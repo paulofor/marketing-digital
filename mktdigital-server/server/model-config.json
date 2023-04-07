@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "PlataformaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoPlataforma": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "VisitaProdutoPlataforma": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoHotmart": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "VisitaProdutoHotmart": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "TokenAcesso": {
+    "dataSource": "mysqlds",
+    "public": true
+  }
+}

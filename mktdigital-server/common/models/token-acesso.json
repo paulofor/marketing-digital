@@ -1,0 +1,50 @@
+{
+  "name": "TokenAcesso",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string",
+      "id" : true
+    },
+    "token": {
+      "type": "string"
+    },
+    "dataAtualizacao": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "ObtemPorNome": {
+      "accepts": [
+        {
+          "arg": "nome",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemPorNome",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}
