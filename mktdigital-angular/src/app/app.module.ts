@@ -38,6 +38,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { PlataformaListComponent } from './plataforma-list/plataforma-list.component';
 import { PlataformaEditComponent } from './plataforma-edit/plataforma-edit.component';
 import { ProdutoHotmartListComponent } from './produto-hotmart-list/produto-hotmart-list.component';
+import { TokenAcessoListComponent } from './token-acesso-list/token-acesso-list.component';
+import { TokenAcessoEditComponent } from './token-acesso-edit/token-acesso-edit.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -52,7 +54,9 @@ registerLocaleData(localePt, 'pt-BR');
     HomeComponent,
     PlataformaListComponent,
     PlataformaEditComponent,
-    ProdutoHotmartListComponent
+    ProdutoHotmartListComponent,
+    TokenAcessoListComponent,
+    TokenAcessoEditComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +105,7 @@ registerLocaleData(localePt, 'pt-BR');
     //{ provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }
   ],
   entryComponents : [
-
+    TokenAcessoEditComponent
   ],
   bootstrap: [AppComponent]
 })

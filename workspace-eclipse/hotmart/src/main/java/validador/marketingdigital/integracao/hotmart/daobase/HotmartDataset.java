@@ -3,11 +3,12 @@ package validador.marketingdigital.integracao.hotmart.daobase;
 import java.util.List;
 
 import validador.marketingdigital.integracao.daobase.IDatasetComum;
+import validador.marketingdigital.integracao.lookback.modelo.TokenAcesso;
 import validador.marketingdigital.integracao.lookback.modelo.VisitaProdutoHotmart;
 
 public class HotmartDataset implements IDatasetComum{
 
-	private String tokenAcesso;
+	private TokenAcesso tokenAcesso;
 	private List<VisitaProdutoHotmart> listaProduto;
 
 	private final String NOME_TOKEN = "HOTMART";
@@ -16,13 +17,19 @@ public class HotmartDataset implements IDatasetComum{
 		return NOME_TOKEN;
 	}
 	
-	public String getTokenAcesso() {
+	
+
+	public TokenAcesso getTokenAcesso() {
 		return tokenAcesso;
 	}
 
-	public void setTokenAcesso(String tokenAcesso) {
+
+
+	public void setTokenAcesso(TokenAcesso tokenAcesso) {
 		this.tokenAcesso = tokenAcesso;
 	}
+
+
 
 	public List<VisitaProdutoHotmart> getListaProduto() {
 		return listaProduto;

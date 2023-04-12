@@ -9,15 +9,15 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ProdutoHotmart } from '../../models/ProdutoHotmart';
+import { TokenAcesso } from '../../models/TokenAcesso';
 import { SocketConnection } from '../../sockets/socket.connections';
 
 
 /**
- * Api services for the `ProdutoHotmart` model.
+ * Api services for the `TokenAcesso` model.
  */
 @Injectable()
-export class ProdutoHotmartApi extends BaseLoopBackApi {
+export class TokenAcessoApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -42,13 +42,13 @@ export class ProdutoHotmartApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `ProdutoHotmart` object.)
+   * This usually means the response is a `TokenAcesso` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProdutoHotmarts";
+    "/TokenAcessos";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -61,7 +61,7 @@ export class ProdutoHotmartApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id ProdutoHotmart id
+   * @param {any} id TokenAcesso id
    *
    * @param {object} data Request data.
    *
@@ -73,13 +73,13 @@ export class ProdutoHotmartApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `ProdutoHotmart` object.)
+   * This usually means the response is a `TokenAcesso` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProdutoHotmarts/:id";
+    "/TokenAcessos/:id";
     let _routeParams: any = {
       id: id
     };
@@ -92,10 +92,38 @@ export class ProdutoHotmartApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {string} nome 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `TokenAcesso` object.)
+   * </em>
+   */
+  public ObtemPorNome(nome: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/TokenAcessos/obtemPorNome";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof nome !== 'undefined' && nome !== null) _urlParams.nome = nome;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
-   * i.e. `ProdutoHotmart`.
+   * i.e. `TokenAcesso`.
    */
   public getModelName() {
-    return "ProdutoHotmart";
+    return "TokenAcesso";
   }
 }

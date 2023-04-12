@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.strongloop.android.loopback.ModelRepository;
-import com.strongloop.android.loopback.callbacks.JsonArrayParser;
-import com.strongloop.android.loopback.callbacks.ListCallback;
+import com.strongloop.android.loopback.callbacks.JsonObjectParser;
+import com.strongloop.android.loopback.callbacks.ObjectCallback;
 import com.strongloop.android.remoting.adapters.RestContractItem;
 
 import validador.marketingdigital.integracao.lookback.modelo.TokenAcesso;
@@ -22,12 +22,12 @@ public class RepositorioTokenAcesso extends ModelRepository<TokenAcesso>{
 	
 
 	
-	public synchronized void obtemPorNome(String nome, final ListCallback<TokenAcesso> callback ) {
+	public synchronized void obtemPorNome(String nome, final ObjectCallback<TokenAcesso> callback ) {
 		RestContractItem contrato = new RestContractItem("TokenAcessos/obtemPorNome","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "TokenAcesso.obtemPorNome");
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("nome", nome);
-        invokeStaticMethod("obtemPorNome", params,    new JsonArrayParser<TokenAcesso>(this, callback));
+        invokeStaticMethod("obtemPorNome", params,    new JsonObjectParser<TokenAcesso>(this, callback));
 	}
 
 }

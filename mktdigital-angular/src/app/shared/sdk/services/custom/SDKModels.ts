@@ -5,6 +5,8 @@ import { PlataformaVenda } from '../../models/PlataformaVenda';
 import { ProdutoPlataforma } from '../../models/ProdutoPlataforma';
 import { VisitaProdutoPlataforma } from '../../models/VisitaProdutoPlataforma';
 import { ProdutoHotmart } from '../../models/ProdutoHotmart';
+import { VisitaProdutoHotmart } from '../../models/VisitaProdutoHotmart';
+import { TokenAcesso } from '../../models/TokenAcesso';
 
 export interface Models { [name: string]: any }
 
@@ -17,6 +19,8 @@ export class SDKModels {
     ProdutoPlataforma: ProdutoPlataforma,
     VisitaProdutoPlataforma: VisitaProdutoPlataforma,
     ProdutoHotmart: ProdutoHotmart,
+    VisitaProdutoHotmart: VisitaProdutoHotmart,
+    TokenAcesso: TokenAcesso,
     
   };
 

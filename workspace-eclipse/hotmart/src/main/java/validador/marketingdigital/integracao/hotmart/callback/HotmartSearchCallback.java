@@ -14,7 +14,7 @@ import br.com.digicom.coletorjson.ParserJson2;
 import validador.marketingdigital.integracao.daobase.DaoBase;
 import validador.marketingdigital.integracao.daobase.comum.DaoBaseComum;
 import validador.marketingdigital.integracao.hotmart.daobase.HotmartDataset;
-import validador.marketingdigital.integracao.hotmart.daobase.ProdutoHotmart_InsereListaProdutoHotmart;
+import validador.marketingdigital.integracao.hotmart.daobase.VisitaProdutoHotmart_InsereListaProdutoHotmart;
 import validador.marketingdigital.integracao.lookback.modelo.VisitaProdutoHotmart;
 
 public class HotmartSearchCallback extends DaoBaseComum implements ICallbackJSON {
@@ -75,12 +75,12 @@ public class HotmartSearchCallback extends DaoBaseComum implements ICallbackJSON
 	}
 
 	public String getBody() {
-		return "{\"name\":\"hottest\",\"rows\":100,\"locale\":\"PT_BR\",\"page\":\"5\"}";
+		return "{\"name\":\"hottest\",\"rows\":100,\"locale\":\"PT_BR\",\"page\":\"1\"}";
 	}
 
 	@Override
 	protected DaoBase getProximo() {
-		return new ProdutoHotmart_InsereListaProdutoHotmart();
+		return new VisitaProdutoHotmart_InsereListaProdutoHotmart();
 	} 
 
 	

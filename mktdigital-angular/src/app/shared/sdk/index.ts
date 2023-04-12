@@ -53,6 +53,8 @@ import { PlataformaVendaApi } from './services/custom/PlataformaVenda';
 import { ProdutoPlataformaApi } from './services/custom/ProdutoPlataforma';
 import { VisitaProdutoPlataformaApi } from './services/custom/VisitaProdutoPlataforma';
 import { ProdutoHotmartApi } from './services/custom/ProdutoHotmart';
+import { VisitaProdutoHotmartApi } from './services/custom/VisitaProdutoHotmart';
+import { TokenAcessoApi } from './services/custom/TokenAcesso';
 /**
 * @module SDKBrowserModule
 * @description
@@ -88,9 +90,10 @@ export class SDKBrowserModule {
         ProdutoPlataformaApi,
         VisitaProdutoPlataformaApi,
         ProdutoHotmartApi,
+        VisitaProdutoHotmartApi,
+        TokenAcessoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-
       ]
     };
   }

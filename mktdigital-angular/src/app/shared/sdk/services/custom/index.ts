@@ -4,5 +4,7 @@ export * from './PlataformaVenda';
 export * from './ProdutoPlataforma';
 export * from './VisitaProdutoPlataforma';
 export * from './ProdutoHotmart';
+export * from './VisitaProdutoHotmart';
+export * from './TokenAcesso';
 export * from './SDKModels';
 export * from './logger.service';
