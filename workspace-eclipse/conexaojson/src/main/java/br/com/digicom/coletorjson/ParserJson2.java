@@ -73,10 +73,11 @@ public class ParserJson2 extends Thread {
 					int status = response.getStatusLine().getStatusCode();
 					System.out.println(callback.getUrl());
 					System.out.println("Resposta: " + status);
+					HttpEntity entity = response.getEntity();
 					if (status >= 200 && status < 300) {
-						HttpEntity entity = response.getEntity();
 						return entity != null ? EntityUtils.toString(entity) : null;
 					} else {
+						System.out.println(entity != null ? EntityUtils.toString(entity) : "");
 						throw new ClientProtocolException("Unexpected response status: " + status);
 					}
 				}

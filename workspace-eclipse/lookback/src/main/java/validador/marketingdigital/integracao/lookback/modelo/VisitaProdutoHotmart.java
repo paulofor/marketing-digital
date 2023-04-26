@@ -7,7 +7,7 @@ import com.strongloop.android.loopback.Model;
 
 public class VisitaProdutoHotmart extends Model{
 
-	private int hotmartId;
+	private long hotmartId;
 	private String nome;
 	private String imagem;
 	private double temperatura;
@@ -22,6 +22,267 @@ public class VisitaProdutoHotmart extends Model{
 	private String produtorCodigoHotmart;
 	private int blueprint;
 	
+	public VisitaProdutoHotmart() {
+		super();
+	}
+	
+
+	
+	
+	
+	
+	public long getHotmartId() {
+		return hotmartId;
+	}
+
+
+
+
+
+
+	public void setHotmartId(int hotmartId) {
+		this.hotmartId = hotmartId;
+	}
+
+
+
+
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+
+
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+
+
+
+
+	public String getImagem() {
+		return imagem;
+	}
+
+
+
+
+
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+
+
+
+
+
+	public double getTemperatura() {
+		return temperatura;
+	}
+
+
+
+
+
+
+	public void setTemperatura(double temperatura) {
+		this.temperatura = temperatura;
+	}
+
+
+
+
+
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+
+
+
+
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+
+
+
+
+
+	public String getFormato() {
+		return formato;
+	}
+
+
+
+
+
+
+	public void setFormato(String formato) {
+		this.formato = formato;
+	}
+
+
+
+
+
+
+	public double getReviewRating() {
+		return reviewRating;
+	}
+
+
+
+
+
+
+	public void setReviewRating(double reviewRating) {
+		this.reviewRating = reviewRating;
+	}
+
+
+
+
+
+
+	public int getTotalAnswers() {
+		return totalAnswers;
+	}
+
+
+
+
+
+
+	public void setTotalAnswers(int totalAnswers) {
+		this.totalAnswers = totalAnswers;
+	}
+
+
+
+
+
+
+	public int getAfiliacaoTipo() {
+		return afiliacaoTipo;
+	}
+
+
+
+
+
+
+	public void setAfiliacaoTipo(int afiliacaoTipo) {
+		this.afiliacaoTipo = afiliacaoTipo;
+	}
+
+
+
+
+
+
+	public double getAfiliacaoValor() {
+		return afiliacaoValor;
+	}
+
+
+
+
+
+
+	public void setAfiliacaoValor(double afiliacaoValor) {
+		this.afiliacaoValor = afiliacaoValor;
+	}
+
+
+
+
+
+
+	public double getAfiliacaoPercentual() {
+		return afiliacaoPercentual;
+	}
+
+
+
+
+
+
+	public void setAfiliacaoPercentual(double afiliacaoPercentual) {
+		this.afiliacaoPercentual = afiliacaoPercentual;
+	}
+
+
+
+
+
+
+	public String getProdutorNome() {
+		return produtorNome;
+	}
+
+
+
+
+
+
+	public void setProdutorNome(String produtorNome) {
+		this.produtorNome = produtorNome;
+	}
+
+
+
+
+
+
+	public String getProdutorCodigoHotmart() {
+		return produtorCodigoHotmart;
+	}
+
+
+
+
+
+
+	public void setProdutorCodigoHotmart(String produtorCodigoHotmart) {
+		this.produtorCodigoHotmart = produtorCodigoHotmart;
+	}
+
+
+
+
+
+
+	public int getBlueprint() {
+		return blueprint;
+	}
+
+
+
+
+
+
+	public void setBlueprint(int blueprint) {
+		this.blueprint = blueprint;
+	}
+
+
+
+
+
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {

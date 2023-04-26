@@ -8,7 +8,7 @@
   "properties": {
     "nome": {
       "type": "string",
-      "id" : true
+      "id": true
     },
     "token": {
       "type": "string"

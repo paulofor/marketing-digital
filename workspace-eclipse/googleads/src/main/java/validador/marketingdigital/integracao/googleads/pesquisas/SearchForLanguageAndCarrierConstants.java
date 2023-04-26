@@ -17,14 +17,7 @@ package validador.marketingdigital.integracao.googleads.pesquisas;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import com.google.ads.googleads.lib.GoogleAdsClient;
-import com.google.ads.googleads.v13.resources.CarrierConstant;
-import com.google.ads.googleads.v13.resources.LanguageConstant;
-import com.google.ads.googleads.v13.services.GoogleAdsRow;
-import com.google.ads.googleads.v13.services.GoogleAdsServiceClient;
-import com.google.ads.googleads.v13.services.SearchGoogleAdsStreamRequest;
-import com.google.ads.googleads.v13.services.SearchGoogleAdsStreamResponse;
-import com.google.api.gax.rpc.ServerStream;
+
 
 /**
  * Illustrates how to:

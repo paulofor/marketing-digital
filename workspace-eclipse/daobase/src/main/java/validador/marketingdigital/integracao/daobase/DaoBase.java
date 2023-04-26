@@ -33,7 +33,7 @@ public abstract class DaoBase {
 	}
 	protected abstract long getTempo();
 	
-	private boolean concluido = false;
+	protected boolean concluido = false;
 	public void executa() {
 		System.out.println("Executando " + this.getClass().getName());
 		this.concluido = false;
@@ -45,6 +45,7 @@ public abstract class DaoBase {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			//System.out.println("executando " + this.toString());
 		}
 	}
 	protected abstract void executaImpl();

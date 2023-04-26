@@ -56,5 +56,49 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {
+    "InsereListaProdutoHotmart": {
+      "accepts": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereListaProdutoHotmart",
+          "verb": "post"
+        }
+      ]
+    },
+    "ListaParaPesquisaPalavraChave": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/listaParaPesquisaPalavraChave",
+          "verb": "get"
+        }
+      ]
+    }
+  }
 }

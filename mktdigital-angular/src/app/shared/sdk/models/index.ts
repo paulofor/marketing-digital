@@ -6,5 +6,6 @@ export * from './VisitaProdutoPlataforma';
 export * from './ProdutoHotmart';
 export * from './VisitaProdutoHotmart';
 export * from './TokenAcesso';
+export * from './IdeiaPalavraChave';
 export * from './BaseModels';
 export * from './FireLoopRef';

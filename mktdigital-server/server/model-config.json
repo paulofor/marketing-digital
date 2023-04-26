@@ -58,5 +58,9 @@
   "TokenAcesso": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "IdeiaPalavraChave": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

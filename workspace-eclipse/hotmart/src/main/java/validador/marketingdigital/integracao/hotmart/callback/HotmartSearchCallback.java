@@ -12,15 +12,20 @@ import org.json.JSONObject;
 import br.com.digicom.coletorjson.ICallbackJSON;
 import br.com.digicom.coletorjson.ParserJson2;
 import validador.marketingdigital.integracao.daobase.DaoBase;
-import validador.marketingdigital.integracao.daobase.comum.DaoBaseComum;
+import validador.marketingdigital.integracao.daobase.comum.DaoBasePaginacao;
 import validador.marketingdigital.integracao.hotmart.daobase.HotmartDataset;
 import validador.marketingdigital.integracao.hotmart.daobase.VisitaProdutoHotmart_InsereListaProdutoHotmart;
 import validador.marketingdigital.integracao.lookback.modelo.VisitaProdutoHotmart;
 
-public class HotmartSearchCallback extends DaoBaseComum implements ICallbackJSON {
+public class HotmartSearchCallback extends DaoBasePaginacao implements ICallbackJSON {
 
 	
 	private List<VisitaProdutoHotmart> listaProduto = new ArrayList<VisitaProdutoHotmart>();
+	private int pagina = 0;
+	
+	public void setPagina(int valor) {
+		this.pagina = valor;
+	}
 	
 	public URL getUrl() throws MalformedURLException {
 		return new URL("https://api-affiliation-market.hotmart.com/v1/market/hottest/search");
@@ -31,6 +36,7 @@ public class HotmartSearchCallback extends DaoBaseComum implements ICallbackJSON
 	}
 
 	public void setJson(JSONObject result) {
+		this.listaProduto.clear();
 		System.out.println("Recebi objeto");
 		JSONArray produtos = result.getJSONArray("content");
 		System.out.println("Produtos:" + produtos.length());
@@ -65,22 +71,29 @@ public class HotmartSearchCallback extends DaoBaseComum implements ICallbackJSON
 	@Override
 	protected void executaImpl() {
 		HotmartDataset ds = (HotmartDataset) this.getComum();
-		
 		ParserJson2 parser = new ParserJson2(this);
 		parser.addHeader(new BasicHeader("Content-Type","application/json"));
-		parser.addHeader(new BasicHeader("Authorization","Bearer " + ds.getTokenAcesso()));
+		parser.addHeader(new BasicHeader("Authorization","Bearer " + ds.getTokenAcesso().getToken()));
 		parser.start();
-
-
 	}
 
 	public String getBody() {
-		return "{\"name\":\"hottest\",\"rows\":100,\"locale\":\"PT_BR\",\"page\":\"1\"}";
+		return "{\"name\":\"hottest\",\"rows\":100,\"locale\":\"PT_BR\",\"page\":\"" + this.pagina + "\"}";
 	}
 
 	@Override
 	protected DaoBase getProximo() {
 		return new VisitaProdutoHotmart_InsereListaProdutoHotmart();
+	}
+
+	@Override
+	protected int getTotalPagina() {
+		return 5;
+	}
+
+	@Override
+	protected void setPaginaCorrente(int pagina) {
+		this.pagina = pagina;
 	} 
 
 	

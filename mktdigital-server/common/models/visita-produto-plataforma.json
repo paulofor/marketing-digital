@@ -21,31 +21,5 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {
-    "InsereListaProdutoHotmart": {
-      "accepts": [
-        {
-          "arg": "lista",
-          "type": "array",
-          "required": true,
-          "description": ""
-        }
-      ],
-      "returns": [
-        {
-          "arg": "resultado",
-          "type": "object",
-          "root": true,
-          "description": ""
-        }
-      ],
-      "description": "",
-      "http": [
-        {
-          "path": "/insereListaProdutoHotmart",
-          "verb": "post"
-        }
-      ]
-    }
-  }
+  "methods": {}
 }

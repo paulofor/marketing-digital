@@ -22,17 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.annotation.Nullable;
-
 import com.google.ads.googleads.lib.GoogleAdsClient;
-import com.google.ads.googleads.v13.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork;
-import com.google.ads.googleads.v13.errors.GoogleAdsError;
-import com.google.ads.googleads.v13.errors.GoogleAdsException;
-import com.google.ads.googleads.v13.services.GenerateKeywordIdeaResult;
-import com.google.ads.googleads.v13.services.GenerateKeywordIdeasRequest;
-import com.google.ads.googleads.v13.services.KeywordPlanIdeaServiceClient;
-import com.google.ads.googleads.v13.services.KeywordPlanIdeaServiceClient.GenerateKeywordIdeasPagedResponse;
-import com.google.ads.googleads.v13.utils.ResourceNames;
 
 /** Generates keyword ideas from a list of seed keywords. */
 public class GenerateKeywordIdeas {

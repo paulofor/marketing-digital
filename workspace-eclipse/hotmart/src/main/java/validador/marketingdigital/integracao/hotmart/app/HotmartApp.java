@@ -7,12 +7,15 @@ public class HotmartApp {
 	public static String UrlLoopback = "";
 
 	public static void main(String[] args) {
-		DaoBaseComum.setUrl("http://localhost:23101/api");
+		//DaoBaseComum.setUrl("http://localhost:23101/api");
+		DaoBaseComum.setUrl("http://vps-40d69db1.vps.ovh.ca:23101/api");
 		try {
 			HotmartObj obj = new HotmartObj();
 			obj.executa();
+			System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.exit(-1);
 		}
 	}
 	

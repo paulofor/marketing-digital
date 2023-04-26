@@ -7,6 +7,7 @@ import { VisitaProdutoPlataforma } from '../../models/VisitaProdutoPlataforma';
 import { ProdutoHotmart } from '../../models/ProdutoHotmart';
 import { VisitaProdutoHotmart } from '../../models/VisitaProdutoHotmart';
 import { TokenAcesso } from '../../models/TokenAcesso';
+import { IdeiaPalavraChave } from '../../models/IdeiaPalavraChave';
 
 export interface Models { [name: string]: any }
 
@@ -21,6 +22,7 @@ export class SDKModels {
     ProdutoHotmart: ProdutoHotmart,
     VisitaProdutoHotmart: VisitaProdutoHotmart,
     TokenAcesso: TokenAcesso,
+    IdeiaPalavraChave: IdeiaPalavraChave,
     
   };
 
