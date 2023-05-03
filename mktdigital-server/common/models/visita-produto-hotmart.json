@@ -51,6 +51,9 @@
     },
     "dataInsercao": {
       "type": "date"
+    },
+    "produtoCodigoU" : {
+      "type": "string"
     }
   },
   "validations": [],

@@ -3,24 +3,22 @@
 declare var Object: any;
 export interface IdeiaPalavraChaveInterface {
   "texto"?: string;
-  "volumePesquisa"?: number;
+  "mediaPesquisa"?: number;
   "concorrencia"?: string;
   "dataAcesso"?: Date;
   "cpcMaximoTopPage"?: number;
   "cpcMinimoTopPage"?: number;
   "hotmartId"?: number;
-  "id"?: number;
 }
 
 export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
   "texto": string;
-  "volumePesquisa": number;
+  "mediaPesquisa": number;
   "concorrencia": string;
   "dataAcesso": Date;
   "cpcMaximoTopPage": number;
   "cpcMinimoTopPage": number;
   "hotmartId": number;
-  "id": number;
   constructor(data?: IdeiaPalavraChaveInterface) {
     Object.assign(this, data);
   }
@@ -52,14 +50,14 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
       name: 'IdeiaPalavraChave',
       plural: 'IdeiaPalavraChaves',
       path: 'IdeiaPalavraChaves',
-      idName: 'id',
+      idName: 'texto',
       properties: {
         "texto": {
           name: 'texto',
           type: 'string'
         },
-        "volumePesquisa": {
-          name: 'volumePesquisa',
+        "mediaPesquisa": {
+          name: 'mediaPesquisa',
           type: 'number'
         },
         "concorrencia": {
@@ -80,10 +78,6 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
         },
         "hotmartId": {
           name: 'hotmartId',
-          type: 'number'
-        },
-        "id": {
-          name: 'id',
           type: 'number'
         },
       },

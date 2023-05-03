@@ -40,6 +40,7 @@ import { PlataformaEditComponent } from './plataforma-edit/plataforma-edit.compo
 import { ProdutoHotmartListComponent } from './produto-hotmart-list/produto-hotmart-list.component';
 import { TokenAcessoListComponent } from './token-acesso-list/token-acesso-list.component';
 import { TokenAcessoEditComponent } from './token-acesso-edit/token-acesso-edit.component';
+import { IdeiaPalavraChaveListComponent } from './ideia-palavra-chave-list/ideia-palavra-chave-list.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -56,7 +57,8 @@ registerLocaleData(localePt, 'pt-BR');
     PlataformaEditComponent,
     ProdutoHotmartListComponent,
     TokenAcessoListComponent,
-    TokenAcessoEditComponent
+    TokenAcessoEditComponent,
+    IdeiaPalavraChaveListComponent
   ],
   imports: [
     BrowserModule,

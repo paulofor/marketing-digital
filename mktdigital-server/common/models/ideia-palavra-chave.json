@@ -35,6 +35,31 @@
   "relations": {},
   "acls": [],
   "methods": {
+    "MelhoresUltimaData": {
+      "accepts": [
+        {
+          "arg": "limiteMensal",
+          "type": "number",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/melhoresUltimaData",
+          "verb": "get"
+        }
+      ]
+    },
     "RecebeLista": {
       "accepts": [
         {

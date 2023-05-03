@@ -12,4 +12,15 @@ module.exports = function(Ideiapalavrachave) {
         }
         callback(null, {'result' : 'ok'})
     } 
+
+    Ideiapalavrachave.MelhoresUltimaData = function(limiteMensal,callback) {
+        let ds = Ideiapalavrachave.dataSource;
+        let sql = "select * from IdeiaPalavraChave " +
+            " inner join VisitaProdutoHotmart on VisitaProdutoHotmart.hotmartId = IdeiaPalavraChave.hotmartId " +
+            " and VisitaProdutoHotmart.dataInsercao = (select max(dataInsercao) from VisitaProdutoHotmart) " +
+            " where dataAcesso = (select max(dataAcesso) from IdeiaPalavraChave) " +
+            " and mediaPesquisa >= " + limiteMensal + 
+            " order by mediaPesquisa desc";
+        ds.connector.query(sql,callback);
+    }
 };
