@@ -1,0 +1,30 @@
+<h2 *ngIf="item" mat-dialog-title>Produto Afiliado Hotmart</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #urlFinal [(ngModel)]="item.urlFinal" name="urlFinal" placeholder="Url Final" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #urlTracking [(ngModel)]="item.urlTracking" name="urlTracking" placeholder="Url Tracking" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #geraTesteCampanha [(ngModel)]="item.geraTesteCampanha" name="geraTesteCampanha" placeholder="Gera Campanha de Teste (0/1)" />
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

@@ -52,7 +52,7 @@
     "dataInsercao": {
       "type": "date"
     },
-    "produtoCodigoU" : {
+    "produtoCodigoU": {
       "type": "string"
     }
   },
@@ -60,6 +60,25 @@
   "relations": {},
   "acls": [],
   "methods": {
+    "AtualizaMaisRecenteProdutoHotmart": {
+      "accepts": [
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualizaMaisRecenteProdutoHotmart",
+          "verb": "post"
+        }
+      ]
+    },
     "InsereListaProdutoHotmart": {
       "accepts": [
         {

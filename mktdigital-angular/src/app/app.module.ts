@@ -41,6 +41,8 @@ import { ProdutoHotmartListComponent } from './produto-hotmart-list/produto-hotm
 import { TokenAcessoListComponent } from './token-acesso-list/token-acesso-list.component';
 import { TokenAcessoEditComponent } from './token-acesso-edit/token-acesso-edit.component';
 import { IdeiaPalavraChaveListComponent } from './ideia-palavra-chave-list/ideia-palavra-chave-list.component';
+import { ProdutoAfiliadoHotmartListComponent } from './produto-afiliado-hotmart-list/produto-afiliado-hotmart-list.component';
+import { ProdutoAfiliadoHotmartEditComponent } from './produto-afiliado-hotmart-edit/produto-afiliado-hotmart-edit.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -58,7 +60,9 @@ registerLocaleData(localePt, 'pt-BR');
     ProdutoHotmartListComponent,
     TokenAcessoListComponent,
     TokenAcessoEditComponent,
-    IdeiaPalavraChaveListComponent
+    IdeiaPalavraChaveListComponent,
+    ProdutoAfiliadoHotmartListComponent,
+    ProdutoAfiliadoHotmartEditComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +111,8 @@ registerLocaleData(localePt, 'pt-BR');
     //{ provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }
   ],
   entryComponents : [
-    TokenAcessoEditComponent
+    TokenAcessoEditComponent,
+    ProdutoAfiliadoHotmartEditComponent
   ],
   bootstrap: [AppComponent]
 })

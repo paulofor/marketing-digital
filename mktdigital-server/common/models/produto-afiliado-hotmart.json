@@ -1,0 +1,26 @@
+{
+  "name": "ProdutoAfiliadoHotmart",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "urlFinal": {
+      "type": "string"
+    },
+    "urlTracking": {
+      "type": "string"
+    },
+    "geraTesteCampanha": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

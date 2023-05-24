@@ -8,7 +8,7 @@
   "properties": {
     "texto": {
       "type": "string",
-      "id" : true
+      "id": true
     },
     "mediaPesquisa": {
       "type": "number"
@@ -18,7 +18,7 @@
     },
     "dataAcesso": {
       "type": "date",
-      "id" : true
+      "id": true
     },
     "cpcMaximoTopPage": {
       "type": "number"
@@ -28,13 +28,33 @@
     },
     "hotmartId": {
       "type": "number",
-      "id" : true
+      "id": true
     }
   },
   "validations": [],
   "relations": {},
   "acls": [],
   "methods": {
+    "AtualizaMaisRecentePalavraChave": {
+      "accepts": [
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualizaMaisRecentePalavraChave",
+          "verb": "post"
+        }
+      ]
+    },
+
     "MelhoresUltimaData": {
       "accepts": [
         {
@@ -85,6 +105,5 @@
         }
       ]
     }
-
   }
 }

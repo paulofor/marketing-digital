@@ -27,5 +27,10 @@
 			<artifactId>facebook-java-business-sdk</artifactId>
 			<version>[8.0.3,)</version>
 		</dependency>
+		    <dependency>
+            <groupId>com.restfb</groupId>
+            <artifactId>restfb</artifactId>
+            <version>2.25.0</version>
+        </dependency>
 	</dependencies>
 </project>

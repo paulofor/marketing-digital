@@ -56,6 +56,10 @@ import { ProdutoHotmartApi } from './services/custom/ProdutoHotmart';
 import { VisitaProdutoHotmartApi } from './services/custom/VisitaProdutoHotmart';
 import { TokenAcessoApi } from './services/custom/TokenAcesso';
 import { IdeiaPalavraChaveApi } from './services/custom/IdeiaPalavraChave';
+import { CampanhaAdsApi } from './services/custom/CampanhaAds';
+import { AnuncioCampanhaAdsApi } from './services/custom/AnuncioCampanhaAds';
+import { PalavraCampanhaAdsApi } from './services/custom/PalavraCampanhaAds';
+import { ProdutoAfiliadoHotmartApi } from './services/custom/ProdutoAfiliadoHotmart';
 /**
 * @module SDKBrowserModule
 * @description
@@ -94,8 +98,13 @@ export class SDKBrowserModule {
         VisitaProdutoHotmartApi,
         TokenAcessoApi,
         IdeiaPalavraChaveApi,
+        CampanhaAdsApi,
+        AnuncioCampanhaAdsApi,
+        PalavraCampanhaAdsApi,
+        ProdutoAfiliadoHotmartApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

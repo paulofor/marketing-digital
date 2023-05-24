@@ -11,12 +11,11 @@ import java.util.stream.Collectors;
 
 import com.google.ads.googleads.lib.GoogleAdsClient;
 import com.google.ads.googleads.v13.common.AdTextAsset;
+import com.google.ads.googleads.v13.common.CustomParameter;
 import com.google.ads.googleads.v13.common.KeywordInfo;
 import com.google.ads.googleads.v13.common.LocationInfo;
 import com.google.ads.googleads.v13.common.ManualCpc;
 import com.google.ads.googleads.v13.common.ResponsiveSearchAdInfo;
-import com.google.ads.googleads.v13.common.TargetRestriction;
-import com.google.ads.googleads.v13.common.TargetingSetting;
 import com.google.ads.googleads.v13.enums.AdGroupAdStatusEnum.AdGroupAdStatus;
 import com.google.ads.googleads.v13.enums.AdGroupCriterionStatusEnum.AdGroupCriterionStatus;
 import com.google.ads.googleads.v13.enums.AdGroupStatusEnum.AdGroupStatus;
@@ -25,7 +24,6 @@ import com.google.ads.googleads.v13.enums.BudgetDeliveryMethodEnum.BudgetDeliver
 import com.google.ads.googleads.v13.enums.CampaignStatusEnum.CampaignStatus;
 import com.google.ads.googleads.v13.enums.KeywordMatchTypeEnum.KeywordMatchType;
 import com.google.ads.googleads.v13.enums.ServedAssetFieldTypeEnum.ServedAssetFieldType;
-import com.google.ads.googleads.v13.enums.TargetingDimensionEnum;
 import com.google.ads.googleads.v13.resources.Ad;
 import com.google.ads.googleads.v13.resources.AdGroup;
 import com.google.ads.googleads.v13.resources.AdGroupAd;
@@ -58,7 +56,6 @@ import com.google.ads.googleads.v13.services.MutateOperation;
 import com.google.ads.googleads.v13.services.MutateOperationResponse;
 import com.google.ads.googleads.v13.utils.ResourceNames;
 import com.google.common.collect.ImmutableList;
-import com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 
 
@@ -118,13 +115,14 @@ public class MinhaCriaCampanha {
 	            .setPath2("deals") // caminho de exibição
 	            .build();
 
-	    List<String> assetGroupFinalUrls = {"http://www.example.com","http://www.lojadigicom.com.br"}
-	    assetGroupFinalUrls = ImmutableList.of("https://www.example.com");
+	    List<String> urlFinal = ImmutableList.of("http://www.example.com");
+
 	    // Wraps the info in an Ad object.
 	    Ad ad =
 	        Ad.newBuilder()
 	            .setResponsiveSearchAd(responsiveSearchAdInfo)
-	            .addAllFinalUrls(urls) // URL alvo
+	            .addAllFinalUrls(urlFinal) // URL alvo
+	            .setTrackingUrlTemplate("http://www.lojadigicom.com.br")
 	            .build();
 
 	    // Builds the final ad group ad representation.
@@ -202,8 +200,11 @@ public class MinhaCriaCampanha {
 
 	private static String addCampaignBudget(GoogleAdsClient googleAdsClient, long customerId) {
 		// Orçamento diário 5,00
-		CampaignBudget budget = CampaignBudget.newBuilder().setName("Test Budget " + System.currentTimeMillis())
-				.setDeliveryMethod(BudgetDeliveryMethod.STANDARD).setAmountMicros(500_000).build();
+		CampaignBudget budget = CampaignBudget.newBuilder()
+				.setName("Test Budget " + System.currentTimeMillis())
+				.setDeliveryMethod(BudgetDeliveryMethod.STANDARD)
+				.setAmountMicros(500_000)
+				.build();
 
 		CampaignBudgetOperation op = CampaignBudgetOperation.newBuilder().setCreate(budget).build();
 

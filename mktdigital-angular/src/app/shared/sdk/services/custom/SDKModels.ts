@@ -8,6 +8,10 @@ import { ProdutoHotmart } from '../../models/ProdutoHotmart';
 import { VisitaProdutoHotmart } from '../../models/VisitaProdutoHotmart';
 import { TokenAcesso } from '../../models/TokenAcesso';
 import { IdeiaPalavraChave } from '../../models/IdeiaPalavraChave';
+import { CampanhaAds } from '../../models/CampanhaAds';
+import { AnuncioCampanhaAds } from '../../models/AnuncioCampanhaAds';
+import { PalavraCampanhaAds } from '../../models/PalavraCampanhaAds';
+import { ProdutoAfiliadoHotmart } from '../../models/ProdutoAfiliadoHotmart';
 
 export interface Models { [name: string]: any }
 
@@ -23,6 +27,10 @@ export class SDKModels {
     VisitaProdutoHotmart: VisitaProdutoHotmart,
     TokenAcesso: TokenAcesso,
     IdeiaPalavraChave: IdeiaPalavraChave,
+    CampanhaAds: CampanhaAds,
+    AnuncioCampanhaAds: AnuncioCampanhaAds,
+    PalavraCampanhaAds: PalavraCampanhaAds,
+    ProdutoAfiliadoHotmart: ProdutoAfiliadoHotmart,
     
   };
 

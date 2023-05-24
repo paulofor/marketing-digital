@@ -62,5 +62,25 @@
   "IdeiaPalavraChave": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "CampanhaAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioCampanhaAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PalavraCampanhaAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoAfiliadoHotmart": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AgendaVisitaHotmart": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

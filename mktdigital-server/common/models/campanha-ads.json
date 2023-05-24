@@ -1,0 +1,23 @@
+{
+  "name": "CampanhaAds",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "anuncioCampanhaAds": {
+      "type": "hasMany",
+      "model": "AnuncioCampanhaAds",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

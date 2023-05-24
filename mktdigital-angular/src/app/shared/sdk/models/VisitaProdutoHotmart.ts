@@ -17,6 +17,7 @@ export interface VisitaProdutoHotmartInterface {
   "produtorCodigoHotmart"?: string;
   "blueprint"?: number;
   "dataInsercao"?: Date;
+  "produtoCodigoU"?: string;
 }
 
 export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
@@ -35,6 +36,7 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
   "produtorCodigoHotmart": string;
   "blueprint": number;
   "dataInsercao": Date;
+  "produtoCodigoU": string;
   constructor(data?: VisitaProdutoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -127,6 +129,10 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
         "dataInsercao": {
           name: 'dataInsercao',
           type: 'Date'
+        },
+        "produtoCodigoU": {
+          name: 'produtoCodigoU',
+          type: 'string'
         },
       },
       relations: {
