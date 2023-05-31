@@ -1,0 +1,13 @@
+<div class="dgc-painel" *ngIf="principal">
+  <div class="dgc-painel-header" *ngIf="principal">
+      <span>{{principal.nome}}</span>
+  </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-detalhe" *ngFor="let item of principal.visitaProdutoHotmarts">
+      {{item.dataInsercao | date : 'dd/MM/yyyy'}}
+      Temperatura: {{item.temperatura}} Valor : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)
+    </div>
+  </div>
+</div>
+

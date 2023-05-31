@@ -11,5 +11,6 @@ export * from './CampanhaAds';
 export * from './AnuncioCampanhaAds';
 export * from './PalavraCampanhaAds';
 export * from './ProdutoAfiliadoHotmart';
+export * from './AgendaVisitaHotmart';
 export * from './SDKModels';
 export * from './logger.service';

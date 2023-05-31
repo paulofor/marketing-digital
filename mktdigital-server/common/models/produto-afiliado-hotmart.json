@@ -17,10 +17,20 @@
     },
     "geraTesteCampanha": {
       "type": "number"
+    },
+    "hotmartId": {
+      "type": "number",
+      "id": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "visitaProdutoHotmarts": {
+      "type": "hasMany",
+      "model": "VisitaProdutoHotmart",
+      "foreignKey": "hotmartId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -3,10 +3,20 @@
       <span>Afiliados Hotmart</span>
       <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
   </div>
-  <div *ngIf="listaBase">
+  <div *ngIf="listaBase" class="dgc-painel-principal">
     <div class="dgc-card" *ngFor="let item of listaBase">
         <div class="dgc-card-header">
-          <span>{{item.nome}}</span>
+          <span class="dgc-link" routerLink="/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}">{{item.nome}}</span>
+          <span class="dgc-direita"># {{item.hotmartId}}</span>
+        </div>
+        <div class="dgc-card-detalhe">
+          <span>Final: {{item.urlFinal}}</span>
+        </div>
+        <div class="dgc-card-detalhe">
+          <span>Tracking: {{item.urlTracking}}</span>
+        </div>
+        <div class="dgc-card-detalhe">
+          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>
         </div>
         <div class="dgc-card-comandos">
             <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>

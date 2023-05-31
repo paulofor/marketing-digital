@@ -12,6 +12,7 @@ import { CampanhaAds } from '../../models/CampanhaAds';
 import { AnuncioCampanhaAds } from '../../models/AnuncioCampanhaAds';
 import { PalavraCampanhaAds } from '../../models/PalavraCampanhaAds';
 import { ProdutoAfiliadoHotmart } from '../../models/ProdutoAfiliadoHotmart';
+import { AgendaVisitaHotmart } from '../../models/AgendaVisitaHotmart';
 
 export interface Models { [name: string]: any }
 
@@ -31,6 +32,7 @@ export class SDKModels {
     AnuncioCampanhaAds: AnuncioCampanhaAds,
     PalavraCampanhaAds: PalavraCampanhaAds,
     ProdutoAfiliadoHotmart: ProdutoAfiliadoHotmart,
+    AgendaVisitaHotmart: AgendaVisitaHotmart,
     
   };
 

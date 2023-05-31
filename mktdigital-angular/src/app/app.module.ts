@@ -43,6 +43,7 @@ import { TokenAcessoEditComponent } from './token-acesso-edit/token-acesso-edit.
 import { IdeiaPalavraChaveListComponent } from './ideia-palavra-chave-list/ideia-palavra-chave-list.component';
 import { ProdutoAfiliadoHotmartListComponent } from './produto-afiliado-hotmart-list/produto-afiliado-hotmart-list.component';
 import { ProdutoAfiliadoHotmartEditComponent } from './produto-afiliado-hotmart-edit/produto-afiliado-hotmart-edit.component';
+import { ProdutoAfiliadoHotmartDetalheComponent } from './produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -62,7 +63,8 @@ registerLocaleData(localePt, 'pt-BR');
     TokenAcessoEditComponent,
     IdeiaPalavraChaveListComponent,
     ProdutoAfiliadoHotmartListComponent,
-    ProdutoAfiliadoHotmartEditComponent
+    ProdutoAfiliadoHotmartEditComponent,
+    ProdutoAfiliadoHotmartDetalheComponent
   ],
   imports: [
     BrowserModule,

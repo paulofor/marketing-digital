@@ -5,6 +5,7 @@ import { ProdutoHotmartListComponent } from '../produto-hotmart-list/produto-hot
 import { TokenAcessoListComponent } from '../token-acesso-list/token-acesso-list.component';
 import { IdeiaPalavraChaveListComponent } from '../ideia-palavra-chave-list/ideia-palavra-chave-list.component';
 import { ProdutoAfiliadoHotmartListComponent } from '../produto-afiliado-hotmart-list/produto-afiliado-hotmart-list.component';
+import { ProdutoAfiliadoHotmartDetalheComponent } from '../produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe.component';
 
 
 
@@ -16,6 +17,7 @@ export const routes : Routes = [
     { path: 'tokenAcesso' , component : TokenAcessoListComponent },
     { path: 'ideiaPalavraChave' , component: IdeiaPalavraChaveListComponent },
     { path: 'produtoAfiliadoHotmart' , component: ProdutoAfiliadoHotmartListComponent },
+    { path: 'produtoAfiliadoHotmartDetalhe/:id' , component: ProdutoAfiliadoHotmartDetalheComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

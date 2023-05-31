@@ -5,19 +5,23 @@
   <mat-dialog-content>
 
     <mat-form-field class="example-full-width">
-      <input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+      <input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" autocomplete="off"/>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput #urlFinal [(ngModel)]="item.urlFinal" name="urlFinal" placeholder="Url Final" />
+      <input matInput #hotmartId [(ngModel)]="item.hotmartId" name="hotmartId" placeholder="Hotmart Id" autocomplete="off"/>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput #urlTracking [(ngModel)]="item.urlTracking" name="urlTracking" placeholder="Url Tracking" />
+      <input matInput #urlFinal [(ngModel)]="item.urlFinal" name="urlFinal" placeholder="Url Final" autocomplete="off"/>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput #geraTesteCampanha [(ngModel)]="item.geraTesteCampanha" name="geraTesteCampanha" placeholder="Gera Campanha de Teste (0/1)" />
+      <input matInput #urlTracking [(ngModel)]="item.urlTracking" name="urlTracking" placeholder="Url Tracking" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #geraTesteCampanha [(ngModel)]="item.geraTesteCampanha" name="geraTesteCampanha" placeholder="Gera Campanha de Teste (0/1)" autocomplete="off"/>
     </mat-form-field>
 
   </mat-dialog-content>

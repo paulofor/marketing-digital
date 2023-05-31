@@ -6,6 +6,7 @@ export interface ProdutoAfiliadoHotmartInterface {
   "urlFinal"?: string;
   "urlTracking"?: string;
   "geraTesteCampanha"?: number;
+  "hotmartId"?: number;
   "id"?: number;
 }
 
@@ -14,6 +15,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "urlFinal": string;
   "urlTracking": string;
   "geraTesteCampanha": number;
+  "hotmartId": number;
   "id": number;
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
@@ -62,6 +64,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
         },
         "geraTesteCampanha": {
           name: 'geraTesteCampanha',
+          type: 'number'
+        },
+        "hotmartId": {
+          name: 'hotmartId',
           type: 'number'
         },
         "id": {

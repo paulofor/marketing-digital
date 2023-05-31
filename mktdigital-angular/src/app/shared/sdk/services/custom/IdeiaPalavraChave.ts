@@ -96,6 +96,35 @@ export class IdeiaPalavraChaveApi extends BaseLoopBackApi {
          * (The remote method definition does not provide any description.)
          * </em>
    *
+   * @param {object} data Request data.
+   *
+   * This method does not accept any data. Supply an empty object.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `IdeiaPalavraChave` object.)
+   * </em>
+   */
+  public AtualizaMaisRecentePalavraChave(customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/IdeiaPalavraChaves/atualizaMaisRecentePalavraChave";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
    * @param {number} limiteMensal 
    *
    * @returns {object[]} An empty reference that will be

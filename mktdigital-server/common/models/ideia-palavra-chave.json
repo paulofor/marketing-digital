@@ -36,8 +36,7 @@
   "acls": [],
   "methods": {
     "AtualizaMaisRecentePalavraChave": {
-      "accepts": [
-      ],
+      "accepts": [],
       "returns": [
         {
           "arg": "resultado",
@@ -54,7 +53,6 @@
         }
       ]
     },
-
     "MelhoresUltimaData": {
       "accepts": [
         {

@@ -45,7 +45,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
-
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -60,6 +59,7 @@ import { CampanhaAdsApi } from './services/custom/CampanhaAds';
 import { AnuncioCampanhaAdsApi } from './services/custom/AnuncioCampanhaAds';
 import { PalavraCampanhaAdsApi } from './services/custom/PalavraCampanhaAds';
 import { ProdutoAfiliadoHotmartApi } from './services/custom/ProdutoAfiliadoHotmart';
+import { AgendaVisitaHotmartApi } from './services/custom/AgendaVisitaHotmart';
 /**
 * @module SDKBrowserModule
 * @description
@@ -102,9 +102,9 @@ export class SDKBrowserModule {
         AnuncioCampanhaAdsApi,
         PalavraCampanhaAdsApi,
         ProdutoAfiliadoHotmartApi,
+        AgendaVisitaHotmartApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-
       ]
     };
   }
