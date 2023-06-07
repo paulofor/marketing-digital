@@ -29,6 +29,16 @@
       "type": "hasMany",
       "model": "VisitaProdutoHotmart",
       "foreignKey": "hotmartId"
+    },
+    "campanhaAdsTestes": {
+      "type": "hasMany",
+      "model": "CampanhaAdsTeste",
+      "foreignKey": ""
+    },
+    "anuncioAds": {
+      "type": "hasMany",
+      "model": "AnuncioAds",
+      "foreignKey": ""
     }
   },
   "acls": [],

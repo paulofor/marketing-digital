@@ -1,4 +1,9 @@
 /* tslint:disable */
+import {
+  VisitaProdutoHotmart,
+  CampanhaAdsTeste,
+  AnuncioAds
+} from '../index';
 
 declare var Object: any;
 export interface ProdutoAfiliadoHotmartInterface {
@@ -7,7 +12,9 @@ export interface ProdutoAfiliadoHotmartInterface {
   "urlTracking"?: string;
   "geraTesteCampanha"?: number;
   "hotmartId"?: number;
-  "id"?: number;
+  visitaProdutoHotmarts?: VisitaProdutoHotmart[];
+  campanhaAdsTestes?: CampanhaAdsTeste[];
+  anuncioAds?: AnuncioAds[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -16,7 +23,9 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "urlTracking": string;
   "geraTesteCampanha": number;
   "hotmartId": number;
-  "id": number;
+  visitaProdutoHotmarts: VisitaProdutoHotmart[];
+  campanhaAdsTestes: CampanhaAdsTeste[];
+  anuncioAds: AnuncioAds[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -48,7 +57,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
       name: 'ProdutoAfiliadoHotmart',
       plural: 'ProdutoAfiliadoHotmarts',
       path: 'ProdutoAfiliadoHotmarts',
-      idName: 'id',
+      idName: 'hotmartId',
       properties: {
         "nome": {
           name: 'nome',
@@ -70,12 +79,32 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'hotmartId',
           type: 'number'
         },
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
       },
       relations: {
+        visitaProdutoHotmarts: {
+          name: 'visitaProdutoHotmarts',
+          type: 'VisitaProdutoHotmart[]',
+          model: 'VisitaProdutoHotmart',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        campanhaAdsTestes: {
+          name: 'campanhaAdsTestes',
+          type: 'CampanhaAdsTeste[]',
+          model: 'CampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'produtoAfiliadoHotmartId'
+        },
+        anuncioAds: {
+          name: 'anuncioAds',
+          type: 'AnuncioAds[]',
+          model: 'AnuncioAds',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'produtoAfiliadoHotmartId'
+        },
       }
     }
   }

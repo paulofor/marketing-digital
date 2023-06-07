@@ -6,24 +6,23 @@
     "validateUpsert": true
   },
   "properties": {
-    "titulo1": {
-      "type": "string"
+    "anuncioAdsId": {
+      "type": "number",
+      "id": true
     },
-    "titulo2": {
-      "type": "string"
-    },
-    "titulo3": {
-      "type": "string"
-    },
-    "descricao1": {
-      "type": "string"
-    },
-    "descricao2": {
-      "type": "string"
+    "campanhaAdsId": {
+      "type": "number",
+      "id": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "anuncioAds": {
+      "type": "belongsTo",
+      "model": "AnuncioAds",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

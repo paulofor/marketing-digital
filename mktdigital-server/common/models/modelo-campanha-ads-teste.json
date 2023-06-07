@@ -1,0 +1,26 @@
+{
+  "name": "ModeloCampanhaAdsTeste",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "orcamentoDiario": {
+      "type": "number"
+    },
+    "qtdeDia": {
+      "type": "number"
+    },
+    "diaInicial": {
+      "type": "number"
+    },
+    "valorTotal": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

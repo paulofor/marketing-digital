@@ -82,5 +82,21 @@
   "AgendaVisitaHotmart": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "AnuncioCampanhaTesteAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "CampanhaAdsTeste": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ModeloCampanhaAdsTeste": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

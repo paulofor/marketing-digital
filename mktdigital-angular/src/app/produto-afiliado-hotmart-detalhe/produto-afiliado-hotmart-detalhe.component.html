@@ -4,10 +4,39 @@
   </div>
 
   <div class="dgc-card">
+    <div class="dgc-card-header">
+      Visitas
+    </div>
     <div class="dgc-card-detalhe" *ngFor="let item of principal.visitaProdutoHotmarts">
       {{item.dataInsercao | date : 'dd/MM/yyyy'}}
       Temperatura: {{item.temperatura}} Valor : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)
     </div>
   </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
+      <span>Anúncios</span>
+      <button class="dgc-direita" (click)="editaAnuncio(principal)">novo</button>
+    </div>
+    <div class="dgc-card">
+      <div class="dgc-card-detalhe">
+        Titulo1
+      </div>
+      <div class="dgc-card-detalhe">
+        Titulo2
+      </div>
+      <div class="dgc-card-detalhe">
+        Titulo3
+      </div>
+      <div class="dgc-card-detalhe">
+        Descrição 1
+      </div>
+      <div class="dgc-card-detalhe">
+        Descrição 2
+      </div>
+    </div>
+   
+  </div>
+
 </div>
 

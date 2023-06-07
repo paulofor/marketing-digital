@@ -13,6 +13,10 @@ import { AnuncioCampanhaAds } from '../../models/AnuncioCampanhaAds';
 import { PalavraCampanhaAds } from '../../models/PalavraCampanhaAds';
 import { ProdutoAfiliadoHotmart } from '../../models/ProdutoAfiliadoHotmart';
 import { AgendaVisitaHotmart } from '../../models/AgendaVisitaHotmart';
+import { AnuncioCampanhaTesteAds } from '../../models/AnuncioCampanhaTesteAds';
+import { CampanhaAdsTeste } from '../../models/CampanhaAdsTeste';
+import { AnuncioAds } from '../../models/AnuncioAds';
+import { ModeloCampanhaAdsTeste } from '../../models/ModeloCampanhaAdsTeste';
 
 export interface Models { [name: string]: any }
 
@@ -33,6 +37,10 @@ export class SDKModels {
     PalavraCampanhaAds: PalavraCampanhaAds,
     ProdutoAfiliadoHotmart: ProdutoAfiliadoHotmart,
     AgendaVisitaHotmart: AgendaVisitaHotmart,
+    AnuncioCampanhaTesteAds: AnuncioCampanhaTesteAds,
+    CampanhaAdsTeste: CampanhaAdsTeste,
+    AnuncioAds: AnuncioAds,
+    ModeloCampanhaAdsTeste: ModeloCampanhaAdsTeste,
     
   };
 

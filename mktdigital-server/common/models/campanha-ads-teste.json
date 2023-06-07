@@ -1,0 +1,50 @@
+{
+  "name": "CampanhaAdsTeste",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "prontaParaTeste": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "anuncioCampanhaTesteAds": {
+      "type": "hasMany",
+      "model": "AnuncioCampanhaTesteAds",
+      "foreignKey": ""
+    },
+    "produtoAfiliadoHotmart": {
+      "type": "belongsTo",
+      "model": "ProdutoAfiliadoHotmart",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "ObtemListaParaTeste": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemListaParaTeste",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

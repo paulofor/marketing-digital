@@ -44,6 +44,11 @@ import { IdeiaPalavraChaveListComponent } from './ideia-palavra-chave-list/ideia
 import { ProdutoAfiliadoHotmartListComponent } from './produto-afiliado-hotmart-list/produto-afiliado-hotmart-list.component';
 import { ProdutoAfiliadoHotmartEditComponent } from './produto-afiliado-hotmart-edit/produto-afiliado-hotmart-edit.component';
 import { ProdutoAfiliadoHotmartDetalheComponent } from './produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe.component';
+import { ModeloCampanhaAdsTesteListComponent } from './modelo-campanha-ads-teste-list/modelo-campanha-ads-teste-list.component';
+import { ModeloCampanhaAdsTesteEditComponent } from './modelo-campanha-ads-teste-edit/modelo-campanha-ads-teste-edit.component';
+import { CampanhaAdsTesteEditComponent } from './campanha-ads-teste-edit/campanha-ads-teste-edit.component';
+import { AnuncioAdsListaComponent } from './anuncio-ads-lista/anuncio-ads-lista.component';
+import { AnuncioAdsEditaComponent } from './anuncio-ads-edita/anuncio-ads-edita.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -64,7 +69,12 @@ registerLocaleData(localePt, 'pt-BR');
     IdeiaPalavraChaveListComponent,
     ProdutoAfiliadoHotmartListComponent,
     ProdutoAfiliadoHotmartEditComponent,
-    ProdutoAfiliadoHotmartDetalheComponent
+    ProdutoAfiliadoHotmartDetalheComponent,
+    ModeloCampanhaAdsTesteListComponent,
+    ModeloCampanhaAdsTesteEditComponent,
+    CampanhaAdsTesteEditComponent,
+    AnuncioAdsListaComponent,
+    AnuncioAdsEditaComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +124,8 @@ registerLocaleData(localePt, 'pt-BR');
   ],
   entryComponents : [
     TokenAcessoEditComponent,
-    ProdutoAfiliadoHotmartEditComponent
+    ProdutoAfiliadoHotmartEditComponent,
+    ModeloCampanhaAdsTesteEditComponent
   ],
   bootstrap: [AppComponent]
 })

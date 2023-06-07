@@ -6,6 +6,7 @@ import { TokenAcessoListComponent } from '../token-acesso-list/token-acesso-list
 import { IdeiaPalavraChaveListComponent } from '../ideia-palavra-chave-list/ideia-palavra-chave-list.component';
 import { ProdutoAfiliadoHotmartListComponent } from '../produto-afiliado-hotmart-list/produto-afiliado-hotmart-list.component';
 import { ProdutoAfiliadoHotmartDetalheComponent } from '../produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe.component';
+import { ModeloCampanhaAdsTesteListComponent } from '../modelo-campanha-ads-teste-list/modelo-campanha-ads-teste-list.component';
 
 
 
@@ -18,7 +19,7 @@ export const routes : Routes = [
     { path: 'ideiaPalavraChave' , component: IdeiaPalavraChaveListComponent },
     { path: 'produtoAfiliadoHotmart' , component: ProdutoAfiliadoHotmartListComponent },
     { path: 'produtoAfiliadoHotmartDetalhe/:id' , component: ProdutoAfiliadoHotmartDetalheComponent },
-
+    { path: 'modeloCampanhaAdsTeste' , component: ModeloCampanhaAdsTesteListComponent },
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

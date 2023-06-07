@@ -23,3 +23,5 @@
 2023-05-31 06:08:59,566 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/usuario/aplicacoes/MarketingDigital/workspace-eclipse-gerador/daobase/src/main/resources
 2023-05-31 06:08:59,568 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2023-05-31 06:08:59,569 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/usuario/aplicacoes/MarketingDigital/workspace-eclipse-gerador/daobase/src/test/resources
+2023-06-01 02:08:17,275 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2023-06-01 02:43:17,908 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

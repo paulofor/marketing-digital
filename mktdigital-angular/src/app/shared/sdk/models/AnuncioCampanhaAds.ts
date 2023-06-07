@@ -1,24 +1,19 @@
 /* tslint:disable */
+import {
+  AnuncioAds
+} from '../index';
 
 declare var Object: any;
 export interface AnuncioCampanhaAdsInterface {
-  "titulo1"?: string;
-  "titulo2"?: string;
-  "titulo3"?: string;
-  "descricao1"?: string;
-  "descricao2"?: string;
-  "id"?: number;
+  "anuncioAdsId"?: number;
   "campanhaAdsId"?: number;
+  anuncioAds?: AnuncioAds;
 }
 
 export class AnuncioCampanhaAds implements AnuncioCampanhaAdsInterface {
-  "titulo1": string;
-  "titulo2": string;
-  "titulo3": string;
-  "descricao1": string;
-  "descricao2": string;
-  "id": number;
+  "anuncioAdsId": number;
   "campanhaAdsId": number;
+  anuncioAds: AnuncioAds;
   constructor(data?: AnuncioCampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -50,30 +45,10 @@ export class AnuncioCampanhaAds implements AnuncioCampanhaAdsInterface {
       name: 'AnuncioCampanhaAds',
       plural: 'AnuncioCampanhaAds',
       path: 'AnuncioCampanhaAds',
-      idName: 'id',
+      idName: 'anuncioAdsId',
       properties: {
-        "titulo1": {
-          name: 'titulo1',
-          type: 'string'
-        },
-        "titulo2": {
-          name: 'titulo2',
-          type: 'string'
-        },
-        "titulo3": {
-          name: 'titulo3',
-          type: 'string'
-        },
-        "descricao1": {
-          name: 'descricao1',
-          type: 'string'
-        },
-        "descricao2": {
-          name: 'descricao2',
-          type: 'string'
-        },
-        "id": {
-          name: 'id',
+        "anuncioAdsId": {
+          name: 'anuncioAdsId',
           type: 'number'
         },
         "campanhaAdsId": {
@@ -82,6 +57,14 @@ export class AnuncioCampanhaAds implements AnuncioCampanhaAdsInterface {
         },
       },
       relations: {
+        anuncioAds: {
+          name: 'anuncioAds',
+          type: 'AnuncioAds',
+          model: 'AnuncioAds',
+          relationType: 'belongsTo',
+                  keyFrom: 'anuncioAdsId',
+          keyTo: 'id'
+        },
       }
     }
   }
