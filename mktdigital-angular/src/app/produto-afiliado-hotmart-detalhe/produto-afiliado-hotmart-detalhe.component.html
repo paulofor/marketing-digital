@@ -13,6 +13,16 @@
     </div>
   </div>
 
+    <div class="dgc-card">
+    <div class="dgc-card-header">
+      Palavras-Chave
+    </div>
+    <div class="dgc-card-detalhe" *ngFor="let item of principal.ideiaPalavraChaves">
+      {{item.dataAcesso | date : 'dd/MM/yyyy'}} {{item.texto}} Volume Pesquisa: {{item.mediaPesquisa}} 
+      Cpc: {{item.cpcMaximoTopPage | currency : 'BRL'}} {{item.cpcMinimoTopPage | currency : 'BRL'}}
+    </div>
+  </div>
+
   <div class="dgc-card">
     <div class="dgc-card-header">
       <span>Anúncios</span>
@@ -33,6 +43,9 @@
       </div>
       <div class="dgc-card-detalhe">
         Descrição 2
+      </div>
+      <div class="dgc-card-comandos">
+        <button class="btn-primary btn-sm btn" (click)="editaAnuncio(item)">Editar</button>
       </div>
     </div>
    

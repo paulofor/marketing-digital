@@ -17,6 +17,7 @@ import { AnuncioCampanhaTesteAds } from '../../models/AnuncioCampanhaTesteAds';
 import { CampanhaAdsTeste } from '../../models/CampanhaAdsTeste';
 import { AnuncioAds } from '../../models/AnuncioAds';
 import { ModeloCampanhaAdsTeste } from '../../models/ModeloCampanhaAdsTeste';
+import { PixelGoogle } from '../../models/PixelGoogle';
 
 export interface Models { [name: string]: any }
 
@@ -41,6 +42,7 @@ export class SDKModels {
     CampanhaAdsTeste: CampanhaAdsTeste,
     AnuncioAds: AnuncioAds,
     ModeloCampanhaAdsTeste: ModeloCampanhaAdsTeste,
+    PixelGoogle: PixelGoogle,
     
   };
 

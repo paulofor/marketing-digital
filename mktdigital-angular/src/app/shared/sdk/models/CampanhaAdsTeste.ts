@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   AnuncioCampanhaTesteAds,
-  ProdutoAfiliadoHotmart
+  ProdutoAfiliadoHotmart,
+  ModeloCampanhaAdsTeste
 } from '../index';
 
 declare var Object: any;
@@ -10,8 +11,10 @@ export interface CampanhaAdsTesteInterface {
   "prontaParaTeste"?: number;
   "id"?: number;
   "produtoAfiliadoHotmartId"?: number;
+  "modeloCampanhaAdsTesteId"?: number;
   anuncioCampanhaTesteAds?: AnuncioCampanhaTesteAds[];
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  modeloCampanhaAdsTeste?: ModeloCampanhaAdsTeste;
 }
 
 export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
@@ -19,8 +22,10 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "prontaParaTeste": number;
   "id": number;
   "produtoAfiliadoHotmartId": number;
+  "modeloCampanhaAdsTesteId": number;
   anuncioCampanhaTesteAds: AnuncioCampanhaTesteAds[];
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  modeloCampanhaAdsTeste: ModeloCampanhaAdsTeste;
   constructor(data?: CampanhaAdsTesteInterface) {
     Object.assign(this, data);
   }
@@ -70,6 +75,10 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           name: 'produtoAfiliadoHotmartId',
           type: 'number'
         },
+        "modeloCampanhaAdsTesteId": {
+          name: 'modeloCampanhaAdsTesteId',
+          type: 'number'
+        },
       },
       relations: {
         anuncioCampanhaTesteAds: {
@@ -87,6 +96,14 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           relationType: 'belongsTo',
                   keyFrom: 'produtoAfiliadoHotmartId',
           keyTo: 'hotmartId'
+        },
+        modeloCampanhaAdsTeste: {
+          name: 'modeloCampanhaAdsTeste',
+          type: 'ModeloCampanhaAdsTeste',
+          model: 'ModeloCampanhaAdsTeste',
+          relationType: 'belongsTo',
+                  keyFrom: 'modeloCampanhaAdsTesteId',
+          keyTo: 'id'
         },
       }
     }

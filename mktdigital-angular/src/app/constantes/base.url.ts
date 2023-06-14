@@ -12,6 +12,8 @@ export const URL_IMAGEM = BASE_URL + '/api/containers/container1/download';
 
 export const DS_MES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
+export const DS_DIA_SEMANA = ['Domingo' , 'Segunda' , 'Terça' , 'Quarta' , 'Quinta' , 'Sexta' , 'Sábado'];
+
 export const LIMITE_PONTOS_MONITORIA = 15;
 
 export const CUSTO_TRADE = 11;

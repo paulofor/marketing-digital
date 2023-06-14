@@ -19,6 +19,8 @@
           <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>
         </div>
         <div class="dgc-card-comandos">
+            <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , item.hotmartId]">Anúncio Google</button>
+            <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , item.hotmartId]">Campanha Teste Google</button>
             <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
         </div>
     </div>

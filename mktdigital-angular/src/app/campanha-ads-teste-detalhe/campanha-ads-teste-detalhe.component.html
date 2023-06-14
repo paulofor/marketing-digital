@@ -1,0 +1,31 @@
+<div class="dgc-painel" *ngIf="principal">
+  <div class="dgc-painel-header" *ngIf="principal">
+      <span>{{principal.nome}}</span>
+  </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
+      Anúncios
+    </div>
+    <div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeEntrada">
+      <span>{{rel.entidade.nome}}</span>
+    </div>
+    <div class="dgc-card-comandos">
+      <button class="btn-primary btn-sm btn" (click)="editaAnuncio(principal)">Novo</button>
+    </div>
+  </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
+      Palavras-Chave
+    </div>
+    <div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeEntrada">
+      <span>{{rel.entidade.nome}}</span>
+    </div>
+    <div class="dgc-card-comandos">
+      <button class="btn-primary btn-sm btn" (click)="editaPalavraChave(principal)">Novo</button>
+    </div>
+  </div>
+
+</div>
+

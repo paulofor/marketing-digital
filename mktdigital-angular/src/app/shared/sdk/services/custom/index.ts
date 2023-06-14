@@ -16,5 +16,6 @@ export * from './AnuncioCampanhaTesteAds';
 export * from './CampanhaAdsTeste';
 export * from './AnuncioAds';
 export * from './ModeloCampanhaAdsTeste';
+export * from './PixelGoogle';
 export * from './SDKModels';
 export * from './logger.service';

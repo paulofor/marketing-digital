@@ -30,6 +30,11 @@
       "model": "VisitaProdutoHotmart",
       "foreignKey": "hotmartId"
     },
+    "ideiaPalavraChaves": {
+      "type": "hasMany",
+      "model": "IdeiaPalavraChave",
+      "foreignKey": "hotmartId"
+    },
     "campanhaAdsTestes": {
       "type": "hasMany",
       "model": "CampanhaAdsTeste",

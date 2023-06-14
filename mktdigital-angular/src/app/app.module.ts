@@ -49,6 +49,12 @@ import { ModeloCampanhaAdsTesteEditComponent } from './modelo-campanha-ads-teste
 import { CampanhaAdsTesteEditComponent } from './campanha-ads-teste-edit/campanha-ads-teste-edit.component';
 import { AnuncioAdsListaComponent } from './anuncio-ads-lista/anuncio-ads-lista.component';
 import { AnuncioAdsEditaComponent } from './anuncio-ads-edita/anuncio-ads-edita.component';
+import { CampanhaAdsTesteListaComponent } from './campanha-ads-teste-lista/campanha-ads-teste-lista.component';
+import { PixelGoogleListComponent } from './pixel-google-list/pixel-google-list.component';
+import { PixelGoogleEditComponent } from './pixel-google-edit/pixel-google-edit.component';
+import { CampanhaAdsTesteDetalheComponent } from './campanha-ads-teste-detalhe/campanha-ads-teste-detalhe.component';
+import { EscolheAnuncioParaCampanhaTesteComponent } from './escolhe-anuncio-para-campanha-teste/escolhe-anuncio-para-campanha-teste.component';
+import { EscolhePalavraChaveParaCampanhaTesteComponent } from './escolhe-palavra-chave-para-campanha-teste/escolhe-palavra-chave-para-campanha-teste.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -74,7 +80,13 @@ registerLocaleData(localePt, 'pt-BR');
     ModeloCampanhaAdsTesteEditComponent,
     CampanhaAdsTesteEditComponent,
     AnuncioAdsListaComponent,
-    AnuncioAdsEditaComponent
+    AnuncioAdsEditaComponent,
+    CampanhaAdsTesteListaComponent,
+    PixelGoogleListComponent,
+    PixelGoogleEditComponent,
+    CampanhaAdsTesteDetalheComponent,
+    EscolheAnuncioParaCampanhaTesteComponent,
+    EscolhePalavraChaveParaCampanhaTesteComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +137,10 @@ registerLocaleData(localePt, 'pt-BR');
   entryComponents : [
     TokenAcessoEditComponent,
     ProdutoAfiliadoHotmartEditComponent,
-    ModeloCampanhaAdsTesteEditComponent
+    ModeloCampanhaAdsTesteEditComponent,
+    AnuncioAdsEditaComponent,
+    CampanhaAdsTesteEditComponent,
+    PixelGoogleEditComponent
   ],
   bootstrap: [AppComponent]
 })

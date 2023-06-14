@@ -1,3 +1,28 @@
-<p>
-  anuncio-ads-lista works!
-</p>
+<div class="dgc-painel" *ngIf="principal">
+  <div class="dgc-painel-header">
+      <span>Anúncios - {{principal.nome}}</span>
+      <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+  </div>
+  <div class="dgc-painel-principal">
+      <div class="dgc-card" *ngFor="let item of principal.anuncioAds">
+        <div class="dgc-card-detalhe">
+          Titulo1 : {{item.titulo1}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Titulo2 : {{item.titulo2}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Titulo3 : {{item.titulo3}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Descrição 1 : {{item.descricao1}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Descrição 2 : {{item.descricao2}}
+        </div>
+        <div class="dgc-card-comandos">
+          <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+        </div>
+      </div>
+  </div>
+</div>

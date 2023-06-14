@@ -98,5 +98,9 @@
   "ModeloCampanhaAdsTeste": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "PixelGoogle": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

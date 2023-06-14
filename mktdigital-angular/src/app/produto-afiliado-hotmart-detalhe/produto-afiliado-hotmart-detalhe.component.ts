@@ -21,6 +21,9 @@ export class ProdutoAfiliadoHotmartDetalheComponent extends BaseItemIdComponent 
       'include' : [
         { 'relation' : 'visitaProdutoHotmarts' , 'scope' : {
           'order' : 'dataInsercao desc'
+        }},
+        { 'relation' : 'ideiaPalavraChaves' , 'scope' : {
+          'order' : ['dataAcesso desc' , 'mediaPesquisa desc' ], 'limit' : 20
         }}
       ]
     }
