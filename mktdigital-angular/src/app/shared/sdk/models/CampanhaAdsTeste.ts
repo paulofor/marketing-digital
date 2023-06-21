@@ -1,31 +1,37 @@
 /* tslint:disable */
 import {
-  AnuncioCampanhaTesteAds,
   ProdutoAfiliadoHotmart,
-  ModeloCampanhaAdsTeste
+  IdeiaPalavraChave,
+  ModeloCampanhaAdsTeste,
+  PalavraChaveCampanhaAdsTeste,
+  AnuncioCampanhaAdsTeste
 } from '../index';
 
 declare var Object: any;
 export interface CampanhaAdsTesteInterface {
   "nome"?: string;
   "prontaParaTeste"?: number;
-  "id"?: number;
   "produtoAfiliadoHotmartId"?: number;
+  "id"?: number;
   "modeloCampanhaAdsTesteId"?: number;
-  anuncioCampanhaTesteAds?: AnuncioCampanhaTesteAds[];
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  ideiaPalavraChaves?: IdeiaPalavraChave[];
   modeloCampanhaAdsTeste?: ModeloCampanhaAdsTeste;
+  palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
+  anuncioCampanhaAdsTestes?: AnuncioCampanhaAdsTeste[];
 }
 
 export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "nome": string;
   "prontaParaTeste": number;
-  "id": number;
   "produtoAfiliadoHotmartId": number;
+  "id": number;
   "modeloCampanhaAdsTesteId": number;
-  anuncioCampanhaTesteAds: AnuncioCampanhaTesteAds[];
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  ideiaPalavraChaves: IdeiaPalavraChave[];
   modeloCampanhaAdsTeste: ModeloCampanhaAdsTeste;
+  palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
+  anuncioCampanhaAdsTestes: AnuncioCampanhaAdsTeste[];
   constructor(data?: CampanhaAdsTesteInterface) {
     Object.assign(this, data);
   }
@@ -67,12 +73,12 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           name: 'prontaParaTeste',
           type: 'number'
         },
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
         "produtoAfiliadoHotmartId": {
           name: 'produtoAfiliadoHotmartId',
+          type: 'number'
+        },
+        "id": {
+          name: 'id',
           type: 'number'
         },
         "modeloCampanhaAdsTesteId": {
@@ -81,14 +87,6 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
         },
       },
       relations: {
-        anuncioCampanhaTesteAds: {
-          name: 'anuncioCampanhaTesteAds',
-          type: 'AnuncioCampanhaTesteAds[]',
-          model: 'AnuncioCampanhaTesteAds',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'campanhaAdsTesteId'
-        },
         produtoAfiliadoHotmart: {
           name: 'produtoAfiliadoHotmart',
           type: 'ProdutoAfiliadoHotmart',
@@ -97,6 +95,14 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
                   keyFrom: 'produtoAfiliadoHotmartId',
           keyTo: 'hotmartId'
         },
+        ideiaPalavraChaves: {
+          name: 'ideiaPalavraChaves',
+          type: 'IdeiaPalavraChave[]',
+          model: 'IdeiaPalavraChave',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsTesteId'
+        },
         modeloCampanhaAdsTeste: {
           name: 'modeloCampanhaAdsTeste',
           type: 'ModeloCampanhaAdsTeste',
@@ -104,6 +110,22 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           relationType: 'belongsTo',
                   keyFrom: 'modeloCampanhaAdsTesteId',
           keyTo: 'id'
+        },
+        palavraChaveCampanhaAdsTestes: {
+          name: 'palavraChaveCampanhaAdsTestes',
+          type: 'PalavraChaveCampanhaAdsTeste[]',
+          model: 'PalavraChaveCampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsTesteId'
+        },
+        anuncioCampanhaAdsTestes: {
+          name: 'anuncioCampanhaAdsTestes',
+          type: 'AnuncioCampanhaAdsTeste[]',
+          model: 'AnuncioCampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsTesteId'
         },
       }
     }

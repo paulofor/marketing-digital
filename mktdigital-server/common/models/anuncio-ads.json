@@ -20,10 +20,19 @@
     },
     "descricao2": {
       "type": "string"
+    },
+    "produtoAfiliadoHotmartId": {
+      "type": "number"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "anuncioCampanhaAdsTestes": {
+      "type": "hasMany",
+      "model": "AnuncioCampanhaAdsTeste",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

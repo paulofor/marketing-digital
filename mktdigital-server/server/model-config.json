@@ -83,10 +83,6 @@
     "dataSource": "mysqlds",
     "public": true
   },
-  "AnuncioCampanhaTesteAds": {
-    "dataSource": "mysqlds",
-    "public": true
-  },
   "CampanhaAdsTeste": {
     "dataSource": "mysqlds",
     "public": true
@@ -100,6 +96,14 @@
     "public": true
   },
   "PixelGoogle": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PalavraChaveCampanhaAdsTeste": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioCampanhaAdsTeste": {
     "dataSource": "mysqlds",
     "public": true
   }

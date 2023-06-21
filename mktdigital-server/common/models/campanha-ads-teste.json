@@ -11,13 +11,16 @@
     },
     "prontaParaTeste": {
       "type": "number"
+    },
+    "produtoAfiliadoHotmartId": {
+      "type": "number"
     }
   },
   "validations": [],
   "relations": {
-    "anuncioCampanhaTesteAds": {
+    "anuncioCampanhaAdsTestes": {
       "type": "hasMany",
-      "model": "AnuncioCampanhaTesteAds",
+      "model": "AnuncioCampanhaAdsTeste",
       "foreignKey": ""
     },
     "produtoAfiliadoHotmart": {
@@ -28,6 +31,16 @@
     "modeloCampanhaAdsTeste": {
       "type": "belongsTo",
       "model": "ModeloCampanhaAdsTeste",
+      "foreignKey": ""
+    },
+    "ideiaPalavraChaves": {
+      "type": "hasMany",
+      "model": "IdeiaPalavraChave",
+      "foreignKey": ""
+    },
+    "palavraChaveCampanhaAdsTestes": {
+      "type": "hasMany",
+      "model": "PalavraChaveCampanhaAdsTeste",
       "foreignKey": ""
     }
   },

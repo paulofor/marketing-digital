@@ -61,11 +61,12 @@ import { AnuncioCampanhaAdsApi } from './services/custom/AnuncioCampanhaAds';
 import { PalavraCampanhaAdsApi } from './services/custom/PalavraCampanhaAds';
 import { ProdutoAfiliadoHotmartApi } from './services/custom/ProdutoAfiliadoHotmart';
 import { AgendaVisitaHotmartApi } from './services/custom/AgendaVisitaHotmart';
-import { AnuncioCampanhaTesteAdsApi } from './services/custom/AnuncioCampanhaTesteAds';
 import { CampanhaAdsTesteApi } from './services/custom/CampanhaAdsTeste';
 import { AnuncioAdsApi } from './services/custom/AnuncioAds';
 import { ModeloCampanhaAdsTesteApi } from './services/custom/ModeloCampanhaAdsTeste';
 import { PixelGoogleApi } from './services/custom/PixelGoogle';
+import { PalavraChaveCampanhaAdsTesteApi } from './services/custom/PalavraChaveCampanhaAdsTeste';
+import { AnuncioCampanhaAdsTesteApi } from './services/custom/AnuncioCampanhaAdsTeste';
 /**
 * @module SDKBrowserModule
 * @description
@@ -109,11 +110,12 @@ export class SDKBrowserModule {
         PalavraCampanhaAdsApi,
         ProdutoAfiliadoHotmartApi,
         AgendaVisitaHotmartApi,
-        AnuncioCampanhaTesteAdsApi,
         CampanhaAdsTesteApi,
         AnuncioAdsApi,
         ModeloCampanhaAdsTesteApi,
         PixelGoogleApi,
+        PalavraChaveCampanhaAdsTesteApi,
+        AnuncioCampanhaAdsTesteApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  PalavraChaveCampanhaAdsTeste
+} from '../index';
 
 declare var Object: any;
 export interface IdeiaPalavraChaveInterface {
@@ -9,6 +12,9 @@ export interface IdeiaPalavraChaveInterface {
   "cpcMaximoTopPage"?: number;
   "cpcMinimoTopPage"?: number;
   "hotmartId"?: number;
+  "id"?: number;
+  "campanhaAdsTesteId"?: number;
+  palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
 }
 
 export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
@@ -19,6 +25,9 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
   "cpcMaximoTopPage": number;
   "cpcMinimoTopPage": number;
   "hotmartId": number;
+  "id": number;
+  "campanhaAdsTesteId": number;
+  palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
   constructor(data?: IdeiaPalavraChaveInterface) {
     Object.assign(this, data);
   }
@@ -50,7 +59,7 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
       name: 'IdeiaPalavraChave',
       plural: 'IdeiaPalavraChaves',
       path: 'IdeiaPalavraChaves',
-      idName: 'texto',
+      idName: 'id',
       properties: {
         "texto": {
           name: 'texto',
@@ -80,8 +89,24 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
           name: 'hotmartId',
           type: 'number'
         },
+        "id": {
+          name: 'id',
+          type: 'number'
+        },
+        "campanhaAdsTesteId": {
+          name: 'campanhaAdsTesteId',
+          type: 'number'
+        },
       },
       relations: {
+        palavraChaveCampanhaAdsTestes: {
+          name: 'palavraChaveCampanhaAdsTestes',
+          type: 'PalavraChaveCampanhaAdsTeste[]',
+          model: 'PalavraChaveCampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'ideiaPalavraChaveId'
+        },
       }
     }
   }

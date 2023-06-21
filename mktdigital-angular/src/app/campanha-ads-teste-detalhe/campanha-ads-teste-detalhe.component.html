@@ -7,8 +7,8 @@
     <div class="dgc-card-header">
       Anúncios
     </div>
-    <div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeEntrada">
-      <span>{{rel.entidade.nome}}</span>
+    <div class="dgc-card-detalhe" *ngFor="let rel of principal.anuncioCampanhaAdsTestes">
+      <span>{{rel.anuncioAds.titulo1}} / {{rel.anuncioAds.titulo2}} / {{rel.anuncioAds.titulo3}}</span>
     </div>
     <div class="dgc-card-comandos">
       <button class="btn-primary btn-sm btn" (click)="editaAnuncio(principal)">Novo</button>
@@ -19,8 +19,8 @@
     <div class="dgc-card-header">
       Palavras-Chave
     </div>
-    <div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeEntrada">
-      <span>{{rel.entidade.nome}}</span>
+    <div class="dgc-card-detalhe" *ngFor="let rel of principal.palavraChaveCampanhaAdsTestes">
+      <span>{{rel.ideiaPalavraChave.texto}}</span>
     </div>
     <div class="dgc-card-comandos">
       <button class="btn-primary btn-sm btn" (click)="editaPalavraChave(principal)">Novo</button>

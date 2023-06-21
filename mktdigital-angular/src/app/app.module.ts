@@ -140,7 +140,9 @@ registerLocaleData(localePt, 'pt-BR');
     ModeloCampanhaAdsTesteEditComponent,
     AnuncioAdsEditaComponent,
     CampanhaAdsTesteEditComponent,
-    PixelGoogleEditComponent
+    PixelGoogleEditComponent,
+    EscolheAnuncioParaCampanhaTesteComponent,
+    EscolhePalavraChaveParaCampanhaTesteComponent
   ],
   bootstrap: [AppComponent]
 })

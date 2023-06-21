@@ -45,12 +45,16 @@ export abstract class BaseSelecionaEditComponent implements OnInit{
         listaEnvio.push(this.listaItem[i][this.getNomePropriedadeRel()][0]);
       }
     };
+    console.log('Procurando ' , this.getNomeFuncaoAtualizacaoRelacionamento , ' em ' , this.srvRel);
+    console.log('Envio Lista: ' , listaEnvio);
+    console.log('Envio Id' , this.origem.id);
     this.srvRel[this.getNomeFuncaoAtualizacaoRelacionamento()](this.origem.id, listaEnvio)
       .subscribe((resultado) => {
         this.dialogRef.close('Pizza!');
       })
   }
   getCheck(item:any) : boolean {
+    console.log('Procurando:' , this.getNomePropriedadeRel() , " em " , item);
     return (item[this.getNomePropriedadeRel()].length>0);
   }
 

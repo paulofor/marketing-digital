@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { BaseSelecionaEditComponent } from '../base-component/base-seleciona-component';
-import { AnuncioAdsApi } from '../shared/sdk';
+import { AnuncioAdsApi, AnuncioCampanhaAdsTeste, AnuncioCampanhaAdsTesteApi } from '../shared/sdk';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-escolhe-anuncio-para-campanha-teste',
@@ -18,7 +19,7 @@ export class EscolheAnuncioParaCampanhaTesteComponent extends BaseSelecionaEditC
 
 
   getNomePropriedadeRel(): string {
-    return "processoJavaComoSaida";
+    return "anuncioCampanhaAdsTestes";
   }
   criaRelacionamento() {
     return new AnuncioCampanhaAdsTeste();
@@ -27,23 +28,22 @@ export class EscolheAnuncioParaCampanhaTesteComponent extends BaseSelecionaEditC
     return "id";
   }
   getNomeChaveItemNoRelacionamento(): string {
-    return "entidadeId";
+    return "anuncioAdsId";
   }
   getNomeChaveOrigemNoRelacionamento(): string {
-    return "processoJavaId";
+    return "campanhaAdsTesteId";
   }
   getNomeFuncaoAtualizacaoRelacionamento(): string {
-    return "AtualizaPorProcessoSaida";
+    return "AtualizaPorCampanhaAdsTeste";
   }
 
   getFiltro() {
     return {
-      'where' : {'sistemaId' : this.origem.sistemaId},
-      'order' : 'nome',
+      'where' : {'produtoAfiliadoHotmartId' : this.origem.produtoAfiliadoHotmartId},
       'include' : {
-        'relation' : 'processoJavaComoSaida',
+        'relation' : 'anuncioCampanhaAdsTestes',
         'scope' : {
-          'where' : {'entidadeId' : this.origem.id }
+          'where' : {'campanhaAdsTesteId' : this.origem.id }
         } 
       }
     }

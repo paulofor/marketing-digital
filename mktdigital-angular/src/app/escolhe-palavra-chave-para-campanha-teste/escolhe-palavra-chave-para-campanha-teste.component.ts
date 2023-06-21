@@ -1,47 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { BaseSelecionaEditComponent } from '../base-component/base-seleciona-component';
+import { PalavraChaveCampanhaAdsTesteApi, PalavraChaveCampanhaAdsTeste, IdeiaPalavraChaveApi } from '../shared/sdk';
 
 @Component({
   selector: 'app-escolhe-palavra-chave-para-campanha-teste',
   templateUrl: './escolhe-palavra-chave-para-campanha-teste.component.html',
   styleUrls: ['./escolhe-palavra-chave-para-campanha-teste.component.css']
 })
-export class EscolhePalavraChaveParaCampanhaTesteComponentextends BaseSelecionaEditComponent{
+export class EscolhePalavraChaveParaCampanhaTesteComponent extends BaseSelecionaEditComponent{
 
 
   constructor(protected dialogRef: MatDialogRef<any>
-    , @Inject(MAT_DIALOG_DATA) protected data: any, protected srvItem: EntidadeApi, protected srvRel: ProcessoEntidadeSaidaRelApi
+    , @Inject(MAT_DIALOG_DATA) protected data: any, protected srvItem: IdeiaPalavraChaveApi, protected srvRel: PalavraChaveCampanhaAdsTesteApi
   ) {
     super(dialogRef, data, srvItem, srvRel );
   }  
 
 
   getNomePropriedadeRel(): string {
-    return "processoJavaComoSaida";
+    return "palavraChaveCampanhaAdsTestes";
   }
   criaRelacionamento() {
-    return new ProcessoEntidadeSaidaRel();
+    return new PalavraChaveCampanhaAdsTeste();
   }
   getNomeChaveItem(): string {
     return "id";
   }
   getNomeChaveItemNoRelacionamento(): string {
-    return "entidadeId";
+    return "ideiaPalavraChaveId";
   }
   getNomeChaveOrigemNoRelacionamento(): string {
-    return "processoJavaId";
+    return "campanhaAdsTesteId";
   }
   getNomeFuncaoAtualizacaoRelacionamento(): string {
-    return "AtualizaPorProcessoSaida";
+    return "AtualizaPalavraChavePorCampanhaAdsTeste";
   }
 
   getFiltro() {
     return {
-      'where' : {'sistemaId' : this.origem.sistemaId},
-      'order' : 'nome',
+      'where' : {'produtoAfiliadoHotmartId' : this.origem.produtoAfiliadoHotmartId},
       'include' : {
-        'relation' : 'processoJavaComoSaida',
+        'relation' : 'palavraChaveCampanhaAdsTestes',
         'scope' : {
-          'where' : {'entidadeId' : this.origem.id }
+          'where' : {'campanhaAdsTesteId' : this.origem.id }
         } 
       }
     }

@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  AnuncioCampanhaAdsTeste
+} from '../index';
 
 declare var Object: any;
 export interface AnuncioAdsInterface {
@@ -7,8 +10,9 @@ export interface AnuncioAdsInterface {
   "titulo3"?: string;
   "descricao1"?: string;
   "descricao2"?: string;
-  "id"?: number;
   "produtoAfiliadoHotmartId"?: number;
+  "id"?: number;
+  anuncioCampanhaAdsTestes?: AnuncioCampanhaAdsTeste[];
 }
 
 export class AnuncioAds implements AnuncioAdsInterface {
@@ -17,8 +21,9 @@ export class AnuncioAds implements AnuncioAdsInterface {
   "titulo3": string;
   "descricao1": string;
   "descricao2": string;
-  "id": number;
   "produtoAfiliadoHotmartId": number;
+  "id": number;
+  anuncioCampanhaAdsTestes: AnuncioCampanhaAdsTeste[];
   constructor(data?: AnuncioAdsInterface) {
     Object.assign(this, data);
   }
@@ -72,16 +77,24 @@ export class AnuncioAds implements AnuncioAdsInterface {
           name: 'descricao2',
           type: 'string'
         },
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
         "produtoAfiliadoHotmartId": {
           name: 'produtoAfiliadoHotmartId',
           type: 'number'
         },
+        "id": {
+          name: 'id',
+          type: 'number'
+        },
       },
       relations: {
+        anuncioCampanhaAdsTestes: {
+          name: 'anuncioCampanhaAdsTestes',
+          type: 'AnuncioCampanhaAdsTeste[]',
+          model: 'AnuncioCampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'anuncioAdsId'
+        },
       }
     }
   }
