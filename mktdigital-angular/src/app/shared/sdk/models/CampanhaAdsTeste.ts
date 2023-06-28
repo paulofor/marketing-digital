@@ -1,7 +1,6 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
-  IdeiaPalavraChave,
   ModeloCampanhaAdsTeste,
   PalavraChaveCampanhaAdsTeste,
   AnuncioCampanhaAdsTeste
@@ -12,10 +11,15 @@ export interface CampanhaAdsTesteInterface {
   "nome"?: string;
   "prontaParaTeste"?: number;
   "produtoAfiliadoHotmartId"?: number;
+  "codigoAds"?: string;
+  "dataEnvioGoogle"?: Date;
+  "custoTotal"?: number;
+  "receitaTotal"?: number;
+  "dataInicio"?: Date;
+  "dataTermino"?: Date;
   "id"?: number;
   "modeloCampanhaAdsTesteId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
-  ideiaPalavraChaves?: IdeiaPalavraChave[];
   modeloCampanhaAdsTeste?: ModeloCampanhaAdsTeste;
   palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
   anuncioCampanhaAdsTestes?: AnuncioCampanhaAdsTeste[];
@@ -25,10 +29,15 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "nome": string;
   "prontaParaTeste": number;
   "produtoAfiliadoHotmartId": number;
+  "codigoAds": string;
+  "dataEnvioGoogle": Date;
+  "custoTotal": number;
+  "receitaTotal": number;
+  "dataInicio": Date;
+  "dataTermino": Date;
   "id": number;
   "modeloCampanhaAdsTesteId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
-  ideiaPalavraChaves: IdeiaPalavraChave[];
   modeloCampanhaAdsTeste: ModeloCampanhaAdsTeste;
   palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
   anuncioCampanhaAdsTestes: AnuncioCampanhaAdsTeste[];
@@ -77,6 +86,30 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           name: 'produtoAfiliadoHotmartId',
           type: 'number'
         },
+        "codigoAds": {
+          name: 'codigoAds',
+          type: 'string'
+        },
+        "dataEnvioGoogle": {
+          name: 'dataEnvioGoogle',
+          type: 'Date'
+        },
+        "custoTotal": {
+          name: 'custoTotal',
+          type: 'number'
+        },
+        "receitaTotal": {
+          name: 'receitaTotal',
+          type: 'number'
+        },
+        "dataInicio": {
+          name: 'dataInicio',
+          type: 'Date'
+        },
+        "dataTermino": {
+          name: 'dataTermino',
+          type: 'Date'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -94,14 +127,6 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           relationType: 'belongsTo',
                   keyFrom: 'produtoAfiliadoHotmartId',
           keyTo: 'hotmartId'
-        },
-        ideiaPalavraChaves: {
-          name: 'ideiaPalavraChaves',
-          type: 'IdeiaPalavraChave[]',
-          model: 'IdeiaPalavraChave',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'campanhaAdsTesteId'
         },
         modeloCampanhaAdsTeste: {
           name: 'modeloCampanhaAdsTeste',

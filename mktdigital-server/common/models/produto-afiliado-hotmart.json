@@ -21,6 +21,9 @@
     "hotmartId": {
       "type": "number",
       "id": true
+    },
+    "sigla" : {
+      "type" : "string"
     }
   },
   "validations": [],

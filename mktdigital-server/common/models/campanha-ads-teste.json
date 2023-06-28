@@ -14,7 +14,26 @@
     },
     "produtoAfiliadoHotmartId": {
       "type": "number"
+    },
+    "codigoAds" : {
+      "type" : "string"
+    },
+    "dataEnvioGoogle" : {
+      "type" : "date"
+    },
+    "custoTotal" : {
+      "type" : "number"
+    },
+    "receitaTotal" : {
+      "type" : "number"
+    },
+    "dataInicio" : {
+      "type": "date"
+    },
+    "dataTermino" : {
+      "type": "date"
     }
+
   },
   "validations": [],
   "relations": {
@@ -33,11 +52,6 @@
       "model": "ModeloCampanhaAdsTeste",
       "foreignKey": ""
     },
-    "ideiaPalavraChaves": {
-      "type": "hasMany",
-      "model": "IdeiaPalavraChave",
-      "foreignKey": ""
-    },
     "palavraChaveCampanhaAdsTestes": {
       "type": "hasMany",
       "model": "PalavraChaveCampanhaAdsTeste",
@@ -46,6 +60,31 @@
   },
   "acls": [],
   "methods": {
+    "AtualizaCampanhaCriada": {
+      "accepts": [
+        {
+          "arg": "campanha",
+          "type": "object",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualizaCampanhaCriada",
+          "verb": "post"
+        }
+      ]
+    },
     "ObtemListaParaTeste": {
       "accepts": [],
       "returns": [
@@ -60,6 +99,24 @@
       "http": [
         {
           "path": "/obtemListaParaTeste",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemListaParaConsultarPerformance": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemListaParaConsultarPerformance",
           "verb": "get"
         }
       ]

@@ -13,7 +13,6 @@ export interface IdeiaPalavraChaveInterface {
   "cpcMinimoTopPage"?: number;
   "hotmartId"?: number;
   "id"?: number;
-  "campanhaAdsTesteId"?: number;
   palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
 }
 
@@ -26,7 +25,6 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
   "cpcMinimoTopPage": number;
   "hotmartId": number;
   "id": number;
-  "campanhaAdsTesteId": number;
   palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
   constructor(data?: IdeiaPalavraChaveInterface) {
     Object.assign(this, data);
@@ -91,10 +89,6 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
-        },
-        "campanhaAdsTesteId": {
-          name: 'campanhaAdsTesteId',
           type: 'number'
         },
       },

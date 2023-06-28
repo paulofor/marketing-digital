@@ -12,6 +12,9 @@
           Orçamento: {{ item.modeloCampanhaAdsTeste.orcamentoDiario | currency : 'BRL'}} * {{item.modeloCampanhaAdsTeste.qtdeDia}}
           = {{ (item.modeloCampanhaAdsTeste.orcamentoDiario*item.modeloCampanhaAdsTeste.qtdeDia) | currency : 'BRL' }}
         </div>
+        <div class="dgc-card-detalhe">
+          Código Ads: {{item.codigoAds}}
+        </div>
         <div class="dgc-card-comandos">
           <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
         </div>

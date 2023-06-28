@@ -19,6 +19,7 @@ public class MontaCampanhaTesteAfiliadoHotmart {
 			carregaProp();
 			MontaCampanhaTesteAfiliadoHotmartObj obj = new MontaCampanhaTesteAfiliadoHotmartObj();
 			obj.executa();
+			System.out.println("finalizou");
 			System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,5 +40,6 @@ public class MontaCampanhaTesteAfiliadoHotmart {
 		DaoBaseComum.setUrl(UrlLoopback);
 		DaoBaseComum.setProximo("MontaCampanhaTesteAfiliadoHotmartObj", new CampanhaAdsTeste_ObtemListaParaTeste());
 		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaTeste", new CriaCampanhaAds());
+		DaoBaseComum.setProximo("CriaCampanhaAds", new CampanhaAdsTeste_AtualizaCampanhaCriada());
 	}
 }

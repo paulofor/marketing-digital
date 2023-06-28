@@ -19,6 +19,7 @@ public class CriaCampanhaAds {
 			carregaProp();
 			CriaCampanhaAdsObj obj = new CriaCampanhaAdsObj();
 			obj.executa();
+			System.out.println("finalizou");
 			System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();

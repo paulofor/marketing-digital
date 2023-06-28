@@ -15,7 +15,7 @@ export abstract class BaseSelecionaEditComponent implements OnInit{
     
 
   ngOnInit() {
-    console.log("Parametro entrada", this.data);
+    //console.log("Parametro entrada", this.data);
     if (this.data.origem) {
       this.origem = this.data.origem;
     }
@@ -45,7 +45,7 @@ export abstract class BaseSelecionaEditComponent implements OnInit{
         listaEnvio.push(this.listaItem[i][this.getNomePropriedadeRel()][0]);
       }
     };
-    console.log('Procurando ' , this.getNomeFuncaoAtualizacaoRelacionamento , ' em ' , this.srvRel);
+    //console.log('Procurando ' , this.getNomeFuncaoAtualizacaoRelacionamento , ' em ' , this.srvRel);
     console.log('Envio Lista: ' , listaEnvio);
     console.log('Envio Id' , this.origem.id);
     this.srvRel[this.getNomeFuncaoAtualizacaoRelacionamento()](this.origem.id, listaEnvio)
@@ -54,7 +54,7 @@ export abstract class BaseSelecionaEditComponent implements OnInit{
       })
   }
   getCheck(item:any) : boolean {
-    console.log('Procurando:' , this.getNomePropriedadeRel() , " em " , item);
+    //console.log('Procurando:' , this.getNomePropriedadeRel() , " em " , item);
     return (item[this.getNomePropriedadeRel()].length>0);
   }
 

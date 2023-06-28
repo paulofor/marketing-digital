@@ -8,9 +8,24 @@ import java.util.Map;
 
 import com.strongloop.android.loopback.Model;
 import com.strongloop.android.remoting.BeanUtil;
+import org.json.JSONObject;
 
 
 public class PixelGoogle extends Model {
+
+
+	public JSONObject getJSON() {
+		JSONObject obj = new JSONObject();
+		try {
+			obj.put("id",getId());
+			obj.put("identificador", identificador);
+			obj.put("script", script);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return obj;
+	}
+
 
 	private String identificador;
 	private String script;

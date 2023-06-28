@@ -38,7 +38,7 @@ public class RepositorioCampanhaAdsTeste extends ModelRepository<CampanhaAdsTest
 		RestContractItem contrato = new RestContractItem("CampanhaAdsTestes/atualizaCampanhaCriada","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsTeste.atualizaCampanhaCriada");
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("campanha", campanha);
+		params.put("campanha", campanha.getJSON());
 		invokeStaticMethod("atualizaCampanhaCriada", params,   new EmptyResponseParser(callback));
 	}
 

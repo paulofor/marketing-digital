@@ -6,12 +6,16 @@ import {
 declare var Object: any;
 export interface CampanhaAdsInterface {
   "nome"?: string;
+  "dataInicio"?: Date;
+  "dataTermino"?: Date;
   "id"?: number;
   anuncioCampanhaAds?: AnuncioCampanhaAds[];
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
   "nome": string;
+  "dataInicio": Date;
+  "dataTermino": Date;
   "id": number;
   anuncioCampanhaAds: AnuncioCampanhaAds[];
   constructor(data?: CampanhaAdsInterface) {
@@ -50,6 +54,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
         "nome": {
           name: 'nome',
           type: 'string'
+        },
+        "dataInicio": {
+          name: 'dataInicio',
+          type: 'Date'
+        },
+        "dataTermino": {
+          name: 'dataTermino',
+          type: 'Date'
         },
         "id": {
           name: 'id',

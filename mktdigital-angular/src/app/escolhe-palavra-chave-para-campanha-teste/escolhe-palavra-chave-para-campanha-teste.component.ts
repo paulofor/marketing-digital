@@ -39,7 +39,9 @@ export class EscolhePalavraChaveParaCampanhaTesteComponent extends BaseSeleciona
 
   getFiltro() {
     return {
-      'where' : {'produtoAfiliadoHotmartId' : this.origem.produtoAfiliadoHotmartId},
+      'where' : { 'and' : [{'hotmartId' : this.origem.produtoAfiliadoHotmartId}, {'maisRecente' : 1}] },
+      'order' : 'mediaPesquisa desc' ,
+      'limit' : 20,
       'include' : {
         'relation' : 'palavraChaveCampanhaAdsTestes',
         'scope' : {

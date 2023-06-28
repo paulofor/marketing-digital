@@ -21,7 +21,11 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput #geraTesteCampanha [(ngModel)]="item.geraTesteCampanha" name="geraTesteCampanha" placeholder="Gera Campanha de Teste (0/1)" autocomplete="off"/>
+      <input matInput maxlength="1" #geraTesteCampanha [(ngModel)]="item.geraTesteCampanha" name="geraTesteCampanha" placeholder="Gera Campanha de Teste (0/1)" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #sigla maxlength="8" [(ngModel)]="item.sigla" name="sigla" placeholder="Sigla (8 caracteres)" autocomplete="off"/>
     </mat-form-field>
 
   </mat-dialog-content>

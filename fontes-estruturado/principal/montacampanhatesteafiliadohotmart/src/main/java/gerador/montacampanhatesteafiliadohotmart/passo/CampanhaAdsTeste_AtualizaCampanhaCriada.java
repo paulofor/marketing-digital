@@ -11,18 +11,15 @@ import java.util.List;
 import com.strongloop.android.loopback.callbacks.*;
 
 
-public class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao { 
+public class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao { 
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		executaCustom();
-		repCampanhaAdsTeste.obtemListaParaTeste( new ListCallback<CampanhaAdsTeste>() { 
-			public void onSuccess(List<CampanhaAdsTeste> lista) {
-				for (CampanhaAdsTeste item : lista) {
-					ds.setCampanhaTesteCorrente(item);
-					executaProximoSemFinalizar();
-				}
+		executaCustom(ds.getCampanhaTesteCorrente());
+		CampanhaAdsTeste campanhaTesteCorrente = ds.getCampanhaTesteCorrente();
+		repCampanhaAdsTeste.atualizaCampanhaCriada( campanhaTesteCorrente ,  new VoidCallback() { 
+			public void onSuccess() {
 				finalizar();
 			}
 			public void onError(Throwable t) {
@@ -34,11 +31,11 @@ public class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new CriaCampanhaAdsImpl();
+		return new DummyDaoBase();
 	}
 
 
-	protected void executaCustom() {}
+	protected void executaCustom( CampanhaAdsTeste CampanhaTesteCorrente ) {}
 
 
 }

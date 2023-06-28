@@ -8,9 +8,26 @@ import java.util.Map;
 
 import com.strongloop.android.loopback.Model;
 import com.strongloop.android.remoting.BeanUtil;
+import org.json.JSONObject;
 
 
 public class ModeloCampanhaAdsTeste extends Model {
+
+
+	public JSONObject getJSON() {
+		JSONObject obj = new JSONObject();
+		try {
+			obj.put("id",getId());
+			obj.put("orcamentoDiario", orcamentoDiario);
+			obj.put("qtdeDia", qtdeDia);
+			obj.put("diaInicial", diaInicial);
+			obj.put("valorTotal", valorTotal);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return obj;
+	}
+
 
 	private double orcamentoDiario;
 	private int qtdeDia;
@@ -45,12 +62,12 @@ public class ModeloCampanhaAdsTeste extends Model {
 		return this.valorTotal;
 	}
 
-	public List<CampanhaAdsTeste> getVersaoPreRedes() {
+	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {
 		return  CampanhaAdsTestes;
 	}
 	public void setCampanhaAdsTestes(List<CampanhaAdsTeste> valores) {
 		this.CampanhaAdsTestes = new ArrayList<CampanhaAdsTeste>();
-		for (int i = 0; i < CampanhaAdsTestes.size(); i++) {
+		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new CampanhaAdsTeste();
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsTestes.add((CampanhaAdsTeste) objeto);

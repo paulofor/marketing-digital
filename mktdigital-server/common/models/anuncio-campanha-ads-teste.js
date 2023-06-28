@@ -2,6 +2,9 @@
 
 module.exports = function(Anunciocampanhaadsteste) {
 
+ 
+
+
     Anunciocampanhaadsteste.AtualizaPorCampanhaAdsTeste = function (campanhaAdsTesteId, listaAnuncio, callback) {
         console.log('campanhaAdsTesteId: ' , campanhaAdsTesteId);
         console.log('listaAnuncio', listaAnuncio);

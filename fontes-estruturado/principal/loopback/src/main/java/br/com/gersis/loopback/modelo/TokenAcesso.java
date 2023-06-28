@@ -8,9 +8,25 @@ import java.util.Map;
 
 import com.strongloop.android.loopback.Model;
 import com.strongloop.android.remoting.BeanUtil;
+import org.json.JSONObject;
 
 
 public class TokenAcesso extends Model {
+
+
+	public JSONObject getJSON() {
+		JSONObject obj = new JSONObject();
+		try {
+			obj.put("id",getId());
+			obj.put("nome", nome);
+			obj.put("token", token);
+			obj.put("dataAtualizacao", dataAtualizacao);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return obj;
+	}
+
 
 	private String nome;
 	private String token;

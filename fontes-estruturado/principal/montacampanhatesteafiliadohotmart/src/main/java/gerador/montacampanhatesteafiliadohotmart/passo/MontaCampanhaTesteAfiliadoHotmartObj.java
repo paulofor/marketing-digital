@@ -14,6 +14,7 @@ public class MontaCampanhaTesteAfiliadoHotmartObj extends DaoAplicacao {
 		CampanhaAdsTeste_ObtemListaParaTeste exec = new CampanhaAdsTeste_ObtemListaParaTeste();
 		exec.setComum(ds);
 		exec.executa();
+		finalizar();
 	}
 }
 

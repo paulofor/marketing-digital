@@ -20,7 +20,9 @@
       Palavras-Chave
     </div>
     <div class="dgc-card-detalhe" *ngFor="let rel of principal.palavraChaveCampanhaAdsTestes">
-      <span>{{rel.ideiaPalavraChave.texto}}</span>
+      <span>
+        {{rel.ideiaPalavraChave.texto}} - {{rel.ideiaPalavraChave.mediaPesquisa}} - cpc: {{rel.ideiaPalavraChave.cpcMinimoTopPage | currency : 'BRL'}} até {{rel.ideiaPalavraChave.cpcMaximoTopPage | currency : 'BRL'}} [{{rel.ideiaPalavraChave.concorrencia}}]
+      </span>
     </div>
     <div class="dgc-card-comandos">
       <button class="btn-primary btn-sm btn" (click)="editaPalavraChave(principal)">Novo</button>

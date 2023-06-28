@@ -13,6 +13,7 @@ export interface ProdutoAfiliadoHotmartInterface {
   "urlTracking"?: string;
   "geraTesteCampanha"?: number;
   "hotmartId"?: number;
+  "sigla"?: string;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
@@ -25,6 +26,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "urlTracking": string;
   "geraTesteCampanha": number;
   "hotmartId": number;
+  "sigla": string;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
   campanhaAdsTestes: CampanhaAdsTeste[];
@@ -81,6 +83,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
         "hotmartId": {
           name: 'hotmartId',
           type: 'number'
+        },
+        "sigla": {
+          name: 'sigla',
+          type: 'string'
         },
       },
       relations: {
