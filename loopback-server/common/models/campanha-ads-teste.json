@@ -1,0 +1,74 @@
+{
+	"name": "CampanhaAdsTeste",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"prontaParaTeste": {
+			"type": "number"
+		},
+		"codigoAds": {
+			"type": "string"
+		},
+		"dataEnvioGoogle": {
+			"type": "date"
+		},
+		"custoTotal": {
+			"type": "number"
+		},
+		"receitaTotal": {
+			"type": "number"
+		},
+		"dataInicio": {
+			"type": "date"
+		},
+		"dataTermino": {
+			"type": "date"
+		},
+		"qtdeImpressao": {
+			"type": "number"
+		},
+		"qtdeClique": {
+			"type": "number"
+		},
+		"ctr": {
+			"type": "number"
+		},
+		"modeloCampanhaAdsTesteId": {
+			"type": "number"
+		},
+		"produtoAfiliadoHotmartId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"modeloCampanhaAdsTeste": {
+			"type": "belongsTo",
+			"model": "ModeloCampanhaAdsTeste",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": ""
+		},
+		"anuncioCampanhaAdsTestes": {
+			"type": "hasMany",
+			"model": "AnuncioCampanhaAdsTeste",
+			"foreignKey": ""
+		},
+		"palavraChaveCampanhaAdsTestes": {
+			"type": "hasMany",
+			"model": "PalavraChaveCampanhaAdsTeste",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "PixelGoogle",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"identificador": {
+			"type": "string"
+		},
+		"script": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {}
+}

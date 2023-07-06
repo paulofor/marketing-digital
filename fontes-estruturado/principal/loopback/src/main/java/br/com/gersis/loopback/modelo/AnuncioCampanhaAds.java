@@ -14,6 +14,10 @@ import org.json.JSONObject;
 public class AnuncioCampanhaAds extends Model {
 
 
+	// Relacionamentos 1
+	private CampanhaAds CampanhaAds;
+	// Relacionamentos N
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -24,10 +28,6 @@ public class AnuncioCampanhaAds extends Model {
 		return obj;
 	}
 
-
-	// Relacionamentos 1
-	private CampanhaAds CampanhaAds;
-	// Relacionamentos N
 
 
 	public CampanhaAds getCampanhaAds() {

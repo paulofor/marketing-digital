@@ -17,6 +17,12 @@
     },
     "valorTotal": {
       "type": "number"
+    },
+    "tipoCpcCusto" : {
+      "type" : "string"
+    },
+    "multiplicadorCpcCusto" : {
+      "type" : "number"
     }
   },
   "validations": [],

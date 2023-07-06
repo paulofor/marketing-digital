@@ -14,6 +14,18 @@ import org.json.JSONObject;
 public class IdeiaPalavraChave extends Model {
 
 
+	private String texto;
+	private int mediaPesquisa;
+	private String concorrencia;
+	private String dataAcesso;
+	private double cpcMaximoTopPage;
+	private double cpcMinimoTopPage;
+	private int hotmartId;
+	// Relacionamentos 1
+	// Relacionamentos N
+	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAdss;
+	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -31,18 +43,6 @@ public class IdeiaPalavraChave extends Model {
 		return obj;
 	}
 
-
-	private String texto;
-	private int mediaPesquisa;
-	private String concorrencia;
-	private String dataAcesso;
-	private double cpcMaximoTopPage;
-	private double cpcMinimoTopPage;
-	private int hotmartId;
-	// Relacionamentos 1
-	// Relacionamentos N
-	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAdss;
-	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
 
 	public void setTexto(String valor) { 
 		this.texto = valor;

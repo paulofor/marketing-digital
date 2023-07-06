@@ -1,0 +1,48 @@
+{
+	"name": "AnuncioAds",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"titulo1": {
+			"type": "string"
+		},
+		"titulo2": {
+			"type": "string"
+		},
+		"titulo3": {
+			"type": "string"
+		},
+		"descricao1": {
+			"type": "string"
+		},
+		"descricao2": {
+			"type": "string"
+		},
+		"produtoAfiliadoHotmartId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": ""
+		},
+		"anuncioCampanhaAdsTestes": {
+			"type": "hasMany",
+			"model": "AnuncioCampanhaAdsTeste",
+			"foreignKey": ""
+		},
+		"anuncioCampanhaAdss": {
+			"type": "hasMany",
+			"model": "AnuncioCampanhaAds",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

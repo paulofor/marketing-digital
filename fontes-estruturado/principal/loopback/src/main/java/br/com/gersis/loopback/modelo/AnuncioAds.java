@@ -14,6 +14,15 @@ import org.json.JSONObject;
 public class AnuncioAds extends Model {
 
 
+	private String titulo1;
+	private String titulo2;
+	private String titulo3;
+	private String descricao1;
+	private String descricao2;
+	// Relacionamentos 1
+	// Relacionamentos N
+	private List<AnuncioCampanhaAdsTeste> AnuncioCampanhaAdsTestes;
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -29,15 +38,6 @@ public class AnuncioAds extends Model {
 		return obj;
 	}
 
-
-	private String titulo1;
-	private String titulo2;
-	private String titulo3;
-	private String descricao1;
-	private String descricao2;
-	// Relacionamentos 1
-	// Relacionamentos N
-	private List<AnuncioCampanhaAdsTeste> AnuncioCampanhaAdsTestes;
 
 	public void setTitulo1(String valor) { 
 		this.titulo1 = valor;

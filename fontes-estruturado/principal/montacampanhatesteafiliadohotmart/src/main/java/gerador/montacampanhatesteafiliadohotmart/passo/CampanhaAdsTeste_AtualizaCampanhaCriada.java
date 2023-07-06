@@ -13,6 +13,9 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao { 
 
+
+	protected object campanha;
+
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();

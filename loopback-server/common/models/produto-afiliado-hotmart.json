@@ -1,0 +1,43 @@
+{
+	"name": "ProdutoAfiliadoHotmart",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"urlFinal": {
+			"type": "string"
+		},
+		"urlTracking": {
+			"type": "string"
+		},
+		"geraTesteCampanha": {
+			"type": "number"
+		},
+		"hotmartId": {
+			"type": "number"
+		},
+		"sigla": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"campanhaAdsTestes": {
+			"type": "hasMany",
+			"model": "CampanhaAdsTeste",
+			"foreignKey": ""
+		},
+		"anuncioAdss": {
+			"type": "hasMany",
+			"model": "AnuncioAds",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

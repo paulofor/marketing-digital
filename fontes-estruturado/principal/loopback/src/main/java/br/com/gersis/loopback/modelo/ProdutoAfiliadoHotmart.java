@@ -14,6 +14,16 @@ import org.json.JSONObject;
 public class ProdutoAfiliadoHotmart extends Model {
 
 
+	private String nome;
+	private String urlFinal;
+	private String urlTracking;
+	private int geraTesteCampanha;
+	private int hotmartId;
+	private String sigla;
+	// Relacionamentos 1
+	// Relacionamentos N
+	private List<CampanhaAdsTeste> CampanhaAdsTestes;
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -30,16 +40,6 @@ public class ProdutoAfiliadoHotmart extends Model {
 		return obj;
 	}
 
-
-	private String nome;
-	private String urlFinal;
-	private String urlTracking;
-	private int geraTesteCampanha;
-	private int hotmartId;
-	private String sigla;
-	// Relacionamentos 1
-	// Relacionamentos N
-	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 
 	public void setNome(String valor) { 
 		this.nome = valor;

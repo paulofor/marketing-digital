@@ -13,6 +13,8 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao { 
 
+
+
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();

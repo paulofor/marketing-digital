@@ -14,6 +14,12 @@ import org.json.JSONObject;
 public class TokenAcesso extends Model {
 
 
+	private String nome;
+	private String token;
+	private String dataAtualizacao;
+	// Relacionamentos 1
+	// Relacionamentos N
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -27,12 +33,6 @@ public class TokenAcesso extends Model {
 		return obj;
 	}
 
-
-	private String nome;
-	private String token;
-	private String dataAtualizacao;
-	// Relacionamentos 1
-	// Relacionamentos N
 
 	public void setNome(String valor) { 
 		this.nome = valor;

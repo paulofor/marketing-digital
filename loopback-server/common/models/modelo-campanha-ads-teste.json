@@ -1,0 +1,38 @@
+{
+	"name": "ModeloCampanhaAdsTeste",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"orcamentoDiario": {
+			"type": "number"
+		},
+		"qtdeDia": {
+			"type": "number"
+		},
+		"diaInicial": {
+			"type": "number"
+		},
+		"valorTotal": {
+			"type": "number"
+		},
+		"multiplicadorCpcCusto": {
+			"type": "number"
+		},
+		"tipoCpcCusto": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"campanhaAdsTestes": {
+			"type": "hasMany",
+			"model": "CampanhaAdsTeste",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

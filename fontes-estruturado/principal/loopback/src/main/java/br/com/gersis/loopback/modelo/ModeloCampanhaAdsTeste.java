@@ -14,6 +14,14 @@ import org.json.JSONObject;
 public class ModeloCampanhaAdsTeste extends Model {
 
 
+	private double orcamentoDiario;
+	private int qtdeDia;
+	private int diaInicial;
+	private double valorTotal;
+	// Relacionamentos 1
+	// Relacionamentos N
+	private List<CampanhaAdsTeste> CampanhaAdsTestes;
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -28,14 +36,6 @@ public class ModeloCampanhaAdsTeste extends Model {
 		return obj;
 	}
 
-
-	private double orcamentoDiario;
-	private int qtdeDia;
-	private int diaInicial;
-	private double valorTotal;
-	// Relacionamentos 1
-	// Relacionamentos N
-	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 
 	public void setOrcamentoDiario(double valor) { 
 		this.orcamentoDiario = valor;

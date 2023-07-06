@@ -1,0 +1,63 @@
+{
+	"name": "VisitaProdutoHotmart",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"imagem": {
+			"type": "string"
+		},
+		"temperatura": {
+			"type": "number"
+		},
+		"categoria": {
+			"type": "string"
+		},
+		"formato": {
+			"type": "string"
+		},
+		"reviewRating": {
+			"type": "number"
+		},
+		"totalAnswers": {
+			"type": "number"
+		},
+		"afiliacaoTipo": {
+			"type": "number"
+		},
+		"afiliacaoValor": {
+			"type": "number"
+		},
+		"afiliacaoPercentual": {
+			"type": "number"
+		},
+		"produtorNome": {
+			"type": "string"
+		},
+		"produtorCodigoHotmart": {
+			"type": "string"
+		},
+		"dataInsercao": {
+			"type": "date"
+		},
+		"blueprint": {
+			"type": "number"
+		},
+		"produtoCodigoU": {
+			"type": "string"
+		},
+		"maisRecente": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {}
+}

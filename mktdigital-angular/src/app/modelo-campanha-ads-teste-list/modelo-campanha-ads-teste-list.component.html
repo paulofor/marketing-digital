@@ -17,6 +17,12 @@
       <div clas="dgc-card-detalhe">
         <span>Orçamento Total: {{item.orcamentoDiario * item.qtdeDia | currency : 'BRL' }}</span>
       </div>
+      <div clas="dgc-card-detalhe">
+        <span>Tipo Custo: {{item.tipoCpcCusto }}</span>
+      </div>
+      <div clas="dgc-card-detalhe">
+        <span>Multiplicador Custo: {{item.multiplicadorCpcCusto | number : '1.2-2' }}</span>
+      </div>
       <div class="dgc-card-comandos">
         <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
       </div>

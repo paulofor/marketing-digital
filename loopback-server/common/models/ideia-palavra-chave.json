@@ -1,0 +1,46 @@
+{
+	"name": "IdeiaPalavraChave",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"texto": {
+			"type": "string"
+		},
+		"mediaPesquisa": {
+			"type": "number"
+		},
+		"concorrencia": {
+			"type": "string"
+		},
+		"dataAcesso": {
+			"type": "date"
+		},
+		"cpcMaximoTopPage": {
+			"type": "number"
+		},
+		"cpcMinimoTopPage": {
+			"type": "number"
+		},
+		"hotmartId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"palavraChaveCampanhaAdss": {
+			"type": "hasMany",
+			"model": "PalavraChaveCampanhaAds",
+			"foreignKey": ""
+		},
+		"palavraChaveCampanhaAdsTestes": {
+			"type": "hasMany",
+			"model": "PalavraChaveCampanhaAdsTeste",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

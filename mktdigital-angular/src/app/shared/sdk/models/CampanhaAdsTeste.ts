@@ -17,6 +17,9 @@ export interface CampanhaAdsTesteInterface {
   "receitaTotal"?: number;
   "dataInicio"?: Date;
   "dataTermino"?: Date;
+  "qtdeImpressao"?: number;
+  "qtdeClique"?: number;
+  "ctr"?: number;
   "id"?: number;
   "modeloCampanhaAdsTesteId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
@@ -35,6 +38,9 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "receitaTotal": number;
   "dataInicio": Date;
   "dataTermino": Date;
+  "qtdeImpressao": number;
+  "qtdeClique": number;
+  "ctr": number;
   "id": number;
   "modeloCampanhaAdsTesteId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
@@ -109,6 +115,18 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
         "dataTermino": {
           name: 'dataTermino',
           type: 'Date'
+        },
+        "qtdeImpressao": {
+          name: 'qtdeImpressao',
+          type: 'number'
+        },
+        "qtdeClique": {
+          name: 'qtdeClique',
+          type: 'number'
+        },
+        "ctr": {
+          name: 'ctr',
+          type: 'number'
         },
         "id": {
           name: 'id',

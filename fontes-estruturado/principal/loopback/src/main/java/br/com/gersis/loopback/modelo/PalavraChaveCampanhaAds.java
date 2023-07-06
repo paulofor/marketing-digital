@@ -14,6 +14,10 @@ import org.json.JSONObject;
 public class PalavraChaveCampanhaAds extends Model {
 
 
+	// Relacionamentos 1
+	private IdeiaPalavraChave IdeiaPalavraChave;
+	// Relacionamentos N
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -24,10 +28,6 @@ public class PalavraChaveCampanhaAds extends Model {
 		return obj;
 	}
 
-
-	// Relacionamentos 1
-	private IdeiaPalavraChave IdeiaPalavraChave;
-	// Relacionamentos N
 
 
 	public IdeiaPalavraChave getIdeiaPalavraChave() {

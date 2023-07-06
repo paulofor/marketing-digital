@@ -6,6 +6,8 @@ export interface ModeloCampanhaAdsTesteInterface {
   "qtdeDia"?: number;
   "diaInicial"?: number;
   "valorTotal"?: number;
+  "tipoCpcCusto"?: string;
+  "multiplicadorCpcCusto"?: number;
   "id"?: number;
 }
 
@@ -14,6 +16,8 @@ export class ModeloCampanhaAdsTeste implements ModeloCampanhaAdsTesteInterface {
   "qtdeDia": number;
   "diaInicial": number;
   "valorTotal": number;
+  "tipoCpcCusto": string;
+  "multiplicadorCpcCusto": number;
   "id": number;
   constructor(data?: ModeloCampanhaAdsTesteInterface) {
     Object.assign(this, data);
@@ -62,6 +66,14 @@ export class ModeloCampanhaAdsTeste implements ModeloCampanhaAdsTesteInterface {
         },
         "valorTotal": {
           name: 'valorTotal',
+          type: 'number'
+        },
+        "tipoCpcCusto": {
+          name: 'tipoCpcCusto',
+          type: 'string'
+        },
+        "multiplicadorCpcCusto": {
+          name: 'multiplicadorCpcCusto',
           type: 'number'
         },
         "id": {

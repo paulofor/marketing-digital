@@ -14,6 +14,11 @@ import org.json.JSONObject;
 public class PixelGoogle extends Model {
 
 
+	private String identificador;
+	private String script;
+	// Relacionamentos 1
+	// Relacionamentos N
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -26,11 +31,6 @@ public class PixelGoogle extends Model {
 		return obj;
 	}
 
-
-	private String identificador;
-	private String script;
-	// Relacionamentos 1
-	// Relacionamentos N
 
 	public void setIdentificador(String valor) { 
 		this.identificador = valor;

@@ -42,5 +42,20 @@ public class RepositorioCampanhaAdsTeste extends ModelRepository<CampanhaAdsTest
 		invokeStaticMethod("atualizaCampanhaCriada", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void obtemListaParaConsultarPerformance(final ListCallback<CampanhaAdsTeste> callback ) {
+		RestContractItem contrato = new RestContractItem("CampanhaAdsTestes/obtemListaParaConsultarPerformance","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsTeste.obtemListaParaConsultarPerformance");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemListaParaConsultarPerformance", params,   new JsonArrayParser<CampanhaAdsTeste>(this, callback));
+	}
+
+	public synchronized void atualizaCampanhaPerformance(CampanhaAdsTeste campanha ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("CampanhaAdsTestes/atualizaCampanhaPerformance","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsTeste.atualizaCampanhaPerformance");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("campanha", campanha.getJSON());
+		invokeStaticMethod("atualizaCampanhaPerformance", params,   new EmptyResponseParser(callback));
+	}
+
 
 }

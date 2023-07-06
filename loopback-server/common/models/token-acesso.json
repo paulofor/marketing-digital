@@ -1,0 +1,24 @@
+{
+	"name": "TokenAcesso",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"token": {
+			"type": "string"
+		},
+		"dataAtualizacao": {
+			"type": "date"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {}
+}

@@ -24,6 +24,17 @@
       </mat-select>
     </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <mat-select #tipoCpcCusto [(ngModel)]="item.tipoCpcCusto" name="tipoCpcCusto" placeholder="Tipo Cpc Custo">
+        <mat-option value="MIN">Mínimo</mat-option>
+        <mat-option value="MAX">Máximo</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #multiplicadorCpcCusto [(ngModel)]="item.multiplicadorCpcCusto" name="multiplicadorCpcCusto" placeholder="Multiplicador Cpc Custo (9.99)" autocomplete="off"/>
+    </mat-form-field>
+
   </mat-dialog-content>
 
   <mat-dialog-actions>

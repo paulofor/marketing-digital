@@ -14,6 +14,9 @@ import org.json.JSONObject;
 public class VisitaProdutoPlataforma extends Model {
 
 
+	// Relacionamentos 1
+	// Relacionamentos N
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -24,9 +27,6 @@ public class VisitaProdutoPlataforma extends Model {
 		return obj;
 	}
 
-
-	// Relacionamentos 1
-	// Relacionamentos N
 
 
 }

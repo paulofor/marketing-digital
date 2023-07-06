@@ -32,6 +32,15 @@
     },
     "dataTermino" : {
       "type": "date"
+    },
+    "qtdeImpressao" : {
+      "type" : "number"
+    },
+    "qtdeClique" : {
+      "type" : "number"
+    },
+    "ctr" : {
+      "type" : "number"
     }
 
   },
@@ -118,6 +127,31 @@
         {
           "path": "/obtemListaParaConsultarPerformance",
           "verb": "get"
+        }
+      ]
+    },
+    "AtualizaCampanhaPerformance": {
+      "accepts": [
+        {
+          "arg": "campanha",
+          "type": "object",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualizaCampanhaPerformance",
+          "verb": "post"
         }
       ]
     }

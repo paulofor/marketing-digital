@@ -14,6 +14,24 @@ import org.json.JSONObject;
 public class CampanhaAdsTeste extends Model {
 
 
+	private String nome;
+	private int prontaParaTeste;
+	private String codigoAds;
+	private String dataEnvioGoogle;
+	private double custoTotal;
+	private double receitaTotal;
+	private String dataInicio;
+	private String dataTermino;
+	private int qtdeImpressao;
+	private int qtdeClique;
+	private double ctr;
+	// Relacionamentos 1
+	private ModeloCampanhaAdsTeste ModeloCampanhaAdsTeste;
+	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
+	// Relacionamentos N
+	private List<AnuncioCampanhaAdsTeste> AnuncioCampanhaAdsTestes;
+	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -24,25 +42,17 @@ public class CampanhaAdsTeste extends Model {
 			obj.put("dataEnvioGoogle", dataEnvioGoogle);
 			obj.put("custoTotal", custoTotal);
 			obj.put("receitaTotal", receitaTotal);
+			obj.put("dataInicio", dataInicio);
+			obj.put("dataTermino", dataTermino);
+			obj.put("qtdeImpressao", qtdeImpressao);
+			obj.put("qtdeClique", qtdeClique);
+			obj.put("ctr", ctr);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return obj;
 	}
 
-
-	private String nome;
-	private int prontaParaTeste;
-	private String codigoAds;
-	private String dataEnvioGoogle;
-	private double custoTotal;
-	private double receitaTotal;
-	// Relacionamentos 1
-	private ModeloCampanhaAdsTeste ModeloCampanhaAdsTeste;
-	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
-	// Relacionamentos N
-	private List<AnuncioCampanhaAdsTeste> AnuncioCampanhaAdsTestes;
-	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
 
 	public void setNome(String valor) { 
 		this.nome = valor;
@@ -79,6 +89,36 @@ public class CampanhaAdsTeste extends Model {
 	}
 	public double getReceitaTotal() { 
 		return this.receitaTotal;
+	}
+	public void setDataInicio(String valor) { 
+		this.dataInicio = valor;
+	}
+	public String getDataInicio() { 
+		return this.dataInicio;
+	}
+	public void setDataTermino(String valor) { 
+		this.dataTermino = valor;
+	}
+	public String getDataTermino() { 
+		return this.dataTermino;
+	}
+	public void setQtdeImpressao(int valor) { 
+		this.qtdeImpressao = valor;
+	}
+	public int getQtdeImpressao() { 
+		return this.qtdeImpressao;
+	}
+	public void setQtdeClique(int valor) { 
+		this.qtdeClique = valor;
+	}
+	public int getQtdeClique() { 
+		return this.qtdeClique;
+	}
+	public void setCtr(double valor) { 
+		this.ctr = valor;
+	}
+	public double getCtr() { 
+		return this.ctr;
 	}
 
 	public ModeloCampanhaAdsTeste getModeloCampanhaAdsTeste() {

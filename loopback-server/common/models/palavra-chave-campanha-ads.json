@@ -1,0 +1,23 @@
+{
+	"name": "PalavraChaveCampanhaAds",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"ideiaPalavraChaveId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"ideiaPalavraChave": {
+			"type": "belongsTo",
+			"model": "IdeiaPalavraChave",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

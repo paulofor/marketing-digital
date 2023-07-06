@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "PlataformaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoPlataforma": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "VisitaProdutoPlataforma": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoHotmart": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "VisitaProdutoHotmart": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "TokenAcesso": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "IdeiaPalavraChave": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "CampanhaAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioCampanhaAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PalavraCampanhaAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoAfiliadoHotmart": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AgendaVisitaHotmart": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "CampanhaAdsTeste": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ModeloCampanhaAdsTeste": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PixelGoogle": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PalavraChaveCampanhaAdsTeste": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioCampanhaAdsTeste": {
+    "dataSource": "mysqlds",
+    "public": true
+  }
+}
