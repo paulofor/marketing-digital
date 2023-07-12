@@ -132,8 +132,9 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		String dataFinal = dtFinal.format(formatter);
 
 		// 2 - Campanha
+		String nomeCampanha = "MktDigital-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + dataInicial;
 		Campaign campaign = Campaign.newBuilder()
-				.setName("MktDigital-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + dataInicial)
+				.setName(nomeCampanha)
 				.setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
 				.setStatus(CampaignStatus.PAUSED)
 				.setManualCpc(ManualCpc.newBuilder().build())
@@ -143,6 +144,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 				.setEndDate(dataFinal)
 				.build();
 
+		campanha.setNomeAds(nomeCampanha);
 		CampaignOperation op = CampaignOperation.newBuilder().setCreate(campaign).build();
 		operations.add(op);
 		
@@ -195,8 +197,11 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 			System.out.println("Nome da campanha:" + campaignResourceName);
 			
 			
+			long valorCpcMax = 1000000 * 20;
+			
 			AdGroup adGroup = AdGroup.newBuilder()
 					.setName("Example Ad Group")
+					.setCpcBidMicros(valorCpcMax)
 					.setCampaign(campaignResourceName)
 					.setStatus(AdGroupStatus.ENABLED).build();
 
@@ -228,8 +233,14 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
                 .setText(palavra.getTexto())
                 .setMatchType(KeywordMatchType.EXACT)
                 .build();
-
-        double valorDouble = (palavra.getCpcMinimoTopPage() * 1.2 ) * 100;
+        
+        double valorDouble = 0;
+        if ("MAX".equals(campanha.getModeloCampanhaAdsTeste().getTipoCpcCusto())) {
+        	 valorDouble = (palavra.getCpcMaximoTopPage() * campanha.getModeloCampanhaAdsTeste().getMultiplicadorCpcCusto() ) * 100;
+        } else {
+        	 valorDouble = (palavra.getCpcMinimoTopPage() * campanha.getModeloCampanhaAdsTeste().getMultiplicadorCpcCusto() ) * 100;
+        }
+    
         long valorCpc = (long) Math.floor(valorDouble);
         valorCpc = valorCpc * 10000;
         // Cria o critério

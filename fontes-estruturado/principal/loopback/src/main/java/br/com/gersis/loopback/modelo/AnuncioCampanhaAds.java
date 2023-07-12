@@ -16,6 +16,7 @@ public class AnuncioCampanhaAds extends Model {
 
 	// Relacionamentos 1
 	private CampanhaAds CampanhaAds;
+	private AnuncioAds AnuncioAds;
 	// Relacionamentos N
 
 	public JSONObject getJSON() {
@@ -36,5 +37,12 @@ public class AnuncioCampanhaAds extends Model {
 	public void setCampanhaAds(HashMap valor) {
 		this.CampanhaAds = new CampanhaAds();
 		BeanUtil.setProperties(this.CampanhaAds, (Map<String, ? extends Object>) valor, true);
+	}
+	public AnuncioAds getAnuncioAds() {
+		return AnuncioAds;
+	}
+	public void setAnuncioAds(HashMap valor) {
+		this.AnuncioAds = new AnuncioAds();
+		BeanUtil.setProperties(this.AnuncioAds, (Map<String, ? extends Object>) valor, true);
 	}
 }

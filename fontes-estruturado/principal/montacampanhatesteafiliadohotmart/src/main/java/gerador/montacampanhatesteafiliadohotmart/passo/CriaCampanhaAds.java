@@ -1,6 +1,8 @@
 package gerador.montacampanhatesteafiliadohotmart.passo;
 
 
+//  ***  Passo 2 ***
+
 import gerador.montacampanhatesteafiliadohotmart.loopback.DaoAplicacao;
 import gerador.montacampanhatesteafiliadohotmart.loopback.DatasetAplicacao;
 import gerador.montacampanhatesteafiliadohotmart.passo.impl.*;

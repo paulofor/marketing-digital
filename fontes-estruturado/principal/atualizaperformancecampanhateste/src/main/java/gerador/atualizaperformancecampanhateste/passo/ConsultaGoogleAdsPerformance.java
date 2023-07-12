@@ -1,6 +1,8 @@
 package gerador.atualizaperformancecampanhateste.passo;
 
 
+//  ***  Passo 2 ***
+
 import gerador.atualizaperformancecampanhateste.loopback.DaoAplicacao;
 import gerador.atualizaperformancecampanhateste.loopback.DatasetAplicacao;
 import gerador.atualizaperformancecampanhateste.passo.impl.*;

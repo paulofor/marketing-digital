@@ -1,6 +1,8 @@
 package gerador.montacampanhatesteafiliadohotmart.passo;
 
 
+//  ***  Passo 3 ***
+
 import gerador.montacampanhatesteafiliadohotmart.loopback.DaoAplicacao;
 import gerador.montacampanhatesteafiliadohotmart.loopback.DatasetAplicacao;
 import gerador.montacampanhatesteafiliadohotmart.passo.impl.*;
@@ -14,14 +16,13 @@ import com.strongloop.android.loopback.callbacks.*;
 public class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao { 
 
 
-	protected object campanha;
+	protected CampanhaAdsTeste campanha;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		executaCustom(ds.getCampanhaTesteCorrente());
-		CampanhaAdsTeste campanhaTesteCorrente = ds.getCampanhaTesteCorrente();
-		repCampanhaAdsTeste.atualizaCampanhaCriada( campanhaTesteCorrente ,  new VoidCallback() { 
+		repCampanhaAdsTeste.atualizaCampanhaCriada( campanha, new VoidCallback() { 
 			public void onSuccess() {
 				finalizar();
 			}

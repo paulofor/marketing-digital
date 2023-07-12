@@ -5,6 +5,9 @@
 	"options": {
 		"validateUpsert": true
 	},
+  	"mixins": {
+    	"Counts": true
+  	},
 	"properties": {
 		"nome": {
 			"type": "string"
@@ -38,6 +41,9 @@
 		},
 		"ctr": {
 			"type": "number"
+		},
+		"nomeAds": {
+			"type": "string"
 		},
 		"modeloCampanhaAdsTesteId": {
 			"type": "number"

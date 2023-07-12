@@ -5,21 +5,28 @@
   <mat-dialog-content>
 
     <mat-form-field class="example-full-width">
-      <input matInput #titulo1 [(ngModel)]="item.titulo1" name="titulo1" placeholder="Título 1" />
+      <input matInput maxlength="30" #titulo1 [(ngModel)]="item.titulo1" name="titulo1" placeholder="Titulo1" />
+      <mat-hint align="end">{{ (titulo1.value?titulo1.value.length:0) }}/30</mat-hint>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput #titulo2 [(ngModel)]="item.titulo2" name="titulo2" placeholder="Título 2" />
+      <input matInput maxlength="30" [(ngModel)]="item.titulo2" #titulo2 name="titulo2" placeholder="Titulo2" />
+      <mat-hint align="end">{{ (titulo2.value?titulo2.value.length:0) }}/30</mat-hint>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput #titulo3 [(ngModel)]="item.titulo3" name="titulo3" placeholder="Título 3" />
+      <input matInput maxlength="30" [(ngModel)]="item.titulo3" #titulo3 name="titulo3" placeholder="Titulo3" />
+      <mat-hint align="end">{{ (titulo3.value?titulo3.value.length:0) }}/30</mat-hint>
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width">
-      <textarea rows="3" matInput #descricao1 [(ngModel)]="item.descricao1" name="descricao1" placeholder="Descrição 1" ></textarea>
+      <textarea rows="2" matInput #descricao1 [(ngModel)]="item.descricao1" name="descricao1" placeholder="Descrição 1" >
+      </textarea>
+      <mat-hint align="end">{{ (descricao1.value?descricao1.value.length:0) }}/90</mat-hint>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <textarea rows="3" matInput #descricao1 [(ngModel)]="item.descricao2" name="descricao2" placeholder="Descrição 2" ></textarea>
+      <textarea rows="2" matInput #descricao2 [(ngModel)]="item.descricao2" name="descricao2" placeholder="Descrição 2" >
+      </textarea>
+      <mat-hint align="end">{{ (descricao2.value?descricao2.value.length:0) }}/90</mat-hint>
     </mat-form-field>
 
   </mat-dialog-content>

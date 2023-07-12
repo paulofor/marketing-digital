@@ -5,6 +5,9 @@
 	"options": {
 		"validateUpsert": true
 	},
+  	"mixins": {
+    	"Counts": true
+  	},
 	"properties": {
 		"nome": {
 			"type": "string"
@@ -20,6 +23,7 @@
 		},
 		"hotmartId": {
 			"type": "number"
+			,"id": true
 		},
 		"sigla": {
 			"type": "string"
@@ -32,7 +36,7 @@
 			"model": "CampanhaAdsTeste",
 			"foreignKey": ""
 		},
-		"anuncioAdss": {
+		"anuncioAds": {
 			"type": "hasMany",
 			"model": "AnuncioAds",
 			"foreignKey": ""

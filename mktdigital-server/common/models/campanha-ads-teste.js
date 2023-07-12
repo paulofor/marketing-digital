@@ -7,6 +7,7 @@ module.exports = function(Campanhaadsteste) {
         const ds = Campanhaadsteste.dataSource;
         const sql = " update CampanhaAdsTeste " +
             " set codigoAds = " + campanha.codigoAds + " , " +
+            " nomeAds = '" + campanha.nomeAds + "' , " +
             " dataEnvioGoogle = now() , prontaParaTeste = 0 " +
             " where id = " + campanha.id;
         ds.connector.query(sql,callback);

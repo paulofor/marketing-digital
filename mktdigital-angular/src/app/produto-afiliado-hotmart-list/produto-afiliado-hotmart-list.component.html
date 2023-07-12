@@ -22,8 +22,8 @@
           <span>Sigla: {{item.sigla}}</span>
         </div>
         <div class="dgc-card-comandos">
-            <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , item.hotmartId]">Anúncio Google</button>
-            <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , item.hotmartId]">Campanha Teste Google</button>
+            <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , item.hotmartId]">Anúncio Google ({{item.anuncioAdsCount}})</button>
+            <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , item.hotmartId]">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>
             <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
         </div>
     </div>

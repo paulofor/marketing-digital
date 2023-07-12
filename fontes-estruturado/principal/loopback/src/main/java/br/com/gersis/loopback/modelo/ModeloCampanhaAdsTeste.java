@@ -18,6 +18,8 @@ public class ModeloCampanhaAdsTeste extends Model {
 	private int qtdeDia;
 	private int diaInicial;
 	private double valorTotal;
+	private double multiplicadorCpcCusto;
+	private String tipoCpcCusto;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
@@ -30,6 +32,8 @@ public class ModeloCampanhaAdsTeste extends Model {
 			obj.put("qtdeDia", qtdeDia);
 			obj.put("diaInicial", diaInicial);
 			obj.put("valorTotal", valorTotal);
+			obj.put("multiplicadorCpcCusto", multiplicadorCpcCusto);
+			obj.put("tipoCpcCusto", tipoCpcCusto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -60,6 +64,18 @@ public class ModeloCampanhaAdsTeste extends Model {
 	}
 	public double getValorTotal() { 
 		return this.valorTotal;
+	}
+	public void setMultiplicadorCpcCusto(double valor) { 
+		this.multiplicadorCpcCusto = valor;
+	}
+	public double getMultiplicadorCpcCusto() { 
+		return this.multiplicadorCpcCusto;
+	}
+	public void setTipoCpcCusto(String valor) { 
+		this.tipoCpcCusto = valor;
+	}
+	public String getTipoCpcCusto() { 
+		return this.tipoCpcCusto;
 	}
 
 	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {

@@ -1,6 +1,8 @@
 package gerador.atualizaperformancecampanhateste.passo;
 
 
+//  ***  Passo 3 ***
+
 import gerador.atualizaperformancecampanhateste.loopback.DaoAplicacao;
 import gerador.atualizaperformancecampanhateste.loopback.DatasetAplicacao;
 import gerador.atualizaperformancecampanhateste.passo.impl.*;
@@ -14,14 +16,13 @@ import com.strongloop.android.loopback.callbacks.*;
 public class CampanhaAdsTeste_AtualizaCampanhaPerformance extends DaoAplicacao { 
 
 
-	//protected object campanha;
+	protected CampanhaAdsTeste campanha;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		executaCustom(ds.getCampanhaTesteCorrente());
-		CampanhaAdsTeste campanhaTesteCorrente = ds.getCampanhaTesteCorrente();
-		repCampanhaAdsTeste.atualizaCampanhaPerformance( campanhaTesteCorrente ,  new VoidCallback() { 
+		repCampanhaAdsTeste.atualizaCampanhaPerformance( campanha, new VoidCallback() { 
 			public void onSuccess() {
 				finalizar();
 			}

@@ -1,6 +1,7 @@
 <div class="dgc-painel" *ngIf="principal">
   <div class="dgc-painel-header">
       <span>Anúncios - {{principal.nome}}</span>
+      <a href="{{principal.urlFinal}}" target="_blank">link</a>
       <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
   </div>
   <div class="dgc-painel-principal">

@@ -1,6 +1,8 @@
 package gerador.montacampanhatesteafiliadohotmart.passo;
 
 
+//  ***  Passo 1 ***
+
 import gerador.montacampanhatesteafiliadohotmart.loopback.DaoAplicacao;
 import gerador.montacampanhatesteafiliadohotmart.loopback.DatasetAplicacao;
 import gerador.montacampanhatesteafiliadohotmart.passo.impl.*;
@@ -19,7 +21,7 @@ public class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao {
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		executaCustom();
-		repCampanhaAdsTeste.obtemListaParaTeste( new ListCallback<CampanhaAdsTeste>() { 
+		repCampanhaAdsTeste.obtemListaParaTeste(  new ListCallback<CampanhaAdsTeste>() { 
 			public void onSuccess(List<CampanhaAdsTeste> lista) {
 				for (CampanhaAdsTeste item : lista) {
 					ds.setCampanhaTesteCorrente(item);

@@ -25,6 +25,7 @@ public class CampanhaAdsTeste extends Model {
 	private int qtdeImpressao;
 	private int qtdeClique;
 	private double ctr;
+	private String nomeAds;
 	// Relacionamentos 1
 	private ModeloCampanhaAdsTeste ModeloCampanhaAdsTeste;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
@@ -47,6 +48,7 @@ public class CampanhaAdsTeste extends Model {
 			obj.put("qtdeImpressao", qtdeImpressao);
 			obj.put("qtdeClique", qtdeClique);
 			obj.put("ctr", ctr);
+			obj.put("nomeAds", nomeAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -119,6 +121,12 @@ public class CampanhaAdsTeste extends Model {
 	}
 	public double getCtr() { 
 		return this.ctr;
+	}
+	public void setNomeAds(String valor) { 
+		this.nomeAds = valor;
+	}
+	public String getNomeAds() { 
+		return this.nomeAds;
 	}
 
 	public ModeloCampanhaAdsTeste getModeloCampanhaAdsTeste() {

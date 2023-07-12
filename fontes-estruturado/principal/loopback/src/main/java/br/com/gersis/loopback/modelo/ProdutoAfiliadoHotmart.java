@@ -23,6 +23,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
+	private List<AnuncioAds> AnuncioAdss;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -87,6 +88,17 @@ public class ProdutoAfiliadoHotmart extends Model {
 			Object objeto = new CampanhaAdsTeste();
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsTestes.add((CampanhaAdsTeste) objeto);
+		}
+	}
+	public List<AnuncioAds> getAnuncioAdss() {
+		return  AnuncioAdss;
+	}
+	public void setAnuncioAdss(List<AnuncioAds> valores) {
+		this.AnuncioAdss = new ArrayList<AnuncioAds>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AnuncioAds();
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AnuncioAdss.add((AnuncioAds) objeto);
 		}
 	}
 }

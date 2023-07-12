@@ -1,6 +1,8 @@
 package gerador.atualizaperformancecampanhateste.passo;
 
 
+//  ***  Passo 1 ***
+
 import gerador.atualizaperformancecampanhateste.loopback.DaoAplicacao;
 import gerador.atualizaperformancecampanhateste.loopback.DatasetAplicacao;
 import gerador.atualizaperformancecampanhateste.passo.impl.*;
@@ -19,7 +21,7 @@ public class CampanhaAdsTeste_ObtemListaParaConsultarPerformance extends DaoApli
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		executaCustom();
-		repCampanhaAdsTeste.obtemListaParaConsultarPerformance( new ListCallback<CampanhaAdsTeste>() { 
+		repCampanhaAdsTeste.obtemListaParaConsultarPerformance(  new ListCallback<CampanhaAdsTeste>() { 
 			public void onSuccess(List<CampanhaAdsTeste> lista) {
 				for (CampanhaAdsTeste item : lista) {
 					ds.setCampanhaTesteCorrente(item);

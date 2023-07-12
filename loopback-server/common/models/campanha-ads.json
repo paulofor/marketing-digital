@@ -5,14 +5,18 @@
 	"options": {
 		"validateUpsert": true
 	},
+  	"mixins": {
+    	"Counts": true
+  	},
 	"properties": {
 		"nome": {
 			"type": "string"
+			,"id": true
 		}
 	},
 	"validations": [],
 	"relations": {
-		"anuncioCampanhaAdss": {
+		"anuncioCampanhaAds": {
 			"type": "hasMany",
 			"model": "AnuncioCampanhaAds",
 			"foreignKey": ""

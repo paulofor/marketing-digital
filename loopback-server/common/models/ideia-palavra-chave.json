@@ -5,6 +5,9 @@
 	"options": {
 		"validateUpsert": true
 	},
+  	"mixins": {
+    	"Counts": true
+  	},
 	"properties": {
 		"texto": {
 			"type": "string"
@@ -30,7 +33,7 @@
 	},
 	"validations": [],
 	"relations": {
-		"palavraChaveCampanhaAdss": {
+		"palavraChaveCampanhaAds": {
 			"type": "hasMany",
 			"model": "PalavraChaveCampanhaAds",
 			"foreignKey": ""

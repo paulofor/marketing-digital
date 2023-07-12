@@ -20,6 +20,7 @@ export interface CampanhaAdsTesteInterface {
   "qtdeImpressao"?: number;
   "qtdeClique"?: number;
   "ctr"?: number;
+  "nomeAds"?: string;
   "id"?: number;
   "modeloCampanhaAdsTesteId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
@@ -41,6 +42,7 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "qtdeImpressao": number;
   "qtdeClique": number;
   "ctr": number;
+  "nomeAds": string;
   "id": number;
   "modeloCampanhaAdsTesteId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
@@ -127,6 +129,10 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
         "ctr": {
           name: 'ctr',
           type: 'number'
+        },
+        "nomeAds": {
+          name: 'nomeAds',
+          type: 'string'
         },
         "id": {
           name: 'id',

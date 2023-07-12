@@ -11,10 +11,9 @@ import com.strongloop.android.remoting.BeanUtil;
 import org.json.JSONObject;
 
 
-public class PlataformaVenda extends Model {
+public class AgendaVisitaHotmart extends Model {
 
 
-	private String nome;
 	// Relacionamentos 1
 	// Relacionamentos N
 
@@ -22,7 +21,6 @@ public class PlataformaVenda extends Model {
 		JSONObject obj = new JSONObject();
 		try {
 			obj.put("id",getId());
-			obj.put("nome", nome);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -30,11 +28,5 @@ public class PlataformaVenda extends Model {
 	}
 
 
-	public void setNome(String valor) { 
-		this.nome = valor;
-	}
-	public String getNome() { 
-		return this.nome;
-	}
 
 }

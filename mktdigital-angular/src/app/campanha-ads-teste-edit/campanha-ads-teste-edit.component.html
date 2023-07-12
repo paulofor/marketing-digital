@@ -16,6 +16,12 @@
       </mat-select>
     </mat-form-field>
 
+    <mat-form-field *ngIf="!item.codigoAds" class="example-half-width">
+      <mat-select #prontaParaTeste [(ngModel)]="item.prontaParaTeste" name="prontaParaTeste" placeholder="Pronta">
+        <mat-option value="0">Não</mat-option>
+        <mat-option value="1">Sim</mat-option>
+      </mat-select>
+    </mat-form-field>
 
   </mat-dialog-content>
 
