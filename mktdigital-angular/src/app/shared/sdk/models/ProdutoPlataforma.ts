@@ -1,24 +1,12 @@
 /* tslint:disable */
-import {
-  PlataformaVenda,
-  VisitaProdutoPlataforma
-} from '../index';
 
 declare var Object: any;
 export interface ProdutoPlataformaInterface {
-  "nome"?: string;
   "id"?: number;
-  "plataformaVendaId"?: number;
-  plataformaVenda?: PlataformaVenda;
-  visitaProdutoPlataformas?: VisitaProdutoPlataforma[];
 }
 
 export class ProdutoPlataforma implements ProdutoPlataformaInterface {
-  "nome": string;
   "id": number;
-  "plataformaVendaId": number;
-  plataformaVenda: PlataformaVenda;
-  visitaProdutoPlataformas: VisitaProdutoPlataforma[];
   constructor(data?: ProdutoPlataformaInterface) {
     Object.assign(this, data);
   }
@@ -52,36 +40,12 @@ export class ProdutoPlataforma implements ProdutoPlataformaInterface {
       path: 'ProdutoPlataformas',
       idName: 'id',
       properties: {
-        "nome": {
-          name: 'nome',
-          type: 'string'
-        },
         "id": {
           name: 'id',
           type: 'number'
         },
-        "plataformaVendaId": {
-          name: 'plataformaVendaId',
-          type: 'number'
-        },
       },
       relations: {
-        plataformaVenda: {
-          name: 'plataformaVenda',
-          type: 'PlataformaVenda',
-          model: 'PlataformaVenda',
-          relationType: 'belongsTo',
-                  keyFrom: 'plataformaVendaId',
-          keyTo: 'id'
-        },
-        visitaProdutoPlataformas: {
-          name: 'visitaProdutoPlataformas',
-          type: 'VisitaProdutoPlataforma[]',
-          model: 'VisitaProdutoPlataforma',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'produtoPlataformaId'
-        },
       }
     }
   }

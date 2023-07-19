@@ -3,6 +3,9 @@ package br.com.gersis.loopback.repositorio;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import org.json.JSONArray;
+
 import com.strongloop.android.loopback.ModelRepository;
 import com.strongloop.android.loopback.callbacks.JsonArrayParser;
 import com.strongloop.android.loopback.callbacks.JsonObjectParser;
@@ -27,5 +30,21 @@ public class RepositorioPalavraChaveCampanhaAdsTeste extends ModelRepository<Pal
 
 	// ***  Operações  ***
 
+	public synchronized void atualizaPalavraChavePorCampanhaAdsTeste(int campanhaAdsTesteId ,List<PalavraChaveCampanhaAdsTeste> listaIdeiaPalavraChave ,final ObjectCallback<PalavraChaveCampanhaAdsTeste> callback ) {
+		RestContractItem contrato = new RestContractItem("PalavraChaveCampanhaAdsTestes/atualizaPalavraChavePorCampanhaAdsTeste","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "PalavraChaveCampanhaAdsTeste.atualizaPalavraChavePorCampanhaAdsTeste");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("campanhaAdsTesteId", campanhaAdsTesteId);
+		params.put("listaIdeiaPalavraChave",obtemLista(listaIdeiaPalavraChave));
+		invokeStaticMethod("atualizaPalavraChavePorCampanhaAdsTeste", params,   new JsonObjectParser<PalavraChaveCampanhaAdsTeste>(this, callback));
+	}
 
+
+	private JSONArray obtemLista(List<PalavraChaveCampanhaAdsTeste> listaEntrada) {
+		JSONArray lista = new JSONArray();
+		for (PalavraChaveCampanhaAdsTeste item : listaEntrada) {
+			lista.put(item.getJSON());
+		}
+		return lista;
+	}
 }

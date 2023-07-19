@@ -7,6 +7,7 @@ module.exports = function(Campanhaadsteste) {
         const ds = Campanhaadsteste.dataSource;
         const sql = " update CampanhaAdsTeste " +
             " set codigoAds = " + campanha.codigoAds + " , " +
+            " nomeAds = '" + campanha.nomeAds + "' , " +
             " dataEnvioGoogle = now() , prontaParaTeste = 0 " +
             " where id = " + campanha.id;
         ds.connector.query(sql,callback);
@@ -41,7 +42,7 @@ module.exports = function(Campanhaadsteste) {
     Campanhaadsteste.ObtemListaParaConsultarPerformance = function(callback) {
         const sql = "SELECT * " +
             " FROM CampanhaAdsTeste " +
-            " WHERE dataInicio >= DATE_SUB(CURDATE(), INTERVAL 2 MONTH) and dataInicio < CURDATE()";
+            " WHERE dataInicio >= DATE_SUB(CURDATE(), INTERVAL 2 MONTH) and dataInicio <= CURDATE()";
         const ds = Campanhaadsteste.dataSource;
         ds.connector.query(sql,callback);
     }

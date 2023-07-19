@@ -45,6 +45,9 @@
 		"nomeAds": {
 			"type": "string"
 		},
+		"cpc": {
+			"type": "number"
+		},
 		"modeloCampanhaAdsTesteId": {
 			"type": "number"
 		},
@@ -76,5 +79,94 @@
 		}
 	},
 	"acls": [],
-	"methods": {}
+	"methods": {
+		"ObtemListaParaTeste": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaParaTeste",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaCampanhaCriada": {
+			"accepts": [
+				{
+					"arg": "campanha",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaCampanhaCriada",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ObtemListaParaConsultarPerformance": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaParaConsultarPerformance",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaCampanhaPerformance": {
+			"accepts": [
+				{
+					"arg": "campanha",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaCampanhaPerformance",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
 }

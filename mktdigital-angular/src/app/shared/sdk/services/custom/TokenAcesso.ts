@@ -107,7 +107,7 @@ export class TokenAcessoApi extends BaseLoopBackApi {
    * This usually means the response is a `TokenAcesso` object.)
    * </em>
    */
-  public ObtemPorNome(nome: any, customHeaders?: Function): Observable<any> {
+  public ObtemPorNome(nome: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/TokenAcessos/obtemPorNome";

@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  CampanhaAdsTeste
+} from '../index';
 
 declare var Object: any;
 export interface ModeloCampanhaAdsTesteInterface {
@@ -6,9 +9,10 @@ export interface ModeloCampanhaAdsTesteInterface {
   "qtdeDia"?: number;
   "diaInicial"?: number;
   "valorTotal"?: number;
-  "tipoCpcCusto"?: string;
   "multiplicadorCpcCusto"?: number;
+  "tipoCpcCusto"?: string;
   "id"?: number;
+  campanhaAdsTestes?: CampanhaAdsTeste[];
 }
 
 export class ModeloCampanhaAdsTeste implements ModeloCampanhaAdsTesteInterface {
@@ -16,9 +20,10 @@ export class ModeloCampanhaAdsTeste implements ModeloCampanhaAdsTesteInterface {
   "qtdeDia": number;
   "diaInicial": number;
   "valorTotal": number;
-  "tipoCpcCusto": string;
   "multiplicadorCpcCusto": number;
+  "tipoCpcCusto": string;
   "id": number;
+  campanhaAdsTestes: CampanhaAdsTeste[];
   constructor(data?: ModeloCampanhaAdsTesteInterface) {
     Object.assign(this, data);
   }
@@ -68,13 +73,13 @@ export class ModeloCampanhaAdsTeste implements ModeloCampanhaAdsTesteInterface {
           name: 'valorTotal',
           type: 'number'
         },
-        "tipoCpcCusto": {
-          name: 'tipoCpcCusto',
-          type: 'string'
-        },
         "multiplicadorCpcCusto": {
           name: 'multiplicadorCpcCusto',
           type: 'number'
+        },
+        "tipoCpcCusto": {
+          name: 'tipoCpcCusto',
+          type: 'string'
         },
         "id": {
           name: 'id',
@@ -82,6 +87,14 @@ export class ModeloCampanhaAdsTeste implements ModeloCampanhaAdsTesteInterface {
         },
       },
       relations: {
+        campanhaAdsTestes: {
+          name: 'campanhaAdsTestes',
+          type: 'CampanhaAdsTeste[]',
+          model: 'CampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'modeloCampanhaAdsTesteId'
+        },
       }
     }
   }

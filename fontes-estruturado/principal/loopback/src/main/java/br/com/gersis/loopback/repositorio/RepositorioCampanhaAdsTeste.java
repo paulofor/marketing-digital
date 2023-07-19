@@ -3,6 +3,9 @@ package br.com.gersis.loopback.repositorio;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import org.json.JSONArray;
+
 import com.strongloop.android.loopback.ModelRepository;
 import com.strongloop.android.loopback.callbacks.JsonArrayParser;
 import com.strongloop.android.loopback.callbacks.JsonObjectParser;
@@ -58,4 +61,11 @@ public class RepositorioCampanhaAdsTeste extends ModelRepository<CampanhaAdsTest
 	}
 
 
+	private JSONArray obtemLista(List<CampanhaAdsTeste> listaEntrada) {
+		JSONArray lista = new JSONArray();
+		for (CampanhaAdsTeste item : listaEntrada) {
+			lista.put(item.getJSON());
+		}
+		return lista;
+	}
 }

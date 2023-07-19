@@ -29,6 +29,12 @@
 		},
 		"hotmartId": {
 			"type": "number"
+		},
+		"retorno100Click": {
+			"type": "number"
+		},
+		"maisRecente": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -45,5 +51,75 @@
 		}
 	},
 	"acls": [],
-	"methods": {}
+	"methods": {
+		"AtualizaMaisRecentePalavraChave": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaMaisRecentePalavraChave",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"MelhoresUltimaData": {
+			"accepts": [
+				{
+					"arg": "limiteMensal",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/melhoresUltimaData",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"RecebeLista": {
+			"accepts": [
+				{
+					"arg": "listaPalavra",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/recebeLista",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
 }

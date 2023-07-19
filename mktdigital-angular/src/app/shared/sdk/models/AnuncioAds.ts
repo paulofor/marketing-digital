@@ -1,5 +1,7 @@
 /* tslint:disable */
 import {
+  ProdutoAfiliadoHotmart,
+  AnuncioCampanhaAds,
   AnuncioCampanhaAdsTeste
 } from '../index';
 
@@ -12,6 +14,8 @@ export interface AnuncioAdsInterface {
   "descricao2"?: string;
   "produtoAfiliadoHotmartId"?: number;
   "id"?: number;
+  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  anuncioCampanhaAds?: AnuncioCampanhaAds[];
   anuncioCampanhaAdsTestes?: AnuncioCampanhaAdsTeste[];
 }
 
@@ -23,6 +27,8 @@ export class AnuncioAds implements AnuncioAdsInterface {
   "descricao2": string;
   "produtoAfiliadoHotmartId": number;
   "id": number;
+  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  anuncioCampanhaAds: AnuncioCampanhaAds[];
   anuncioCampanhaAdsTestes: AnuncioCampanhaAdsTeste[];
   constructor(data?: AnuncioAdsInterface) {
     Object.assign(this, data);
@@ -87,6 +93,22 @@ export class AnuncioAds implements AnuncioAdsInterface {
         },
       },
       relations: {
+        produtoAfiliadoHotmart: {
+          name: 'produtoAfiliadoHotmart',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoAfiliadoHotmartId',
+          keyTo: 'hotmartId'
+        },
+        anuncioCampanhaAds: {
+          name: 'anuncioCampanhaAds',
+          type: 'AnuncioCampanhaAds[]',
+          model: 'AnuncioCampanhaAds',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'anuncioAdsId'
+        },
         anuncioCampanhaAdsTestes: {
           name: 'anuncioCampanhaAdsTestes',
           type: 'AnuncioCampanhaAdsTeste[]',

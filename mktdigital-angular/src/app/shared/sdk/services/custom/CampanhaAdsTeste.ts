@@ -578,6 +578,31 @@ export class CampanhaAdsTesteApi extends BaseLoopBackApi {
          * (The remote method definition does not provide any description.)
          * </em>
    *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAdsTeste` object.)
+   * </em>
+   */
+  public ObtemListaParaTeste(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAdsTestes/obtemListaParaTeste";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
    * @param {object} data Request data.
    *
    *  - `campanha` – `{object}` - 
@@ -599,31 +624,6 @@ export class CampanhaAdsTesteApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (typeof campanha !== 'undefined' && campanha !== null) _urlParams.campanha = campanha;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * <em>
-         * (The remote method definition does not provide any description.)
-         * </em>
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `CampanhaAdsTeste` object.)
-   * </em>
-   */
-  public ObtemListaParaTeste(customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAdsTestes/obtemListaParaTeste";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

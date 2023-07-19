@@ -1,8 +1,6 @@
 package gerador.montacampanhatesteafiliadohotmart.passo;
 
 
-//  ***  Passo 3 ***
-
 import gerador.montacampanhatesteafiliadohotmart.loopback.DaoAplicacao;
 import gerador.montacampanhatesteafiliadohotmart.loopback.DatasetAplicacao;
 import gerador.montacampanhatesteafiliadohotmart.passo.impl.*;
@@ -14,6 +12,8 @@ import com.strongloop.android.loopback.callbacks.*;
 
 
 public class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao { 
+
+	private int NUM_PASSO = 3;
 
 
 	protected CampanhaAdsTeste campanha;
@@ -39,7 +39,12 @@ public class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao {
 	}
 
 
-	protected void executaCustom( CampanhaAdsTeste CampanhaTesteCorrente ) {}
+	protected void executaCustom( CampanhaAdsTeste campanhaTesteCorrente ) {}
+
+
+	public int getNumPasso() {
+		return NUM_PASSO;
+	}
 
 
 }

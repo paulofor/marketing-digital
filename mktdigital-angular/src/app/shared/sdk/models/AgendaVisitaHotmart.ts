@@ -2,12 +2,10 @@
 
 declare var Object: any;
 export interface AgendaVisitaHotmartInterface {
-  "data"?: string;
   "id"?: number;
 }
 
 export class AgendaVisitaHotmart implements AgendaVisitaHotmartInterface {
-  "data": string;
   "id": number;
   constructor(data?: AgendaVisitaHotmartInterface) {
     Object.assign(this, data);
@@ -42,10 +40,6 @@ export class AgendaVisitaHotmart implements AgendaVisitaHotmartInterface {
       path: 'AgendaVisitaHotmarts',
       idName: 'id',
       properties: {
-        "data": {
-          name: 'data',
-          type: 'string'
-        },
         "id": {
           name: 'id',
           type: 'number'

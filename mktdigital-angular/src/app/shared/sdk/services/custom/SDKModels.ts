@@ -19,6 +19,8 @@ import { ModeloCampanhaAdsTeste } from '../../models/ModeloCampanhaAdsTeste';
 import { PixelGoogle } from '../../models/PixelGoogle';
 import { PalavraChaveCampanhaAdsTeste } from '../../models/PalavraChaveCampanhaAdsTeste';
 import { AnuncioCampanhaAdsTeste } from '../../models/AnuncioCampanhaAdsTeste';
+import { FacebookConta } from '../../models/FacebookConta';
+import { ProdutoAfiliadoMetrica } from '../../models/ProdutoAfiliadoMetrica';
 
 export interface Models { [name: string]: any }
 
@@ -45,6 +47,8 @@ export class SDKModels {
     PixelGoogle: PixelGoogle,
     PalavraChaveCampanhaAdsTeste: PalavraChaveCampanhaAdsTeste,
     AnuncioCampanhaAdsTeste: AnuncioCampanhaAdsTeste,
+    FacebookConta: FacebookConta,
+    ProdutoAfiliadoMetrica: ProdutoAfiliadoMetrica,
     
   };
 

@@ -2,11 +2,11 @@
 
 declare var Object: any;
 export interface ProdutoHotmartInterface {
-  "hotmartId"?: number;
+  "id"?: number;
 }
 
 export class ProdutoHotmart implements ProdutoHotmartInterface {
-  "hotmartId": number;
+  "id": number;
   constructor(data?: ProdutoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -38,10 +38,10 @@ export class ProdutoHotmart implements ProdutoHotmartInterface {
       name: 'ProdutoHotmart',
       plural: 'ProdutoHotmarts',
       path: 'ProdutoHotmarts',
-      idName: 'hotmartId',
+      idName: 'id',
       properties: {
-        "hotmartId": {
-          name: 'hotmartId',
+        "id": {
+          name: 'id',
           type: 'number'
         },
       },

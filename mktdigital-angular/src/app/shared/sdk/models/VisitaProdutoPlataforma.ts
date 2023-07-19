@@ -2,15 +2,11 @@
 
 declare var Object: any;
 export interface VisitaProdutoPlataformaInterface {
-  "plataformaVendaId"?: number;
-  "produtoPlataformaId"?: number;
-  "dataVisita"?: Date;
+  "id"?: number;
 }
 
 export class VisitaProdutoPlataforma implements VisitaProdutoPlataformaInterface {
-  "plataformaVendaId": number;
-  "produtoPlataformaId": number;
-  "dataVisita": Date;
+  "id": number;
   constructor(data?: VisitaProdutoPlataformaInterface) {
     Object.assign(this, data);
   }
@@ -42,19 +38,11 @@ export class VisitaProdutoPlataforma implements VisitaProdutoPlataformaInterface
       name: 'VisitaProdutoPlataforma',
       plural: 'VisitaProdutoPlataformas',
       path: 'VisitaProdutoPlataformas',
-      idName: 'plataformaVendaId',
+      idName: 'id',
       properties: {
-        "plataformaVendaId": {
-          name: 'plataformaVendaId',
+        "id": {
+          name: 'id',
           type: 'number'
-        },
-        "produtoPlataformaId": {
-          name: 'produtoPlataformaId',
-          type: 'number'
-        },
-        "dataVisita": {
-          name: 'dataVisita',
-          type: 'Date'
         },
       },
       relations: {

@@ -10,7 +10,6 @@ declare var Object: any;
 export interface CampanhaAdsTesteInterface {
   "nome"?: string;
   "prontaParaTeste"?: number;
-  "produtoAfiliadoHotmartId"?: number;
   "codigoAds"?: string;
   "dataEnvioGoogle"?: Date;
   "custoTotal"?: number;
@@ -21,8 +20,10 @@ export interface CampanhaAdsTesteInterface {
   "qtdeClique"?: number;
   "ctr"?: number;
   "nomeAds"?: string;
-  "id"?: number;
+  "cpc"?: number;
   "modeloCampanhaAdsTesteId"?: number;
+  "produtoAfiliadoHotmartId"?: number;
+  "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   modeloCampanhaAdsTeste?: ModeloCampanhaAdsTeste;
   palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
@@ -32,7 +33,6 @@ export interface CampanhaAdsTesteInterface {
 export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "nome": string;
   "prontaParaTeste": number;
-  "produtoAfiliadoHotmartId": number;
   "codigoAds": string;
   "dataEnvioGoogle": Date;
   "custoTotal": number;
@@ -43,8 +43,10 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "qtdeClique": number;
   "ctr": number;
   "nomeAds": string;
-  "id": number;
+  "cpc": number;
   "modeloCampanhaAdsTesteId": number;
+  "produtoAfiliadoHotmartId": number;
+  "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   modeloCampanhaAdsTeste: ModeloCampanhaAdsTeste;
   palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
@@ -90,10 +92,6 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           name: 'prontaParaTeste',
           type: 'number'
         },
-        "produtoAfiliadoHotmartId": {
-          name: 'produtoAfiliadoHotmartId',
-          type: 'number'
-        },
         "codigoAds": {
           name: 'codigoAds',
           type: 'string'
@@ -134,12 +132,20 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           name: 'nomeAds',
           type: 'string'
         },
-        "id": {
-          name: 'id',
+        "cpc": {
+          name: 'cpc',
           type: 'number'
         },
         "modeloCampanhaAdsTesteId": {
           name: 'modeloCampanhaAdsTesteId',
+          type: 'number'
+        },
+        "produtoAfiliadoHotmartId": {
+          name: 'produtoAfiliadoHotmartId',
+          type: 'number'
+        },
+        "id": {
+          name: 'id',
           type: 'number'
         },
       },

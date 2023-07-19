@@ -1,8 +1,10 @@
 /* tslint:disable */
+import {
+  ProdutoAfiliadoHotmart
+} from '../index';
 
 declare var Object: any;
 export interface VisitaProdutoHotmartInterface {
-  "hotmartId"?: number;
   "nome"?: string;
   "imagem"?: string;
   "temperatura"?: number;
@@ -10,18 +12,21 @@ export interface VisitaProdutoHotmartInterface {
   "formato"?: string;
   "reviewRating"?: number;
   "totalAnswers"?: number;
-  "afiliacaoTipo"?: string;
+  "afiliacaoTipo"?: number;
   "afiliacaoValor"?: number;
   "afiliacaoPercentual"?: number;
   "produtorNome"?: string;
   "produtorCodigoHotmart"?: string;
-  "blueprint"?: number;
   "dataInsercao"?: Date;
+  "blueprint"?: number;
   "produtoCodigoU"?: string;
+  "maisRecente"?: number;
+  "produtoAfiliadoHotmartId"?: number;
+  "id"?: number;
+  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
 }
 
 export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
-  "hotmartId": number;
   "nome": string;
   "imagem": string;
   "temperatura": number;
@@ -29,14 +34,18 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
   "formato": string;
   "reviewRating": number;
   "totalAnswers": number;
-  "afiliacaoTipo": string;
+  "afiliacaoTipo": number;
   "afiliacaoValor": number;
   "afiliacaoPercentual": number;
   "produtorNome": string;
   "produtorCodigoHotmart": string;
-  "blueprint": number;
   "dataInsercao": Date;
+  "blueprint": number;
   "produtoCodigoU": string;
+  "maisRecente": number;
+  "produtoAfiliadoHotmartId": number;
+  "id": number;
+  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   constructor(data?: VisitaProdutoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -68,12 +77,8 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
       name: 'VisitaProdutoHotmart',
       plural: 'VisitaProdutoHotmarts',
       path: 'VisitaProdutoHotmarts',
-      idName: 'hotmartId',
+      idName: 'id',
       properties: {
-        "hotmartId": {
-          name: 'hotmartId',
-          type: 'number'
-        },
         "nome": {
           name: 'nome',
           type: 'string'
@@ -104,7 +109,7 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
         },
         "afiliacaoTipo": {
           name: 'afiliacaoTipo',
-          type: 'string'
+          type: 'number'
         },
         "afiliacaoValor": {
           name: 'afiliacaoValor',
@@ -122,20 +127,40 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
           name: 'produtorCodigoHotmart',
           type: 'string'
         },
-        "blueprint": {
-          name: 'blueprint',
-          type: 'number'
-        },
         "dataInsercao": {
           name: 'dataInsercao',
           type: 'Date'
+        },
+        "blueprint": {
+          name: 'blueprint',
+          type: 'number'
         },
         "produtoCodigoU": {
           name: 'produtoCodigoU',
           type: 'string'
         },
+        "maisRecente": {
+          name: 'maisRecente',
+          type: 'number'
+        },
+        "produtoAfiliadoHotmartId": {
+          name: 'produtoAfiliadoHotmartId',
+          type: 'number'
+        },
+        "id": {
+          name: 'id',
+          type: 'number'
+        },
       },
       relations: {
+        produtoAfiliadoHotmart: {
+          name: 'produtoAfiliadoHotmart',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoAfiliadoHotmartId',
+          keyTo: 'hotmartId'
+        },
       }
     }
   }

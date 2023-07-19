@@ -1,7 +1,6 @@
 /* tslint:disable */
 import {
   VisitaProdutoHotmart,
-  IdeiaPalavraChave,
   CampanhaAdsTeste,
   AnuncioAds
 } from '../index';
@@ -15,7 +14,6 @@ export interface ProdutoAfiliadoHotmartInterface {
   "hotmartId"?: number;
   "sigla"?: string;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
-  ideiaPalavraChaves?: IdeiaPalavraChave[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
   anuncioAds?: AnuncioAds[];
 }
@@ -28,7 +26,6 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "hotmartId": number;
   "sigla": string;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
-  ideiaPalavraChaves: IdeiaPalavraChave[];
   campanhaAdsTestes: CampanhaAdsTeste[];
   anuncioAds: AnuncioAds[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
@@ -96,15 +93,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           model: 'VisitaProdutoHotmart',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
-          keyTo: 'hotmartId'
-        },
-        ideiaPalavraChaves: {
-          name: 'ideiaPalavraChaves',
-          type: 'IdeiaPalavraChave[]',
-          model: 'IdeiaPalavraChave',
-          relationType: 'hasMany',
-                  keyFrom: 'hotmartId',
-          keyTo: 'hotmartId'
+          keyTo: 'produtoAfiliadoHotmartId'
         },
         campanhaAdsTestes: {
           name: 'campanhaAdsTestes',

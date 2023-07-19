@@ -3,6 +3,9 @@ package br.com.gersis.loopback.repositorio;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import org.json.JSONArray;
+
 import com.strongloop.android.loopback.ModelRepository;
 import com.strongloop.android.loopback.callbacks.JsonArrayParser;
 import com.strongloop.android.loopback.callbacks.JsonObjectParser;
@@ -27,5 +30,20 @@ public class RepositorioTokenAcesso extends ModelRepository<TokenAcesso> {
 
 	// ***  Operações  ***
 
+	public synchronized void obtemPorNome(String nome ,final ObjectCallback<TokenAcesso> callback ) {
+		RestContractItem contrato = new RestContractItem("TokenAcessos/obtemPorNome","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "TokenAcesso.obtemPorNome");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("nome", nome);
+		invokeStaticMethod("obtemPorNome", params,   new JsonObjectParser<TokenAcesso>(this, callback));
+	}
 
+
+	private JSONArray obtemLista(List<TokenAcesso> listaEntrada) {
+		JSONArray lista = new JSONArray();
+		for (TokenAcesso item : listaEntrada) {
+			lista.put(item.getJSON());
+		}
+		return lista;
+	}
 }

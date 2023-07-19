@@ -56,11 +56,85 @@
 		},
 		"maisRecente": {
 			"type": "number"
+		},
+		"hotmartId": {
+			"type": "number"
+			,"id": true
 		}
+
 	},
 	"validations": [],
 	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		}
 	},
 	"acls": [],
-	"methods": {}
+	"methods": {
+		"AtualizaMaisRecenteProdutoHotmart": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaMaisRecenteProdutoHotmart",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"InsereListaProdutoHotmart": {
+			"accepts": [
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereListaProdutoHotmart",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaPesquisaPalavraChave": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaPesquisaPalavraChave",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
 }

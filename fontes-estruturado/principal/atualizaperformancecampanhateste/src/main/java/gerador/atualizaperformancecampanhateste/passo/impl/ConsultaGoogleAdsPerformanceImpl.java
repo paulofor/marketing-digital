@@ -12,6 +12,7 @@ import com.google.ads.googleads.v13.services.SearchGoogleAdsRequest;
 import com.google.ads.googleads.v13.services.SearchGoogleAdsResponse;
 
 import br.com.gersis.loopback.modelo.CampanhaAdsTeste;
+import gerador.atualizaperformancecampanhateste.loopback.DatasetAplicacao;
 import gerador.atualizaperformancecampanhateste.passo.ConsultaGoogleAdsPerformance;
 
 
@@ -23,9 +24,11 @@ public class ConsultaGoogleAdsPerformanceImpl extends ConsultaGoogleAdsPerforman
 	@Override
 	protected void executaCustom(CampanhaAdsTeste campanhaTesteCorrente) {
 		GoogleAdsClient googleAdsClient = null;
+		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			consultaAds2(googleAdsClient, campanhaTesteCorrente);
+			ds.setCampanhaTesteCorrente(campanhaTesteCorrente);
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
 			System.exit(1);
@@ -39,7 +42,7 @@ public class ConsultaGoogleAdsPerformanceImpl extends ConsultaGoogleAdsPerforman
 	private void consultaAds2(GoogleAdsClient googleAdsClient, CampanhaAdsTeste campanha) {
 		
 		String query = "SELECT campaign.id, campaign.name, metrics.impressions, metrics.clicks, " +
-				"metrics.ctr, metrics.cost_micros, metrics.ctr " +
+				"metrics.ctr, metrics.cost_micros, metrics.ctr, metrics.average_cpc " +
 		        "FROM campaign " +
 		        "WHERE campaign.id = '" + campanha.getCodigoAds() + "' ";
 		
@@ -61,6 +64,10 @@ public class ConsultaGoogleAdsPerformanceImpl extends ConsultaGoogleAdsPerforman
 			    	campanha.setQtdeClique((new Long(linha.getMetrics().getClicks()).intValue()));
 			    	System.out.println(linha.getMetrics().getCostMicros());
 			    	campanha.setCtr(linha.getMetrics().getCtr());
+			    	long custo = linha.getMetrics().getCostMicros();
+			    	double valor = (double) custo / 1000000L;
+			    	campanha.setCustoTotal(valor);
+			    	campanha.setCpc(linha.getMetrics().getAverageCpc()/1000000);
 			    }
 			    // Checks if the total results count is greater than 0.
 			   

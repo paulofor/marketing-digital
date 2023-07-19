@@ -1,0 +1,76 @@
+{
+	"name": "ProdutoAfiliadoMetrica",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"hotmartId": {
+			"type": "string"
+			,"id": true
+		},
+		"cpcMax": {
+			"type": "number"
+		},
+		"cpcMin": {
+			"type": "number"
+		},
+		"cpcReferencia": {
+			"type": "number"
+		},
+		"comissao": {
+			"type": "number"
+		},
+		"lucroVenda01": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+		"CalculaAtual": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/calculaAtual",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ObtemItensLucro": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemItensLucro",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

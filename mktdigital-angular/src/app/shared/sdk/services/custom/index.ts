@@ -18,5 +18,7 @@ export * from './ModeloCampanhaAdsTeste';
 export * from './PixelGoogle';
 export * from './PalavraChaveCampanhaAdsTeste';
 export * from './AnuncioCampanhaAdsTeste';
+export * from './FacebookConta';
+export * from './ProdutoAfiliadoMetrica';
 export * from './SDKModels';
 export * from './logger.service';

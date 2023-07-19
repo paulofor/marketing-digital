@@ -1,8 +1,6 @@
 package gerador.atualizaperformancecampanhateste.passo;
 
 
-//  ***  Passo 1 ***
-
 import gerador.atualizaperformancecampanhateste.loopback.DaoAplicacao;
 import gerador.atualizaperformancecampanhateste.loopback.DatasetAplicacao;
 import gerador.atualizaperformancecampanhateste.passo.impl.*;
@@ -14,6 +12,8 @@ import com.strongloop.android.loopback.callbacks.*;
 
 
 public class CampanhaAdsTeste_ObtemListaParaConsultarPerformance extends DaoAplicacao { 
+
+	private int NUM_PASSO = 1;
 
 
 
@@ -43,6 +43,11 @@ public class CampanhaAdsTeste_ObtemListaParaConsultarPerformance extends DaoApli
 
 
 	protected void executaCustom() {}
+
+
+	public int getNumPasso() {
+		return NUM_PASSO;
+	}
 
 
 }

@@ -1,18 +1,23 @@
 /* tslint:disable */
 import {
+  CampanhaAdsTeste,
   IdeiaPalavraChave
 } from '../index';
 
 declare var Object: any;
 export interface PalavraChaveCampanhaAdsTesteInterface {
-  "ideiaPalavraChaveId"?: number;
   "campanhaAdsTesteId"?: number;
+  "ideiaPalavraChaveId"?: number;
+  "id"?: number;
+  campanhaAdsTeste?: CampanhaAdsTeste;
   ideiaPalavraChave?: IdeiaPalavraChave;
 }
 
 export class PalavraChaveCampanhaAdsTeste implements PalavraChaveCampanhaAdsTesteInterface {
-  "ideiaPalavraChaveId": number;
   "campanhaAdsTesteId": number;
+  "ideiaPalavraChaveId": number;
+  "id": number;
+  campanhaAdsTeste: CampanhaAdsTeste;
   ideiaPalavraChave: IdeiaPalavraChave;
   constructor(data?: PalavraChaveCampanhaAdsTesteInterface) {
     Object.assign(this, data);
@@ -45,18 +50,30 @@ export class PalavraChaveCampanhaAdsTeste implements PalavraChaveCampanhaAdsTest
       name: 'PalavraChaveCampanhaAdsTeste',
       plural: 'PalavraChaveCampanhaAdsTestes',
       path: 'PalavraChaveCampanhaAdsTestes',
-      idName: 'ideiaPalavraChaveId',
+      idName: 'id',
       properties: {
-        "ideiaPalavraChaveId": {
-          name: 'ideiaPalavraChaveId',
-          type: 'number'
-        },
         "campanhaAdsTesteId": {
           name: 'campanhaAdsTesteId',
           type: 'number'
         },
+        "ideiaPalavraChaveId": {
+          name: 'ideiaPalavraChaveId',
+          type: 'number'
+        },
+        "id": {
+          name: 'id',
+          type: 'number'
+        },
       },
       relations: {
+        campanhaAdsTeste: {
+          name: 'campanhaAdsTeste',
+          type: 'CampanhaAdsTeste',
+          model: 'CampanhaAdsTeste',
+          relationType: 'belongsTo',
+                  keyFrom: 'campanhaAdsTesteId',
+          keyTo: 'id'
+        },
         ideiaPalavraChave: {
           name: 'ideiaPalavraChave',
           type: 'IdeiaPalavraChave',

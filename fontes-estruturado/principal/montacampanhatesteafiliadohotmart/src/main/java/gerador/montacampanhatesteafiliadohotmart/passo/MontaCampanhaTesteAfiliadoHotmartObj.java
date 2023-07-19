@@ -16,5 +16,8 @@ public class MontaCampanhaTesteAfiliadoHotmartObj extends DaoAplicacao {
 		exec.executa();
 		finalizar();
 	}
+	public int getNumPasso() {
+		return 1;
+	}
 }
 

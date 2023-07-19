@@ -12,6 +12,8 @@ export interface IdeiaPalavraChaveInterface {
   "cpcMaximoTopPage"?: number;
   "cpcMinimoTopPage"?: number;
   "hotmartId"?: number;
+  "retorno100Click"?: number;
+  "maisRecente"?: number;
   "id"?: number;
   palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
 }
@@ -24,6 +26,8 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
   "cpcMaximoTopPage": number;
   "cpcMinimoTopPage": number;
   "hotmartId": number;
+  "retorno100Click": number;
+  "maisRecente": number;
   "id": number;
   palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
   constructor(data?: IdeiaPalavraChaveInterface) {
@@ -85,6 +89,14 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
         },
         "hotmartId": {
           name: 'hotmartId',
+          type: 'number'
+        },
+        "retorno100Click": {
+          name: 'retorno100Click',
+          type: 'number'
+        },
+        "maisRecente": {
+          name: 'maisRecente',
           type: 'number'
         },
         "id": {

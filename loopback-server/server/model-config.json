@@ -106,5 +106,13 @@
   "AnuncioCampanhaAdsTeste": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "FacebookConta": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoAfiliadoMetrica": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

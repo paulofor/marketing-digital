@@ -30,5 +30,37 @@
 		}
 	},
 	"acls": [],
-	"methods": {}
+	"methods": {
+		"AtualizaPalavraChavePorCampanhaAdsTeste": {
+			"accepts": [
+				{
+					"arg": "campanhaAdsTesteId",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "listaIdeiaPalavraChave",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaPalavraChavePorCampanhaAdsTeste",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
 }

@@ -10,9 +10,10 @@ import com.restfb.types.User;
 
 public class FacebookOAuthFlow {
     public static void main(String[] args) {
+    	
         String appId = "364886200279300"; // Substitua pelo seu App ID
         String appSecret = "3a859efdce03e46d1564b937a7808232"; // Substitua pelo seu App Secret
-        String redirectUri = "https://sua-url-de-redirecionamento"; // Substitua pela sua URL de redirecionamento
+        String redirectUri = "http://tyche.ovh:23101/admin/"; // Substitua pela sua URL de redirecionamento
 
         ScopeBuilder scopeBuilder = new ScopeBuilder();
         scopeBuilder.addPermission(FacebookPermissions.EMAIL); // Adicione as permissões necessárias

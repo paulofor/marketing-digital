@@ -11,6 +11,7 @@
 	"properties": {
 		"nome": {
 			"type": "string"
+			,"id": true
 		},
 		"token": {
 			"type": "string"
@@ -23,5 +24,31 @@
 	"relations": {
 	},
 	"acls": [],
-	"methods": {}
+	"methods": {
+		"ObtemPorNome": {
+			"accepts": [
+				{
+					"arg": "nome",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemPorNome",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
 }

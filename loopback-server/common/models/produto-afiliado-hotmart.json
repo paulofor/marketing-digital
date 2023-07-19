@@ -40,8 +40,14 @@
 			"type": "hasMany",
 			"model": "AnuncioAds",
 			"foreignKey": ""
+		},
+		"visitaProdutoHotmarts": {
+			"type": "hasMany",
+			"model": "VisitaProdutoHotmart",
+			"foreignKey": "hotmartId"
 		}
 	},
 	"acls": [],
-	"methods": {}
+	"methods": {
+	}
 }

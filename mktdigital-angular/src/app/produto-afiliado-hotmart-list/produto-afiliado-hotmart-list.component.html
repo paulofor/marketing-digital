@@ -21,6 +21,9 @@
         <div class="dgc-card-detalhe">
           <span>Sigla: {{item.sigla}}</span>
         </div>
+        <div class="dgc-card-detalhe">
+          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>
+        </div>
         <div class="dgc-card-comandos">
             <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , item.hotmartId]">Anúncio Google ({{item.anuncioAdsCount}})</button>
             <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , item.hotmartId]">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>

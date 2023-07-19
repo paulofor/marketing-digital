@@ -18,6 +18,21 @@
         <div class="dgc-card-detalhe">
           Pronta: {{item.prontaParaTeste}}
         </div>
+        <div class="dgc-card-header">
+          Resultados
+        </div>
+        <div class="dgc-card-detalhe">
+          Custo: {{item.custoTotal | currency : 'BRL'}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Receita: {{item.receitaTotal}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Impressões: {{item.qtdeImpressao}} ({{(item.custoTotal / item.qtdeImpressao) | currency : 'BRL'}})
+        </div>
+        <div class="dgc-card-detalhe">
+          Cliques: {{item.qtdeClique}} ({{(item.custoTotal / item.qtdeClique) | currency : 'BRL'}})
+        </div>
         <div class="dgc-card-comandos">
           <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
         </div>

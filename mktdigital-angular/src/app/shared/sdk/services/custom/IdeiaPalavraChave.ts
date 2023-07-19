@@ -346,7 +346,7 @@ export class IdeiaPalavraChaveApi extends BaseLoopBackApi {
    * This usually means the response is a `IdeiaPalavraChave` object.)
    * </em>
    */
-  public MelhoresUltimaData(limiteMensal: any, customHeaders?: Function): Observable<any> {
+  public MelhoresUltimaData(limiteMensal: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/IdeiaPalavraChaves/melhoresUltimaData";
@@ -376,7 +376,7 @@ export class IdeiaPalavraChaveApi extends BaseLoopBackApi {
    * This usually means the response is a `IdeiaPalavraChave` object.)
    * </em>
    */
-  public RecebeLista(listaPalavra: any, customHeaders?: Function): Observable<any> {
+  public RecebeLista(listaPalavra: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/IdeiaPalavraChaves/recebeLista";

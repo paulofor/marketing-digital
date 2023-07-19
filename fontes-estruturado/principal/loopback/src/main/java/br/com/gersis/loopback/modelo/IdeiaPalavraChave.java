@@ -21,9 +21,11 @@ public class IdeiaPalavraChave extends Model {
 	private double cpcMaximoTopPage;
 	private double cpcMinimoTopPage;
 	private int hotmartId;
+	private double retorno100Click;
+	private int maisRecente;
 	// Relacionamentos 1
 	// Relacionamentos N
-	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAdss;
+	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAds;
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
 
 	public JSONObject getJSON() {
@@ -37,6 +39,8 @@ public class IdeiaPalavraChave extends Model {
 			obj.put("cpcMaximoTopPage", cpcMaximoTopPage);
 			obj.put("cpcMinimoTopPage", cpcMinimoTopPage);
 			obj.put("hotmartId", hotmartId);
+			obj.put("retorno100Click", retorno100Click);
+			obj.put("maisRecente", maisRecente);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -86,16 +90,28 @@ public class IdeiaPalavraChave extends Model {
 	public int getHotmartId() { 
 		return this.hotmartId;
 	}
-
-	public List<PalavraChaveCampanhaAds> getPalavraChaveCampanhaAdss() {
-		return  PalavraChaveCampanhaAdss;
+	public void setRetorno100Click(double valor) { 
+		this.retorno100Click = valor;
 	}
-	public void setPalavraChaveCampanhaAdss(List<PalavraChaveCampanhaAds> valores) {
-		this.PalavraChaveCampanhaAdss = new ArrayList<PalavraChaveCampanhaAds>();
+	public double getRetorno100Click() { 
+		return this.retorno100Click;
+	}
+	public void setMaisRecente(int valor) { 
+		this.maisRecente = valor;
+	}
+	public int getMaisRecente() { 
+		return this.maisRecente;
+	}
+
+	public List<PalavraChaveCampanhaAds> getPalavraChaveCampanhaAds() {
+		return  PalavraChaveCampanhaAds;
+	}
+	public void setPalavraChaveCampanhaAds(List<PalavraChaveCampanhaAds> valores) {
+		this.PalavraChaveCampanhaAds = new ArrayList<PalavraChaveCampanhaAds>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new PalavraChaveCampanhaAds();
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.PalavraChaveCampanhaAdss.add((PalavraChaveCampanhaAds) objeto);
+			this.PalavraChaveCampanhaAds.add((PalavraChaveCampanhaAds) objeto);
 		}
 	}
 	public List<PalavraChaveCampanhaAdsTeste> getPalavraChaveCampanhaAdsTestes() {

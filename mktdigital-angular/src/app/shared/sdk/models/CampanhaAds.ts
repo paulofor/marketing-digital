@@ -6,17 +6,11 @@ import {
 declare var Object: any;
 export interface CampanhaAdsInterface {
   "nome"?: string;
-  "dataInicio"?: Date;
-  "dataTermino"?: Date;
-  "id"?: number;
   anuncioCampanhaAds?: AnuncioCampanhaAds[];
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
   "nome": string;
-  "dataInicio": Date;
-  "dataTermino": Date;
-  "id": number;
   anuncioCampanhaAds: AnuncioCampanhaAds[];
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
@@ -49,23 +43,11 @@ export class CampanhaAds implements CampanhaAdsInterface {
       name: 'CampanhaAds',
       plural: 'CampanhaAds',
       path: 'CampanhaAds',
-      idName: 'id',
+      idName: 'nome',
       properties: {
         "nome": {
           name: 'nome',
           type: 'string'
-        },
-        "dataInicio": {
-          name: 'dataInicio',
-          type: 'Date'
-        },
-        "dataTermino": {
-          name: 'dataTermino',
-          type: 'Date'
-        },
-        "id": {
-          name: 'id',
-          type: 'number'
         },
       },
       relations: {
@@ -74,7 +56,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
           type: 'AnuncioCampanhaAds[]',
           model: 'AnuncioCampanhaAds',
           relationType: 'hasMany',
-                  keyFrom: 'id',
+                  keyFrom: 'nome',
           keyTo: 'campanhaAdsId'
         },
       }
