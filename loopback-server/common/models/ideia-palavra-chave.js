@@ -5,18 +5,14 @@ module.exports = function(Ideiapalavrachave) {
 
 
     Ideiapalavrachave.AtualizaMaisRecentePalavraChave = function(callback) {
-        let sql1 = "update IdeiaPalavraChave set maisRecente = 0 ";
-        let sql2 = "CREATE TEMPORARY TABLE TempTable SELECT MAX(dataAcesso) AS maxDataInsercao FROM IdeiaPalavraChave";
-        let sql3 = "UPDATE IdeiaPalavraChave SET maisRecente = 1 WHERE dataAcesso = (SELECT maxDataInsercao FROM TempTable)";
-        let sql4 = "DROP TEMPORARY TABLE IF EXISTS TempTable";
+        const sql = "UPDATE IdeiaPalavraChave AS v1 " +
+            " JOIN ( " +
+            " SELECT MAX(dataAcesso) AS maxDataInsercao " +
+            " FROM IdeiaPalavraChave " +
+            " ) AS v2 ON v1.dataAcesso = v2.maxDataInsercao " +
+            " SET v1.maisRecente = 1"
         let ds = Ideiapalavrachave.dataSource;
-        ds.connector.query(sql1, (err,result) => {
-            ds.connector.query(sql2, (err,result) => {
-                ds.connector.query(sql3, (err,result) => {
-                    ds.connector.query(sql4,callback);
-                })
-            })
-        })
+        ds.connector.query(sql,callback);
     }
 
 

@@ -30,8 +30,11 @@ public class VisitaProdutoHotmart extends Model {
 	private int blueprint;
 	private String produtoCodigoU;
 	private int maisRecente;
+	private int hotmartId;
 	// Relacionamentos 1
+	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
+	private List<ProdutoAfiliadoMetrica> ProdutoAfiliadoMetricas;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -53,6 +56,7 @@ public class VisitaProdutoHotmart extends Model {
 			obj.put("blueprint", blueprint);
 			obj.put("produtoCodigoU", produtoCodigoU);
 			obj.put("maisRecente", maisRecente);
+			obj.put("hotmartId", hotmartId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -156,5 +160,29 @@ public class VisitaProdutoHotmart extends Model {
 	public int getMaisRecente() { 
 		return this.maisRecente;
 	}
+	public void setHotmartId(int valor) { 
+		this.hotmartId = valor;
+	}
+	public int getHotmartId() { 
+		return this.hotmartId;
+	}
 
+	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
+		return ProdutoAfiliadoHotmart;
+	}
+	public void setProdutoAfiliadoHotmart(HashMap valor) {
+		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public List<ProdutoAfiliadoMetrica> getProdutoAfiliadoMetricas() {
+		return  ProdutoAfiliadoMetricas;
+	}
+	public void setProdutoAfiliadoMetricas(List<ProdutoAfiliadoMetrica> valores) {
+		this.ProdutoAfiliadoMetricas = new ArrayList<ProdutoAfiliadoMetrica>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoAfiliadoMetrica();
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoAfiliadoMetricas.add((ProdutoAfiliadoMetrica) objeto);
+		}
+	}
 }

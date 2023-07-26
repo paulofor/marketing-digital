@@ -4,8 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import gerador.montacampanhatesteafiliadohotmart.passo.*;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
+import gerador.montacampanhatesteafiliadohotmart.passo.*;
 import br.com.gersis.daobase.comum.DaoBaseComum;
 
 public class MontaCampanhaTesteAfiliadoHotmart {
@@ -13,8 +15,8 @@ public class MontaCampanhaTesteAfiliadoHotmart {
 	private static String UrlLoopback = "";
 
 	public static void main(String[] args) {
-			System.out.print("MontaCampanhaTesteAfiliadoHotmart");
-			System.out.println("(15/07/2023 10:49:27)");
+		System.out.print("MontaCampanhaTesteAfiliadoHotmart");
+		System.out.println("(24/07/2023 14:01:03)");
 		try {
 			carregaProp();
 			MontaCampanhaTesteAfiliadoHotmartObj obj = new MontaCampanhaTesteAfiliadoHotmartObj();
@@ -22,7 +24,19 @@ public class MontaCampanhaTesteAfiliadoHotmart {
 			System.out.println("finalizou");
 			System.exit(0);
 		} catch (Exception e) {
-			e.printStackTrace();
+			gravarErro(e);
+		}
+	}
+
+
+	private static void gravarErro(Exception e) {
+		try {
+			FileWriter fileWriter = new FileWriter("../MontaCampanhaTesteAfiliadoHotmart.err", true);
+			PrintWriter printWriter = new PrintWriter(fileWriter);
+			e.printStackTrace(printWriter);
+			printWriter.close();
+		} catch (IOException ex) {
+			ex.printStackTrace();
 		}
 	}
 

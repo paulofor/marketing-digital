@@ -30,6 +30,13 @@ public class RepositorioPixelGoogle extends ModelRepository<PixelGoogle> {
 
 	// ***  Operações  ***
 
+	public synchronized void registraCriacao(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("PixelGoogles/registraCriacao","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "PixelGoogle.registraCriacao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("registraCriacao", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<PixelGoogle> listaEntrada) {
 		JSONArray lista = new JSONArray();

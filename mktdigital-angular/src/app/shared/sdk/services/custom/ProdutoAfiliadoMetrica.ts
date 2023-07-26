@@ -11,6 +11,8 @@ import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ProdutoAfiliadoMetrica } from '../../models/ProdutoAfiliadoMetrica';
 import { SocketConnection } from '../../sockets/socket.connections';
+import { VisitaProdutoHotmart } from '../../models/VisitaProdutoHotmart';
+import { IdeiaPalavraChave } from '../../models/IdeiaPalavraChave';
 
 
 /**
@@ -27,6 +29,66 @@ export class ProdutoAfiliadoMetricaApi extends BaseLoopBackApi {
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
     super(http,  connection,  models, auth, errorHandler);
+  }
+
+  /**
+   * Busca relação visitaProdutoHotmart de belongsTo.
+   *
+   * @param {any} id ProdutoAfiliadoMetrica id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoMetrica` object.)
+   * </em>
+   */
+  public getVisitaProdutoHotmart(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoMetricas/:id/visitaProdutoHotmart";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Busca relação ideiaPalavraChave de belongsTo.
+   *
+   * @param {any} id ProdutoAfiliadoMetrica id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoMetrica` object.)
+   * </em>
+   */
+  public getIdeiaPalavraChave(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoMetricas/:id/ideiaPalavraChave";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
   }
 
   /**

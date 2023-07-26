@@ -16,7 +16,9 @@ public class PixelGoogle extends Model {
 
 	private String identificador;
 	private String script;
+	private String dataCriacao;
 	// Relacionamentos 1
+	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
 
 	public JSONObject getJSON() {
@@ -25,6 +27,7 @@ public class PixelGoogle extends Model {
 			obj.put("id",getId());
 			obj.put("identificador", identificador);
 			obj.put("script", script);
+			obj.put("dataCriacao", dataCriacao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -44,5 +47,18 @@ public class PixelGoogle extends Model {
 	public String getScript() { 
 		return this.script;
 	}
+	public void setDataCriacao(String valor) { 
+		this.dataCriacao = valor;
+	}
+	public String getDataCriacao() { 
+		return this.dataCriacao;
+	}
 
+	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
+		return ProdutoAfiliadoHotmart;
+	}
+	public void setProdutoAfiliadoHotmart(HashMap valor) {
+		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
 }

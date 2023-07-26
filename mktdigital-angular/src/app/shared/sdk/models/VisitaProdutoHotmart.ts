@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  ProdutoAfiliadoHotmart
+  ProdutoAfiliadoHotmart,
+  ProdutoAfiliadoMetrica
 } from '../index';
 
 declare var Object: any;
@@ -21,9 +22,9 @@ export interface VisitaProdutoHotmartInterface {
   "blueprint"?: number;
   "produtoCodigoU"?: string;
   "maisRecente"?: number;
-  "produtoAfiliadoHotmartId"?: number;
-  "id"?: number;
+  "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  produtoAfiliadoMetricas?: ProdutoAfiliadoMetrica[];
 }
 
 export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
@@ -43,9 +44,9 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
   "blueprint": number;
   "produtoCodigoU": string;
   "maisRecente": number;
-  "produtoAfiliadoHotmartId": number;
-  "id": number;
+  "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  produtoAfiliadoMetricas: ProdutoAfiliadoMetrica[];
   constructor(data?: VisitaProdutoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -77,7 +78,7 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
       name: 'VisitaProdutoHotmart',
       plural: 'VisitaProdutoHotmarts',
       path: 'VisitaProdutoHotmarts',
-      idName: 'id',
+      idName: 'hotmartId',
       properties: {
         "nome": {
           name: 'nome',
@@ -143,12 +144,8 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
           name: 'maisRecente',
           type: 'number'
         },
-        "produtoAfiliadoHotmartId": {
-          name: 'produtoAfiliadoHotmartId',
-          type: 'number'
-        },
-        "id": {
-          name: 'id',
+        "hotmartId": {
+          name: 'hotmartId',
           type: 'number'
         },
       },
@@ -158,8 +155,16 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
           type: 'ProdutoAfiliadoHotmart',
           model: 'ProdutoAfiliadoHotmart',
           relationType: 'belongsTo',
-                  keyFrom: 'produtoAfiliadoHotmartId',
+                  keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
+        },
+        produtoAfiliadoMetricas: {
+          name: 'produtoAfiliadoMetricas',
+          type: 'ProdutoAfiliadoMetrica[]',
+          model: 'ProdutoAfiliadoMetrica',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'visitaProdutoHotmartId'
         },
       }
     }

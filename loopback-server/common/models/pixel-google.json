@@ -14,12 +14,42 @@
 		},
 		"script": {
 			"type": "string"
+		},
+		"dataCriacao": {
+			"type": "date"
+		},
+		"produtoAfiliadoHotmartId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {
+		"RegistraCriacao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraCriacao",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

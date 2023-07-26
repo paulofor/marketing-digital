@@ -1,16 +1,25 @@
 /* tslint:disable */
+import {
+  ProdutoAfiliadoHotmart
+} from '../index';
 
 declare var Object: any;
 export interface PixelGoogleInterface {
   "identificador"?: string;
   "script"?: string;
+  "dataCriacao"?: Date;
+  "produtoAfiliadoHotmartId"?: number;
   "id"?: number;
+  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
 }
 
 export class PixelGoogle implements PixelGoogleInterface {
   "identificador": string;
   "script": string;
+  "dataCriacao": Date;
+  "produtoAfiliadoHotmartId": number;
   "id": number;
+  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   constructor(data?: PixelGoogleInterface) {
     Object.assign(this, data);
   }
@@ -52,12 +61,28 @@ export class PixelGoogle implements PixelGoogleInterface {
           name: 'script',
           type: 'string'
         },
+        "dataCriacao": {
+          name: 'dataCriacao',
+          type: 'Date'
+        },
+        "produtoAfiliadoHotmartId": {
+          name: 'produtoAfiliadoHotmartId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        produtoAfiliadoHotmart: {
+          name: 'produtoAfiliadoHotmart',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoAfiliadoHotmartId',
+          keyTo: 'hotmartId'
+        },
       }
     }
   }

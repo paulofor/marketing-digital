@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  PalavraChaveCampanhaAdsTeste
+  PalavraChaveCampanhaAdsTeste,
+  ProdutoAfiliadoMetrica
 } from '../index';
 
 declare var Object: any;
@@ -16,6 +17,7 @@ export interface IdeiaPalavraChaveInterface {
   "maisRecente"?: number;
   "id"?: number;
   palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
+  produtoAfiliadoMetricas?: ProdutoAfiliadoMetrica[];
 }
 
 export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
@@ -30,6 +32,7 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
   "maisRecente": number;
   "id": number;
   palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
+  produtoAfiliadoMetricas: ProdutoAfiliadoMetrica[];
   constructor(data?: IdeiaPalavraChaveInterface) {
     Object.assign(this, data);
   }
@@ -109,6 +112,14 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
           name: 'palavraChaveCampanhaAdsTestes',
           type: 'PalavraChaveCampanhaAdsTeste[]',
           model: 'PalavraChaveCampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'ideiaPalavraChaveId'
+        },
+        produtoAfiliadoMetricas: {
+          name: 'produtoAfiliadoMetricas',
+          type: 'ProdutoAfiliadoMetrica[]',
+          model: 'ProdutoAfiliadoMetrica',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'ideiaPalavraChaveId'

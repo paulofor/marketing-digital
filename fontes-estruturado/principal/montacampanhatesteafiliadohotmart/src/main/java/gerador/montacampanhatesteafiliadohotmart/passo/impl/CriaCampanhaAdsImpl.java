@@ -70,7 +70,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	private static Long CODIGO_USUARIO = 5328916093L;
 	
 	@Override
-	protected void executaCustom(CampanhaAdsTeste campanhaTesteCorrente) {
+	protected boolean executaCustom(CampanhaAdsTeste campanhaTesteCorrente) {
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
@@ -90,6 +90,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 			System.err.printf("Failed to create GoogleAdsClient. Exception: %s%n", ioe);
 			System.exit(1);
 		}
+		return true;
 	}
 
 	

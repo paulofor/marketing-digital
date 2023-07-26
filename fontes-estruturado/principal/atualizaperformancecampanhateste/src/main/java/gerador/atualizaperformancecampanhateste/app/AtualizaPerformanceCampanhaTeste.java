@@ -4,8 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import gerador.atualizaperformancecampanhateste.passo.*;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
+import gerador.atualizaperformancecampanhateste.passo.*;
 import br.com.gersis.daobase.comum.DaoBaseComum;
 
 public class AtualizaPerformanceCampanhaTeste {
@@ -13,8 +15,8 @@ public class AtualizaPerformanceCampanhaTeste {
 	private static String UrlLoopback = "";
 
 	public static void main(String[] args) {
-			System.out.print("AtualizaPerformanceCampanhaTeste");
-			System.out.println("(15/07/2023 10:49:28)");
+		System.out.print("AtualizaPerformanceCampanhaTeste");
+		System.out.println("(24/07/2023 14:01:04)");
 		try {
 			carregaProp();
 			AtualizaPerformanceCampanhaTesteObj obj = new AtualizaPerformanceCampanhaTesteObj();
@@ -22,7 +24,19 @@ public class AtualizaPerformanceCampanhaTeste {
 			System.out.println("finalizou");
 			System.exit(0);
 		} catch (Exception e) {
-			e.printStackTrace();
+			gravarErro(e);
+		}
+	}
+
+
+	private static void gravarErro(Exception e) {
+		try {
+			FileWriter fileWriter = new FileWriter("../AtualizaPerformanceCampanhaTeste.err", true);
+			PrintWriter printWriter = new PrintWriter(fileWriter);
+			e.printStackTrace(printWriter);
+			printWriter.close();
+		} catch (IOException ex) {
+			ex.printStackTrace();
 		}
 	}
 

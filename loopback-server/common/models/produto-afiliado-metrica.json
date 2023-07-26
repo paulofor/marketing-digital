@@ -27,10 +27,41 @@
 		},
 		"lucroVenda01": {
 			"type": "number"
+		},
+		"cpc100": {
+			"type": "number"
+		},
+		"palavra": {
+			"type": "string"
+		},
+		"ideiaPalavraChaveId": {
+			"type": "number"
+		},
+		"temperaturaProduto": {
+			"type": "number"
+		},
+		"mediaPesquisaPalavra": {
+			"type": "number"
+		},
+		"visitaProdutoHotmartId": {
+			"type": "number"
+		},
+		"ideiaPalavraChaveId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
+		"visitaProdutoHotmart": {
+			"type": "belongsTo",
+			"model": "VisitaProdutoHotmart",
+			"foreignKey": ""
+		},
+		"ideiaPalavraChave": {
+			"type": "belongsTo",
+			"model": "IdeiaPalavraChave",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {

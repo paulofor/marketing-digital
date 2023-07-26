@@ -1,4 +1,8 @@
 /* tslint:disable */
+import {
+  VisitaProdutoHotmart,
+  IdeiaPalavraChave
+} from '../index';
 
 declare var Object: any;
 export interface ProdutoAfiliadoMetricaInterface {
@@ -8,6 +12,14 @@ export interface ProdutoAfiliadoMetricaInterface {
   "cpcReferencia"?: number;
   "comissao"?: number;
   "lucroVenda01"?: number;
+  "cpc100"?: number;
+  "palavra"?: string;
+  "ideiaPalavraChaveId"?: number;
+  "temperaturaProduto"?: number;
+  "mediaPesquisaPalavra"?: number;
+  "visitaProdutoHotmartId"?: number;
+  visitaProdutoHotmart?: VisitaProdutoHotmart;
+  ideiaPalavraChave?: IdeiaPalavraChave;
 }
 
 export class ProdutoAfiliadoMetrica implements ProdutoAfiliadoMetricaInterface {
@@ -17,6 +29,14 @@ export class ProdutoAfiliadoMetrica implements ProdutoAfiliadoMetricaInterface {
   "cpcReferencia": number;
   "comissao": number;
   "lucroVenda01": number;
+  "cpc100": number;
+  "palavra": string;
+  "ideiaPalavraChaveId": number;
+  "temperaturaProduto": number;
+  "mediaPesquisaPalavra": number;
+  "visitaProdutoHotmartId": number;
+  visitaProdutoHotmart: VisitaProdutoHotmart;
+  ideiaPalavraChave: IdeiaPalavraChave;
   constructor(data?: ProdutoAfiliadoMetricaInterface) {
     Object.assign(this, data);
   }
@@ -74,8 +94,48 @@ export class ProdutoAfiliadoMetrica implements ProdutoAfiliadoMetricaInterface {
           name: 'lucroVenda01',
           type: 'number'
         },
+        "cpc100": {
+          name: 'cpc100',
+          type: 'number'
+        },
+        "palavra": {
+          name: 'palavra',
+          type: 'string'
+        },
+        "ideiaPalavraChaveId": {
+          name: 'ideiaPalavraChaveId',
+          type: 'number'
+        },
+        "temperaturaProduto": {
+          name: 'temperaturaProduto',
+          type: 'number'
+        },
+        "mediaPesquisaPalavra": {
+          name: 'mediaPesquisaPalavra',
+          type: 'number'
+        },
+        "visitaProdutoHotmartId": {
+          name: 'visitaProdutoHotmartId',
+          type: 'number'
+        },
       },
       relations: {
+        visitaProdutoHotmart: {
+          name: 'visitaProdutoHotmart',
+          type: 'VisitaProdutoHotmart',
+          model: 'VisitaProdutoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'visitaProdutoHotmartId',
+          keyTo: 'hotmartId'
+        },
+        ideiaPalavraChave: {
+          name: 'ideiaPalavraChave',
+          type: 'IdeiaPalavraChave',
+          model: 'IdeiaPalavraChave',
+          relationType: 'belongsTo',
+                  keyFrom: 'ideiaPalavraChaveId',
+          keyTo: 'id'
+        },
       }
     }
   }

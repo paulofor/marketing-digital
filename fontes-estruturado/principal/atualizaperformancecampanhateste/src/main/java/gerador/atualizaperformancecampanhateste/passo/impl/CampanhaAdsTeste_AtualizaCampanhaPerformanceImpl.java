@@ -9,8 +9,9 @@ import gerador.atualizaperformancecampanhateste.passo.*;
 public class CampanhaAdsTeste_AtualizaCampanhaPerformanceImpl extends CampanhaAdsTeste_AtualizaCampanhaPerformance {
 
 	@Override
-	protected void executaCustom(CampanhaAdsTeste campanhaTesteCorrente) {
+	protected boolean executaCustom(CampanhaAdsTeste campanhaTesteCorrente) {
 		this.campanha = campanhaTesteCorrente;
+		return true;
 	} 
 
 

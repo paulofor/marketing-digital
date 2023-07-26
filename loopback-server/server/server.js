@@ -3,14 +3,22 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 
+var https = require('https');
+var fs = require('fs');
+
 var app = module.exports = loopback();
 require('loopback-counts-mixin')(app);
 
 app.start = function() {
+   // Load your SSL certificate and private key
+   var options = {
+    key: fs.readFileSync('/etc/letsencrypt/live/tyche.ovh/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/tyche.ovh/fullchain.pem')
+  };
   // start the web server
-  return app.listen(function() {
+  return https.createServer(options, app).listen(function() {
     app.emit('started');
-    var baseUrl = app.get('url').replace(/\/$/, '');
+    var baseUrl = 'https://' + app.get('host') + ':' + app.get('port');
     console.log('Web server listening at: %s', baseUrl);
     if (app.get('loopback-component-explorer')) {
       var explorerPath = app.get('loopback-component-explorer').mountPath;

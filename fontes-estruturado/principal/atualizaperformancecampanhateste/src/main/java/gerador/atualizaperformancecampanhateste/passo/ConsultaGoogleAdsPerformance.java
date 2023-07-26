@@ -20,8 +20,11 @@ public class ConsultaGoogleAdsPerformance extends DaoAplicacao {
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		executaCustom(ds.getCampanhaTesteCorrente());
-		executaProximo();
+		if (executaCustom(ds.getCampanhaTesteCorrente())) {
+			executaProximo();
+		} else {
+			executaProximo();
+		}
 	}
 
 
@@ -31,7 +34,7 @@ public class ConsultaGoogleAdsPerformance extends DaoAplicacao {
 	}
 
 
-	protected void executaCustom( CampanhaAdsTeste campanhaTesteCorrente ) {}
+	protected boolean executaCustom( CampanhaAdsTeste campanhaTesteCorrente ) { return true; }
 
 
 	public int getNumPasso() {

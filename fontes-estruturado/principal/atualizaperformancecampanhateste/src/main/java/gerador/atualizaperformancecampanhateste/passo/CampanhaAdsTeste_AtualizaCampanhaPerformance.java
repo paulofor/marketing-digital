@@ -21,15 +21,18 @@ public class CampanhaAdsTeste_AtualizaCampanhaPerformance extends DaoAplicacao {
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		executaCustom(ds.getCampanhaTesteCorrente());
-		repCampanhaAdsTeste.atualizaCampanhaPerformance( campanha, new VoidCallback() { 
-			public void onSuccess() {
-				finalizar();
-			}
-			public void onError(Throwable t) {
-				onErrorBase(t);
-			}
-		});
+		if (executaCustom(ds.getCampanhaTesteCorrente())) {
+			repCampanhaAdsTeste.atualizaCampanhaPerformance( campanha, new VoidCallback() { 
+				public void onSuccess() {
+					finalizar();
+				}
+				public void onError(Throwable t) {
+					onErrorBase(t);
+				}
+			});
+		} else {
+			executaProximo();
+		}
 	}
 
 
@@ -39,7 +42,7 @@ public class CampanhaAdsTeste_AtualizaCampanhaPerformance extends DaoAplicacao {
 	}
 
 
-	protected void executaCustom( CampanhaAdsTeste campanhaTesteCorrente ) {}
+	protected boolean executaCustom( CampanhaAdsTeste campanhaTesteCorrente ) { return true; }
 
 
 	public int getNumPasso() {

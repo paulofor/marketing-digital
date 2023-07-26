@@ -20,19 +20,22 @@ public class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao {
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		executaCustom();
-		repCampanhaAdsTeste.obtemListaParaTeste(  new ListCallback<CampanhaAdsTeste>() { 
-			public void onSuccess(List<CampanhaAdsTeste> lista) {
-				for (CampanhaAdsTeste item : lista) {
-					ds.setCampanhaTesteCorrente(item);
-					executaProximoSemFinalizar();
+		if (executaCustom()) {
+			repCampanhaAdsTeste.obtemListaParaTeste(  new ListCallback<CampanhaAdsTeste>() { 
+				public void onSuccess(List<CampanhaAdsTeste> lista) {
+					for (CampanhaAdsTeste item : lista) {
+						ds.setCampanhaTesteCorrente(item);
+						executaProximoSemFinalizar();
+					}
+					finalizar();
 				}
-				finalizar();
-			}
-			public void onError(Throwable t) {
-				onErrorBase(t);
-			}
-		});
+				public void onError(Throwable t) {
+					onErrorBase(t);
+				}
+			});
+		} else {
+			executaProximo();
+		}
 	}
 
 
@@ -42,7 +45,7 @@ public class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao {
 	}
 
 
-	protected void executaCustom() {}
+	protected boolean executaCustom() { return true; }
 
 
 	public int getNumPasso() {

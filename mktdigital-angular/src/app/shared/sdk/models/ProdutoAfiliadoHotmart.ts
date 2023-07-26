@@ -2,7 +2,8 @@
 import {
   VisitaProdutoHotmart,
   CampanhaAdsTeste,
-  AnuncioAds
+  AnuncioAds,
+  PixelGoogle
 } from '../index';
 
 declare var Object: any;
@@ -13,9 +14,11 @@ export interface ProdutoAfiliadoHotmartInterface {
   "geraTesteCampanha"?: number;
   "hotmartId"?: number;
   "sigla"?: string;
+  "pixelGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
   anuncioAds?: AnuncioAds[];
+  pixelGoogles?: PixelGoogle[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -25,9 +28,11 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "geraTesteCampanha": number;
   "hotmartId": number;
   "sigla": string;
+  "pixelGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   campanhaAdsTestes: CampanhaAdsTeste[];
   anuncioAds: AnuncioAds[];
+  pixelGoogles: PixelGoogle[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -85,6 +90,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'sigla',
           type: 'string'
         },
+        "pixelGoogleId": {
+          name: 'pixelGoogleId',
+          type: 'number'
+        },
       },
       relations: {
         visitaProdutoHotmarts: {
@@ -93,7 +102,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           model: 'VisitaProdutoHotmart',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
-          keyTo: 'produtoAfiliadoHotmartId'
+          keyTo: 'hotmartId'
         },
         campanhaAdsTestes: {
           name: 'campanhaAdsTestes',
@@ -107,6 +116,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'anuncioAds',
           type: 'AnuncioAds[]',
           model: 'AnuncioAds',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'produtoAfiliadoHotmartId'
+        },
+        pixelGoogles: {
+          name: 'pixelGoogles',
+          type: 'PixelGoogle[]',
+          model: 'PixelGoogle',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'produtoAfiliadoHotmartId'

@@ -20,19 +20,22 @@ public class CampanhaAdsTeste_ObtemListaParaConsultarPerformance extends DaoApli
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		executaCustom();
-		repCampanhaAdsTeste.obtemListaParaConsultarPerformance(  new ListCallback<CampanhaAdsTeste>() { 
-			public void onSuccess(List<CampanhaAdsTeste> lista) {
-				for (CampanhaAdsTeste item : lista) {
-					ds.setCampanhaTesteCorrente(item);
-					executaProximoSemFinalizar();
+		if (executaCustom()) {
+			repCampanhaAdsTeste.obtemListaParaConsultarPerformance(  new ListCallback<CampanhaAdsTeste>() { 
+				public void onSuccess(List<CampanhaAdsTeste> lista) {
+					for (CampanhaAdsTeste item : lista) {
+						ds.setCampanhaTesteCorrente(item);
+						executaProximoSemFinalizar();
+					}
+					finalizar();
 				}
-				finalizar();
-			}
-			public void onError(Throwable t) {
-				onErrorBase(t);
-			}
-		});
+				public void onError(Throwable t) {
+					onErrorBase(t);
+				}
+			});
+		} else {
+			executaProximo();
+		}
 	}
 
 
@@ -42,7 +45,7 @@ public class CampanhaAdsTeste_ObtemListaParaConsultarPerformance extends DaoApli
 	}
 
 
-	protected void executaCustom() {}
+	protected boolean executaCustom() { return true; }
 
 
 	public int getNumPasso() {

@@ -61,7 +61,6 @@
 			"type": "number"
 			,"id": true
 		}
-
 	},
 	"validations": [],
 	"relations": {
@@ -69,6 +68,11 @@
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
+		},
+		"produtoAfiliadoMetricas": {
+			"type": "hasMany",
+			"model": "ProdutoAfiliadoMetrica",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

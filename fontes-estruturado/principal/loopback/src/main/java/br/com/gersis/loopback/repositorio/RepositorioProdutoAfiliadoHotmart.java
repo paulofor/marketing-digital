@@ -30,6 +30,13 @@ public class RepositorioProdutoAfiliadoHotmart extends ModelRepository<ProdutoAf
 
 	// ***  Operações  ***
 
+	public synchronized void listaCriarPixelGoogle(final ListCallback<ProdutoAfiliadoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/listaCriarPixelGoogle","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.listaCriarPixelGoogle");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaCriarPixelGoogle", params,   new JsonArrayParser<ProdutoAfiliadoHotmart>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<ProdutoAfiliadoHotmart> listaEntrada) {
 		JSONArray lista = new JSONArray();

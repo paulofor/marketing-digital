@@ -27,6 +27,9 @@
 		},
 		"sigla": {
 			"type": "string"
+		},
+		"pixelGoogleId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -44,10 +47,34 @@
 		"visitaProdutoHotmarts": {
 			"type": "hasMany",
 			"model": "VisitaProdutoHotmart",
-			"foreignKey": "hotmartId"
+			"foreignKey": ""
+		},
+		"pixelGoogles": {
+			"type": "hasMany",
+			"model": "PixelGoogle",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],
 	"methods": {
+		"ListaCriarPixelGoogle": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaCriarPixelGoogle",
+   					"verb": "get"
+ 				}
+ 			]
+		}
 	}
 }

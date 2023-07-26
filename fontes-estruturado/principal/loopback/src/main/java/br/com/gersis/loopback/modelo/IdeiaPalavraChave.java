@@ -27,6 +27,7 @@ public class IdeiaPalavraChave extends Model {
 	// Relacionamentos N
 	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAds;
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
+	private List<ProdutoAfiliadoMetrica> ProdutoAfiliadoMetricas;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -123,6 +124,17 @@ public class IdeiaPalavraChave extends Model {
 			Object objeto = new PalavraChaveCampanhaAdsTeste();
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PalavraChaveCampanhaAdsTestes.add((PalavraChaveCampanhaAdsTeste) objeto);
+		}
+	}
+	public List<ProdutoAfiliadoMetrica> getProdutoAfiliadoMetricas() {
+		return  ProdutoAfiliadoMetricas;
+	}
+	public void setProdutoAfiliadoMetricas(List<ProdutoAfiliadoMetrica> valores) {
+		this.ProdutoAfiliadoMetricas = new ArrayList<ProdutoAfiliadoMetrica>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoAfiliadoMetrica();
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoAfiliadoMetricas.add((ProdutoAfiliadoMetrica) objeto);
 		}
 	}
 }

@@ -9,8 +9,9 @@ import gerador.montacampanhatesteafiliadohotmart.passo.*;
 public class CampanhaAdsTeste_AtualizaCampanhaCriadaImpl extends CampanhaAdsTeste_AtualizaCampanhaCriada {
 
 	@Override
-	protected void executaCustom(CampanhaAdsTeste CampanhaTesteCorrente) {
+	protected boolean executaCustom(CampanhaAdsTeste CampanhaTesteCorrente) {
 		this.campanha = CampanhaTesteCorrente;
+		return true;
 	} 
 
 	
