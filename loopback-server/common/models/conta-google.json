@@ -1,0 +1,61 @@
+{
+	"name": "ContaGoogle",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"gmail": {
+			"type": "string"
+		},
+		"dataCriacao": {
+			"type": "date"
+		},
+		"ativo": {
+			"type": "number"
+		},
+		"senha": {
+			"type": "string"
+		},
+		"urlAds": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"campanhaAdsTestes": {
+			"type": "hasMany",
+			"model": "CampanhaAdsTeste",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ObtemContaDisponivel": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemContaDisponivel",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

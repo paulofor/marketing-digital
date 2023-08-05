@@ -30,6 +30,7 @@ public class CampanhaAdsTeste extends Model {
 	// Relacionamentos 1
 	private ModeloCampanhaAdsTeste ModeloCampanhaAdsTeste;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
+	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
 	private List<AnuncioCampanhaAdsTeste> AnuncioCampanhaAdsTestes;
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
@@ -150,6 +151,13 @@ public class CampanhaAdsTeste extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public ContaGoogle getContaGoogle() {
+		return ContaGoogle;
+	}
+	public void setContaGoogle(HashMap valor) {
+		this.ContaGoogle = new ContaGoogle();
+		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<AnuncioCampanhaAdsTeste> getAnuncioCampanhaAdsTestes() {
 		return  AnuncioCampanhaAdsTestes;

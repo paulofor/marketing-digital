@@ -43,6 +43,7 @@ public class PixelGoogle_RegistraCriacao extends DaoAplicacao {
 
 	protected boolean executaCustom( PixelGoogle pixelGoogle ) { return true; }
 
+	protected void preFinalizar() { return; }
 
 	public int getNumPasso() {
 		return NUM_PASSO;

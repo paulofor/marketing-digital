@@ -1,9 +1,9 @@
-package gerador.montacampanhatesteafiliadohotmart.passo;
+package gerador.montacampanhatesteafiliadohotmartconversao.passo;
 
 
-import gerador.montacampanhatesteafiliadohotmart.loopback.DaoAplicacao;
-import gerador.montacampanhatesteafiliadohotmart.loopback.DatasetAplicacao;
-import gerador.montacampanhatesteafiliadohotmart.passo.impl.*;
+import gerador.montacampanhatesteafiliadohotmartconversao.loopback.DaoAplicacao;
+import gerador.montacampanhatesteafiliadohotmartconversao.loopback.DatasetAplicacao;
+import gerador.montacampanhatesteafiliadohotmartconversao.passo.impl.*;
 import br.com.gersis.daobase.*;
 import br.com.gersis.loopback.modelo.*;
 
@@ -23,12 +23,8 @@ public class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao {
 		if (executaCustom()) {
 			repCampanhaAdsTeste.obtemListaParaTeste(  new ListCallback<CampanhaAdsTeste>() { 
 				public void onSuccess(List<CampanhaAdsTeste> lista) {
-					for (CampanhaAdsTeste item : lista) {
-						ds.setCampanhaTesteCorrente(item);
-						executaProximoSemFinalizar();
-					}
-					preFinalizar();
-					finalizar();
+						ds.setCampanhaTesteCorrente(lista);
+						executaProximo();
 				}
 				public void onError(Throwable t) {
 					onErrorBase(t);
@@ -42,7 +38,7 @@ public class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new CriaCampanhaAdsImpl();
+		return new ContaGoogle_ObtemContaDisponivelImpl();
 	}
 
 

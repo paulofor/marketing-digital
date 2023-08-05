@@ -14,7 +14,10 @@ public class AtualizaPerformanceCampanhaTesteObj extends DaoAplicacao {
 		CampanhaAdsTeste_ObtemListaParaConsultarPerformance exec = new CampanhaAdsTeste_ObtemListaParaConsultarPerformance();
 		exec.setComum(ds);
 		exec.executa();
+		executaFinalizacao(ds);
 		finalizar();
+	}
+	private void executaFinalizacao(DatasetAplicacao ds) {
 	}
 	public int getNumPasso() {
 		return 1;

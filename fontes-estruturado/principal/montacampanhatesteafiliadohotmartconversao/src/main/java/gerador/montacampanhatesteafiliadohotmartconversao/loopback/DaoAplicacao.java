@@ -1,4 +1,4 @@
-package gerador.criapixelgoogle.loopback;
+package gerador.montacampanhatesteafiliadohotmartconversao.loopback;
 
 
 import com.strongloop.android.loopback.RestAdapter;

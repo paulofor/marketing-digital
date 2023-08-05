@@ -16,7 +16,7 @@ public class CriaPixelGoogle {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPixelGoogle");
-		System.out.println("(24/07/2023 14:01:04)");
+		System.out.println("(28/07/2023 15:35:47)");
 		try {
 			carregaProp();
 			CriaPixelGoogleObj obj = new CriaPixelGoogleObj();
@@ -31,7 +31,7 @@ public class CriaPixelGoogle {
 
 	private static void gravarErro(Exception e) {
 		try {
-			FileWriter fileWriter = new FileWriter("../CriaPixelGoogle.err", true);
+			FileWriter fileWriter = new FileWriter("CriaPixelGoogle.err", true);
 			PrintWriter printWriter = new PrintWriter(fileWriter);
 			e.printStackTrace(printWriter);
 			printWriter.close();

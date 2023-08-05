@@ -1,4 +1,4 @@
-package gerador.montacampanhatesteafiliadohotmart.app;
+package gerador.montacampanhatesteafiliadohotmartconversao.app;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,19 +7,19 @@ import java.util.Properties;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
-import gerador.montacampanhatesteafiliadohotmart.passo.*;
+import gerador.montacampanhatesteafiliadohotmartconversao.passo.*;
 import br.com.gersis.daobase.comum.DaoBaseComum;
 
-public class MontaCampanhaTesteAfiliadoHotmart {
+public class MontaCampanhaTesteAfiliadoHotmartConversao {
 
 	private static String UrlLoopback = "";
 
 	public static void main(String[] args) {
-		System.out.print("MontaCampanhaTesteAfiliadoHotmart");
-		System.out.println("(28/07/2023 15:35:46)");
+		System.out.print("MontaCampanhaTesteAfiliadoHotmartConversao");
+		System.out.println("(28/07/2023 15:35:48)");
 		try {
 			carregaProp();
-			MontaCampanhaTesteAfiliadoHotmartObj obj = new MontaCampanhaTesteAfiliadoHotmartObj();
+			MontaCampanhaTesteAfiliadoHotmartConversaoObj obj = new MontaCampanhaTesteAfiliadoHotmartConversaoObj();
 			obj.executa();
 			System.out.println("finalizou");
 			System.exit(0);
@@ -31,7 +31,7 @@ public class MontaCampanhaTesteAfiliadoHotmart {
 
 	private static void gravarErro(Exception e) {
 		try {
-			FileWriter fileWriter = new FileWriter("MontaCampanhaTesteAfiliadoHotmart.err", true);
+			FileWriter fileWriter = new FileWriter("MontaCampanhaTesteAfiliadoHotmartConversao.err", true);
 			PrintWriter printWriter = new PrintWriter(fileWriter);
 			e.printStackTrace(printWriter);
 			printWriter.close();
@@ -52,8 +52,9 @@ public class MontaCampanhaTesteAfiliadoHotmart {
 
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
-		DaoBaseComum.setProximo("MontaCampanhaTesteAfiliadoHotmartObj", new CampanhaAdsTeste_ObtemListaParaTeste());
-		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaTeste", new CriaCampanhaAds());
-		DaoBaseComum.setProximo("CriaCampanhaAds", new CampanhaAdsTeste_AtualizaCampanhaCriada());
+		DaoBaseComum.setProximo("MontaCampanhaTesteAfiliadoHotmartConversaoObj", new CampanhaAdsTeste_ObtemListaParaTeste());
+		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaTeste", new ContaGoogle_ObtemContaDisponivel());
+		DaoBaseComum.setProximo("ContaGoogle_ObtemContaDisponivel", new CriaCampanhaAdsConversao());
+		DaoBaseComum.setProximo("CriaCampanhaAdsConversao", new CampanhaAdsTeste_AtualizaCampanhaCriada());
 	}
 }

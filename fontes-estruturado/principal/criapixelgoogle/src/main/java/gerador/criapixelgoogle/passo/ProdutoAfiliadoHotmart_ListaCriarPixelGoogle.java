@@ -27,6 +27,7 @@ public class ProdutoAfiliadoHotmart_ListaCriarPixelGoogle extends DaoAplicacao {
 						ds.setProdutoAfiliadoCorrente(item);
 						executaProximoSemFinalizar();
 					}
+					preFinalizar();
 					finalizar();
 				}
 				public void onError(Throwable t) {
@@ -47,6 +48,7 @@ public class ProdutoAfiliadoHotmart_ListaCriarPixelGoogle extends DaoAplicacao {
 
 	protected boolean executaCustom() { return true; }
 
+	protected void preFinalizar() { return; }
 
 	public int getNumPasso() {
 		return NUM_PASSO;

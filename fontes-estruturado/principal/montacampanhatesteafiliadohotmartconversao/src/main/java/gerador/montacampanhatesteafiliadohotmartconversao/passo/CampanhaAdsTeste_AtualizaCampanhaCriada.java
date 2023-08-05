@@ -1,9 +1,9 @@
-package gerador.montacampanhatesteafiliadohotmart.passo;
+package gerador.montacampanhatesteafiliadohotmartconversao.passo;
 
 
-import gerador.montacampanhatesteafiliadohotmart.loopback.DaoAplicacao;
-import gerador.montacampanhatesteafiliadohotmart.loopback.DatasetAplicacao;
-import gerador.montacampanhatesteafiliadohotmart.passo.impl.*;
+import gerador.montacampanhatesteafiliadohotmartconversao.loopback.DaoAplicacao;
+import gerador.montacampanhatesteafiliadohotmartconversao.loopback.DatasetAplicacao;
+import gerador.montacampanhatesteafiliadohotmartconversao.passo.impl.*;
 import br.com.gersis.daobase.*;
 import br.com.gersis.loopback.modelo.*;
 
@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao { 
 
-	private int NUM_PASSO = 3;
+	private int NUM_PASSO = 4;
 
 
 	protected CampanhaAdsTeste campanha;

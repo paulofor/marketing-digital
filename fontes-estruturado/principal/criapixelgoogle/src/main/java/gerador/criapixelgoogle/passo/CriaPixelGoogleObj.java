@@ -14,7 +14,10 @@ public class CriaPixelGoogleObj extends DaoAplicacao {
 		ProdutoAfiliadoHotmart_ListaCriarPixelGoogle exec = new ProdutoAfiliadoHotmart_ListaCriarPixelGoogle();
 		exec.setComum(ds);
 		exec.executa();
+		executaFinalizacao(ds);
 		finalizar();
+	}
+	private void executaFinalizacao(DatasetAplicacao ds) {
 	}
 	public int getNumPasso() {
 		return 1;

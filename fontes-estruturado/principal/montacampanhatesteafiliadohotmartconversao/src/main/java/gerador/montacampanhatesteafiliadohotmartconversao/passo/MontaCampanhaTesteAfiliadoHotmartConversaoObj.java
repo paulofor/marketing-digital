@@ -1,12 +1,12 @@
-package gerador.montacampanhatesteafiliadohotmart.passo;
+package gerador.montacampanhatesteafiliadohotmartconversao.passo;
 
 
-import gerador.montacampanhatesteafiliadohotmart.loopback.DaoAplicacao;
-import gerador.montacampanhatesteafiliadohotmart.loopback.DatasetAplicacao;
+import gerador.montacampanhatesteafiliadohotmartconversao.loopback.DaoAplicacao;
+import gerador.montacampanhatesteafiliadohotmartconversao.loopback.DatasetAplicacao;
 import br.com.gersis.daobase.DaoBase;
 import br.com.gersis.daobase.IDatasetComum;
 
-public class MontaCampanhaTesteAfiliadoHotmartObj extends DaoAplicacao { 
+public class MontaCampanhaTesteAfiliadoHotmartConversaoObj extends DaoAplicacao { 
 
 	@Override
 	protected void executaImpl() {

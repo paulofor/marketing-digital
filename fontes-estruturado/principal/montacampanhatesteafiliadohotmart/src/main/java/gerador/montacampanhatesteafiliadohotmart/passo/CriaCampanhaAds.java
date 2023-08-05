@@ -36,6 +36,7 @@ public class CriaCampanhaAds extends DaoAplicacao {
 
 	protected boolean executaCustom( CampanhaAdsTeste campanhaTesteCorrente ) { return true; }
 
+	protected void preFinalizar() { return; }
 
 	public int getNumPasso() {
 		return NUM_PASSO;

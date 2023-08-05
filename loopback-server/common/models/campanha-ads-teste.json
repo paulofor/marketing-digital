@@ -53,6 +53,9 @@
 		},
 		"produtoAfiliadoHotmartId": {
 			"type": "number"
+		},
+		"contaGoogleId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -65,6 +68,11 @@
 		"produtoAfiliadoHotmart": {
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": ""
+		},
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
 			"foreignKey": ""
 		},
 		"anuncioCampanhaAdsTestes": {

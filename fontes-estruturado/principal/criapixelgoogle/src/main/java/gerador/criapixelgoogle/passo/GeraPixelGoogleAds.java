@@ -36,6 +36,7 @@ public class GeraPixelGoogleAds extends DaoAplicacao {
 
 	protected boolean executaCustom() { return true; }
 
+	protected void preFinalizar() { return; }
 
 	public int getNumPasso() {
 		return NUM_PASSO;
