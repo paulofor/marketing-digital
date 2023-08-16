@@ -47,7 +47,7 @@
 		"visitaProdutoHotmarts": {
 			"type": "hasMany",
 			"model": "VisitaProdutoHotmart",
-			"foreignKey": ""
+			"foreignKey": "hotmartId"
 		},
 		"pixelGoogles": {
 			"type": "hasMany",
