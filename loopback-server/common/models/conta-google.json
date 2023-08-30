@@ -26,6 +26,9 @@
 		},
 		"urlAds": {
 			"type": "string"
+		},
+		"idAds": {
+			"type": "string"
 		}
 	},
 	"validations": [],
@@ -33,6 +36,16 @@
 		"campanhaAdsTestes": {
 			"type": "hasMany",
 			"model": "CampanhaAdsTeste",
+			"foreignKey": ""
+		},
+		"pixelGoogles": {
+			"type": "hasMany",
+			"model": "PixelGoogle",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotmarts": {
+			"type": "hasMany",
+			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": ""
 		}
 	},

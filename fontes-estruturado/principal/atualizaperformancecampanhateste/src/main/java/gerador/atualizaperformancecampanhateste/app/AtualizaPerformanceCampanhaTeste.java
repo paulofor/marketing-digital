@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 import gerador.atualizaperformancecampanhateste.passo.*;
+import gerador.atualizaperformancecampanhateste.passo.impl.*;
 import br.com.gersis.daobase.comum.DaoBaseComum;
 
 public class AtualizaPerformanceCampanhaTeste {
@@ -16,7 +17,7 @@ public class AtualizaPerformanceCampanhaTeste {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaPerformanceCampanhaTeste");
-		System.out.println("(28/07/2023 15:35:47)");
+		System.out.println("(23/08/2023 17:38:21)");
 		try {
 			carregaProp();
 			AtualizaPerformanceCampanhaTesteObj obj = new AtualizaPerformanceCampanhaTesteObj();
@@ -52,8 +53,8 @@ public class AtualizaPerformanceCampanhaTeste {
 
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
-		DaoBaseComum.setProximo("AtualizaPerformanceCampanhaTesteObj", new CampanhaAdsTeste_ObtemListaParaConsultarPerformance());
-		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaConsultarPerformance", new ConsultaGoogleAdsPerformance());
-		DaoBaseComum.setProximo("ConsultaGoogleAdsPerformance", new CampanhaAdsTeste_AtualizaCampanhaPerformance());
+		DaoBaseComum.setProximo("AtualizaPerformanceCampanhaTesteObj", new CampanhaAdsTeste_ObtemListaParaConsultarPerformanceImpl());
+		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaConsultarPerformance", new ConsultaGoogleAdsPerformanceImpl());
+		DaoBaseComum.setProximo("ConsultaGoogleAdsPerformance", new CampanhaAdsTeste_AtualizaCampanhaPerformanceImpl());
 	}
 }

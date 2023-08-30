@@ -30,10 +30,21 @@
 		},
 		"pixelGoogleId": {
 			"type": "number"
+		},
+		"criaPixelVenda": {
+			"type": "number"
+		},
+		"contaGoogleId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
 		"campanhaAdsTestes": {
 			"type": "hasMany",
 			"model": "CampanhaAdsTeste",

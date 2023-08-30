@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 import gerador.montacampanhatesteafiliadohotmart.passo.*;
+import gerador.montacampanhatesteafiliadohotmart.passo.impl.*;
 import br.com.gersis.daobase.comum.DaoBaseComum;
 
 public class MontaCampanhaTesteAfiliadoHotmart {
@@ -16,7 +17,7 @@ public class MontaCampanhaTesteAfiliadoHotmart {
 
 	public static void main(String[] args) {
 		System.out.print("MontaCampanhaTesteAfiliadoHotmart");
-		System.out.println("(28/07/2023 15:35:46)");
+		System.out.println("(23/08/2023 17:38:20)");
 		try {
 			carregaProp();
 			MontaCampanhaTesteAfiliadoHotmartObj obj = new MontaCampanhaTesteAfiliadoHotmartObj();
@@ -52,8 +53,8 @@ public class MontaCampanhaTesteAfiliadoHotmart {
 
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
-		DaoBaseComum.setProximo("MontaCampanhaTesteAfiliadoHotmartObj", new CampanhaAdsTeste_ObtemListaParaTeste());
-		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaTeste", new CriaCampanhaAds());
-		DaoBaseComum.setProximo("CriaCampanhaAds", new CampanhaAdsTeste_AtualizaCampanhaCriada());
+		DaoBaseComum.setProximo("MontaCampanhaTesteAfiliadoHotmartObj", new CampanhaAdsTeste_ObtemListaParaTesteImpl());
+		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaTeste", new CriaCampanhaAdsImpl());
+		DaoBaseComum.setProximo("CriaCampanhaAds", new CampanhaAdsTeste_AtualizaCampanhaCriadaImpl());
 	}
 }

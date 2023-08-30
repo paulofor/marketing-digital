@@ -72,7 +72,7 @@
 		"produtoAfiliadoMetricas": {
 			"type": "hasMany",
 			"model": "ProdutoAfiliadoMetrica",
-			"foreignKey": ""
+			"foreignKey": "hotmartId"
 		}
 	},
 	"acls": [],

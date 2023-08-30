@@ -22,7 +22,6 @@ public class ProdutoAfiliadoMetrica extends Model {
 	private double lucroVenda01;
 	private double cpc100;
 	private String palavra;
-	private int ideiaPalavraChaveId;
 	private int temperaturaProduto;
 	private int mediaPesquisaPalavra;
 	// Relacionamentos 1
@@ -42,7 +41,6 @@ public class ProdutoAfiliadoMetrica extends Model {
 			obj.put("lucroVenda01", lucroVenda01);
 			obj.put("cpc100", cpc100);
 			obj.put("palavra", palavra);
-			obj.put("ideiaPalavraChaveId", ideiaPalavraChaveId);
 			obj.put("temperaturaProduto", temperaturaProduto);
 			obj.put("mediaPesquisaPalavra", mediaPesquisaPalavra);
 		} catch (Exception e) {
@@ -99,12 +97,6 @@ public class ProdutoAfiliadoMetrica extends Model {
 	}
 	public String getPalavra() { 
 		return this.palavra;
-	}
-	public void setIdeiaPalavraChaveId(int valor) { 
-		this.ideiaPalavraChaveId = valor;
-	}
-	public int getIdeiaPalavraChaveId() { 
-		return this.ideiaPalavraChaveId;
 	}
 	public void setTemperaturaProduto(int valor) { 
 		this.temperaturaProduto = valor;

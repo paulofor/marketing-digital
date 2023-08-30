@@ -20,9 +20,12 @@ public class ContaGoogle extends Model {
 	private int ativo;
 	private String senha;
 	private String urlAds;
+	private String idAds;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
+	private List<PixelGoogle> PixelGoogles;
+	private List<ProdutoAfiliadoHotmart> ProdutoAfiliadoHotmarts;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -34,6 +37,7 @@ public class ContaGoogle extends Model {
 			obj.put("ativo", ativo);
 			obj.put("senha", senha);
 			obj.put("urlAds", urlAds);
+			obj.put("idAds", idAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -77,6 +81,12 @@ public class ContaGoogle extends Model {
 	public String getUrlAds() { 
 		return this.urlAds;
 	}
+	public void setIdAds(String valor) { 
+		this.idAds = valor;
+	}
+	public String getIdAds() { 
+		return this.idAds;
+	}
 
 	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {
 		return  CampanhaAdsTestes;
@@ -87,6 +97,28 @@ public class ContaGoogle extends Model {
 			Object objeto = new CampanhaAdsTeste();
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsTestes.add((CampanhaAdsTeste) objeto);
+		}
+	}
+	public List<PixelGoogle> getPixelGoogles() {
+		return  PixelGoogles;
+	}
+	public void setPixelGoogles(List<PixelGoogle> valores) {
+		this.PixelGoogles = new ArrayList<PixelGoogle>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PixelGoogle();
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PixelGoogles.add((PixelGoogle) objeto);
+		}
+	}
+	public List<ProdutoAfiliadoHotmart> getProdutoAfiliadoHotmarts() {
+		return  ProdutoAfiliadoHotmarts;
+	}
+	public void setProdutoAfiliadoHotmarts(List<ProdutoAfiliadoHotmart> valores) {
+		this.ProdutoAfiliadoHotmarts = new ArrayList<ProdutoAfiliadoHotmart>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoAfiliadoHotmart();
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoAfiliadoHotmarts.add((ProdutoAfiliadoHotmart) objeto);
 		}
 	}
 }

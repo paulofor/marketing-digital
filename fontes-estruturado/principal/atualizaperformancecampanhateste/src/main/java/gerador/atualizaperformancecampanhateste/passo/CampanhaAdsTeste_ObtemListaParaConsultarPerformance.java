@@ -11,7 +11,7 @@ import java.util.List;
 import com.strongloop.android.loopback.callbacks.*;
 
 
-public class CampanhaAdsTeste_ObtemListaParaConsultarPerformance extends DaoAplicacao { 
+public abstract class CampanhaAdsTeste_ObtemListaParaConsultarPerformance extends DaoAplicacao { 
 
 	private int NUM_PASSO = 1;
 

@@ -1,0 +1,34 @@
+<h2 *ngIf="item" mat-dialog-title>ContaGoogle</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #gmail [(ngModel)]="item.gmail" name="gmail" placeholder="Gmail" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #idAds [(ngModel)]="item.idAds" name="idAds" placeholder="Id Ads" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #senha [(ngModel)]="item.senha" name="senha" placeholder="Senha" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #urlAds [(ngModel)]="item.urlAds" name="urlAds" placeholder="Url Ads" />
+		</mat-form-field>
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

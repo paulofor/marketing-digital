@@ -34,16 +34,10 @@
 		"palavra": {
 			"type": "string"
 		},
-		"ideiaPalavraChaveId": {
-			"type": "number"
-		},
 		"temperaturaProduto": {
 			"type": "number"
 		},
 		"mediaPesquisaPalavra": {
-			"type": "number"
-		},
-		"visitaProdutoHotmartId": {
 			"type": "number"
 		},
 		"ideiaPalavraChaveId": {
@@ -55,7 +49,7 @@
 		"visitaProdutoHotmart": {
 			"type": "belongsTo",
 			"model": "VisitaProdutoHotmart",
-			"foreignKey": ""
+			"foreignKey": "hotmartId"
 		},
 		"ideiaPalavraChave": {
 			"type": "belongsTo",

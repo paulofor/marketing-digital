@@ -1,0 +1,46 @@
+<h2 *ngIf="item" mat-dialog-title>Produto Afiliado Hotmart</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #hotmartId [(ngModel)]="item.hotmartId" name="hotmartId" placeholder="Hotmart Id" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #urlFinal [(ngModel)]="item.urlFinal" name="urlFinal" placeholder="Url Final" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #urlTracking [(ngModel)]="item.urlTracking" name="urlTracking" placeholder="Url Tracking" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="1" #geraTesteCampanha [(ngModel)]="item.geraTesteCampanha" name="geraTesteCampanha" placeholder="Gera Campanha de Teste (0/1)" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #sigla maxlength="8" [(ngModel)]="item.sigla" name="sigla" placeholder="Sigla (8 caracteres)" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" *ngIf="listaConta">
+      <mat-select placeholder="Conta Google Corrente"  #contaGoogleId [(ngModel)]="item.contaGoogleId" name="contaGoogleId">
+        <mat-option *ngFor="let conta of listaConta" [value]="conta.id">
+          {{ conta.gmail}} ({{conta.nome}})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

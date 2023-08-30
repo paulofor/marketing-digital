@@ -44,4 +44,12 @@ public class DummyDaoBase extends DaoBase {
 		return null;
 	}
 
+
+
+	@Override
+	protected int getNumPasso() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

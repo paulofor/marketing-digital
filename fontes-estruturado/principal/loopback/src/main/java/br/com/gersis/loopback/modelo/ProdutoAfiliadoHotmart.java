@@ -21,7 +21,9 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private int hotmartId;
 	private String sigla;
 	private int pixelGoogleId;
+	private int criaPixelVenda;
 	// Relacionamentos 1
+	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 	private List<AnuncioAds> AnuncioAds;
@@ -39,6 +41,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("hotmartId", hotmartId);
 			obj.put("sigla", sigla);
 			obj.put("pixelGoogleId", pixelGoogleId);
+			obj.put("criaPixelVenda", criaPixelVenda);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -88,7 +91,20 @@ public class ProdutoAfiliadoHotmart extends Model {
 	public int getPixelGoogleId() { 
 		return this.pixelGoogleId;
 	}
+	public void setCriaPixelVenda(int valor) { 
+		this.criaPixelVenda = valor;
+	}
+	public int getCriaPixelVenda() { 
+		return this.criaPixelVenda;
+	}
 
+	public ContaGoogle getContaGoogle() {
+		return ContaGoogle;
+	}
+	public void setContaGoogle(HashMap valor) {
+		this.ContaGoogle = new ContaGoogle();
+		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
+	}
 	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {
 		return  CampanhaAdsTestes;
 	}

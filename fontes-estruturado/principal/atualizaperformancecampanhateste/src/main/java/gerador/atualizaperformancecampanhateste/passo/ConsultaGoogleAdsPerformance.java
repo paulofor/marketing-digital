@@ -11,7 +11,7 @@ import java.util.List;
 import com.strongloop.android.loopback.callbacks.*;
 
 
-public class ConsultaGoogleAdsPerformance extends DaoAplicacao { 
+public abstract class ConsultaGoogleAdsPerformance extends DaoAplicacao { 
 
 	private int NUM_PASSO = 2;
 

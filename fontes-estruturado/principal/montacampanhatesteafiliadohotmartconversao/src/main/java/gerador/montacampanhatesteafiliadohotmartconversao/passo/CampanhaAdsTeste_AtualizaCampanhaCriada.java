@@ -11,7 +11,7 @@ import java.util.List;
 import com.strongloop.android.loopback.callbacks.*;
 
 
-public class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao { 
+public abstract class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao { 
 
 	private int NUM_PASSO = 4;
 
@@ -24,7 +24,7 @@ public class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao {
 		if (executaCustom(ds.getCampanhaTesteCorrente())) {
 			repCampanhaAdsTeste.atualizaCampanhaCriada( campanha, new VoidCallback() { 
 				public void onSuccess() {
-					finalizar();
+					executaProximo();
 				}
 				public void onError(Throwable t) {
 					onErrorBase(t);

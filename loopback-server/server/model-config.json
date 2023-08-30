@@ -114,5 +114,9 @@
   "ProdutoAfiliadoMetrica": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "ContaGoogle": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

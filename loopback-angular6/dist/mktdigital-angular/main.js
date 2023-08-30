@@ -290,6 +290,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _anuncio_ads_lista_anuncio_ads_lista_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../anuncio-ads-lista/anuncio-ads-lista.component */ "./src/app/anuncio-ads-lista/anuncio-ads-lista.component.ts");
 /* harmony import */ var _pixel_google_list_pixel_google_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pixel-google-list/pixel-google-list.component */ "./src/app/pixel-google-list/pixel-google-list.component.ts");
 /* harmony import */ var _campanha_ads_teste_detalhe_campanha_ads_teste_detalhe_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../campanha-ads-teste-detalhe/campanha-ads-teste-detalhe.component */ "./src/app/campanha-ads-teste-detalhe/campanha-ads-teste-detalhe.component.ts");
+/* harmony import */ var _conta_google_list_conta_google_list_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../conta-google-list/conta-google-list.component */ "./src/app/conta-google-list/conta-google-list.component.ts");
+
 
 
 
@@ -312,6 +314,7 @@ var routes = [
     { path: 'produtoAfiliadoHotmartDetalhe/:id', component: _produto_afiliado_hotmart_detalhe_produto_afiliado_hotmart_detalhe_component__WEBPACK_IMPORTED_MODULE_6__["ProdutoAfiliadoHotmartDetalheComponent"] },
     { path: 'modeloCampanhaAdsTeste', component: _modelo_campanha_ads_teste_list_modelo_campanha_ads_teste_list_component__WEBPACK_IMPORTED_MODULE_7__["ModeloCampanhaAdsTesteListComponent"] },
     { path: 'pixelGoogle', component: _pixel_google_list_pixel_google_list_component__WEBPACK_IMPORTED_MODULE_10__["PixelGoogleListComponent"] },
+    { path: 'contaGoogle', component: _conta_google_list_conta_google_list_component__WEBPACK_IMPORTED_MODULE_12__["ContaGoogleListComponent"] },
     { path: 'anuncioAds/:id', component: _anuncio_ads_lista_anuncio_ads_lista_component__WEBPACK_IMPORTED_MODULE_9__["AnuncioAdsListaComponent"] },
     { path: 'campanhaAdsTeste/:id', component: _campanha_ads_teste_lista_campanha_ads_teste_lista_component__WEBPACK_IMPORTED_MODULE_8__["CampanhaAdsTesteListaComponent"] },
     { path: 'campanhaAdsTesteDetalhe/:id', component: _campanha_ads_teste_detalhe_campanha_ads_teste_detalhe_component__WEBPACK_IMPORTED_MODULE_11__["CampanhaAdsTesteDetalheComponent"] },
@@ -440,6 +443,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _campanha_ads_teste_detalhe_campanha_ads_teste_detalhe_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./campanha-ads-teste-detalhe/campanha-ads-teste-detalhe.component */ "./src/app/campanha-ads-teste-detalhe/campanha-ads-teste-detalhe.component.ts");
 /* harmony import */ var _escolhe_anuncio_para_campanha_teste_escolhe_anuncio_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./escolhe-anuncio-para-campanha-teste/escolhe-anuncio-para-campanha-teste.component */ "./src/app/escolhe-anuncio-para-campanha-teste/escolhe-anuncio-para-campanha-teste.component.ts");
 /* harmony import */ var _escolhe_palavra_chave_para_campanha_teste_escolhe_palavra_chave_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./escolhe-palavra-chave-para-campanha-teste/escolhe-palavra-chave-para-campanha-teste.component */ "./src/app/escolhe-palavra-chave-para-campanha-teste/escolhe-palavra-chave-para-campanha-teste.component.ts");
+/* harmony import */ var _conta_google_list_conta_google_list_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./conta-google-list/conta-google-list.component */ "./src/app/conta-google-list/conta-google-list.component.ts");
+/* harmony import */ var _conta_google_edit_conta_google_edit_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./conta-google-edit/conta-google-edit.component */ "./src/app/conta-google-edit/conta-google-edit.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -498,6 +503,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 Object(_angular_common__WEBPACK_IMPORTED_MODULE_9__["registerLocaleData"])(_angular_common_locales_pt__WEBPACK_IMPORTED_MODULE_10___default.a, 'pt-BR');
 var AppModule = /** @class */ (function () {
@@ -528,7 +535,9 @@ var AppModule = /** @class */ (function () {
                 _pixel_google_edit_pixel_google_edit_component__WEBPACK_IMPORTED_MODULE_44__["PixelGoogleEditComponent"],
                 _campanha_ads_teste_detalhe_campanha_ads_teste_detalhe_component__WEBPACK_IMPORTED_MODULE_45__["CampanhaAdsTesteDetalheComponent"],
                 _escolhe_anuncio_para_campanha_teste_escolhe_anuncio_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_46__["EscolheAnuncioParaCampanhaTesteComponent"],
-                _escolhe_palavra_chave_para_campanha_teste_escolhe_palavra_chave_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_47__["EscolhePalavraChaveParaCampanhaTesteComponent"]
+                _escolhe_palavra_chave_para_campanha_teste_escolhe_palavra_chave_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_47__["EscolhePalavraChaveParaCampanhaTesteComponent"],
+                _conta_google_list_conta_google_list_component__WEBPACK_IMPORTED_MODULE_48__["ContaGoogleListComponent"],
+                _conta_google_edit_conta_google_edit_component__WEBPACK_IMPORTED_MODULE_49__["ContaGoogleEditComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -583,7 +592,8 @@ var AppModule = /** @class */ (function () {
                 _campanha_ads_teste_edit_campanha_ads_teste_edit_component__WEBPACK_IMPORTED_MODULE_39__["CampanhaAdsTesteEditComponent"],
                 _pixel_google_edit_pixel_google_edit_component__WEBPACK_IMPORTED_MODULE_44__["PixelGoogleEditComponent"],
                 _escolhe_anuncio_para_campanha_teste_escolhe_anuncio_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_46__["EscolheAnuncioParaCampanhaTesteComponent"],
-                _escolhe_palavra_chave_para_campanha_teste_escolhe_palavra_chave_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_47__["EscolhePalavraChaveParaCampanhaTesteComponent"]
+                _escolhe_palavra_chave_para_campanha_teste_escolhe_palavra_chave_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_47__["EscolhePalavraChaveParaCampanhaTesteComponent"],
+                _conta_google_edit_conta_google_edit_component__WEBPACK_IMPORTED_MODULE_49__["ContaGoogleEditComponent"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
@@ -1270,9 +1280,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CUSTO_TRADE", function() { return CUSTO_TRADE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PERCENTUAL_AVISO", function() { return PERCENTUAL_AVISO; });
 //
-//export const BASE_URL = 'http://vps-40d69db1.vps.ovh.ca:23101'; 
+var BASE_URL = 'http://vps-40d69db1.vps.ovh.ca:23101';
 //export const BASE_URL = 'http://localhost:23101'; 
-var BASE_URL = 'https://tyche.ovh:23101';
+//export const BASE_URL = 'https://tyche.ovh:23101'; 
 var API_VERSION = 'api';
 var URL_UPLOAD = BASE_URL + '/api/containers/container1/upload';
 var URL_IMAGEM = BASE_URL + '/api/containers/container1/download';
@@ -1281,6 +1291,354 @@ var DS_DIA_SEMANA = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'
 var LIMITE_PONTOS_MONITORIA = 15;
 var CUSTO_TRADE = 11;
 var PERCENTUAL_AVISO = 1.5;
+
+
+/***/ }),
+
+/***/ "./src/app/conta-google-edit/conta-google-edit-base.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/conta-google-edit/conta-google-edit-base.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: ContaGoogleEditBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleEditBaseComponent", function() { return ContaGoogleEditBaseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+var ContaGoogleEditBaseComponent = /** @class */ (function () {
+    function ContaGoogleEditBaseComponent(dialogRef, data, servico) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.servico = servico;
+    }
+    ContaGoogleEditBaseComponent.prototype.ngOnInit = function () {
+        console.log("Data(BaseEdit):", this.data);
+        if (this.data.origem) {
+            this.origem = this.data.origem;
+        }
+        if (!this.data.item) {
+            console.log("fluxo nova");
+            this.item = this.criaItem();
+        }
+        else {
+            console.log('fluxo altera');
+            this.item = this.data.item;
+            console.log('Item(BaseEdit):', this.item);
+        }
+        this.montaCombos();
+        this.posItem();
+    };
+    ContaGoogleEditBaseComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.preSubmit();
+        console.log('Submit(BaseEdit):', this.item);
+        this.servico.upsert(this.item, function (err, obj) {
+            if (err) {
+                console.log("ErroUpsert:" + JSON.stringify(err));
+            }
+            else {
+            }
+            _this.posSubmit();
+        }).subscribe(function (e) {
+            console.log(JSON.stringify(e));
+            _this.closeDialog();
+        });
+    };
+    ContaGoogleEditBaseComponent.prototype.preSubmit = function () {
+    };
+    ContaGoogleEditBaseComponent.prototype.closeDialog = function () {
+        this.dialogRef.close('Pizza!');
+    };
+    ContaGoogleEditBaseComponent.prototype.criaItem = function () {
+        return new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ContaGoogle"]();
+    };
+    ContaGoogleEditBaseComponent.prototype.montaCombos = function () {
+    };
+    ContaGoogleEditBaseComponent.prototype.posItem = function () {
+    };
+    ContaGoogleEditBaseComponent.prototype.posSubmit = function () {
+    };
+    ContaGoogleEditBaseComponent = __decorate([
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ContaGoogleApi"]])
+    ], ContaGoogleEditBaseComponent);
+    return ContaGoogleEditBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/conta-google-edit/conta-google-edit.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/conta-google-edit/conta-google-edit.component.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/conta-google-edit/conta-google-edit.component.html":
+/*!********************************************************************!*\
+  !*** ./src/app/conta-google-edit/conta-google-edit.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>ContaGoogle</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #gmail [(ngModel)]=\"item.gmail\" name=\"gmail\" placeholder=\"Gmail\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #idAds [(ngModel)]=\"item.idAds\" name=\"idAds\" placeholder=\"Id Ads\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #senha [(ngModel)]=\"item.senha\" name=\"senha\" placeholder=\"Senha\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #urlAds [(ngModel)]=\"item.urlAds\" name=\"urlAds\" placeholder=\"Url Ads\" />\n\t\t</mat-form-field>\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>\n"
+
+/***/ }),
+
+/***/ "./src/app/conta-google-edit/conta-google-edit.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/conta-google-edit/conta-google-edit.component.ts ***!
+  \******************************************************************/
+/*! exports provided: ContaGoogleEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleEditComponent", function() { return ContaGoogleEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _conta_google_edit_base_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./conta-google-edit-base.component */ "./src/app/conta-google-edit/conta-google-edit-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var ContaGoogleEditComponent = /** @class */ (function (_super) {
+    __extends(ContaGoogleEditComponent, _super);
+    function ContaGoogleEditComponent(dialogRef, data, servico) {
+        var _this = _super.call(this, dialogRef, data, servico) || this;
+        _this.dialogRef = dialogRef;
+        _this.data = data;
+        _this.servico = servico;
+        return _this;
+    }
+    ContaGoogleEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-conta-google-edit',
+            template: __webpack_require__(/*! ./conta-google-edit.component.html */ "./src/app/conta-google-edit/conta-google-edit.component.html"),
+            styles: [__webpack_require__(/*! ./conta-google-edit.component.css */ "./src/app/conta-google-edit/conta-google-edit.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ContaGoogleApi"]])
+    ], ContaGoogleEditComponent);
+    return ContaGoogleEditComponent;
+}(_conta_google_edit_base_component__WEBPACK_IMPORTED_MODULE_3__["ContaGoogleEditBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/conta-google-list/conta-google-list-base.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/conta-google-list/conta-google-list-base.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: ContaGoogleListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleListBaseComponent", function() { return ContaGoogleListBaseComponent; });
+/* harmony import */ var _conta_google_edit_conta_google_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../conta-google-edit/conta-google-edit.component */ "./src/app/conta-google-edit/conta-google-edit.component.ts");
+
+var ContaGoogleListBaseComponent = /** @class */ (function () {
+    function ContaGoogleListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    ContaGoogleListBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    ContaGoogleListBaseComponent.prototype.preCarregaTela = function () { };
+    ContaGoogleListBaseComponent.prototype.posCarregaLista = function () { };
+    ContaGoogleListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    ContaGoogleListBaseComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao
+            }
+        });
+    };
+    ContaGoogleListBaseComponent.prototype.getComponente = function () {
+        return _conta_google_edit_conta_google_edit_component__WEBPACK_IMPORTED_MODULE_0__["ContaGoogleEditComponent"];
+    };
+    ContaGoogleListBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ContaGoogleListBaseComponent.prototype.getDialogo1 = function () {
+    };
+    ContaGoogleListBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ContaGoogleListBaseComponent.prototype.getDialogo2 = function () {
+    };
+    ContaGoogleListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return ContaGoogleListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/conta-google-list/conta-google-list.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/conta-google-list/conta-google-list.component.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/conta-google-list/conta-google-list.component.html":
+/*!********************************************************************!*\
+  !*** ./src/app/conta-google-list/conta-google-list.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Conta Google</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.gmail}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.idAds}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/conta-google-list/conta-google-list.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/conta-google-list/conta-google-list.component.ts ***!
+  \******************************************************************/
+/*! exports provided: ContaGoogleListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleListComponent", function() { return ContaGoogleListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _conta_google_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./conta-google-list-base.component */ "./src/app/conta-google-list/conta-google-list-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ContaGoogleListComponent = /** @class */ (function (_super) {
+    __extends(ContaGoogleListComponent, _super);
+    function ContaGoogleListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    ContaGoogleListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-conta-google-list',
+            template: __webpack_require__(/*! ./conta-google-list.component.html */ "./src/app/conta-google-list/conta-google-list.component.html"),
+            styles: [__webpack_require__(/*! ./conta-google-list.component.css */ "./src/app/conta-google-list/conta-google-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ContaGoogleApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], ContaGoogleListComponent);
+    return ContaGoogleListComponent;
+}(_conta_google_list_base_component__WEBPACK_IMPORTED_MODULE_4__["ContaGoogleListBaseComponent"]));
+
 
 
 /***/ }),
@@ -2241,6 +2599,46 @@ var PlataformaListComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe-base.component.ts":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe-base.component.ts ***!
+  \*****************************************************************************************************/
+/*! exports provided: ProdutoAfiliadoHotmartDetalheBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartDetalheBaseComponent", function() { return ProdutoAfiliadoHotmartDetalheBaseComponent; });
+var ProdutoAfiliadoHotmartDetalheBaseComponent = /** @class */ (function () {
+    function ProdutoAfiliadoHotmartDetalheBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    ProdutoAfiliadoHotmartDetalheBaseComponent.prototype.ngOnInit = function () {
+        this.carregaTela();
+    };
+    ProdutoAfiliadoHotmartDetalheBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.router.params.subscribe(function (params) {
+            _this.idPrincipal = params['id'];
+            _this.srv.findById(_this.idPrincipal, _this.getFiltro())
+                .subscribe(function (result) {
+                _this.principal = result;
+                console.log('principal:', _this.principal);
+            });
+        });
+    };
+    ProdutoAfiliadoHotmartDetalheBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return ProdutoAfiliadoHotmartDetalheBaseComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe.component.css":
 /*!*************************************************************************************************!*\
   !*** ./src/app/produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe.component.css ***!
@@ -2259,7 +2657,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\" *ngIf=\"principal\">\n      <span>{{principal.nome}}</span>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Visitas\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.visitaProdutoHotmarts\">\n      {{item.dataInsercao | date : 'dd/MM/yyyy'}}\n      Temperatura: {{item.temperatura}} Valor : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)\n    </div>\n  </div>\n\n    <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Palavras-Chave\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.ideiaPalavraChaves\">\n      {{item.dataAcesso | date : 'dd/MM/yyyy'}} {{item.texto}} Volume Pesquisa: {{item.mediaPesquisa}} \n      Cpc: {{item.cpcMaximoTopPage | currency : 'BRL'}} {{item.cpcMinimoTopPage | currency : 'BRL'}}\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncio(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-detalhe\">\n        Titulo1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo2\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo3\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 2\n      </div>\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncio(item)\">Editar</button>\n      </div>\n    </div>\n   \n  </div>\n\n</div>\n\n"
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\" *ngIf=\"principal\">\n      <span>{{principal.nome}}</span>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Visitas\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.visitaProdutoHotmarts\">\n      {{item.dataInsercao | date : 'dd/MM/yyyy'}}\n      Temperatura: {{item.temperatura}} Valor : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)\n    </div>\n  </div>\n\n    <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Palavras-Chave\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of  principal.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n      {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}} \n      Cpc: {{item.cpcMax | currency : 'BRL'}} {{item.cpcMin | currency : 'BRL'}}\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Pixel\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.ideiaPalavraChaves\">\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncio(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-detalhe\">\n        Titulo1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo2\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo3\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 2\n      </div>\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncio(item)\">Editar</button>\n      </div>\n    </div>\n   \n  </div>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -2276,8 +2674,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _base_component_base_item_id_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../base-component/base-item-id-component */ "./src/app/base-component/base-item-id-component.ts");
-/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _produto_afiliado_hotmart_detalhe_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./produto-afiliado-hotmart-detalhe-base.component */ "./src/app/produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe-base.component.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -2304,22 +2702,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ProdutoAfiliadoHotmartDetalheComponent = /** @class */ (function (_super) {
     __extends(ProdutoAfiliadoHotmartDetalheComponent, _super);
-    function ProdutoAfiliadoHotmartDetalheComponent(dialog, srv, router) {
-        var _this = _super.call(this, dialog, srv, router) || this;
-        _this.dialog = dialog;
+    function ProdutoAfiliadoHotmartDetalheComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
         _this.srv = srv;
         _this.router = router;
+        _this.dialog = dialog;
         return _this;
     }
     ProdutoAfiliadoHotmartDetalheComponent.prototype.getFiltro = function () {
         return {
             'include': [
                 { 'relation': 'visitaProdutoHotmarts', 'scope': {
-                        'order': 'dataInsercao desc'
+                        'order': 'dataInsercao desc',
+                        'include': { 'relation': 'produtoAfiliadoMetricas' }
                     } },
-                { 'relation': 'ideiaPalavraChaves', 'scope': {
-                        'order': ['dataAcesso desc', 'mediaPesquisa desc'], 'limit': 20
-                    } }
+                'contaGoogle'
             ]
         };
     };
@@ -2329,10 +2726,10 @@ var ProdutoAfiliadoHotmartDetalheComponent = /** @class */ (function (_super) {
             template: __webpack_require__(/*! ./produto-afiliado-hotmart-detalhe.component.html */ "./src/app/produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe.component.html"),
             styles: [__webpack_require__(/*! ./produto-afiliado-hotmart-detalhe.component.css */ "./src/app/produto-afiliado-hotmart-detalhe/produto-afiliado-hotmart-detalhe.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _shared_sdk__WEBPACK_IMPORTED_MODULE_4__["ProdutoAfiliadoHotmartApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ProdutoAfiliadoHotmartApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
     ], ProdutoAfiliadoHotmartDetalheComponent);
     return ProdutoAfiliadoHotmartDetalheComponent;
-}(_base_component_base_item_id_component__WEBPACK_IMPORTED_MODULE_3__["BaseItemIdComponent"]));
+}(_produto_afiliado_hotmart_detalhe_base_component__WEBPACK_IMPORTED_MODULE_4__["ProdutoAfiliadoHotmartDetalheBaseComponent"]));
 
 
 
@@ -2356,7 +2753,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Produto Afiliado Hotmart</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #hotmartId [(ngModel)]=\"item.hotmartId\" name=\"hotmartId\" placeholder=\"Hotmart Id\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlFinal [(ngModel)]=\"item.urlFinal\" name=\"urlFinal\" placeholder=\"Url Final\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlTracking [(ngModel)]=\"item.urlTracking\" name=\"urlTracking\" placeholder=\"Url Tracking\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput maxlength=\"1\" #geraTesteCampanha [(ngModel)]=\"item.geraTesteCampanha\" name=\"geraTesteCampanha\" placeholder=\"Gera Campanha de Teste (0/1)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #sigla maxlength=\"8\" [(ngModel)]=\"item.sigla\" name=\"sigla\" placeholder=\"Sigla (8 caracteres)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Produto Afiliado Hotmart</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #hotmartId [(ngModel)]=\"item.hotmartId\" name=\"hotmartId\" placeholder=\"Hotmart Id\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlFinal [(ngModel)]=\"item.urlFinal\" name=\"urlFinal\" placeholder=\"Url Final\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlTracking [(ngModel)]=\"item.urlTracking\" name=\"urlTracking\" placeholder=\"Url Tracking\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput maxlength=\"1\" #geraTesteCampanha [(ngModel)]=\"item.geraTesteCampanha\" name=\"geraTesteCampanha\" placeholder=\"Gera Campanha de Teste (0/1)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #sigla maxlength=\"8\" [(ngModel)]=\"item.sigla\" name=\"sigla\" placeholder=\"Sigla (8 caracteres)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Corrente\"  #contaGoogleId [(ngModel)]=\"item.contaGoogleId\" name=\"contaGoogleId\">\n        <mat-option *ngFor=\"let conta of listaConta\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
 
 /***/ }),
 
@@ -2402,16 +2799,24 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 var ProdutoAfiliadoHotmartEditComponent = /** @class */ (function (_super) {
     __extends(ProdutoAfiliadoHotmartEditComponent, _super);
-    function ProdutoAfiliadoHotmartEditComponent(dialogRef, data, servico) {
+    function ProdutoAfiliadoHotmartEditComponent(dialogRef, data, servico, srvConta) {
         var _this = _super.call(this, dialogRef, data, servico) || this;
         _this.dialogRef = dialogRef;
         _this.data = data;
         _this.servico = servico;
+        _this.srvConta = srvConta;
         return _this;
     }
     ProdutoAfiliadoHotmartEditComponent.prototype.criaItem = function () {
         var novo = new _shared_sdk__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoHotmart"]();
         return novo;
+    };
+    ProdutoAfiliadoHotmartEditComponent.prototype.montaCombos = function () {
+        var _this = this;
+        this.srvConta.find()
+            .subscribe(function (result) {
+            _this.listaConta = result;
+        });
     };
     ProdutoAfiliadoHotmartEditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2420,7 +2825,7 @@ var ProdutoAfiliadoHotmartEditComponent = /** @class */ (function (_super) {
             styles: [__webpack_require__(/*! ./produto-afiliado-hotmart-edit.component.css */ "./src/app/produto-afiliado-hotmart-edit/produto-afiliado-hotmart-edit.component.css")]
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoHotmartApi"]])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoHotmartApi"], _shared_sdk__WEBPACK_IMPORTED_MODULE_1__["ContaGoogleApi"]])
     ], ProdutoAfiliadoHotmartEditComponent);
     return ProdutoAfiliadoHotmartEditComponent;
 }(_base_component_base_edit_component__WEBPACK_IMPORTED_MODULE_3__["BaseEditComponent"]));
@@ -2447,7 +2852,7 @@ module.exports = ".dgc-card {\n    width: 48%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Afiliados Hotmart</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
+module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Afiliados Hotmart</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n          <span>{{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})</span>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -2501,7 +2906,14 @@ var ProdutoAfiliadoHotmartListComponent = /** @class */ (function (_super) {
     ProdutoAfiliadoHotmartListComponent.prototype.getFiltro = function () {
         return {
             'counts': ['campanhaAdsTestes', 'anuncioAds'],
-            'include': { 'relation': 'visitaProdutoHotmarts', 'order': 'dataInsercao desc', 'limit': 2 }
+            'include': [
+                {
+                    'relation': 'visitaProdutoHotmarts',
+                    'scope': { 'where': { 'maisRecente': 1 }, 'include': { 'relation': 'produtoAfiliadoMetricas',
+                            'scope': { 'order': 'mediaPesquisaPalavra desc', 'limit': 5 } } }
+                },
+                'contaGoogle'
+            ]
         };
     };
     ProdutoAfiliadoHotmartListComponent.prototype.criaItem = function () {
@@ -2618,7 +3030,7 @@ var ProdutoHotmartListComponent = /** @class */ (function (_super) {
 /*!*************************************!*\
   !*** ./src/app/shared/sdk/index.ts ***!
   \*************************************/
-/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, AccessToken, SDKToken, FireLoopRef, ErrorHandler, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, LoggerService */
+/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, AccessToken, SDKToken, FireLoopRef, ErrorHandler, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2657,112 +3069,117 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_custom_AnuncioCampanhaAdsTeste__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./services/custom/AnuncioCampanhaAdsTeste */ "./src/app/shared/sdk/services/custom/AnuncioCampanhaAdsTeste.ts");
 /* harmony import */ var _services_custom_FacebookConta__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./services/custom/FacebookConta */ "./src/app/shared/sdk/services/custom/FacebookConta.ts");
 /* harmony import */ var _services_custom_ProdutoAfiliadoMetrica__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./services/custom/ProdutoAfiliadoMetrica */ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoMetrica.ts");
-/* harmony import */ var _models_index__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./models/index */ "./src/app/shared/sdk/models/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["User"]; });
+/* harmony import */ var _services_custom_ContaGoogle__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./services/custom/ContaGoogle */ "./src/app/shared/sdk/services/custom/ContaGoogle.ts");
+/* harmony import */ var _models_index__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./models/index */ "./src/app/shared/sdk/models/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["User"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["PlataformaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["PlataformaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["ProdutoPlataforma"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["ProdutoPlataforma"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["VisitaProdutoPlataforma"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["VisitaProdutoPlataforma"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["ProdutoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["ProdutoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["VisitaProdutoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["VisitaProdutoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcesso", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["TokenAcesso"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcesso", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["TokenAcesso"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChave", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["IdeiaPalavraChave"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChave", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["IdeiaPalavraChave"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["CampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["CampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["AnuncioCampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["AnuncioCampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["PalavraCampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["PalavraCampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["ProdutoAfiliadoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["ProdutoAfiliadoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["AgendaVisitaHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["AgendaVisitaHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["CampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["CampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["AnuncioAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["AnuncioAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["ModeloCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["ModeloCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["PixelGoogle"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["PixelGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["PalavraChaveCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["PalavraChaveCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["AnuncioCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["AnuncioCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["FacebookConta"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["FacebookConta"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["ProdutoAfiliadoMetrica"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["ProdutoAfiliadoMetrica"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["AccessToken"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["ContaGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["SDKToken"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["AccessToken"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _models_index__WEBPACK_IMPORTED_MODULE_33__["FireLoopRef"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["SDKToken"]; });
 
-/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["ErrorHandler"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _models_index__WEBPACK_IMPORTED_MODULE_34__["FireLoopRef"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["RealTime"]; });
+/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["ErrorHandler"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["UserApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["PlataformaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["PlataformaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["ProdutoPlataformaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["ProdutoPlataformaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["VisitaProdutoPlataformaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["VisitaProdutoPlataformaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["ProdutoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["ProdutoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["VisitaProdutoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["VisitaProdutoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcessoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["TokenAcessoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcessoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["TokenAcessoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChaveApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["IdeiaPalavraChaveApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChaveApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["IdeiaPalavraChaveApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["CampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["CampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["AnuncioCampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["AnuncioCampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["PalavraCampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["PalavraCampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["ProdutoAfiliadoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["ProdutoAfiliadoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["AgendaVisitaHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["AgendaVisitaHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["CampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["CampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["AnuncioAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["AnuncioAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["ModeloCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["ModeloCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["PixelGoogleApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["PixelGoogleApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["PalavraChaveCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["PalavraChaveCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["AnuncioCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["AnuncioCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["FacebookContaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["FacebookContaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["ProdutoAfiliadoMetricaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["ProdutoAfiliadoMetricaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["ContaGoogleApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["SDKModels"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["SDKModels"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["LoopBackAuth"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["LoopBackAuth"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["BaseLoopBackApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["BaseLoopBackApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_34__["LoggerService"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["RealTime"]; });
 
-/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./lb.config */ "./src/app/shared/sdk/lb.config.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return _lb_config__WEBPACK_IMPORTED_MODULE_35__["LoopBackConfig"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["UserApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_35__["LoggerService"]; });
+
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return _lb_config__WEBPACK_IMPORTED_MODULE_36__["LoopBackConfig"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseStorage", function() { return _storage_storage_swaps__WEBPACK_IMPORTED_MODULE_4__["BaseStorage"]; });
 
@@ -2849,6 +3266,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 /**
 * @module SDKBrowserModule
 * @description
@@ -2895,6 +3313,7 @@ var SDKBrowserModule = /** @class */ (function () {
                 _services_custom_AnuncioCampanhaAdsTeste__WEBPACK_IMPORTED_MODULE_30__["AnuncioCampanhaAdsTesteApi"],
                 _services_custom_FacebookConta__WEBPACK_IMPORTED_MODULE_31__["FacebookContaApi"],
                 _services_custom_ProdutoAfiliadoMetrica__WEBPACK_IMPORTED_MODULE_32__["ProdutoAfiliadoMetricaApi"],
+                _services_custom_ContaGoogle__WEBPACK_IMPORTED_MODULE_33__["ContaGoogleApi"],
                 internalStorageProvider,
                 { provide: _storage_storage_swaps__WEBPACK_IMPORTED_MODULE_4__["SDKStorage"], useClass: _storage_storage_browser__WEBPACK_IMPORTED_MODULE_9__["StorageBrowser"] }
             ]
@@ -3645,6 +4064,10 @@ var CampanhaAdsTeste = /** @class */ (function () {
                     name: 'produtoAfiliadoHotmartId',
                     type: 'number'
                 },
+                "contaGoogleId": {
+                    name: 'contaGoogleId',
+                    type: 'number'
+                },
                 "id": {
                     name: 'id',
                     type: 'number'
@@ -3683,10 +4106,114 @@ var CampanhaAdsTeste = /** @class */ (function () {
                     keyFrom: 'id',
                     keyTo: 'campanhaAdsTesteId'
                 },
+                contaGoogle: {
+                    name: 'contaGoogle',
+                    type: 'ContaGoogle',
+                    model: 'ContaGoogle',
+                    relationType: 'belongsTo',
+                    keyFrom: 'contaGoogleId',
+                    keyTo: 'id'
+                },
             }
         };
     };
     return CampanhaAdsTeste;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/models/ContaGoogle.ts":
+/*!**************************************************!*\
+  !*** ./src/app/shared/sdk/models/ContaGoogle.ts ***!
+  \**************************************************/
+/*! exports provided: ContaGoogle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return ContaGoogle; });
+var ContaGoogle = /** @class */ (function () {
+    function ContaGoogle(data) {
+        Object.assign(this, data);
+    }
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `ContaGoogle`.
+     */
+    ContaGoogle.getModelName = function () {
+        return "ContaGoogle";
+    };
+    /**
+    * @method factory
+    * @author Jonathan Casarrubias
+    * @license MIT
+    * This method creates an instance of ContaGoogle for dynamic purposes.
+    **/
+    ContaGoogle.factory = function (data) {
+        return new ContaGoogle(data);
+    };
+    /**
+    * @method getModelDefinition
+    * @author Julien Ledun
+    * @license MIT
+    * This method returns an object that represents some of the model
+    * definitions.
+    **/
+    ContaGoogle.getModelDefinition = function () {
+        return {
+            name: 'ContaGoogle',
+            plural: 'ContaGoogles',
+            path: 'ContaGoogles',
+            idName: 'id',
+            properties: {
+                "nome": {
+                    name: 'nome',
+                    type: 'string'
+                },
+                "gmail": {
+                    name: 'gmail',
+                    type: 'string'
+                },
+                "dataCriacao": {
+                    name: 'dataCriacao',
+                    type: 'Date'
+                },
+                "ativo": {
+                    name: 'ativo',
+                    type: 'number'
+                },
+                "senha": {
+                    name: 'senha',
+                    type: 'string'
+                },
+                "urlAds": {
+                    name: 'urlAds',
+                    type: 'string'
+                },
+                "idAds": {
+                    name: 'idAds',
+                    type: 'string'
+                },
+                "id": {
+                    name: 'id',
+                    type: 'number'
+                },
+            },
+            relations: {
+                campanhaAdsTestes: {
+                    name: 'campanhaAdsTestes',
+                    type: 'CampanhaAdsTeste[]',
+                    model: 'CampanhaAdsTeste',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'contaGoogleId'
+                },
+            }
+        };
+    };
+    return ContaGoogle;
 }());
 
 
@@ -4793,7 +5320,7 @@ var ProdutoAfiliadoMetrica = /** @class */ (function () {
             properties: {
                 "hotmartId": {
                     name: 'hotmartId',
-                    type: 'string'
+                    type: 'number'
                 },
                 "cpcMax": {
                     name: 'cpcMax',
@@ -4823,10 +5350,6 @@ var ProdutoAfiliadoMetrica = /** @class */ (function () {
                     name: 'palavra',
                     type: 'string'
                 },
-                "ideiaPalavraChaveId": {
-                    name: 'ideiaPalavraChaveId',
-                    type: 'number'
-                },
                 "temperaturaProduto": {
                     name: 'temperaturaProduto',
                     type: 'number'
@@ -4835,8 +5358,8 @@ var ProdutoAfiliadoMetrica = /** @class */ (function () {
                     name: 'mediaPesquisaPalavra',
                     type: 'number'
                 },
-                "visitaProdutoHotmartId": {
-                    name: 'visitaProdutoHotmartId',
+                "ideiaPalavraChaveId": {
+                    name: 'ideiaPalavraChaveId',
                     type: 'number'
                 },
             },
@@ -4846,7 +5369,7 @@ var ProdutoAfiliadoMetrica = /** @class */ (function () {
                     type: 'VisitaProdutoHotmart',
                     model: 'VisitaProdutoHotmart',
                     relationType: 'belongsTo',
-                    keyFrom: 'visitaProdutoHotmartId',
+                    keyFrom: 'hotmartId',
                     keyTo: 'hotmartId'
                 },
                 ideiaPalavraChave: {
@@ -5272,7 +5795,7 @@ var VisitaProdutoHotmart = /** @class */ (function () {
                     model: 'ProdutoAfiliadoMetrica',
                     relationType: 'hasMany',
                     keyFrom: 'hotmartId',
-                    keyTo: 'visitaProdutoHotmartId'
+                    keyTo: 'hotmartId'
                 },
             }
         };
@@ -5348,7 +5871,7 @@ var VisitaProdutoPlataforma = /** @class */ (function () {
 /*!********************************************!*\
   !*** ./src/app/shared/sdk/models/index.ts ***!
   \********************************************/
-/*! exports provided: User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, AccessToken, SDKToken, FireLoopRef */
+/*! exports provided: User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, AccessToken, SDKToken, FireLoopRef */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5416,15 +5939,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProdutoAfiliadoMetrica__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./ProdutoAfiliadoMetrica */ "./src/app/shared/sdk/models/ProdutoAfiliadoMetrica.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _ProdutoAfiliadoMetrica__WEBPACK_IMPORTED_MODULE_20__["ProdutoAfiliadoMetrica"]; });
 
-/* harmony import */ var _BaseModels__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./BaseModels */ "./src/app/shared/sdk/models/BaseModels.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_21__["AccessToken"]; });
+/* harmony import */ var _ContaGoogle__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./ContaGoogle */ "./src/app/shared/sdk/models/ContaGoogle.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return _ContaGoogle__WEBPACK_IMPORTED_MODULE_21__["ContaGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_21__["SDKToken"]; });
+/* harmony import */ var _BaseModels__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./BaseModels */ "./src/app/shared/sdk/models/BaseModels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_22__["AccessToken"]; });
 
-/* harmony import */ var _FireLoopRef__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./FireLoopRef */ "./src/app/shared/sdk/models/FireLoopRef.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _FireLoopRef__WEBPACK_IMPORTED_MODULE_22__["FireLoopRef"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_22__["SDKToken"]; });
+
+/* harmony import */ var _FireLoopRef__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./FireLoopRef */ "./src/app/shared/sdk/models/FireLoopRef.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _FireLoopRef__WEBPACK_IMPORTED_MODULE_23__["FireLoopRef"]; });
 
 /* tslint:disable */
+
 
 
 
@@ -6412,7 +6939,7 @@ var ErrorHandler = /** @class */ (function () {
 /*!***************************************************!*\
   !*** ./src/app/shared/sdk/services/core/index.ts ***!
   \***************************************************/
-/*! exports provided: ErrorHandler, RealTime, LoopBackAuth, BaseLoopBackApi */
+/*! exports provided: ErrorHandler, LoopBackAuth, BaseLoopBackApi, RealTime */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8618,6 +9145,37 @@ var CampanhaAdsTesteApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Busca relação contaGoogle de belongsTo.
+     *
+     * @param {any} id CampanhaAdsTeste id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsTeste` object.)
+     * </em>
+     */
+    CampanhaAdsTesteApi.prototype.getContaGoogle = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsTestes/:id/contaGoogle";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * palavraChaveCampanhaAdsTestes consultas de CampanhaAdsTeste.
      *
      * @param {any} id CampanhaAdsTeste id
@@ -9110,6 +9668,423 @@ var CampanhaAdsTesteApi = /** @class */ (function (_super) {
             _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
     ], CampanhaAdsTesteApi);
     return CampanhaAdsTesteApi;
+}(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/services/custom/ContaGoogle.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/ContaGoogle.ts ***!
+  \***********************************************************/
+/*! exports provided: ContaGoogleApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return ContaGoogleApi; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony import */ var _core_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/base.service */ "./src/app/shared/sdk/services/core/base.service.ts");
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/shared/sdk/services/core/auth.service.ts");
+/* harmony import */ var _core_error_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/error.service */ "./src/app/shared/sdk/services/core/error.service.ts");
+/* harmony import */ var _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sockets/socket.connections */ "./src/app/shared/sdk/sockets/socket.connections.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/* tslint:disable */
+
+
+
+
+
+
+
+
+/**
+ * Api services for the `ContaGoogle` model.
+ */
+var ContaGoogleApi = /** @class */ (function (_super) {
+    __extends(ContaGoogleApi, _super);
+    function ContaGoogleApi(http, connection, models, auth, errorHandler) {
+        var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
+        _this.http = http;
+        _this.connection = connection;
+        _this.models = models;
+        _this.auth = auth;
+        _this.errorHandler = errorHandler;
+        return _this;
+    }
+    /**
+     * Localize um item relacionado por ID para campanhaAdsTestes.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsTestes
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.findByIdCampanhaAdsTestes = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/campanhaAdsTestes/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para campanhaAdsTestes.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsTestes
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ContaGoogleApi.prototype.destroyByIdCampanhaAdsTestes = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/campanhaAdsTestes/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para campanhaAdsTestes.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsTestes
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.updateByIdCampanhaAdsTestes = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/campanhaAdsTestes/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsTestes consultas de ContaGoogle.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.getCampanhaAdsTestes = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/campanhaAdsTestes";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsTestes deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.createCampanhaAdsTestes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/campanhaAdsTestes";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os campanhaAdsTestes deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ContaGoogleApi.prototype.deleteCampanhaAdsTestes = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/campanhaAdsTestes";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsTestes contagens de ContaGoogle.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ContaGoogleApi.prototype.countCampanhaAdsTestes = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/campanhaAdsTestes/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - Model instance data
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.patchOrCreate = function (data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles";
+        var _routeParams = {};
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - An object of model property name/value pairs
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.patchAttributes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.ObtemContaDisponivel = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/obtemContaDisponivel";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsTestes deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.createManyCampanhaAdsTestes = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/campanhaAdsTestes";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `ContaGoogle`.
+     */
+    ContaGoogleApi.prototype.getModelName = function () {
+        return "ContaGoogle";
+    };
+    ContaGoogleApi = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"])),
+        __param(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"])),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"],
+            _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
+            _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
+    ], ContaGoogleApi);
+    return ContaGoogleApi;
 }(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
 
 
@@ -12890,6 +13865,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_AnuncioCampanhaAdsTeste__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../models/AnuncioCampanhaAdsTeste */ "./src/app/shared/sdk/models/AnuncioCampanhaAdsTeste.ts");
 /* harmony import */ var _models_FacebookConta__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../models/FacebookConta */ "./src/app/shared/sdk/models/FacebookConta.ts");
 /* harmony import */ var _models_ProdutoAfiliadoMetrica__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../models/ProdutoAfiliadoMetrica */ "./src/app/shared/sdk/models/ProdutoAfiliadoMetrica.ts");
+/* harmony import */ var _models_ContaGoogle__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../models/ContaGoogle */ "./src/app/shared/sdk/models/ContaGoogle.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -12897,6 +13873,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 /* tslint:disable */
+
 
 
 
@@ -12943,6 +13920,7 @@ var SDKModels = /** @class */ (function () {
             AnuncioCampanhaAdsTeste: _models_AnuncioCampanhaAdsTeste__WEBPACK_IMPORTED_MODULE_19__["AnuncioCampanhaAdsTeste"],
             FacebookConta: _models_FacebookConta__WEBPACK_IMPORTED_MODULE_20__["FacebookConta"],
             ProdutoAfiliadoMetrica: _models_ProdutoAfiliadoMetrica__WEBPACK_IMPORTED_MODULE_21__["ProdutoAfiliadoMetrica"],
+            ContaGoogle: _models_ContaGoogle__WEBPACK_IMPORTED_MODULE_22__["ContaGoogle"],
         };
     }
     SDKModels.prototype.get = function (modelName) {
@@ -14482,7 +15460,7 @@ var VisitaProdutoPlataformaApi = /** @class */ (function (_super) {
 /*!*****************************************************!*\
   !*** ./src/app/shared/sdk/services/custom/index.ts ***!
   \*****************************************************/
-/*! exports provided: UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, SDKModels, LoggerService */
+/*! exports provided: PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, SDKModels, UserApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14550,13 +15528,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProdutoAfiliadoMetrica__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./ProdutoAfiliadoMetrica */ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoMetrica.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _ProdutoAfiliadoMetrica__WEBPACK_IMPORTED_MODULE_20__["ProdutoAfiliadoMetricaApi"]; });
 
-/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _SDKModels__WEBPACK_IMPORTED_MODULE_21__["SDKModels"]; });
+/* harmony import */ var _ContaGoogle__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./ContaGoogle */ "./src/app/shared/sdk/services/custom/ContaGoogle.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _ContaGoogle__WEBPACK_IMPORTED_MODULE_21__["ContaGoogleApi"]; });
 
-/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./logger.service */ "./src/app/shared/sdk/services/custom/logger.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _logger_service__WEBPACK_IMPORTED_MODULE_22__["LoggerService"]; });
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _SDKModels__WEBPACK_IMPORTED_MODULE_22__["SDKModels"]; });
+
+/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./logger.service */ "./src/app/shared/sdk/services/custom/logger.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _logger_service__WEBPACK_IMPORTED_MODULE_23__["LoggerService"]; });
 
 /* tslint:disable */
+
 
 
 
@@ -14681,7 +15663,7 @@ var LoggerService = /** @class */ (function () {
 /*!**********************************************!*\
   !*** ./src/app/shared/sdk/services/index.ts ***!
   \**********************************************/
-/*! exports provided: ErrorHandler, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, LoggerService */
+/*! exports provided: ErrorHandler, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14689,15 +15671,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core/index */ "./src/app/shared/sdk/services/core/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["RealTime"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["LoopBackAuth"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["BaseLoopBackApi"]; });
 
-/* harmony import */ var _custom_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom/index */ "./src/app/shared/sdk/services/custom/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["UserApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["RealTime"]; });
 
+/* harmony import */ var _custom_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom/index */ "./src/app/shared/sdk/services/custom/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PlataformaVendaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoPlataformaApi"]; });
@@ -14738,7 +15718,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoMetricaApi"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ContaGoogleApi"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["SDKModels"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["UserApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["LoggerService"]; });
 
@@ -15325,7 +16309,7 @@ var SDKStorage = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
+module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
 
 /***/ }),
 
@@ -15631,7 +16615,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/usuario/aplicacoes/MarketingDigital/mktdigital-angular/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/usuario/aplicacoes/MarketingDigital/loopback-angular6/src/main.ts */"./src/main.ts");
 
 
 /***/ })

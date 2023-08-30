@@ -11,7 +11,7 @@ import java.util.List;
 import com.strongloop.android.loopback.callbacks.*;
 
 
-public class ContaGoogle_ObtemContaDisponivel extends DaoAplicacao { 
+public abstract class ContaGoogle_ObtemContaDisponivel extends DaoAplicacao { 
 
 	private int NUM_PASSO = 2;
 
