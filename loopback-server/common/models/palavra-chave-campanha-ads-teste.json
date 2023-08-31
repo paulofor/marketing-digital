@@ -11,9 +11,11 @@
 	"properties": {
 		"campanhaAdsTesteId": {
 			"type": "number"
+			,"id": true
 		},
 		"ideiaPalavraChaveId": {
 			"type": "number"
+			,"id": true
 		}
 	},
 	"validations": [],

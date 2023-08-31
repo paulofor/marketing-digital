@@ -11,9 +11,11 @@
 	"properties": {
 		"campanhaAdsTesteId": {
 			"type": "number"
+			,"id": true
 		},
 		"anuncioAdsId": {
 			"type": "number"
+			,"id": true
 		}
 	},
 	"validations": [],

@@ -67,7 +67,7 @@ import gerador.montacampanhatesteafiliadohotmart.passo.CriaCampanhaAds;
 
 public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 
-	private static Long CODIGO_USUARIO = 5328916093L;
+	private static Long CODIGO_USUARIO = 7966834741L;
 	
 	@Override
 	protected boolean executaCustom(CampanhaAdsTeste campanhaTesteCorrente) {
@@ -133,7 +133,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		String dataFinal = dtFinal.format(formatter);
 
 		// 2 - Campanha
-		String nomeCampanha = "MktDigital-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + dataInicial;
+		String nomeCampanha = "MktDigital2-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + dataInicial;
 		Campaign campaign = Campaign.newBuilder()
 				.setName(nomeCampanha)
 				.setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
