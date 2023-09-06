@@ -1,6 +1,8 @@
 /* tslint:disable */
 import {
-  CampanhaAdsTeste
+  CampanhaAdsTeste,
+  PixelGoogle,
+  ProdutoAfiliadoHotmart
 } from '../index';
 
 declare var Object: any;
@@ -14,6 +16,8 @@ export interface ContaGoogleInterface {
   "idAds"?: string;
   "id"?: number;
   campanhaAdsTestes?: CampanhaAdsTeste[];
+  pixelGoogles?: PixelGoogle[];
+  produtoAfiliadoHotmarts?: ProdutoAfiliadoHotmart[];
 }
 
 export class ContaGoogle implements ContaGoogleInterface {
@@ -26,6 +30,8 @@ export class ContaGoogle implements ContaGoogleInterface {
   "idAds": string;
   "id": number;
   campanhaAdsTestes: CampanhaAdsTeste[];
+  pixelGoogles: PixelGoogle[];
+  produtoAfiliadoHotmarts: ProdutoAfiliadoHotmart[];
   constructor(data?: ContaGoogleInterface) {
     Object.assign(this, data);
   }
@@ -97,6 +103,22 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'campanhaAdsTestes',
           type: 'CampanhaAdsTeste[]',
           model: 'CampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        pixelGoogles: {
+          name: 'pixelGoogles',
+          type: 'PixelGoogle[]',
+          model: 'PixelGoogle',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        produtoAfiliadoHotmarts: {
+          name: 'produtoAfiliadoHotmarts',
+          type: 'ProdutoAfiliadoHotmart[]',
+          model: 'ProdutoAfiliadoHotmart',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'

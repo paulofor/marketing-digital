@@ -60,6 +60,9 @@
 		"hotmartId": {
 			"type": "number"
 			,"id": true
+		},
+		"possuiPalavraChave": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -67,6 +70,11 @@
 		"produtoAfiliadoHotmart": {
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"ideiaPalavraChave": {
+			"type": "belongsTo",
+			"model": "IdeiaPalavraChave",
 			"foreignKey": "hotmartId"
 		},
 		"produtoAfiliadoMetricas": {

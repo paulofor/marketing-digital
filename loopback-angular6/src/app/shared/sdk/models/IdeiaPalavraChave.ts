@@ -1,5 +1,6 @@
 /* tslint:disable */
 import {
+  VisitaProdutoHotmart,
   PalavraChaveCampanhaAdsTeste,
   ProdutoAfiliadoMetrica
 } from '../index';
@@ -15,7 +16,11 @@ export interface IdeiaPalavraChaveInterface {
   "hotmartId"?: number;
   "retorno100Click"?: number;
   "maisRecente"?: number;
+  "cpcPara50"?: number;
+  "cpcPara75"?: number;
+  "quantidadePorVisita"?: number;
   "id"?: number;
+  visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
   produtoAfiliadoMetricas?: ProdutoAfiliadoMetrica[];
 }
@@ -30,7 +35,11 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
   "hotmartId": number;
   "retorno100Click": number;
   "maisRecente": number;
+  "cpcPara50": number;
+  "cpcPara75": number;
+  "quantidadePorVisita": number;
   "id": number;
+  visitaProdutoHotmarts: VisitaProdutoHotmart[];
   palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
   produtoAfiliadoMetricas: ProdutoAfiliadoMetrica[];
   constructor(data?: IdeiaPalavraChaveInterface) {
@@ -102,12 +111,32 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
           name: 'maisRecente',
           type: 'number'
         },
+        "cpcPara50": {
+          name: 'cpcPara50',
+          type: 'number'
+        },
+        "cpcPara75": {
+          name: 'cpcPara75',
+          type: 'number'
+        },
+        "quantidadePorVisita": {
+          name: 'quantidadePorVisita',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        visitaProdutoHotmarts: {
+          name: 'visitaProdutoHotmarts',
+          type: 'VisitaProdutoHotmart[]',
+          model: 'VisitaProdutoHotmart',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'hotmartId'
+        },
         palavraChaveCampanhaAdsTestes: {
           name: 'palavraChaveCampanhaAdsTestes',
           type: 'PalavraChaveCampanhaAdsTeste[]',

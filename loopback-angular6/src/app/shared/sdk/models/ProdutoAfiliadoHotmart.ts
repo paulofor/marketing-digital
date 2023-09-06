@@ -3,7 +3,8 @@ import {
   VisitaProdutoHotmart,
   CampanhaAdsTeste,
   AnuncioAds,
-  PixelGoogle
+  PixelGoogle,
+  ContaGoogle
 } from '../index';
 
 declare var Object: any;
@@ -15,10 +16,13 @@ export interface ProdutoAfiliadoHotmartInterface {
   "hotmartId"?: number;
   "sigla"?: string;
   "pixelGoogleId"?: number;
+  "criaPixelVenda"?: number;
+  "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
   anuncioAds?: AnuncioAds[];
   pixelGoogles?: PixelGoogle[];
+  contaGoogle?: ContaGoogle;
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -29,10 +33,13 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "hotmartId": number;
   "sigla": string;
   "pixelGoogleId": number;
+  "criaPixelVenda": number;
+  "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   campanhaAdsTestes: CampanhaAdsTeste[];
   anuncioAds: AnuncioAds[];
   pixelGoogles: PixelGoogle[];
+  contaGoogle: ContaGoogle;
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -94,6 +101,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'pixelGoogleId',
           type: 'number'
         },
+        "criaPixelVenda": {
+          name: 'criaPixelVenda',
+          type: 'number'
+        },
+        "contaGoogleId": {
+          name: 'contaGoogleId',
+          type: 'number'
+        },
       },
       relations: {
         visitaProdutoHotmarts: {
@@ -127,6 +142,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'produtoAfiliadoHotmartId'
+        },
+        contaGoogle: {
+          name: 'contaGoogle',
+          type: 'ContaGoogle',
+          model: 'ContaGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'contaGoogleId',
+          keyTo: 'id'
         },
       }
     }

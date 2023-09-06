@@ -58,6 +58,7 @@ import { EscolhePalavraChaveParaCampanhaTesteComponent } from './escolhe-palavra
 
 import { ContaGoogleListComponent } from './conta-google-list/conta-google-list.component';
 import { ContaGoogleEditComponent } from './conta-google-edit/conta-google-edit.component';
+import { IdeiaPalavraChaveListSimplesMelhoresCpcComponent } from './ideia-palavra-chave-list-simples-melhores-cpc/ideia-palavra-chave-list-simples-melhores-cpc.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -91,7 +92,8 @@ registerLocaleData(localePt, 'pt-BR');
     EscolheAnuncioParaCampanhaTesteComponent,
     EscolhePalavraChaveParaCampanhaTesteComponent,
     ContaGoogleListComponent,
-    ContaGoogleEditComponent
+    ContaGoogleEditComponent,
+    IdeiaPalavraChaveListSimplesMelhoresCpcComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { AnuncioAdsListaComponent } from '../anuncio-ads-lista/anuncio-ads-lista
 import { PixelGoogleListComponent } from '../pixel-google-list/pixel-google-list.component';
 import { CampanhaAdsTesteDetalheComponent } from '../campanha-ads-teste-detalhe/campanha-ads-teste-detalhe.component';
 import { ContaGoogleListComponent } from '../conta-google-list/conta-google-list.component';
+import { IdeiaPalavraChaveListSimplesMelhoresCpcComponent } from '../ideia-palavra-chave-list-simples-melhores-cpc/ideia-palavra-chave-list-simples-melhores-cpc.component';
 
 
 
@@ -31,6 +32,8 @@ export const routes : Routes = [
     { path: 'anuncioAds/:id' , component: AnuncioAdsListaComponent },
     { path: 'campanhaAdsTeste/:id' , component: CampanhaAdsTesteListaComponent },
     { path: 'campanhaAdsTesteDetalhe/:id' , component: CampanhaAdsTesteDetalheComponent },
+
+    { path: 'melhoresCpc' , component: IdeiaPalavraChaveListSimplesMelhoresCpcComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

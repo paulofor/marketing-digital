@@ -31,6 +31,7 @@ public class VisitaProdutoHotmart extends Model {
 	private String produtoCodigoU;
 	private int maisRecente;
 	private int hotmartId;
+	private int possuiPalavraChave;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
@@ -57,6 +58,7 @@ public class VisitaProdutoHotmart extends Model {
 			obj.put("produtoCodigoU", produtoCodigoU);
 			obj.put("maisRecente", maisRecente);
 			obj.put("hotmartId", hotmartId);
+			obj.put("possuiPalavraChave", possuiPalavraChave);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -165,6 +167,12 @@ public class VisitaProdutoHotmart extends Model {
 	}
 	public int getHotmartId() { 
 		return this.hotmartId;
+	}
+	public void setPossuiPalavraChave(int valor) { 
+		this.possuiPalavraChave = valor;
+	}
+	public int getPossuiPalavraChave() { 
+		return this.possuiPalavraChave;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {

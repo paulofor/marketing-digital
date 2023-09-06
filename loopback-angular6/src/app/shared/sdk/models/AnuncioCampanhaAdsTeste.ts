@@ -8,7 +8,6 @@ declare var Object: any;
 export interface AnuncioCampanhaAdsTesteInterface {
   "campanhaAdsTesteId"?: number;
   "anuncioAdsId"?: number;
-  "id"?: number;
   campanhaAdsTeste?: CampanhaAdsTeste;
   anuncioAds?: AnuncioAds;
 }
@@ -16,7 +15,6 @@ export interface AnuncioCampanhaAdsTesteInterface {
 export class AnuncioCampanhaAdsTeste implements AnuncioCampanhaAdsTesteInterface {
   "campanhaAdsTesteId": number;
   "anuncioAdsId": number;
-  "id": number;
   campanhaAdsTeste: CampanhaAdsTeste;
   anuncioAds: AnuncioAds;
   constructor(data?: AnuncioCampanhaAdsTesteInterface) {
@@ -50,7 +48,7 @@ export class AnuncioCampanhaAdsTeste implements AnuncioCampanhaAdsTesteInterface
       name: 'AnuncioCampanhaAdsTeste',
       plural: 'AnuncioCampanhaAdsTestes',
       path: 'AnuncioCampanhaAdsTestes',
-      idName: 'id',
+      idName: 'campanhaAdsTesteId',
       properties: {
         "campanhaAdsTesteId": {
           name: 'campanhaAdsTesteId',
@@ -58,10 +56,6 @@ export class AnuncioCampanhaAdsTeste implements AnuncioCampanhaAdsTesteInterface
         },
         "anuncioAdsId": {
           name: 'anuncioAdsId',
-          type: 'number'
-        },
-        "id": {
-          name: 'id',
           type: 'number'
         },
       },

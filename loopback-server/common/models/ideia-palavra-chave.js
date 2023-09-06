@@ -2,9 +2,43 @@
 
 module.exports = function(Ideiapalavrachave) {
 
+    Ideiapalavrachave.CalculaCpcAlvo = function(callback) {
+        const sql = " update IdeiaPalavraChave " +
+            " set cpcPara50 = " +
+            " (((select afiliacaoValor from VisitaProdutoHotmart where hotmartId = IdeiaPalavraChave.hotmartId and maisRecente = 1) * 0.5)/111), " +
+            " cpcPara75 = " +
+            " (((select afiliacaoValor from VisitaProdutoHotmart where hotmartId = IdeiaPalavraChave.hotmartId and maisRecente = 1) * 0.75)/111) " +
+            " where maisRecente = 1";
+        let ds = Ideiapalavrachave.dataSource;
+        ds.connector.query(sql,callback);
+    }
 
+    Ideiapalavrachave.AtualizaQuantidadeVisita = function(callback) {
+        const sql = "UPDATE IdeiaPalavraChave AS ipc " +
+            " SET ipc.quantidadePorVisita = ( " +
+            " SELECT COUNT(*) " +
+            " FROM VisitaProdutoHotmart AS vph " +
+            " WHERE vph.hotmartId = ipc.hotmartId " +
+            " and maisRecente = 1 " +
+            " ) " +
+            " where maisRecente = 1";
+        let ds = Ideiapalavrachave.dataSource;
+        ds.connector.query(sql,callback);      
+    }
+
+    Ideiapalavrachave.MelhoresCpcComVisita = function(limite,callback) {
+        const sql = "select IdeiaPalavraChave.*, VisitaProdutoHotmart.* " +
+            " from IdeiaPalavraChave, VisitaProdutoHotmart " +
+            " where IdeiaPalavraChave.hotmartId = VisitaProdutoHotmart.hotmartId " +
+            " and quantidadePorVisita <= 5 " +
+            " and IdeiaPalavraChave.maisRecente = 1 and VisitaProdutoHotmart.maisRecente = 1 " +
+            " order by cpcMaximoTopPage, mediaPesquisa desc limit " + limite;
+        let ds = Ideiapalavrachave.dataSource;
+        ds.connector.query(sql,callback);
+    }
 
     Ideiapalavrachave.AtualizaMaisRecentePalavraChave = function(callback) {
+        const sql0 = "UPDATE IdeiaPalavraChave set maisRecente = 0";
         const sql = "UPDATE IdeiaPalavraChave AS v1 " +
             " JOIN ( " +
             " SELECT MAX(dataAcesso) AS maxDataInsercao " +
@@ -12,18 +46,23 @@ module.exports = function(Ideiapalavrachave) {
             " ) AS v2 ON v1.dataAcesso = v2.maxDataInsercao " +
             " SET v1.maisRecente = 1"
         let ds = Ideiapalavrachave.dataSource;
-        ds.connector.query(sql,callback);
+        ds.connector.query(sql0,(err,result) => {
+            ds.connector.query(sql,callback);
+        });
     }
 
 
-    Ideiapalavrachave.RecebeLista = function(lista, callback) {
+    Ideiapalavrachave.RecebeLista = function(lista, hotmartId, callback) {
         for (let i=0; i<lista.length; i++) {
             let item = lista[i];
             //console.log(item);
             item['dataAcesso'] = new Date();
             Ideiapalavrachave.create(item);
         }
-        callback(null, {'result' : 'ok'})
+        const sql = "update VisitaProdutoHotmart set possuiPalavraChave = 1 " +
+            " where maisRecente = 1 and hotmartId = " + hotmartId;
+        let ds = Ideiapalavrachave.dataSource;
+        ds.connector.query(sql,callback);
     } 
 
     Ideiapalavrachave.MelhoresUltimaData = function(limiteMensal,callback) {

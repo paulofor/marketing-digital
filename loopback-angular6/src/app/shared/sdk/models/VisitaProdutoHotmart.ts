@@ -1,5 +1,6 @@
 /* tslint:disable */
 import {
+  IdeiaPalavraChave,
   ProdutoAfiliadoHotmart,
   ProdutoAfiliadoMetrica
 } from '../index';
@@ -23,6 +24,8 @@ export interface VisitaProdutoHotmartInterface {
   "produtoCodigoU"?: string;
   "maisRecente"?: number;
   "hotmartId"?: number;
+  "possuiPalavraChave"?: number;
+  ideiaPalavraChave?: IdeiaPalavraChave;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   produtoAfiliadoMetricas?: ProdutoAfiliadoMetrica[];
 }
@@ -45,6 +48,8 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
   "produtoCodigoU": string;
   "maisRecente": number;
   "hotmartId": number;
+  "possuiPalavraChave": number;
+  ideiaPalavraChave: IdeiaPalavraChave;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   produtoAfiliadoMetricas: ProdutoAfiliadoMetrica[];
   constructor(data?: VisitaProdutoHotmartInterface) {
@@ -148,8 +153,20 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
           name: 'hotmartId',
           type: 'number'
         },
+        "possuiPalavraChave": {
+          name: 'possuiPalavraChave',
+          type: 'number'
+        },
       },
       relations: {
+        ideiaPalavraChave: {
+          name: 'ideiaPalavraChave',
+          type: 'IdeiaPalavraChave',
+          model: 'IdeiaPalavraChave',
+          relationType: 'belongsTo',
+                  keyFrom: 'hotmartId',
+          keyTo: 'id'
+        },
         produtoAfiliadoHotmart: {
           name: 'produtoAfiliadoHotmart',
           type: 'ProdutoAfiliadoHotmart',

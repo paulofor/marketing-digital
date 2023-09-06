@@ -37,12 +37,12 @@ public class RepositorioVisitaProdutoHotmart extends ModelRepository<VisitaProdu
 		invokeStaticMethod("atualizaMaisRecenteProdutoHotmart", params,   new JsonObjectParser<VisitaProdutoHotmart>(this, callback));
 	}
 
-	public synchronized void insereListaProdutoHotmart(List<VisitaProdutoHotmart> lista ,final ObjectCallback<VisitaProdutoHotmart> callback ) {
+	public synchronized void insereListaProdutoHotmart(List<VisitaProdutoHotmart> lista ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("VisitaProdutoHotmarts/insereListaProdutoHotmart","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "VisitaProdutoHotmart.insereListaProdutoHotmart");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("lista",obtemLista(lista));
-		invokeStaticMethod("insereListaProdutoHotmart", params,   new JsonObjectParser<VisitaProdutoHotmart>(this, callback));
+		invokeStaticMethod("insereListaProdutoHotmart", params,   new EmptyResponseParser(callback));
 	}
 
 	public synchronized void listaParaPesquisaPalavraChave(final ListCallback<VisitaProdutoHotmart> callback ) {

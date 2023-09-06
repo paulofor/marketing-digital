@@ -28,7 +28,8 @@ module.exports = function(Visitaprodutohotmart) {
     Visitaprodutohotmart.ListaParaPesquisaPalavraChave = function(callback) {
         let sql = "SELECT * " +
             " FROM VisitaProdutoHotmart " +
-            " where dataInsercao = (select max(dataInsercao) from VisitaProdutoHotmart)"
+            " where dataInsercao = (select max(dataInsercao) from VisitaProdutoHotmart) " +
+            " and possuiPalavraChave = 0 ";
         let ds = Visitaprodutohotmart.dataSource
         ds.connector.query(sql,callback);
     }

@@ -14,6 +14,8 @@ import org.json.JSONObject;
 public class AnuncioCampanhaAdsTeste extends Model {
 
 
+	private int campanhaAdsTesteId;
+	private int anuncioAdsId;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private AnuncioAds AnuncioAds;
@@ -23,6 +25,8 @@ public class AnuncioCampanhaAdsTeste extends Model {
 		JSONObject obj = new JSONObject();
 		try {
 			obj.put("id",getId());
+			obj.put("campanhaAdsTesteId", campanhaAdsTesteId);
+			obj.put("anuncioAdsId", anuncioAdsId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -30,6 +34,18 @@ public class AnuncioCampanhaAdsTeste extends Model {
 	}
 
 
+	public void setCampanhaAdsTesteId(int valor) { 
+		this.campanhaAdsTesteId = valor;
+	}
+	public int getCampanhaAdsTesteId() { 
+		return this.campanhaAdsTesteId;
+	}
+	public void setAnuncioAdsId(int valor) { 
+		this.anuncioAdsId = valor;
+	}
+	public int getAnuncioAdsId() { 
+		return this.anuncioAdsId;
+	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {
 		return CampanhaAdsTeste;

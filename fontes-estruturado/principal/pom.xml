@@ -15,6 +15,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>criapixelmetagoogle</module>
 		<module>montacampanhatesteafiliadohotmartconversao</module>
 		<module>obtemvendashotmart</module>
+		<module>obtemideiapalavrachaveads</module>
 	</modules>
 
 </project>

@@ -14,6 +14,8 @@ import org.json.JSONObject;
 public class PalavraChaveCampanhaAdsTeste extends Model {
 
 
+	private int campanhaAdsTesteId;
+	private int ideiaPalavraChaveId;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private IdeiaPalavraChave IdeiaPalavraChave;
@@ -23,6 +25,8 @@ public class PalavraChaveCampanhaAdsTeste extends Model {
 		JSONObject obj = new JSONObject();
 		try {
 			obj.put("id",getId());
+			obj.put("campanhaAdsTesteId", campanhaAdsTesteId);
+			obj.put("ideiaPalavraChaveId", ideiaPalavraChaveId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -30,6 +34,18 @@ public class PalavraChaveCampanhaAdsTeste extends Model {
 	}
 
 
+	public void setCampanhaAdsTesteId(int valor) { 
+		this.campanhaAdsTesteId = valor;
+	}
+	public int getCampanhaAdsTesteId() { 
+		return this.campanhaAdsTesteId;
+	}
+	public void setIdeiaPalavraChaveId(int valor) { 
+		this.ideiaPalavraChaveId = valor;
+	}
+	public int getIdeiaPalavraChaveId() { 
+		return this.ideiaPalavraChaveId;
+	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {
 		return CampanhaAdsTeste;

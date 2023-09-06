@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  ProdutoAfiliadoHotmart
+  ProdutoAfiliadoHotmart,
+  ContaGoogle
 } from '../index';
 
 declare var Object: any;
@@ -9,8 +10,10 @@ export interface PixelGoogleInterface {
   "script"?: string;
   "dataCriacao"?: Date;
   "produtoAfiliadoHotmartId"?: number;
+  "contaGoogleId"?: number;
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  contaGoogle?: ContaGoogle;
 }
 
 export class PixelGoogle implements PixelGoogleInterface {
@@ -18,8 +21,10 @@ export class PixelGoogle implements PixelGoogleInterface {
   "script": string;
   "dataCriacao": Date;
   "produtoAfiliadoHotmartId": number;
+  "contaGoogleId": number;
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  contaGoogle: ContaGoogle;
   constructor(data?: PixelGoogleInterface) {
     Object.assign(this, data);
   }
@@ -69,6 +74,10 @@ export class PixelGoogle implements PixelGoogleInterface {
           name: 'produtoAfiliadoHotmartId',
           type: 'number'
         },
+        "contaGoogleId": {
+          name: 'contaGoogleId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -82,6 +91,14 @@ export class PixelGoogle implements PixelGoogleInterface {
           relationType: 'belongsTo',
                   keyFrom: 'produtoAfiliadoHotmartId',
           keyTo: 'hotmartId'
+        },
+        contaGoogle: {
+          name: 'contaGoogle',
+          type: 'ContaGoogle',
+          model: 'ContaGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'contaGoogleId',
+          keyTo: 'id'
         },
       }
     }

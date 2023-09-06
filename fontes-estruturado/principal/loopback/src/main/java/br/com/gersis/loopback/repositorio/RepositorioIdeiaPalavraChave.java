@@ -45,12 +45,13 @@ public class RepositorioIdeiaPalavraChave extends ModelRepository<IdeiaPalavraCh
 		invokeStaticMethod("melhoresUltimaData", params,   new JsonArrayParser<IdeiaPalavraChave>(this, callback));
 	}
 
-	public synchronized void recebeLista(List<IdeiaPalavraChave> listaPalavra ,final ObjectCallback<IdeiaPalavraChave> callback ) {
+	public synchronized void recebeLista(List<IdeiaPalavraChave> listaPalavra ,int hotmartId ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/recebeLista","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "IdeiaPalavraChave.recebeLista");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("listaPalavra",obtemLista(listaPalavra));
-		invokeStaticMethod("recebeLista", params,   new JsonObjectParser<IdeiaPalavraChave>(this, callback));
+		params.put("hotmartId", hotmartId);
+		invokeStaticMethod("recebeLista", params,   new EmptyResponseParser(callback));
 	}
 
 

@@ -8,7 +8,6 @@ declare var Object: any;
 export interface PalavraChaveCampanhaAdsTesteInterface {
   "campanhaAdsTesteId"?: number;
   "ideiaPalavraChaveId"?: number;
-  "id"?: number;
   campanhaAdsTeste?: CampanhaAdsTeste;
   ideiaPalavraChave?: IdeiaPalavraChave;
 }
@@ -16,7 +15,6 @@ export interface PalavraChaveCampanhaAdsTesteInterface {
 export class PalavraChaveCampanhaAdsTeste implements PalavraChaveCampanhaAdsTesteInterface {
   "campanhaAdsTesteId": number;
   "ideiaPalavraChaveId": number;
-  "id": number;
   campanhaAdsTeste: CampanhaAdsTeste;
   ideiaPalavraChave: IdeiaPalavraChave;
   constructor(data?: PalavraChaveCampanhaAdsTesteInterface) {
@@ -50,7 +48,7 @@ export class PalavraChaveCampanhaAdsTeste implements PalavraChaveCampanhaAdsTest
       name: 'PalavraChaveCampanhaAdsTeste',
       plural: 'PalavraChaveCampanhaAdsTestes',
       path: 'PalavraChaveCampanhaAdsTestes',
-      idName: 'id',
+      idName: 'campanhaAdsTesteId',
       properties: {
         "campanhaAdsTesteId": {
           name: 'campanhaAdsTesteId',
@@ -58,10 +56,6 @@ export class PalavraChaveCampanhaAdsTeste implements PalavraChaveCampanhaAdsTest
         },
         "ideiaPalavraChaveId": {
           name: 'ideiaPalavraChaveId',
-          type: 'number'
-        },
-        "id": {
-          name: 'id',
           type: 'number'
         },
       },
