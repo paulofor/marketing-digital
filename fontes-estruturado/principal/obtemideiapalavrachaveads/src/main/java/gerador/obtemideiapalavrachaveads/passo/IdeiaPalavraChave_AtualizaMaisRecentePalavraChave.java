@@ -21,9 +21,8 @@ public abstract class IdeiaPalavraChave_AtualizaMaisRecentePalavraChave extends 
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom()) {
-			repIdeiaPalavraChave.atualizaMaisRecentePalavraChave(  new ObjectCallback<IdeiaPalavraChave>() { 
-				public void onSuccess(IdeiaPalavraChave object) {
-					//preFinalizar();
+			repIdeiaPalavraChave.atualizaMaisRecentePalavraChave(  new VoidCallback() { 
+				public void onSuccess() {
 					executaProximo();
 				}
 				public void onError(Throwable t) {

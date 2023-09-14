@@ -20,6 +20,7 @@ public class PixelGoogle extends Model {
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ContaGoogle ContaGoogle;
+	private ProdutoAfiliadoHotmart paginaVenda;
 	// Relacionamentos N
 
 	public JSONObject getJSON() {
@@ -68,5 +69,12 @@ public class PixelGoogle extends Model {
 	public void setContaGoogle(HashMap valor) {
 		this.ContaGoogle = new ContaGoogle();
 		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotmart getPaginaVenda() {
+		return paginaVenda;
+	}
+	public void setPaginaVenda(HashMap valor) {
+		this.paginaVenda = new ProdutoAfiliadoHotmart();
+		BeanUtil.setProperties(this.paginaVenda, (Map<String, ? extends Object>) valor, true);
 	}
 }

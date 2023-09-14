@@ -21,14 +21,16 @@
         <div class="dgc-card-detalhe">
           <span>Sigla: {{item.sigla}}</span>
         </div>
-        <div class="dgc-card-detalhe" *ngIf="item.contaGoogle">
+        <div class="dgc-card-detalhe" *ngIf="item.contaGoogle!=null">
           <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>
         </div>
-        <div class="dgc-card-detalhe">
+        <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0">
           <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>
         </div>
-        <div class="dgc-card-detalhe" *ngFor="let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas">
-          <span>{{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})</span>
+        <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0" >
+          <div *ngFor="let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas">
+            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})
+          </div>
         </div>
         <div class="dgc-card-comandos">
             <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , item.hotmartId]">Anúncio Google ({{item.anuncioAdsCount}})</button>

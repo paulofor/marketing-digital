@@ -20,6 +20,7 @@ export class ProdutoAfiliadoHotmartListComponent extends BaseListComponent {
 
   getFiltro() {
     return {
+      'order' : 'nome',
       'counts' : ['campanhaAdsTestes','anuncioAds'],
       'include' : [
         {

@@ -133,7 +133,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		String dataFinal = dtFinal.format(formatter);
 
 		// 2 - Campanha
-		String nomeCampanha = "MktDigital2-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + dataInicial;
+		String nomeCampanha = "MktDigital8-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + dataInicial;
 		Campaign campaign = Campaign.newBuilder()
 				.setName(nomeCampanha)
 				.setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
@@ -141,8 +141,8 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 				.setManualCpc(ManualCpc.newBuilder().build())
 				.setCampaignBudget(budgetResourceName)
 				.setNetworkSettings(networkSettings)
-				.setStartDate(dataInicial)
-				.setEndDate(dataFinal)
+				//.setStartDate(dataInicial)
+				//.setEndDate(dataFinal)
 				.build();
 
 		campanha.setNomeAds(nomeCampanha);
@@ -241,6 +241,9 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
         } else {
         	 valorDouble = (palavra.getCpcMinimoTopPage() * campanha.getModeloCampanhaAdsTeste().getMultiplicadorCpcCusto() ) * 100;
         }
+        
+        
+        valorDouble = palavra.getCpcPara50() * 100;
     
         long valorCpc = (long) Math.floor(valorDouble);
         valorCpc = valorCpc * 10000;
@@ -314,7 +317,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	    AdGroupAd adGroupAd =
 	        AdGroupAd.newBuilder()
 	            .setAdGroup(adGroupResourceName)
-	            .setStatus(AdGroupAdStatus.PAUSED)
+	            .setStatus(AdGroupAdStatus.ENABLED)
 	            .setAd(ad)
 	            .build();
 

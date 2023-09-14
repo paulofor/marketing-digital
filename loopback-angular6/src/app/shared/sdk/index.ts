@@ -124,7 +124,6 @@ export class SDKBrowserModule {
         ContaGoogleApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-
       ]
     };
   }

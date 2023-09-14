@@ -23,11 +23,15 @@ public class IdeiaPalavraChave extends Model {
 	private int hotmartId;
 	private double retorno100Click;
 	private int maisRecente;
+	private double cpcPara50;
+	private double cpcPara75;
+	private int quantidadePorVisita;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAds;
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
 	private List<ProdutoAfiliadoMetrica> ProdutoAfiliadoMetricas;
+	private List<VisitaProdutoHotmart> VisitaProdutoHotmarts;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -42,6 +46,9 @@ public class IdeiaPalavraChave extends Model {
 			obj.put("hotmartId", hotmartId);
 			obj.put("retorno100Click", retorno100Click);
 			obj.put("maisRecente", maisRecente);
+			obj.put("cpcPara50", cpcPara50);
+			obj.put("cpcPara75", cpcPara75);
+			obj.put("quantidadePorVisita", quantidadePorVisita);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -103,6 +110,24 @@ public class IdeiaPalavraChave extends Model {
 	public int getMaisRecente() { 
 		return this.maisRecente;
 	}
+	public void setCpcPara50(double valor) { 
+		this.cpcPara50 = valor;
+	}
+	public double getCpcPara50() { 
+		return this.cpcPara50;
+	}
+	public void setCpcPara75(double valor) { 
+		this.cpcPara75 = valor;
+	}
+	public double getCpcPara75() { 
+		return this.cpcPara75;
+	}
+	public void setQuantidadePorVisita(int valor) { 
+		this.quantidadePorVisita = valor;
+	}
+	public int getQuantidadePorVisita() { 
+		return this.quantidadePorVisita;
+	}
 
 	public List<PalavraChaveCampanhaAds> getPalavraChaveCampanhaAds() {
 		return  PalavraChaveCampanhaAds;
@@ -135,6 +160,17 @@ public class IdeiaPalavraChave extends Model {
 			Object objeto = new ProdutoAfiliadoMetrica();
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoAfiliadoMetricas.add((ProdutoAfiliadoMetrica) objeto);
+		}
+	}
+	public List<VisitaProdutoHotmart> getVisitaProdutoHotmarts() {
+		return  VisitaProdutoHotmarts;
+	}
+	public void setVisitaProdutoHotmarts(List<VisitaProdutoHotmart> valores) {
+		this.VisitaProdutoHotmarts = new ArrayList<VisitaProdutoHotmart>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new VisitaProdutoHotmart();
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.VisitaProdutoHotmarts.add((VisitaProdutoHotmart) objeto);
 		}
 	}
 }

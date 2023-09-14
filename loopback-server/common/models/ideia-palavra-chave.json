@@ -208,6 +208,44 @@
    					"verb": "post"
  				}
  			]
+		},
+		"ListaTop": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaTop",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaTopPesquisa": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaTopPesquisa",
+   					"verb": "get"
+ 				}
+ 			]
 		}
 	}
 }

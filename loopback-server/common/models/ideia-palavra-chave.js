@@ -2,6 +2,38 @@
 
 module.exports = function(Ideiapalavrachave) {
 
+    Ideiapalavrachave.ListaTop = function(callback) {
+        const sql = "select *  " +
+            " from IdeiaPalavraChave, VisitaProdutoHotmart " +
+            " where IdeiaPalavraChave.hotmartId = VisitaProdutoHotmart.hotmartId " +
+            " and IdeiaPalavraChave.maisRecente = 1 " +
+            " and VisitaProdutoHotmart.maisRecente = 1 " +
+            " and cpcPara75 > cpcMinimoTopPage " +
+            " and quantidadePorVisita < 8 " +
+            " and afiliacaoPercentual > 30 " +
+            " and afiliacaoValor < 200 " +
+            " and concorrencia = 'LOW' " +
+            " order by mediaPesquisa desc";
+        let ds = Ideiapalavrachave.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
+    Ideiapalavrachave.ListaTopPesquisa = function(callback) {
+        const sql = "select *  " +
+            " from IdeiaPalavraChave, VisitaProdutoHotmart " +
+            " where IdeiaPalavraChave.hotmartId = VisitaProdutoHotmart.hotmartId " +
+            " and IdeiaPalavraChave.maisRecente = 1 " +
+            " and VisitaProdutoHotmart.maisRecente = 1 " +
+            " and quantidadePorVisita < 8 " +
+            " and afiliacaoPercentual > 30 " +
+            " and afiliacaoValor < 200 " +
+            " order by mediaPesquisa desc limit 50";
+        let ds = Ideiapalavrachave.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
+
+
     Ideiapalavrachave.CalculaCpcAlvo = function(callback) {
         const sql = " update IdeiaPalavraChave " +
             " set cpcPara50 = " +

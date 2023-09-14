@@ -30,11 +30,11 @@ public class RepositorioIdeiaPalavraChave extends ModelRepository<IdeiaPalavraCh
 
 	// ***  Operações  ***
 
-	public synchronized void atualizaMaisRecentePalavraChave(final ObjectCallback<IdeiaPalavraChave> callback ) {
+	public synchronized void atualizaMaisRecentePalavraChave(final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/atualizaMaisRecentePalavraChave","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "IdeiaPalavraChave.atualizaMaisRecentePalavraChave");
 		Map<String, Object> params = new HashMap<String, Object>();
-		invokeStaticMethod("atualizaMaisRecentePalavraChave", params,   new JsonObjectParser<IdeiaPalavraChave>(this, callback));
+		invokeStaticMethod("atualizaMaisRecentePalavraChave", params,   new EmptyResponseParser(callback));
 	}
 
 	public synchronized void melhoresUltimaData(int limiteMensal ,final ListCallback<IdeiaPalavraChave> callback ) {
@@ -52,6 +52,42 @@ public class RepositorioIdeiaPalavraChave extends ModelRepository<IdeiaPalavraCh
 		params.put("listaPalavra",obtemLista(listaPalavra));
 		params.put("hotmartId", hotmartId);
 		invokeStaticMethod("recebeLista", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void melhoresCpcComVisita(int limite ,final ListCallback<IdeiaPalavraChave> callback ) {
+		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/melhoresCpcComVisita","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "IdeiaPalavraChave.melhoresCpcComVisita");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("limite", limite);
+		invokeStaticMethod("melhoresCpcComVisita", params,   new JsonArrayParser<IdeiaPalavraChave>(this, callback));
+	}
+
+	public synchronized void calculaCpcAlvo(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/calculaCpcAlvo","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "IdeiaPalavraChave.calculaCpcAlvo");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("calculaCpcAlvo", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void atualizaQuantidadeVisita(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/atualizaQuantidadeVisita","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "IdeiaPalavraChave.atualizaQuantidadeVisita");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("atualizaQuantidadeVisita", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaTop(final ListCallback<IdeiaPalavraChave> callback ) {
+		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/listaTop","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "IdeiaPalavraChave.listaTop");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaTop", params,   new JsonArrayParser<IdeiaPalavraChave>(this, callback));
+	}
+
+	public synchronized void listaTopPesquisa(final ListCallback<IdeiaPalavraChave> callback ) {
+		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/listaTopPesquisa","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "IdeiaPalavraChave.listaTopPesquisa");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaTopPesquisa", params,   new JsonArrayParser<IdeiaPalavraChave>(this, callback));
 	}
 
 

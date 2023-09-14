@@ -34,6 +34,7 @@ public class VisitaProdutoHotmart extends Model {
 	private int possuiPalavraChave;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
+	private IdeiaPalavraChave IdeiaPalavraChave;
 	// Relacionamentos N
 	private List<ProdutoAfiliadoMetrica> ProdutoAfiliadoMetricas;
 
@@ -181,6 +182,13 @@ public class VisitaProdutoHotmart extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public IdeiaPalavraChave getIdeiaPalavraChave() {
+		return IdeiaPalavraChave;
+	}
+	public void setIdeiaPalavraChave(HashMap valor) {
+		this.IdeiaPalavraChave = new IdeiaPalavraChave();
+		BeanUtil.setProperties(this.IdeiaPalavraChave, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ProdutoAfiliadoMetrica> getProdutoAfiliadoMetricas() {
 		return  ProdutoAfiliadoMetricas;
