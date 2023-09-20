@@ -12,7 +12,9 @@ export interface PixelGoogleInterface {
   "produtoAfiliadoHotmartId"?: number;
   "contaGoogleId"?: number;
   "id"?: number;
+  "pixelGooglePaginaVendaId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  paginaVenda?: ProdutoAfiliadoHotmart;
   contaGoogle?: ContaGoogle;
 }
 
@@ -23,7 +25,9 @@ export class PixelGoogle implements PixelGoogleInterface {
   "produtoAfiliadoHotmartId": number;
   "contaGoogleId": number;
   "id": number;
+  "pixelGooglePaginaVendaId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  paginaVenda: ProdutoAfiliadoHotmart;
   contaGoogle: ContaGoogle;
   constructor(data?: PixelGoogleInterface) {
     Object.assign(this, data);
@@ -82,6 +86,10 @@ export class PixelGoogle implements PixelGoogleInterface {
           name: 'id',
           type: 'number'
         },
+        "pixelGooglePaginaVendaId": {
+          name: 'pixelGooglePaginaVendaId',
+          type: 'number'
+        },
       },
       relations: {
         produtoAfiliadoHotmart: {
@@ -90,6 +98,14 @@ export class PixelGoogle implements PixelGoogleInterface {
           model: 'ProdutoAfiliadoHotmart',
           relationType: 'belongsTo',
                   keyFrom: 'produtoAfiliadoHotmartId',
+          keyTo: 'hotmartId'
+        },
+        paginaVenda: {
+          name: 'paginaVenda',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'pixelGooglePaginaVendaId',
           keyTo: 'hotmartId'
         },
         contaGoogle: {

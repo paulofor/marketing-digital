@@ -30,7 +30,7 @@ public abstract class ConsultaGoogleAdsPerformance extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new CampanhaAdsTeste_AtualizaCampanhaPerformanceImpl();
+		return new CampanhaAdsMetrica_InsereMetricaImpl();
 	}
 
 

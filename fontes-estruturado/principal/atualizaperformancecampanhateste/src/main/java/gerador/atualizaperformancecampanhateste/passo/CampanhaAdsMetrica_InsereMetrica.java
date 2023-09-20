@@ -11,18 +11,18 @@ import java.util.List;
 import com.strongloop.android.loopback.callbacks.*;
 
 
-public abstract class CampanhaAdsTeste_AtualizaCampanhaPerformance extends DaoAplicacao { 
+public abstract class CampanhaAdsMetrica_InsereMetrica extends DaoAplicacao { 
 
 	private int NUM_PASSO = 3;
 
 
-	protected CampanhaAdsTeste campanha;
+	protected CampanhaAdsMetrica metricaCampanha;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		if (executaCustom(ds.getCampanhaTesteCorrente())) {
-			repCampanhaAdsTeste.atualizaCampanhaPerformance( campanha, new VoidCallback() { 
+		if (executaCustom(ds.getMetricaCampanha())) {
+			repCampanhaAdsMetrica.insereMetrica( metricaCampanha, new VoidCallback() { 
 				public void onSuccess() {
 					executaProximo();
 				}
@@ -42,7 +42,7 @@ public abstract class CampanhaAdsTeste_AtualizaCampanhaPerformance extends DaoAp
 	}
 
 
-	protected boolean executaCustom( CampanhaAdsTeste campanhaTesteCorrente ) { return true; }
+	protected boolean executaCustom( CampanhaAdsMetrica metricaCampanha ) { return true; }
 
 	protected void preFinalizar() { return; }
 

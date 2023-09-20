@@ -17,7 +17,7 @@ public class AtualizaPerformanceCampanhaTeste {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaPerformanceCampanhaTeste");
-		System.out.println("(12/09/2023 19:28:41)");
+		System.out.println("(18/09/2023 02:04:16)");
 		try {
 			carregaProp();
 			AtualizaPerformanceCampanhaTesteObj obj = new AtualizaPerformanceCampanhaTesteObj();
@@ -55,6 +55,6 @@ public class AtualizaPerformanceCampanhaTeste {
 		DaoBaseComum.setUrl(UrlLoopback);
 		DaoBaseComum.setProximo("AtualizaPerformanceCampanhaTesteObj", new CampanhaAdsTeste_ObtemListaParaConsultarPerformanceImpl());
 		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaConsultarPerformance", new ConsultaGoogleAdsPerformanceImpl());
-		DaoBaseComum.setProximo("ConsultaGoogleAdsPerformance", new CampanhaAdsTeste_AtualizaCampanhaPerformanceImpl());
+		DaoBaseComum.setProximo("ConsultaGoogleAdsPerformance", new CampanhaAdsMetrica_InsereMetricaImpl());
 	}
 }

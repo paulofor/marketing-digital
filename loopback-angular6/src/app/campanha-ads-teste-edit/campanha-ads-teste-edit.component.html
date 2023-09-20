@@ -23,6 +23,13 @@
       </mat-select>
     </mat-form-field>
 
+    <mat-form-field *ngIf="item.codigoAds" class="example-half-width">
+      <mat-select #ativa [(ngModel)]="item.ativa" name="ativa" placeholder="Ativa">
+        <mat-option value="0">Não</mat-option>
+        <mat-option value="1">Sim</mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </mat-dialog-content>
 
   <mat-dialog-actions>

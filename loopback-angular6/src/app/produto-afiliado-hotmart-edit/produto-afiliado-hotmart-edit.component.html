@@ -28,6 +28,10 @@
       <input matInput #sigla maxlength="8" [(ngModel)]="item.sigla" name="sigla" placeholder="Sigla (8 caracteres)" autocomplete="off"/>
     </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <input matInput #precoReal  [(ngModel)]="item.precoReal" name="precoReal" placeholder="Comissão Valor Real" autocomplete="off"/>
+    </mat-form-field>
+
     <mat-form-field class="example-full-width" *ngIf="listaConta">
       <mat-select placeholder="Conta Google Corrente"  #contaGoogleId [(ngModel)]="item.contaGoogleId" name="contaGoogleId">
         <mat-option *ngFor="let conta of listaConta" [value]="conta.id">

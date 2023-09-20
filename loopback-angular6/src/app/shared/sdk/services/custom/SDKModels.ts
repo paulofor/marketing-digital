@@ -22,6 +22,7 @@ import { AnuncioCampanhaAdsTeste } from '../../models/AnuncioCampanhaAdsTeste';
 import { FacebookConta } from '../../models/FacebookConta';
 import { ProdutoAfiliadoMetrica } from '../../models/ProdutoAfiliadoMetrica';
 import { ContaGoogle } from '../../models/ContaGoogle';
+import { CampanhaAdsMetrica } from '../../models/CampanhaAdsMetrica';
 
 export interface Models { [name: string]: any }
 
@@ -51,6 +52,7 @@ export class SDKModels {
     FacebookConta: FacebookConta,
     ProdutoAfiliadoMetrica: ProdutoAfiliadoMetrica,
     ContaGoogle: ContaGoogle,
+    CampanhaAdsMetrica: CampanhaAdsMetrica,
     
   };
 

@@ -42,7 +42,8 @@ module.exports = function(Campanhaadsteste) {
     Campanhaadsteste.ObtemListaParaConsultarPerformance = function(callback) {
         const sql = "SELECT * " +
             " FROM CampanhaAdsTeste " +
-            " WHERE dataInicio >= DATE_SUB(CURDATE(), INTERVAL 2 MONTH) and dataInicio <= CURDATE()";
+            " where ativa = 1 ";
+            //" WHERE dataInicio >= DATE_SUB(CURDATE(), INTERVAL 2 MONTH) and dataInicio <= CURDATE()";
         const ds = Campanhaadsteste.dataSource;
         ds.connector.query(sql,callback);
     }

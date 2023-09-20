@@ -1,0 +1,75 @@
+{
+	"name": "CampanhaAdsMetrica",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"dataHora": {
+			"type": "date"
+			,"id": true
+		},
+		"cpcMedio": {
+			"type": "number"
+		},
+		"custoCampanha": {
+			"type": "number"
+		},
+		"impressao": {
+			"type": "number"
+		},
+		"clique": {
+			"type": "number"
+		},
+		"cpcCampanha": {
+			"type": "number"
+		},
+		"codigoAds": {
+			"type": "string"
+		},
+		"campanhaAdsTesteId": {
+			"type": "number"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"campanhaAdsTeste": {
+			"type": "belongsTo",
+			"model": "CampanhaAdsTeste",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"InsereMetrica": {
+			"accepts": [
+				{
+					"arg": "metricaCampanha",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereMetrica",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

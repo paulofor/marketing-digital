@@ -17,6 +17,8 @@ export interface ProdutoAfiliadoHotmartInterface {
   "sigla"?: string;
   "pixelGoogleId"?: number;
   "criaPixelVenda"?: number;
+  "pixelGooglePaginaVendaId"?: number;
+  "precoReal"?: number;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
@@ -34,6 +36,8 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "sigla": string;
   "pixelGoogleId": number;
   "criaPixelVenda": number;
+  "pixelGooglePaginaVendaId": number;
+  "precoReal": number;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   campanhaAdsTestes: CampanhaAdsTeste[];
@@ -105,6 +109,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'criaPixelVenda',
           type: 'number'
         },
+        "pixelGooglePaginaVendaId": {
+          name: 'pixelGooglePaginaVendaId',
+          type: 'number'
+        },
+        "precoReal": {
+          name: 'precoReal',
+          type: 'number'
+        },
         "contaGoogleId": {
           name: 'contaGoogleId',
           type: 'number'
@@ -141,7 +153,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           model: 'PixelGoogle',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
-          keyTo: 'produtoAfiliadoHotmartId'
+          keyTo: 'pixelGooglePaginaVendaId'
         },
         contaGoogle: {
           name: 'contaGoogle',

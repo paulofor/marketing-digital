@@ -48,6 +48,9 @@
 		"cpc": {
 			"type": "number"
 		},
+		"ativa": {
+			"type": "number"
+		},
 		"modeloCampanhaAdsTesteId": {
 			"type": "number"
 		},
@@ -83,6 +86,11 @@
 		"palavraChaveCampanhaAdsTestes": {
 			"type": "hasMany",
 			"model": "PalavraChaveCampanhaAdsTeste",
+			"foreignKey": ""
+		},
+		"campanhaAdsMetricas": {
+			"type": "hasMany",
+			"model": "CampanhaAdsMetrica",
 			"foreignKey": ""
 		}
 	},

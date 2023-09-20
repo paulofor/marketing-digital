@@ -36,6 +36,11 @@
 			"type": "belongsTo",
 			"model": "ContaGoogle",
 			"foreignKey": ""
+		},
+		"paginaVenda": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "pixelGooglePaginaVendaId"
 		}
 	},
 	"acls": [],

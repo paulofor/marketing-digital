@@ -118,5 +118,9 @@
   "ContaGoogle": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "CampanhaAdsMetrica": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

@@ -70,6 +70,7 @@ import { AnuncioCampanhaAdsTesteApi } from './services/custom/AnuncioCampanhaAds
 import { FacebookContaApi } from './services/custom/FacebookConta';
 import { ProdutoAfiliadoMetricaApi } from './services/custom/ProdutoAfiliadoMetrica';
 import { ContaGoogleApi } from './services/custom/ContaGoogle';
+import { CampanhaAdsMetricaApi } from './services/custom/CampanhaAdsMetrica';
 /**
 * @module SDKBrowserModule
 * @description
@@ -122,6 +123,7 @@ export class SDKBrowserModule {
         FacebookContaApi,
         ProdutoAfiliadoMetricaApi,
         ContaGoogleApi,
+        CampanhaAdsMetricaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

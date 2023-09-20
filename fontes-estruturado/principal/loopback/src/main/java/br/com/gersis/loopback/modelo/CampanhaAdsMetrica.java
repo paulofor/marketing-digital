@@ -15,6 +15,13 @@ public class CampanhaAdsMetrica extends Model {
 
 
 	private String dataHora;
+	private double cpcMedio;
+	private double custoCampanha;
+	private int impressao;
+	private int clique;
+	private double cpcCampanha;
+	private String codigoAds;
+	private int campanhaAdsTesteId;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	// Relacionamentos N
@@ -24,6 +31,13 @@ public class CampanhaAdsMetrica extends Model {
 		try {
 			obj.put("id",getId());
 			obj.put("dataHora", dataHora);
+			obj.put("cpcMedio", cpcMedio);
+			obj.put("custoCampanha", custoCampanha);
+			obj.put("impressao", impressao);
+			obj.put("clique", clique);
+			obj.put("cpcCampanha", cpcCampanha);
+			obj.put("codigoAds", codigoAds);
+			obj.put("campanhaAdsTesteId", campanhaAdsTesteId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -36,6 +50,48 @@ public class CampanhaAdsMetrica extends Model {
 	}
 	public String getDataHora() { 
 		return this.dataHora;
+	}
+	public void setCpcMedio(double valor) { 
+		this.cpcMedio = valor;
+	}
+	public double getCpcMedio() { 
+		return this.cpcMedio;
+	}
+	public void setCustoCampanha(double valor) { 
+		this.custoCampanha = valor;
+	}
+	public double getCustoCampanha() { 
+		return this.custoCampanha;
+	}
+	public void setImpressao(int valor) { 
+		this.impressao = valor;
+	}
+	public int getImpressao() { 
+		return this.impressao;
+	}
+	public void setClique(int valor) { 
+		this.clique = valor;
+	}
+	public int getClique() { 
+		return this.clique;
+	}
+	public void setCpcCampanha(double valor) { 
+		this.cpcCampanha = valor;
+	}
+	public double getCpcCampanha() { 
+		return this.cpcCampanha;
+	}
+	public void setCodigoAds(String valor) { 
+		this.codigoAds = valor;
+	}
+	public String getCodigoAds() { 
+		return this.codigoAds;
+	}
+	public void setCampanhaAdsTesteId(int valor) { 
+		this.campanhaAdsTesteId = valor;
+	}
+	public int getCampanhaAdsTesteId() { 
+		return this.campanhaAdsTesteId;
 	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {

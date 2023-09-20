@@ -7,6 +7,7 @@ import java.util.List;
 
 public class DatasetAplicacao  implements IDatasetComum {
 	private CampanhaAdsTeste campanhaTesteCorrente;
+	private CampanhaAdsMetrica metricaCampanha;
 
 
 	public void setCampanhaTesteCorrente(CampanhaAdsTeste valor) { 
@@ -14,5 +15,11 @@ public class DatasetAplicacao  implements IDatasetComum {
 	}
 	public CampanhaAdsTeste getCampanhaTesteCorrente() { 
 		return this.campanhaTesteCorrente;
+	}
+	public void setMetricaCampanha(CampanhaAdsMetrica valor) { 
+		this.metricaCampanha = valor;
+	}
+	public CampanhaAdsMetrica getMetricaCampanha() { 
+		return this.metricaCampanha;
 	}
 }

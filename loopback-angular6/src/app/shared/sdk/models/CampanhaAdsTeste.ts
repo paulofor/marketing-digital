@@ -4,7 +4,8 @@ import {
   ModeloCampanhaAdsTeste,
   PalavraChaveCampanhaAdsTeste,
   AnuncioCampanhaAdsTeste,
-  ContaGoogle
+  ContaGoogle,
+  CampanhaAdsMetrica
 } from '../index';
 
 declare var Object: any;
@@ -22,6 +23,7 @@ export interface CampanhaAdsTesteInterface {
   "ctr"?: number;
   "nomeAds"?: string;
   "cpc"?: number;
+  "ativa"?: number;
   "modeloCampanhaAdsTesteId"?: number;
   "produtoAfiliadoHotmartId"?: number;
   "contaGoogleId"?: number;
@@ -31,6 +33,7 @@ export interface CampanhaAdsTesteInterface {
   palavraChaveCampanhaAdsTestes?: PalavraChaveCampanhaAdsTeste[];
   anuncioCampanhaAdsTestes?: AnuncioCampanhaAdsTeste[];
   contaGoogle?: ContaGoogle;
+  campanhaAdsMetricas?: CampanhaAdsMetrica[];
 }
 
 export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
@@ -47,6 +50,7 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "ctr": number;
   "nomeAds": string;
   "cpc": number;
+  "ativa": number;
   "modeloCampanhaAdsTesteId": number;
   "produtoAfiliadoHotmartId": number;
   "contaGoogleId": number;
@@ -56,6 +60,7 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   palavraChaveCampanhaAdsTestes: PalavraChaveCampanhaAdsTeste[];
   anuncioCampanhaAdsTestes: AnuncioCampanhaAdsTeste[];
   contaGoogle: ContaGoogle;
+  campanhaAdsMetricas: CampanhaAdsMetrica[];
   constructor(data?: CampanhaAdsTesteInterface) {
     Object.assign(this, data);
   }
@@ -141,6 +146,10 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           name: 'cpc',
           type: 'number'
         },
+        "ativa": {
+          name: 'ativa',
+          type: 'number'
+        },
         "modeloCampanhaAdsTesteId": {
           name: 'modeloCampanhaAdsTesteId',
           type: 'number'
@@ -198,6 +207,14 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           relationType: 'belongsTo',
                   keyFrom: 'contaGoogleId',
           keyTo: 'id'
+        },
+        campanhaAdsMetricas: {
+          name: 'campanhaAdsMetricas',
+          type: 'CampanhaAdsMetrica[]',
+          model: 'CampanhaAdsMetrica',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsTesteId'
         },
       }
     }

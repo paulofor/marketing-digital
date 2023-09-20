@@ -30,10 +30,11 @@ public class RepositorioCampanhaAdsMetrica extends ModelRepository<CampanhaAdsMe
 
 	// ***  Operações  ***
 
-	public synchronized void insereMetrica(final VoidCallback callback ) {
+	public synchronized void insereMetrica(CampanhaAdsMetrica metricaCampanha ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricas/insereMetrica","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetrica.insereMetrica");
 		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("metricaCampanha", metricaCampanha.getJSON());
 		invokeStaticMethod("insereMetrica", params,   new EmptyResponseParser(callback));
 	}
 

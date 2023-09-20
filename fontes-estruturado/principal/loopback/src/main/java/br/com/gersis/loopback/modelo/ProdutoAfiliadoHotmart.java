@@ -23,6 +23,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private int pixelGoogleId;
 	private int criaPixelVenda;
 	private int pixelGooglePaginaVendaId;
+	private double precoReal;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
@@ -45,6 +46,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("pixelGoogleId", pixelGoogleId);
 			obj.put("criaPixelVenda", criaPixelVenda);
 			obj.put("pixelGooglePaginaVendaId", pixelGooglePaginaVendaId);
+			obj.put("precoReal", precoReal);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -105,6 +107,12 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public int getPixelGooglePaginaVendaId() { 
 		return this.pixelGooglePaginaVendaId;
+	}
+	public void setPrecoReal(double valor) { 
+		this.precoReal = valor;
+	}
+	public double getPrecoReal() { 
+		return this.precoReal;
 	}
 
 	public ContaGoogle getContaGoogle() {

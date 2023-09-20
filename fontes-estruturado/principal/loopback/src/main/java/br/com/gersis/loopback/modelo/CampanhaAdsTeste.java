@@ -27,6 +27,7 @@ public class CampanhaAdsTeste extends Model {
 	private double ctr;
 	private String nomeAds;
 	private double cpc;
+	private int ativa;
 	// Relacionamentos 1
 	private ModeloCampanhaAdsTeste ModeloCampanhaAdsTeste;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
@@ -53,6 +54,7 @@ public class CampanhaAdsTeste extends Model {
 			obj.put("ctr", ctr);
 			obj.put("nomeAds", nomeAds);
 			obj.put("cpc", cpc);
+			obj.put("ativa", ativa);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -137,6 +139,12 @@ public class CampanhaAdsTeste extends Model {
 	}
 	public double getCpc() { 
 		return this.cpc;
+	}
+	public void setAtiva(int valor) { 
+		this.ativa = valor;
+	}
+	public int getAtiva() { 
+		return this.ativa;
 	}
 
 	public ModeloCampanhaAdsTeste getModeloCampanhaAdsTeste() {
