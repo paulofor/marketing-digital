@@ -28,7 +28,7 @@
           <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>
         </div>
         <div class="dgc-card-detalhe" >
-          <span>Valor Real: {{item.precoReal| currency : 'BRL'}}</span>
+          <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>
         </div>
         <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0" >
           <div *ngFor="let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas">

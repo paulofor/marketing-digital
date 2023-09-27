@@ -40,6 +40,12 @@
 		"precoReal": {
 			"type": "number"
 		},
+		"vendaTotal": {
+			"type": "number"
+		},
+		"qtdeVenda": {
+			"type": "number"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}

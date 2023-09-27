@@ -15,6 +15,7 @@ import { ContaGoogleListComponent } from '../conta-google-list/conta-google-list
 import { IdeiaPalavraChaveListSimplesMelhoresCpcComponent } from '../ideia-palavra-chave-list-simples-melhores-cpc/ideia-palavra-chave-list-simples-melhores-cpc.component';
 import { IdeiaPalavraChaveListSimplesTopComponent } from '../ideia-palavra-chave-list-simples-top/ideia-palavra-chave-list-simples-top.component';
 import { IdeiaPalavraChaveListSimplesTopPesquisaComponent } from '../ideia-palavra-chave-list-simples-top-pesquisa/ideia-palavra-chave-list-simples-top-pesquisa.component';
+import { CampanhaAdsTesteListAtivaMetricaComponent } from '../campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component';
 
 
 
@@ -38,6 +39,9 @@ export const routes : Routes = [
     { path: 'melhoresCpc' , component: IdeiaPalavraChaveListSimplesMelhoresCpcComponent },
     { path: 'melhoresTop' , component: IdeiaPalavraChaveListSimplesTopComponent },
     { path: 'melhoresTopPesquisa' , component: IdeiaPalavraChaveListSimplesTopPesquisaComponent },
+
+    { path: 'campanhaAdsTesteAtivaMetrica' , component: CampanhaAdsTesteListAtivaMetricaComponent },
+
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

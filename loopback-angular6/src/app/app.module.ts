@@ -61,6 +61,7 @@ import { ContaGoogleEditComponent } from './conta-google-edit/conta-google-edit.
 import { IdeiaPalavraChaveListSimplesMelhoresCpcComponent } from './ideia-palavra-chave-list-simples-melhores-cpc/ideia-palavra-chave-list-simples-melhores-cpc.component';
 import { IdeiaPalavraChaveListSimplesTopComponent } from './ideia-palavra-chave-list-simples-top/ideia-palavra-chave-list-simples-top.component';
 import { IdeiaPalavraChaveListSimplesTopPesquisaComponent } from './ideia-palavra-chave-list-simples-top-pesquisa/ideia-palavra-chave-list-simples-top-pesquisa.component';
+import { CampanhaAdsTesteListAtivaMetricaComponent } from './campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -97,7 +98,8 @@ registerLocaleData(localePt, 'pt-BR');
     ContaGoogleEditComponent,
     IdeiaPalavraChaveListSimplesMelhoresCpcComponent,
     IdeiaPalavraChaveListSimplesTopComponent,
-    IdeiaPalavraChaveListSimplesTopPesquisaComponent
+    IdeiaPalavraChaveListSimplesTopPesquisaComponent,
+    CampanhaAdsTesteListAtivaMetricaComponent
   ],
   imports: [
     BrowserModule,

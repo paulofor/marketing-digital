@@ -10,8 +10,12 @@ public class CampanhaAdsMetrica_InsereMetricaImpl extends CampanhaAdsMetrica_Ins
 
 	@Override
 	protected boolean executaCustom(CampanhaAdsMetrica metricaCampanha) {
-		this.metricaCampanha = metricaCampanha;
-		return true;
+		if (metricaCampanha == null) {
+			return false;
+		} else {
+			this.metricaCampanha = metricaCampanha;
+			return true;
+		}
 	} 
 
 

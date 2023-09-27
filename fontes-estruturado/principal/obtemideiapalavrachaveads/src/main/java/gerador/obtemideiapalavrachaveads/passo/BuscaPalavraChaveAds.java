@@ -16,14 +16,17 @@ public abstract class BuscaPalavraChaveAds extends DaoAplicacao {
 	private int NUM_PASSO = 2;
 
 
+	// campos saida
+	protected List<IdeiaPalavraChave>  saidaListaPalavraChave;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getVisitaCorrente())) {
+			ds.setListaPalavraChave(saidaListaPalavraChave);
 			executaProximo();
 		} else {
-			executaProximo();
+			finalizar();
 		}
 	}
 

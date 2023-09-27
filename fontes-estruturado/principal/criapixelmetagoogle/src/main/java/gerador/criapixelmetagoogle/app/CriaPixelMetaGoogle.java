@@ -17,7 +17,7 @@ public class CriaPixelMetaGoogle {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPixelMetaGoogle");
-		System.out.println("(18/09/2023 02:04:16)");
+		System.out.println("(27/09/2023 02:10:17)");
 		try {
 			carregaProp();
 			CriaPixelMetaGoogleObj obj = new CriaPixelMetaGoogleObj();

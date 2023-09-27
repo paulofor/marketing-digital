@@ -19,6 +19,8 @@ export interface ProdutoAfiliadoHotmartInterface {
   "criaPixelVenda"?: number;
   "pixelGooglePaginaVendaId"?: number;
   "precoReal"?: number;
+  "vendaTotal"?: number;
+  "qtdeVenda"?: number;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
@@ -38,6 +40,8 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "criaPixelVenda": number;
   "pixelGooglePaginaVendaId": number;
   "precoReal": number;
+  "vendaTotal": number;
+  "qtdeVenda": number;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   campanhaAdsTestes: CampanhaAdsTeste[];
@@ -115,6 +119,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
         },
         "precoReal": {
           name: 'precoReal',
+          type: 'number'
+        },
+        "vendaTotal": {
+          name: 'vendaTotal',
+          type: 'number'
+        },
+        "qtdeVenda": {
+          name: 'qtdeVenda',
           type: 'number'
         },
         "contaGoogleId": {

@@ -16,14 +16,17 @@ public abstract class ColetaProdutoHotmart extends DaoAplicacao {
 	private int NUM_PASSO = 2;
 
 
+	// campos saida
+	protected List<VisitaProdutoHotmart>  saidaListaVisita;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getToken())) {
+			ds.setListaVisita(saidaListaVisita);
 			executaProximo();
 		} else {
-			executaProximo();
+			finalizar();
 		}
 	}
 

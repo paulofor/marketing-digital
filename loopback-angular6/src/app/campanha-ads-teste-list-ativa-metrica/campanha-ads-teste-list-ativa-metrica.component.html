@@ -1,0 +1,27 @@
+<div class="dgc-painel" *ngIf="listaBase">
+	<div class="dgc-painel-header">
+		<span>Campanhas Ativas ({{listaBase.length}})</span>
+  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+	</div>
+	<div class="dgc-painel-principal">
+		<div class="dgc-card" *ngFor="let item of listaBase">
+ 			<div class="dgc-card-header">
+ 				<span>{{item.produtoAfiliadoHotmart.nome}} ({{item.produtoAfiliadoHotmart.sigla}})</span>
+ 			</div>
+			<div class="dgc-card-detalhe">
+				<span>Comissão real: {{item.produtoAfiliadoHotmart.precoReal | currency : 'BRL'}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span style="margin-right: 4px;">Temperatura: {{item.produtoAfiliadoHotmart.visitaProdutoHotmarts[0].temperatura}}</span>
+				<span>({{item.produtoAfiliadoHotmart.visitaProdutoHotmarts[0].dataInsercao | date: 'dd-MM-yyy'}})</span>
+			</div>
+			<div class="dgc-card-detalhe" *ngFor="let metrica of item.campanhaAdsMetricas">
+				<div >{{metrica.dataHora | date: 'dd-MM-yyy HH:mm'}}</div>
+				<span style="margin-right: 8px;">cliques: {{metrica.clique}}</span>
+				<span style="margin-right: 8px;">impresssao: {{metrica.impressao}}</span>
+				<span style="margin-right: 8px;">cpc: {{metrica.cpcMedio}}</span>
+				<span style="margin-right: 8px;">custo: {{metrica.custoCampanha}}</span>
+			</div>
+ 		</div>
+  	</div>
+</div>

@@ -16,14 +16,17 @@ public abstract class CriaCampanhaAds extends DaoAplicacao {
 	private int NUM_PASSO = 2;
 
 
+	// campos saida
+	protected CampanhaAdsTeste  saidaCampanhaTesteCorrente;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getCampanhaTesteCorrente())) {
+			ds.setCampanhaTesteCorrente(saidaCampanhaTesteCorrente);
 			executaProximo();
 		} else {
-			executaProximo();
+			finalizar();
 		}
 	}
 

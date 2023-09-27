@@ -27,6 +27,12 @@ public class ConsultaGoogleAdsPerformanceImpl extends ConsultaGoogleAdsPerforman
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
+			
+			// Access and print individual fields
+	        System.out.println("Developer Token: " + googleAdsClient.getDeveloperToken());
+	        System.out.println("Login Customer ID: " + googleAdsClient.getLoginCustomerId());
+	        System.out.println("Credenciais: " + googleAdsClient.getCredentials().toString());
+
 			CampanhaAdsMetrica metrica = consultaAds3(googleAdsClient, campanhaTesteCorrente);
 			//ds.setCampanhaTesteCorrente(campanhaTesteCorrente);
 			ds.setMetricaCampanha(metrica);
@@ -49,7 +55,7 @@ public class ConsultaGoogleAdsPerformanceImpl extends ConsultaGoogleAdsPerforman
 				"metrics.ctr, metrics.cost_micros, metrics.ctr, metrics.average_cpc " +
 		        "FROM campaign " +
 		        "WHERE campaign.id = '" + campanha.getCodigoAds() + "' ";
-		
+		System.out.println("Query:" + query);
 
 		
 		try (GoogleAdsServiceClient googleAdsServiceClient =
@@ -62,8 +68,10 @@ public class ConsultaGoogleAdsPerformanceImpl extends ConsultaGoogleAdsPerforman
 			            .setQuery(query)
 			            .build();
 			    // Issues the search request.
+			    System.out.println("Vai fazer search");
 			    SearchPagedResponse searchPagedResponse = googleAdsServiceClient.search(request);
 			    for (GoogleAdsRow linha : searchPagedResponse.getPage().getResponse().getResultsList()) {
+			    	System.out.println("Obteve resultado search...");
 			    	saida = new CampanhaAdsMetrica();
 			    	saida.setCodigoAds(campanha.getCodigoAds());
 			    	saida.setCampanhaAdsTesteId((int)campanha.getId());

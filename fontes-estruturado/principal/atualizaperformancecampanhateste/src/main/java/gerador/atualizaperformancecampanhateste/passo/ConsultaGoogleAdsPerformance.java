@@ -16,14 +16,17 @@ public abstract class ConsultaGoogleAdsPerformance extends DaoAplicacao {
 	private int NUM_PASSO = 2;
 
 
+	// campos saida
+	protected CampanhaAdsMetrica  saidaMetricaCampanha;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getCampanhaTesteCorrente())) {
+			ds.setMetricaCampanha(saidaMetricaCampanha);
 			executaProximo();
 		} else {
-			executaProximo();
+			finalizar();
 		}
 	}
 

@@ -32,6 +32,14 @@
       <input matInput #precoReal  [(ngModel)]="item.precoReal" name="precoReal" placeholder="Comissão Valor Real" autocomplete="off"/>
     </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <input matInput #vendaTotal  [(ngModel)]="item.vendaTotal" name="vendaTotal" placeholder="Valor Venda" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #qtdeVenda  [(ngModel)]="item.qtdeVenda" name="qtdeVenda" placeholder="Quantdade Venda" autocomplete="off"/>
+    </mat-form-field> 
+
     <mat-form-field class="example-full-width" *ngIf="listaConta">
       <mat-select placeholder="Conta Google Corrente"  #contaGoogleId [(ngModel)]="item.contaGoogleId" name="contaGoogleId">
         <mat-option *ngFor="let conta of listaConta" [value]="conta.id">
