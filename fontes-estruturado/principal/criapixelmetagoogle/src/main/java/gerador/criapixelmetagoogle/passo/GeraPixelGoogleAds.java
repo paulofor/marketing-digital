@@ -18,12 +18,14 @@ public abstract class GeraPixelGoogleAds extends DaoAplicacao {
 
 	// campos saida
 	protected PixelGoogle  saidaPixelGoogle;
+	protected PixelGoogle  saidaPixelGooglePaginaVenda;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getProdutoAfiliadoCorrente())) {
 			ds.setPixelGoogle(saidaPixelGoogle);
+			ds.setPixelGooglePaginaVenda(saidaPixelGooglePaginaVenda);
 			executaProximo();
 		} else {
 			finalizar();

@@ -18,6 +18,9 @@
 		"dataCriacao": {
 			"type": "date"
 		},
+		"nome": {
+			"type": "string"
+		},
 		"produtoAfiliadoHotmartId": {
 			"type": "number"
 		},
@@ -37,7 +40,7 @@
 			"model": "ContaGoogle",
 			"foreignKey": ""
 		},
-		"paginaVenda": {
+		"produtoAfiliadoPaginaVenda": {
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "pixelGooglePaginaVendaId"
@@ -47,6 +50,24 @@
 	"methods": {
 		"RegistraCriacao": {
 			"accepts": [
+				{
+					"arg": "pixelPaginaVenda",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "pixelVenda",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "produtoAfiliadoId",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
 			],
 			"returns": [
  				{

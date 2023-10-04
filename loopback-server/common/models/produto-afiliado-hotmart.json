@@ -77,7 +77,7 @@
 			"model": "PixelGoogle",
 			"foreignKey": ""
 		},
-		"pixelGoogles": {
+		"pixelGooglePaginaVenda": {
 			"type": "hasMany",
 			"model": "PixelGoogle",
 			"foreignKey": "pixelGooglePaginaVendaId"

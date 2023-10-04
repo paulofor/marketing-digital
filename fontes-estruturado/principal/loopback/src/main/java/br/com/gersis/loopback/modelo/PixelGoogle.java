@@ -17,10 +17,11 @@ public class PixelGoogle extends Model {
 	private String identificador;
 	private String script;
 	private String dataCriacao;
+	private String nome;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ContaGoogle ContaGoogle;
-	private ProdutoAfiliadoHotmart paginaVenda;
+	private ProdutoAfiliadoHotmart produtoAfiliadoPaginaVenda;
 	// Relacionamentos N
 
 	public JSONObject getJSON() {
@@ -30,6 +31,7 @@ public class PixelGoogle extends Model {
 			obj.put("identificador", identificador);
 			obj.put("script", script);
 			obj.put("dataCriacao", dataCriacao);
+			obj.put("nome", nome);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -55,6 +57,12 @@ public class PixelGoogle extends Model {
 	public String getDataCriacao() { 
 		return this.dataCriacao;
 	}
+	public void setNome(String valor) { 
+		this.nome = valor;
+	}
+	public String getNome() { 
+		return this.nome;
+	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
 		return ProdutoAfiliadoHotmart;
@@ -70,11 +78,11 @@ public class PixelGoogle extends Model {
 		this.ContaGoogle = new ContaGoogle();
 		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
 	}
-	public ProdutoAfiliadoHotmart getPaginaVenda() {
-		return paginaVenda;
+	public ProdutoAfiliadoHotmart getProdutoAfiliadoPaginaVenda() {
+		return produtoAfiliadoPaginaVenda;
 	}
-	public void setPaginaVenda(HashMap valor) {
-		this.paginaVenda = new ProdutoAfiliadoHotmart();
-		BeanUtil.setProperties(this.paginaVenda, (Map<String, ? extends Object>) valor, true);
+	public void setProdutoAfiliadoPaginaVenda(HashMap valor) {
+		this.produtoAfiliadoPaginaVenda = new ProdutoAfiliadoHotmart();
+		BeanUtil.setProperties(this.produtoAfiliadoPaginaVenda, (Map<String, ? extends Object>) valor, true);
 	}
 }

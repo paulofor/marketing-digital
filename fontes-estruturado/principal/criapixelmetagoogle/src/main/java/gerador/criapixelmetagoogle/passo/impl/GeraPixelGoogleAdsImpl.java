@@ -8,7 +8,6 @@ import java.util.Collections;
 import com.google.ads.googleads.lib.GoogleAdsClient;
 import com.google.ads.googleads.v13.enums.ConversionActionCategoryEnum.ConversionActionCategory;
 import com.google.ads.googleads.v13.enums.ConversionActionStatusEnum.ConversionActionStatus;
-import com.google.ads.googleads.v13.enums.ConversionActionTypeEnum;
 import com.google.ads.googleads.v13.enums.ConversionActionTypeEnum.ConversionActionType;
 import com.google.ads.googleads.v13.resources.ConversionAction;
 import com.google.ads.googleads.v13.resources.ConversionAction.ValueSettings;
@@ -17,7 +16,7 @@ import com.google.ads.googleads.v13.services.ConversionActionServiceClient;
 import com.google.ads.googleads.v13.services.MutateConversionActionResult;
 import com.google.ads.googleads.v13.services.MutateConversionActionsResponse;
 
-import autovalue.shaded.com.google.common.collect.ImmutableList;
+import br.com.gersis.loopback.modelo.PixelGoogle;
 import br.com.gersis.loopback.modelo.ProdutoAfiliadoHotmart;
 import gerador.criapixelmetagoogle.passo.GeraPixelGoogleAds;
 
@@ -33,7 +32,10 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
-			criaPixel(googleAdsClient,produtoAfiliadoCorrente);
+			String nomePixelPaginaVenda = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_pagina_venda";
+			String nomePixel = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_venda";
+			this.saidaPixelGooglePaginaVenda = criaPixel(googleAdsClient,nomePixelPaginaVenda);
+			this.saidaPixelGoogle = criaPixel(googleAdsClient,nomePixel);
 			//criaMeta(googleAdsClient);
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
@@ -48,16 +50,15 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 	
 	
 	
-	
-	private void criaPixel(GoogleAdsClient googleAdsClient, ProdutoAfiliadoHotmart produtoAfiliadoCorrente) {
+	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel) {
 
-		
+		PixelGoogle pixel = null;
 		
 		
 		// Creates a ConversionAction.
 		  ConversionAction conversionAction =
 				    ConversionAction.newBuilder()
-			        .setName("Pixel Digicom Livro")
+			        .setName(nomePixel)
 			        .setCategory(ConversionActionCategory.DEFAULT)
 			        .setType(ConversionActionType.WEBPAGE)
 			        .setStatus(ConversionActionStatus.ENABLED)
@@ -80,6 +81,9 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		            Long.toString(CODIGO_USUARIO), Collections.singletonList(operation));
 		    System.out.printf("Added %d conversion actions:%n", response.getResultsCount());
 		    for (MutateConversionActionResult result : response.getResultsList()) {
+		    	pixel = new PixelGoogle();
+		    	pixel.setNome(nomePixel);
+		    	pixel.setIdentificador(result.getResourceName());
 		      System.out.printf(
 		          "New conversion action added with resource name: '%s'%n", result.getResourceName());
 		    }
@@ -87,6 +91,7 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 			  e.printStackTrace();
 			  System.exit(-1);
 		  }
+		  return pixel;
 	}
 	
 	

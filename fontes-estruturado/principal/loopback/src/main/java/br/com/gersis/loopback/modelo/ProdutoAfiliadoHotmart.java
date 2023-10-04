@@ -33,7 +33,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<AnuncioAds> AnuncioAds;
 	private List<VisitaProdutoHotmart> VisitaProdutoHotmarts;
 	private List<PixelGoogle> PixelGoogles;
-	private List<PixelGoogle> PixelGoogles;
+	private List<PixelGoogle> pixelGooglePaginaVenda;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -182,15 +182,15 @@ public class ProdutoAfiliadoHotmart extends Model {
 			this.PixelGoogles.add((PixelGoogle) objeto);
 		}
 	}
-	public List<PixelGoogle> getPixelGoogles() {
-		return  PixelGoogles;
+	public List<PixelGoogle> getPixelGooglePaginaVenda() {
+		return  pixelGooglePaginaVenda;
 	}
-	public void setPixelGoogles(List<PixelGoogle> valores) {
-		this.PixelGoogles = new ArrayList<PixelGoogle>();
+	public void setPixelGooglePaginaVenda(List<PixelGoogle> valores) {
+		this.pixelGooglePaginaVenda = new ArrayList<PixelGoogle>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new PixelGoogle();
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.PixelGoogles.add((PixelGoogle) objeto);
+			this.pixelGooglePaginaVenda.add((PixelGoogle) objeto);
 		}
 	}
 }

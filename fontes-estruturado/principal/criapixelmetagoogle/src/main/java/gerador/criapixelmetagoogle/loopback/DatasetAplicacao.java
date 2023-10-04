@@ -8,6 +8,7 @@ import java.util.List;
 public class DatasetAplicacao  implements IDatasetComum {
 	private ProdutoAfiliadoHotmart produtoAfiliadoCorrente;
 	private PixelGoogle pixelGoogle;
+	private PixelGoogle pixelGooglePaginaVenda;
 
 
 	public void setProdutoAfiliadoCorrente(ProdutoAfiliadoHotmart valor) { 
@@ -21,5 +22,11 @@ public class DatasetAplicacao  implements IDatasetComum {
 	}
 	public PixelGoogle getPixelGoogle() { 
 		return this.pixelGoogle;
+	}
+	public void setPixelGooglePaginaVenda(PixelGoogle valor) { 
+		this.pixelGooglePaginaVenda = valor;
+	}
+	public PixelGoogle getPixelGooglePaginaVenda() { 
+		return this.pixelGooglePaginaVenda;
 	}
 }

@@ -16,12 +16,15 @@ public abstract class PixelGoogle_RegistraCriacao extends DaoAplicacao {
 	private int NUM_PASSO = 3;
 
 
+	protected PixelGoogle pixelPaginaVenda;
+	protected PixelGoogle pixelVenda;
+	protected int produtoAfiliadoId;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		if (executaCustom(ds.getPixelGoogle())) {
-			repPixelGoogle.registraCriacao(  new VoidCallback() { 
+		if (executaCustom(ds.getProdutoAfiliadoCorrente(), ds.getPixelGoogle(), ds.getPixelGooglePaginaVenda())) {
+			repPixelGoogle.registraCriacao( pixelPaginaVenda,pixelVenda,produtoAfiliadoId, new VoidCallback() { 
 				public void onSuccess() {
 					executaProximo();
 				}
@@ -41,7 +44,7 @@ public abstract class PixelGoogle_RegistraCriacao extends DaoAplicacao {
 	}
 
 
-	protected boolean executaCustom( PixelGoogle pixelGoogle ) { return true; }
+	protected boolean executaCustom( ProdutoAfiliadoHotmart produtoAfiliadoCorrente , PixelGoogle pixelGoogle , PixelGoogle pixelGooglePaginaVenda ) { return true; }
 
 	protected void preFinalizar() { return; }
 
