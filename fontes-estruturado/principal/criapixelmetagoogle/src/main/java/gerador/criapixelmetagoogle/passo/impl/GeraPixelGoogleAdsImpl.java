@@ -32,8 +32,8 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
-			String nomePixelPaginaVenda = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_pagina_venda";
-			String nomePixel = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_venda";
+			String nomePixelPaginaVenda = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_pagina_venda_7";
+			String nomePixel = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_venda_7";
 			this.saidaPixelGooglePaginaVenda = criaPixel(googleAdsClient,nomePixelPaginaVenda);
 			this.saidaPixelGoogle = criaPixel(googleAdsClient,nomePixel);
 			//criaMeta(googleAdsClient);

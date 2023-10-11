@@ -5,6 +5,7 @@ module.exports = function(Visitaprodutohotmart) {
 
 
     Visitaprodutohotmart.AtualizaMaisRecenteProdutoHotmart = function(callback) {
+        const sql0 = "UPDATE VisitaProdutoHotmart set maisRecente = 0 ";
         const sql = "UPDATE VisitaProdutoHotmart AS v1 " +
             " JOIN ( " +
             " SELECT MAX(dataInsercao) AS maxDataInsercao " +
@@ -12,7 +13,9 @@ module.exports = function(Visitaprodutohotmart) {
             " ) AS v2 ON v1.dataInsercao = v2.maxDataInsercao " +
             " SET v1.maisRecente = 1"
         let ds = Visitaprodutohotmart.dataSource;
-        ds.connector.query(sql,callback);
+        ds.connector.query(sql0, (err,result) => {
+            ds.connector.query(sql,callback);
+        })
     }
 
     Visitaprodutohotmart.InsereListaProdutoHotmart = function(lista, callback) {

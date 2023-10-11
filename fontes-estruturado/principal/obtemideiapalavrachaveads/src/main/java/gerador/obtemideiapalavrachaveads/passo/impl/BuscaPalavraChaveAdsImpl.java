@@ -33,15 +33,13 @@ public class BuscaPalavraChaveAdsImpl extends BuscaPalavraChaveAds {
 	
 	@Override
 	protected boolean executaCustom(VisitaProdutoHotmart visitaCorrente) {
-		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			List<Long> listaLocal = new ArrayList<Long>();
 			List<String> listaPalavra = new ArrayList<String>();
 			listaPalavra.add(visitaCorrente.getNome());
-			List<IdeiaPalavraChave> listaIdeia = runExample(googleAdsClient,CODIGO_USUARIO,1014, listaLocal,listaPalavra, null, visitaCorrente.getHotmartId());
-			ds.setListaPalavraChave(listaIdeia);
+			saidaListaPalavraChave = runExample(googleAdsClient,CODIGO_USUARIO,1014, listaLocal,listaPalavra, null, visitaCorrente.getHotmartId());
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
 			System.exit(-1);
@@ -50,7 +48,8 @@ public class BuscaPalavraChaveAdsImpl extends BuscaPalavraChaveAds {
 			System.exit(-1);
 		}
 		try {
-			Thread.sleep(30000);
+			System.out.println("Palavras: " + saidaListaPalavraChave.size() + " wait..");
+			Thread.sleep(40000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

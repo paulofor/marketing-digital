@@ -27,13 +27,13 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private double vendaTotal;
 	private int qtdeVenda;
 	// Relacionamentos 1
+	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
+	private PixelGoogle produtoAfiliadoPaginaVenda;
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 	private List<AnuncioAds> AnuncioAds;
 	private List<VisitaProdutoHotmart> VisitaProdutoHotmarts;
-	private List<PixelGoogle> PixelGoogles;
-	private List<PixelGoogle> pixelGooglePaginaVenda;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -131,12 +131,26 @@ public class ProdutoAfiliadoHotmart extends Model {
 		return this.qtdeVenda;
 	}
 
+	public PixelGoogle getPixelGoogle() {
+		return PixelGoogle;
+	}
+	public void setPixelGoogle(HashMap valor) {
+		this.PixelGoogle = new PixelGoogle();
+		BeanUtil.setProperties(this.PixelGoogle, (Map<String, ? extends Object>) valor, true);
+	}
 	public ContaGoogle getContaGoogle() {
 		return ContaGoogle;
 	}
 	public void setContaGoogle(HashMap valor) {
 		this.ContaGoogle = new ContaGoogle();
 		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
+	}
+	public PixelGoogle getProdutoAfiliadoPaginaVenda() {
+		return produtoAfiliadoPaginaVenda;
+	}
+	public void setProdutoAfiliadoPaginaVenda(HashMap valor) {
+		this.produtoAfiliadoPaginaVenda = new PixelGoogle();
+		BeanUtil.setProperties(this.produtoAfiliadoPaginaVenda, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {
 		return  CampanhaAdsTestes;
@@ -169,28 +183,6 @@ public class ProdutoAfiliadoHotmart extends Model {
 			Object objeto = new VisitaProdutoHotmart();
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.VisitaProdutoHotmarts.add((VisitaProdutoHotmart) objeto);
-		}
-	}
-	public List<PixelGoogle> getPixelGoogles() {
-		return  PixelGoogles;
-	}
-	public void setPixelGoogles(List<PixelGoogle> valores) {
-		this.PixelGoogles = new ArrayList<PixelGoogle>();
-		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new PixelGoogle();
-			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.PixelGoogles.add((PixelGoogle) objeto);
-		}
-	}
-	public List<PixelGoogle> getPixelGooglePaginaVenda() {
-		return  pixelGooglePaginaVenda;
-	}
-	public void setPixelGooglePaginaVenda(List<PixelGoogle> valores) {
-		this.pixelGooglePaginaVenda = new ArrayList<PixelGoogle>();
-		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new PixelGoogle();
-			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.pixelGooglePaginaVenda.add((PixelGoogle) objeto);
 		}
 	}
 }

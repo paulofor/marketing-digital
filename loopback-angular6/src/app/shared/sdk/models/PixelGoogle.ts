@@ -9,12 +9,13 @@ export interface PixelGoogleInterface {
   "identificador"?: string;
   "script"?: string;
   "dataCriacao"?: Date;
-  "produtoAfiliadoHotmartId"?: number;
+  "nome"?: string;
+  "codigo1"?: string;
+  "codigo2"?: string;
   "contaGoogleId"?: number;
   "id"?: number;
-  "pixelGooglePaginaVendaId"?: number;
-  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
-  paginaVenda?: ProdutoAfiliadoHotmart;
+  produtoAfiliadoHotmarts?: ProdutoAfiliadoHotmart[];
+  pixelGooglePaginaVenda?: ProdutoAfiliadoHotmart[];
   contaGoogle?: ContaGoogle;
 }
 
@@ -22,12 +23,13 @@ export class PixelGoogle implements PixelGoogleInterface {
   "identificador": string;
   "script": string;
   "dataCriacao": Date;
-  "produtoAfiliadoHotmartId": number;
+  "nome": string;
+  "codigo1": string;
+  "codigo2": string;
   "contaGoogleId": number;
   "id": number;
-  "pixelGooglePaginaVendaId": number;
-  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
-  paginaVenda: ProdutoAfiliadoHotmart;
+  produtoAfiliadoHotmarts: ProdutoAfiliadoHotmart[];
+  pixelGooglePaginaVenda: ProdutoAfiliadoHotmart[];
   contaGoogle: ContaGoogle;
   constructor(data?: PixelGoogleInterface) {
     Object.assign(this, data);
@@ -74,9 +76,17 @@ export class PixelGoogle implements PixelGoogleInterface {
           name: 'dataCriacao',
           type: 'Date'
         },
-        "produtoAfiliadoHotmartId": {
-          name: 'produtoAfiliadoHotmartId',
-          type: 'number'
+        "nome": {
+          name: 'nome',
+          type: 'string'
+        },
+        "codigo1": {
+          name: 'codigo1',
+          type: 'string'
+        },
+        "codigo2": {
+          name: 'codigo2',
+          type: 'string'
         },
         "contaGoogleId": {
           name: 'contaGoogleId',
@@ -86,27 +96,23 @@ export class PixelGoogle implements PixelGoogleInterface {
           name: 'id',
           type: 'number'
         },
-        "pixelGooglePaginaVendaId": {
-          name: 'pixelGooglePaginaVendaId',
-          type: 'number'
-        },
       },
       relations: {
-        produtoAfiliadoHotmart: {
-          name: 'produtoAfiliadoHotmart',
-          type: 'ProdutoAfiliadoHotmart',
+        produtoAfiliadoHotmarts: {
+          name: 'produtoAfiliadoHotmarts',
+          type: 'ProdutoAfiliadoHotmart[]',
           model: 'ProdutoAfiliadoHotmart',
-          relationType: 'belongsTo',
-                  keyFrom: 'produtoAfiliadoHotmartId',
-          keyTo: 'hotmartId'
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'pixelGoogleId'
         },
-        paginaVenda: {
-          name: 'paginaVenda',
-          type: 'ProdutoAfiliadoHotmart',
+        pixelGooglePaginaVenda: {
+          name: 'pixelGooglePaginaVenda',
+          type: 'ProdutoAfiliadoHotmart[]',
           model: 'ProdutoAfiliadoHotmart',
-          relationType: 'belongsTo',
-                  keyFrom: 'pixelGooglePaginaVendaId',
-          keyTo: 'hotmartId'
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'pixelGooglePaginaVendaId'
         },
         contaGoogle: {
           name: 'contaGoogle',

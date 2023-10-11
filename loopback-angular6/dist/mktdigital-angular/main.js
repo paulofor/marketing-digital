@@ -2918,7 +2918,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Pixel Google</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #identificador [(ngModel)]=\"item.identificador\" name=\"identificador\" placeholder=\"Identificador\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Pixel Google</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #identificador [(ngModel)]=\"item.identificador\" name=\"identificador\" placeholder=\"Identificador\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #codigo1 [(ngModel)]=\"item.codigo1\" name=\"codigo1\" placeholder=\"Código 1\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #codigo2 [(ngModel)]=\"item.codigo2\" name=\"codigo2\" placeholder=\"Código 2\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
 
 /***/ }),
 
@@ -2998,7 +2998,7 @@ var PixelGoogleEditComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".dgc-card {\n    width: 48%;\n}"
 
 /***/ }),
 
@@ -3009,7 +3009,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Pix Google</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\">\n      <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n          <div class=\"dgc-card-header\">\n            <span>{{item.identificador}}</span>\n          </div>\n          <div class=\"dgc-card-comandos\">\n              <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n          </div>\n      </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Pixel Google</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n      <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n          <div class=\"dgc-card-header\">\n            <span>{{item.nome}}</span>\n          </div>\n          <div class=\"dgc-card-detalhe\">\n            <span>{{item.codigo1}}</span>\n          </div>\n          <div class=\"dgc-card-detalhe\">\n            <span>{{item.codigo2}}</span>\n          </div>\n          <div class=\"dgc-card-comandos\">\n              <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n          </div>\n      </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -3424,7 +3424,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Produto Afiliado Hotmart</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #hotmartId [(ngModel)]=\"item.hotmartId\" name=\"hotmartId\" placeholder=\"Hotmart Id\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlFinal [(ngModel)]=\"item.urlFinal\" name=\"urlFinal\" placeholder=\"Url Final\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlTracking [(ngModel)]=\"item.urlTracking\" name=\"urlTracking\" placeholder=\"Url Tracking\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput maxlength=\"1\" #geraTesteCampanha [(ngModel)]=\"item.geraTesteCampanha\" name=\"geraTesteCampanha\" placeholder=\"Gera Campanha de Teste (0/1)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #sigla maxlength=\"8\" [(ngModel)]=\"item.sigla\" name=\"sigla\" placeholder=\"Sigla (8 caracteres)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #precoReal  [(ngModel)]=\"item.precoReal\" name=\"precoReal\" placeholder=\"Comissão Valor Real\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Corrente\"  #contaGoogleId [(ngModel)]=\"item.contaGoogleId\" name=\"contaGoogleId\">\n        <mat-option *ngFor=\"let conta of listaConta\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Produto Afiliado Hotmart</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #hotmartId [(ngModel)]=\"item.hotmartId\" name=\"hotmartId\" placeholder=\"Hotmart Id\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlFinal [(ngModel)]=\"item.urlFinal\" name=\"urlFinal\" placeholder=\"Url Final\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlTracking [(ngModel)]=\"item.urlTracking\" name=\"urlTracking\" placeholder=\"Url Tracking\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput maxlength=\"1\" #geraTesteCampanha [(ngModel)]=\"item.geraTesteCampanha\" name=\"geraTesteCampanha\" placeholder=\"Gera Campanha de Teste (0/1)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #sigla maxlength=\"8\" [(ngModel)]=\"item.sigla\" name=\"sigla\" placeholder=\"Sigla (8 caracteres)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #precoReal  [(ngModel)]=\"item.precoReal\" name=\"precoReal\" placeholder=\"Comissão Valor Real\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #vendaTotal  [(ngModel)]=\"item.vendaTotal\" name=\"vendaTotal\" placeholder=\"Valor Venda\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #qtdeVenda  [(ngModel)]=\"item.qtdeVenda\" name=\"qtdeVenda\" placeholder=\"Quantdade Venda\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Corrente\"  #contaGoogleId [(ngModel)]=\"item.contaGoogleId\" name=\"contaGoogleId\">\n        <mat-option *ngFor=\"let conta of listaConta\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
 
 /***/ }),
 
@@ -3523,7 +3523,7 @@ module.exports = ".dgc-card {\n    width: 48%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Afiliados Hotmart</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle!=null\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" >\n          <span>Valor Real: {{item.precoReal| currency : 'BRL'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\" >\n          <div *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})\n          </div>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
+module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Afiliados Hotmart</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle!=null\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" >\n          <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\" >\n          <div *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})\n          </div>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -3702,7 +3702,7 @@ var ProdutoHotmartListComponent = /** @class */ (function (_super) {
 /*!*************************************!*\
   !*** ./src/app/shared/sdk/index.ts ***!
   \*************************************/
-/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, AccessToken, SDKToken, FireLoopRef, ErrorHandler, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, LoggerService */
+/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, AccessToken, SDKToken, FireLoopRef, ErrorHandler, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3799,6 +3799,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["ErrorHandler"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["ProdutoPlataformaApi"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["VisitaProdutoPlataformaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["ProdutoHotmartApi"]; });
@@ -3850,8 +3852,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["UserApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["PlataformaVendaApi"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["ProdutoPlataformaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["LoggerService"]; });
 
@@ -5881,9 +5881,17 @@ var PixelGoogle = /** @class */ (function () {
                     name: 'dataCriacao',
                     type: 'Date'
                 },
-                "produtoAfiliadoHotmartId": {
-                    name: 'produtoAfiliadoHotmartId',
-                    type: 'number'
+                "nome": {
+                    name: 'nome',
+                    type: 'string'
+                },
+                "codigo1": {
+                    name: 'codigo1',
+                    type: 'string'
+                },
+                "codigo2": {
+                    name: 'codigo2',
+                    type: 'string'
                 },
                 "contaGoogleId": {
                     name: 'contaGoogleId',
@@ -5893,27 +5901,23 @@ var PixelGoogle = /** @class */ (function () {
                     name: 'id',
                     type: 'number'
                 },
-                "pixelGooglePaginaVendaId": {
-                    name: 'pixelGooglePaginaVendaId',
-                    type: 'number'
-                },
             },
             relations: {
-                produtoAfiliadoHotmart: {
-                    name: 'produtoAfiliadoHotmart',
-                    type: 'ProdutoAfiliadoHotmart',
+                produtoAfiliadoHotmarts: {
+                    name: 'produtoAfiliadoHotmarts',
+                    type: 'ProdutoAfiliadoHotmart[]',
                     model: 'ProdutoAfiliadoHotmart',
-                    relationType: 'belongsTo',
-                    keyFrom: 'produtoAfiliadoHotmartId',
-                    keyTo: 'hotmartId'
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'pixelGoogleId'
                 },
-                paginaVenda: {
-                    name: 'paginaVenda',
-                    type: 'ProdutoAfiliadoHotmart',
+                pixelGooglePaginaVenda: {
+                    name: 'pixelGooglePaginaVenda',
+                    type: 'ProdutoAfiliadoHotmart[]',
                     model: 'ProdutoAfiliadoHotmart',
-                    relationType: 'belongsTo',
-                    keyFrom: 'pixelGooglePaginaVendaId',
-                    keyTo: 'hotmartId'
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'pixelGooglePaginaVendaId'
                 },
                 contaGoogle: {
                     name: 'contaGoogle',
@@ -6081,6 +6085,14 @@ var ProdutoAfiliadoHotmart = /** @class */ (function () {
                     name: 'precoReal',
                     type: 'number'
                 },
+                "vendaTotal": {
+                    name: 'vendaTotal',
+                    type: 'number'
+                },
+                "qtdeVenda": {
+                    name: 'qtdeVenda',
+                    type: 'number'
+                },
                 "contaGoogleId": {
                     name: 'contaGoogleId',
                     type: 'number'
@@ -6111,13 +6123,21 @@ var ProdutoAfiliadoHotmart = /** @class */ (function () {
                     keyFrom: 'hotmartId',
                     keyTo: 'produtoAfiliadoHotmartId'
                 },
-                pixelGoogles: {
-                    name: 'pixelGoogles',
-                    type: 'PixelGoogle[]',
+                pixelGoogle: {
+                    name: 'pixelGoogle',
+                    type: 'PixelGoogle',
                     model: 'PixelGoogle',
-                    relationType: 'hasMany',
-                    keyFrom: 'hotmartId',
-                    keyTo: 'pixelGooglePaginaVendaId'
+                    relationType: 'belongsTo',
+                    keyFrom: 'pixelGoogleId',
+                    keyTo: 'id'
+                },
+                produtoAfiliadoPaginaVenda: {
+                    name: 'produtoAfiliadoPaginaVenda',
+                    type: 'PixelGoogle',
+                    model: 'PixelGoogle',
+                    relationType: 'belongsTo',
+                    keyFrom: 'pixelGooglePaginaVendaId',
+                    keyTo: 'id'
                 },
                 contaGoogle: {
                     name: 'contaGoogle',
@@ -14019,11 +14039,11 @@ var PixelGoogleApi = /** @class */ (function (_super) {
         return _this;
     }
     /**
-     * Busca relação produtoAfiliadoHotmart de belongsTo.
+     * Localize um item relacionado por ID para produtoAfiliadoHotmarts.
      *
      * @param {any} id PixelGoogle id
      *
-     * @param {boolean} refresh
+     * @param {any} fk Chave estrangeira para produtoAfiliadoHotmarts
      *
      * @returns {object} An empty reference that will be
      *   populated with the actual data once the response is returned
@@ -14034,27 +14054,55 @@ var PixelGoogleApi = /** @class */ (function (_super) {
      * This usually means the response is a `PixelGoogle` object.)
      * </em>
      */
-    PixelGoogleApi.prototype.getProdutoAfiliadoHotmart = function (id, refresh, customHeaders) {
-        if (refresh === void 0) { refresh = {}; }
+    PixelGoogleApi.prototype.findByIdProdutoAfiliadoHotmarts = function (id, fk, customHeaders) {
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/PixelGoogles/:id/produtoAfiliadoHotmart";
+            "/PixelGoogles/:id/produtoAfiliadoHotmarts/:fk";
         var _routeParams = {
-            id: id
+            id: id,
+            fk: fk
         };
         var _postBody = {};
         var _urlParams = {};
-        if (typeof refresh !== 'undefined' && refresh !== null)
-            _urlParams.refresh = refresh;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
     /**
-     * Busca relação paginaVenda de belongsTo.
+     * Excluir um item relacionado por ID para produtoAfiliadoHotmarts.
      *
      * @param {any} id PixelGoogle id
      *
-     * @param {boolean} refresh
+     * @param {any} fk Chave estrangeira para produtoAfiliadoHotmarts
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PixelGoogleApi.prototype.destroyByIdProdutoAfiliadoHotmarts = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/produtoAfiliadoHotmarts/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para produtoAfiliadoHotmarts.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {any} fk Chave estrangeira para produtoAfiliadoHotmarts
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
      *
      * @returns {object} An empty reference that will be
      *   populated with the actual data once the response is returned
@@ -14065,18 +14113,110 @@ var PixelGoogleApi = /** @class */ (function (_super) {
      * This usually means the response is a `PixelGoogle` object.)
      * </em>
      */
-    PixelGoogleApi.prototype.getPaginaVenda = function (id, refresh, customHeaders) {
-        if (refresh === void 0) { refresh = {}; }
+    PixelGoogleApi.prototype.updateByIdProdutoAfiliadoHotmarts = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/produtoAfiliadoHotmarts/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para pixelGooglePaginaVenda.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {any} fk Chave estrangeira para pixelGooglePaginaVenda
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.findByIdPixelGooglePaginaVenda = function (id, fk, customHeaders) {
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/PixelGoogles/:id/paginaVenda";
+            "/PixelGoogles/:id/pixelGooglePaginaVenda/:fk";
         var _routeParams = {
-            id: id
+            id: id,
+            fk: fk
         };
         var _postBody = {};
         var _urlParams = {};
-        if (typeof refresh !== 'undefined' && refresh !== null)
-            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para pixelGooglePaginaVenda.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {any} fk Chave estrangeira para pixelGooglePaginaVenda
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PixelGoogleApi.prototype.destroyByIdPixelGooglePaginaVenda = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/pixelGooglePaginaVenda/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para pixelGooglePaginaVenda.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {any} fk Chave estrangeira para pixelGooglePaginaVenda
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.updateByIdPixelGooglePaginaVenda = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/pixelGooglePaginaVenda/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -14108,6 +14248,240 @@ var PixelGoogleApi = /** @class */ (function (_super) {
         var _urlParams = {};
         if (typeof refresh !== 'undefined' && refresh !== null)
             _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * produtoAfiliadoHotmarts consultas de PixelGoogle.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.getProdutoAfiliadoHotmarts = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/produtoAfiliadoHotmarts";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no produtoAfiliadoHotmarts deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.createProdutoAfiliadoHotmarts = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/produtoAfiliadoHotmarts";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os produtoAfiliadoHotmarts deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PixelGoogleApi.prototype.deleteProdutoAfiliadoHotmarts = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/produtoAfiliadoHotmarts";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * produtoAfiliadoHotmarts contagens de PixelGoogle.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PixelGoogleApi.prototype.countProdutoAfiliadoHotmarts = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/produtoAfiliadoHotmarts/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * pixelGooglePaginaVenda consultas de PixelGoogle.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.getPixelGooglePaginaVenda = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/pixelGooglePaginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no pixelGooglePaginaVenda deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.createPixelGooglePaginaVenda = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/pixelGooglePaginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os pixelGooglePaginaVenda deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PixelGoogleApi.prototype.deletePixelGooglePaginaVenda = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/pixelGooglePaginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * pixelGooglePaginaVenda contagens de PixelGoogle.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PixelGoogleApi.prototype.countPixelGooglePaginaVenda = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/pixelGooglePaginaVenda/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -14180,7 +14554,11 @@ var PixelGoogleApi = /** @class */ (function (_super) {
      *
      * @param {object} data Request data.
      *
-     * This method does not accept any data. Supply an empty object.
+     *  - `pixelPaginaVenda` – `{object}` -
+     *
+     *  - `pixelVenda` – `{object}` -
+     *
+     *  - `produtoAfiliadoId` – `{number}` -
      *
      * @returns {object} An empty reference that will be
      *   populated with the actual data once the response is returned
@@ -14191,12 +14569,87 @@ var PixelGoogleApi = /** @class */ (function (_super) {
      * This usually means the response is a `PixelGoogle` object.)
      * </em>
      */
-    PixelGoogleApi.prototype.RegistraCriacao = function (customHeaders) {
+    PixelGoogleApi.prototype.RegistraCriacao = function (pixelPaginaVenda, pixelVenda, produtoAfiliadoId, customHeaders) {
+        if (pixelPaginaVenda === void 0) { pixelPaginaVenda = {}; }
+        if (pixelVenda === void 0) { pixelVenda = {}; }
+        if (produtoAfiliadoId === void 0) { produtoAfiliadoId = {}; }
         var _method = "POST";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/PixelGoogles/registraCriacao";
         var _routeParams = {};
         var _postBody = {};
+        var _urlParams = {};
+        if (typeof pixelPaginaVenda !== 'undefined' && pixelPaginaVenda !== null)
+            _urlParams.pixelPaginaVenda = pixelPaginaVenda;
+        if (typeof pixelVenda !== 'undefined' && pixelVenda !== null)
+            _urlParams.pixelVenda = pixelVenda;
+        if (typeof produtoAfiliadoId !== 'undefined' && produtoAfiliadoId !== null)
+            _urlParams.produtoAfiliadoId = produtoAfiliadoId;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no produtoAfiliadoHotmarts deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.createManyProdutoAfiliadoHotmarts = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/produtoAfiliadoHotmarts";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no pixelGooglePaginaVenda deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.createManyPixelGooglePaginaVenda = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/pixelGooglePaginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
         var _urlParams = {};
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
@@ -14717,11 +15170,11 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         return result;
     };
     /**
-     * Localize um item relacionado por ID para pixelGoogles.
+     * Busca relação pixelGoogle de belongsTo.
      *
      * @param {any} id ProdutoAfiliadoHotmart id
      *
-     * @param {any} fk Chave estrangeira para pixelGoogles
+     * @param {boolean} refresh
      *
      * @returns {object} An empty reference that will be
      *   populated with the actual data once the response is returned
@@ -14732,55 +15185,27 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
      * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
      * </em>
      */
-    ProdutoAfiliadoHotmartApi.prototype.findByIdPixelGoogles = function (id, fk, customHeaders) {
+    ProdutoAfiliadoHotmartApi.prototype.getPixelGoogle = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ProdutoAfiliadoHotmarts/:id/pixelGoogles/:fk";
+            "/ProdutoAfiliadoHotmarts/:id/pixelGoogle";
         var _routeParams = {
-            id: id,
-            fk: fk
+            id: id
         };
         var _postBody = {};
         var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
     /**
-     * Excluir um item relacionado por ID para pixelGoogles.
+     * Busca relação produtoAfiliadoPaginaVenda de belongsTo.
      *
      * @param {any} id ProdutoAfiliadoHotmart id
      *
-     * @param {any} fk Chave estrangeira para pixelGoogles
-     *
-     * @returns {object} An empty reference that will be
-     *   populated with the actual data once the response is returned
-     *   from the server.
-     *
-     * This method returns no data.
-     */
-    ProdutoAfiliadoHotmartApi.prototype.destroyByIdPixelGoogles = function (id, fk, customHeaders) {
-        var _method = "DELETE";
-        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ProdutoAfiliadoHotmarts/:id/pixelGoogles/:fk";
-        var _routeParams = {
-            id: id,
-            fk: fk
-        };
-        var _postBody = {};
-        var _urlParams = {};
-        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-        return result;
-    };
-    /**
-     * Atualizar um item relacionado por ID para pixelGoogles.
-     *
-     * @param {any} id ProdutoAfiliadoHotmart id
-     *
-     * @param {any} fk Chave estrangeira para pixelGoogles
-     *
-     * @param {object} data Request data.
-     *
-     * This method expects a subset of model properties as request parameters.
+     * @param {boolean} refresh
      *
      * @returns {object} An empty reference that will be
      *   populated with the actual data once the response is returned
@@ -14791,19 +15216,18 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
      * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
      * </em>
      */
-    ProdutoAfiliadoHotmartApi.prototype.updateByIdPixelGoogles = function (id, fk, data, customHeaders) {
-        if (data === void 0) { data = {}; }
-        var _method = "PUT";
+    ProdutoAfiliadoHotmartApi.prototype.getProdutoAfiliadoPaginaVenda = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ProdutoAfiliadoHotmarts/:id/pixelGoogles/:fk";
+            "/ProdutoAfiliadoHotmarts/:id/produtoAfiliadoPaginaVenda";
         var _routeParams = {
-            id: id,
-            fk: fk
+            id: id
         };
-        var _postBody = {
-            data: data
-        };
+        var _postBody = {};
         var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -15190,123 +15614,6 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         return result;
     };
     /**
-     * pixelGoogles consultas de ProdutoAfiliadoHotmart.
-     *
-     * @param {any} id ProdutoAfiliadoHotmart id
-     *
-     * @param {object} filter
-     *
-     * @returns {object[]} An empty reference that will be
-     *   populated with the actual data once the response is returned
-     *   from the server.
-     *
-     * <em>
-     * (The remote method definition does not provide any description.
-     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
-     * </em>
-     */
-    ProdutoAfiliadoHotmartApi.prototype.getPixelGoogles = function (id, filter, customHeaders) {
-        if (filter === void 0) { filter = {}; }
-        var _method = "GET";
-        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ProdutoAfiliadoHotmarts/:id/pixelGoogles";
-        var _routeParams = {
-            id: id
-        };
-        var _postBody = {};
-        var _urlParams = {};
-        if (typeof filter !== 'undefined' && filter !== null)
-            _urlParams.filter = filter;
-        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-        return result;
-    };
-    /**
-     * Cria uma nova instância no pixelGoogles deste modelo.
-     *
-     * @param {any} id ProdutoAfiliadoHotmart id
-     *
-     * @param {object} data Request data.
-     *
-     * This method expects a subset of model properties as request parameters.
-     *
-     * @returns {object} An empty reference that will be
-     *   populated with the actual data once the response is returned
-     *   from the server.
-     *
-     * <em>
-     * (The remote method definition does not provide any description.
-     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
-     * </em>
-     */
-    ProdutoAfiliadoHotmartApi.prototype.createPixelGoogles = function (id, data, customHeaders) {
-        if (data === void 0) { data = {}; }
-        var _method = "POST";
-        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ProdutoAfiliadoHotmarts/:id/pixelGoogles";
-        var _routeParams = {
-            id: id
-        };
-        var _postBody = {
-            data: data
-        };
-        var _urlParams = {};
-        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-        return result;
-    };
-    /**
-     * Exclui todos os pixelGoogles deste modelo.
-     *
-     * @param {any} id ProdutoAfiliadoHotmart id
-     *
-     * @returns {object} An empty reference that will be
-     *   populated with the actual data once the response is returned
-     *   from the server.
-     *
-     * This method returns no data.
-     */
-    ProdutoAfiliadoHotmartApi.prototype.deletePixelGoogles = function (id, customHeaders) {
-        var _method = "DELETE";
-        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ProdutoAfiliadoHotmarts/:id/pixelGoogles";
-        var _routeParams = {
-            id: id
-        };
-        var _postBody = {};
-        var _urlParams = {};
-        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-        return result;
-    };
-    /**
-     * pixelGoogles contagens de ProdutoAfiliadoHotmart.
-     *
-     * @param {any} id ProdutoAfiliadoHotmart id
-     *
-     * @param {object} where Criteria to match model instances
-     *
-     * @returns {object} An empty reference that will be
-     *   populated with the actual data once the response is returned
-     *   from the server.
-     *
-     * Data properties:
-     *
-     *  - `count` – `{number}` -
-     */
-    ProdutoAfiliadoHotmartApi.prototype.countPixelGoogles = function (id, where, customHeaders) {
-        if (where === void 0) { where = {}; }
-        var _method = "GET";
-        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ProdutoAfiliadoHotmarts/:id/pixelGoogles/count";
-        var _routeParams = {
-            id: id
-        };
-        var _postBody = {};
-        var _urlParams = {};
-        if (typeof where !== 'undefined' && where !== null)
-            _urlParams.where = where;
-        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-        return result;
-    };
-    /**
      * Patch an existing model instance or insert a new one into the data source.
      *
      * @param {object} data Request data.
@@ -15481,39 +15788,6 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         var _method = "POST";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ProdutoAfiliadoHotmarts/:id/anuncioAds";
-        var _routeParams = {
-            id: id
-        };
-        var _postBody = {
-            data: data
-        };
-        var _urlParams = {};
-        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-        return result;
-    };
-    /**
-     * Cria uma nova instância no pixelGoogles deste modelo.
-     *
-     * @param {any} id ProdutoAfiliadoHotmart id
-     *
-     * @param {object} data Request data.
-     *
-     * This method expects a subset of model properties as request parameters.
-     *
-     * @returns {object[]} An empty reference that will be
-     *   populated with the actual data once the response is returned
-     *   from the server.
-     *
-     * <em>
-     * (The remote method definition does not provide any description.
-     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
-     * </em>
-     */
-    ProdutoAfiliadoHotmartApi.prototype.createManyPixelGoogles = function (id, data, customHeaders) {
-        if (data === void 0) { data = []; }
-        var _method = "POST";
-        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ProdutoAfiliadoHotmarts/:id/pixelGoogles";
         var _routeParams = {
             id: id
         };
@@ -17782,7 +18056,7 @@ var VisitaProdutoPlataformaApi = /** @class */ (function (_super) {
 /*!*****************************************************!*\
   !*** ./src/app/shared/sdk/services/custom/index.ts ***!
   \*****************************************************/
-/*! exports provided: VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, LoggerService */
+/*! exports provided: ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, UserApi, PlataformaVendaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17989,7 +18263,7 @@ var LoggerService = /** @class */ (function () {
 /*!**********************************************!*\
   !*** ./src/app/shared/sdk/services/index.ts ***!
   \**********************************************/
-/*! exports provided: ErrorHandler, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, LoggerService */
+/*! exports provided: ErrorHandler, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18004,6 +18278,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["RealTime"]; });
 
 /* harmony import */ var _custom_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom/index */ "./src/app/shared/sdk/services/custom/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoPlataformaApi"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["VisitaProdutoPlataformaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoHotmartApi"]; });
@@ -18049,8 +18325,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["UserApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PlataformaVendaApi"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoPlataformaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["LoggerService"]; });
 

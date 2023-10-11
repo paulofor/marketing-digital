@@ -21,8 +21,11 @@
 		"nome": {
 			"type": "string"
 		},
-		"produtoAfiliadoHotmartId": {
-			"type": "number"
+		"codigo1": {
+			"type": "string"
+		},
+		"codigo2": {
+			"type": "string"
 		},
 		"contaGoogleId": {
 			"type": "number"
@@ -30,18 +33,18 @@
 	},
 	"validations": [],
 	"relations": {
-		"produtoAfiliadoHotmart": {
-			"type": "belongsTo",
-			"model": "ProdutoAfiliadoHotmart",
-			"foreignKey": ""
-		},
 		"contaGoogle": {
 			"type": "belongsTo",
 			"model": "ContaGoogle",
 			"foreignKey": ""
 		},
-		"produtoAfiliadoPaginaVenda": {
-			"type": "belongsTo",
+		"produtoAfiliadoHotmarts": {
+			"type": "hasMany",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": ""
+		},
+		"pixelGooglePaginaVenda": {
+			"type": "hasMany",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "pixelGooglePaginaVendaId"
 		}

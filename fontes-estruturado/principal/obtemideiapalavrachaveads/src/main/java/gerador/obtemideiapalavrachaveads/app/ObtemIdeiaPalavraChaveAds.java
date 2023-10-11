@@ -17,7 +17,7 @@ public class ObtemIdeiaPalavraChaveAds {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemIdeiaPalavraChaveAds");
-		System.out.println("(03/10/2023 00:37:23)");
+		System.out.println("(11/10/2023 13:08:22)");
 		try {
 			carregaProp();
 			ObtemIdeiaPalavraChaveAdsObj obj = new ObtemIdeiaPalavraChaveAdsObj();
@@ -47,7 +47,7 @@ public class ObtemIdeiaPalavraChaveAds {
 		//Properties prop = new Properties();
 		//prop.load(input);
 		//UrlLoopback = prop.getProperty("loopback.url");
-		UrlLoopback = "http://vps-40d69db1.vps.ovh.ca:23101/api";
+		UrlLoopback = "http://localhost:23101/api";
 		DaoBaseComum.setUrl(UrlLoopback);
 	}
 

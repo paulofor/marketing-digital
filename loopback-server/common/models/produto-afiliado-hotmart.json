@@ -48,14 +48,24 @@
 		},
 		"contaGoogleId": {
 			"type": "number"
-		}
+		},
 	},
 	"validations": [],
 	"relations": {
+		"pixelGoogle": {
+			"type": "belongsTo",
+			"model": "PixelGoogle",
+			"foreignKey": ""
+		},
 		"contaGoogle": {
 			"type": "belongsTo",
 			"model": "ContaGoogle",
 			"foreignKey": ""
+		},
+		"produtoAfiliadoPaginaVenda": {
+			"type": "belongsTo",
+			"model": "PixelGoogle",
+			"foreignKey": "pixelGooglePaginaVendaId"
 		},
 		"campanhaAdsTestes": {
 			"type": "hasMany",
@@ -71,16 +81,6 @@
 			"type": "hasMany",
 			"model": "VisitaProdutoHotmart",
 			"foreignKey": "hotmartId"
-		},
-		"pixelGoogles": {
-			"type": "hasMany",
-			"model": "PixelGoogle",
-			"foreignKey": ""
-		},
-		"pixelGooglePaginaVenda": {
-			"type": "hasMany",
-			"model": "PixelGoogle",
-			"foreignKey": "pixelGooglePaginaVendaId"
 		}
 	},
 	"acls": [],
