@@ -8,10 +8,13 @@
  			<div class="dgc-card-header">
  				<span>{{item.produtoAfiliadoHotmart.nome}} ({{item.produtoAfiliadoHotmart.sigla}})</span>
  			</div>
+			 <div class="dgc-card-header" *ngIf="(item.produtoAfiliadoHotmart.visitaProdutoHotmarts.length == 0)">
+				<span style="color: red;">Não Encontrado</span>
+			</div>
 			<div class="dgc-card-detalhe">
 				<span>Comissão real: {{item.produtoAfiliadoHotmart.precoReal | currency : 'BRL'}}</span>
 			</div>
-			<div class="dgc-card-detalhe">
+			<div class="dgc-card-detalhe" *ngIf="(item.produtoAfiliadoHotmart.visitaProdutoHotmarts.length > 0)">
 				<span style="margin-right: 4px;">Temperatura: {{item.produtoAfiliadoHotmart.visitaProdutoHotmarts[0].temperatura}}</span>
 				<span>({{item.produtoAfiliadoHotmart.visitaProdutoHotmarts[0].dataInsercao | date: 'dd-MM-yyy'}})</span>
 			</div>

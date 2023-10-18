@@ -61,28 +61,33 @@ import com.google.common.collect.ImmutableList;
 import br.com.gersis.loopback.modelo.AnuncioAds;
 import br.com.gersis.loopback.modelo.CampanhaAdsTeste;
 import br.com.gersis.loopback.modelo.IdeiaPalavraChave;
+import br.com.gersis.loopback.modelo.PalavraChaveCampanhaAdsTeste;
 import br.com.gersis.loopback.modelo.ProdutoAfiliadoHotmart;
 import gerador.montacampanhatesteafiliadohotmart.passo.CriaCampanhaAds;
 
 
 public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 
-	private static Long CODIGO_USUARIO = 7966834741L;
+	//private static Long CODIGO_USUARIO = 7966834741L;
+	private long codigoUsuario;
 	
 	@Override
 	protected boolean executaCustom(CampanhaAdsTeste campanhaTesteCorrente) {
 		GoogleAdsClient googleAdsClient = null;
+		String textoSemHifens = campanhaTesteCorrente.getContaGoogle().getIdAds().replace("-", "");
+		this.codigoUsuario = Long.parseLong(textoSemHifens);
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			// Creates a single shared budget to be used by the campaigns added below.
-			String budgetResourceName = addCampaignBudget(googleAdsClient, CODIGO_USUARIO, campanhaTesteCorrente);
-			String resourceNameCampanha = criaCampanha(googleAdsClient, CODIGO_USUARIO, budgetResourceName, campanhaTesteCorrente);
-			String resourceNameAdGrupo = createAdGroup(googleAdsClient, CODIGO_USUARIO, resourceNameCampanha, campanhaTesteCorrente);
-			createKeyword(googleAdsClient, CODIGO_USUARIO, resourceNameAdGrupo, campanhaTesteCorrente);
-			createExpandedTextAd(googleAdsClient, CODIGO_USUARIO, resourceNameAdGrupo, campanhaTesteCorrente);
+			String budgetResourceName = addCampaignBudget(googleAdsClient, codigoUsuario, campanhaTesteCorrente);
+			String resourceNameCampanha = criaCampanha(googleAdsClient, codigoUsuario, budgetResourceName, campanhaTesteCorrente);
+			String resourceNameAdGrupo = createAdGroup(googleAdsClient, codigoUsuario, resourceNameCampanha, campanhaTesteCorrente);
+			createKeywords(googleAdsClient, codigoUsuario, resourceNameAdGrupo, campanhaTesteCorrente);
+			createExpandedTextAd(googleAdsClient, codigoUsuario, resourceNameAdGrupo, campanhaTesteCorrente);
 			String campanha[] = resourceNameCampanha.split("/");
 			String codigoCampanha = campanha[campanha.length-1];
 			campanhaTesteCorrente.setCodigoAds(codigoCampanha);
+			this.saidaCampanhaTesteCorrente = campanhaTesteCorrente;
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
 			System.exit(1);
@@ -133,7 +138,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		String dataFinal = dtFinal.format(formatter);
 
 		// 2 - Campanha
-		String nomeCampanha = "MktDigital8-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + dataInicial;
+		String nomeCampanha = "MktDigital-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
 		Campaign campaign = Campaign.newBuilder()
 				.setName(nomeCampanha)
 				.setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
@@ -221,9 +226,64 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	}
 
 	
-	
+	private void createKeywords(GoogleAdsClient googleAdsClient, long customerId, String adGroupResourceName, CampanhaAdsTeste campanha) {
+	    // Itera sobre a lista de ideias de palavras-chave
+	    for (PalavraChaveCampanhaAdsTeste ideia :campanha.getPalavraChaveCampanhaAdsTestes()) {
+	        IdeiaPalavraChave palavra = ideia.getIdeiaPalavraChave();
 
-	private void createKeyword(GoogleAdsClient googleAdsClient, long customerId, String adGroupResourceName, CampanhaAdsTeste campanha) {
+	        // Cria a palavra-chave.
+	        KeywordInfo keywordInfo = KeywordInfo.newBuilder()
+	            .setText(palavra.getTexto())
+	            .setMatchType(KeywordMatchType.EXACT)
+	            .build();
+
+	        double valorDouble = 0;
+	        if ("MAX".equals(campanha.getModeloCampanhaAdsTeste().getTipoCpcCusto())) {
+	            valorDouble = (palavra.getCpcMaximoTopPage() * campanha.getModeloCampanhaAdsTeste().getMultiplicadorCpcCusto()) * 100;
+	        } else {
+	            valorDouble = (palavra.getCpcMinimoTopPage() * campanha.getModeloCampanhaAdsTeste().getMultiplicadorCpcCusto()) * 100;
+	        }
+
+	        valorDouble = palavra.getCpcPara50() * 100;
+
+	        long valorCpc = (long) Math.floor(valorDouble);
+	        valorCpc = valorCpc * 10000;
+
+	        // Cria o critério
+	        AdGroupCriterion adGroupCriterion = AdGroupCriterion.newBuilder()
+	            .setAdGroup(adGroupResourceName)
+	            .setKeyword(keywordInfo)
+	            .setStatus(AdGroupCriterionStatus.ENABLED)
+	            .setCpcBidMicros(valorCpc)
+	            .build();
+
+	        // Cria a operação de adição do critério
+	        AdGroupCriterionOperation adGroupCriterionOperation = AdGroupCriterionOperation.newBuilder()
+	            .setCreate(adGroupCriterion)
+	            .build();
+
+	        // Adiciona o critério ao grupo de anúncios
+	        AdGroupCriterionServiceClient adGroupCriterionServiceClient = googleAdsClient.getLatestVersion().createAdGroupCriterionServiceClient();
+	        MutateAdGroupCriteriaResponse response = adGroupCriterionServiceClient.mutateAdGroupCriteria(Long.toString(customerId), Collections.singletonList(adGroupCriterionOperation));
+
+	        AdGroupCriterionOperation keywordOperation =
+	            AdGroupCriterionOperation.newBuilder()
+	            .setCreate(adGroupCriterion)
+	            .build();
+
+	        // Envia a operação para criar a palavra-chave.
+	        MutateAdGroupCriteriaResponse keywordResponse =
+	            adGroupCriterionServiceClient.mutateAdGroupCriteria(
+	                Long.toString(customerId), Arrays.asList(keywordOperation));
+	        String keywordResourceName = keywordResponse.getResults(0).getResourceName();
+	        System.out.printf(
+	            "Palavra-chave com CPC de %d criada com sucesso: '%s'.%n",
+	            valorCpc, keywordResourceName);
+	    }
+	}
+
+
+	private void createKeywordOld(GoogleAdsClient googleAdsClient, long customerId, String adGroupResourceName, CampanhaAdsTeste campanha) {
 		// TODO Auto-generated method stub
 		
 		

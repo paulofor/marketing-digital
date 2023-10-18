@@ -23,6 +23,10 @@ export class ProdutoAfiliadoHotmartEditComponent extends BaseEditComponent {
     return novo;
   }
 
+  preSubmit() {
+    delete this.item['contaGoogle'];
+  }
+
   montaCombos(): void {
     this.srvConta.find()
       .subscribe((result:ContaGoogle[]) => {

@@ -37,9 +37,9 @@ module.exports = function(Ideiapalavrachave) {
     Ideiapalavrachave.CalculaCpcAlvo = function(callback) {
         const sql = " update IdeiaPalavraChave " +
             " set cpcPara50 = " +
-            " (((select afiliacaoValor from VisitaProdutoHotmart where hotmartId = IdeiaPalavraChave.hotmartId and maisRecente = 1) * 0.5)/111), " +
+            " (((select afiliacaoValor from VisitaProdutoHotmart where hotmartId = IdeiaPalavraChave.hotmartId and maisRecente = 1) * 0.5)/50), " +
             " cpcPara75 = " +
-            " (((select afiliacaoValor from VisitaProdutoHotmart where hotmartId = IdeiaPalavraChave.hotmartId and maisRecente = 1) * 0.75)/111) " +
+            " (((select afiliacaoValor from VisitaProdutoHotmart where hotmartId = IdeiaPalavraChave.hotmartId and maisRecente = 1) * 0.75)/50) " +
             " where maisRecente = 1";
         let ds = Ideiapalavrachave.dataSource;
         ds.connector.query(sql,callback);
@@ -62,9 +62,12 @@ module.exports = function(Ideiapalavrachave) {
         const sql = "select IdeiaPalavraChave.*, VisitaProdutoHotmart.* " +
             " from IdeiaPalavraChave, VisitaProdutoHotmart " +
             " where IdeiaPalavraChave.hotmartId = VisitaProdutoHotmart.hotmartId " +
-            " and quantidadePorVisita <= 5 " +
+            " and cpcPara50 >= cpcMinimoTopPage " +
+            " and afiliacaoValor <= 70 and afiliacaoValor > 0 " +
+            " and quantidadePorVisita < 20 " +
+            " and afiliacaoPercentual >= 30 " +
             " and IdeiaPalavraChave.maisRecente = 1 and VisitaProdutoHotmart.maisRecente = 1 " +
-            " order by cpcMaximoTopPage, mediaPesquisa desc limit " + limite;
+            " order by mediaPesquisa desc limit " + limite;
         let ds = Ideiapalavrachave.dataSource;
         ds.connector.query(sql,callback);
     }

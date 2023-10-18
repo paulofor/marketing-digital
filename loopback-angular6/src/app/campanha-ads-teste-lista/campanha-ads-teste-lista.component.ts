@@ -20,9 +20,9 @@ export class CampanhaAdsTesteListaComponent extends BaseItemIdComponent{
   
   getFiltro() {
     return {
-      'include' : { 'relation' : 'campanhaAdsTestes' , 'scope' : {
-        'include' : 'modeloCampanhaAdsTeste'}
-      }
+      'include' : [{ 'relation' : 'campanhaAdsTestes' , 'scope' : {
+        'include' :[ 'modeloCampanhaAdsTeste' , 'contaGoogle']}
+      }]
     }
   }
 

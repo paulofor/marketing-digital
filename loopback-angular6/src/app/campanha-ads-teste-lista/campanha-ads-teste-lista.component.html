@@ -15,6 +15,9 @@
         <div class="dgc-card-detalhe">
           Código Ads: {{item.codigoAds}}
         </div>
+        <div *ngIf="item.contaGoogle" class="dgc-card-detalhe">
+          Conta Google: {{item.contaGoogle.nome}}
+        </div>
         <div class="dgc-card-detalhe">
           Pronta: {{item.prontaParaTeste}}
         </div>

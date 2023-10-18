@@ -1092,7 +1092,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Campanha Ads</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"example-half-width\" *ngIf=\"listaModelo\">\n      <mat-select placeholder=\"Modelo Campanha\"  #modeloCampanhaAdsTesteId [(ngModel)]=\"item.modeloCampanhaAdsTesteId\" name=\"modeloCampanhaAdsTesteId\">\n        <mat-option *ngFor=\"let modelo of listaModelo\" [value]=\"modelo.id\">\n          Orçamento: {{ modelo.orcamentoDiario | currency : 'BRL'}} * {{modelo.qtdeDia}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field *ngIf=\"!item.codigoAds\" class=\"example-half-width\">\n      <mat-select #prontaParaTeste [(ngModel)]=\"item.prontaParaTeste\" name=\"prontaParaTeste\" placeholder=\"Pronta\">\n        <mat-option value=\"0\">Não</mat-option>\n        <mat-option value=\"1\">Sim</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field *ngIf=\"item.codigoAds\" class=\"example-half-width\">\n      <mat-select #ativa [(ngModel)]=\"item.ativa\" name=\"ativa\" placeholder=\"Ativa\">\n        <mat-option value=\"0\">Não</mat-option>\n        <mat-option value=\"1\">Sim</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Campanha Ads</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"example-half-width\" *ngIf=\"listaModelo\">\n      <mat-select placeholder=\"Modelo Campanha\"  #modeloCampanhaAdsTesteId [(ngModel)]=\"item.modeloCampanhaAdsTesteId\" name=\"modeloCampanhaAdsTesteId\">\n        <mat-option *ngFor=\"let modelo of listaModelo\" [value]=\"modelo.id\">\n          Orçamento: {{ modelo.orcamentoDiario | currency : 'BRL'}} * {{modelo.qtdeDia}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field *ngIf=\"!item.codigoAds\" class=\"example-half-width\">\n      <mat-select #prontaParaTeste [(ngModel)]=\"item.prontaParaTeste\" name=\"prontaParaTeste\" placeholder=\"Pronta\">\n        <mat-option value=\"0\">Não</mat-option>\n        <mat-option value=\"1\">Sim</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field *ngIf=\"item.codigoAds\" class=\"example-half-width\">\n      <mat-select #ativa [(ngModel)]=\"item.ativa\" name=\"ativa\" placeholder=\"Ativa\">\n        <mat-option value=\"0\">Não</mat-option>\n        <mat-option value=\"1\">Sim</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google\"  #contaGoogleId [(ngModel)]=\"item.contaGoogleId\" name=\"contaGoogleId\">\n        <mat-option *ngFor=\"let conta of listaConta\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n\n"
 
 /***/ }),
 
@@ -1138,12 +1138,13 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 var CampanhaAdsTesteEditComponent = /** @class */ (function (_super) {
     __extends(CampanhaAdsTesteEditComponent, _super);
-    function CampanhaAdsTesteEditComponent(dialogRef, data, servico, srvModelo) {
+    function CampanhaAdsTesteEditComponent(dialogRef, data, servico, srvModelo, srvConta) {
         var _this = _super.call(this, dialogRef, data, servico) || this;
         _this.dialogRef = dialogRef;
         _this.data = data;
         _this.servico = servico;
         _this.srvModelo = srvModelo;
+        _this.srvConta = srvConta;
         return _this;
     }
     CampanhaAdsTesteEditComponent.prototype.criaItem = function () {
@@ -1157,6 +1158,13 @@ var CampanhaAdsTesteEditComponent = /** @class */ (function (_super) {
             .subscribe(function (result) {
             _this.listaModelo = result;
         });
+        this.srvConta.find()
+            .subscribe(function (result) {
+            _this.listaConta = result;
+        });
+    };
+    CampanhaAdsTesteEditComponent.prototype.preSubmit = function () {
+        delete this.item['contaGoogle'];
     };
     CampanhaAdsTesteEditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1165,7 +1173,8 @@ var CampanhaAdsTesteEditComponent = /** @class */ (function (_super) {
             styles: [__webpack_require__(/*! ./campanha-ads-teste-edit.component.css */ "./src/app/campanha-ads-teste-edit/campanha-ads-teste-edit.component.css")]
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["CampanhaAdsTesteApi"], _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ModeloCampanhaAdsTesteApi"]])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["CampanhaAdsTesteApi"],
+            _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ModeloCampanhaAdsTesteApi"], _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ContaGoogleApi"]])
     ], CampanhaAdsTesteEditComponent);
     return CampanhaAdsTesteEditComponent;
 }(_base_component_base_edit_component__WEBPACK_IMPORTED_MODULE_3__["BaseEditComponent"]));
@@ -1259,7 +1268,7 @@ module.exports = ".dgc-card {\n    width: 48%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\" *ngIf=\"listaBase\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Campanhas Ativas ({{listaBase.length}})</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.produtoAfiliadoHotmart.nome}} ({{item.produtoAfiliadoHotmart.sigla}})</span>\n \t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão real: {{item.produtoAfiliadoHotmart.precoReal | currency : 'BRL'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span style=\"margin-right: 4px;\">Temperatura: {{item.produtoAfiliadoHotmart.visitaProdutoHotmarts[0].temperatura}}</span>\n\t\t\t\t<span>({{item.produtoAfiliadoHotmart.visitaProdutoHotmarts[0].dataInsercao | date: 'dd-MM-yyy'}})</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\" *ngFor=\"let metrica of item.campanhaAdsMetricas\">\n\t\t\t\t<div >{{metrica.dataHora | date: 'dd-MM-yyy HH:mm'}}</div>\n\t\t\t\t<span style=\"margin-right: 8px;\">cliques: {{metrica.clique}}</span>\n\t\t\t\t<span style=\"margin-right: 8px;\">impresssao: {{metrica.impressao}}</span>\n\t\t\t\t<span style=\"margin-right: 8px;\">cpc: {{metrica.cpcMedio}}</span>\n\t\t\t\t<span style=\"margin-right: 8px;\">custo: {{metrica.custoCampanha}}</span>\n\t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"listaBase\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Campanhas Ativas ({{listaBase.length}})</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.produtoAfiliadoHotmart.nome}} ({{item.produtoAfiliadoHotmart.sigla}})</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-header\" *ngIf=\"(item.produtoAfiliadoHotmart.visitaProdutoHotmarts.length == 0)\">\n\t\t\t\t<span style=\"color: red;\">Não Encontrado</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão real: {{item.produtoAfiliadoHotmart.precoReal | currency : 'BRL'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\" *ngIf=\"(item.produtoAfiliadoHotmart.visitaProdutoHotmarts.length > 0)\">\n\t\t\t\t<span style=\"margin-right: 4px;\">Temperatura: {{item.produtoAfiliadoHotmart.visitaProdutoHotmarts[0].temperatura}}</span>\n\t\t\t\t<span>({{item.produtoAfiliadoHotmart.visitaProdutoHotmarts[0].dataInsercao | date: 'dd-MM-yyy'}})</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\" *ngFor=\"let metrica of item.campanhaAdsMetricas\">\n\t\t\t\t<div >{{metrica.dataHora | date: 'dd-MM-yyy HH:mm'}}</div>\n\t\t\t\t<span style=\"margin-right: 8px;\">cliques: {{metrica.clique}}</span>\n\t\t\t\t<span style=\"margin-right: 8px;\">impresssao: {{metrica.impressao}}</span>\n\t\t\t\t<span style=\"margin-right: 8px;\">cpc: {{metrica.cpcMedio}}</span>\n\t\t\t\t<span style=\"margin-right: 8px;\">custo: {{metrica.custoCampanha}}</span>\n\t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1315,6 +1324,7 @@ var CampanhaAdsTesteListAtivaMetricaComponent = /** @class */ (function (_super)
         return {
             'where': { 'ativa': 1 },
             'include': [
+                'contaGoogle',
                 { 'relation': 'campanhaAdsMetricas', 'scope': { 'order': 'dataHora desc', 'limit': 10 } },
                 { 'relation': 'produtoAfiliadoHotmart', 'scope': { 'include': { 'relation': 'visitaProdutoHotmarts', 'scope': {
                                 'where': { 'maisRecente': 1 },
@@ -1356,7 +1366,7 @@ module.exports = ".dgc-card {\n    width: 280px;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\">\n      <span>Campanhas Teste - {{principal.nome}}</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div class=\"dgc-painel-principal\">\n      <div class=\"dgc-card\" *ngFor=\"let item of principal.campanhaAdsTestes\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/campanhaAdsTesteDetalhe/{{item.id}}\">{{item.nome}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Orçamento: {{ item.modeloCampanhaAdsTeste.orcamentoDiario | currency : 'BRL'}} * {{item.modeloCampanhaAdsTeste.qtdeDia}}\n          = {{ (item.modeloCampanhaAdsTeste.orcamentoDiario*item.modeloCampanhaAdsTeste.qtdeDia) | currency : 'BRL' }}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Código Ads: {{item.codigoAds}}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Pronta: {{item.prontaParaTeste}}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Ativa: {{item.ativa}}\n        </div>\n        <div class=\"dgc-card-header\">\n          Resultados\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Custo: {{item.custoTotal | currency : 'BRL'}}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Receita: {{item.receitaTotal}}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Impressões: {{item.qtdeImpressao}} ({{(item.custoTotal / item.qtdeImpressao) | currency : 'BRL'}})\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Cliques: {{item.qtdeClique}} ({{(item.custoTotal / item.qtdeClique) | currency : 'BRL'}})\n        </div>\n        <div class=\"dgc-card-comandos\">\n          <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n      </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\">\n      <span>Campanhas Teste - {{principal.nome}}</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div class=\"dgc-painel-principal\">\n      <div class=\"dgc-card\" *ngFor=\"let item of principal.campanhaAdsTestes\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/campanhaAdsTesteDetalhe/{{item.id}}\">{{item.nome}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Orçamento: {{ item.modeloCampanhaAdsTeste.orcamentoDiario | currency : 'BRL'}} * {{item.modeloCampanhaAdsTeste.qtdeDia}}\n          = {{ (item.modeloCampanhaAdsTeste.orcamentoDiario*item.modeloCampanhaAdsTeste.qtdeDia) | currency : 'BRL' }}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Código Ads: {{item.codigoAds}}\n        </div>\n        <div *ngIf=\"item.contaGoogle\" class=\"dgc-card-detalhe\">\n          Conta Google: {{item.contaGoogle.nome}}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Pronta: {{item.prontaParaTeste}}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Ativa: {{item.ativa}}\n        </div>\n        <div class=\"dgc-card-header\">\n          Resultados\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Custo: {{item.custoTotal | currency : 'BRL'}}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Receita: {{item.receitaTotal}}\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Impressões: {{item.qtdeImpressao}} ({{(item.custoTotal / item.qtdeImpressao) | currency : 'BRL'}})\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          Cliques: {{item.qtdeClique}} ({{(item.custoTotal / item.qtdeClique) | currency : 'BRL'}})\n        </div>\n        <div class=\"dgc-card-comandos\">\n          <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n      </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -1412,10 +1422,10 @@ var CampanhaAdsTesteListaComponent = /** @class */ (function (_super) {
     }
     CampanhaAdsTesteListaComponent.prototype.getFiltro = function () {
         return {
-            'include': { 'relation': 'campanhaAdsTestes', 'scope': {
-                    'include': 'modeloCampanhaAdsTeste'
-                }
-            }
+            'include': [{ 'relation': 'campanhaAdsTestes', 'scope': {
+                        'include': ['modeloCampanhaAdsTeste', 'contaGoogle']
+                    }
+                }]
         };
     };
     CampanhaAdsTesteListaComponent.prototype.edita = function (edicao) {
@@ -2210,7 +2220,7 @@ var IdeiaPalavraChaveListSimplesMelhoresCpcBaseComponent = /** @class */ (functi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".dgc-card {\n    width: 32%;\n}"
+module.exports = ".dgc-card {\n    width: 32%;\n}\n\n.corAzul {\n    color: blue;\n}\n\n.corVermelho {\n    color: red;\n}\n\n.corVerde {\n    color: green;\n}"
 
 /***/ }),
 
@@ -2221,7 +2231,7 @@ module.exports = ".dgc-card {\n    width: 32%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>IdeiaPalavraChave</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Hotmart Id: {{item.hotmartId}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor}} ({{item.afiliacaoPercentual}}%)</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Temperatura: {{item.temperatura}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Produtor: {{item.produtorNome}}</span>\n\t\t\t</div>\n\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.texto}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Média Pesquisa: {{item.mediaPesquisa}}</span>\n\t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Cpc: {{item.cpcMinimoTopPage}} {{item.cpcMaximoTopPage}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Concorrencia: {{item.concorrencia}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataAcesso | date : 'dd-MM-yyyy'}}</span>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-50: {{item.cpcPara50}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-75: {{item.cpcPara75}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>IdeiaPalavraChave</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Hotmart Id: {{item.hotmartId}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor}} ({{item.afiliacaoPercentual}}%)</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Temperatura: {{item.temperatura}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Produtor: {{item.produtorNome}}</span>\n\t\t\t</div>\n\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.texto}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Média Pesquisa: {{item.mediaPesquisa}}</span>\n\t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Cpc: {{item.cpcMinimoTopPage}} {{item.cpcMaximoTopPage}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Concorrencia: {{item.concorrencia}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataAcesso | date : 'dd-MM-yyyy'}}</span>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span class='{{classeCor(item)}}'>CPC-50: {{item.cpcPara50}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-75: {{item.cpcPara75}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -2281,6 +2291,17 @@ var IdeiaPalavraChaveListSimplesMelhoresCpcComponent = /** @class */ (function (
             _this.listaBase = result;
             _this.posCarregaLista();
         });
+    };
+    IdeiaPalavraChaveListSimplesMelhoresCpcComponent.prototype.classeCor = function (item) {
+        if (item.cpcMinimoTopPage > 0) {
+            if (item.cpcPara50 > item.cpcMinimoTopPage)
+                return 'corAzul';
+            else
+                return 'corVermelho';
+        }
+        else {
+            return 'corVerde';
+        }
     };
     IdeiaPalavraChaveListSimplesMelhoresCpcComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2371,7 +2392,7 @@ var IdeiaPalavraChaveListSimplesTopPesquisaBaseComponent = /** @class */ (functi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".dgc-card {\n    width: 32%;\n}"
+module.exports = ".dgc-card {\n    width: 32%;\n}\n\n.corAzul {\n    color: blue;\n}\n\n.corVermelho {\n    color: red;\n}\n\n.corVerde {\n    color: green;\n}"
 
 /***/ }),
 
@@ -2382,7 +2403,7 @@ module.exports = ".dgc-card {\n    width: 32%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>IdeiaPalavraChave</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Hotmart Id: {{item.hotmartId}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor}} ({{item.afiliacaoPercentual}}%)</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Temperatura: {{item.temperatura}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Produtor: {{item.produtorNome}}</span>\n\t\t\t</div>\n\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.texto}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Média Pesquisa: {{item.mediaPesquisa}}</span>\n\t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Cpc: {{item.cpcMinimoTopPage}} {{item.cpcMaximoTopPage}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Concorrencia: {{item.concorrencia}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataAcesso | date : 'dd-MM-yyyy'}}</span>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-50: {{item.cpcPara50}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-75: {{item.cpcPara75}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>IdeiaPalavraChave</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Hotmart Id: {{item.hotmartId}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor}} ({{item.afiliacaoPercentual}}%)</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Temperatura: {{item.temperatura}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Produtor: {{item.produtorNome}}</span>\n\t\t\t</div>\n\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.texto}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Média Pesquisa: {{item.mediaPesquisa}}</span>\n\t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Cpc: {{item.cpcMinimoTopPage}} {{item.cpcMaximoTopPage}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Concorrencia: {{item.concorrencia}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataAcesso | date : 'dd-MM-yyyy'}}</span>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span class='{{classeCor(item)}}'>CPC-50: {{item.cpcPara50}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-75: {{item.cpcPara75}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n\n"
 
 /***/ }),
 
@@ -2442,6 +2463,17 @@ var IdeiaPalavraChaveListSimplesTopPesquisaComponent = /** @class */ (function (
             _this.listaBase = result;
             _this.posCarregaLista();
         });
+    };
+    IdeiaPalavraChaveListSimplesTopPesquisaComponent.prototype.classeCor = function (item) {
+        if (item.cpcMinimoTopPage > 0) {
+            if (item.cpcPara50 > item.cpcMinimoTopPage)
+                return 'corAzul';
+            else
+                return 'corVermelho';
+        }
+        else {
+            return 'corVerde';
+        }
     };
     IdeiaPalavraChaveListSimplesTopPesquisaComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2532,7 +2564,7 @@ var IdeiaPalavraChaveListSimplesTopBaseComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".dgc-card {\n    width: 32%;\n}"
+module.exports = ".dgc-card {\n    width: 32%;\n}\n\n.corAzul {\n    color: blue;\n}\n\n.corVermelho {\n    color: red;\n}\n\n.corVerde {\n    color: green;\n}"
 
 /***/ }),
 
@@ -2543,7 +2575,7 @@ module.exports = ".dgc-card {\n    width: 32%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>IdeiaPalavraChave</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Hotmart Id: {{item.hotmartId}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor}} ({{item.afiliacaoPercentual}}%)</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Temperatura: {{item.temperatura}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Produtor: {{item.produtorNome}}</span>\n\t\t\t</div>\n\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.texto}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Média Pesquisa: {{item.mediaPesquisa}}</span>\n\t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Cpc: {{item.cpcMinimoTopPage}} {{item.cpcMaximoTopPage}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Concorrencia: {{item.concorrencia}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataAcesso | date : 'dd-MM-yyyy'}}</span>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-50: {{item.cpcPara50}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-75: {{item.cpcPara75}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>IdeiaPalavraChave</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Hotmart Id: {{item.hotmartId}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor}} ({{item.afiliacaoPercentual}}%)</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Temperatura: {{item.temperatura}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Produtor: {{item.produtorNome}}</span>\n\t\t\t</div>\n\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.texto}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Média Pesquisa: {{item.mediaPesquisa}}</span>\n\t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Cpc: {{item.cpcMinimoTopPage}} {{item.cpcMaximoTopPage}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Concorrencia: {{item.concorrencia}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataAcesso | date : 'dd-MM-yyyy'}}</span>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span class='{{classeCor(item)}}'>CPC-50: {{item.cpcPara50}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>CPC-75: {{item.cpcPara75}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n\n"
 
 /***/ }),
 
@@ -2603,6 +2635,17 @@ var IdeiaPalavraChaveListSimplesTopComponent = /** @class */ (function (_super) 
             _this.listaBase = result;
             _this.posCarregaLista();
         });
+    };
+    IdeiaPalavraChaveListSimplesTopComponent.prototype.classeCor = function (item) {
+        if (item.cpcMinimoTopPage > 0) {
+            if (item.cpcPara50 > item.cpcMinimoTopPage)
+                return 'corAzul';
+            else
+                return 'corVermelho';
+        }
+        else {
+            return 'corVerde';
+        }
     };
     IdeiaPalavraChaveListSimplesTopComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -3009,7 +3052,7 @@ module.exports = ".dgc-card {\n    width: 48%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Pixel Google</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n      <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n          <div class=\"dgc-card-header\">\n            <span>{{item.nome}}</span>\n          </div>\n          <div class=\"dgc-card-detalhe\">\n            <span>{{item.codigo1}}</span>\n          </div>\n          <div class=\"dgc-card-detalhe\">\n            <span>{{item.codigo2}}</span>\n          </div>\n          <div class=\"dgc-card-comandos\">\n              <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n          </div>\n      </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Pixel Google</span>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n      <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n          <div class=\"dgc-card-header\">\n            <span>{{item.nome}}</span>\n          </div>\n          <div class=\"dgc-card-detalhe\">\n            <span>{{item.codigo1}}</span>\n          </div>\n          <div class=\"dgc-card-detalhe\">\n            <span>{{item.codigo2}}</span>\n          </div>\n          <div class=\"dgc-card-comandos\">\n              <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n          </div>\n      </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -3424,7 +3467,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Produto Afiliado Hotmart</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #hotmartId [(ngModel)]=\"item.hotmartId\" name=\"hotmartId\" placeholder=\"Hotmart Id\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlFinal [(ngModel)]=\"item.urlFinal\" name=\"urlFinal\" placeholder=\"Url Final\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlTracking [(ngModel)]=\"item.urlTracking\" name=\"urlTracking\" placeholder=\"Url Tracking\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput maxlength=\"1\" #geraTesteCampanha [(ngModel)]=\"item.geraTesteCampanha\" name=\"geraTesteCampanha\" placeholder=\"Gera Campanha de Teste (0/1)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #sigla maxlength=\"8\" [(ngModel)]=\"item.sigla\" name=\"sigla\" placeholder=\"Sigla (8 caracteres)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #precoReal  [(ngModel)]=\"item.precoReal\" name=\"precoReal\" placeholder=\"Comissão Valor Real\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #vendaTotal  [(ngModel)]=\"item.vendaTotal\" name=\"vendaTotal\" placeholder=\"Valor Venda\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #qtdeVenda  [(ngModel)]=\"item.qtdeVenda\" name=\"qtdeVenda\" placeholder=\"Quantdade Venda\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Corrente\"  #contaGoogleId [(ngModel)]=\"item.contaGoogleId\" name=\"contaGoogleId\">\n        <mat-option *ngFor=\"let conta of listaConta\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Produto Afiliado Hotmart</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #hotmartId [(ngModel)]=\"item.hotmartId\" name=\"hotmartId\" placeholder=\"Hotmart Id\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlFinal [(ngModel)]=\"item.urlFinal\" name=\"urlFinal\" placeholder=\"Url Final\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlTracking [(ngModel)]=\"item.urlTracking\" name=\"urlTracking\" placeholder=\"Url Tracking\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput maxlength=\"1\" #geraTesteCampanha [(ngModel)]=\"item.geraTesteCampanha\" name=\"geraTesteCampanha\" placeholder=\"Gera Campanha de Teste (0/1)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #sigla maxlength=\"8\" [(ngModel)]=\"item.sigla\" name=\"sigla\" placeholder=\"Sigla (8 caracteres)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #precoReal  [(ngModel)]=\"item.precoReal\" name=\"precoReal\" placeholder=\"Comissão Valor Real\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #vendaTotal  [(ngModel)]=\"item.vendaTotal\" name=\"vendaTotal\" placeholder=\"Valor Venda\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #qtdeVenda  [(ngModel)]=\"item.qtdeVenda\" name=\"qtdeVenda\" placeholder=\"Quantdade Venda\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #criaPixelVenda  [(ngModel)]=\"item.criaPixelVenda\" name=\"criaPixelVenda\" placeholder=\"Cria Pixel\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Corrente\"  #contaGoogleId [(ngModel)]=\"item.contaGoogleId\" name=\"contaGoogleId\">\n        <mat-option *ngFor=\"let conta of listaConta\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
 
 /***/ }),
 
@@ -3482,6 +3525,9 @@ var ProdutoAfiliadoHotmartEditComponent = /** @class */ (function (_super) {
         var novo = new _shared_sdk__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoHotmart"]();
         return novo;
     };
+    ProdutoAfiliadoHotmartEditComponent.prototype.preSubmit = function () {
+        delete this.item['contaGoogle'];
+    };
     ProdutoAfiliadoHotmartEditComponent.prototype.montaCombos = function () {
         var _this = this;
         this.srvConta.find()
@@ -3523,7 +3569,7 @@ module.exports = ".dgc-card {\n    width: 48%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Afiliados Hotmart</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle!=null\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" >\n          <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\" >\n          <div *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})\n          </div>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
+module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\">\n      <span>Afiliados Hotmart</span>\n      <button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Cria Pixel: {{item.criaPixelVenda}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle!=null\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" >\n          <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\" >\n          <div *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})\n          </div>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -3702,7 +3748,7 @@ var ProdutoHotmartListComponent = /** @class */ (function (_super) {
 /*!*************************************!*\
   !*** ./src/app/shared/sdk/index.ts ***!
   \*************************************/
-/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, AccessToken, SDKToken, FireLoopRef, ErrorHandler, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, LoggerService */
+/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, AccessToken, SDKToken, FireLoopRef, ErrorHandler, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3799,8 +3845,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["ErrorHandler"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["ProdutoPlataformaApi"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["VisitaProdutoPlataformaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["ProdutoHotmartApi"]; });
@@ -3852,6 +3896,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["UserApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["PlataformaVendaApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["ProdutoPlataformaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_36__["LoggerService"]; });
 
@@ -18056,7 +18102,7 @@ var VisitaProdutoPlataformaApi = /** @class */ (function (_super) {
 /*!*****************************************************!*\
   !*** ./src/app/shared/sdk/services/custom/index.ts ***!
   \*****************************************************/
-/*! exports provided: ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, UserApi, PlataformaVendaApi, LoggerService */
+/*! exports provided: VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18263,7 +18309,7 @@ var LoggerService = /** @class */ (function () {
 /*!**********************************************!*\
   !*** ./src/app/shared/sdk/services/index.ts ***!
   \**********************************************/
-/*! exports provided: ErrorHandler, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, LoggerService */
+/*! exports provided: ErrorHandler, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18278,8 +18324,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["RealTime"]; });
 
 /* harmony import */ var _custom_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom/index */ "./src/app/shared/sdk/services/custom/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoPlataformaApi"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["VisitaProdutoPlataformaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoHotmartApi"]; });
@@ -18325,6 +18369,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["UserApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PlataformaVendaApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoPlataformaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["LoggerService"]; });
 

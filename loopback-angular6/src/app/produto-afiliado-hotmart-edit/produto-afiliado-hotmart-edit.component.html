@@ -40,6 +40,10 @@
       <input matInput #qtdeVenda  [(ngModel)]="item.qtdeVenda" name="qtdeVenda" placeholder="Quantdade Venda" autocomplete="off"/>
     </mat-form-field> 
 
+    <mat-form-field class="example-full-width">
+      <input matInput #criaPixelVenda  [(ngModel)]="item.criaPixelVenda" name="criaPixelVenda" placeholder="Cria Pixel" autocomplete="off"/>
+    </mat-form-field> 
+
     <mat-form-field class="example-full-width" *ngIf="listaConta">
       <mat-select placeholder="Conta Google Corrente"  #contaGoogleId [(ngModel)]="item.contaGoogleId" name="contaGoogleId">
         <mat-option *ngFor="let conta of listaConta" [value]="conta.id">

@@ -32,6 +32,7 @@ module.exports = function(Campanhaadsteste) {
                 { 'relation' : 'anuncioCampanhaAdsTestes' , 'scope' : {'include':'anuncioAds'} },
                 { 'relation' : 'palavraChaveCampanhaAdsTestes' , 'scope' : {'include':'ideiaPalavraChave'} },
                 { 'relation' : 'produtoAfiliadoHotmart' },
+                { 'relation' : 'contaGoogle' },
                 { 'relation' : 'modeloCampanhaAdsTeste' }
 
             ]

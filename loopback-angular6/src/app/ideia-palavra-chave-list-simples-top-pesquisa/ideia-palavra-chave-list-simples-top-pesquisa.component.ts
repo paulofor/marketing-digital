@@ -23,4 +23,13 @@ export class IdeiaPalavraChaveListSimplesTopPesquisaComponent extends IdeiaPalav
             this.posCarregaLista();
         })
     }
+
+	classeCor(item) {
+		if (item.cpcMinimoTopPage > 0) {
+			if (item.cpcPara50 > item.cpcMinimoTopPage ) return 'corAzul';
+			else return 'corVermelho'
+		} else {
+			return 'corVerde'
+		}
+	}
 }
