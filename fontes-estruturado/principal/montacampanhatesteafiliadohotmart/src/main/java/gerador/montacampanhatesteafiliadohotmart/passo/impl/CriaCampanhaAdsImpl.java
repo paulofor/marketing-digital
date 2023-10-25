@@ -126,7 +126,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 
 		// 1 - Opções de Rede
 		NetworkSettings networkSettings = NetworkSettings.newBuilder().setTargetGoogleSearch(true)
-				.setTargetSearchNetwork(true).setTargetContentNetwork(false).setTargetPartnerSearchNetwork(false)
+				.setTargetSearchNetwork(false).setTargetContentNetwork(false).setTargetPartnerSearchNetwork(false)
 				.build();
 		
         // Formata a data como string no formato AAAAMMDD
@@ -142,12 +142,12 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		Campaign campaign = Campaign.newBuilder()
 				.setName(nomeCampanha)
 				.setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
-				.setStatus(CampaignStatus.PAUSED)
+				.setStatus(CampaignStatus.ENABLED)
 				.setManualCpc(ManualCpc.newBuilder().build())
 				.setCampaignBudget(budgetResourceName)
 				.setNetworkSettings(networkSettings)
-				//.setStartDate(dataInicial)
-				//.setEndDate(dataFinal)
+				.setStartDate(dataInicial)
+				.setEndDate(dataFinal)
 				.build();
 
 		campanha.setNomeAds(nomeCampanha);
@@ -238,11 +238,13 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	            .build();
 
 	        double valorDouble = 0;
+	        /*
 	        if ("MAX".equals(campanha.getModeloCampanhaAdsTeste().getTipoCpcCusto())) {
 	            valorDouble = (palavra.getCpcMaximoTopPage() * campanha.getModeloCampanhaAdsTeste().getMultiplicadorCpcCusto()) * 100;
 	        } else {
 	            valorDouble = (palavra.getCpcMinimoTopPage() * campanha.getModeloCampanhaAdsTeste().getMultiplicadorCpcCusto()) * 100;
 	        }
+	        */
 
 	        valorDouble = palavra.getCpcPara50() * 100;
 
@@ -279,6 +281,11 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	        System.out.printf(
 	            "Palavra-chave com CPC de %d criada com sucesso: '%s'.%n",
 	            valorCpc, keywordResourceName);
+	        try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 	    }
 	}
 
@@ -406,12 +413,19 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 
 	
 	private LocalDate obtemDataFinal(LocalDate inicial, CampanhaAdsTeste campanha) {
-		int diferenca = campanha.getModeloCampanhaAdsTeste().getQtdeDia() - 1;
+		//int diferenca = campanha.getModeloCampanhaAdsTeste().getQtdeDia() - 1;
+		int diferenca = 21;
 	    LocalDate proximaData = inicial.plusDays(diferenca);
         return proximaData;
 	}
 
+	
+	private LocalDate obtemDataInicial(CampanhaAdsTeste campanha) {
 
+        return LocalDate.now();
+	}
+
+	/*
 	private LocalDate obtemDataInicial(CampanhaAdsTeste campanha) {
 		int diaSemana = campanha.getModeloCampanhaAdsTeste().getDiaInicial();
 		
@@ -426,7 +440,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	    LocalDate proximaData = hoje.plusDays(diferenca);
         return proximaData;
 	}
-	
+	*/
 	
 }
 

@@ -20,7 +20,7 @@ export class CampanhaAdsTesteListAtivaMetricaComponent extends CampanhaAdsTesteL
 			'where' : {'ativa' : 1},
 			'include' : [
 				'contaGoogle' ,
-				{'relation' : 'campanhaAdsMetricas' , 'scope' : {'order' : 'dataHora desc' , 'limit' : 10}},
+				{'relation' : 'campanhaAdsMetricas' , 'scope' : {'order' : 'dataHora desc' , 'limit' : 5}},
 				{'relation' : 'produtoAfiliadoHotmart', 'scope' : {'include' : {'relation' : 'visitaProdutoHotmarts' , 'scope' : {
 					'where' : {'maisRecente' : 1},
 					'include' : 'ideiaPalavraChave'
