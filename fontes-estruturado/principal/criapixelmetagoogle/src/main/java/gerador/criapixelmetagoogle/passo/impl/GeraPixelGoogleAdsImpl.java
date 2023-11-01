@@ -29,6 +29,9 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 	
 	@Override
 	protected boolean executaCustom( ProdutoAfiliadoHotmart produtoAfiliadoCorrente) {
+		if (produtoAfiliadoCorrente.getSigla()==null) {
+			throw new RuntimeException("Sem sigla");
+		}
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
@@ -47,9 +50,6 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		return true;
 	}
 
-	
-	
-	
 	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel) {
 
 		PixelGoogle pixel = null;
@@ -65,7 +65,7 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 			        .setViewThroughLookbackWindowDays(15L)
 			        .setValueSettings(
 			            ValueSettings.newBuilder()
-			                .setDefaultValue(23.41)
+			                .setDefaultValue(10)
 			                .setAlwaysUseDefaultValue(true)
 			                .build())
 			        .build();

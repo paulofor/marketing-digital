@@ -37,7 +37,7 @@ public abstract class DaoAplicacao extends DaoBase {
 
 	@Override
 	protected long getTempo() {
-		return 10000;
+		return 5000;
 	}
 
 	@Override

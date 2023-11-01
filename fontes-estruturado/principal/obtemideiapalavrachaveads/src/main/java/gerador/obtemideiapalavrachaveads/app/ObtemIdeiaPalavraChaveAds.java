@@ -17,7 +17,7 @@ public class ObtemIdeiaPalavraChaveAds {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemIdeiaPalavraChaveAds");
-		System.out.println("(11/10/2023 13:08:22)");
+		System.out.println("(01/11/2023 07:34:45)");
 		try {
 			carregaProp();
 			ObtemIdeiaPalavraChaveAdsObj obj = new ObtemIdeiaPalavraChaveAdsObj();
@@ -47,7 +47,7 @@ public class ObtemIdeiaPalavraChaveAds {
 		//Properties prop = new Properties();
 		//prop.load(input);
 		//UrlLoopback = prop.getProperty("loopback.url");
-		UrlLoopback = "http://localhost:23101/api";
+		UrlLoopback = "http://vps-40d69db1.vps.ovh.ca:23101/api";
 		DaoBaseComum.setUrl(UrlLoopback);
 	}
 
@@ -57,5 +57,6 @@ public class ObtemIdeiaPalavraChaveAds {
 		DaoBaseComum.setProximo("VisitaProdutoHotmart_ListaParaPesquisaPalavraChave", new BuscaPalavraChaveAdsImpl());
 		DaoBaseComum.setProximo("BuscaPalavraChaveAds", new IdeiaPalavraChave_RecebeListaImpl());
 		DaoBaseComum.setProximo("IdeiaPalavraChave_RecebeLista", new IdeiaPalavraChave_AtualizaMaisRecentePalavraChaveImpl());
+		DaoBaseComum.setProximo("IdeiaPalavraChave_AtualizaMaisRecentePalavraChave", new IdeiaPalavraChave_CalculaCpcAlvoImpl());
 	}
 }

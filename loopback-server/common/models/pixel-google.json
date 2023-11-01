@@ -27,6 +27,9 @@
 		"codigo2": {
 			"type": "string"
 		},
+		"instalado": {
+			"type": "number"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}

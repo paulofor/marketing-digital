@@ -22,6 +22,9 @@ public class ObtemIdeiaPalavraChaveAdsObj extends DaoAplicacao {
 		DaoBase finalizacao1 = new IdeiaPalavraChave_AtualizaMaisRecentePalavraChaveImpl();
 		finalizacao1.setComum(ds);
 		finalizacao1.executa();
+		DaoBase finalizacao1 = new IdeiaPalavraChave_CalculaCpcAlvoImpl();
+		finalizacao1.setComum(ds);
+		finalizacao1.executa();
 	}
 	public int getNumPasso() {
 		return 1;
