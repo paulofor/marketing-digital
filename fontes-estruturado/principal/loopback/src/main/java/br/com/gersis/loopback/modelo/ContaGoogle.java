@@ -95,6 +95,7 @@ public class ContaGoogle extends Model {
 		this.CampanhaAdsTestes = new ArrayList<CampanhaAdsTeste>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new CampanhaAdsTeste();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsTestes.add((CampanhaAdsTeste) objeto);
 		}
@@ -106,6 +107,7 @@ public class ContaGoogle extends Model {
 		this.PixelGoogles = new ArrayList<PixelGoogle>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new PixelGoogle();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PixelGoogles.add((PixelGoogle) objeto);
 		}
@@ -117,6 +119,7 @@ public class ContaGoogle extends Model {
 		this.ProdutoAfiliadoHotmarts = new ArrayList<ProdutoAfiliadoHotmart>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new ProdutoAfiliadoHotmart();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoAfiliadoHotmarts.add((ProdutoAfiliadoHotmart) objeto);
 		}

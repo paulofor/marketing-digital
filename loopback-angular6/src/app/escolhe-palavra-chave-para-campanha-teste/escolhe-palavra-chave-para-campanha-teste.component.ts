@@ -39,7 +39,7 @@ export class EscolhePalavraChaveParaCampanhaTesteComponent extends BaseSeleciona
 
   getFiltro() {
     return {
-      'where' : { 'and' : [{'hotmartId' : this.origem.produtoAfiliadoHotmartId}, {'maisRecente' : 1}] },
+      'where' : { 'and' : [{'hotmartId' : this.origem.produtoAfiliadoHotmartId}, {'maisRecenteProduto' : 1}] },
       'order' : 'mediaPesquisa desc' ,
       'limit' : 20,
       'include' : {

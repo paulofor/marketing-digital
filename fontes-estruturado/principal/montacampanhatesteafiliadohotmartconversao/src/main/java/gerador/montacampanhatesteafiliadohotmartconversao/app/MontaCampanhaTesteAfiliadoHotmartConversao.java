@@ -17,7 +17,7 @@ public class MontaCampanhaTesteAfiliadoHotmartConversao {
 
 	public static void main(String[] args) {
 		System.out.print("MontaCampanhaTesteAfiliadoHotmartConversao");
-		System.out.println("(01/11/2023 07:34:45)");
+		System.out.println("(08/11/2023 10:33:56)");
 		try {
 			carregaProp();
 			MontaCampanhaTesteAfiliadoHotmartConversaoObj obj = new MontaCampanhaTesteAfiliadoHotmartConversaoObj();
@@ -54,8 +54,7 @@ public class MontaCampanhaTesteAfiliadoHotmartConversao {
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
 		DaoBaseComum.setProximo("MontaCampanhaTesteAfiliadoHotmartConversaoObj", new CampanhaAdsTeste_ObtemListaParaTesteImpl());
-		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaTeste", new ContaGoogle_ObtemContaDisponivelImpl());
-		DaoBaseComum.setProximo("ContaGoogle_ObtemContaDisponivel", new CriaCampanhaAdsConversaoImpl());
+		DaoBaseComum.setProximo("CampanhaAdsTeste_ObtemListaParaTeste", new CriaCampanhaAdsConversaoImpl());
 		DaoBaseComum.setProximo("CriaCampanhaAdsConversao", new CampanhaAdsTeste_AtualizaCampanhaCriadaImpl());
 	}
 }

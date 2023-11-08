@@ -73,16 +73,27 @@ module.exports = function(Ideiapalavrachave) {
     }
 
     Ideiapalavrachave.AtualizaMaisRecentePalavraChave = function(callback) {
-        const sql0 = "UPDATE IdeiaPalavraChave set maisRecente = 0";
+        const sql0 = "UPDATE IdeiaPalavraChave set maisRecente = 0 where maisRecente = 1";
         const sql = "UPDATE IdeiaPalavraChave AS v1 " +
             " JOIN ( " +
             " SELECT MAX(dataAcesso) AS maxDataInsercao " +
             " FROM IdeiaPalavraChave " +
             " ) AS v2 ON v1.dataAcesso = v2.maxDataInsercao " +
-            " SET v1.maisRecente = 1"
+            " SET v1.maisRecente = 1";
+        const sql3 = "UPDATE IdeiaPalavraChave set maisRecenteProduto = 0 where maisRecenteProduto = 1";
+        const sql2 = "UPDATE IdeiaPalavraChave AS v1 " +
+            " JOIN ( " +
+            " SELECT hotmartId, MAX(dataAcesso) AS maxDataInsercaoProduto " +
+            " FROM IdeiaPalavraChave " +
+            " ) AS v2 ON v1.hotmartId = v2.hotmartId " +
+            " SET v1.maisRecenteProduto = 1"
         let ds = Ideiapalavrachave.dataSource;
         ds.connector.query(sql0,(err,result) => {
-            ds.connector.query(sql,callback);
+            ds.connector.query(sql,(err1,result1) => {
+                ds.connector.query(sql3,(err2,result2) => {
+                    ds.connector.query(sql2, callback);
+                })
+            });
         });
     }
 

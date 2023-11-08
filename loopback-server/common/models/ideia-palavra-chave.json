@@ -44,10 +44,18 @@
 		},
 		"quantidadePorVisita": {
 			"type": "number"
+		},
+		"maisRecenteProduto": {
+			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
+		"visitaProdutoHotmart": {
+			"type": "belongsTo",
+			"model": "VisitaProdutoHotmart",
+			"foreignKey": "hotmartId"
+		},
 		"palavraChaveCampanhaAds": {
 			"type": "hasMany",
 			"model": "PalavraChaveCampanhaAds",
@@ -62,11 +70,6 @@
 			"type": "hasMany",
 			"model": "ProdutoAfiliadoMetrica",
 			"foreignKey": ""
-		},
-		"visitaProdutoHotmarts": {
-			"type": "hasMany",
-			"model": "VisitaProdutoHotmart",
-			"foreignKey": "hotmartId"
 		}
 	},
 	"acls": [],

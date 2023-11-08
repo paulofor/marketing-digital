@@ -5,16 +5,29 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collections;
 
+// Importa as classes necessárias.
+
+
+
+
 import com.google.ads.googleads.lib.GoogleAdsClient;
+import com.google.ads.googleads.v13.common.CustomAudienceSegment;
 import com.google.ads.googleads.v13.enums.ConversionActionCategoryEnum.ConversionActionCategory;
 import com.google.ads.googleads.v13.enums.ConversionActionStatusEnum.ConversionActionStatus;
 import com.google.ads.googleads.v13.enums.ConversionActionTypeEnum.ConversionActionType;
 import com.google.ads.googleads.v13.resources.ConversionAction;
 import com.google.ads.googleads.v13.resources.ConversionAction.ValueSettings;
+import com.google.ads.googleads.v13.resources.CustomAudience;
+import com.google.ads.googleads.v13.resources.CustomerConversionGoal;
 import com.google.ads.googleads.v13.services.ConversionActionOperation;
 import com.google.ads.googleads.v13.services.ConversionActionServiceClient;
+import com.google.ads.googleads.v13.services.CustomAudienceOperation;
+import com.google.ads.googleads.v13.services.CustomAudienceServiceClient;
+import com.google.ads.googleads.v13.services.CustomerConversionGoalOperation;
+import com.google.ads.googleads.v13.services.CustomerConversionGoalServiceClient;
 import com.google.ads.googleads.v13.services.MutateConversionActionResult;
 import com.google.ads.googleads.v13.services.MutateConversionActionsResponse;
+import com.google.ads.googleads.v13.services.MutateCustomAudiencesResponse;
 
 import br.com.gersis.loopback.modelo.PixelGoogle;
 import br.com.gersis.loopback.modelo.ProdutoAfiliadoHotmart;
@@ -50,6 +63,166 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		return true;
 	}
 
+	/*
+	private PixelGoogle criaMetaPixelv2(GoogleAdsClient googleAdsClient, String nomePixel) {
+		
+		
+		CustomerConversionGoal goal = CustomerConversionGoal.newBuilder()
+										.build();
+
+		
+		 // Creates the operation.
+		CustomerConversionGoalOperation operation =
+				CustomerConversionGoalOperation.newBuilder().setUpdate(goal).build();
+
+		  try (CustomerConversionGoalServiceClient conversionActionServiceClient =
+		      googleAdsClient.getLatestVersion().createCustomerConversionGoalServiceClient()) {
+		    MutateConversionActionsResponse response =
+		        conversionActionServiceClient.mutateConversionActions(
+		            Long.toString(customerId), Collections.singletonList(operation));
+		    System.out.printf("Added %d conversion actions:%n", response.getResultsCount());
+		    for (MutateConversionActionResult result : response.getResultsList()) {
+		      System.out.printf(
+		          "New conversion action added with resource name: '%s'%n", result.getResourceName());
+		    }
+		  }
+		// Cria a ação de conversão.
+		ConversionAction conversionAction =
+		    ConversionAction.newBuilder()
+		        .setName(nomePixel)
+		        .setCategory(ConversionActionCategory.DEFAULT)
+		        .setType(ConversionActionType.WEBPAGE)
+		        .setStatus(ConversionActionStatus.ENABLED)
+		        .setViewThroughLookbackWindowDays(15L)
+		        .setValueSettings(
+		            ValueSettings.newBuilder()
+		                .setDefaultValue(10)
+		                .setAlwaysUseDefaultValue(true)
+		                .build())
+		        .build();
+
+		// Cria a operação para criar a ação de conversão.
+		ConversionActionOperation operation =
+		    ConversionActionOperation.newBuilder().setCreate(conversionAction).build();
+
+		// Cria o cliente do serviço de ação de conversão.
+		ConversionActionServiceClient conversionActionServiceClient =
+		    GoogleAdsClient.newBuilder().getLatestVersion().createConversionActionServiceClient();
+
+		// Cria a resposta para a operação.
+		MutateConversionActionsResponse response =
+		    conversionActionServiceClient.mutateConversionActions(
+		        Long.toString(CODIGO_USUARIO), Collections.singletonList(operation));
+
+		// Imprime o ID da ação de conversão.
+		System.out.println("ID da ação de conversão: " + response.getResultsList().get(0).getResourceName());
+
+		// Cria a audiência personalizada.
+		// Cria a audiência personalizada.
+		// Cria a audiência personalizada.
+		CustomAudienceSegment customAudienceSegment =
+			    CustomAudienceSegment.newBuilder()
+			        .setName(NOME_PIXEL + "_AudienciaPersonalizada")
+			        .setDescription("Audiência personalizada para Pixel " + NOME_PIXEL)
+			        .setCriteria(
+			            Collections.singletonList(
+			                CustomAudienceSegmentCriterion.newBuilder()
+			                    .setPixelMembership(
+			                        CustomAudiencePixelMembership.newBuilder()
+			                            .setPixelId(
+			                                response.getResultsList().get(0).getResourceName())
+			                            .build())
+			                    .setType(CustomAudienceCriterionType.PIXEL)
+			                    .build())
+			            )
+			        .build();
+
+		// Cria a operação para criar a audiência personalizada.
+		CustomAudienceOperation customAudienceOperation =
+		    CustomAudienceOperation.setUpdate(customAudienceSegment).build();
+
+		// Cria o cliente do serviço de meta personalizada.
+		CustomAudienceServiceClient customAudienceServiceClient =
+		    GoogleAdsClient.newBuilder().getLatestVersion().createCustomAudienceServiceClient();
+
+		// Cria a resposta para a operação.
+		MutateCustomAudiencesResponse customAudienceResponse =
+		    customAudienceServiceClient.mutateCustomAudiences(
+		        Long.toString(CODIGO_USUARIO), Collections.singletonList(customAudienceOperation));
+
+		// Imprime o ID da audiência personalizada.
+		System.out.println("ID da audiência personalizada: " + customAudienceResponse.getResultsList().get(0).getResourceName());
+
+
+	}
+	
+	
+	private PixelGoogle criaMetaPixelv1(GoogleAdsClient googleAdsClient, String nomePixel) {
+
+
+		
+		// Cria a ação de conversão.
+		ConversionAction conversionAction =
+		    ConversionAction.newBuilder()
+		        .setName(nomePixel)
+		        .setCategory(ConversionActionCategory.DEFAULT)
+		        .setType(ConversionActionType.WEBPAGE)
+		        .setStatus(ConversionActionStatus.ENABLED)
+		        .setViewThroughLookbackWindowDays(15L)
+		        .setValueSettings(
+		            ValueSettings.newBuilder()
+		                .setDefaultValue(10)
+		                .setAlwaysUseDefaultValue(true)
+		                .build())
+		        .build();
+
+		// Cria a operação para criar a ação de conversão.
+		ConversionActionOperation operation =
+		    ConversionActionOperation.newBuilder().setCreate(conversionAction).build();
+
+		ConversionActionServiceClient conversionActionServiceClient =
+			      googleAdsClient.getLatestVersion().createConversionActionServiceClient();
+		
+
+		// Cria a resposta para a operação.
+		MutateConversionActionsResponse response =
+		    conversionActionServiceClient.mutateConversionActions(
+		        Long.toString(CODIGO_USUARIO), Collections.singletonList(operation));
+
+		// Imprime o ID da ação de conversão.
+		System.out.println("ID da ação de conversão: " + response.getResultsList().get(0).getResourceName());
+
+		// Cria a audiência personalizada.
+		CustomAudience customAudience =
+		    CustomAudience.newBuilder()
+		        .setName(nomePixel + "_AudienciaPersonalizada")
+		        .setDescription("Audiência personalizada para Pixel " + nomePixel)
+		        .setMemberships(
+		            CustomAudienceMembership.newBuilder().setPixelMembership(
+		                CustomAudiencePixelMembership.newBuilder().setPixelId(
+		                    response.getResultsList().get(0).getResourceName()).build())
+		                .build())
+		        .build();
+
+		// Cria a operação para criar a audiência personalizada.
+		CustomAudienceOperation customAudienceOperation =
+		    CustomAudienceOperation.newBuilder().setCreate(customAudience).build();
+
+		// Cria o cliente do serviço de meta personalizada.
+		CustomAudienceServiceClient customAudienceServiceClient =
+		    GoogleAdsClient.newBuilder().getLatestVersion().createCustomAudienceServiceClient();
+
+		// Cria a resposta para a operação.
+		MutateCustomAudiencesResponse customAudienceResponse =
+		    customAudienceServiceClient.mutateCustomAudiences(
+		        Long.toString(CODIGO_USUARIO), Collections.singletonList(customAudienceOperation));
+
+		// Imprime o ID da audiência personalizada.
+		System.out.println("ID da audiência personalizada: " + customAudienceResponse.getResultsList().get(0).getResourceName());
+
+	}
+
+	*/
 	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel) {
 
 		PixelGoogle pixel = null;

@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class CriaCampanhaAdsConversao extends DaoAplicacao { 
 
-	private int NUM_PASSO = 3;
+	private int NUM_PASSO = 2;
 
 
 	// campos saida
@@ -22,7 +22,7 @@ public abstract class CriaCampanhaAdsConversao extends DaoAplicacao {
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		if (executaCustom(ds.getCampanhaTesteCorrente(), ds.getConta())) {
+		if (executaCustom(ds.getCampanhaTesteCorrente())) {
 			ds.setCampanhaTesteCorrente(saidaCampanhaTesteCorrente);
 			executaProximo();
 		} else {
@@ -37,7 +37,7 @@ public abstract class CriaCampanhaAdsConversao extends DaoAplicacao {
 	}
 
 
-	protected boolean executaCustom( CampanhaAdsTeste campanhaTesteCorrente , ContaGoogle conta ) { return true; }
+	protected boolean executaCustom( CampanhaAdsTeste campanhaTesteCorrente ) { return true; }
 
 	protected void preFinalizar() { return; }
 

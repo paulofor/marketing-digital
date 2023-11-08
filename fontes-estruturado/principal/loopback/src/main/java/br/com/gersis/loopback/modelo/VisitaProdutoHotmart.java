@@ -34,9 +34,9 @@ public class VisitaProdutoHotmart extends Model {
 	private int possuiPalavraChave;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
-	private IdeiaPalavraChave IdeiaPalavraChave;
 	// Relacionamentos N
 	private List<ProdutoAfiliadoMetrica> ProdutoAfiliadoMetricas;
+	private List<IdeiaPalavraChave> IdeiaPalavraChaves;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -183,13 +183,6 @@ public class VisitaProdutoHotmart extends Model {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
 	}
-	public IdeiaPalavraChave getIdeiaPalavraChave() {
-		return IdeiaPalavraChave;
-	}
-	public void setIdeiaPalavraChave(HashMap valor) {
-		this.IdeiaPalavraChave = new IdeiaPalavraChave();
-		BeanUtil.setProperties(this.IdeiaPalavraChave, (Map<String, ? extends Object>) valor, true);
-	}
 	public List<ProdutoAfiliadoMetrica> getProdutoAfiliadoMetricas() {
 		return  ProdutoAfiliadoMetricas;
 	}
@@ -197,8 +190,21 @@ public class VisitaProdutoHotmart extends Model {
 		this.ProdutoAfiliadoMetricas = new ArrayList<ProdutoAfiliadoMetrica>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new ProdutoAfiliadoMetrica();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoAfiliadoMetricas.add((ProdutoAfiliadoMetrica) objeto);
+		}
+	}
+	public List<IdeiaPalavraChave> getIdeiaPalavraChaves() {
+		return  IdeiaPalavraChaves;
+	}
+	public void setIdeiaPalavraChaves(List<IdeiaPalavraChave> valores) {
+		this.IdeiaPalavraChaves = new ArrayList<IdeiaPalavraChave>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new IdeiaPalavraChave();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.IdeiaPalavraChaves.add((IdeiaPalavraChave) objeto);
 		}
 	}
 }

@@ -295,6 +295,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ideia_palavra_chave_list_simples_top_ideia_palavra_chave_list_simples_top_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../ideia-palavra-chave-list-simples-top/ideia-palavra-chave-list-simples-top.component */ "./src/app/ideia-palavra-chave-list-simples-top/ideia-palavra-chave-list-simples-top.component.ts");
 /* harmony import */ var _ideia_palavra_chave_list_simples_top_pesquisa_ideia_palavra_chave_list_simples_top_pesquisa_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../ideia-palavra-chave-list-simples-top-pesquisa/ideia-palavra-chave-list-simples-top-pesquisa.component */ "./src/app/ideia-palavra-chave-list-simples-top-pesquisa/ideia-palavra-chave-list-simples-top-pesquisa.component.ts");
 /* harmony import */ var _campanha_ads_teste_list_ativa_metrica_campanha_ads_teste_list_ativa_metrica_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component */ "./src/app/campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component.ts");
+/* harmony import */ var _visita_produto_hotmart_resumo_visita_produto_hotmart_resumo_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component */ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.ts");
+
 
 
 
@@ -323,6 +325,7 @@ var routes = [
     { path: 'modeloCampanhaAdsTeste', component: _modelo_campanha_ads_teste_list_modelo_campanha_ads_teste_list_component__WEBPACK_IMPORTED_MODULE_7__["ModeloCampanhaAdsTesteListComponent"] },
     { path: 'pixelGoogle', component: _pixel_google_list_pixel_google_list_component__WEBPACK_IMPORTED_MODULE_10__["PixelGoogleListComponent"] },
     { path: 'contaGoogle', component: _conta_google_list_conta_google_list_component__WEBPACK_IMPORTED_MODULE_12__["ContaGoogleListComponent"] },
+    { path: 'resumoVisitaHotmart', component: _visita_produto_hotmart_resumo_visita_produto_hotmart_resumo_component__WEBPACK_IMPORTED_MODULE_17__["VisitaProdutoHotmartResumoComponent"] },
     { path: 'anuncioAds/:id', component: _anuncio_ads_lista_anuncio_ads_lista_component__WEBPACK_IMPORTED_MODULE_9__["AnuncioAdsListaComponent"] },
     { path: 'campanhaAdsTeste/:id', component: _campanha_ads_teste_lista_campanha_ads_teste_lista_component__WEBPACK_IMPORTED_MODULE_8__["CampanhaAdsTesteListaComponent"] },
     { path: 'campanhaAdsTesteDetalhe/:id', component: _campanha_ads_teste_detalhe_campanha_ads_teste_detalhe_component__WEBPACK_IMPORTED_MODULE_11__["CampanhaAdsTesteDetalheComponent"] },
@@ -461,6 +464,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ideia_palavra_chave_list_simples_top_ideia_palavra_chave_list_simples_top_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./ideia-palavra-chave-list-simples-top/ideia-palavra-chave-list-simples-top.component */ "./src/app/ideia-palavra-chave-list-simples-top/ideia-palavra-chave-list-simples-top.component.ts");
 /* harmony import */ var _ideia_palavra_chave_list_simples_top_pesquisa_ideia_palavra_chave_list_simples_top_pesquisa_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./ideia-palavra-chave-list-simples-top-pesquisa/ideia-palavra-chave-list-simples-top-pesquisa.component */ "./src/app/ideia-palavra-chave-list-simples-top-pesquisa/ideia-palavra-chave-list-simples-top-pesquisa.component.ts");
 /* harmony import */ var _campanha_ads_teste_list_ativa_metrica_campanha_ads_teste_list_ativa_metrica_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component */ "./src/app/campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component.ts");
+/* harmony import */ var _visita_produto_hotmart_resumo_visita_produto_hotmart_resumo_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component */ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -495,6 +499,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 //import { NgxImgModule } from 'ngx-img';
 
 //import { UploadModule } from './upload/upload.module';
+
 
 
 
@@ -561,7 +566,8 @@ var AppModule = /** @class */ (function () {
                 _ideia_palavra_chave_list_simples_melhores_cpc_ideia_palavra_chave_list_simples_melhores_cpc_component__WEBPACK_IMPORTED_MODULE_50__["IdeiaPalavraChaveListSimplesMelhoresCpcComponent"],
                 _ideia_palavra_chave_list_simples_top_ideia_palavra_chave_list_simples_top_component__WEBPACK_IMPORTED_MODULE_51__["IdeiaPalavraChaveListSimplesTopComponent"],
                 _ideia_palavra_chave_list_simples_top_pesquisa_ideia_palavra_chave_list_simples_top_pesquisa_component__WEBPACK_IMPORTED_MODULE_52__["IdeiaPalavraChaveListSimplesTopPesquisaComponent"],
-                _campanha_ads_teste_list_ativa_metrica_campanha_ads_teste_list_ativa_metrica_component__WEBPACK_IMPORTED_MODULE_53__["CampanhaAdsTesteListAtivaMetricaComponent"]
+                _campanha_ads_teste_list_ativa_metrica_campanha_ads_teste_list_ativa_metrica_component__WEBPACK_IMPORTED_MODULE_53__["CampanhaAdsTesteListAtivaMetricaComponent"],
+                _visita_produto_hotmart_resumo_visita_produto_hotmart_resumo_component__WEBPACK_IMPORTED_MODULE_54__["VisitaProdutoHotmartResumoComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -2050,7 +2056,7 @@ var EscolhePalavraChaveParaCampanhaTesteComponent = /** @class */ (function (_su
     };
     EscolhePalavraChaveParaCampanhaTesteComponent.prototype.getFiltro = function () {
         return {
-            'where': { 'and': [{ 'hotmartId': this.origem.produtoAfiliadoHotmartId }, { 'maisRecente': 1 }] },
+            'where': { 'and': [{ 'hotmartId': this.origem.produtoAfiliadoHotmartId }, { 'maisRecenteProduto': 1 }] },
             'order': 'mediaPesquisa desc',
             'limit': 20,
             'include': {
@@ -4083,7 +4089,7 @@ var SDKBrowserModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return LoopBackConfig; });
-/* harmony import */ var src_app_constantes_base_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/constantes/base.url */ "./src/app/constantes/base.url.ts");
+/* harmony import */ var _constantes_base_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constantes/base.url */ "./src/app/constantes/base.url.ts");
 /* tslint:disable */
 
 /**
@@ -4170,7 +4176,7 @@ var LoopBackConfig = /** @class */ (function () {
     LoopBackConfig.getRequestOptionsCredentials = function () {
         return LoopBackConfig.withCredentials;
     };
-    LoopBackConfig.path = src_app_constantes_base_url__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"];
+    LoopBackConfig.path = _constantes_base_url__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"];
     LoopBackConfig.version = 'api';
     LoopBackConfig.authPrefix = '';
     LoopBackConfig.debug = true;
@@ -5597,6 +5603,10 @@ var IdeiaPalavraChave = /** @class */ (function () {
                 },
                 "quantidadePorVisita": {
                     name: 'quantidadePorVisita',
+                    type: 'number'
+                },
+                "maisRecenteProduto": {
+                    name: 'maisRecenteProduto',
                     type: 'number'
                 },
                 "id": {
@@ -17891,6 +17901,30 @@ var VisitaProdutoHotmartApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `VisitaProdutoHotmart` object.)
+     * </em>
+     */
+    VisitaProdutoHotmartApi.prototype.ResumoPorDataInsercao = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/VisitaProdutoHotmarts/resumoPorDataInsercao";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Cria uma nova instância no produtoAfiliadoMetricas deste modelo.
      *
      * @param {any} id VisitaProdutoHotmart id
@@ -18961,7 +18995,7 @@ var SDKStorage = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresCpc\">\n        <i class=\"fa fa-search\"></i>\n        <p>(usar essse) Melhores Cpc</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTop\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTopPesquisa\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top Pesquisa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsTesteAtivaMetrica\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanha Ativa</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
+module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresCpc\">\n        <i class=\"fa fa-search\"></i>\n        <p>(usar essse) Melhores Cpc</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTop\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTopPesquisa\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top Pesquisa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/resumoVisitaHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Resumot Visita Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsTesteAtivaMetrica\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanha Ativa</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
 
 /***/ }),
 
@@ -19202,6 +19236,167 @@ var TokenAcessoListComponent = /** @class */ (function (_super) {
     ], TokenAcessoListComponent);
     return TokenAcessoListComponent;
 }(_base_component_base_list_component__WEBPACK_IMPORTED_MODULE_2__["BaseListComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo-base.component.ts":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo-base.component.ts ***!
+  \***********************************************************************************************/
+/*! exports provided: VisitaProdutoHotmartResumoBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartResumoBaseComponent", function() { return VisitaProdutoHotmartResumoBaseComponent; });
+var VisitaProdutoHotmartResumoBaseComponent = /** @class */ (function () {
+    function VisitaProdutoHotmartResumoBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    VisitaProdutoHotmartResumoBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    VisitaProdutoHotmartResumoBaseComponent.prototype.preCarregaTela = function () { };
+    VisitaProdutoHotmartResumoBaseComponent.prototype.posCarregaLista = function () { };
+    VisitaProdutoHotmartResumoBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.ResumoPorDataInsercao()
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    VisitaProdutoHotmartResumoBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    VisitaProdutoHotmartResumoBaseComponent.prototype.getDialogo1 = function () {
+    };
+    VisitaProdutoHotmartResumoBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    VisitaProdutoHotmartResumoBaseComponent.prototype.getDialogo2 = function () {
+    };
+    VisitaProdutoHotmartResumoBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return VisitaProdutoHotmartResumoBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.css":
+/*!*******************************************************************************************!*\
+  !*** ./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.css ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.html":
+/*!********************************************************************************************!*\
+  !*** ./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.html ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Resumo de Vista</span>\n\n\t</div>\n\t<div *ngIf=\"listaPrincipal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaPrincipal\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.dataInsercao | date : 'dd/MM/yyy'}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>Produtos Coletados: {{item.qtdeProduto}}</span>\n\t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.ts":
+/*!******************************************************************************************!*\
+  !*** ./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.ts ***!
+  \******************************************************************************************/
+/*! exports provided: VisitaProdutoHotmartResumoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartResumoComponent", function() { return VisitaProdutoHotmartResumoComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _visita_produto_hotmart_resumo_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./visita-produto-hotmart-resumo-base.component */ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var VisitaProdutoHotmartResumoComponent = /** @class */ (function (_super) {
+    __extends(VisitaProdutoHotmartResumoComponent, _super);
+    function VisitaProdutoHotmartResumoComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    VisitaProdutoHotmartResumoComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.ResumoPorDataInsercao()
+            .subscribe(function (result) {
+            console.log('lista: ', result);
+            _this.listaPrincipal = result;
+            _this.posCarregaLista();
+        });
+    };
+    VisitaProdutoHotmartResumoComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-visita-produto-hotmart-resumo',
+            template: __webpack_require__(/*! ./visita-produto-hotmart-resumo.component.html */ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.html"),
+            styles: [__webpack_require__(/*! ./visita-produto-hotmart-resumo.component.css */ "./src/app/visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["VisitaProdutoHotmartApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], VisitaProdutoHotmartResumoComponent);
+    return VisitaProdutoHotmartResumoComponent;
+}(_visita_produto_hotmart_resumo_base_component__WEBPACK_IMPORTED_MODULE_4__["VisitaProdutoHotmartResumoBaseComponent"]));
 
 
 

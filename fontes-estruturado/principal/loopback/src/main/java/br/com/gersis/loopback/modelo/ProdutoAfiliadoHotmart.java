@@ -159,6 +159,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 		this.CampanhaAdsTestes = new ArrayList<CampanhaAdsTeste>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new CampanhaAdsTeste();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsTestes.add((CampanhaAdsTeste) objeto);
 		}
@@ -170,6 +171,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 		this.AnuncioAds = new ArrayList<AnuncioAds>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new AnuncioAds();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.AnuncioAds.add((AnuncioAds) objeto);
 		}
@@ -181,6 +183,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 		this.VisitaProdutoHotmarts = new ArrayList<VisitaProdutoHotmart>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new VisitaProdutoHotmart();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.VisitaProdutoHotmarts.add((VisitaProdutoHotmart) objeto);
 		}

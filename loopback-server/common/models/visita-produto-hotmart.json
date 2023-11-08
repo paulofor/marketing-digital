@@ -72,14 +72,14 @@
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
 		},
-		"ideiaPalavraChave": {
-			"type": "belongsTo",
-			"model": "IdeiaPalavraChave",
-			"foreignKey": "hotmartId"
-		},
 		"produtoAfiliadoMetricas": {
 			"type": "hasMany",
 			"model": "ProdutoAfiliadoMetrica",
+			"foreignKey": "hotmartId"
+		},
+		"ideiaPalavraChaves": {
+			"type": "hasMany",
+			"model": "IdeiaPalavraChave",
 			"foreignKey": "hotmartId"
 		}
 	},
@@ -144,6 +144,44 @@
 			"http": [
          		{
           			"path": "/listaParaPesquisaPalavraChave",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ResumoPorDataInsercao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/resumoPorDataInsercao",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ProdutosTopVendas": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/produtosTopVendas",
    					"verb": "get"
  				}
  			]

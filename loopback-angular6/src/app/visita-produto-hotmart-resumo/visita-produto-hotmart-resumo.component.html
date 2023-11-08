@@ -1,0 +1,16 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header">
+		<span>Resumo de Vista</span>
+
+	</div>
+	<div *ngIf="listaPrincipal">
+		<div class="dgc-card" *ngFor="let item of listaPrincipal">
+ 			<div class="dgc-card-header">
+ 				<span>{{item.dataInsercao | date : 'dd/MM/yyy'}}</span>
+ 			</div>
+ 			<div class="dgc-card-header">
+				<span>Produtos Coletados: {{item.qtdeProduto}}</span>
+			</div>
+ 		</div>
+  	</div>
+</div>

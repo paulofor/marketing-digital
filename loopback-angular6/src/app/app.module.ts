@@ -62,6 +62,8 @@ import { IdeiaPalavraChaveListSimplesMelhoresCpcComponent } from './ideia-palavr
 import { IdeiaPalavraChaveListSimplesTopComponent } from './ideia-palavra-chave-list-simples-top/ideia-palavra-chave-list-simples-top.component';
 import { IdeiaPalavraChaveListSimplesTopPesquisaComponent } from './ideia-palavra-chave-list-simples-top-pesquisa/ideia-palavra-chave-list-simples-top-pesquisa.component';
 import { CampanhaAdsTesteListAtivaMetricaComponent } from './campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component';
+import { VisitaProdutoHotmartResumoComponent } from './visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component';
+import { ProdutosTopVendasComponent } from './produtos-top-vendas/produtos-top-vendas.component';
 
 
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -99,7 +101,9 @@ registerLocaleData(localePt, 'pt-BR');
     IdeiaPalavraChaveListSimplesMelhoresCpcComponent,
     IdeiaPalavraChaveListSimplesTopComponent,
     IdeiaPalavraChaveListSimplesTopPesquisaComponent,
-    CampanhaAdsTesteListAtivaMetricaComponent
+    CampanhaAdsTesteListAtivaMetricaComponent,
+    VisitaProdutoHotmartResumoComponent,
+    ProdutosTopVendasComponent
   ],
   imports: [
     BrowserModule,

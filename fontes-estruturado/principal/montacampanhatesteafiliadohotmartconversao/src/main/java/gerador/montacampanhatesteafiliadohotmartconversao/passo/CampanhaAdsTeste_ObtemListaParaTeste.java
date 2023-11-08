@@ -23,8 +23,12 @@ public abstract class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao 
 		if (executaCustom()) {
 			repCampanhaAdsTeste.obtemListaParaTeste(  new ListCallback<CampanhaAdsTeste>() { 
 				public void onSuccess(List<CampanhaAdsTeste> lista) {
-						ds.setCampanhaTesteCorrente(lista);
-						executaProximo();
+					for (CampanhaAdsTeste item : lista) {
+						ds.setCampanhaTesteCorrente(item);
+						executaProximoSemFinalizar();
+					}
+					preFinalizar();
+					finalizar();
 				}
 				public void onError(Throwable t) {
 					onErrorBase(t);
@@ -38,7 +42,7 @@ public abstract class CampanhaAdsTeste_ObtemListaParaTeste extends DaoAplicacao 
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new ContaGoogle_ObtemContaDisponivelImpl();
+		return new CriaCampanhaAdsConversaoImpl();
 	}
 
 

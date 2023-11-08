@@ -102,6 +102,7 @@ public class PixelGoogle extends Model {
 		this.ProdutoAfiliadoHotmarts = new ArrayList<ProdutoAfiliadoHotmart>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new ProdutoAfiliadoHotmart();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoAfiliadoHotmarts.add((ProdutoAfiliadoHotmart) objeto);
 		}
@@ -113,6 +114,7 @@ public class PixelGoogle extends Model {
 		this.pixelGooglePaginaVenda = new ArrayList<ProdutoAfiliadoHotmart>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new ProdutoAfiliadoHotmart();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.pixelGooglePaginaVenda.add((ProdutoAfiliadoHotmart) objeto);
 		}

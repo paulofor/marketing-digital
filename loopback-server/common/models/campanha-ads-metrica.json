@@ -34,7 +34,7 @@
 		"campanhaAdsTesteId": {
 			"type": "number"
 			,"id": true
-		}
+		},
 	},
 	"validations": [],
 	"relations": {

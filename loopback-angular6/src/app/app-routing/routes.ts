@@ -16,6 +16,8 @@ import { IdeiaPalavraChaveListSimplesMelhoresCpcComponent } from '../ideia-palav
 import { IdeiaPalavraChaveListSimplesTopComponent } from '../ideia-palavra-chave-list-simples-top/ideia-palavra-chave-list-simples-top.component';
 import { IdeiaPalavraChaveListSimplesTopPesquisaComponent } from '../ideia-palavra-chave-list-simples-top-pesquisa/ideia-palavra-chave-list-simples-top-pesquisa.component';
 import { CampanhaAdsTesteListAtivaMetricaComponent } from '../campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component';
+import { VisitaProdutoHotmartResumoComponent } from '../visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component';
+import { ProdutosTopVendasComponent } from '../produtos-top-vendas/produtos-top-vendas.component';
 
 
 
@@ -32,6 +34,8 @@ export const routes : Routes = [
     { path: 'pixelGoogle' , component: PixelGoogleListComponent },
     { path: 'contaGoogle' , component: ContaGoogleListComponent },
 
+    { path: 'resumoVisitaHotmart' , component: VisitaProdutoHotmartResumoComponent },
+
     { path: 'anuncioAds/:id' , component: AnuncioAdsListaComponent },
     { path: 'campanhaAdsTeste/:id' , component: CampanhaAdsTesteListaComponent },
     { path: 'campanhaAdsTesteDetalhe/:id' , component: CampanhaAdsTesteDetalheComponent },
@@ -42,7 +46,7 @@ export const routes : Routes = [
 
     { path: 'campanhaAdsTesteAtivaMetrica' , component: CampanhaAdsTesteListAtivaMetricaComponent },
 
-
+    { path: 'produtosTopVendas' , component: ProdutosTopVendasComponent },
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

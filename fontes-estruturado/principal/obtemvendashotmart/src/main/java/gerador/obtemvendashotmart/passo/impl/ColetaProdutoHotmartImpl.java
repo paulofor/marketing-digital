@@ -22,7 +22,7 @@ import gerador.obtemvendashotmart.passo.ColetaProdutoHotmart;
 
 public class ColetaProdutoHotmartImpl extends ColetaProdutoHotmart implements ICallbackJSON{
 
-	final int TOTAL_PAGINA = 15;
+	final int TOTAL_PAGINA = 30;
 	private int paginaAtual = 0;
 	private boolean concluidoInterno = false;
 	

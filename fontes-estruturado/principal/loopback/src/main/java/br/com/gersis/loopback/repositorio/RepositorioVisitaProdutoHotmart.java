@@ -52,6 +52,20 @@ public class RepositorioVisitaProdutoHotmart extends ModelRepository<VisitaProdu
 		invokeStaticMethod("listaParaPesquisaPalavraChave", params,   new JsonArrayParser<VisitaProdutoHotmart>(this, callback));
 	}
 
+	public synchronized void resumoPorDataInsercao(final ListCallback<VisitaProdutoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("VisitaProdutoHotmarts/resumoPorDataInsercao","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "VisitaProdutoHotmart.resumoPorDataInsercao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("resumoPorDataInsercao", params,   new JsonArrayParser<VisitaProdutoHotmart>(this, callback));
+	}
+
+	public synchronized void produtosTopVendas(final ListCallback<VisitaProdutoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("VisitaProdutoHotmarts/produtosTopVendas","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "VisitaProdutoHotmart.produtosTopVendas");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("produtosTopVendas", params,   new JsonArrayParser<VisitaProdutoHotmart>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<VisitaProdutoHotmart> listaEntrada) {
 		JSONArray lista = new JSONArray();

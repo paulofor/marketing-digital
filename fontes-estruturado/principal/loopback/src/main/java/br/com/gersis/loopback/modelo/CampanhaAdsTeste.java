@@ -175,6 +175,7 @@ public class CampanhaAdsTeste extends Model {
 		this.AnuncioCampanhaAdsTestes = new ArrayList<AnuncioCampanhaAdsTeste>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new AnuncioCampanhaAdsTeste();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.AnuncioCampanhaAdsTestes.add((AnuncioCampanhaAdsTeste) objeto);
 		}
@@ -186,6 +187,7 @@ public class CampanhaAdsTeste extends Model {
 		this.PalavraChaveCampanhaAdsTestes = new ArrayList<PalavraChaveCampanhaAdsTeste>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new PalavraChaveCampanhaAdsTeste();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PalavraChaveCampanhaAdsTestes.add((PalavraChaveCampanhaAdsTeste) objeto);
 		}
@@ -197,6 +199,7 @@ public class CampanhaAdsTeste extends Model {
 		this.CampanhaAdsMetricas = new ArrayList<CampanhaAdsMetrica>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new CampanhaAdsMetrica();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsMetricas.add((CampanhaAdsMetrica) objeto);
 		}

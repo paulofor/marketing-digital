@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicacao { 
 
-	private int NUM_PASSO = 4;
+	private int NUM_PASSO = 3;
 
 
 	protected CampanhaAdsTeste campanha;

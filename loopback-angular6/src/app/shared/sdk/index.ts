@@ -126,6 +126,7 @@ export class SDKBrowserModule {
         CampanhaAdsMetricaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

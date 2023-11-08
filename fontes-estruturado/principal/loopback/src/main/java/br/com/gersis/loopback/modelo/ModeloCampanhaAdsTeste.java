@@ -85,6 +85,7 @@ public class ModeloCampanhaAdsTeste extends Model {
 		this.CampanhaAdsTestes = new ArrayList<CampanhaAdsTeste>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new CampanhaAdsTeste();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsTestes.add((CampanhaAdsTeste) objeto);
 		}

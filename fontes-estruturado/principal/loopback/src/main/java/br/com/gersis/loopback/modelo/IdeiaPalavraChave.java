@@ -26,12 +26,13 @@ public class IdeiaPalavraChave extends Model {
 	private double cpcPara50;
 	private double cpcPara75;
 	private int quantidadePorVisita;
+	private int maisRecenteProduto;
 	// Relacionamentos 1
+	private VisitaProdutoHotmart VisitaProdutoHotmart;
 	// Relacionamentos N
 	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAds;
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
 	private List<ProdutoAfiliadoMetrica> ProdutoAfiliadoMetricas;
-	private List<VisitaProdutoHotmart> VisitaProdutoHotmarts;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -49,6 +50,7 @@ public class IdeiaPalavraChave extends Model {
 			obj.put("cpcPara50", cpcPara50);
 			obj.put("cpcPara75", cpcPara75);
 			obj.put("quantidadePorVisita", quantidadePorVisita);
+			obj.put("maisRecenteProduto", maisRecenteProduto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -128,7 +130,20 @@ public class IdeiaPalavraChave extends Model {
 	public int getQuantidadePorVisita() { 
 		return this.quantidadePorVisita;
 	}
+	public void setMaisRecenteProduto(int valor) { 
+		this.maisRecenteProduto = valor;
+	}
+	public int getMaisRecenteProduto() { 
+		return this.maisRecenteProduto;
+	}
 
+	public VisitaProdutoHotmart getVisitaProdutoHotmart() {
+		return VisitaProdutoHotmart;
+	}
+	public void setVisitaProdutoHotmart(HashMap valor) {
+		this.VisitaProdutoHotmart = new VisitaProdutoHotmart();
+		BeanUtil.setProperties(this.VisitaProdutoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
 	public List<PalavraChaveCampanhaAds> getPalavraChaveCampanhaAds() {
 		return  PalavraChaveCampanhaAds;
 	}
@@ -136,6 +151,7 @@ public class IdeiaPalavraChave extends Model {
 		this.PalavraChaveCampanhaAds = new ArrayList<PalavraChaveCampanhaAds>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new PalavraChaveCampanhaAds();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PalavraChaveCampanhaAds.add((PalavraChaveCampanhaAds) objeto);
 		}
@@ -147,6 +163,7 @@ public class IdeiaPalavraChave extends Model {
 		this.PalavraChaveCampanhaAdsTestes = new ArrayList<PalavraChaveCampanhaAdsTeste>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new PalavraChaveCampanhaAdsTeste();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PalavraChaveCampanhaAdsTestes.add((PalavraChaveCampanhaAdsTeste) objeto);
 		}
@@ -158,19 +175,9 @@ public class IdeiaPalavraChave extends Model {
 		this.ProdutoAfiliadoMetricas = new ArrayList<ProdutoAfiliadoMetrica>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new ProdutoAfiliadoMetrica();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoAfiliadoMetricas.add((ProdutoAfiliadoMetrica) objeto);
-		}
-	}
-	public List<VisitaProdutoHotmart> getVisitaProdutoHotmarts() {
-		return  VisitaProdutoHotmarts;
-	}
-	public void setVisitaProdutoHotmarts(List<VisitaProdutoHotmart> valores) {
-		this.VisitaProdutoHotmarts = new ArrayList<VisitaProdutoHotmart>();
-		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new VisitaProdutoHotmart();
-			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.VisitaProdutoHotmarts.add((VisitaProdutoHotmart) objeto);
 		}
 	}
 }

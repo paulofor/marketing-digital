@@ -2,7 +2,13 @@
 
 module.exports = function(Visitaprodutohotmart) {
 
-
+    Visitaprodutohotmart.ResumoPorDataInsercao = function(callback) {
+        const sql = "select dataInsercao, count(*) as qtdeProduto " +
+            " from VisitaProdutoHotmart " +
+            " group by dataInsercao order by dataInsercao desc limit 10";
+        let ds = Visitaprodutohotmart.dataSource;
+        ds.connector.query(sql,callback);
+    }
 
     Visitaprodutohotmart.AtualizaMaisRecenteProdutoHotmart = function(callback) {
         const sql0 = "UPDATE VisitaProdutoHotmart set maisRecente = 0 ";
