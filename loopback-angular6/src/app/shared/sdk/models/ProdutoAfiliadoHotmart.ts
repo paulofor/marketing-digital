@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   VisitaProdutoHotmart,
+  IdeiaPalavraChave,
   CampanhaAdsTeste,
   AnuncioAds,
   PixelGoogle,
@@ -21,8 +22,10 @@ export interface ProdutoAfiliadoHotmartInterface {
   "precoReal"?: number;
   "vendaTotal"?: number;
   "qtdeVenda"?: number;
+  "trabalho"?: number;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
+  ideiaPalavraChaves?: IdeiaPalavraChave[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
   anuncioAds?: AnuncioAds[];
   pixelGoogle?: PixelGoogle;
@@ -43,8 +46,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "precoReal": number;
   "vendaTotal": number;
   "qtdeVenda": number;
+  "trabalho": number;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
+  ideiaPalavraChaves: IdeiaPalavraChave[];
   campanhaAdsTestes: CampanhaAdsTeste[];
   anuncioAds: AnuncioAds[];
   pixelGoogle: PixelGoogle;
@@ -131,6 +136,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'qtdeVenda',
           type: 'number'
         },
+        "trabalho": {
+          name: 'trabalho',
+          type: 'number'
+        },
         "contaGoogleId": {
           name: 'contaGoogleId',
           type: 'number'
@@ -141,6 +150,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'visitaProdutoHotmarts',
           type: 'VisitaProdutoHotmart[]',
           model: 'VisitaProdutoHotmart',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        ideiaPalavraChaves: {
+          name: 'ideiaPalavraChaves',
+          type: 'IdeiaPalavraChave[]',
+          model: 'IdeiaPalavraChave',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'

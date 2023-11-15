@@ -18,6 +18,7 @@ import { IdeiaPalavraChaveListSimplesTopPesquisaComponent } from '../ideia-palav
 import { CampanhaAdsTesteListAtivaMetricaComponent } from '../campanha-ads-teste-list-ativa-metrica/campanha-ads-teste-list-ativa-metrica.component';
 import { VisitaProdutoHotmartResumoComponent } from '../visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component';
 import { ProdutosTopVendasComponent } from '../produtos-top-vendas/produtos-top-vendas.component';
+import { ProdutoAfiliadoTrabalhoComponent } from '../produto-afiliado-trabalho/produto-afiliado-trabalho.component';
 
 
 
@@ -47,6 +48,8 @@ export const routes : Routes = [
     { path: 'campanhaAdsTesteAtivaMetrica' , component: CampanhaAdsTesteListAtivaMetricaComponent },
 
     { path: 'produtosTopVendas' , component: ProdutosTopVendasComponent },
+    { path: 'produtoAfiliadoTrabalho' , component: ProdutoAfiliadoTrabalhoComponent },
+
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

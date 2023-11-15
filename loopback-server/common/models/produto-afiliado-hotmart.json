@@ -46,9 +46,12 @@
 		"qtdeVenda": {
 			"type": "number"
 		},
-		"contaGoogleId": {
+		"trabalho": {
 			"type": "number"
 		},
+		"contaGoogleId": {
+			"type": "number"
+		}
 	},
 	"validations": [],
 	"relations": {
@@ -81,6 +84,11 @@
 			"type": "hasMany",
 			"model": "VisitaProdutoHotmart",
 			"foreignKey": "hotmartId"
+		},
+		"ideiaPalavraChaves": {
+			"type": "hasMany",
+			"model": "IdeiaPalavraChave",
+			"foreignKey": "hotmartId"
 		}
 	},
 	"acls": [],
@@ -101,6 +109,50 @@
          		{
           			"path": "/listaCriarPixelGoogle",
    					"verb": "get"
+ 				}
+ 			]
+		},
+		"ResetTrabalho": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/resetTrabalho",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"DesligaPixelVenda": {
+			"accepts": [
+				{
+					"arg": "hotmartId",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/desligaPixelVenda",
+   					"verb": "post"
  				}
  			]
 		}

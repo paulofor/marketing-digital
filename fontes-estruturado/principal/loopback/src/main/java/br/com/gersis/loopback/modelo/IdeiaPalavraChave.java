@@ -29,6 +29,7 @@ public class IdeiaPalavraChave extends Model {
 	private int maisRecenteProduto;
 	// Relacionamentos 1
 	private VisitaProdutoHotmart VisitaProdutoHotmart;
+	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
 	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAds;
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
@@ -143,6 +144,13 @@ public class IdeiaPalavraChave extends Model {
 	public void setVisitaProdutoHotmart(HashMap valor) {
 		this.VisitaProdutoHotmart = new VisitaProdutoHotmart();
 		BeanUtil.setProperties(this.VisitaProdutoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
+		return ProdutoAfiliadoHotmart;
+	}
+	public void setProdutoAfiliadoHotmart(HashMap valor) {
+		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<PalavraChaveCampanhaAds> getPalavraChaveCampanhaAds() {
 		return  PalavraChaveCampanhaAds;

@@ -38,6 +38,9 @@
             {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})
           </div>
         </div>
+        <div class="dgc-card-detalhe">
+          <span>Trabalho: {{item.trabalho}}</span>
+        </div>
         <div class="dgc-card-comandos">
             <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , item.hotmartId]">Anúncio Google ({{item.anuncioAdsCount}})</button>
             <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , item.hotmartId]">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>

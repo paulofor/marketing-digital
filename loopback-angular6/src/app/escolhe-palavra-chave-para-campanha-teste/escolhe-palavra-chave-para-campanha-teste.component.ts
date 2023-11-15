@@ -14,7 +14,9 @@ export class EscolhePalavraChaveParaCampanhaTesteComponent extends BaseSeleciona
   constructor(protected dialogRef: MatDialogRef<any>
     , @Inject(MAT_DIALOG_DATA) protected data: any, protected srvItem: IdeiaPalavraChaveApi, protected srvRel: PalavraChaveCampanhaAdsTesteApi
   ) {
+
     super(dialogRef, data, srvItem, srvRel );
+   
   }  
 
 
@@ -38,8 +40,9 @@ export class EscolhePalavraChaveParaCampanhaTesteComponent extends BaseSeleciona
   }
 
   getFiltro() {
+    
     return {
-      'where' : { 'and' : [{'hotmartId' : this.origem.produtoAfiliadoHotmartId}, {'maisRecenteProduto' : 1}] },
+      'where' : { 'and' : [{'hotmartId' : this.origem.produtoAfiliadoHotmartId}] },
       'order' : 'mediaPesquisa desc' ,
       'limit' : 20,
       'include' : {

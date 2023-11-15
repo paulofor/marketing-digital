@@ -26,6 +26,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private double precoReal;
 	private double vendaTotal;
 	private int qtdeVenda;
+	private int trabalho;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -34,6 +35,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 	private List<AnuncioAds> AnuncioAds;
 	private List<VisitaProdutoHotmart> VisitaProdutoHotmarts;
+	private List<IdeiaPalavraChave> IdeiaPalavraChaves;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -51,6 +53,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("precoReal", precoReal);
 			obj.put("vendaTotal", vendaTotal);
 			obj.put("qtdeVenda", qtdeVenda);
+			obj.put("trabalho", trabalho);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -130,6 +133,12 @@ public class ProdutoAfiliadoHotmart extends Model {
 	public int getQtdeVenda() { 
 		return this.qtdeVenda;
 	}
+	public void setTrabalho(int valor) { 
+		this.trabalho = valor;
+	}
+	public int getTrabalho() { 
+		return this.trabalho;
+	}
 
 	public PixelGoogle getPixelGoogle() {
 		return PixelGoogle;
@@ -186,6 +195,18 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.VisitaProdutoHotmarts.add((VisitaProdutoHotmart) objeto);
+		}
+	}
+	public List<IdeiaPalavraChave> getIdeiaPalavraChaves() {
+		return  IdeiaPalavraChaves;
+	}
+	public void setIdeiaPalavraChaves(List<IdeiaPalavraChave> valores) {
+		this.IdeiaPalavraChaves = new ArrayList<IdeiaPalavraChave>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new IdeiaPalavraChave();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.IdeiaPalavraChaves.add((IdeiaPalavraChave) objeto);
 		}
 	}
 }

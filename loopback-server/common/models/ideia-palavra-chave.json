@@ -56,6 +56,11 @@
 			"model": "VisitaProdutoHotmart",
 			"foreignKey": "hotmartId"
 		},
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
 		"palavraChaveCampanhaAds": {
 			"type": "hasMany",
 			"model": "PalavraChaveCampanhaAds",

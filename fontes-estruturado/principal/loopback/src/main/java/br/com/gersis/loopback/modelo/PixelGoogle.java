@@ -21,6 +21,8 @@ public class PixelGoogle extends Model {
 	private String codigo1;
 	private String codigo2;
 	private int instalado;
+	private String nomeMeta;
+	private String idAds;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
@@ -38,6 +40,8 @@ public class PixelGoogle extends Model {
 			obj.put("codigo1", codigo1);
 			obj.put("codigo2", codigo2);
 			obj.put("instalado", instalado);
+			obj.put("nomeMeta", nomeMeta);
+			obj.put("idAds", idAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -86,6 +90,18 @@ public class PixelGoogle extends Model {
 	}
 	public int getInstalado() { 
 		return this.instalado;
+	}
+	public void setNomeMeta(String valor) { 
+		this.nomeMeta = valor;
+	}
+	public String getNomeMeta() { 
+		return this.nomeMeta;
+	}
+	public void setIdAds(String valor) { 
+		this.idAds = valor;
+	}
+	public String getIdAds() { 
+		return this.idAds;
 	}
 
 	public ContaGoogle getContaGoogle() {

@@ -20,6 +20,11 @@
 			"type": "hasMany",
 			"model": "AnuncioCampanhaAds",
 			"foreignKey": ""
+		},
+		"palavraChaveCampanhaAds": {
+			"type": "hasMany",
+			"model": "PalavraChaveCampanhaAds",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

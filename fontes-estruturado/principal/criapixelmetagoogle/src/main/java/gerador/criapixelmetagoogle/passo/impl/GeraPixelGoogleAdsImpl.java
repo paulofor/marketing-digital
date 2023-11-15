@@ -38,7 +38,7 @@ import gerador.criapixelmetagoogle.passo.GeraPixelGoogleAds;
 public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds { 
 
 	//private static Long CODIGO_USUARIO = 5328916093L;
-	private static Long CODIGO_USUARIO = 7966834741L;
+	//private static Long CODIGO_USUARIO = 7966834741L;
 	
 	@Override
 	protected boolean executaCustom( ProdutoAfiliadoHotmart produtoAfiliadoCorrente) {
@@ -49,9 +49,10 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			String nomePixelPaginaVenda = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_pagina_venda";
-			String nomePixel = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_venda";
-			this.saidaPixelGooglePaginaVenda = criaPixel(googleAdsClient,nomePixelPaginaVenda);
-			this.saidaPixelGoogle = criaPixel(googleAdsClient,nomePixel);
+			String nomePixel = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_venda_" + produtoAfiliadoCorrente.getContaGoogle().getNome();
+			long codigoUsuario = new Long(produtoAfiliadoCorrente.getContaGoogle().getIdAds().replace("-", ""));
+			this.saidaPixelGooglePaginaVenda = criaPixel(googleAdsClient,nomePixelPaginaVenda,codigoUsuario);
+			this.saidaPixelGoogle = criaPixel(googleAdsClient,nomePixel,codigoUsuario);
 			//criaMeta(googleAdsClient);
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
@@ -223,7 +224,7 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 	}
 
 	*/
-	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel) {
+	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel, long codigoUsuario) {
 
 		PixelGoogle pixel = null;
 		
@@ -251,7 +252,7 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		      googleAdsClient.getLatestVersion().createConversionActionServiceClient()) {
 		    MutateConversionActionsResponse response =
 		        conversionActionServiceClient.mutateConversionActions(
-		            Long.toString(CODIGO_USUARIO), Collections.singletonList(operation));
+		            Long.toString(codigoUsuario), Collections.singletonList(operation));
 		    System.out.printf("Added %d conversion actions:%n", response.getResultsCount());
 		    for (MutateConversionActionResult result : response.getResultsList()) {
 		    	pixel = new PixelGoogle();

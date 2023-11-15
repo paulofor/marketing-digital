@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { BaseItemIdComponent } from '../base-component/base-item-id-component';
-import { CampanhaAdsTesteApi } from '../shared/sdk';
+import { CampanhaAdsTeste, CampanhaAdsTesteApi } from '../shared/sdk';
 import { EscolheAnuncioParaCampanhaTesteComponent } from '../escolhe-anuncio-para-campanha-teste/escolhe-anuncio-para-campanha-teste.component';
 import { EscolhePalavraChaveParaCampanhaTesteComponent } from '../escolhe-palavra-chave-para-campanha-teste/escolhe-palavra-chave-para-campanha-teste.component';
 
@@ -41,7 +41,11 @@ export class CampanhaAdsTesteDetalheComponent extends BaseItemIdComponent{
       }
     });
   }
-  editaPalavraChave(origem,edicao?) {
+  editaPalavraChave(origem1,edicao?) {
+    console.log('campanha', origem1);
+    let campanha = new CampanhaAdsTeste();
+    campanha.id = origem1.id;
+    campanha.produtoAfiliadoHotmartId = origem1.produtoAfiliadoHotmartId;
     this.dialog.afterAllClosed.subscribe(result => {
       this.carregaTela();
     });
@@ -49,7 +53,7 @@ export class CampanhaAdsTesteDetalheComponent extends BaseItemIdComponent{
       width: '800px',
       data: {
         item: edicao,
-        origem: origem
+        origem: origem1
       }
     });
   }

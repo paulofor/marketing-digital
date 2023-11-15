@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { VisitaProdutoHotmartApi } from '../shared/sdk';
 import { ProdutosTopVendasBaseComponent } from './produtos-top-vendas-base.component';
+import { ProdutoAfiliadoHotmartEditComponent } from '../produto-afiliado-hotmart-edit/produto-afiliado-hotmart-edit.component';
 
 @Component({
 	selector: 'app-produtos-top-vendas',
@@ -15,23 +16,29 @@ export class ProdutosTopVendasComponent extends ProdutosTopVendasBaseComponent {
 		super(srv,router,dialog);
 	}
 
+	getDialogo1() : any {
+		return ProdutoAfiliadoHotmartEditComponent
+	}
+
 	getFiltro() {
 		return{
 			'where': {
 			  'and': [
-				{'maisRecente': 1},
-				{'temperatura': {'gt': 100}}
+				{'maisRecente': 1}
 			  ]
 			},
-			'order': ['afiliacaoPercentual desc', 'temperatura desc'],
-			'limit': 20,
-			'include': {
-			  'relation': 'ideiaPalavraChave',
-			  'scope': {
-				'where': {'maisRecente': 1}
-			  }
+			'order': ['temperatura desc', 'afiliacaoPercentual desc'],
+			'limit': 50,
+			'include': [
+				{
+					'relation': 'ideiaPalavraChaves',
+					'scope': {
+						'where': {'maisRecente': 1},
+						'order' : 'mediaPesquisa desc'
+					},
+				},
+				{'relation': 'produtoAfiliadoHotmart'}
+			]
 			}
-		  }
-		  
 	}
 }

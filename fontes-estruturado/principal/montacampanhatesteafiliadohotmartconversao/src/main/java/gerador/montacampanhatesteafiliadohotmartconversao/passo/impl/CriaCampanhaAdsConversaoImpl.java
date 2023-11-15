@@ -25,19 +25,17 @@ import com.google.ads.googleads.v13.enums.AdvertisingChannelTypeEnum.Advertising
 import com.google.ads.googleads.v13.enums.BiddingStrategyTypeEnum.BiddingStrategyType;
 import com.google.ads.googleads.v13.enums.BudgetDeliveryMethodEnum.BudgetDeliveryMethod;
 import com.google.ads.googleads.v13.enums.CampaignStatusEnum.CampaignStatus;
-import com.google.ads.googleads.v13.enums.ConversionActionCategoryEnum.ConversionActionCategory;
-import com.google.ads.googleads.v13.enums.ConversionActionTypeEnum.ConversionActionType;
 import com.google.ads.googleads.v13.enums.KeywordMatchTypeEnum.KeywordMatchType;
 import com.google.ads.googleads.v13.enums.ServedAssetFieldTypeEnum.ServedAssetFieldType;
 import com.google.ads.googleads.v13.resources.Ad;
 import com.google.ads.googleads.v13.resources.AdGroup;
 import com.google.ads.googleads.v13.resources.AdGroupAd;
 import com.google.ads.googleads.v13.resources.AdGroupCriterion;
+import com.google.ads.googleads.v13.resources.BiddingStrategy;
 import com.google.ads.googleads.v13.resources.Campaign;
 import com.google.ads.googleads.v13.resources.Campaign.NetworkSettings;
 import com.google.ads.googleads.v13.resources.CampaignBudget;
 import com.google.ads.googleads.v13.resources.CampaignCriterion;
-import com.google.ads.googleads.v13.resources.ConversionAction;
 import com.google.ads.googleads.v13.services.AdGroupAdOperation;
 import com.google.ads.googleads.v13.services.AdGroupAdServiceClient;
 import com.google.ads.googleads.v13.services.AdGroupCriterionOperation;
@@ -47,10 +45,8 @@ import com.google.ads.googleads.v13.services.AdGroupServiceClient;
 import com.google.ads.googleads.v13.services.CampaignBudgetOperation;
 import com.google.ads.googleads.v13.services.CampaignBudgetServiceClient;
 import com.google.ads.googleads.v13.services.CampaignCriterionOperation;
-import com.google.ads.googleads.v13.services.CampaignCriterionServiceClient;
 import com.google.ads.googleads.v13.services.CampaignOperation;
 import com.google.ads.googleads.v13.services.CampaignServiceClient;
-import com.google.ads.googleads.v13.services.ConversionActionServiceClient;
 import com.google.ads.googleads.v13.services.GoogleAdsServiceClient;
 import com.google.ads.googleads.v13.services.MutateAdGroupAdResult;
 import com.google.ads.googleads.v13.services.MutateAdGroupAdsResponse;
@@ -62,6 +58,7 @@ import com.google.ads.googleads.v13.services.MutateCampaignsResponse;
 import com.google.ads.googleads.v13.services.MutateGoogleAdsResponse;
 import com.google.ads.googleads.v13.services.MutateOperation;
 import com.google.ads.googleads.v13.utils.ResourceNames;
+
 import com.google.common.collect.ImmutableList;
 
 import br.com.gersis.loopback.modelo.AnuncioAds;
@@ -93,7 +90,7 @@ public class CriaCampanhaAdsConversaoImpl extends CriaCampanhaAdsConversao {
 				String campanha[] = resourceNameCampanha.split("/");
 				String codigoCampanha = campanha[campanha.length-1];
 				campanhaTesteCorrente.setCodigoAds(codigoCampanha);
-				criaMetaCampanha(googleAdsClient,codigoUsuario,resourceNameCampanha);
+				//criaMetaCampanha(googleAdsClient,codigoUsuario,resourceNameCampanha);
 				this.saidaCampanhaTesteCorrente = campanhaTesteCorrente;
 			} catch (FileNotFoundException fnfe) {
 				System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
@@ -109,27 +106,6 @@ public class CriaCampanhaAdsConversaoImpl extends CriaCampanhaAdsConversao {
 		
 
 
-		private void criaMetaCampanha(GoogleAdsClient googleAdsClient,  long customerId, String resourceNameCampanha, String resourceNameMeta) {
-			/*
-			ConversionAction conversionAction = ConversionAction.newBuilder()
-				    .setName("Nome da Conversão")
-				    .setType(ConversionActionType.WEBPAGE)
-				    .setCategory(ConversionActionCategory.PURCHASE)
-				    .build();
-
-			ConversionActionServiceClient conversionActionServiceClient = googleAdsClient.getLatestVersion().createConversionActionServiceClient();
-				conversionAction = conversionActionServiceClient.createConversionAction(customerId, conversionAction);
-			*/
-
-			CampaignCriterion campaignCriterion = CampaignCriterion.newBuilder()
-				    .setCampaign(resourceNameCampanha)
-				    .setConversionAction(ConversionAction.newBuilder().setResourceName(resourceNameMeta).build())
-				    .build();
-			CampaignCriterionServiceClient campaignCriterionServiceClient = googleAdsClient.getLatestVersion().createCampaignCriterionServiceClient();
-			campaignCriterionServiceClient.createCampaignCriterion(customerId, campaignCriterion);
-
-				
-		}
 		
 		
 		private String addCampaignBudget(GoogleAdsClient googleAdsClient, long customerId,CampanhaAdsTeste campanha) {
@@ -172,7 +148,7 @@ public class CriaCampanhaAdsConversaoImpl extends CriaCampanhaAdsConversao {
 		    String dataFinal = dtFinal.format(formatter);
 
 		    // 2 - Campanha
-		    String nomeCampanha = "MktDigitalConv-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
+		    String nomeCampanha = "MktDigitalConv1-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
 		    Campaign campaign = Campaign.newBuilder()
 		        .setName(nomeCampanha)
 		        .setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
@@ -180,7 +156,6 @@ public class CriaCampanhaAdsConversaoImpl extends CriaCampanhaAdsConversao {
 		        .setNetworkSettings(networkSettings)
 		        .setStartDate(dataInicial)
 		        .setCampaignBudget(orcamento)
-		        .setBiddingStrategyType(BiddingStrategyType.MAXIMIZE_CONVERSIONS) // Usar a estratégia de maximização de conversões
 		        .setMaximizeConversions(MaximizeConversions.newBuilder()
 		            .setTargetCpaMicros((long) 8 * 1000000) // Definir a meta desejada
 		            .build())
@@ -314,7 +289,7 @@ public class CriaCampanhaAdsConversaoImpl extends CriaCampanhaAdsConversao {
 				System.out.println("Nome da campanha:" + campaignResourceName);
 				
 				
-				long valorCpcMax = 1000000 * 20;
+				long valorCpcMax = 20 * 1000000;
 				
 				AdGroup adGroup = AdGroup.newBuilder()
 						.setName("Example Ad Group")
@@ -367,7 +342,7 @@ public class CriaCampanhaAdsConversaoImpl extends CriaCampanhaAdsConversao {
 		            .setAdGroup(adGroupResourceName)
 		            .setKeyword(keywordInfo)
 		            .setStatus(AdGroupCriterionStatus.ENABLED)
-		            .setCpcBidMicros(valorCpc)
+		            //.setCpcBidMicros(valorCpc)
 		            .build();
 
 		        // Cria a operação de adição do critério

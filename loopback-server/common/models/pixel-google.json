@@ -30,6 +30,12 @@
 		"instalado": {
 			"type": "number"
 		},
+		"nomeMeta": {
+			"type": "string"
+		},
+		"idAds": {
+			"type": "string"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}

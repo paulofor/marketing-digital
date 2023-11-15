@@ -1,0 +1,34 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header">
+		<span>Produtos Afiliados de Trabalho</span>
+  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="reset()">reset</button>
+	</div>
+	<div *ngIf="listaBase">
+		<div class="dgc-card" *ngFor="let item of listaBase">
+ 			<div class="dgc-card-header">
+ 				<span>{{item.nome}}</span>
+ 			</div>
+			<div class="dgc-card-detalhe">
+				<span>Temperatura: {{item.visitaProdutoHotmarts[0].temperatura}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Afiliação: {{item.visitaProdutoHotmarts[0].afiliacaoValor}} ( {{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}% )</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span *ngIf="item.contaGoogle">Conta: {{item.contaGoogle.nome}} ({{item.contaGoogle.idAds}})</span>
+				<span *ngIf="!item.contaGoogle">Conta: - </span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Cria Pixel: {{item.criaPixelVenda}}</span>
+			  </div>
+			<div class="dgc-card-detalhe">
+				<span *ngIf="item.pixelGoogle">Pixel: {{item.pixelGoogle.nome}} ()</span>
+				<span *ngIf="!item.pixelGoogle">Pixel: - </span>
+			</div>
+			<div class="dgc-card-comandos">
+				<button *ngIf="item.pixelGoogle" class="btn-primary btn-sm btn" (click)="desligaPixel(item)">Desliga Pixel</button>
+				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+			</div>
+ 		</div>
+  	</div>
+</div>

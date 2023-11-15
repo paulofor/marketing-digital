@@ -1,6 +1,6 @@
 <div class="dgc-painel">
 	<div class="dgc-painel-header">
-		<span>VisitaProdutoHotmart</span>
+		<span>Produtos Hotmart - Top 50</span>
   		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
 	<div *ngIf="listaBase">
@@ -11,12 +11,22 @@
 			 <div class="dgc-card-detalhe">
 				<span>Temperatura: {{item.temperatura}}</span>
 			</div>
+		
 			<div class="dgc-card-detalhe">
 				<span>Afiliação: {{item.afiliacaoValor}} ( {{item.afiliacaoPercentual}}% )</span>
 			</div>
- 			<div class="dgc-card-comandos">
- 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
- 			</div>
+
+			<div class="dgc-card-detalhe" *ngIf="item.produtoAfiliadoHotmart">
+				<span>Trabalho: {{item.produtoAfiliadoHotmart.trabalho}}</span>
+			</div>
+			<div class="dgc-card-detalhe" *ngFor="let palavra of item.ideiaPalavraChaves">
+				<span>
+					{{palavra.texto}} - {{palavra.mediaPesquisa}} - cpc: {{palavra.cpcMinimoTopPage | currency : 'BRL'}} até {{palavra.cpcMaximoTopPage | currency : 'BRL'}} [{{palavra.concorrencia}}]
+				  </span>
+			</div>
+			<div class="dgc-card-comandos" *ngIf="item.produtoAfiliadoHotmart">
+				<button class="btn-primary btn-sm btn" (click)="dialogo1({'item': item.produtoAfiliadoHotmart})">Editar</button>
+			  </div>
  		</div>
   	</div>
 </div>

@@ -15,14 +15,15 @@ export abstract class BaseSelecionaEditComponent implements OnInit{
     
 
   ngOnInit() {
-    //console.log("Parametro entrada", this.data);
-    if (this.data.origem) {
+    console.log("Parametro entrada", this.data);
+    if (this.data.origem!=null) {
       this.origem = this.data.origem;
     }
+    console.log('this.origem:' , this.origem);
     this.srvItem.find(this.getFiltro())
       .subscribe((result: any[]) => {
         this.listaItem = result;
-        console.log('ListaItem(seleciona):' , this.listaItem);
+        console.log('ListaItem(BaseSelecionaEditComponent):' , this.listaItem);
       })
 
   }

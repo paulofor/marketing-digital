@@ -18,6 +18,7 @@ public class CampanhaAds extends Model {
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<AnuncioCampanhaAds> AnuncioCampanhaAds;
+	private List<PalavraChaveCampanhaAds> PalavraChaveCampanhaAds;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -48,6 +49,18 @@ public class CampanhaAds extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.AnuncioCampanhaAds.add((AnuncioCampanhaAds) objeto);
+		}
+	}
+	public List<PalavraChaveCampanhaAds> getPalavraChaveCampanhaAds() {
+		return  PalavraChaveCampanhaAds;
+	}
+	public void setPalavraChaveCampanhaAds(List<PalavraChaveCampanhaAds> valores) {
+		this.PalavraChaveCampanhaAds = new ArrayList<PalavraChaveCampanhaAds>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PalavraChaveCampanhaAds();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PalavraChaveCampanhaAds.add((PalavraChaveCampanhaAds) objeto);
 		}
 	}
 }

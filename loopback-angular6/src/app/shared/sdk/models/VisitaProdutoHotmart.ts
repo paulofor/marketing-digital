@@ -25,7 +25,7 @@ export interface VisitaProdutoHotmartInterface {
   "maisRecente"?: number;
   "hotmartId"?: number;
   "possuiPalavraChave"?: number;
-  ideiaPalavraChave?: IdeiaPalavraChave;
+  ideiaPalavraChaves?: IdeiaPalavraChave[];
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   produtoAfiliadoMetricas?: ProdutoAfiliadoMetrica[];
 }
@@ -49,7 +49,7 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
   "maisRecente": number;
   "hotmartId": number;
   "possuiPalavraChave": number;
-  ideiaPalavraChave: IdeiaPalavraChave;
+  ideiaPalavraChaves: IdeiaPalavraChave[];
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   produtoAfiliadoMetricas: ProdutoAfiliadoMetrica[];
   constructor(data?: VisitaProdutoHotmartInterface) {
@@ -159,13 +159,13 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
         },
       },
       relations: {
-        ideiaPalavraChave: {
-          name: 'ideiaPalavraChave',
-          type: 'IdeiaPalavraChave',
+        ideiaPalavraChaves: {
+          name: 'ideiaPalavraChaves',
+          type: 'IdeiaPalavraChave[]',
           model: 'IdeiaPalavraChave',
-          relationType: 'belongsTo',
+          relationType: 'hasMany',
                   keyFrom: 'hotmartId',
-          keyTo: 'id'
+          keyTo: 'hotmartId'
         },
         produtoAfiliadoHotmart: {
           name: 'produtoAfiliadoHotmart',

@@ -13,6 +13,8 @@ export interface PixelGoogleInterface {
   "codigo1"?: string;
   "codigo2"?: string;
   "instalado"?: number;
+  "nomeMeta"?: string;
+  "idAds"?: string;
   "contaGoogleId"?: number;
   "id"?: number;
   produtoAfiliadoHotmarts?: ProdutoAfiliadoHotmart[];
@@ -28,6 +30,8 @@ export class PixelGoogle implements PixelGoogleInterface {
   "codigo1": string;
   "codigo2": string;
   "instalado": number;
+  "nomeMeta": string;
+  "idAds": string;
   "contaGoogleId": number;
   "id": number;
   produtoAfiliadoHotmarts: ProdutoAfiliadoHotmart[];
@@ -93,6 +97,14 @@ export class PixelGoogle implements PixelGoogleInterface {
         "instalado": {
           name: 'instalado',
           type: 'number'
+        },
+        "nomeMeta": {
+          name: 'nomeMeta',
+          type: 'string'
+        },
+        "idAds": {
+          name: 'idAds',
+          type: 'string'
         },
         "contaGoogleId": {
           name: 'contaGoogleId',
