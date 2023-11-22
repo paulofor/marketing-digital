@@ -48,7 +48,7 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
-			String nomePixelPaginaVenda = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_pagina_venda";
+			String nomePixelPaginaVenda = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_pagina_venda_" + produtoAfiliadoCorrente.getContaGoogle().getNome();
 			String nomePixel = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_venda_" + produtoAfiliadoCorrente.getContaGoogle().getNome();
 			long codigoUsuario = new Long(produtoAfiliadoCorrente.getContaGoogle().getIdAds().replace("-", ""));
 			this.saidaPixelGooglePaginaVenda = criaPixel(googleAdsClient,nomePixelPaginaVenda,codigoUsuario);
@@ -239,7 +239,7 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 			        .setViewThroughLookbackWindowDays(15L)
 			        .setValueSettings(
 			            ValueSettings.newBuilder()
-			                .setDefaultValue(10)
+			                //.setDefaultValue(0)
 			                .setAlwaysUseDefaultValue(true)
 			                .build())
 			        .build();

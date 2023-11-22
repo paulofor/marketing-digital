@@ -51,6 +51,12 @@
 		"ativa": {
 			"type": "number"
 		},
+		"cpaMax": {
+			"type": "number"
+		},
+		"cpcMax": {
+			"type": "number"
+		},
 		"modeloCampanhaAdsTesteId": {
 			"type": "number"
 		},

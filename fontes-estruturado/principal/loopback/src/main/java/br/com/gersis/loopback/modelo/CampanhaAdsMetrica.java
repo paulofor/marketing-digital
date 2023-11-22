@@ -22,8 +22,14 @@ public class CampanhaAdsMetrica extends Model {
 	private double cpcCampanha;
 	private String codigoAds;
 	private int campanhaAdsTesteId;
+	private String status;
+	private int contaGoogleId;
+	private String estrategia;
+	private String rede;
+	private int conversao;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
+	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
 
 	public JSONObject getJSON() {
@@ -38,6 +44,11 @@ public class CampanhaAdsMetrica extends Model {
 			obj.put("cpcCampanha", cpcCampanha);
 			obj.put("codigoAds", codigoAds);
 			obj.put("campanhaAdsTesteId", campanhaAdsTesteId);
+			obj.put("status", status);
+			obj.put("contaGoogleId", contaGoogleId);
+			obj.put("estrategia", estrategia);
+			obj.put("rede", rede);
+			obj.put("conversao", conversao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -93,6 +104,36 @@ public class CampanhaAdsMetrica extends Model {
 	public int getCampanhaAdsTesteId() { 
 		return this.campanhaAdsTesteId;
 	}
+	public void setStatus(String valor) { 
+		this.status = valor;
+	}
+	public String getStatus() { 
+		return this.status;
+	}
+	public void setContaGoogleId(int valor) { 
+		this.contaGoogleId = valor;
+	}
+	public int getContaGoogleId() { 
+		return this.contaGoogleId;
+	}
+	public void setEstrategia(String valor) { 
+		this.estrategia = valor;
+	}
+	public String getEstrategia() { 
+		return this.estrategia;
+	}
+	public void setRede(String valor) { 
+		this.rede = valor;
+	}
+	public String getRede() { 
+		return this.rede;
+	}
+	public void setConversao(int valor) { 
+		this.conversao = valor;
+	}
+	public int getConversao() { 
+		return this.conversao;
+	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {
 		return CampanhaAdsTeste;
@@ -100,5 +141,12 @@ public class CampanhaAdsMetrica extends Model {
 	public void setCampanhaAdsTeste(HashMap valor) {
 		this.CampanhaAdsTeste = new CampanhaAdsTeste();
 		BeanUtil.setProperties(this.CampanhaAdsTeste, (Map<String, ? extends Object>) valor, true);
+	}
+	public ContaGoogle getContaGoogle() {
+		return ContaGoogle;
+	}
+	public void setContaGoogle(HashMap valor) {
+		this.ContaGoogle = new ContaGoogle();
+		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
 	}
 }

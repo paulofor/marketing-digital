@@ -20,13 +20,18 @@
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>Cria Pixel: {{item.criaPixelVenda}}</span>
-			  </div>
+			</div>
 			<div class="dgc-card-detalhe">
 				<span *ngIf="item.pixelGoogle">Pixel: {{item.pixelGoogle.nome}} ()</span>
 				<span *ngIf="!item.pixelGoogle">Pixel: - </span>
 			</div>
+			<div class="dgc-card-detalhe">
+				<span>Url Própria: {{item.urlPropria}} ({{item.complementoAnuncio}})</span>
+			</div>
 			<div class="dgc-card-comandos">
-				<button *ngIf="item.pixelGoogle" class="btn-primary btn-sm btn" (click)="desligaPixel(item)">Desliga Pixel</button>
+				<button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , item.hotmartId]">Anúncio Google ({{item.anuncioAdsCount}})</button>
+				<button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , item.hotmartId]">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>
+	 			<button *ngIf="item.pixelGoogle" class="btn-primary btn-sm btn" (click)="desligaPixel(item)">Desliga Pixel</button>
 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
 			</div>
  		</div>

@@ -23,6 +23,9 @@ import { FacebookConta } from '../../models/FacebookConta';
 import { ProdutoAfiliadoMetrica } from '../../models/ProdutoAfiliadoMetrica';
 import { ContaGoogle } from '../../models/ContaGoogle';
 import { CampanhaAdsMetrica } from '../../models/CampanhaAdsMetrica';
+import { LoadPaginaVenda } from '../../models/LoadPaginaVenda';
+import { SolicitacaoCheckout } from '../../models/SolicitacaoCheckout';
+import { PlanoProduto } from '../../models/PlanoProduto';
 
 export interface Models { [name: string]: any }
 
@@ -53,6 +56,9 @@ export class SDKModels {
     ProdutoAfiliadoMetrica: ProdutoAfiliadoMetrica,
     ContaGoogle: ContaGoogle,
     CampanhaAdsMetrica: CampanhaAdsMetrica,
+    LoadPaginaVenda: LoadPaginaVenda,
+    SolicitacaoCheckout: SolicitacaoCheckout,
+    PlanoProduto: PlanoProduto,
     
   };
 

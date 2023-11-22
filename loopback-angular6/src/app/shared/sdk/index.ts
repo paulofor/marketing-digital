@@ -71,6 +71,9 @@ import { FacebookContaApi } from './services/custom/FacebookConta';
 import { ProdutoAfiliadoMetricaApi } from './services/custom/ProdutoAfiliadoMetrica';
 import { ContaGoogleApi } from './services/custom/ContaGoogle';
 import { CampanhaAdsMetricaApi } from './services/custom/CampanhaAdsMetrica';
+import { LoadPaginaVendaApi } from './services/custom/LoadPaginaVenda';
+import { SolicitacaoCheckoutApi } from './services/custom/SolicitacaoCheckout';
+import { PlanoProdutoApi } from './services/custom/PlanoProduto';
 /**
 * @module SDKBrowserModule
 * @description
@@ -124,6 +127,9 @@ export class SDKBrowserModule {
         ProdutoAfiliadoMetricaApi,
         ContaGoogleApi,
         CampanhaAdsMetricaApi,
+        LoadPaginaVendaApi,
+        SolicitacaoCheckoutApi,
+        PlanoProdutoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

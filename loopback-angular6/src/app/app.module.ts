@@ -65,6 +65,10 @@ import { CampanhaAdsTesteListAtivaMetricaComponent } from './campanha-ads-teste-
 import { VisitaProdutoHotmartResumoComponent } from './visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component';
 import { ProdutosTopVendasComponent } from './produtos-top-vendas/produtos-top-vendas.component';
 import { ProdutoAfiliadoTrabalhoComponent } from './produto-afiliado-trabalho/produto-afiliado-trabalho.component';
+import { ProdutosBoaOpcaoIntermediariaComponent } from './produtos-boa-opcao-intermediaria/produtos-boa-opcao-intermediaria.component';
+import { LoadPaginaVendaListSimplesComponent } from './load-pagina-venda-list-simples/load-pagina-venda-list-simples.component';
+import { SolicitacaoCheckoutListSimplesComponent } from './solicitacao-checkout-list-simples/solicitacao-checkout-list-simples.component';
+import { CampanhaAdsMetricaListSimplesComponent } from './campanha-ads-metrica-list-simples/campanha-ads-metrica-list-simples.component';
 
 
 
@@ -106,7 +110,11 @@ registerLocaleData(localePt, 'pt-BR');
     CampanhaAdsTesteListAtivaMetricaComponent,
     VisitaProdutoHotmartResumoComponent,
     ProdutosTopVendasComponent,
-    ProdutoAfiliadoTrabalhoComponent
+    ProdutoAfiliadoTrabalhoComponent,
+    ProdutosBoaOpcaoIntermediariaComponent,
+    LoadPaginaVendaListSimplesComponent,
+    SolicitacaoCheckoutListSimplesComponent,
+    CampanhaAdsMetricaListSimplesComponent
   ],
   imports: [
     BrowserModule,

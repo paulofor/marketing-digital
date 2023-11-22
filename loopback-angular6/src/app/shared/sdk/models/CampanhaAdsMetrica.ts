@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  CampanhaAdsTeste
+  CampanhaAdsTeste,
+  ContaGoogle
 } from '../index';
 
 declare var Object: any;
@@ -13,7 +14,13 @@ export interface CampanhaAdsMetricaInterface {
   "cpcCampanha"?: number;
   "codigoAds"?: string;
   "campanhaAdsTesteId"?: number;
+  "status"?: string;
+  "contaGoogleId"?: number;
+  "estrategia"?: string;
+  "rede"?: string;
+  "conversao"?: number;
   campanhaAdsTeste?: CampanhaAdsTeste;
+  contaGoogle?: ContaGoogle;
 }
 
 export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
@@ -25,7 +32,13 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
   "cpcCampanha": number;
   "codigoAds": string;
   "campanhaAdsTesteId": number;
+  "status": string;
+  "contaGoogleId": number;
+  "estrategia": string;
+  "rede": string;
+  "conversao": number;
   campanhaAdsTeste: CampanhaAdsTeste;
+  contaGoogle: ContaGoogle;
   constructor(data?: CampanhaAdsMetricaInterface) {
     Object.assign(this, data);
   }
@@ -91,6 +104,26 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
           name: 'campanhaAdsTesteId',
           type: 'number'
         },
+        "status": {
+          name: 'status',
+          type: 'string'
+        },
+        "contaGoogleId": {
+          name: 'contaGoogleId',
+          type: 'number'
+        },
+        "estrategia": {
+          name: 'estrategia',
+          type: 'string'
+        },
+        "rede": {
+          name: 'rede',
+          type: 'string'
+        },
+        "conversao": {
+          name: 'conversao',
+          type: 'number'
+        },
       },
       relations: {
         campanhaAdsTeste: {
@@ -99,6 +132,14 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
           model: 'CampanhaAdsTeste',
           relationType: 'belongsTo',
                   keyFrom: 'campanhaAdsTesteId',
+          keyTo: 'id'
+        },
+        contaGoogle: {
+          name: 'contaGoogle',
+          type: 'ContaGoogle',
+          model: 'ContaGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'contaGoogleId',
           keyTo: 'id'
         },
       }

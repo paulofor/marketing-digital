@@ -3,7 +3,6 @@ package gerador.montacampanhatesteafiliadohotmart.passo.impl;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -77,6 +76,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		String textoSemHifens = campanhaTesteCorrente.getContaGoogle().getIdAds().replace("-", "");
 		this.codigoUsuario = Long.parseLong(textoSemHifens);
 		try {
+			testaCampanha(campanhaTesteCorrente);
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			// Creates a single shared budget to be used by the campaigns added below.
 			String budgetResourceName = addCampaignBudget(googleAdsClient, codigoUsuario, campanhaTesteCorrente);
@@ -98,6 +98,15 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		return true;
 	}
 
+	private void testaCampanha(CampanhaAdsTeste campanhaTesteCorrente) {
+		if (campanhaTesteCorrente.getAnuncioCampanhaAdsTestes().size()==0) {
+			throw new RuntimeException("Campanha sem anuncio");
+		}
+		if (campanhaTesteCorrente.getPalavraChaveCampanhaAdsTestes().size()==0) {
+			throw new RuntimeException("Campanha sem palavra-chave");
+		}
+	}
+	
 	
 	private String addCampaignBudget(GoogleAdsClient googleAdsClient, long customerId,CampanhaAdsTeste campanha) {
 		// Orçamento diário 5,00
@@ -147,7 +156,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 				.setCampaignBudget(budgetResourceName)
 				.setNetworkSettings(networkSettings)
 				.setStartDate(dataInicial)
-				.setEndDate(dataFinal)
+				//.setEndDate(dataFinal)
 				.build();
 
 		campanha.setNomeAds(nomeCampanha);
@@ -205,8 +214,12 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 			
 			long valorCpcMax = 1000000 * 20;
 			
+			if (campanha.getCpcMax()>0) {
+				valorCpcMax = (long) Math.floor(1000000 * campanha.getCpaMax());
+			}
+			
 			AdGroup adGroup = AdGroup.newBuilder()
-					.setName("Example Ad Group")
+					.setName("Grupo de Anúncio")
 					.setCpcBidMicros(valorCpcMax)
 					.setCampaign(campaignResourceName)
 					.setStatus(AdGroupStatus.ENABLED).build();
@@ -249,14 +262,14 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	        valorDouble = palavra.getCpcPara50() * 100;
 
 	        long valorCpc = (long) Math.floor(valorDouble);
-	        valorCpc = valorCpc * 10000;
+	        valorCpc = 10 * 10000;
 
 	        // Cria o critério
 	        AdGroupCriterion adGroupCriterion = AdGroupCriterion.newBuilder()
 	            .setAdGroup(adGroupResourceName)
 	            .setKeyword(keywordInfo)
 	            .setStatus(AdGroupCriterionStatus.ENABLED)
-	            .setCpcBidMicros(valorCpc)
+	            //.setCpcBidMicros(valorCpc)
 	            .build();
 
 	        // Cria a operação de adição do critério

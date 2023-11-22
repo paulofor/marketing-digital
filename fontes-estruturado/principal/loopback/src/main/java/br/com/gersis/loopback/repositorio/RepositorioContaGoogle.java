@@ -37,6 +37,13 @@ public class RepositorioContaGoogle extends ModelRepository<ContaGoogle> {
 		invokeStaticMethod("obtemContaDisponivel", params,   new JsonObjectParser<ContaGoogle>(this, callback));
 	}
 
+	public synchronized void listaAtivaParaMetricaCampanha(final ListCallback<ContaGoogle> callback ) {
+		RestContractItem contrato = new RestContractItem("ContaGoogles/listaAtivaParaMetricaCampanha","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ContaGoogle.listaAtivaParaMetricaCampanha");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaAtivaParaMetricaCampanha", params,   new JsonArrayParser<ContaGoogle>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<ContaGoogle> listaEntrada) {
 		JSONArray lista = new JSONArray();

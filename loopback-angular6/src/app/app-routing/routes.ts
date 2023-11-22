@@ -19,6 +19,10 @@ import { CampanhaAdsTesteListAtivaMetricaComponent } from '../campanha-ads-teste
 import { VisitaProdutoHotmartResumoComponent } from '../visita-produto-hotmart-resumo/visita-produto-hotmart-resumo.component';
 import { ProdutosTopVendasComponent } from '../produtos-top-vendas/produtos-top-vendas.component';
 import { ProdutoAfiliadoTrabalhoComponent } from '../produto-afiliado-trabalho/produto-afiliado-trabalho.component';
+import { ProdutosBoaOpcaoIntermediariaComponent } from '../produtos-boa-opcao-intermediaria/produtos-boa-opcao-intermediaria.component';
+import { LoadPaginaVendaListSimplesComponent } from '../load-pagina-venda-list-simples/load-pagina-venda-list-simples.component';
+import { SolicitacaoCheckoutListSimplesComponent } from '../solicitacao-checkout-list-simples/solicitacao-checkout-list-simples.component';
+import { CampanhaAdsMetricaListSimplesComponent } from '../campanha-ads-metrica-list-simples/campanha-ads-metrica-list-simples.component';
 
 
 
@@ -48,7 +52,11 @@ export const routes : Routes = [
     { path: 'campanhaAdsTesteAtivaMetrica' , component: CampanhaAdsTesteListAtivaMetricaComponent },
 
     { path: 'produtosTopVendas' , component: ProdutosTopVendasComponent },
+    { path: 'afiliadoMedio' , component: ProdutosBoaOpcaoIntermediariaComponent },
     { path: 'produtoAfiliadoTrabalho' , component: ProdutoAfiliadoTrabalhoComponent },
+    { path: 'acessos' ,  component: LoadPaginaVendaListSimplesComponent },
+    { path: 'checkout' , component: SolicitacaoCheckoutListSimplesComponent },
+    { path: 'metricaCampanha' , component: CampanhaAdsMetricaListSimplesComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

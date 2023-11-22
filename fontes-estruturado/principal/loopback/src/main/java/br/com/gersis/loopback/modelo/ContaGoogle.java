@@ -26,6 +26,7 @@ public class ContaGoogle extends Model {
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 	private List<PixelGoogle> PixelGoogles;
 	private List<ProdutoAfiliadoHotmart> ProdutoAfiliadoHotmarts;
+	private List<CampanhaAdsMetrica> CampanhaAdsMetricas;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -122,6 +123,18 @@ public class ContaGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoAfiliadoHotmarts.add((ProdutoAfiliadoHotmart) objeto);
+		}
+	}
+	public List<CampanhaAdsMetrica> getCampanhaAdsMetricas() {
+		return  CampanhaAdsMetricas;
+	}
+	public void setCampanhaAdsMetricas(List<CampanhaAdsMetrica> valores) {
+		this.CampanhaAdsMetricas = new ArrayList<CampanhaAdsMetrica>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CampanhaAdsMetrica();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CampanhaAdsMetricas.add((CampanhaAdsMetrica) objeto);
 		}
 	}
 }

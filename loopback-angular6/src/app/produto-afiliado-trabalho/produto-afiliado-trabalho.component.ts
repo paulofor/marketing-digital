@@ -31,6 +31,7 @@ export class ProdutoAfiliadoTrabalhoComponent extends ProdutoAfiliadoTrabalhoBas
 
 	getFiltro() {
 		return {
+			'counts' : ['campanhaAdsTestes','anuncioAds'],
 			'where' : {'trabalho' : '1'},
 			'include' : [ 
 				{'relation' : 'visitaProdutoHotmarts' , 'scope' : {'where' : {'maisRecente' : 1}}} ,

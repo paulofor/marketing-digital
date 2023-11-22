@@ -185,6 +185,25 @@
    					"verb": "get"
  				}
  			]
+		},
+		"ListaBoaOpcaoIntermediaria": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaBoaOpcaoIntermediaria",
+   					"verb": "get"
+ 				}
+ 			]
 		}
 	}
 }

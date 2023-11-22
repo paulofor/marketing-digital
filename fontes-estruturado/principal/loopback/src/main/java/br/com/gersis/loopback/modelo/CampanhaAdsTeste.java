@@ -28,6 +28,8 @@ public class CampanhaAdsTeste extends Model {
 	private String nomeAds;
 	private double cpc;
 	private int ativa;
+	private double cpaMax;
+	private double cpcMax;
 	// Relacionamentos 1
 	private ModeloCampanhaAdsTeste ModeloCampanhaAdsTeste;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
@@ -55,6 +57,8 @@ public class CampanhaAdsTeste extends Model {
 			obj.put("nomeAds", nomeAds);
 			obj.put("cpc", cpc);
 			obj.put("ativa", ativa);
+			obj.put("cpaMax", cpaMax);
+			obj.put("cpcMax", cpcMax);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -145,6 +149,18 @@ public class CampanhaAdsTeste extends Model {
 	}
 	public int getAtiva() { 
 		return this.ativa;
+	}
+	public void setCpaMax(double valor) { 
+		this.cpaMax = valor;
+	}
+	public double getCpaMax() { 
+		return this.cpaMax;
+	}
+	public void setCpcMax(double valor) { 
+		this.cpcMax = valor;
+	}
+	public double getCpcMax() { 
+		return this.cpcMax;
 	}
 
 	public ModeloCampanhaAdsTeste getModeloCampanhaAdsTeste() {

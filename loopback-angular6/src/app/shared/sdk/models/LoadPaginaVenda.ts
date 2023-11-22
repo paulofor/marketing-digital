@@ -1,0 +1,83 @@
+/* tslint:disable */
+import {
+  ProdutoAfiliadoHotmart
+} from '../index';
+
+declare var Object: any;
+export interface LoadPaginaVendaInterface {
+  "dataHora"?: Date;
+  "tempoConsumido"?: number;
+  "id"?: number;
+  "hotmartId"?: number;
+  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+}
+
+export class LoadPaginaVenda implements LoadPaginaVendaInterface {
+  "dataHora": Date;
+  "tempoConsumido": number;
+  "id": number;
+  "hotmartId": number;
+  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  constructor(data?: LoadPaginaVendaInterface) {
+    Object.assign(this, data);
+  }
+  /**
+   * The name of the model represented by this $resource,
+   * i.e. `LoadPaginaVenda`.
+   */
+  public static getModelName() {
+    return "LoadPaginaVenda";
+  }
+  /**
+  * @method factory
+  * @author Jonathan Casarrubias
+  * @license MIT
+  * This method creates an instance of LoadPaginaVenda for dynamic purposes.
+  **/
+  public static factory(data: LoadPaginaVendaInterface): LoadPaginaVenda{
+    return new LoadPaginaVenda(data);
+  }
+  /**
+  * @method getModelDefinition
+  * @author Julien Ledun
+  * @license MIT
+  * This method returns an object that represents some of the model
+  * definitions.
+  **/
+  public static getModelDefinition() {
+    return {
+      name: 'LoadPaginaVenda',
+      plural: 'LoadPaginaVendas',
+      path: 'LoadPaginaVendas',
+      idName: 'id',
+      properties: {
+        "dataHora": {
+          name: 'dataHora',
+          type: 'Date'
+        },
+        "tempoConsumido": {
+          name: 'tempoConsumido',
+          type: 'number'
+        },
+        "id": {
+          name: 'id',
+          type: 'number'
+        },
+        "hotmartId": {
+          name: 'hotmartId',
+          type: 'number'
+        },
+      },
+      relations: {
+        produtoAfiliadoHotmart: {
+          name: 'produtoAfiliadoHotmart',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+      }
+    }
+  }
+}

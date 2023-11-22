@@ -122,5 +122,17 @@
   "CampanhaAdsMetrica": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "LoadPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "SolicitacaoCheckout": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PlanoProduto": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

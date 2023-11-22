@@ -22,5 +22,8 @@ export * from './FacebookConta';
 export * from './ProdutoAfiliadoMetrica';
 export * from './ContaGoogle';
 export * from './CampanhaAdsMetrica';
+export * from './LoadPaginaVenda';
+export * from './SolicitacaoCheckout';
+export * from './PlanoProduto';
 export * from './SDKModels';
 export * from './logger.service';

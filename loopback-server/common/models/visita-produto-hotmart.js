@@ -2,6 +2,37 @@
 
 module.exports = function(Visitaprodutohotmart) {
 
+
+    Visitaprodutohotmart.ListaBoaOpcaoIntermediaria = function(callback) {
+        console.log('entrou aqui');
+        const sql = " select hotmartId " +
+            " from VisitaProdutoHotmart " +
+            " where temperatura >= 70 " +
+            " and (afiliacaoPercentual >= 50 or afiliacaoPercentual = 0) " +
+            " and maisRecente = 1 " +
+            " order by temperatura desc ";
+        let ds = Visitaprodutohotmart.dataSource;
+        ds.connector.query(sql, (err,result) => {
+            // Mapeando a lista para obter apenas os IDs
+            var idsParaFiltrar = result.map(item => item.hotmartId);
+            const filtro = {
+                'include' : {'relation': 'ideiaPalavraChaves', 'scope' : {'order' : 'mediaPesquisa desc', 'limit' : 15}},
+                'order' : 'temperatura desc',
+                'where': {
+                    'and' : [
+                        {'hotmartId': { inq: idsParaFiltrar } }, 
+                        {'maisRecente': 1 }
+                    ]
+                }
+                
+            }
+            console.log('filtro' , filtro);
+            Visitaprodutohotmart.find(filtro,callback);
+        })
+    }
+
+
+
     Visitaprodutohotmart.ResumoPorDataInsercao = function(callback) {
         const sql = "select dataInsercao, count(*) as qtdeProduto " +
             " from VisitaProdutoHotmart " +

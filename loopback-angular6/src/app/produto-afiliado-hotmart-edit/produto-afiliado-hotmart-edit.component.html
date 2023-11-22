@@ -56,6 +56,14 @@
       <input matInput #trabalho  [(ngModel)]="item.trabalho" name="trabalho" placeholder="Produto de trabalho" autocomplete="off"/>
     </mat-form-field> 
 
+    <mat-form-field class="example-full-width">
+      <input matInput #urlPropria  [(ngModel)]="item.urlPropria" name="urlPropria" placeholder="Url Própria" autocomplete="off"/>
+    </mat-form-field> 
+
+    <mat-form-field class="example-full-width">
+      <input matInput #complementoAnuncio  [(ngModel)]="item.complementoAnuncio" name="complementoAnuncio" placeholder="Sufixo Anúncio" autocomplete="off"/>
+    </mat-form-field> 
+
   </mat-dialog-content>
 
   <mat-dialog-actions>

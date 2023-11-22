@@ -66,6 +66,13 @@ public class RepositorioVisitaProdutoHotmart extends ModelRepository<VisitaProdu
 		invokeStaticMethod("produtosTopVendas", params,   new JsonArrayParser<VisitaProdutoHotmart>(this, callback));
 	}
 
+	public synchronized void listaBoaOpcaoIntermediaria(final ListCallback<VisitaProdutoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("VisitaProdutoHotmarts/listaBoaOpcaoIntermediaria","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "VisitaProdutoHotmart.listaBoaOpcaoIntermediaria");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaBoaOpcaoIntermediaria", params,   new JsonArrayParser<VisitaProdutoHotmart>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<VisitaProdutoHotmart> listaEntrada) {
 		JSONArray lista = new JSONArray();

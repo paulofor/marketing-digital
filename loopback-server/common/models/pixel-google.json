@@ -36,6 +36,9 @@
 		"idAds": {
 			"type": "string"
 		},
+		"snippet": {
+			"type": "string"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}

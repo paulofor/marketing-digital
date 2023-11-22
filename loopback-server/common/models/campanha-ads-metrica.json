@@ -34,6 +34,21 @@
 		"campanhaAdsTesteId": {
 			"type": "number"
 			,"id": true
+		},
+		"status": {
+			"type": "string"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		},
+		"estrategia": {
+			"type": "string"
+		},
+		"rede": {
+			"type": "string"
+		},
+		"conversao": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -41,6 +56,11 @@
 		"campanhaAdsTeste": {
 			"type": "belongsTo",
 			"model": "CampanhaAdsTeste",
+			"foreignKey": ""
+		},
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
 			"foreignKey": ""
 		}
 	},
@@ -67,6 +87,31 @@
 			"http": [
          		{
           			"path": "/insereMetrica",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"InsereListaMetrica": {
+			"accepts": [
+				{
+					"arg": "listaMetrica",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereListaMetrica",
    					"verb": "post"
  				}
  			]

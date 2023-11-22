@@ -27,6 +27,8 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private double vendaTotal;
 	private int qtdeVenda;
 	private int trabalho;
+	private String urlPropria;
+	private String complementoAnuncio;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -36,6 +38,9 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<AnuncioAds> AnuncioAds;
 	private List<VisitaProdutoHotmart> VisitaProdutoHotmarts;
 	private List<IdeiaPalavraChave> IdeiaPalavraChaves;
+	private List<LoadPaginaVenda> LoadPaginaVendas;
+	private List<SolicitacaoCheckout> SolicitacaoCheckouts;
+	private List<PlanoProduto> PlanoProdutos;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -54,6 +59,8 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("vendaTotal", vendaTotal);
 			obj.put("qtdeVenda", qtdeVenda);
 			obj.put("trabalho", trabalho);
+			obj.put("urlPropria", urlPropria);
+			obj.put("complementoAnuncio", complementoAnuncio);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -139,6 +146,18 @@ public class ProdutoAfiliadoHotmart extends Model {
 	public int getTrabalho() { 
 		return this.trabalho;
 	}
+	public void setUrlPropria(String valor) { 
+		this.urlPropria = valor;
+	}
+	public String getUrlPropria() { 
+		return this.urlPropria;
+	}
+	public void setComplementoAnuncio(String valor) { 
+		this.complementoAnuncio = valor;
+	}
+	public String getComplementoAnuncio() { 
+		return this.complementoAnuncio;
+	}
 
 	public PixelGoogle getPixelGoogle() {
 		return PixelGoogle;
@@ -207,6 +226,42 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.IdeiaPalavraChaves.add((IdeiaPalavraChave) objeto);
+		}
+	}
+	public List<LoadPaginaVenda> getLoadPaginaVendas() {
+		return  LoadPaginaVendas;
+	}
+	public void setLoadPaginaVendas(List<LoadPaginaVenda> valores) {
+		this.LoadPaginaVendas = new ArrayList<LoadPaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new LoadPaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.LoadPaginaVendas.add((LoadPaginaVenda) objeto);
+		}
+	}
+	public List<SolicitacaoCheckout> getSolicitacaoCheckouts() {
+		return  SolicitacaoCheckouts;
+	}
+	public void setSolicitacaoCheckouts(List<SolicitacaoCheckout> valores) {
+		this.SolicitacaoCheckouts = new ArrayList<SolicitacaoCheckout>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new SolicitacaoCheckout();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.SolicitacaoCheckouts.add((SolicitacaoCheckout) objeto);
+		}
+	}
+	public List<PlanoProduto> getPlanoProdutos() {
+		return  PlanoProdutos;
+	}
+	public void setPlanoProdutos(List<PlanoProduto> valores) {
+		this.PlanoProdutos = new ArrayList<PlanoProduto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PlanoProduto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PlanoProdutos.add((PlanoProduto) objeto);
 		}
 	}
 }

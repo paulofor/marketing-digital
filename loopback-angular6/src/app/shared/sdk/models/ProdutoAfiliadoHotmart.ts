@@ -5,7 +5,10 @@ import {
   CampanhaAdsTeste,
   AnuncioAds,
   PixelGoogle,
-  ContaGoogle
+  ContaGoogle,
+  LoadPaginaVenda,
+  SolicitacaoCheckout,
+  PlanoProduto
 } from '../index';
 
 declare var Object: any;
@@ -23,6 +26,8 @@ export interface ProdutoAfiliadoHotmartInterface {
   "vendaTotal"?: number;
   "qtdeVenda"?: number;
   "trabalho"?: number;
+  "urlPropria"?: string;
+  "complementoAnuncio"?: string;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
@@ -31,6 +36,9 @@ export interface ProdutoAfiliadoHotmartInterface {
   pixelGoogle?: PixelGoogle;
   produtoAfiliadoPaginaVenda?: PixelGoogle;
   contaGoogle?: ContaGoogle;
+  loadPaginaVendas?: LoadPaginaVenda[];
+  solicitacaoCheckouts?: SolicitacaoCheckout[];
+  planoProdutos?: PlanoProduto[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -47,6 +55,8 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "vendaTotal": number;
   "qtdeVenda": number;
   "trabalho": number;
+  "urlPropria": string;
+  "complementoAnuncio": string;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
@@ -55,6 +65,9 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   pixelGoogle: PixelGoogle;
   produtoAfiliadoPaginaVenda: PixelGoogle;
   contaGoogle: ContaGoogle;
+  loadPaginaVendas: LoadPaginaVenda[];
+  solicitacaoCheckouts: SolicitacaoCheckout[];
+  planoProdutos: PlanoProduto[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -140,6 +153,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'trabalho',
           type: 'number'
         },
+        "urlPropria": {
+          name: 'urlPropria',
+          type: 'string'
+        },
+        "complementoAnuncio": {
+          name: 'complementoAnuncio',
+          type: 'string'
+        },
         "contaGoogleId": {
           name: 'contaGoogleId',
           type: 'number'
@@ -201,6 +222,30 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           relationType: 'belongsTo',
                   keyFrom: 'contaGoogleId',
           keyTo: 'id'
+        },
+        loadPaginaVendas: {
+          name: 'loadPaginaVendas',
+          type: 'LoadPaginaVenda[]',
+          model: 'LoadPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        solicitacaoCheckouts: {
+          name: 'solicitacaoCheckouts',
+          type: 'SolicitacaoCheckout[]',
+          model: 'SolicitacaoCheckout',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        planoProdutos: {
+          name: 'planoProdutos',
+          type: 'PlanoProduto[]',
+          model: 'PlanoProduto',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
         },
       }
     }

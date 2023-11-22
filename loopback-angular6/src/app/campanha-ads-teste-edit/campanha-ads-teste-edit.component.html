@@ -40,6 +40,15 @@
       </mat-select>
     </mat-form-field>
 
+
+    <mat-form-field class="example-full-width">
+      <input matInput #cpcMax [(ngModel)]="item.cpcMax" name="cpcMax" placeholder="Cpc Max" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #cpaMax [(ngModel)]="item.cpaMax" name="cpaMax" placeholder="Cpa Max" />
+    </mat-form-field>
+
   </mat-dialog-content>
   <p>O valor de item.ativa é: {{ item.ativa }}</p>
 

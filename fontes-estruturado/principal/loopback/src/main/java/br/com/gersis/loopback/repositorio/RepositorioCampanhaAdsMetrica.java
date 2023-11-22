@@ -38,6 +38,14 @@ public class RepositorioCampanhaAdsMetrica extends ModelRepository<CampanhaAdsMe
 		invokeStaticMethod("insereMetrica", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void insereListaMetrica(List<CampanhaAdsMetrica> listaMetrica ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricas/insereListaMetrica","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetrica.insereListaMetrica");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("listaMetrica",obtemLista(listaMetrica));
+		invokeStaticMethod("insereListaMetrica", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<CampanhaAdsMetrica> listaEntrada) {
 		JSONArray lista = new JSONArray();

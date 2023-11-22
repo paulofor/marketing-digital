@@ -49,6 +49,12 @@
 		"trabalho": {
 			"type": "number"
 		},
+		"urlPropria": {
+			"type": "string"
+		},
+		"complementoAnuncio": {
+			"type": "string"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}
@@ -88,6 +94,21 @@
 		"ideiaPalavraChaves": {
 			"type": "hasMany",
 			"model": "IdeiaPalavraChave",
+			"foreignKey": "hotmartId"
+		},
+		"loadPaginaVendas": {
+			"type": "hasMany",
+			"model": "LoadPaginaVenda",
+			"foreignKey": "hotmartId"
+		},
+		"solicitacaoCheckouts": {
+			"type": "hasMany",
+			"model": "SolicitacaoCheckout",
+			"foreignKey": "hotmartId"
+		},
+		"planoProdutos": {
+			"type": "hasMany",
+			"model": "PlanoProduto",
 			"foreignKey": "hotmartId"
 		}
 	},

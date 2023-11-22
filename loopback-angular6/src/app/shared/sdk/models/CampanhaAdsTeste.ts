@@ -24,6 +24,8 @@ export interface CampanhaAdsTesteInterface {
   "nomeAds"?: string;
   "cpc"?: number;
   "ativa"?: number;
+  "cpaMax"?: number;
+  "cpcMax"?: number;
   "modeloCampanhaAdsTesteId"?: number;
   "produtoAfiliadoHotmartId"?: number;
   "contaGoogleId"?: number;
@@ -51,6 +53,8 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "nomeAds": string;
   "cpc": number;
   "ativa": number;
+  "cpaMax": number;
+  "cpcMax": number;
   "modeloCampanhaAdsTesteId": number;
   "produtoAfiliadoHotmartId": number;
   "contaGoogleId": number;
@@ -148,6 +152,14 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
         },
         "ativa": {
           name: 'ativa',
+          type: 'number'
+        },
+        "cpaMax": {
+          name: 'cpaMax',
+          type: 'number'
+        },
+        "cpcMax": {
+          name: 'cpcMax',
           type: 'number'
         },
         "modeloCampanhaAdsTesteId": {
