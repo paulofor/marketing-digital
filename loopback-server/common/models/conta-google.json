@@ -29,6 +29,9 @@
 		},
 		"idAds": {
 			"type": "string"
+		},
+		"suspensa": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -51,6 +54,11 @@
 		"campanhaAdsMetricas": {
 			"type": "hasMany",
 			"model": "CampanhaAdsMetrica",
+			"foreignKey": ""
+		},
+		"contaGoogleMetricaMes": {
+			"type": "hasMany",
+			"model": "ContaGoogleMetricaMes",
 			"foreignKey": ""
 		}
 	},

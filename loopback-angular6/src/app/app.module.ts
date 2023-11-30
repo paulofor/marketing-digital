@@ -69,6 +69,11 @@ import { ProdutosBoaOpcaoIntermediariaComponent } from './produtos-boa-opcao-int
 import { LoadPaginaVendaListSimplesComponent } from './load-pagina-venda-list-simples/load-pagina-venda-list-simples.component';
 import { SolicitacaoCheckoutListSimplesComponent } from './solicitacao-checkout-list-simples/solicitacao-checkout-list-simples.component';
 import { CampanhaAdsMetricaListSimplesComponent } from './campanha-ads-metrica-list-simples/campanha-ads-metrica-list-simples.component';
+import { ListaEstiloFanartComponent } from './lista-estilo-fanart/lista-estilo-fanart.component';
+import { LinkCheckoutEditComponent } from './link-checkout-edit/link-checkout-edit.component';
+import { ProdutoPendenteEstruturaComponent } from './produto-pendente-estrutura/produto-pendente-estrutura.component';
+import { ProdutoObtemProximoTrabalhoComponent } from './produto-obtem-proximo-trabalho/produto-obtem-proximo-trabalho.component';
+import { ListaBomCrescimentoTemperaturaComponent } from './lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura.component';
 
 
 
@@ -114,7 +119,12 @@ registerLocaleData(localePt, 'pt-BR');
     ProdutosBoaOpcaoIntermediariaComponent,
     LoadPaginaVendaListSimplesComponent,
     SolicitacaoCheckoutListSimplesComponent,
-    CampanhaAdsMetricaListSimplesComponent
+    CampanhaAdsMetricaListSimplesComponent,
+    ListaEstiloFanartComponent,
+    LinkCheckoutEditComponent,
+    ProdutoPendenteEstruturaComponent,
+    ProdutoObtemProximoTrabalhoComponent,
+    ListaBomCrescimentoTemperaturaComponent
   ],
   imports: [
     BrowserModule,

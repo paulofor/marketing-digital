@@ -269,7 +269,7 @@ body {
   color: blue;
 }
 .dgc-verde {
-  color: green;
+  color: green!important;
 }
 .dgc-lucro {
   color: green;

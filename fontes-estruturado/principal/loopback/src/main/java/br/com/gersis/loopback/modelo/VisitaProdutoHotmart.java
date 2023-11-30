@@ -32,6 +32,7 @@ public class VisitaProdutoHotmart extends Model {
 	private int maisRecente;
 	private int hotmartId;
 	private int possuiPalavraChave;
+	private int deltaTemperatura;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
@@ -60,6 +61,7 @@ public class VisitaProdutoHotmart extends Model {
 			obj.put("maisRecente", maisRecente);
 			obj.put("hotmartId", hotmartId);
 			obj.put("possuiPalavraChave", possuiPalavraChave);
+			obj.put("deltaTemperatura", deltaTemperatura);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -174,6 +176,12 @@ public class VisitaProdutoHotmart extends Model {
 	}
 	public int getPossuiPalavraChave() { 
 		return this.possuiPalavraChave;
+	}
+	public void setDeltaTemperatura(int valor) { 
+		this.deltaTemperatura = valor;
+	}
+	public int getDeltaTemperatura() { 
+		return this.deltaTemperatura;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {

@@ -73,6 +73,27 @@ public class RepositorioVisitaProdutoHotmart extends ModelRepository<VisitaProdu
 		invokeStaticMethod("listaBoaOpcaoIntermediaria", params,   new JsonArrayParser<VisitaProdutoHotmart>(this, callback));
 	}
 
+	public synchronized void listaEstiloFanart(final ListCallback<VisitaProdutoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("VisitaProdutoHotmarts/listaEstiloFanart","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "VisitaProdutoHotmart.listaEstiloFanart");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaEstiloFanart", params,   new JsonArrayParser<VisitaProdutoHotmart>(this, callback));
+	}
+
+	public synchronized void ajustaDeltaTemperatura(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("VisitaProdutoHotmarts/ajustaDeltaTemperatura","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "VisitaProdutoHotmart.ajustaDeltaTemperatura");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("ajustaDeltaTemperatura", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaBomCrescimentoTemperatura(final ListCallback<VisitaProdutoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("VisitaProdutoHotmarts/listaBomCrescimentoTemperatura","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "VisitaProdutoHotmart.listaBomCrescimentoTemperatura");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaBomCrescimentoTemperatura", params,   new JsonArrayParser<VisitaProdutoHotmart>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<VisitaProdutoHotmart> listaEntrada) {
 		JSONArray lista = new JSONArray();

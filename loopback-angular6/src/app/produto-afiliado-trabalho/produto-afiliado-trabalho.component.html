@@ -1,10 +1,10 @@
 <div class="dgc-painel">
 	<div class="dgc-painel-header">
-		<span>Produtos Afiliados de Trabalho</span>
+		<span>Produtos Afiliados de Trabalho ({{listaBase.length}})</span>
   		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="reset()">reset</button>
 	</div>
 	<div *ngIf="listaBase">
-		<div class="dgc-card" *ngFor="let item of listaBase">
+		<div class="dgc-card" *ngFor="let item of listaBase">	
  			<div class="dgc-card-header">
  				<span>{{item.nome}}</span>
  			</div>
@@ -27,6 +27,12 @@
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>Url Própria: {{item.urlPropria}} ({{item.complementoAnuncio}})</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Rejeição Url Original: {{item.rejeicaoUrlOriginal}}</span>
+			</div>
+			<div class="dgc-card-header">
+				<span>{{item.comentario}}</span>
 			</div>
 			<div class="dgc-card-comandos">
 				<button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , item.hotmartId]">Anúncio Google ({{item.anuncioAdsCount}})</button>

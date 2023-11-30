@@ -6,9 +6,11 @@ import {
   AnuncioAds,
   PixelGoogle,
   ContaGoogle,
+  CampanhaAdsMetrica,
   LoadPaginaVenda,
   SolicitacaoCheckout,
-  PlanoProduto
+  PlanoProduto,
+  LinkCheckout
 } from '../index';
 
 declare var Object: any;
@@ -28,6 +30,10 @@ export interface ProdutoAfiliadoHotmartInterface {
   "trabalho"?: number;
   "urlPropria"?: string;
   "complementoAnuncio"?: string;
+  "rejeicaoUrlOriginal"?: number;
+  "precoMedioProduto"?: number;
+  "lucroMedioProduto"?: number;
+  "comentario"?: string;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
@@ -36,9 +42,11 @@ export interface ProdutoAfiliadoHotmartInterface {
   pixelGoogle?: PixelGoogle;
   produtoAfiliadoPaginaVenda?: PixelGoogle;
   contaGoogle?: ContaGoogle;
+  campanhaAdsMetricas?: CampanhaAdsMetrica[];
   loadPaginaVendas?: LoadPaginaVenda[];
   solicitacaoCheckouts?: SolicitacaoCheckout[];
   planoProdutos?: PlanoProduto[];
+  linkCheckouts?: LinkCheckout[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -57,6 +65,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "trabalho": number;
   "urlPropria": string;
   "complementoAnuncio": string;
+  "rejeicaoUrlOriginal": number;
+  "precoMedioProduto": number;
+  "lucroMedioProduto": number;
+  "comentario": string;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
@@ -65,9 +77,11 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   pixelGoogle: PixelGoogle;
   produtoAfiliadoPaginaVenda: PixelGoogle;
   contaGoogle: ContaGoogle;
+  campanhaAdsMetricas: CampanhaAdsMetrica[];
   loadPaginaVendas: LoadPaginaVenda[];
   solicitacaoCheckouts: SolicitacaoCheckout[];
   planoProdutos: PlanoProduto[];
+  linkCheckouts: LinkCheckout[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -161,6 +175,22 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'complementoAnuncio',
           type: 'string'
         },
+        "rejeicaoUrlOriginal": {
+          name: 'rejeicaoUrlOriginal',
+          type: 'number'
+        },
+        "precoMedioProduto": {
+          name: 'precoMedioProduto',
+          type: 'number'
+        },
+        "lucroMedioProduto": {
+          name: 'lucroMedioProduto',
+          type: 'number'
+        },
+        "comentario": {
+          name: 'comentario',
+          type: 'string'
+        },
         "contaGoogleId": {
           name: 'contaGoogleId',
           type: 'number'
@@ -223,6 +253,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
                   keyFrom: 'contaGoogleId',
           keyTo: 'id'
         },
+        campanhaAdsMetricas: {
+          name: 'campanhaAdsMetricas',
+          type: 'CampanhaAdsMetrica[]',
+          model: 'CampanhaAdsMetrica',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
         loadPaginaVendas: {
           name: 'loadPaginaVendas',
           type: 'LoadPaginaVenda[]',
@@ -243,6 +281,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'planoProdutos',
           type: 'PlanoProduto[]',
           model: 'PlanoProduto',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        linkCheckouts: {
+          name: 'linkCheckouts',
+          type: 'LinkCheckout[]',
+          model: 'LinkCheckout',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'

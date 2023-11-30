@@ -1,0 +1,80 @@
+{
+	"name": "ContaGoogleMetricaMes",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"custoAtual": {
+			"type": "number"
+		},
+		"status": {
+			"type": "string"
+		},
+		"qtdeCampanhaAtiva": {
+			"type": "number"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaDiaConta": {
+			"accepts": [
+				{
+					"arg": "metrica",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaDiaConta",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"CustoTotalMes": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/custoTotalMes",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

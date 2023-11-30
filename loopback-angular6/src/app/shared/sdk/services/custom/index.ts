@@ -25,5 +25,7 @@ export * from './CampanhaAdsMetrica';
 export * from './LoadPaginaVenda';
 export * from './SolicitacaoCheckout';
 export * from './PlanoProduto';
+export * from './ContaGoogleMetricaMes';
+export * from './LinkCheckout';
 export * from './SDKModels';
 export * from './logger.service';

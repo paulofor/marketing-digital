@@ -52,6 +52,21 @@ public class RepositorioProdutoAfiliadoHotmart extends ModelRepository<ProdutoAf
 		invokeStaticMethod("desligaPixelVenda", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void listaPendenteEstrutura(final ListCallback<ProdutoAfiliadoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/listaPendenteEstrutura","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.listaPendenteEstrutura");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaPendenteEstrutura", params,   new JsonArrayParser<ProdutoAfiliadoHotmart>(this, callback));
+	}
+
+	public synchronized void obtemProximoTrabalho(int hotmartId ,final ObjectCallback<ProdutoAfiliadoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/obtemProximoTrabalho","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.obtemProximoTrabalho");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("hotmartId", hotmartId);
+		invokeStaticMethod("obtemProximoTrabalho", params,   new JsonObjectParser<ProdutoAfiliadoHotmart>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<ProdutoAfiliadoHotmart> listaEntrada) {
 		JSONArray lista = new JSONArray();

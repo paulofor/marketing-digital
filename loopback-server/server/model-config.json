@@ -134,5 +134,13 @@
   "PlanoProduto": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "ContaGoogleMetricaMes": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "LinkCheckout": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

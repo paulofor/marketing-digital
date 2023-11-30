@@ -29,6 +29,10 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private int trabalho;
 	private String urlPropria;
 	private String complementoAnuncio;
+	private int rejeicaoUrlOriginal;
+	private double precoMedioProduto;
+	private double lucroMedioProduto;
+	private String comentario;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -41,6 +45,8 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<LoadPaginaVenda> LoadPaginaVendas;
 	private List<SolicitacaoCheckout> SolicitacaoCheckouts;
 	private List<PlanoProduto> PlanoProdutos;
+	private List<LinkCheckout> LinkCheckouts;
+	private List<CampanhaAdsMetrica> CampanhaAdsMetricas;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -61,6 +67,10 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("trabalho", trabalho);
 			obj.put("urlPropria", urlPropria);
 			obj.put("complementoAnuncio", complementoAnuncio);
+			obj.put("rejeicaoUrlOriginal", rejeicaoUrlOriginal);
+			obj.put("precoMedioProduto", precoMedioProduto);
+			obj.put("lucroMedioProduto", lucroMedioProduto);
+			obj.put("comentario", comentario);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -157,6 +167,30 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public String getComplementoAnuncio() { 
 		return this.complementoAnuncio;
+	}
+	public void setRejeicaoUrlOriginal(int valor) { 
+		this.rejeicaoUrlOriginal = valor;
+	}
+	public int getRejeicaoUrlOriginal() { 
+		return this.rejeicaoUrlOriginal;
+	}
+	public void setPrecoMedioProduto(double valor) { 
+		this.precoMedioProduto = valor;
+	}
+	public double getPrecoMedioProduto() { 
+		return this.precoMedioProduto;
+	}
+	public void setLucroMedioProduto(double valor) { 
+		this.lucroMedioProduto = valor;
+	}
+	public double getLucroMedioProduto() { 
+		return this.lucroMedioProduto;
+	}
+	public void setComentario(String valor) { 
+		this.comentario = valor;
+	}
+	public String getComentario() { 
+		return this.comentario;
 	}
 
 	public PixelGoogle getPixelGoogle() {
@@ -262,6 +296,30 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PlanoProdutos.add((PlanoProduto) objeto);
+		}
+	}
+	public List<LinkCheckout> getLinkCheckouts() {
+		return  LinkCheckouts;
+	}
+	public void setLinkCheckouts(List<LinkCheckout> valores) {
+		this.LinkCheckouts = new ArrayList<LinkCheckout>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new LinkCheckout();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.LinkCheckouts.add((LinkCheckout) objeto);
+		}
+	}
+	public List<CampanhaAdsMetrica> getCampanhaAdsMetricas() {
+		return  CampanhaAdsMetricas;
+	}
+	public void setCampanhaAdsMetricas(List<CampanhaAdsMetrica> valores) {
+		this.CampanhaAdsMetricas = new ArrayList<CampanhaAdsMetrica>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CampanhaAdsMetrica();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CampanhaAdsMetricas.add((CampanhaAdsMetrica) objeto);
 		}
 	}
 }

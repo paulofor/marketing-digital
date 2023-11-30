@@ -146,18 +146,20 @@ public class CriaCampanhaAdsConversaoImpl extends CriaCampanhaAdsConversao {
 		    LocalDate dtFinal = obtemDataFinal(dtInicial, campanha);
 		    String dataInicial = dtInicial.format(formatter);
 		    String dataFinal = dtFinal.format(formatter);
+		    
+		    
 
 		    // 2 - Campanha
-		    String nomeCampanha = "MktDigitalConv1-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
+		    String nomeCampanha = "MktDigitalConv-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
 		    Campaign campaign = Campaign.newBuilder()
 		        .setName(nomeCampanha)
 		        .setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
-		        .setStatus(CampaignStatus.ENABLED)
+		        .setStatus(CampaignStatus.PAUSED)
 		        .setNetworkSettings(networkSettings)
 		        .setStartDate(dataInicial)
 		        .setCampaignBudget(orcamento)
 		        .setMaximizeConversions(MaximizeConversions.newBuilder()
-		            .setTargetCpaMicros((long) 8 * 1000000) // Definir a meta desejada
+		            .setTargetCpaMicros((long) campanha.getCpaMax() * 1000000) // Definir a meta desejada
 		            .build())
 		        .build();
 

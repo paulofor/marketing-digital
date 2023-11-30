@@ -3,8 +3,11 @@ package gerador.atualizaperformancecampanhatotalativa.passo.impl;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.google.ads.googleads.lib.GoogleAdsClient;
 import com.google.ads.googleads.v13.services.GoogleAdsRow;
@@ -13,7 +16,6 @@ import com.google.ads.googleads.v13.services.GoogleAdsServiceClient.SearchPagedR
 import com.google.ads.googleads.v13.services.SearchGoogleAdsRequest;
 
 import br.com.gersis.loopback.modelo.CampanhaAdsMetrica;
-import br.com.gersis.loopback.modelo.CampanhaAdsTeste;
 import br.com.gersis.loopback.modelo.ContaGoogle;
 import gerador.atualizaperformancecampanhatotalativa.passo.ConsultaGoogleAdsListaAtivaPorConta;
 
@@ -54,12 +56,22 @@ private List<CampanhaAdsMetrica> consultaSql(GoogleAdsClient googleAdsClient, Co
 		long codigoUsuario = Long.parseLong(textoSemHifens);
 		
 		String query = "SELECT campaign.status, campaign.id, campaign.name, metrics.impressions, metrics.clicks, metrics.conversions, " +
-				"campaign.advertising_channel_type, campaign.bidding_strategy_type, metrics.ctr, metrics.cost_micros, metrics.ctr, metrics.average_cpc " +
+				"campaign.advertising_channel_type, bidding_strategy.target_cpa.target_cpa_micros , campaign.bidding_strategy_type, metrics.ctr, metrics.cost_micros, metrics.ctr, metrics.average_cpc " +
 		        "FROM campaign ";
 		        //"WHERE campaign.status = 'ENABLE'";
 		System.out.println("Query:" + query);
 
 		List<CampanhaAdsMetrica> listaMetrica = new ArrayList<CampanhaAdsMetrica>();
+	    // Definindo o Locale como US
+        Locale localeUS = new Locale("en", "US");
+
+        // Criando um objeto NumberFormat para formatar o número com o Locale US
+        NumberFormat nf = NumberFormat.getNumberInstance(localeUS);
+        DecimalFormat df = (DecimalFormat) nf;
+
+        // Definindo o formato para duas casas decimais
+        df.applyPattern("#.##");
+		
 		try (GoogleAdsServiceClient googleAdsServiceClient =
 			      googleAdsClient.getLatestVersion().createGoogleAdsServiceClient()) {
 			    // Creates a request that will retrieve all campaign labels with the specified
@@ -76,8 +88,10 @@ private List<CampanhaAdsMetrica> consultaSql(GoogleAdsClient googleAdsClient, Co
 			    for (GoogleAdsRow linha : searchPagedResponse.getPage().getResponse().getResultsList()) {
 			    	System.out.println("Obteve resultado search...");
 			    	CampanhaAdsMetrica saida = new CampanhaAdsMetrica();
+			    	saida.setCpaCampanha(linha.getBiddingStrategy().getTargetCpa().getTargetCpaMicros());
 			    	saida.setContaGoogleId(new Integer(contaCorrente.getId().toString()));
 			    	saida.setCodigoAds("" +linha.getCampaign().getId());
+			    	saida.setNomeCampanha(linha.getCampaign().getName().toString());
 			    	//saida.setCampanhaAdsTesteId((int)campanha.getId());
 			    	saida.setImpressao(new Long(linha.getMetrics().getImpressions()).intValue());
 			    	saida.setClique((new Long(linha.getMetrics().getClicks()).intValue()));
@@ -91,6 +105,13 @@ private List<CampanhaAdsMetrica> consultaSql(GoogleAdsClient googleAdsClient, Co
 			    	saida.setCpcMedio(linha.getMetrics().getAverageCpc()/1000000);
 			    	saida.setRede(linha.getCampaign().getAdvertisingChannelType().toString());
 			    	saida.setEstrategia(linha.getCampaign().getBiddingStrategyType().toString());
+			    	//obtemDadosGrupoAd(googleAdsClient, codigoUsuario,saida);
+			    	saida.setStatusRejeicao(linha.getAdGroupAd().getPolicySummary().toString());
+			    	if (saida.getConversao()>0 && saida.getCustoCampanha()>0) {
+			    		saida.setCpaMedio(Double.parseDouble(df.format(saida.getCustoCampanha() / saida.getConversao())));
+			    	} else {
+			    		saida.setCpaMedio(0);
+			    	}
 			    	listaMetrica.add(saida);
 			    }
 			    // Checks if the total results count is greater than 0.
@@ -100,6 +121,38 @@ private List<CampanhaAdsMetrica> consultaSql(GoogleAdsClient googleAdsClient, Co
 			  }
 		return listaMetrica;
 	}
+
+
+	private void obtemDadosGrupoAd(GoogleAdsClient googleAdsClient, long codigoUsuario, CampanhaAdsMetrica metrica) {
+		// TODO Auto-generated method stub
+		String query = "SELECT ad_group.status "
+		        + "FROM ad_group "
+		        + "WHERE ad_group.campaign.id = " + metrica.getCodigoAds();
+
+
+        try (GoogleAdsServiceClient googleAdsServiceClient =
+			      googleAdsClient.getLatestVersion().createGoogleAdsServiceClient()) {
+        	   SearchGoogleAdsRequest request =
+   			        SearchGoogleAdsRequest.newBuilder()
+   			            .setCustomerId(Long.toString(codigoUsuario))
+   			            .setQuery(query)
+   			            .build();
+   			    // Issues the search request.
+   			    System.out.println("Vai fazer search");
+   			    SearchPagedResponse searchPagedResponse = googleAdsServiceClient.search(request);
+   			    for (GoogleAdsRow linha : searchPagedResponse.getPage().getResponse().getResultsList()) {
+   			    	metrica.setStatusRejeicao(linha.getAdGroup().getStatus().toString());
+   			    }
+        	
+        } catch (Exception e) {
+        	System.out.println("Erro no obtemDadosGrupoAd");
+        	e.printStackTrace();
+        }
+
+
+	}
+
+	
 	
 }
 

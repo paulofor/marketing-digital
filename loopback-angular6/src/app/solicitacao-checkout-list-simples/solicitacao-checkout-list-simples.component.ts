@@ -15,4 +15,12 @@ export class SolicitacaoCheckoutListSimplesComponent extends SolicitacaoCheckout
 		super(srv,router,dialog);
 	}
 
+	getFiltro() {
+		return {
+			'include' : 'produtoAfiliadoHotmart',
+			'order' : 'dataHora desc',
+			'limit' : 50
+		}
+	}
+
 }

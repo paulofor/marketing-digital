@@ -46,6 +46,20 @@ public class RepositorioCampanhaAdsMetrica extends ModelRepository<CampanhaAdsMe
 		invokeStaticMethod("insereListaMetrica", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void limpaMaisRecente(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricas/limpaMaisRecente","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetrica.limpaMaisRecente");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("limpaMaisRecente", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void ajustaCampanhaProduto(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricas/ajustaCampanhaProduto","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetrica.ajustaCampanhaProduto");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("ajustaCampanhaProduto", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<CampanhaAdsMetrica> listaEntrada) {
 		JSONArray lista = new JSONArray();

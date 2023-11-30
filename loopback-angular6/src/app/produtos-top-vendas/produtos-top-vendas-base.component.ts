@@ -18,7 +18,7 @@ export class ProdutosTopVendasBaseComponent implements OnInit {
 	posCarregaLista() {}
 
     carregaTela() {
-        this.srv.find(this.getFiltro())
+        this.srv.ProdutosTopVendas()
 	     .subscribe((result:VisitaProdutoHotmart[]) => {
             console.log('result: ' , result);
             this.listaBase = result;

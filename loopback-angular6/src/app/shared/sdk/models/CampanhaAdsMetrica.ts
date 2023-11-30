@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   CampanhaAdsTeste,
-  ContaGoogle
+  ContaGoogle,
+  ProdutoAfiliadoHotmart
 } from '../index';
 
 declare var Object: any;
@@ -19,8 +20,17 @@ export interface CampanhaAdsMetricaInterface {
   "estrategia"?: string;
   "rede"?: string;
   "conversao"?: number;
+  "maisRecente"?: number;
+  "nomeCampanha"?: string;
+  "statusRejeicao"?: string;
+  "urlFinal"?: string;
+  "hotmartId"?: number;
+  "cpaMedio"?: number;
+  "cpaCampanha"?: number;
+  "id"?: number;
   campanhaAdsTeste?: CampanhaAdsTeste;
   contaGoogle?: ContaGoogle;
+  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
 }
 
 export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
@@ -37,8 +47,17 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
   "estrategia": string;
   "rede": string;
   "conversao": number;
+  "maisRecente": number;
+  "nomeCampanha": string;
+  "statusRejeicao": string;
+  "urlFinal": string;
+  "hotmartId": number;
+  "cpaMedio": number;
+  "cpaCampanha": number;
+  "id": number;
   campanhaAdsTeste: CampanhaAdsTeste;
   contaGoogle: ContaGoogle;
+  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   constructor(data?: CampanhaAdsMetricaInterface) {
     Object.assign(this, data);
   }
@@ -70,7 +89,7 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
       name: 'CampanhaAdsMetrica',
       plural: 'CampanhaAdsMetricas',
       path: 'CampanhaAdsMetricas',
-      idName: 'dataHora',
+      idName: 'id',
       properties: {
         "dataHora": {
           name: 'dataHora',
@@ -124,6 +143,38 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
           name: 'conversao',
           type: 'number'
         },
+        "maisRecente": {
+          name: 'maisRecente',
+          type: 'number'
+        },
+        "nomeCampanha": {
+          name: 'nomeCampanha',
+          type: 'string'
+        },
+        "statusRejeicao": {
+          name: 'statusRejeicao',
+          type: 'string'
+        },
+        "urlFinal": {
+          name: 'urlFinal',
+          type: 'string'
+        },
+        "hotmartId": {
+          name: 'hotmartId',
+          type: 'number'
+        },
+        "cpaMedio": {
+          name: 'cpaMedio',
+          type: 'number'
+        },
+        "cpaCampanha": {
+          name: 'cpaCampanha',
+          type: 'number'
+        },
+        "id": {
+          name: 'id',
+          type: 'number'
+        },
       },
       relations: {
         campanhaAdsTeste: {
@@ -141,6 +192,14 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'contaGoogleId',
           keyTo: 'id'
+        },
+        produtoAfiliadoHotmart: {
+          name: 'produtoAfiliadoHotmart',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
         },
       }
     }

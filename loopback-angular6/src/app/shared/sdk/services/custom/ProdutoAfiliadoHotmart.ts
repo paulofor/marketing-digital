@@ -17,9 +17,11 @@ import { CampanhaAdsTeste } from '../../models/CampanhaAdsTeste';
 import { AnuncioAds } from '../../models/AnuncioAds';
 import { PixelGoogle } from '../../models/PixelGoogle';
 import { ContaGoogle } from '../../models/ContaGoogle';
+import { CampanhaAdsMetrica } from '../../models/CampanhaAdsMetrica';
 import { LoadPaginaVenda } from '../../models/LoadPaginaVenda';
 import { SolicitacaoCheckout } from '../../models/SolicitacaoCheckout';
 import { PlanoProduto } from '../../models/PlanoProduto';
+import { LinkCheckout } from '../../models/LinkCheckout';
 
 
 /**
@@ -501,6 +503,99 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
   }
 
   /**
+   * Localize um item relacionado por ID para campanhaAdsMetricas.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {any} fk Chave estrangeira para campanhaAdsMetricas
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public findByIdCampanhaAdsMetricas(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/campanhaAdsMetricas/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para campanhaAdsMetricas.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {any} fk Chave estrangeira para campanhaAdsMetricas
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdCampanhaAdsMetricas(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/campanhaAdsMetricas/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para campanhaAdsMetricas.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {any} fk Chave estrangeira para campanhaAdsMetricas
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public updateByIdCampanhaAdsMetricas(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/campanhaAdsMetricas/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Localize um item relacionado por ID para loadPaginaVendas.
    *
    * @param {any} id ProdutoAfiliadoHotmart id
@@ -767,6 +862,99 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProdutoAfiliadoHotmarts/:id/planoProdutos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Localize um item relacionado por ID para linkCheckouts.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {any} fk Chave estrangeira para linkCheckouts
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public findByIdLinkCheckouts(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/linkCheckouts/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para linkCheckouts.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {any} fk Chave estrangeira para linkCheckouts
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdLinkCheckouts(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/linkCheckouts/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para linkCheckouts.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {any} fk Chave estrangeira para linkCheckouts
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public updateByIdLinkCheckouts(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/linkCheckouts/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -1244,6 +1432,122 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
   }
 
   /**
+   * campanhaAdsMetricas consultas de ProdutoAfiliadoHotmart.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public getCampanhaAdsMetricas(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/campanhaAdsMetricas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no campanhaAdsMetricas deste modelo.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public createCampanhaAdsMetricas(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/campanhaAdsMetricas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os campanhaAdsMetricas deste modelo.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteCampanhaAdsMetricas(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/campanhaAdsMetricas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * campanhaAdsMetricas contagens de ProdutoAfiliadoHotmart.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countCampanhaAdsMetricas(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/campanhaAdsMetricas/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * loadPaginaVendas consultas de ProdutoAfiliadoHotmart.
    *
    * @param {any} id ProdutoAfiliadoHotmart id
@@ -1592,6 +1896,122 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
   }
 
   /**
+   * linkCheckouts consultas de ProdutoAfiliadoHotmart.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public getLinkCheckouts(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/linkCheckouts";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no linkCheckouts deste modelo.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public createLinkCheckouts(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/linkCheckouts";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os linkCheckouts deste modelo.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteLinkCheckouts(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/linkCheckouts";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * linkCheckouts contagens de ProdutoAfiliadoHotmart.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countLinkCheckouts(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/linkCheckouts/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Patch an existing model instance or insert a new one into the data source.
    *
    * @param {object} data Request data.
@@ -1738,6 +2158,59 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public ListaPendenteEstrutura(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/listaPendenteEstrutura";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {number} hotmartId 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public ObtemProximoTrabalho(hotmartId: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/obtemProximoTrabalho";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof hotmartId !== 'undefined' && hotmartId !== null) _urlParams.hotmartId = hotmartId;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Cria uma nova instância no visitaProdutoHotmarts deste modelo.
    *
    * @param {any} id ProdutoAfiliadoHotmart id
@@ -1870,6 +2343,39 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
   }
 
   /**
+   * Cria uma nova instância no campanhaAdsMetricas deste modelo.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public createManyCampanhaAdsMetricas(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/campanhaAdsMetricas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Cria uma nova instância no loadPaginaVendas deste modelo.
    *
    * @param {any} id ProdutoAfiliadoHotmart id
@@ -1957,6 +2463,39 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProdutoAfiliadoHotmarts/:id/planoProdutos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no linkCheckouts deste modelo.
+   *
+   * @param {any} id ProdutoAfiliadoHotmart id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+   * </em>
+   */
+  public createManyLinkCheckouts(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProdutoAfiliadoHotmarts/:id/linkCheckouts";
     let _routeParams: any = {
       id: id
     };

@@ -1,0 +1,33 @@
+{
+	"name": "LinkCheckout",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"url": {
+			"type": "string"
+		},
+		"titulo": {
+			"type": "string"
+		},
+		"hotmartId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

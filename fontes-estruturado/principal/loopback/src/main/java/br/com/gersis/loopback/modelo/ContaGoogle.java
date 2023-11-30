@@ -21,12 +21,14 @@ public class ContaGoogle extends Model {
 	private String senha;
 	private String urlAds;
 	private String idAds;
+	private int suspensa;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 	private List<PixelGoogle> PixelGoogles;
 	private List<ProdutoAfiliadoHotmart> ProdutoAfiliadoHotmarts;
 	private List<CampanhaAdsMetrica> CampanhaAdsMetricas;
+	private List<ContaGoogleMetricaMes> ContaGoogleMetricaMes;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -39,6 +41,7 @@ public class ContaGoogle extends Model {
 			obj.put("senha", senha);
 			obj.put("urlAds", urlAds);
 			obj.put("idAds", idAds);
+			obj.put("suspensa", suspensa);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -88,6 +91,12 @@ public class ContaGoogle extends Model {
 	public String getIdAds() { 
 		return this.idAds;
 	}
+	public void setSuspensa(int valor) { 
+		this.suspensa = valor;
+	}
+	public int getSuspensa() { 
+		return this.suspensa;
+	}
 
 	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {
 		return  CampanhaAdsTestes;
@@ -135,6 +144,18 @@ public class ContaGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsMetricas.add((CampanhaAdsMetrica) objeto);
+		}
+	}
+	public List<ContaGoogleMetricaMes> getContaGoogleMetricaMes() {
+		return  ContaGoogleMetricaMes;
+	}
+	public void setContaGoogleMetricaMes(List<ContaGoogleMetricaMes> valores) {
+		this.ContaGoogleMetricaMes = new ArrayList<ContaGoogleMetricaMes>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ContaGoogleMetricaMes();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ContaGoogleMetricaMes.add((ContaGoogleMetricaMes) objeto);
 		}
 	}
 }

@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class ContaGoogle_ListaAtivaParaMetricaCampanha extends DaoAplicacao { 
 
-	private int NUM_PASSO = 1;
+	private int NUM_PASSO = 2;
 
 
 
@@ -42,7 +42,7 @@ public abstract class ContaGoogle_ListaAtivaParaMetricaCampanha extends DaoAplic
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new ConsultaGoogleAdsListaAtivaPorContaImpl();
+		return new ObtemDadosContaGoogleImpl();
 	}
 
 

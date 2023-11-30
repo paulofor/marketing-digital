@@ -26,6 +26,8 @@ import { CampanhaAdsMetrica } from '../../models/CampanhaAdsMetrica';
 import { LoadPaginaVenda } from '../../models/LoadPaginaVenda';
 import { SolicitacaoCheckout } from '../../models/SolicitacaoCheckout';
 import { PlanoProduto } from '../../models/PlanoProduto';
+import { ContaGoogleMetricaMes } from '../../models/ContaGoogleMetricaMes';
+import { LinkCheckout } from '../../models/LinkCheckout';
 
 export interface Models { [name: string]: any }
 
@@ -59,6 +61,8 @@ export class SDKModels {
     LoadPaginaVenda: LoadPaginaVenda,
     SolicitacaoCheckout: SolicitacaoCheckout,
     PlanoProduto: PlanoProduto,
+    ContaGoogleMetricaMes: ContaGoogleMetricaMes,
+    LinkCheckout: LinkCheckout,
     
   };
 

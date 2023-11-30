@@ -55,6 +55,18 @@
 		"complementoAnuncio": {
 			"type": "string"
 		},
+		"rejeicaoUrlOriginal": {
+			"type": "number"
+		},
+		"precoMedioProduto": {
+			"type": "number"
+		},
+		"lucroMedioProduto": {
+			"type": "number"
+		},
+		"comentario": {
+			"type": "string"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}
@@ -109,6 +121,16 @@
 		"planoProdutos": {
 			"type": "hasMany",
 			"model": "PlanoProduto",
+			"foreignKey": "hotmartId"
+		},
+		"linkCheckouts": {
+			"type": "hasMany",
+			"model": "LinkCheckout",
+			"foreignKey": "hotmartId"
+		},
+		"campanhaAdsMetricas": {
+			"type": "hasMany",
+			"model": "CampanhaAdsMetrica",
 			"foreignKey": "hotmartId"
 		}
 	},
@@ -174,6 +196,50 @@
          		{
           			"path": "/desligaPixelVenda",
    					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaPendenteEstrutura": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaPendenteEstrutura",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ObtemProximoTrabalho": {
+			"accepts": [
+				{
+					"arg": "hotmartId",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemProximoTrabalho",
+   					"verb": "get"
  				}
  			]
 		}

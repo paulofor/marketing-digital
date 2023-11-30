@@ -12,7 +12,7 @@ module.exports = function(Loadpaginavenda) {
         const filtro = {
             'order' : 'id desc',
             'include' : 'produtoAfiliadoHotmart',
-            'limit' : 50
+            'limit' : 60
         }
         Loadpaginavenda.find(filtro,callback);
     }

@@ -23,6 +23,10 @@ import { ProdutosBoaOpcaoIntermediariaComponent } from '../produtos-boa-opcao-in
 import { LoadPaginaVendaListSimplesComponent } from '../load-pagina-venda-list-simples/load-pagina-venda-list-simples.component';
 import { SolicitacaoCheckoutListSimplesComponent } from '../solicitacao-checkout-list-simples/solicitacao-checkout-list-simples.component';
 import { CampanhaAdsMetricaListSimplesComponent } from '../campanha-ads-metrica-list-simples/campanha-ads-metrica-list-simples.component';
+import { ListaEstiloFanartComponent } from '../lista-estilo-fanart/lista-estilo-fanart.component';
+import { ProdutoPendenteEstruturaComponent } from '../produto-pendente-estrutura/produto-pendente-estrutura.component';
+import { ProdutoObtemProximoTrabalhoComponent } from '../produto-obtem-proximo-trabalho/produto-obtem-proximo-trabalho.component';
+import { ListaBomCrescimentoTemperaturaComponent } from '../lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura.component';
 
 
 
@@ -57,6 +61,10 @@ export const routes : Routes = [
     { path: 'acessos' ,  component: LoadPaginaVendaListSimplesComponent },
     { path: 'checkout' , component: SolicitacaoCheckoutListSimplesComponent },
     { path: 'metricaCampanha' , component: CampanhaAdsMetricaListSimplesComponent },
+    { path: 'estiloFanart' , component: ListaEstiloFanartComponent },
+    { path: 'pendenteEstrutura' , component: ProdutoPendenteEstruturaComponent },    
+    { path: 'workProduto/:id' , component: ProdutoObtemProximoTrabalhoComponent },
+    { path: 'crescimentoTemperatura' , component: ListaBomCrescimentoTemperaturaComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

@@ -3,7 +3,7 @@
 		<span>Conta Google</span>
   		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
-	<div *ngIf="listaBase">
+	<div *ngIf="listaBase" class="dgc-painel-principal">
 		<div class="dgc-card" *ngFor="let item of listaBase">
  			<div class="dgc-card-header">
  				<span>{{item.nome}}</span>
@@ -16,6 +16,15 @@
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>Ativa: {{item.ativo}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Suspensa: {{item.suspensa}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Custo Mês: {{item.contaGoogleMetricaMes[0].custoAtual | currency: 'BRL'}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Campanhas Ativas: {{item.contaGoogleMetricaMes[0].qtdeCampanhaAtiva}}</span>
 			</div>
  			<div class="dgc-card-comandos">
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>

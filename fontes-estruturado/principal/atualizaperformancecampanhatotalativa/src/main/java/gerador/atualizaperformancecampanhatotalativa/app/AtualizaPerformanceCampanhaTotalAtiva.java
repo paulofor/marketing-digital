@@ -17,7 +17,7 @@ public class AtualizaPerformanceCampanhaTotalAtiva {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaPerformanceCampanhaTotalAtiva");
-		System.out.println("(22/11/2023 07:36:23)");
+		System.out.println("(29/11/2023 20:59:35)");
 		try {
 			carregaProp();
 			AtualizaPerformanceCampanhaTotalAtivaObj obj = new AtualizaPerformanceCampanhaTotalAtivaObj();
@@ -53,8 +53,12 @@ public class AtualizaPerformanceCampanhaTotalAtiva {
 
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
-		DaoBaseComum.setProximo("AtualizaPerformanceCampanhaTotalAtivaObj", new ContaGoogle_ListaAtivaParaMetricaCampanhaImpl());
-		DaoBaseComum.setProximo("ContaGoogle_ListaAtivaParaMetricaCampanha", new ConsultaGoogleAdsListaAtivaPorContaImpl());
+		DaoBaseComum.setProximo("AtualizaPerformanceCampanhaTotalAtivaObj", new CampanhaAdsMetrica_LimpaMaisRecenteImpl());
+		DaoBaseComum.setProximo("CampanhaAdsMetrica_LimpaMaisRecente", new ContaGoogle_ListaAtivaParaMetricaCampanhaImpl());
+		DaoBaseComum.setProximo("ContaGoogle_ListaAtivaParaMetricaCampanha", new ObtemDadosContaGoogleImpl());
+		DaoBaseComum.setProximo("ObtemDadosContaGoogle", new ContaGoogleMetricaMes_AtualizaDiaContaImpl());
+		DaoBaseComum.setProximo("ContaGoogleMetricaMes_AtualizaDiaConta", new ConsultaGoogleAdsListaAtivaPorContaImpl());
 		DaoBaseComum.setProximo("ConsultaGoogleAdsListaAtivaPorConta", new CampanhaAdsMetrica_InsereListaMetricaImpl());
+		DaoBaseComum.setProximo("CampanhaAdsMetrica_InsereListaMetrica", new CampanhaAdsMetrica_AjustaCampanhaProdutoImpl());
 	}
 }

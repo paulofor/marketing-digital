@@ -12,13 +12,16 @@ public class AtualizaPerformanceCampanhaTotalAtivaObj extends DaoAplicacao {
 	@Override
 	protected void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		ContaGoogle_ListaAtivaParaMetricaCampanha exec = new ContaGoogle_ListaAtivaParaMetricaCampanhaImpl();
+		CampanhaAdsMetrica_LimpaMaisRecente exec = new CampanhaAdsMetrica_LimpaMaisRecenteImpl();
 		exec.setComum(ds);
 		exec.executa();
 		executaFinalizacao(ds);
 		finalizar();
 	}
 	private void executaFinalizacao(DatasetAplicacao ds) {
+		DaoBase finalizacao1 = new CampanhaAdsMetrica_AjustaCampanhaProdutoImpl();
+		finalizacao1.setComum(ds);
+		finalizacao1.executa();
 	}
 	public int getNumPasso() {
 		return 1;

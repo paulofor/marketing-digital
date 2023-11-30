@@ -25,6 +25,7 @@ export interface VisitaProdutoHotmartInterface {
   "maisRecente"?: number;
   "hotmartId"?: number;
   "possuiPalavraChave"?: number;
+  "deltaTemperatura"?: number;
   ideiaPalavraChaves?: IdeiaPalavraChave[];
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   produtoAfiliadoMetricas?: ProdutoAfiliadoMetrica[];
@@ -49,6 +50,7 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
   "maisRecente": number;
   "hotmartId": number;
   "possuiPalavraChave": number;
+  "deltaTemperatura": number;
   ideiaPalavraChaves: IdeiaPalavraChave[];
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   produtoAfiliadoMetricas: ProdutoAfiliadoMetrica[];
@@ -155,6 +157,10 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
         },
         "possuiPalavraChave": {
           name: 'possuiPalavraChave',
+          type: 'number'
+        },
+        "deltaTemperatura": {
+          name: 'deltaTemperatura',
           type: 'number'
         },
       },

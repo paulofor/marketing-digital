@@ -25,6 +25,7 @@ export class CampanhaAdsTesteEditComponent extends BaseEditComponent {
   criaItem() {
     let novo = new CampanhaAdsTeste();
     novo.produtoAfiliadoHotmartId = this.origem.hotmartId;
+    novo.contaGoogleId = this.origem.contaGoogleId;
     return novo;
   }
 

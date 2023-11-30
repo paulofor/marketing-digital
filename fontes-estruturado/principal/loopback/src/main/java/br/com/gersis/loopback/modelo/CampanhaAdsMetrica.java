@@ -27,9 +27,17 @@ public class CampanhaAdsMetrica extends Model {
 	private String estrategia;
 	private String rede;
 	private int conversao;
+	private int maisRecente;
+	private String nomeCampanha;
+	private String statusRejeicao;
+	private String urlFinal;
+	private int hotmartId;
+	private double cpaMedio;
+	private double cpaCampanha;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private ContaGoogle ContaGoogle;
+	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
 
 	public JSONObject getJSON() {
@@ -49,6 +57,13 @@ public class CampanhaAdsMetrica extends Model {
 			obj.put("estrategia", estrategia);
 			obj.put("rede", rede);
 			obj.put("conversao", conversao);
+			obj.put("maisRecente", maisRecente);
+			obj.put("nomeCampanha", nomeCampanha);
+			obj.put("statusRejeicao", statusRejeicao);
+			obj.put("urlFinal", urlFinal);
+			obj.put("hotmartId", hotmartId);
+			obj.put("cpaMedio", cpaMedio);
+			obj.put("cpaCampanha", cpaCampanha);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -134,6 +149,48 @@ public class CampanhaAdsMetrica extends Model {
 	public int getConversao() { 
 		return this.conversao;
 	}
+	public void setMaisRecente(int valor) { 
+		this.maisRecente = valor;
+	}
+	public int getMaisRecente() { 
+		return this.maisRecente;
+	}
+	public void setNomeCampanha(String valor) { 
+		this.nomeCampanha = valor;
+	}
+	public String getNomeCampanha() { 
+		return this.nomeCampanha;
+	}
+	public void setStatusRejeicao(String valor) { 
+		this.statusRejeicao = valor;
+	}
+	public String getStatusRejeicao() { 
+		return this.statusRejeicao;
+	}
+	public void setUrlFinal(String valor) { 
+		this.urlFinal = valor;
+	}
+	public String getUrlFinal() { 
+		return this.urlFinal;
+	}
+	public void setHotmartId(int valor) { 
+		this.hotmartId = valor;
+	}
+	public int getHotmartId() { 
+		return this.hotmartId;
+	}
+	public void setCpaMedio(double valor) { 
+		this.cpaMedio = valor;
+	}
+	public double getCpaMedio() { 
+		return this.cpaMedio;
+	}
+	public void setCpaCampanha(double valor) { 
+		this.cpaCampanha = valor;
+	}
+	public double getCpaCampanha() { 
+		return this.cpaCampanha;
+	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {
 		return CampanhaAdsTeste;
@@ -148,5 +205,12 @@ public class CampanhaAdsMetrica extends Model {
 	public void setContaGoogle(HashMap valor) {
 		this.ContaGoogle = new ContaGoogle();
 		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
+		return ProdutoAfiliadoHotmart;
+	}
+	public void setProdutoAfiliadoHotmart(HashMap valor) {
+		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
 	}
 }

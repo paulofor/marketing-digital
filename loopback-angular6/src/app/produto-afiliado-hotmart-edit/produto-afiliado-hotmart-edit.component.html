@@ -46,7 +46,7 @@
 
     <mat-form-field class="example-full-width" *ngIf="listaConta">
       <mat-select placeholder="Conta Google Corrente"  #contaGoogleId [(ngModel)]="item.contaGoogleId" name="contaGoogleId">
-        <mat-option *ngFor="let conta of listaConta" [value]="conta.id">
+        <mat-option *ngFor="let conta of listaConta" [ngStyle]="{'color': conta.suspensa === 1 ? 'red' : 'inherit'}" [value]="conta.id">
           {{ conta.gmail}} ({{conta.nome}})
         </mat-option>
       </mat-select>
@@ -63,6 +63,23 @@
     <mat-form-field class="example-full-width">
       <input matInput #complementoAnuncio  [(ngModel)]="item.complementoAnuncio" name="complementoAnuncio" placeholder="Sufixo Anúncio" autocomplete="off"/>
     </mat-form-field> 
+
+    <mat-form-field class="example-full-width">
+      <input matInput #rejeicaoUrlOriginal  [(ngModel)]="item.rejeicaoUrlOriginal" name="rejeicaoUrlOriginal" placeholder="Rejeição Url Original" autocomplete="off"/>
+    </mat-form-field> 
+
+    <mat-form-field class="example-full-width">
+      <input matInput #precoMedioProduto  [(ngModel)]="item.precoMedioProduto" name="precoMedioProduto" placeholder="Preço Médio Produto" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #lucroMedioProduto  [(ngModel)]="item.lucroMedioProduto" name="lucroMedioProduto" placeholder="Lucro Médio Produto" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #comentario  [(ngModel)]="item.comentario" name="comentario" placeholder="Comentário" autocomplete="off"/>
+    </mat-form-field> 
+
 
   </mat-dialog-content>
 

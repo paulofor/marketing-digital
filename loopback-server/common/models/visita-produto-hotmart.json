@@ -63,6 +63,9 @@
 		},
 		"possuiPalavraChave": {
 			"type": "number"
+		},
+		"deltaTemperatura": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -201,6 +204,63 @@
 			"http": [
          		{
           			"path": "/listaBoaOpcaoIntermediaria",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaEstiloFanart": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaEstiloFanart",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AjustaDeltaTemperatura": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/ajustaDeltaTemperatura",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaBomCrescimentoTemperatura": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaBomCrescimentoTemperatura",
    					"verb": "get"
  				}
  			]

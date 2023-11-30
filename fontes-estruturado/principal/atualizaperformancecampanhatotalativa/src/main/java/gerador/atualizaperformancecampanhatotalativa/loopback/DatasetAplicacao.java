@@ -9,6 +9,7 @@ public class DatasetAplicacao  implements IDatasetComum {
 	private ContaGoogle contaCorrente;
 	private CampanhaAdsTeste campanhaCorrente;
 	private List<CampanhaAdsMetrica> listaMetricaCampanha;
+	private ContaGoogleMetricaMes metricaConta;
 
 
 	public void setContaCorrente(ContaGoogle valor) { 
@@ -28,5 +29,11 @@ public class DatasetAplicacao  implements IDatasetComum {
 	}
 	public List<CampanhaAdsMetrica> getListaMetricaCampanha() { 
 		return this.listaMetricaCampanha;
+	}
+	public void setMetricaConta(ContaGoogleMetricaMes valor) { 
+		this.metricaConta = valor;
+	}
+	public ContaGoogleMetricaMes getMetricaConta() { 
+		return this.metricaConta;
 	}
 }

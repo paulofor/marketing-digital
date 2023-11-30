@@ -8,6 +8,8 @@ export class ProdutoAfiliadoHotmartDetalheBaseComponent implements OnInit {
 	idPrincipal: number;
 	constructor(protected srv: ProdutoAfiliadoHotmartApi, protected router: ActivatedRoute, protected dialog: MatDialog) { }
 
+	posCarregaTela() {}
+
 	ngOnInit() {
 		this.carregaTela()
 	}
@@ -18,6 +20,7 @@ export class ProdutoAfiliadoHotmartDetalheBaseComponent implements OnInit {
 	 		.subscribe((result: ProdutoAfiliadoHotmart) => {
 				this.principal = result;
 				console.log('principal:', this.principal);
+            	this.posCarregaTela();
 			})
 		})
 	}

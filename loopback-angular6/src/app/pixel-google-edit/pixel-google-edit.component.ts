@@ -21,6 +21,11 @@ export class PixelGoogleEditComponent extends BaseEditComponent {
     return novo;
   }
 
+  filtro() {
+    return {
+      'order' : 'id desc'
+    }
+  }
  
 
 }

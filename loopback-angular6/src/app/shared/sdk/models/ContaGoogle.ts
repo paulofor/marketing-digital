@@ -3,7 +3,8 @@ import {
   CampanhaAdsTeste,
   PixelGoogle,
   ProdutoAfiliadoHotmart,
-  CampanhaAdsMetrica
+  CampanhaAdsMetrica,
+  ContaGoogleMetricaMes
 } from '../index';
 
 declare var Object: any;
@@ -15,11 +16,13 @@ export interface ContaGoogleInterface {
   "senha"?: string;
   "urlAds"?: string;
   "idAds"?: string;
+  "suspensa"?: number;
   "id"?: number;
   campanhaAdsTestes?: CampanhaAdsTeste[];
   pixelGoogles?: PixelGoogle[];
   produtoAfiliadoHotmarts?: ProdutoAfiliadoHotmart[];
   campanhaAdsMetricas?: CampanhaAdsMetrica[];
+  contaGoogleMetricaMes?: ContaGoogleMetricaMes[];
 }
 
 export class ContaGoogle implements ContaGoogleInterface {
@@ -30,11 +33,13 @@ export class ContaGoogle implements ContaGoogleInterface {
   "senha": string;
   "urlAds": string;
   "idAds": string;
+  "suspensa": number;
   "id": number;
   campanhaAdsTestes: CampanhaAdsTeste[];
   pixelGoogles: PixelGoogle[];
   produtoAfiliadoHotmarts: ProdutoAfiliadoHotmart[];
   campanhaAdsMetricas: CampanhaAdsMetrica[];
+  contaGoogleMetricaMes: ContaGoogleMetricaMes[];
   constructor(data?: ContaGoogleInterface) {
     Object.assign(this, data);
   }
@@ -96,6 +101,10 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'idAds',
           type: 'string'
         },
+        "suspensa": {
+          name: 'suspensa',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -130,6 +139,14 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'campanhaAdsMetricas',
           type: 'CampanhaAdsMetrica[]',
           model: 'CampanhaAdsMetrica',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        contaGoogleMetricaMes: {
+          name: 'contaGoogleMetricaMes',
+          type: 'ContaGoogleMetricaMes[]',
+          model: 'ContaGoogleMetricaMes',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'

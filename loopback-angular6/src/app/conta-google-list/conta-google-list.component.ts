@@ -15,4 +15,10 @@ export class ContaGoogleListComponent extends ContaGoogleListBaseComponent {
 		super(srv,router,dialog);
 	}
 
+	getFiltro() {
+		return {
+			'include' : {'relation' : 'contaGoogleMetricaMes'}
+		}
+	}
+
 }

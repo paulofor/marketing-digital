@@ -74,6 +74,7 @@ public class ConsultaGoogleAdsPerformanceImpl extends ConsultaGoogleAdsPerforman
 			    	System.out.println("Obteve resultado search...");
 			    	saida = new CampanhaAdsMetrica();
 			    	saida.setCodigoAds(campanha.getCodigoAds());
+
 			    	saida.setCampanhaAdsTesteId((int)campanha.getId());
 			    	saida.setImpressao(new Long(linha.getMetrics().getImpressions()).intValue());
 			    	saida.setClique((new Long(linha.getMetrics().getClicks()).intValue()));

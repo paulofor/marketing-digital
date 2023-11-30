@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class CampanhaAdsMetrica_InsereListaMetrica extends DaoAplicacao { 
 
-	private int NUM_PASSO = 3;
+	private int NUM_PASSO = 6;
 
 
 	protected List<CampanhaAdsMetrica> listaMetrica;

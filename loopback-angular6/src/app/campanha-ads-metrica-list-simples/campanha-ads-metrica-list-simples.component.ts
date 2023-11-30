@@ -15,10 +15,19 @@ export class CampanhaAdsMetricaListSimplesComponent extends CampanhaAdsMetricaLi
 		super(srv,router,dialog);
 	}
 
+	tipoCard(item) {
+		if (item.status=='ENABLED') {
+			return 'texto-forte'
+		} else {
+			return 'texto-fraco'
+		}
+	}
+
 	getFiltro() {
 		return {
-			'order' : 'dataHora desc',
-			'include' : 'contaGoogle'
+			'order' : 'custoCampanha desc',
+			'include' : 'contaGoogle',
+			'where' : {'maisRecente' : 1}
 		}
 	}
 }

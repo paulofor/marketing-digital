@@ -2,6 +2,91 @@
 
 module.exports = function(Visitaprodutohotmart) {
 
+    Visitaprodutohotmart.AjustaDeltaTemperatura = function(callback) {
+        const sql = "UPDATE ( " +
+            " SELECT hotmartId, " +
+            "        temperatura, " +
+            "       dataInsercao, " +
+            "        @prev_temp AS prev_temp, " +
+            "        @prev_temp := temperatura AS dummy, " +
+            "        @prev_date AS prev_date, " +
+            "        @prev_date := dataInsercao AS dummy2 " +
+            " FROM VisitaProdutoHotmart, " +
+            "      (SELECT @prev_temp := NULL, @prev_date := NULL) temp " +
+            " ORDER BY hotmartId, dataInsercao " +
+            " ) AS t " +
+            " JOIN VisitaProdutoHotmart vph " +
+            " ON t.hotmartId = vph.hotmartId " +
+            " AND t.dataInsercao = vph.dataInsercao " +
+            " SET vph.deltatemperatura = IF(t.hotmartId = vph.hotmartId, vph.temperatura - t.prev_temp, 0) " +
+            " where deltaTemperatura is null";
+        let ds = Visitaprodutohotmart.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
+    
+
+    Visitaprodutohotmart.ListaBomCrescimentoTemperatura = function(callback) {
+        const sql = " select hotmartId " +
+            " from VisitaProdutoHotmart " +
+            " where deltaTemperatura >= 15 " +
+            " and afiliacaoPercentual >= 40 " +
+            " and afiliacaoValor >= 10 and afiliacaoValor <=600 " +
+            " and maisRecente = 1 " +
+            " order by temperatura desc ";
+        let ds = Visitaprodutohotmart.dataSource;
+        ds.connector.query(sql, (err,result) => {
+            console.log('err:' , err);
+            // Mapeando a lista para obter apenas os IDs
+            var idsParaFiltrar = result.map(item => item.hotmartId);
+            const filtro = {
+                'include' : {'relation': 'ideiaPalavraChaves', 'scope' : {'order' : 'mediaPesquisa desc', 'limit' : 15}},
+                'order' : 'temperatura desc',
+                'where': {
+                    'and' : [
+                        {'hotmartId': { inq: idsParaFiltrar } }, 
+                        {'maisRecente': 1 }
+                    ]
+                }
+                
+            }
+            console.log('filtro' , filtro);
+            Visitaprodutohotmart.find(filtro,callback);
+        })
+    }
+
+
+
+
+    Visitaprodutohotmart.ListaEstiloFanart = function(callback) {
+        const sql = " select hotmartId " +
+            " from VisitaProdutoHotmart " +
+            " where temperatura >= 40 and temperatura <= 100 " +
+            " and afiliacaoPercentual >= 60 " +
+            " and afiliacaoValor >= 100 and afiliacaoValor <=300 " +
+            " and maisRecente = 1 " +
+            " order by temperatura desc ";
+        let ds = Visitaprodutohotmart.dataSource;
+        ds.connector.query(sql, (err,result) => {
+            console.log('err:' , err);
+            // Mapeando a lista para obter apenas os IDs
+            var idsParaFiltrar = result.map(item => item.hotmartId);
+            const filtro = {
+                'include' : {'relation': 'ideiaPalavraChaves', 'scope' : {'order' : 'mediaPesquisa desc', 'limit' : 15}},
+                'order' : 'temperatura desc',
+                'where': {
+                    'and' : [
+                        {'hotmartId': { inq: idsParaFiltrar } }, 
+                        {'maisRecente': 1 }
+                    ]
+                }
+                
+            }
+            console.log('filtro' , filtro);
+            Visitaprodutohotmart.find(filtro,callback);
+        })
+    }
+
 
     Visitaprodutohotmart.ListaBoaOpcaoIntermediaria = function(callback) {
         console.log('entrou aqui');
