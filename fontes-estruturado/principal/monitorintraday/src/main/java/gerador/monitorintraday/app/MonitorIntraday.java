@@ -1,0 +1,61 @@
+package gerador.monitorintraday.app;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+import gerador.monitorintraday.passo.*;
+import gerador.monitorintraday.passo.impl.*;
+import br.com.gersis.daobase.comum.DaoBaseComum;
+
+public class MonitorIntraday {
+
+	private static String UrlLoopback = "";
+
+	public static void main(String[] args) {
+		System.out.print("MonitorIntraday");
+		System.out.println("(06/12/2023 12:55:57)");
+		try {
+			carregaProp();
+			MonitorIntradayObj obj = new MonitorIntradayObj();
+			obj.executa();
+			System.out.println("finalizou");
+			System.exit(0);
+		} catch (Exception e) {
+			gravarErro(e);
+		}
+	}
+
+
+	private static void gravarErro(Exception e) {
+		try {
+			FileWriter fileWriter = new FileWriter("MonitorIntraday.err", true);
+			PrintWriter printWriter = new PrintWriter(fileWriter);
+			e.printStackTrace(printWriter);
+			printWriter.close();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	private static void carregaProp() throws IOException {
+		//System.out.println("Dir:" + System.getProperty("user.dir"));
+		//InputStream input = new FileInputStream("CriaPythonTreinoRede.config");
+		//Properties prop = new Properties();
+		//prop.load(input);
+		//UrlLoopback = prop.getProperty("loopback.url");
+		UrlLoopback = "http://vps-40d69db1.vps.ovh.ca:23101/api";
+		DaoBaseComum.setUrl(UrlLoopback);
+	}
+
+	private static void preparaComum() {
+		DaoBaseComum.setUrl(UrlLoopback);
+		DaoBaseComum.setProximo("MonitorIntradayObj", new CampanhaAdsMetricaIntraday_DesligarTodosImpl());
+		DaoBaseComum.setProximo("CampanhaAdsMetricaIntraday_DesligarTodos", new ContaGoogle_ListaAtivaParaMetricaCampanhaImpl());
+		DaoBaseComum.setProximo("ContaGoogle_ListaAtivaParaMetricaCampanha", new ConsultaGoogleAdsListaAtivaPorContaImpl());
+		DaoBaseComum.setProximo("ConsultaGoogleAdsListaAtivaPorConta", new CampanhaAdsMetricaIntraday_AtualizaIntradayImpl());
+	}
+}

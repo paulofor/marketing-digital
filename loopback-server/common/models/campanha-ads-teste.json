@@ -98,6 +98,11 @@
 			"type": "hasMany",
 			"model": "CampanhaAdsMetrica",
 			"foreignKey": ""
+		},
+		"campanhaAdsMetricaIntradays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsMetricaIntraday",
+			"foreignKey": "codigoAds"
 		}
 	},
 	"acls": [],

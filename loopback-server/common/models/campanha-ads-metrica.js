@@ -7,6 +7,15 @@ module.exports = function(Campanhaadsmetrica) {
         Campanhaadsmetrica.create(metrica,callback);
     }
 
+    Campanhaadsmetrica.HistoricoPorCodigoAds = function(codigoAds,callback) {
+        const filtro = {
+            'where' : {'codigoAds' : codigoAds},
+            'order' : 'dataHora desc'
+        }
+        Campanhaadsmetrica.find(filtro,callback);
+    }
+
+
     /*
     Campanhaadsmetrica.InsereListaMetrica = function(lista,callback) {
         let sql = "update CampanhaAdsMetrica set maisRecente = 0  where maisRecente = 1 ";

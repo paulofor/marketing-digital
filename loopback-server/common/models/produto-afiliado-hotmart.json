@@ -67,6 +67,9 @@
 		"comentario": {
 			"type": "string"
 		},
+		"percentualComissaoAtual": {
+			"type": "number"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}
@@ -131,6 +134,11 @@
 		"campanhaAdsMetricas": {
 			"type": "hasMany",
 			"model": "CampanhaAdsMetrica",
+			"foreignKey": "hotmartId"
+		},
+		"precoProdutoAfiliados": {
+			"type": "hasMany",
+			"model": "PrecoProdutoAfiliado",
 			"foreignKey": "hotmartId"
 		}
 	},

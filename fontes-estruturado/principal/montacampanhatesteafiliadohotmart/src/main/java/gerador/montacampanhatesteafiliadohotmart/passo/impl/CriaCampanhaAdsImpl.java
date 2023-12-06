@@ -16,6 +16,7 @@ import com.google.ads.googleads.v13.common.AdTextAsset;
 import com.google.ads.googleads.v13.common.KeywordInfo;
 import com.google.ads.googleads.v13.common.LocationInfo;
 import com.google.ads.googleads.v13.common.ManualCpc;
+import com.google.ads.googleads.v13.common.MaximizeConversions;
 import com.google.ads.googleads.v13.common.ResponsiveSearchAdInfo;
 import com.google.ads.googleads.v13.enums.AdGroupAdStatusEnum.AdGroupAdStatus;
 import com.google.ads.googleads.v13.enums.AdGroupCriterionStatusEnum.AdGroupCriterionStatus;
@@ -78,9 +79,16 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		try {
 			testaCampanha(campanhaTesteCorrente);
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
-			// Creates a single shared budget to be used by the campaigns added below.
 			String budgetResourceName = addCampaignBudget(googleAdsClient, codigoUsuario, campanhaTesteCorrente);
-			String resourceNameCampanha = criaCampanha(googleAdsClient, codigoUsuario, budgetResourceName, campanhaTesteCorrente);
+			String resourceNameCampanha = null;
+			int idModelo = campanhaTesteCorrente.getModeloCampanhaAdsTeste().getIdTipo();
+			if (idModelo==1 || idModelo==2) {
+				resourceNameCampanha = criaCampanhaConversao(googleAdsClient, codigoUsuario, budgetResourceName, campanhaTesteCorrente);
+			}
+			if (idModelo==3) {
+				resourceNameCampanha = criaCampanhaCpc(googleAdsClient, codigoUsuario, budgetResourceName, campanhaTesteCorrente);
+			}
+			//criaCampanha(googleAdsClient, codigoUsuario, budgetResourceName, campanhaTesteCorrente);
 			String resourceNameAdGrupo = createAdGroup(googleAdsClient, codigoUsuario, resourceNameCampanha, campanhaTesteCorrente);
 			createKeywords(googleAdsClient, codigoUsuario, resourceNameAdGrupo, campanhaTesteCorrente);
 			createExpandedTextAd(googleAdsClient, codigoUsuario, resourceNameAdGrupo, campanhaTesteCorrente);
@@ -102,15 +110,18 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		if (campanhaTesteCorrente.getAnuncioCampanhaAdsTestes().size()==0) {
 			throw new RuntimeException("Campanha sem anuncio");
 		}
-		if (campanhaTesteCorrente.getPalavraChaveCampanhaAdsTestes().size()==0) {
-			throw new RuntimeException("Campanha sem palavra-chave");
-		}
+		//if (campanhaTesteCorrente.getPalavraChaveCampanhaAdsTestes().size()==0) {
+		//	throw new RuntimeException("Campanha sem palavra-chave");
+		//}
 	}
 	
 	
 	private String addCampaignBudget(GoogleAdsClient googleAdsClient, long customerId,CampanhaAdsTeste campanha) {
-		// Orçamento diário 5,00
-		long valorDiario = (long) campanha.getModeloCampanhaAdsTeste().getOrcamentoDiario() * 1000000;
+		// Orçamento diário 5,00 - 40,00
+			
+		//long valorDiario = (long) campanha.getModeloCampanhaAdsTeste().getOrcamentoDiario() * 1000000;
+		long valorDiario = (long) 40 * 1000000;
+		
 		CampaignBudget budget = CampaignBudget.newBuilder()
 				.setName("Orçamento " + System.currentTimeMillis())
 				.setDeliveryMethod(BudgetDeliveryMethod.STANDARD)
@@ -129,7 +140,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		}
 	}
 
-	private String criaCampanha(GoogleAdsClient googleAdsClient, long customerId, String budgetResourceName, CampanhaAdsTeste campanha) {
+	private String criaCampanhaCpc(GoogleAdsClient googleAdsClient, long customerId, String budgetResourceName, CampanhaAdsTeste campanha) {
 
 		List<CampaignOperation> operations = new ArrayList<>(1);
 
@@ -147,7 +158,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		String dataFinal = dtFinal.format(formatter);
 
 		// 2 - Campanha
-		String nomeCampanha = "MktDigital-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
+		String nomeCampanha = "MktDigitalClique-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
 		Campaign campaign = Campaign.newBuilder()
 				.setName(nomeCampanha)
 				.setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
@@ -205,6 +216,88 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		return saida;
 	}
 
+	
+	
+	private String criaCampanhaConversao(GoogleAdsClient googleAdsClient,long customerId,  String orcamento,  CampanhaAdsTeste campanha) {
+	    List<CampaignOperation> operations = new ArrayList<>(1);
+
+	    // 1 - Opções de Rede
+	    NetworkSettings networkSettings = NetworkSettings.newBuilder()
+	        .setTargetGoogleSearch(true)
+	        .setTargetSearchNetwork(false)
+	        .setTargetContentNetwork(false)
+	        .setTargetPartnerSearchNetwork(false)
+	        .build();
+
+	    // Formata a data como string no formato AAAAMMDD
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+
+	    LocalDate dtInicial = obtemDataInicial(campanha);
+	    LocalDate dtFinal = obtemDataFinal(dtInicial, campanha);
+	    String dataInicial = dtInicial.format(formatter);
+	    String dataFinal = dtFinal.format(formatter);
+	    
+	    
+
+	    // 2 - Campanha
+	    String nomeCampanha = "MktDigitalConv-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
+	    Campaign campaign = Campaign.newBuilder()
+	        .setName(nomeCampanha)
+	        .setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
+	        .setStatus(CampaignStatus.PAUSED)
+	        .setNetworkSettings(networkSettings)
+	        .setStartDate(dataInicial)
+	        .setCampaignBudget(orcamento)
+	        .setMaximizeConversions(MaximizeConversions.newBuilder()
+	            .setTargetCpaMicros((long) campanha.getCpaMax() * 1000000) // Definir a meta desejada
+	            .build())
+	        .build();
+
+	    campanha.setNomeAds(nomeCampanha);
+	    CampaignOperation op = CampaignOperation.newBuilder().setCreate(campaign).build();
+	    operations.add(op);
+
+	    String saida = null;
+
+	    try (CampaignServiceClient campaignServiceClient = googleAdsClient.getLatestVersion().createCampaignServiceClient()) {
+	        MutateCampaignsResponse response = campaignServiceClient.mutateCampaigns(Long.toString(customerId), operations);
+	        System.out.printf("Added %d campaigns:%n", response.getResultsCount());
+	        for (MutateCampaignResult result : response.getResultsList()) {
+	            System.out.println(result.getResourceName());
+	            saida = result.getResourceName();
+	        }
+	    }
+
+		List<CampaignCriterion> campaignCriteria = new ArrayList<>();
+	    campaignCriteria.add(
+	        CampaignCriterion.newBuilder()
+	            .setCampaign(saida)
+	            // Adds one positive location target for New York City (ID=1023191), specifically adding
+	            // the positive criteria before the negative one.
+	            .setLocation(
+	                LocationInfo.newBuilder()
+	                    .setGeoTargetConstant(ResourceNames.geoTargetConstant(2076))
+	                    .build())
+	            .setNegative(false)
+	            .build());
+	    List<MutateOperation> mutateOperations = campaignCriteria.stream()
+	            .map(
+	                    criterion ->
+	                        MutateOperation.newBuilder()
+	                            .setCampaignCriterionOperation(
+	                                CampaignCriterionOperation.newBuilder().setCreate(criterion).build())
+	                            .build())
+	                .collect(Collectors.toList());
+	    
+	    try (GoogleAdsServiceClient googleAdsServiceClient =
+	            googleAdsClient.getLatestVersion().createGoogleAdsServiceClient()) {
+	          MutateGoogleAdsResponse response =
+	              googleAdsServiceClient.mutate(Long.toString(customerId), mutateOperations);
+	          //printResponseDetails(response);
+	        }
+		return saida;
+	}
+
 
 	private String createAdGroup(GoogleAdsClient googleAdsClient, long customerId, String campaignResourceName, CampanhaAdsTeste campanha) {
 		try (AdGroupServiceClient adGroupServiceClient = googleAdsClient.getLatestVersion().createAdGroupServiceClient()) {
@@ -215,7 +308,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 			long valorCpcMax = 1000000 * 20;
 			
 			if (campanha.getCpcMax()>0) {
-				valorCpcMax = (long) Math.floor(1000000 * campanha.getCpaMax());
+				valorCpcMax = (long) Math.floor(1000000 * campanha.getCpcMax());
 			}
 			
 			AdGroup adGroup = AdGroup.newBuilder()
@@ -259,10 +352,10 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	        }
 	        */
 
-	        valorDouble = palavra.getCpcPara50() * 100;
+	        //valorDouble = palavra.getCpcPara50() * 100;
 
-	        long valorCpc = (long) Math.floor(valorDouble);
-	        valorCpc = 10 * 10000;
+	        //long valorCpc = (long) Math.floor(valorDouble);
+	        //valorCpc = 10 * 10000;
 
 	        // Cria o critério
 	        AdGroupCriterion adGroupCriterion = AdGroupCriterion.newBuilder()
@@ -291,9 +384,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	            adGroupCriterionServiceClient.mutateAdGroupCriteria(
 	                Long.toString(customerId), Arrays.asList(keywordOperation));
 	        String keywordResourceName = keywordResponse.getResults(0).getResourceName();
-	        System.out.printf(
-	            "Palavra-chave com CPC de %d criada com sucesso: '%s'.%n",
-	            valorCpc, keywordResourceName);
+	        System.out.printf("Palavra-chave criada com sucesso:");
 	        try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {
@@ -383,15 +474,28 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	            //.setPath2("deals") // caminho de exibição
 	            .build();
 
-	    List<String> urlFinal = ImmutableList.of(produto.getUrlFinal());
+	    Ad ad = null;
+	    if (produto.getUrlPropria()==null) {
+	    
+	    	List<String> urlFinal = ImmutableList.of(produto.getUrlFinal());
 
-	    // Wraps the info in an Ad object.
-	    Ad ad =
-	        Ad.newBuilder()
-	            .setResponsiveSearchAd(responsiveSearchAdInfo)
-	            .addAllFinalUrls(urlFinal) // URL alvo
-	            .setTrackingUrlTemplate(produto.getUrlTracking())
-	            .build();
+	    	// Wraps the info in an Ad object.
+	    	ad =
+	    			Ad.newBuilder()
+	    			.setResponsiveSearchAd(responsiveSearchAdInfo)
+	    			.addAllFinalUrls(urlFinal) // URL alvo
+	    			.setTrackingUrlTemplate(produto.getUrlTracking())
+	    			.build();
+	    } else {
+	    	List<String> urlFinal = ImmutableList.of(produto.getUrlPropria());
+
+	    	// Wraps the info in an Ad object.
+	    	ad =
+	    			Ad.newBuilder()
+	    			.setResponsiveSearchAd(responsiveSearchAdInfo)
+	    			.addAllFinalUrls(urlFinal) // URL alvo
+	    			.build();
+	    }
 
 	    // Builds the final ad group ad representation.
 	    AdGroupAd adGroupAd =

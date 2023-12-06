@@ -8,6 +8,7 @@ declare var Object: any;
 export interface PalavraChaveCampanhaAdsTesteInterface {
   "campanhaAdsTesteId"?: number;
   "ideiaPalavraChaveId"?: number;
+  "codigoAds"?: string;
   campanhaAdsTeste?: CampanhaAdsTeste;
   ideiaPalavraChave?: IdeiaPalavraChave;
 }
@@ -15,6 +16,7 @@ export interface PalavraChaveCampanhaAdsTesteInterface {
 export class PalavraChaveCampanhaAdsTeste implements PalavraChaveCampanhaAdsTesteInterface {
   "campanhaAdsTesteId": number;
   "ideiaPalavraChaveId": number;
+  "codigoAds": string;
   campanhaAdsTeste: CampanhaAdsTeste;
   ideiaPalavraChave: IdeiaPalavraChave;
   constructor(data?: PalavraChaveCampanhaAdsTesteInterface) {
@@ -57,6 +59,10 @@ export class PalavraChaveCampanhaAdsTeste implements PalavraChaveCampanhaAdsTest
         "ideiaPalavraChaveId": {
           name: 'ideiaPalavraChaveId',
           type: 'number'
+        },
+        "codigoAds": {
+          name: 'codigoAds',
+          type: 'string'
         },
       },
       relations: {

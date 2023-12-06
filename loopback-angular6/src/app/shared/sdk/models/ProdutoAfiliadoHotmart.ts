@@ -10,7 +10,8 @@ import {
   LoadPaginaVenda,
   SolicitacaoCheckout,
   PlanoProduto,
-  LinkCheckout
+  LinkCheckout,
+  PrecoProdutoAfiliado
 } from '../index';
 
 declare var Object: any;
@@ -34,6 +35,7 @@ export interface ProdutoAfiliadoHotmartInterface {
   "precoMedioProduto"?: number;
   "lucroMedioProduto"?: number;
   "comentario"?: string;
+  "percentualComissaoAtual"?: number;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
@@ -47,6 +49,7 @@ export interface ProdutoAfiliadoHotmartInterface {
   solicitacaoCheckouts?: SolicitacaoCheckout[];
   planoProdutos?: PlanoProduto[];
   linkCheckouts?: LinkCheckout[];
+  precoProdutoAfiliados?: PrecoProdutoAfiliado[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -69,6 +72,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "precoMedioProduto": number;
   "lucroMedioProduto": number;
   "comentario": string;
+  "percentualComissaoAtual": number;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
@@ -82,6 +86,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   solicitacaoCheckouts: SolicitacaoCheckout[];
   planoProdutos: PlanoProduto[];
   linkCheckouts: LinkCheckout[];
+  precoProdutoAfiliados: PrecoProdutoAfiliado[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -191,6 +196,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'comentario',
           type: 'string'
         },
+        "percentualComissaoAtual": {
+          name: 'percentualComissaoAtual',
+          type: 'number'
+        },
         "contaGoogleId": {
           name: 'contaGoogleId',
           type: 'number'
@@ -289,6 +298,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'linkCheckouts',
           type: 'LinkCheckout[]',
           model: 'LinkCheckout',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        precoProdutoAfiliados: {
+          name: 'precoProdutoAfiliados',
+          type: 'PrecoProdutoAfiliado[]',
+          model: 'PrecoProdutoAfiliado',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'

@@ -17,6 +17,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>obtemvendashotmart</module>
 		<module>obtemideiapalavrachaveads</module>
 		<module>atualizaperformancecampanhatotalativa</module>
+		<module>monitorintraday</module>
+		<module>atualizaafiliados</module>
 	</modules>
 
 </project>

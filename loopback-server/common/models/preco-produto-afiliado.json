@@ -1,0 +1,76 @@
+{
+	"name": "PrecoProdutoAfiliado",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"valorAVista": {
+			"type": "number"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"parcelas": {
+			"type": "number"
+		},
+		"valorParcela": {
+			"type": "number"
+		},
+		"urlCheckout": {
+			"type": "string"
+		},
+		"hotmartId": {
+			"type": "number"
+		},
+		"valorComissao": {
+			"type": "number"
+		},
+		"valorTotalParcelado": {
+			"type": "number"
+		},
+		"valorComissaoParcelado": {
+			"type": "number"
+		},
+		"percentualComissaoAtual": {
+			"type": "number"
+		},
+		"cpcDesejado": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		}
+	},
+	"acls": [],
+	"methods": {
+		"CalculaComissao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/calculaComissao",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

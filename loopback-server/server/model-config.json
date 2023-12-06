@@ -142,5 +142,13 @@
   "LinkCheckout": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "CampanhaAdsMetricaIntraday": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PrecoProdutoAfiliado": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

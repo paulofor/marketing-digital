@@ -33,6 +33,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private double precoMedioProduto;
 	private double lucroMedioProduto;
 	private String comentario;
+	private double percentualComissaoAtual;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -47,6 +48,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<PlanoProduto> PlanoProdutos;
 	private List<LinkCheckout> LinkCheckouts;
 	private List<CampanhaAdsMetrica> CampanhaAdsMetricas;
+	private List<PrecoProdutoAfiliado> PrecoProdutoAfiliados;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -71,6 +73,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("precoMedioProduto", precoMedioProduto);
 			obj.put("lucroMedioProduto", lucroMedioProduto);
 			obj.put("comentario", comentario);
+			obj.put("percentualComissaoAtual", percentualComissaoAtual);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -191,6 +194,12 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public String getComentario() { 
 		return this.comentario;
+	}
+	public void setPercentualComissaoAtual(double valor) { 
+		this.percentualComissaoAtual = valor;
+	}
+	public double getPercentualComissaoAtual() { 
+		return this.percentualComissaoAtual;
 	}
 
 	public PixelGoogle getPixelGoogle() {
@@ -320,6 +329,18 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsMetricas.add((CampanhaAdsMetrica) objeto);
+		}
+	}
+	public List<PrecoProdutoAfiliado> getPrecoProdutoAfiliados() {
+		return  PrecoProdutoAfiliados;
+	}
+	public void setPrecoProdutoAfiliados(List<PrecoProdutoAfiliado> valores) {
+		this.PrecoProdutoAfiliados = new ArrayList<PrecoProdutoAfiliado>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PrecoProdutoAfiliado();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PrecoProdutoAfiliados.add((PrecoProdutoAfiliado) objeto);
 		}
 	}
 }

@@ -1,0 +1,142 @@
+{
+	"name": "CampanhaAdsMetricaIntraday",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"codigoAds": {
+			"type": "string"
+			,"id": true
+		},
+		"cpc": {
+			"type": "number"
+		},
+		"custoDia": {
+			"type": "number"
+		},
+		"dataHora": {
+			"type": "date"
+		},
+		"status": {
+			"type": "string"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		},
+		"nomeCampanha": {
+			"type": "string"
+		},
+		"clique": {
+			"type": "number"
+		},
+		"impressao": {
+			"type": "number"
+		},
+		"conversao": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"campanhaAdsTeste": {
+			"type": "belongsTo",
+			"model": "CampanhaAdsTeste",
+			"foreignKey": "codigoAds"
+		},
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaIntraday": {
+			"accepts": [
+				{
+					"arg": "metricaIntraday",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaIntraday",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"DesligarTodos": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/desligarTodos",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"TotaisDia": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/totaisDia",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"LimpaDia": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/limpaDia",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

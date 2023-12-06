@@ -77,6 +77,10 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
+      <input matInput #urlYouTube  [(ngModel)]="item.urlYouTube" name="urlYouTube" placeholder="Url YouTube" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
       <input matInput #comentario  [(ngModel)]="item.comentario" name="comentario" placeholder="Comentário" autocomplete="off"/>
     </mat-form-field> 
 

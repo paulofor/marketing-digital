@@ -18,8 +18,7 @@ module.exports = function(Visitaprodutohotmart) {
             " JOIN VisitaProdutoHotmart vph " +
             " ON t.hotmartId = vph.hotmartId " +
             " AND t.dataInsercao = vph.dataInsercao " +
-            " SET vph.deltatemperatura = IF(t.hotmartId = vph.hotmartId, vph.temperatura - t.prev_temp, 0) " +
-            " where deltaTemperatura is null";
+            " SET vph.deltatemperatura = IF(t.hotmartId = vph.hotmartId, vph.temperatura - t.prev_temp, 0) ";
         let ds = Visitaprodutohotmart.dataSource;
         ds.connector.query(sql,callback);
     }
@@ -30,8 +29,8 @@ module.exports = function(Visitaprodutohotmart) {
         const sql = " select hotmartId " +
             " from VisitaProdutoHotmart " +
             " where deltaTemperatura >= 15 " +
-            " and afiliacaoPercentual >= 40 " +
-            " and afiliacaoValor >= 10 and afiliacaoValor <=600 " +
+            " and (afiliacaoPercentual >= 40 or afiliacaoPercentual=0) " +
+            " and afiliacaoValor >= 10 and afiliacaoValor <= 600 " +
             " and maisRecente = 1 " +
             " order by temperatura desc ";
         let ds = Visitaprodutohotmart.dataSource;

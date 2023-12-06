@@ -10,7 +10,8 @@
           <span class="dgc-direita"># {{item.hotmartId}}</span>
         </div>
         <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts.length>0">
-          <span>Temperatura : {{item.visitaProdutoHotmarts[0].temperatura}}</span>
+          <span>Temperatura : {{item.visitaProdutoHotmarts[0].temperatura}} ({{item.visitaProdutoHotmarts[0].deltaTemperatura}})</span>
+          <span>  -  {{item.visitaProdutoHotmarts[0].dataInsercao | date : 'dd/MM/yyyy'}}</span>
         </div>
         <div class="dgc-card-detalhe">
           <span>Final: {{item.urlFinal}}</span>

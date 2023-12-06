@@ -20,6 +20,8 @@ public class ModeloCampanhaAdsTeste extends Model {
 	private double valorTotal;
 	private double multiplicadorCpcCusto;
 	private String tipoCpcCusto;
+	private String nome;
+	private int idTipo;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
@@ -34,6 +36,8 @@ public class ModeloCampanhaAdsTeste extends Model {
 			obj.put("valorTotal", valorTotal);
 			obj.put("multiplicadorCpcCusto", multiplicadorCpcCusto);
 			obj.put("tipoCpcCusto", tipoCpcCusto);
+			obj.put("nome", nome);
+			obj.put("idTipo", idTipo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -76,6 +80,18 @@ public class ModeloCampanhaAdsTeste extends Model {
 	}
 	public String getTipoCpcCusto() { 
 		return this.tipoCpcCusto;
+	}
+	public void setNome(String valor) { 
+		this.nome = valor;
+	}
+	public String getNome() { 
+		return this.nome;
+	}
+	public void setIdTipo(int valor) { 
+		this.idTipo = valor;
+	}
+	public int getIdTipo() { 
+		return this.idTipo;
 	}
 
 	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {

@@ -4,12 +4,31 @@
   </div>
 
   <div class="dgc-card">
+    <div class="dgc-card-detalhe">
+      <span>{{principal.contaGoogle.nome}}</span>
+    </div>
+    <div class="dgc-card-header">
+      <a href="{{principal.urlFinal}}" target="_blank">{{principal.urlFinal}}</a>
+    </div>
+    <div class="dgc-card-detalhe">
+      <a href="{{principal.urlPropria}}" target="_blank">{{principal.urlPropria}}</a>
+    </div>
+    <div class="dgc-card-detalhe">
+      <span>You Tube:{{principal.urlYouTube}}</span>
+    </div>
+    <div class="dgc-card-comandos">
+      <button class="btn-primary btn-sm btn dgc-direita" (click)="editaProduto(principal)">Edita Produto</button>
+   </div>
+  </div>
+
+
+  <div class="dgc-card">
     <div class="dgc-card-header">
       Visitas
     </div>
     <div class="dgc-card-detalhe" *ngFor="let item of principal.visitaProdutoHotmarts">
       {{item.dataInsercao | date : 'dd/MM/yyyy'}}
-      Temperatura: {{item.temperatura}} Valor : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)
+      Temperatura: {{item.temperatura}} Comissão : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)
     </div>
   </div>
 
@@ -20,6 +39,43 @@
     <div class="dgc-card-detalhe" *ngFor="let item of  principal.visitaProdutoHotmarts[0].produtoAfiliadoMetricas">
       {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}} 
       Cpc: {{item.cpcMax | currency : 'BRL'}} {{item.cpcMin | currency : 'BRL'}}
+    </div>
+  </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
+      Precos
+    </div>
+    <div *ngFor="let item of principal.precoProdutoAfiliados">
+      <div class="dgc-card-headeer">
+        <span>{{item.nome}}</span>
+      </div>
+      <div class="dgc-card-detalhe">
+        <span> {{item.parcelas}} X {{item.valorParcela | currency : 'BRL'}} = {{item.valorTotalParcelado | currency : 'BRL' }}</span>
+      </div>
+      <div class="dgc-card-detalhe">
+        <span>A vista: {{item.valorAVista | currency : 'BRL'}}</span>
+      </div>
+      <div class="dgc-card-detalhe">
+        <span>comissão a vista: {{ item.valorComissao | currency : 'BRL'}}</span>
+      </div>
+      <div class="dgc-card-detalhe">
+        <span>comissão parcelada: {{ item.valorComissaoParcelado | currency : 'BRL'}}</span>
+      </div>
+      <div class="dgc-card-detalhe">
+        <span>CPC Desejado: {{item.cpcDesejado | currency : 'BRL'}}</span>
+      </div>
+      <div class="dgc-card-detalhe">
+        <span>{{item.urlCheckout}}</span>
+      </div>
+      <div class="dgc-card-detalhe">
+         <button class="btn-primary btn-sm btn dgc-direita" (click)="editaPreco(item)">Edita Preço</button>
+      </div>
+    </div>
+     
+    <div class="dgc-card-comandos">
+      <button class="btn-primary btn-sm btn" (click)="atualizaPreco()">Atualiza Preços</button>
+      <button class="btn-primary btn-sm btn" (click)="editaPreco()">Novo Preço</button>
     </div>
   </div>
 

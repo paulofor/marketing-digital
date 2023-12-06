@@ -11,6 +11,8 @@ export interface ModeloCampanhaAdsTesteInterface {
   "valorTotal"?: number;
   "multiplicadorCpcCusto"?: number;
   "tipoCpcCusto"?: string;
+  "nome"?: string;
+  "idTipo"?: number;
   "id"?: number;
   campanhaAdsTestes?: CampanhaAdsTeste[];
 }
@@ -22,6 +24,8 @@ export class ModeloCampanhaAdsTeste implements ModeloCampanhaAdsTesteInterface {
   "valorTotal": number;
   "multiplicadorCpcCusto": number;
   "tipoCpcCusto": string;
+  "nome": string;
+  "idTipo": number;
   "id": number;
   campanhaAdsTestes: CampanhaAdsTeste[];
   constructor(data?: ModeloCampanhaAdsTesteInterface) {
@@ -80,6 +84,14 @@ export class ModeloCampanhaAdsTeste implements ModeloCampanhaAdsTesteInterface {
         "tipoCpcCusto": {
           name: 'tipoCpcCusto',
           type: 'string'
+        },
+        "nome": {
+          name: 'nome',
+          type: 'string'
+        },
+        "idTipo": {
+          name: 'idTipo',
+          type: 'number'
         },
         "id": {
           name: 'id',

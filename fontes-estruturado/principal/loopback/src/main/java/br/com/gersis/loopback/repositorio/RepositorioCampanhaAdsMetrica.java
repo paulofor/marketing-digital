@@ -60,6 +60,14 @@ public class RepositorioCampanhaAdsMetrica extends ModelRepository<CampanhaAdsMe
 		invokeStaticMethod("ajustaCampanhaProduto", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void historicoPorCodigoAds(String codigoAds ,final ListCallback<CampanhaAdsMetrica> callback ) {
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricas/historicoPorCodigoAds","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetrica.historicoPorCodigoAds");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("codigoAds", codigoAds);
+		invokeStaticMethod("historicoPorCodigoAds", params,   new JsonArrayParser<CampanhaAdsMetrica>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<CampanhaAdsMetrica> listaEntrada) {
 		JSONArray lista = new JSONArray();

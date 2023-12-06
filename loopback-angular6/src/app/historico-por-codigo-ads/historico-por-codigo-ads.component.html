@@ -1,0 +1,49 @@
+<div class="dgc-painel" *ngIf="listaBase">
+	<div class="dgc-painel-header">
+		<span>Histórico {{listaBase[0].nomeCampanha}}</span>
+	</div>
+	<div class="dgc-painel-principal" >
+		<div class="dgc-card" *ngFor="let item of listaBase">
+			<div class="dgc-card-header">
+				<span>cpc: {{item.cpcMedio | currency: 'BRL'}}</span>
+			   <span class="dgc-direita" style="color: red;" *ngIf="(item.conversao>0)">{{item.conversao}}</span>
+			   <span class="dgc-direita" *ngIf="(item.conversao==0)">{{item.conversao}}</span>
+			</div>
+		   <div class="dgc-card-detalhe">
+			   <span>cliques: {{item.clique}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>impressao: {{item.impressao}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>Custo: {{item.custoCampanha | currency: 'BRL'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>Custo Conv: {{item.cpaMedio | currency: 'BRL'}} (Tg: {{item.cpaCampanha | currency : 'BRL'}})</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.nomeCampanha}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.rede}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.estrategia}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.status}}</span>
+		   </div>
+		   
+		   <div class="dgc-card-detalhe">
+			   <span *ngIf="item.contaGoogle">Conta: {{item.contaGoogle.nome}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>Mais recente: {{item.maisRecente}}</span>
+		   </div>
+
+		</div>
+  	</div>
+</div>

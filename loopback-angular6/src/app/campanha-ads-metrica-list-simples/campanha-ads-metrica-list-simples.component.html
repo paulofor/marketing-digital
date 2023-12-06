@@ -23,7 +23,7 @@
 				<span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
-				<span>{{item.nomeCampanha}}</span>
+				<span routerLink="/historicoPorCodigoAds/{{item.codigoAds}}">{{item.nomeCampanha}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>{{item.rede}}</span>

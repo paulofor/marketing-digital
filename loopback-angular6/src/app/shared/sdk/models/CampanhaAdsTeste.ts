@@ -5,7 +5,8 @@ import {
   PalavraChaveCampanhaAdsTeste,
   AnuncioCampanhaAdsTeste,
   ContaGoogle,
-  CampanhaAdsMetrica
+  CampanhaAdsMetrica,
+  CampanhaAdsMetricaIntraday
 } from '../index';
 
 declare var Object: any;
@@ -36,6 +37,7 @@ export interface CampanhaAdsTesteInterface {
   anuncioCampanhaAdsTestes?: AnuncioCampanhaAdsTeste[];
   contaGoogle?: ContaGoogle;
   campanhaAdsMetricas?: CampanhaAdsMetrica[];
+  campanhaAdsMetricaIntradays?: CampanhaAdsMetricaIntraday[];
 }
 
 export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
@@ -65,6 +67,7 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   anuncioCampanhaAdsTestes: AnuncioCampanhaAdsTeste[];
   contaGoogle: ContaGoogle;
   campanhaAdsMetricas: CampanhaAdsMetrica[];
+  campanhaAdsMetricaIntradays: CampanhaAdsMetricaIntraday[];
   constructor(data?: CampanhaAdsTesteInterface) {
     Object.assign(this, data);
   }
@@ -227,6 +230,14 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'campanhaAdsTesteId'
+        },
+        campanhaAdsMetricaIntradays: {
+          name: 'campanhaAdsMetricaIntradays',
+          type: 'CampanhaAdsMetricaIntraday[]',
+          model: 'CampanhaAdsMetricaIntraday',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'codigoAds'
         },
       }
     }

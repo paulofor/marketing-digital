@@ -50,7 +50,7 @@ export class CampanhaAdsTesteDetalheComponent extends BaseItemIdComponent{
       this.carregaTela();
     });
     this.dialog.open(EscolhePalavraChaveParaCampanhaTesteComponent, {
-      width: '800px',
+      width: '1000px',
       data: {
         item: edicao,
         origem: origem1

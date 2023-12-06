@@ -76,6 +76,8 @@ import { SolicitacaoCheckoutApi } from './services/custom/SolicitacaoCheckout';
 import { PlanoProdutoApi } from './services/custom/PlanoProduto';
 import { ContaGoogleMetricaMesApi } from './services/custom/ContaGoogleMetricaMes';
 import { LinkCheckoutApi } from './services/custom/LinkCheckout';
+import { CampanhaAdsMetricaIntradayApi } from './services/custom/CampanhaAdsMetricaIntraday';
+import { PrecoProdutoAfiliadoApi } from './services/custom/PrecoProdutoAfiliado';
 /**
 * @module SDKBrowserModule
 * @description
@@ -134,6 +136,8 @@ export class SDKBrowserModule {
         PlanoProdutoApi,
         ContaGoogleMetricaMesApi,
         LinkCheckoutApi,
+        CampanhaAdsMetricaIntradayApi,
+        PrecoProdutoAfiliadoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

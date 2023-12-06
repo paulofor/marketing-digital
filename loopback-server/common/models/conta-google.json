@@ -60,6 +60,11 @@
 			"type": "hasMany",
 			"model": "ContaGoogleMetricaMes",
 			"foreignKey": ""
+		},
+		"campanhaAdsMetricaIntradays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsMetricaIntraday",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

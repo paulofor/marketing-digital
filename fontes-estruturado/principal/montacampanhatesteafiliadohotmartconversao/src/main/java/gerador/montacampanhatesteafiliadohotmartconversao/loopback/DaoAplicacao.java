@@ -38,6 +38,8 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioPlanoProduto repPlanoProduto = adapter.createRepository(RepositorioPlanoProduto.class);
 	protected RepositorioContaGoogleMetricaMes repContaGoogleMetricaMes = adapter.createRepository(RepositorioContaGoogleMetricaMes.class);
 	protected RepositorioLinkCheckout repLinkCheckout = adapter.createRepository(RepositorioLinkCheckout.class);
+	protected RepositorioCampanhaAdsMetricaIntraday repCampanhaAdsMetricaIntraday = adapter.createRepository(RepositorioCampanhaAdsMetricaIntraday.class);
+	protected RepositorioPrecoProdutoAfiliado repPrecoProdutoAfiliado = adapter.createRepository(RepositorioPrecoProdutoAfiliado.class);
 
 
 	@Override

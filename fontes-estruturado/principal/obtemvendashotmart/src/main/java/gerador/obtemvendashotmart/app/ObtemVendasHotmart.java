@@ -17,7 +17,7 @@ public class ObtemVendasHotmart {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemVendasHotmart");
-		System.out.println("(29/11/2023 20:59:34)");
+		System.out.println("(06/12/2023 12:55:55)");
 		try {
 			carregaProp();
 			ObtemVendasHotmartObj obj = new ObtemVendasHotmartObj();
@@ -57,5 +57,6 @@ public class ObtemVendasHotmart {
 		DaoBaseComum.setProximo("TokenAcesso_ObtemPorNome", new ColetaProdutoHotmartImpl());
 		DaoBaseComum.setProximo("ColetaProdutoHotmart", new VisitaProdutoHotmart_InsereListaProdutoHotmartImpl());
 		DaoBaseComum.setProximo("VisitaProdutoHotmart_InsereListaProdutoHotmart", new VisitaProdutoHotmart_AtualizaMaisRecenteProdutoHotmartImpl());
+		DaoBaseComum.setProximo("VisitaProdutoHotmart_AtualizaMaisRecenteProdutoHotmart", new VisitaProdutoHotmart_AjustaDeltaTemperaturaImpl());
 	}
 }

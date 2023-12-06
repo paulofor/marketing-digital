@@ -1,15 +1,16 @@
 <div class="dgc-painel">
-	<div class="dgc-painel-header">
+	<div class="dgc-painel-header" *ngIf="listaBase">
 		<span>Produtos Afiliados de Trabalho ({{listaBase.length}})</span>
   		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="reset()">reset</button>
 	</div>
 	<div *ngIf="listaBase">
 		<div class="dgc-card" *ngFor="let item of listaBase">	
  			<div class="dgc-card-header">
- 				<span>{{item.nome}}</span>
+ 				<span class="dgc-link" routerLink="/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}">{{item.nome}}</span>
  			</div>
 			<div class="dgc-card-detalhe">
-				<span>Temperatura: {{item.visitaProdutoHotmarts[0].temperatura}}</span>
+				<span style="margin-right: 4px;">Temperatura: {{item.visitaProdutoHotmarts[0].temperatura}}</span>
+				<span>({{item.visitaProdutoHotmarts[0].dataInsercao | date: 'dd-MM-yyy'}})</span>
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>Afiliação: {{item.visitaProdutoHotmarts[0].afiliacaoValor}} ( {{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}% )</span>

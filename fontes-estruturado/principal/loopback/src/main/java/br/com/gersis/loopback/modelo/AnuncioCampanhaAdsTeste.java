@@ -16,6 +16,7 @@ public class AnuncioCampanhaAdsTeste extends Model {
 
 	private int campanhaAdsTesteId;
 	private int anuncioAdsId;
+	private String codigoAds;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private AnuncioAds AnuncioAds;
@@ -27,6 +28,7 @@ public class AnuncioCampanhaAdsTeste extends Model {
 			obj.put("id",getId());
 			obj.put("campanhaAdsTesteId", campanhaAdsTesteId);
 			obj.put("anuncioAdsId", anuncioAdsId);
+			obj.put("codigoAds", codigoAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -45,6 +47,12 @@ public class AnuncioCampanhaAdsTeste extends Model {
 	}
 	public int getAnuncioAdsId() { 
 		return this.anuncioAdsId;
+	}
+	public void setCodigoAds(String valor) { 
+		this.codigoAds = valor;
+	}
+	public String getCodigoAds() { 
+		return this.codigoAds;
 	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {

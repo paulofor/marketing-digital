@@ -1,0 +1,36 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header" *ngIf="resumoDia">
+		<span>Custo: {{resumoDia.totalCusto | currency: 'BRL'}} , Cliques: {{resumoDia.totalClique}} , Impressão: {{resumoDia.totalImpressao}} </span>
+  		<span class="dgc-direita">{{resumoDia.totalCampanha}} campanhas</span>
+	</div>
+	<div class="dgc-painel-principal" *ngIf="listaBase">
+		<div class="dgc-card  {{tipoCard(item)}}" *ngFor="let item of listaBase">
+			<div class="dgc-card-header">
+				<span>Custo: {{item.custoDia | currency: 'BRL'}}</span>
+  		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>cpc: {{item.cpc | currency: 'BRL'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>clique: {{item.clique}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>impressão: {{item.impressao}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span class="dgc-link" routerLink="/historicoPorCodigoAds/{{item.codigoAds}}">{{item.nomeCampanha}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.status}}</span>
+		   </div>
+		   
+		   <div class="dgc-card-detalhe">
+			   <span *ngIf="item.contaGoogle">Conta: {{item.contaGoogle.nome}}</span>
+		   </div>
+
+		</div>
+  	</div>
+</div>

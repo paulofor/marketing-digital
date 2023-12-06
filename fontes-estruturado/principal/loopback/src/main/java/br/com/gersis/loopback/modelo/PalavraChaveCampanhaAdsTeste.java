@@ -16,6 +16,7 @@ public class PalavraChaveCampanhaAdsTeste extends Model {
 
 	private int campanhaAdsTesteId;
 	private int ideiaPalavraChaveId;
+	private String codigoAds;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private IdeiaPalavraChave IdeiaPalavraChave;
@@ -27,6 +28,7 @@ public class PalavraChaveCampanhaAdsTeste extends Model {
 			obj.put("id",getId());
 			obj.put("campanhaAdsTesteId", campanhaAdsTesteId);
 			obj.put("ideiaPalavraChaveId", ideiaPalavraChaveId);
+			obj.put("codigoAds", codigoAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -45,6 +47,12 @@ public class PalavraChaveCampanhaAdsTeste extends Model {
 	}
 	public int getIdeiaPalavraChaveId() { 
 		return this.ideiaPalavraChaveId;
+	}
+	public void setCodigoAds(String valor) { 
+		this.codigoAds = valor;
+	}
+	public String getCodigoAds() { 
+		return this.codigoAds;
 	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {

@@ -74,6 +74,9 @@ import { LinkCheckoutEditComponent } from './link-checkout-edit/link-checkout-ed
 import { ProdutoPendenteEstruturaComponent } from './produto-pendente-estrutura/produto-pendente-estrutura.component';
 import { ProdutoObtemProximoTrabalhoComponent } from './produto-obtem-proximo-trabalho/produto-obtem-proximo-trabalho.component';
 import { ListaBomCrescimentoTemperaturaComponent } from './lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura.component';
+import { CampanhaAdsMetricaIntradayListSimplesComponent } from './campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples.component';
+import { HistoricoPorCodigoAdsComponent } from './historico-por-codigo-ads/historico-por-codigo-ads.component';
+import { PrecoProdutoAfiliadoEditComponent } from './preco-produto-afiliado-edit/preco-produto-afiliado-edit.component';
 
 
 
@@ -124,7 +127,10 @@ registerLocaleData(localePt, 'pt-BR');
     LinkCheckoutEditComponent,
     ProdutoPendenteEstruturaComponent,
     ProdutoObtemProximoTrabalhoComponent,
-    ListaBomCrescimentoTemperaturaComponent
+    ListaBomCrescimentoTemperaturaComponent,
+    CampanhaAdsMetricaIntradayListSimplesComponent,
+    HistoricoPorCodigoAdsComponent,
+    PrecoProdutoAfiliadoEditComponent
   ],
   imports: [
     BrowserModule,
@@ -181,7 +187,8 @@ registerLocaleData(localePt, 'pt-BR');
     PixelGoogleEditComponent,
     EscolheAnuncioParaCampanhaTesteComponent,
     EscolhePalavraChaveParaCampanhaTesteComponent,
-    ContaGoogleEditComponent
+    ContaGoogleEditComponent,
+    PrecoProdutoAfiliadoEditComponent
   ],
   bootstrap: [AppComponent]
 })

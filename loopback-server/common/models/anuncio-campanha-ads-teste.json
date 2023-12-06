@@ -16,6 +16,9 @@
 		"anuncioAdsId": {
 			"type": "number"
 			,"id": true
+		},
+		"codigoAds": {
+			"type": "string"
 		}
 	},
 	"validations": [],

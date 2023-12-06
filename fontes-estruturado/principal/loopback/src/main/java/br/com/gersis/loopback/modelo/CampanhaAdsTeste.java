@@ -38,6 +38,7 @@ public class CampanhaAdsTeste extends Model {
 	private List<AnuncioCampanhaAdsTeste> AnuncioCampanhaAdsTestes;
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
 	private List<CampanhaAdsMetrica> CampanhaAdsMetricas;
+	private List<CampanhaAdsMetricaIntraday> CampanhaAdsMetricaIntradays;
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -218,6 +219,18 @@ public class CampanhaAdsTeste extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsMetricas.add((CampanhaAdsMetrica) objeto);
+		}
+	}
+	public List<CampanhaAdsMetricaIntraday> getCampanhaAdsMetricaIntradays() {
+		return  CampanhaAdsMetricaIntradays;
+	}
+	public void setCampanhaAdsMetricaIntradays(List<CampanhaAdsMetricaIntraday> valores) {
+		this.CampanhaAdsMetricaIntradays = new ArrayList<CampanhaAdsMetricaIntraday>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CampanhaAdsMetricaIntraday();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CampanhaAdsMetricaIntradays.add((CampanhaAdsMetricaIntraday) objeto);
 		}
 	}
 }

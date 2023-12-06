@@ -26,6 +26,12 @@
 		},
 		"tipoCpcCusto": {
 			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"idTipo": {
+			"type": "number"
 		}
 	},
 	"validations": [],

@@ -28,6 +28,8 @@ import { SolicitacaoCheckout } from '../../models/SolicitacaoCheckout';
 import { PlanoProduto } from '../../models/PlanoProduto';
 import { ContaGoogleMetricaMes } from '../../models/ContaGoogleMetricaMes';
 import { LinkCheckout } from '../../models/LinkCheckout';
+import { CampanhaAdsMetricaIntraday } from '../../models/CampanhaAdsMetricaIntraday';
+import { PrecoProdutoAfiliado } from '../../models/PrecoProdutoAfiliado';
 
 export interface Models { [name: string]: any }
 
@@ -63,6 +65,8 @@ export class SDKModels {
     PlanoProduto: PlanoProduto,
     ContaGoogleMetricaMes: ContaGoogleMetricaMes,
     LinkCheckout: LinkCheckout,
+    CampanhaAdsMetricaIntraday: CampanhaAdsMetricaIntraday,
+    PrecoProdutoAfiliado: PrecoProdutoAfiliado,
     
   };
 

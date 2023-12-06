@@ -1,0 +1,12 @@
+.dgc-card {
+    width: 220px;
+}
+
+.texto-fraco {
+    color: #999 !important; /* Cor mais fraca, por exemplo, um cinza mais claro */
+}
+
+/* Classe para o texto com fonte forte */
+.texto-forte {
+    color: #000 !important; /* Cor mais fraca, por exemplo, um cinza mais claro */
+}

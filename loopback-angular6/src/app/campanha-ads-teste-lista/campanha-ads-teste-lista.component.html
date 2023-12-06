@@ -9,8 +9,7 @@
           <span class="dgc-link" routerLink="/campanhaAdsTesteDetalhe/{{item.id}}">{{item.nome}}</span>
         </div>
         <div class="dgc-card-detalhe">
-          Orçamento: {{ item.modeloCampanhaAdsTeste.orcamentoDiario | currency : 'BRL'}} * {{item.modeloCampanhaAdsTeste.qtdeDia}}
-          = {{ (item.modeloCampanhaAdsTeste.orcamentoDiario*item.modeloCampanhaAdsTeste.qtdeDia) | currency : 'BRL' }}
+          Tipo: {{ item.modeloCampanhaAdsTeste.nome}}
         </div>
         <div class="dgc-card-detalhe">
           Código Ads: {{item.codigoAds}}

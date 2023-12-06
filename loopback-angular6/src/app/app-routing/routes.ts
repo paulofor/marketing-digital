@@ -27,6 +27,8 @@ import { ListaEstiloFanartComponent } from '../lista-estilo-fanart/lista-estilo-
 import { ProdutoPendenteEstruturaComponent } from '../produto-pendente-estrutura/produto-pendente-estrutura.component';
 import { ProdutoObtemProximoTrabalhoComponent } from '../produto-obtem-proximo-trabalho/produto-obtem-proximo-trabalho.component';
 import { ListaBomCrescimentoTemperaturaComponent } from '../lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura.component';
+import { CampanhaAdsMetricaIntradayListSimplesComponent } from '../campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples.component';
+import { HistoricoPorCodigoAdsComponent } from '../historico-por-codigo-ads/historico-por-codigo-ads.component';
 
 
 
@@ -65,6 +67,8 @@ export const routes : Routes = [
     { path: 'pendenteEstrutura' , component: ProdutoPendenteEstruturaComponent },    
     { path: 'workProduto/:id' , component: ProdutoObtemProximoTrabalhoComponent },
     { path: 'crescimentoTemperatura' , component: ListaBomCrescimentoTemperaturaComponent },
+    { path: 'campanhaAdsMetricaIntradayListSimples' , component: CampanhaAdsMetricaIntradayListSimplesComponent },
+    { path: 'historicoPorCodigoAds/:id' , component: HistoricoPorCodigoAdsComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

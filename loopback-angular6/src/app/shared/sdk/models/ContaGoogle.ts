@@ -4,7 +4,8 @@ import {
   PixelGoogle,
   ProdutoAfiliadoHotmart,
   CampanhaAdsMetrica,
-  ContaGoogleMetricaMes
+  ContaGoogleMetricaMes,
+  CampanhaAdsMetricaIntraday
 } from '../index';
 
 declare var Object: any;
@@ -23,6 +24,7 @@ export interface ContaGoogleInterface {
   produtoAfiliadoHotmarts?: ProdutoAfiliadoHotmart[];
   campanhaAdsMetricas?: CampanhaAdsMetrica[];
   contaGoogleMetricaMes?: ContaGoogleMetricaMes[];
+  campanhaAdsMetricaIntradays?: CampanhaAdsMetricaIntraday[];
 }
 
 export class ContaGoogle implements ContaGoogleInterface {
@@ -40,6 +42,7 @@ export class ContaGoogle implements ContaGoogleInterface {
   produtoAfiliadoHotmarts: ProdutoAfiliadoHotmart[];
   campanhaAdsMetricas: CampanhaAdsMetrica[];
   contaGoogleMetricaMes: ContaGoogleMetricaMes[];
+  campanhaAdsMetricaIntradays: CampanhaAdsMetricaIntraday[];
   constructor(data?: ContaGoogleInterface) {
     Object.assign(this, data);
   }
@@ -147,6 +150,14 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'contaGoogleMetricaMes',
           type: 'ContaGoogleMetricaMes[]',
           model: 'ContaGoogleMetricaMes',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        campanhaAdsMetricaIntradays: {
+          name: 'campanhaAdsMetricaIntradays',
+          type: 'CampanhaAdsMetricaIntraday[]',
+          model: 'CampanhaAdsMetricaIntraday',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'

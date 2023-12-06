@@ -27,5 +27,7 @@ export * from './SolicitacaoCheckout';
 export * from './PlanoProduto';
 export * from './ContaGoogleMetricaMes';
 export * from './LinkCheckout';
+export * from './CampanhaAdsMetricaIntraday';
+export * from './PrecoProdutoAfiliado';
 export * from './BaseModels';
 export * from './FireLoopRef';

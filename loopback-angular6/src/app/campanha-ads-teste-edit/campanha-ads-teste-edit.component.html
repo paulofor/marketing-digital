@@ -11,7 +11,7 @@
     <mat-form-field class="example-half-width" *ngIf="listaModelo">
       <mat-select placeholder="Modelo Campanha"  #modeloCampanhaAdsTesteId [(ngModel)]="item.modeloCampanhaAdsTesteId" name="modeloCampanhaAdsTesteId">
         <mat-option *ngFor="let modelo of listaModelo" [value]="modelo.id">
-          Orçamento: {{ modelo.orcamentoDiario | currency : 'BRL'}} * {{modelo.qtdeDia}}
+          {{modelo.nome}}
         </mat-option>
       </mat-select>
     </mat-form-field>

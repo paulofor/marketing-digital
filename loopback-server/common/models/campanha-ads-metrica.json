@@ -177,6 +177,31 @@
    					"verb": "post"
  				}
  			]
+		},
+		"HistoricoPorCodigoAds": {
+			"accepts": [
+				{
+					"arg": "codigoAds",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/historicoPorCodigoAds",
+   					"verb": "get"
+ 				}
+ 			]
 		}
 	}
 }
