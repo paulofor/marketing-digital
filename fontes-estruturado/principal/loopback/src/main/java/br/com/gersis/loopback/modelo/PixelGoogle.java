@@ -28,7 +28,15 @@ public class PixelGoogle extends Model {
 	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
 	private List<ProdutoAfiliadoHotmart> ProdutoAfiliadoHotmarts;
-	private List<ProdutoAfiliadoHotmart> pixelGooglePaginaVenda;
+	private List<ProdutoAfiliadoHotmart> produtoAfiliadoPaginaVenda;
+	private List<ProdutoAfiliadoHotmart> pixelGoogleCheckout;
+
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -131,16 +139,28 @@ public class PixelGoogle extends Model {
 			this.ProdutoAfiliadoHotmarts.add((ProdutoAfiliadoHotmart) objeto);
 		}
 	}
-	public List<ProdutoAfiliadoHotmart> getPixelGooglePaginaVenda() {
-		return  pixelGooglePaginaVenda;
+	public List<ProdutoAfiliadoHotmart> getProdutoAfiliadoPaginaVenda() {
+		return  produtoAfiliadoPaginaVenda;
 	}
-	public void setPixelGooglePaginaVenda(List<ProdutoAfiliadoHotmart> valores) {
-		this.pixelGooglePaginaVenda = new ArrayList<ProdutoAfiliadoHotmart>();
+	public void setProdutoAfiliadoPaginaVenda(List<ProdutoAfiliadoHotmart> valores) {
+		this.produtoAfiliadoPaginaVenda = new ArrayList<ProdutoAfiliadoHotmart>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new ProdutoAfiliadoHotmart();
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.pixelGooglePaginaVenda.add((ProdutoAfiliadoHotmart) objeto);
+			this.produtoAfiliadoPaginaVenda.add((ProdutoAfiliadoHotmart) objeto);
+		}
+	}
+	public List<ProdutoAfiliadoHotmart> getPixelGoogleCheckout() {
+		return  pixelGoogleCheckout;
+	}
+	public void setPixelGoogleCheckout(List<ProdutoAfiliadoHotmart> valores) {
+		this.pixelGoogleCheckout = new ArrayList<ProdutoAfiliadoHotmart>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoAfiliadoHotmart();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.pixelGoogleCheckout.add((ProdutoAfiliadoHotmart) objeto);
 		}
 	}
 }

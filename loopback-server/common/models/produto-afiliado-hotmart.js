@@ -2,6 +2,56 @@
 
 module.exports = function(Produtoafiliadohotmart) {
 
+
+    Produtoafiliadohotmart.AtualizaUrlHotlink = function( produto, callback) {
+        //console.log('entrou aqui: ' , produto);
+        const ds = Produtoafiliadohotmart.dataSource;
+        const sql = "update ProdutoAfiliadoHotmart set salesPage = '" + produto.salesPage + "' , publicProfileLink = '" + produto.publicProfileLink + "' " +
+            " where hotmartId = " + produto.hotmartId;
+        //console.log(sql);
+        ds.connector.query(sql,callback);
+    }
+
+
+    Produtoafiliadohotmart.ListaParaPesquisaHotlink = function(callback) {
+        const filtro = {'where' : {'trabalho' : 1}}
+        Produtoafiliadohotmart.find(filtro,callback);
+    }
+
+
+    Produtoafiliadohotmart.AtualizaTemperaturaAtual = function(callback) {
+        const sql1 = "update ProdutoAfiliadoHotmart " +
+                " set temperaturaAtual = (select temperatura from VisitaProdutoHotmart " +
+                " where maisRecente = 1 and ProdutoAfiliadoHotmart.hotmartId = VisitaProdutoHotmart.hotmartId)";
+        const sql0 = "update ProdutoAfiliadoHotmart set temperaturaAtual = 0";
+        let ds = Produtoafiliadohotmart.dataSource;
+        ds.connector.query(sql0, (err,result) => {
+            ds.connector.query(sql1, callback);
+        })
+    }
+
+
+
+    Produtoafiliadohotmart.AtualizaAfiliados = function(listaAfiliado,callback) {
+        let ds = Produtoafiliadohotmart.dataSource;
+        console.log('tamanho: ' , listaAfiliado.length);
+        for (let i=0; i < listaAfiliado.length ; i++) {
+            let item = listaAfiliado[i];
+            Produtoafiliadohotmart.findById(item.hotmartId, (err,result) => {
+                if (!result && !err) {
+                    let sql = "insert into ProdutoAfiliadoHotmart (hotmartId, nome, hotmartUcode) values (" + item.hotmartId + " , '" + item.nome + "' , '" + item.hotmartUcode + "') ";
+                    //console.log(sql);
+                    ds.connector.query(sql,(err,result) => {
+
+                    })
+                }
+            })
+        }
+        callback(null, {'recebi' : 'ok'});
+    }
+
+
+
     Produtoafiliadohotmart.ObtemProximoTrabalho = function(hotmartId,callback) {
         const hoje = new Date();
         const tresDiasAtras = new Date(hoje.getTime() - (3 * 24 * 60 * 60 * 1000)); // Data de três dias atrás
@@ -49,7 +99,7 @@ module.exports = function(Produtoafiliadohotmart) {
         */
         const filtro = {
             'where' : {'and' : [{'criaPixelVenda' : '1'} , {'pixelGoogleId' : null}]},
-            'include' : 'contaGoogle'
+            'include' : ['contaGoogle','contaRemarketing']
         }
         Produtoafiliadohotmart.find(filtro, callback);
     }

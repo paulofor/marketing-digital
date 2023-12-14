@@ -45,13 +45,14 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		if (produtoAfiliadoCorrente.getSigla()==null) {
 			throw new RuntimeException("Sem sigla");
 		}
+		if (produtoAfiliadoCorrente.getContaGoogle()==null) {
+			throw new RuntimeException("Sem conta google");
+		}
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
-			String nomePixelPaginaVenda = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_pagina_venda_" + produtoAfiliadoCorrente.getContaGoogle().getNome();
 			String nomePixel = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_venda_" + produtoAfiliadoCorrente.getContaGoogle().getNome();
 			long codigoUsuario = new Long(produtoAfiliadoCorrente.getContaGoogle().getIdAds().replace("-", ""));
-			this.saidaPixelGooglePaginaVenda = criaPixel(googleAdsClient,nomePixelPaginaVenda,codigoUsuario);
 			this.saidaPixelGoogle = criaPixel(googleAdsClient,nomePixel,codigoUsuario);
 			//criaMeta(googleAdsClient);
 		} catch (FileNotFoundException fnfe) {

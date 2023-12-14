@@ -5,12 +5,16 @@ export interface TokenAcessoInterface {
   "nome"?: string;
   "token"?: string;
   "dataAtualizacao"?: Date;
+  "valido"?: number;
+  "dataAcesso"?: Date;
 }
 
 export class TokenAcesso implements TokenAcessoInterface {
   "nome": string;
   "token": string;
   "dataAtualizacao": Date;
+  "valido": number;
+  "dataAcesso": Date;
   constructor(data?: TokenAcessoInterface) {
     Object.assign(this, data);
   }
@@ -54,6 +58,14 @@ export class TokenAcesso implements TokenAcessoInterface {
         },
         "dataAtualizacao": {
           name: 'dataAtualizacao',
+          type: 'Date'
+        },
+        "valido": {
+          name: 'valido',
+          type: 'number'
+        },
+        "dataAcesso": {
+          name: 'dataAcesso',
           type: 'Date'
         },
       },

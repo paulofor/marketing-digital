@@ -14,6 +14,12 @@
 		},
 		"tempoConsumido": {
 			"type": "number"
+		},
+		"visitante": {
+			"type": "string"
+		},
+		"qtdeVisita": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -31,6 +37,12 @@
 				{
 					"arg": "idHm",
 					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "visitante",
+					"type": "string",
    					"required": false,
     				"description": ""
 				}
@@ -67,6 +79,25 @@
          		{
           			"path": "/ultimosAcessos",
    					"verb": "get"
+ 				}
+ 			]
+		},
+		"LimpaMeuAcesso": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/limpaMeuAcesso",
+   					"verb": "post"
  				}
  			]
 		}

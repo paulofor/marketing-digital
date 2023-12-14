@@ -57,6 +57,9 @@
 		"cpcMax": {
 			"type": "number"
 		},
+		"codigoAdsGrupoAnuncio": {
+			"type": "string"
+		},
 		"modeloCampanhaAdsTesteId": {
 			"type": "number"
 		},

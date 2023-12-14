@@ -40,6 +40,20 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioLinkCheckout repLinkCheckout = adapter.createRepository(RepositorioLinkCheckout.class);
 	protected RepositorioCampanhaAdsMetricaIntraday repCampanhaAdsMetricaIntraday = adapter.createRepository(RepositorioCampanhaAdsMetricaIntraday.class);
 	protected RepositorioPrecoProdutoAfiliado repPrecoProdutoAfiliado = adapter.createRepository(RepositorioPrecoProdutoAfiliado.class);
+	protected RepositorioAnuncioAdsDisplay repAnuncioAdsDisplay = adapter.createRepository(RepositorioAnuncioAdsDisplay.class);
+	protected RepositorioImagemAnuncio repImagemAnuncio = adapter.createRepository(RepositorioImagemAnuncio.class);
+	protected RepositorioVisitante repVisitante = adapter.createRepository(RepositorioVisitante.class);
+	protected RepositorioProdutoProprio repProdutoProprio = adapter.createRepository(RepositorioProdutoProprio.class);
+	protected RepositorioVideoExecucaoPaginaVenda repVideoExecucaoPaginaVenda = adapter.createRepository(RepositorioVideoExecucaoPaginaVenda.class);
+	protected RepositorioProdutoAfiliadoHotlink repProdutoAfiliadoHotlink = adapter.createRepository(RepositorioProdutoAfiliadoHotlink.class);
+	protected RepositorioTagIdSecaoPaginaVenda repTagIdSecaoPaginaVenda = adapter.createRepository(RepositorioTagIdSecaoPaginaVenda.class);
+	protected RepositorioCampanhaAdsRedeDisplay repCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioCampanhaAdsRedeDisplay.class);
+	protected RepositorioOtimizacaoCampanhaAdsRedeDisplay repOtimizacaoCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioOtimizacaoCampanhaAdsRedeDisplay.class);
+	protected RepositorioPaginaVenda repPaginaVenda = adapter.createRepository(RepositorioPaginaVenda.class);
+	protected RepositorioPublicoAlvoAds repPublicoAlvoAds = adapter.createRepository(RepositorioPublicoAlvoAds.class);
+	protected RepositorioPublicoAlvoAdsDiario repPublicoAlvoAdsDiario = adapter.createRepository(RepositorioPublicoAlvoAdsDiario.class);
+	protected RepositorioFaixaHorarioCampanhaAds repFaixaHorarioCampanhaAds = adapter.createRepository(RepositorioFaixaHorarioCampanhaAds.class);
+	protected RepositorioAnuncioCampanhaAdsDisplay repAnuncioCampanhaAdsDisplay = adapter.createRepository(RepositorioAnuncioCampanhaAdsDisplay.class);
 
 
 	@Override

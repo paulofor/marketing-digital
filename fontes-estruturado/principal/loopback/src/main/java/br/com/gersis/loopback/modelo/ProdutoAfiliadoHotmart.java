@@ -34,10 +34,21 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private double lucroMedioProduto;
 	private String comentario;
 	private double percentualComissaoAtual;
+	private String urlYouTube;
+	private int contaGoogleRemarketingId;
+	private int pixelGoogleCheckoutId;
+	private String hotmartUcode;
+	private String tagIdVideoVenda;
+	private String salesPage;
+	private String publicProfileLink;
+	private int temperaturaAtual;
+	private int possuiImagemRedeDisplay;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
-	private PixelGoogle produtoAfiliadoPaginaVenda;
+	private PixelGoogle pixelGooglePaginaVenda;
+	private ContaGoogle contaRemarketing;
+	private PixelGoogle pixelGoogleCheckout;
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 	private List<AnuncioAds> AnuncioAds;
@@ -49,6 +60,18 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<LinkCheckout> LinkCheckouts;
 	private List<CampanhaAdsMetrica> CampanhaAdsMetricas;
 	private List<PrecoProdutoAfiliado> PrecoProdutoAfiliados;
+	private List<ProdutoAfiliadoHotlink> ProdutoAfiliadoHotlinks;
+	private List<TagIdSecaoPaginaVenda> TagIdSecaoPaginaVendas;
+	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
+	private List<PaginaVenda> PaginaVendas;
+	private List<PublicoAlvoAds> PublicoAlvoAds;
+
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -74,6 +97,15 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("lucroMedioProduto", lucroMedioProduto);
 			obj.put("comentario", comentario);
 			obj.put("percentualComissaoAtual", percentualComissaoAtual);
+			obj.put("urlYouTube", urlYouTube);
+			obj.put("contaGoogleRemarketingId", contaGoogleRemarketingId);
+			obj.put("pixelGoogleCheckoutId", pixelGoogleCheckoutId);
+			obj.put("hotmartUcode", hotmartUcode);
+			obj.put("tagIdVideoVenda", tagIdVideoVenda);
+			obj.put("salesPage", salesPage);
+			obj.put("publicProfileLink", publicProfileLink);
+			obj.put("temperaturaAtual", temperaturaAtual);
+			obj.put("possuiImagemRedeDisplay", possuiImagemRedeDisplay);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -201,6 +233,60 @@ public class ProdutoAfiliadoHotmart extends Model {
 	public double getPercentualComissaoAtual() { 
 		return this.percentualComissaoAtual;
 	}
+	public void setUrlYouTube(String valor) { 
+		this.urlYouTube = valor;
+	}
+	public String getUrlYouTube() { 
+		return this.urlYouTube;
+	}
+	public void setContaGoogleRemarketingId(int valor) { 
+		this.contaGoogleRemarketingId = valor;
+	}
+	public int getContaGoogleRemarketingId() { 
+		return this.contaGoogleRemarketingId;
+	}
+	public void setPixelGoogleCheckoutId(int valor) { 
+		this.pixelGoogleCheckoutId = valor;
+	}
+	public int getPixelGoogleCheckoutId() { 
+		return this.pixelGoogleCheckoutId;
+	}
+	public void setHotmartUcode(String valor) { 
+		this.hotmartUcode = valor;
+	}
+	public String getHotmartUcode() { 
+		return this.hotmartUcode;
+	}
+	public void setTagIdVideoVenda(String valor) { 
+		this.tagIdVideoVenda = valor;
+	}
+	public String getTagIdVideoVenda() { 
+		return this.tagIdVideoVenda;
+	}
+	public void setSalesPage(String valor) { 
+		this.salesPage = valor;
+	}
+	public String getSalesPage() { 
+		return this.salesPage;
+	}
+	public void setPublicProfileLink(String valor) { 
+		this.publicProfileLink = valor;
+	}
+	public String getPublicProfileLink() { 
+		return this.publicProfileLink;
+	}
+	public void setTemperaturaAtual(int valor) { 
+		this.temperaturaAtual = valor;
+	}
+	public int getTemperaturaAtual() { 
+		return this.temperaturaAtual;
+	}
+	public void setPossuiImagemRedeDisplay(int valor) { 
+		this.possuiImagemRedeDisplay = valor;
+	}
+	public int getPossuiImagemRedeDisplay() { 
+		return this.possuiImagemRedeDisplay;
+	}
 
 	public PixelGoogle getPixelGoogle() {
 		return PixelGoogle;
@@ -216,12 +302,26 @@ public class ProdutoAfiliadoHotmart extends Model {
 		this.ContaGoogle = new ContaGoogle();
 		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
 	}
-	public PixelGoogle getProdutoAfiliadoPaginaVenda() {
-		return produtoAfiliadoPaginaVenda;
+	public PixelGoogle getPixelGooglePaginaVenda() {
+		return pixelGooglePaginaVenda;
 	}
-	public void setProdutoAfiliadoPaginaVenda(HashMap valor) {
-		this.produtoAfiliadoPaginaVenda = new PixelGoogle();
-		BeanUtil.setProperties(this.produtoAfiliadoPaginaVenda, (Map<String, ? extends Object>) valor, true);
+	public void setPixelGooglePaginaVenda(HashMap valor) {
+		this.pixelGooglePaginaVenda = new PixelGoogle();
+		BeanUtil.setProperties(this.pixelGooglePaginaVenda, (Map<String, ? extends Object>) valor, true);
+	}
+	public ContaGoogle getContaRemarketing() {
+		return contaRemarketing;
+	}
+	public void setContaRemarketing(HashMap valor) {
+		this.contaRemarketing = new ContaGoogle();
+		BeanUtil.setProperties(this.contaRemarketing, (Map<String, ? extends Object>) valor, true);
+	}
+	public PixelGoogle getPixelGoogleCheckout() {
+		return pixelGoogleCheckout;
+	}
+	public void setPixelGoogleCheckout(HashMap valor) {
+		this.pixelGoogleCheckout = new PixelGoogle();
+		BeanUtil.setProperties(this.pixelGoogleCheckout, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {
 		return  CampanhaAdsTestes;
@@ -341,6 +441,66 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PrecoProdutoAfiliados.add((PrecoProdutoAfiliado) objeto);
+		}
+	}
+	public List<ProdutoAfiliadoHotlink> getProdutoAfiliadoHotlinks() {
+		return  ProdutoAfiliadoHotlinks;
+	}
+	public void setProdutoAfiliadoHotlinks(List<ProdutoAfiliadoHotlink> valores) {
+		this.ProdutoAfiliadoHotlinks = new ArrayList<ProdutoAfiliadoHotlink>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoAfiliadoHotlink();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoAfiliadoHotlinks.add((ProdutoAfiliadoHotlink) objeto);
+		}
+	}
+	public List<TagIdSecaoPaginaVenda> getTagIdSecaoPaginaVendas() {
+		return  TagIdSecaoPaginaVendas;
+	}
+	public void setTagIdSecaoPaginaVendas(List<TagIdSecaoPaginaVenda> valores) {
+		this.TagIdSecaoPaginaVendas = new ArrayList<TagIdSecaoPaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new TagIdSecaoPaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.TagIdSecaoPaginaVendas.add((TagIdSecaoPaginaVenda) objeto);
+		}
+	}
+	public List<CampanhaAdsRedeDisplay> getCampanhaAdsRedeDisplays() {
+		return  CampanhaAdsRedeDisplays;
+	}
+	public void setCampanhaAdsRedeDisplays(List<CampanhaAdsRedeDisplay> valores) {
+		this.CampanhaAdsRedeDisplays = new ArrayList<CampanhaAdsRedeDisplay>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CampanhaAdsRedeDisplay();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CampanhaAdsRedeDisplays.add((CampanhaAdsRedeDisplay) objeto);
+		}
+	}
+	public List<PaginaVenda> getPaginaVendas() {
+		return  PaginaVendas;
+	}
+	public void setPaginaVendas(List<PaginaVenda> valores) {
+		this.PaginaVendas = new ArrayList<PaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendas.add((PaginaVenda) objeto);
+		}
+	}
+	public List<PublicoAlvoAds> getPublicoAlvoAds() {
+		return  PublicoAlvoAds;
+	}
+	public void setPublicoAlvoAds(List<PublicoAlvoAds> valores) {
+		this.PublicoAlvoAds = new ArrayList<PublicoAlvoAds>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PublicoAlvoAds();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PublicoAlvoAds.add((PublicoAlvoAds) objeto);
 		}
 	}
 }

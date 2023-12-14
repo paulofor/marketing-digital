@@ -6,13 +6,35 @@
     </title>
     <meta name="robots" content="max-image-preview:large">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11408245263"></script>
-  
-    
     <script>
+
+        function generateRandomValue() {
+            const array = new Uint32Array(2);
+            crypto.getRandomValues(array);
+            return array[0].toString(16) + array[1].toString(16);
+        }
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Verifica se o cookie começa com o nome desejado
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('executando')
-            fetch('proxy-load.php?id=492187')
+            console.log('executando');
+            // Use a função getCookie para verificar se um cookie existe
+            let meuCookie = getCookie('digicomId');
+            console.log('meu cookie:', meuCookie);
+            if (!meuCookie) {
+                // Se o cookie não existir, crie-o e envie como parâmetro para o PHP
+                meuCookie = generateRandomValue(); // Defina o valor desejado para o cookie
+                document.cookie = 'digicomId=' + meuCookie + '; path=/'; // Define o cookie
+            }
+            fetch('proxy-load.php?id=492187&visitante=' + meuCookie)
                 .then(function (response) {
                     console.log('Requisição GET para a outra URL feita com sucesso.', response);
                 })
@@ -22,23 +44,22 @@
             var links = document.querySelectorAll('.pagamento');
             // Adiciona um ouvinte de eventos a cada elemento encontrado
             links.forEach(function (link) {
-            document.querySelectorAll('.pagamento').forEach(function (link) {
-                link.addEventListener('click', function (event) {
-                    fetch('proxy-checkout.php?id=492187')
-                        .then(function (response) {
-                            console.log('Requisição GET para a outra URL feita com sucesso.', response);
-                        })
-                        .catch(function (error) {
-                            console.error('Erro ao fazer requisição GET para a outra URL:', error);
-                        });
+                document.querySelectorAll('.pagamento').forEach(function (link) {
+                    link.addEventListener('click', function (event) {
+                        fetch('proxy-checkout.php?id=492187&visitante=' + meuCookie)
+                            .then(function (response) {
+                                console.log('Requisição GET para a outra URL feita com sucesso.', response);
+                            })
+                            .catch(function (error) {
+                                console.error('Erro ao fazer requisição GET para a outra URL:', error);
+                            });
                     });
                 });
             });
         });
 
-       
+
     </script>
-    
 
 
     <script src="https://identification.hotmart.com/id.min.js?account=b1fc3f8f-2130-3b8c-aa36-1d22185eac20"

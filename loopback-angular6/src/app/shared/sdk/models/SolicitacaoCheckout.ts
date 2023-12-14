@@ -6,15 +6,17 @@ import {
 declare var Object: any;
 export interface SolicitacaoCheckoutInterface {
   "dataHora"?: Date;
-  "id"?: number;
+  "visitante"?: string;
   "hotmartId"?: number;
+  "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
 }
 
 export class SolicitacaoCheckout implements SolicitacaoCheckoutInterface {
   "dataHora": Date;
-  "id": number;
+  "visitante": string;
   "hotmartId": number;
+  "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   constructor(data?: SolicitacaoCheckoutInterface) {
     Object.assign(this, data);
@@ -53,12 +55,16 @@ export class SolicitacaoCheckout implements SolicitacaoCheckoutInterface {
           name: 'dataHora',
           type: 'Date'
         },
-        "id": {
-          name: 'id',
-          type: 'number'
+        "visitante": {
+          name: 'visitante',
+          type: 'string'
         },
         "hotmartId": {
           name: 'hotmartId',
+          type: 'number'
+        },
+        "id": {
+          name: 'id',
           type: 'number'
         },
       },

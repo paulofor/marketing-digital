@@ -30,6 +30,15 @@ import { ContaGoogleMetricaMes } from '../../models/ContaGoogleMetricaMes';
 import { LinkCheckout } from '../../models/LinkCheckout';
 import { CampanhaAdsMetricaIntraday } from '../../models/CampanhaAdsMetricaIntraday';
 import { PrecoProdutoAfiliado } from '../../models/PrecoProdutoAfiliado';
+import { ImagemAnuncio } from '../../models/ImagemAnuncio';
+import { AnuncioAdsDisplay } from '../../models/AnuncioAdsDisplay';
+import { Visitante } from '../../models/Visitante';
+import { VideoExecucao } from '../../models/VideoExecucao';
+import { ProdutoAfiliadoHotlink } from '../../models/ProdutoAfiliadoHotlink';
+import { TagIdSecaoPaginaVenda } from '../../models/TagIdSecaoPaginaVenda';
+import { CampanhaAdsRedeDisplay } from '../../models/CampanhaAdsRedeDisplay';
+import { OtimizacaoCampanhaAdsRedeDisplay } from '../../models/OtimizacaoCampanhaAdsRedeDisplay';
+import { ListaRemarketingAds } from '../../models/ListaRemarketingAds';
 
 export interface Models { [name: string]: any }
 
@@ -67,6 +76,15 @@ export class SDKModels {
     LinkCheckout: LinkCheckout,
     CampanhaAdsMetricaIntraday: CampanhaAdsMetricaIntraday,
     PrecoProdutoAfiliado: PrecoProdutoAfiliado,
+    ImagemAnuncio: ImagemAnuncio,
+    AnuncioAdsDisplay: AnuncioAdsDisplay,
+    Visitante: Visitante,
+    VideoExecucao: VideoExecucao,
+    ProdutoAfiliadoHotlink: ProdutoAfiliadoHotlink,
+    TagIdSecaoPaginaVenda: TagIdSecaoPaginaVenda,
+    CampanhaAdsRedeDisplay: CampanhaAdsRedeDisplay,
+    OtimizacaoCampanhaAdsRedeDisplay: OtimizacaoCampanhaAdsRedeDisplay,
+    ListaRemarketingAds: ListaRemarketingAds,
     
   };
 

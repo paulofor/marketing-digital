@@ -22,6 +22,9 @@ public abstract class CampanhaAdsTeste_AtualizaCampanhaCriada extends DaoAplicac
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getCampanhaTesteCorrente())) {
+			if (campanha==null) {
+				throw new RuntimeException("campanha precisa ser atribuido em CampanhaAdsTeste_AtualizaCampanhaCriadaImpl ");
+			}
 			repCampanhaAdsTeste.atualizaCampanhaCriada( campanha, new VoidCallback() { 
 				public void onSuccess() {
 					executaProximo();

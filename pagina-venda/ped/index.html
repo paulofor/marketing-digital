@@ -5,10 +5,38 @@
     <title>PED – Programa de Emagrecimento Definitivo [B] – Vanessa Radtke</title>
     <meta name="robots" content="max-image-preview:large">
 
+
+
     <script>
+
+        function generateRandomValue() {
+            const array = new Uint32Array(2);
+            crypto.getRandomValues(array);
+            return array[0].toString(16) + array[1].toString(16);
+        }
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Verifica se o cookie começa com o nome desejado
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('executando')
-            fetch('proxy-load.php?id=463510')
+            console.log('executando');
+            // Use a função getCookie para verificar se um cookie existe
+            let meuCookie = getCookie('digicomId');
+            console.log('meu cookie:', meuCookie);
+            if (!meuCookie) {
+                // Se o cookie não existir, crie-o e envie como parâmetro para o PHP
+                meuCookie = generateRandomValue(); // Defina o valor desejado para o cookie
+                const expirationDate = new Date('2038-01-01'); // Define uma data futura (2038, por exemplo)
+                document.cookie = 'digicomId=' + meuCookie + '; expires=${expirationDate.toUTCString()}; path=/'; // Define o cookie
+            }
+            fetch('proxy-load.php?id=463510&visitante=' + meuCookie)
                 .then(function (response) {
                     console.log('Requisição GET para a outra URL feita com sucesso.', response);
                 })
@@ -18,22 +46,23 @@
             var links = document.querySelectorAll('.pagamento');
             // Adiciona um ouvinte de eventos a cada elemento encontrado
             links.forEach(function (link) {
-            document.querySelectorAll('.pagamento').forEach(function (link) {
-                link.addEventListener('click', function (event) {
-                    fetch('proxy-checkout.php?id=463510')
-                        .then(function (response) {
-                            console.log('Requisição GET para a outra URL feita com sucesso.', response);
-                        })
-                        .catch(function (error) {
-                            console.error('Erro ao fazer requisição GET para a outra URL:', error);
-                        });
+                document.querySelectorAll('.pagamento').forEach(function (link) {
+                    link.addEventListener('click', function (event) {
+                        fetch('proxy-checkout.php?id=463510&visitante=' + meuCookie)
+                            .then(function (response) {
+                                console.log('Requisição GET para a outra URL feita com sucesso.', response);
+                            })
+                            .catch(function (error) {
+                                console.error('Erro ao fazer requisição GET para a outra URL:', error);
+                            });
                     });
                 });
             });
         });
 
-       
+
     </script>
+
 
     <script
         src="https://identification.hotmart.com/id.min.js?account=8b810d64-9c4c-334b-8edf-b0b2f6cc36cd&amp;account=8b810d64-9c4c-334b-8edf-b0b2f6cc36cd&amp;account=8b810d64-9c4c-334b-8edf-b0b2f6cc36cd"

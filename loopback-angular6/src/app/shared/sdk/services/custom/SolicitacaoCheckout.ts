@@ -129,6 +129,8 @@ export class SolicitacaoCheckoutApi extends BaseLoopBackApi {
    *
    * @param {number} idHm 
    *
+   * @param {string} visitante 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -138,7 +140,7 @@ export class SolicitacaoCheckoutApi extends BaseLoopBackApi {
    * This usually means the response is a `SolicitacaoCheckout` object.)
    * </em>
    */
-  public InsereItem(idHm: any = {}, customHeaders?: Function): Observable<any> {
+  public InsereItem(idHm: any = {}, visitante: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/SolicitacaoCheckouts/insereItem";
@@ -146,6 +148,7 @@ export class SolicitacaoCheckoutApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (typeof idHm !== 'undefined' && idHm !== null) _urlParams.idHm = idHm;
+    if (typeof visitante !== 'undefined' && visitante !== null) _urlParams.visitante = visitante;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

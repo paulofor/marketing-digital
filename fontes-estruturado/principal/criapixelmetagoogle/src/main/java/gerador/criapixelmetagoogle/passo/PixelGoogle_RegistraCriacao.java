@@ -13,18 +13,28 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class PixelGoogle_RegistraCriacao extends DaoAplicacao { 
 
-	private int NUM_PASSO = 3;
+	private int NUM_PASSO = 4;
 
 
 	protected PixelGoogle pixelPaginaVenda;
 	protected PixelGoogle pixelVenda;
 	protected int produtoAfiliadoId;
+	protected PixelGoogle pixelCheckout;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		if (executaCustom(ds.getProdutoAfiliadoCorrente(), ds.getPixelGoogle(), ds.getPixelGooglePaginaVenda())) {
-			repPixelGoogle.registraCriacao( pixelPaginaVenda,pixelVenda,produtoAfiliadoId, new VoidCallback() { 
+		if (executaCustom(ds.getProdutoAfiliadoCorrente(), ds.getPixelGoogle(), ds.getPixelGooglePaginaVenda(), ds.getPixelGoogleCheckout())) {
+			if (pixelPaginaVenda==null) {
+				throw new RuntimeException("pixelPaginaVenda precisa ser atribuido em PixelGoogle_RegistraCriacaoImpl ");
+			}
+			if (pixelVenda==null) {
+				throw new RuntimeException("pixelVenda precisa ser atribuido em PixelGoogle_RegistraCriacaoImpl ");
+			}
+			if (pixelCheckout==null) {
+				throw new RuntimeException("pixelCheckout precisa ser atribuido em PixelGoogle_RegistraCriacaoImpl ");
+			}
+			repPixelGoogle.registraCriacao( pixelPaginaVenda,pixelVenda,produtoAfiliadoId,pixelCheckout, new VoidCallback() { 
 				public void onSuccess() {
 					executaProximo();
 				}
@@ -44,7 +54,7 @@ public abstract class PixelGoogle_RegistraCriacao extends DaoAplicacao {
 	}
 
 
-	protected boolean executaCustom( ProdutoAfiliadoHotmart produtoAfiliadoCorrente , PixelGoogle pixelGoogle , PixelGoogle pixelGooglePaginaVenda ) { return true; }
+	protected boolean executaCustom( ProdutoAfiliadoHotmart produtoAfiliadoCorrente , PixelGoogle pixelGoogle , PixelGoogle pixelGooglePaginaVenda , PixelGoogle pixelGoogleCheckout ) { return true; }
 
 	protected void preFinalizar() { return; }
 

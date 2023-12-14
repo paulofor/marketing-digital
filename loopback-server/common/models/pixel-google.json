@@ -55,10 +55,15 @@
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": ""
 		},
-		"pixelGooglePaginaVenda": {
+		"produtoAfiliadoPaginaVenda": {
 			"type": "hasMany",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "pixelGooglePaginaVendaId"
+		},
+		"pixelGoogleCheckout": {
+			"type": "hasMany",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "pixelGoogleCheckoutId"
 		}
 	},
 	"acls": [],
@@ -80,6 +85,12 @@
 				{
 					"arg": "produtoAfiliadoId",
 					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "pixelCheckout",
+					"type": "object",
    					"required": false,
     				"description": ""
 				}

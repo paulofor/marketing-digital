@@ -1,0 +1,58 @@
+{
+	"name": "PublicoAlvoAds",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"tamanhoAtualRedePesquisa": {
+			"type": "number"
+		},
+		"tamanhoAtualRedeDisplay": {
+			"type": "number"
+		},
+		"tipo": {
+			"type": "string"
+		},
+		"contemUrl": {
+			"type": "string"
+		},
+		"custoFormacaoAtual": {
+			"type": "number"
+		},
+		"custoPorPessoaAtual": {
+			"type": "number"
+		},
+		"paginaVendaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"paginaVenda": {
+			"type": "belongsTo",
+			"model": "PaginaVenda",
+			"foreignKey": ""
+		},
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

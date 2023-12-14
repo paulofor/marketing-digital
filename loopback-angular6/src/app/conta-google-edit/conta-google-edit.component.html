@@ -9,11 +9,11 @@
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-			<input matInput #gmail [(ngModel)]="item.gmail" name="gmail" placeholder="Gmail" />
+			<input matInput #idAds [(ngModel)]="item.idAds" name="idAds" placeholder="Id Ads" />
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-			<input matInput #idAds [(ngModel)]="item.idAds" name="idAds" placeholder="Id Ads" />
+			<input matInput #gmail [(ngModel)]="item.gmail" name="gmail" placeholder="Gmail" />
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
@@ -24,12 +24,24 @@
 			<input matInput #urlAds [(ngModel)]="item.urlAds" name="urlAds" placeholder="Url Ads" />
 		</mat-form-field>
 
-		<mat-form-field class="example-full-width">
+		<mat-form-field class="example-half-width">
 			<input matInput #ativo [(ngModel)]="item.ativo" name="ativo" placeholder="Ativo" />
 		</mat-form-field>
 
-		<mat-form-field class="example-full-width">
+		<mat-form-field class="example-half-width">
 			<input matInput #suspensa [(ngModel)]="item.suspensa" name="suspensa" placeholder="Suspensa" />
+		</mat-form-field>
+
+		<mat-form-field class="example-half-width">
+			<input matInput #codigoTagRemarketing [(ngModel)]="item.codigoTagRemarketing" name="codigoTagRemarketing" placeholder="Tag de Remarketing" />
+		</mat-form-field>
+
+
+		<mat-form-field class="example-full-width">
+			<mat-select #tipo [(ngModel)]="item.tipo" name="tipo" placeholder="Tipo">
+				<mat-option value="CAMPANHA">Campanha</mat-option>
+				<mat-option value="REMARKETING">Remarketing</mat-option>
+			</mat-select>
 		</mat-form-field>
 
 	</mat-dialog-content>

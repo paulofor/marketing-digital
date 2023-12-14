@@ -37,7 +37,7 @@ public abstract class VisitaProdutoHotmart_AjustaDeltaTemperatura extends DaoApl
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new ProdutoAfiliadoHotmart_AtualizaTemperaturaAtualImpl();
 	}
 
 

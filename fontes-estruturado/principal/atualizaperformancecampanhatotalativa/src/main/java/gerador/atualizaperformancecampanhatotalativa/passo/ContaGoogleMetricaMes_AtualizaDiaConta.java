@@ -22,6 +22,9 @@ public abstract class ContaGoogleMetricaMes_AtualizaDiaConta extends DaoAplicaca
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getMetricaConta())) {
+			if (metrica==null) {
+				throw new RuntimeException("metrica precisa ser atribuido em ContaGoogleMetricaMes_AtualizaDiaContaImpl ");
+			}
 			repContaGoogleMetricaMes.atualizaDiaConta( metrica, new VoidCallback() { 
 				public void onSuccess() {
 					executaProximo();

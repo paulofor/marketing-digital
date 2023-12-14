@@ -19,6 +19,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>atualizaperformancecampanhatotalativa</module>
 		<module>monitorintraday</module>
 		<module>atualizaafiliados</module>
+		<module>obtemhotlink</module>
+		<module>criacampanhaadsrededisplay</module>
+		<module>otimizacampanhaadsrededisplay</module>
+		<module>listaremarketingdiario</module>
+		<module>obtempublicoalvoads</module>
+		<module>testeads</module>
 	</modules>
 
 </project>

@@ -31,6 +31,7 @@ export class ProdutoAfiliadoTrabalhoComponent extends ProdutoAfiliadoTrabalhoBas
 
 	getFiltro() {
 		return {
+			'order' : 'temperaturaAtual desc', 
 			'counts' : ['campanhaAdsTestes','anuncioAds'],
 			'where' : {'trabalho' : '1'},
 			'include' : [ 

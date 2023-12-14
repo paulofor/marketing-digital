@@ -17,7 +17,7 @@ public class CriaPixelMetaGoogle {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPixelMetaGoogle");
-		System.out.println("(06/12/2023 12:55:54)");
+		System.out.println("(14/12/2023 00:10:13)");
 		try {
 			carregaProp();
 			CriaPixelMetaGoogleObj obj = new CriaPixelMetaGoogleObj();
@@ -55,6 +55,7 @@ public class CriaPixelMetaGoogle {
 		DaoBaseComum.setUrl(UrlLoopback);
 		DaoBaseComum.setProximo("CriaPixelMetaGoogleObj", new ProdutoAfiliadoHotmart_ListaCriarPixelGoogleImpl());
 		DaoBaseComum.setProximo("ProdutoAfiliadoHotmart_ListaCriarPixelGoogle", new GeraPixelGoogleAdsImpl());
-		DaoBaseComum.setProximo("GeraPixelGoogleAds", new PixelGoogle_RegistraCriacaoImpl());
+		DaoBaseComum.setProximo("GeraPixelGoogleAds", new GeraPixelGoogleAdsRemarketingImpl());
+		DaoBaseComum.setProximo("GeraPixelGoogleAdsRemarketing", new PixelGoogle_RegistraCriacaoImpl());
 	}
 }

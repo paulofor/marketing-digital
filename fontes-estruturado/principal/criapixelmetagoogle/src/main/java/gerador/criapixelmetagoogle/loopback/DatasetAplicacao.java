@@ -9,6 +9,7 @@ public class DatasetAplicacao  implements IDatasetComum {
 	private ProdutoAfiliadoHotmart produtoAfiliadoCorrente;
 	private PixelGoogle pixelGoogle;
 	private PixelGoogle pixelGooglePaginaVenda;
+	private PixelGoogle pixelGoogleCheckout;
 
 
 	public void setProdutoAfiliadoCorrente(ProdutoAfiliadoHotmart valor) { 
@@ -28,5 +29,11 @@ public class DatasetAplicacao  implements IDatasetComum {
 	}
 	public PixelGoogle getPixelGooglePaginaVenda() { 
 		return this.pixelGooglePaginaVenda;
+	}
+	public void setPixelGoogleCheckout(PixelGoogle valor) { 
+		this.pixelGoogleCheckout = valor;
+	}
+	public PixelGoogle getPixelGoogleCheckout() { 
+		return this.pixelGoogleCheckout;
 	}
 }

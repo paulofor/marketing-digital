@@ -125,11 +125,11 @@ export class PixelGoogleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Localize um item relacionado por ID para pixelGooglePaginaVenda.
+   * Localize um item relacionado por ID para produtoAfiliadoPaginaVenda.
    *
    * @param {any} id PixelGoogle id
    *
-   * @param {any} fk Chave estrangeira para pixelGooglePaginaVenda
+   * @param {any} fk Chave estrangeira para produtoAfiliadoPaginaVenda
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -140,10 +140,10 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    * This usually means the response is a `PixelGoogle` object.)
    * </em>
    */
-  public findByIdPixelGooglePaginaVenda(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public findByIdProdutoAfiliadoPaginaVenda(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PixelGoogles/:id/pixelGooglePaginaVenda/:fk";
+    "/PixelGoogles/:id/produtoAfiliadoPaginaVenda/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -155,11 +155,11 @@ export class PixelGoogleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Excluir um item relacionado por ID para pixelGooglePaginaVenda.
+   * Excluir um item relacionado por ID para produtoAfiliadoPaginaVenda.
    *
    * @param {any} id PixelGoogle id
    *
-   * @param {any} fk Chave estrangeira para pixelGooglePaginaVenda
+   * @param {any} fk Chave estrangeira para produtoAfiliadoPaginaVenda
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -167,10 +167,10 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdPixelGooglePaginaVenda(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdProdutoAfiliadoPaginaVenda(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PixelGoogles/:id/pixelGooglePaginaVenda/:fk";
+    "/PixelGoogles/:id/produtoAfiliadoPaginaVenda/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -182,11 +182,11 @@ export class PixelGoogleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Atualizar um item relacionado por ID para pixelGooglePaginaVenda.
+   * Atualizar um item relacionado por ID para produtoAfiliadoPaginaVenda.
    *
    * @param {any} id PixelGoogle id
    *
-   * @param {any} fk Chave estrangeira para pixelGooglePaginaVenda
+   * @param {any} fk Chave estrangeira para produtoAfiliadoPaginaVenda
    *
    * @param {object} data Request data.
    *
@@ -201,10 +201,103 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    * This usually means the response is a `PixelGoogle` object.)
    * </em>
    */
-  public updateByIdPixelGooglePaginaVenda(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public updateByIdProdutoAfiliadoPaginaVenda(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PixelGoogles/:id/pixelGooglePaginaVenda/:fk";
+    "/PixelGoogles/:id/produtoAfiliadoPaginaVenda/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Localize um item relacionado por ID para pixelGoogleCheckout.
+   *
+   * @param {any} id PixelGoogle id
+   *
+   * @param {any} fk Chave estrangeira para pixelGoogleCheckout
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PixelGoogle` object.)
+   * </em>
+   */
+  public findByIdPixelGoogleCheckout(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PixelGoogles/:id/pixelGoogleCheckout/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para pixelGoogleCheckout.
+   *
+   * @param {any} id PixelGoogle id
+   *
+   * @param {any} fk Chave estrangeira para pixelGoogleCheckout
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdPixelGoogleCheckout(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PixelGoogles/:id/pixelGoogleCheckout/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para pixelGoogleCheckout.
+   *
+   * @param {any} id PixelGoogle id
+   *
+   * @param {any} fk Chave estrangeira para pixelGoogleCheckout
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PixelGoogle` object.)
+   * </em>
+   */
+  public updateByIdPixelGoogleCheckout(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PixelGoogles/:id/pixelGoogleCheckout/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -364,7 +457,7 @@ export class PixelGoogleApi extends BaseLoopBackApi {
   }
 
   /**
-   * pixelGooglePaginaVenda consultas de PixelGoogle.
+   * produtoAfiliadoPaginaVenda consultas de PixelGoogle.
    *
    * @param {any} id PixelGoogle id
    *
@@ -379,10 +472,10 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    * This usually means the response is a `PixelGoogle` object.)
    * </em>
    */
-  public getPixelGooglePaginaVenda(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getProdutoAfiliadoPaginaVenda(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PixelGoogles/:id/pixelGooglePaginaVenda";
+    "/PixelGoogles/:id/produtoAfiliadoPaginaVenda";
     let _routeParams: any = {
       id: id
     };
@@ -394,7 +487,7 @@ export class PixelGoogleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no pixelGooglePaginaVenda deste modelo.
+   * Cria uma nova instância no produtoAfiliadoPaginaVenda deste modelo.
    *
    * @param {any} id PixelGoogle id
    *
@@ -411,10 +504,10 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    * This usually means the response is a `PixelGoogle` object.)
    * </em>
    */
-  public createPixelGooglePaginaVenda(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createProdutoAfiliadoPaginaVenda(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PixelGoogles/:id/pixelGooglePaginaVenda";
+    "/PixelGoogles/:id/produtoAfiliadoPaginaVenda";
     let _routeParams: any = {
       id: id
     };
@@ -427,7 +520,7 @@ export class PixelGoogleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Exclui todos os pixelGooglePaginaVenda deste modelo.
+   * Exclui todos os produtoAfiliadoPaginaVenda deste modelo.
    *
    * @param {any} id PixelGoogle id
    *
@@ -437,10 +530,10 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deletePixelGooglePaginaVenda(id: any, customHeaders?: Function): Observable<any> {
+  public deleteProdutoAfiliadoPaginaVenda(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PixelGoogles/:id/pixelGooglePaginaVenda";
+    "/PixelGoogles/:id/produtoAfiliadoPaginaVenda";
     let _routeParams: any = {
       id: id
     };
@@ -451,7 +544,7 @@ export class PixelGoogleApi extends BaseLoopBackApi {
   }
 
   /**
-   * pixelGooglePaginaVenda contagens de PixelGoogle.
+   * produtoAfiliadoPaginaVenda contagens de PixelGoogle.
    *
    * @param {any} id PixelGoogle id
    *
@@ -465,10 +558,126 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countPixelGooglePaginaVenda(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countProdutoAfiliadoPaginaVenda(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PixelGoogles/:id/pixelGooglePaginaVenda/count";
+    "/PixelGoogles/:id/produtoAfiliadoPaginaVenda/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * pixelGoogleCheckout consultas de PixelGoogle.
+   *
+   * @param {any} id PixelGoogle id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PixelGoogle` object.)
+   * </em>
+   */
+  public getPixelGoogleCheckout(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PixelGoogles/:id/pixelGoogleCheckout";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no pixelGoogleCheckout deste modelo.
+   *
+   * @param {any} id PixelGoogle id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PixelGoogle` object.)
+   * </em>
+   */
+  public createPixelGoogleCheckout(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PixelGoogles/:id/pixelGoogleCheckout";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os pixelGoogleCheckout deste modelo.
+   *
+   * @param {any} id PixelGoogle id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deletePixelGoogleCheckout(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PixelGoogles/:id/pixelGoogleCheckout";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * pixelGoogleCheckout contagens de PixelGoogle.
+   *
+   * @param {any} id PixelGoogle id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countPixelGoogleCheckout(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PixelGoogles/:id/pixelGoogleCheckout/count";
     let _routeParams: any = {
       id: id
     };
@@ -554,6 +763,8 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    *
    *  - `produtoAfiliadoId` – `{number}` - 
    *
+   *  - `pixelCheckout` – `{object}` - 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -563,7 +774,7 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    * This usually means the response is a `PixelGoogle` object.)
    * </em>
    */
-  public RegistraCriacao(pixelPaginaVenda: any = {}, pixelVenda: any = {}, produtoAfiliadoId: any = {}, customHeaders?: Function): Observable<any> {
+  public RegistraCriacao(pixelPaginaVenda: any = {}, pixelVenda: any = {}, produtoAfiliadoId: any = {}, pixelCheckout: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/PixelGoogles/registraCriacao";
@@ -573,6 +784,7 @@ export class PixelGoogleApi extends BaseLoopBackApi {
     if (typeof pixelPaginaVenda !== 'undefined' && pixelPaginaVenda !== null) _urlParams.pixelPaginaVenda = pixelPaginaVenda;
     if (typeof pixelVenda !== 'undefined' && pixelVenda !== null) _urlParams.pixelVenda = pixelVenda;
     if (typeof produtoAfiliadoId !== 'undefined' && produtoAfiliadoId !== null) _urlParams.produtoAfiliadoId = produtoAfiliadoId;
+    if (typeof pixelCheckout !== 'undefined' && pixelCheckout !== null) _urlParams.pixelCheckout = pixelCheckout;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -611,7 +823,7 @@ export class PixelGoogleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no pixelGooglePaginaVenda deste modelo.
+   * Cria uma nova instância no produtoAfiliadoPaginaVenda deste modelo.
    *
    * @param {any} id PixelGoogle id
    *
@@ -628,10 +840,43 @@ export class PixelGoogleApi extends BaseLoopBackApi {
    * This usually means the response is a `PixelGoogle` object.)
    * </em>
    */
-  public createManyPixelGooglePaginaVenda(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyProdutoAfiliadoPaginaVenda(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PixelGoogles/:id/pixelGooglePaginaVenda";
+    "/PixelGoogles/:id/produtoAfiliadoPaginaVenda";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no pixelGoogleCheckout deste modelo.
+   *
+   * @param {any} id PixelGoogle id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PixelGoogle` object.)
+   * </em>
+   */
+  public createManyPixelGoogleCheckout(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PixelGoogles/:id/pixelGoogleCheckout";
     let _routeParams: any = {
       id: id
     };

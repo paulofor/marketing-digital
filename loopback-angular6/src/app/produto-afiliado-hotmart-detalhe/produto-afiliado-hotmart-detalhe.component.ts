@@ -58,10 +58,17 @@ export class ProdutoAfiliadoHotmartDetalheComponent extends ProdutoAfiliadoHotma
 		  'include' : [
 			{ 'relation' : 'visitaProdutoHotmarts' , 'scope' : {
 			  	'order' : 'dataInsercao desc',
+				'limit' : 4,
 				'include' : { 'relation' : 'produtoAfiliadoMetricas'}
 			}},
 			'contaGoogle',
-			'precoProdutoAfiliados'
+			'contaRemarketing',
+			'precoProdutoAfiliados',
+			'pixelGoogle',
+			'pixelGoogleCheckout',
+			'pixelGooglePaginaVenda',
+			'produtoAfiliadoHotlinks'
+
 		  ]
 		}
 	  }

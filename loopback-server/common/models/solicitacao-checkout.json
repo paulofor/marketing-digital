@@ -11,6 +11,12 @@
 	"properties": {
 		"dataHora": {
 			"type": "date"
+		},
+		"visitante": {
+			"type": "string"
+		},
+		"hotmartId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -28,6 +34,12 @@
 				{
 					"arg": "idHm",
 					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "visitante",
+					"type": "string",
    					"required": false,
     				"description": ""
 				}

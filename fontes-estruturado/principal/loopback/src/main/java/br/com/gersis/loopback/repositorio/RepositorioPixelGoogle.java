@@ -30,13 +30,14 @@ public class RepositorioPixelGoogle extends ModelRepository<PixelGoogle> {
 
 	// ***  Operações  ***
 
-	public synchronized void registraCriacao(PixelGoogle pixelPaginaVenda ,PixelGoogle pixelVenda ,int produtoAfiliadoId ,final VoidCallback callback ) {
+	public synchronized void registraCriacao(PixelGoogle pixelPaginaVenda ,PixelGoogle pixelVenda ,int produtoAfiliadoId ,PixelGoogle pixelCheckout ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PixelGoogles/registraCriacao","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "PixelGoogle.registraCriacao");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("pixelPaginaVenda", pixelPaginaVenda.getJSON());
 		params.put("pixelVenda", pixelVenda.getJSON());
 		params.put("produtoAfiliadoId", produtoAfiliadoId);
+		params.put("pixelCheckout", pixelCheckout.getJSON());
 		invokeStaticMethod("registraCriacao", params,   new EmptyResponseParser(callback));
 	}
 

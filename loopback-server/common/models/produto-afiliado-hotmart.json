@@ -70,6 +70,33 @@
 		"percentualComissaoAtual": {
 			"type": "number"
 		},
+		"urlYouTube": {
+			"type": "string"
+		},
+		"contaGoogleRemarketingId": {
+			"type": "number"
+		},
+		"pixelGoogleCheckoutId": {
+			"type": "number"
+		},
+		"hotmartUcode": {
+			"type": "string"
+		},
+		"tagIdVideoVenda": {
+			"type": "string"
+		},
+		"salesPage": {
+			"type": "string"
+		},
+		"publicProfileLink": {
+			"type": "string"
+		},
+		"temperaturaAtual": {
+			"type": "number"
+		},
+		"possuiImagemRedeDisplay": {
+			"type": "number"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}
@@ -86,10 +113,20 @@
 			"model": "ContaGoogle",
 			"foreignKey": ""
 		},
-		"produtoAfiliadoPaginaVenda": {
+		"pixelGooglePaginaVenda": {
 			"type": "belongsTo",
 			"model": "PixelGoogle",
 			"foreignKey": "pixelGooglePaginaVendaId"
+		},
+		"contaRemarketing": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": "contaGoogleRemarketingId"
+		},
+		"pixelGoogleCheckout": {
+			"type": "belongsTo",
+			"model": "PixelGoogle",
+			"foreignKey": "pixelGoogleCheckoutId"
 		},
 		"campanhaAdsTestes": {
 			"type": "hasMany",
@@ -139,6 +176,31 @@
 		"precoProdutoAfiliados": {
 			"type": "hasMany",
 			"model": "PrecoProdutoAfiliado",
+			"foreignKey": "hotmartId"
+		},
+		"produtoAfiliadoHotlinks": {
+			"type": "hasMany",
+			"model": "ProdutoAfiliadoHotlink",
+			"foreignKey": "hotmartId"
+		},
+		"tagIdSecaoPaginaVendas": {
+			"type": "hasMany",
+			"model": "TagIdSecaoPaginaVenda",
+			"foreignKey": ""
+		},
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		},
+		"paginaVendas": {
+			"type": "hasMany",
+			"model": "PaginaVenda",
+			"foreignKey": "hotmartId"
+		},
+		"publicoAlvoAds": {
+			"type": "hasMany",
+			"model": "PublicoAlvoAds",
 			"foreignKey": "hotmartId"
 		}
 	},
@@ -248,6 +310,113 @@
          		{
           			"path": "/obtemProximoTrabalho",
    					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaAfiliados": {
+			"accepts": [
+				{
+					"arg": "listaAfiliado",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaAfiliados",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaPendenteInformacao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaPendenteInformacao",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaTemperaturaAtual": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaTemperaturaAtual",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaPesquisaHotlink": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaPesquisaHotlink",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaUrlHotlink": {
+			"accepts": [
+				{
+					"arg": "produto",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaUrlHotlink",
+   					"verb": "post"
  				}
  			]
 		}

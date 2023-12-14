@@ -1,7 +1,6 @@
 <div class="dgc-painel">
-  <div class="dgc-painel-header">
-      <span>Afiliados Hotmart</span>
-      <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+  <div class="dgc-painel-header" *ngIf="listaBase">
+      <span>Afiliados Hotmart ({{listaBase.length}})</span>
   </div>
   <div *ngIf="listaBase" class="dgc-painel-principal">
     <div class="dgc-card" *ngFor="let item of listaBase">
@@ -10,7 +9,8 @@
           <span class="dgc-direita"># {{item.hotmartId}}</span>
         </div>
         <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts.length>0">
-          <span>Temperatura : {{item.visitaProdutoHotmarts[0].temperatura}} ({{item.visitaProdutoHotmarts[0].deltaTemperatura}})</span>
+          <span>Temperatura : {{item.visitaProdutoHotmarts[0].temperatura}} 
+            ({{ item.visitaProdutoHotmarts[0].deltaTemperatura >= 0 ? '+' + item.visitaProdutoHotmarts[0].deltaTemperatura : item.visitaProdutoHotmarts[0].deltaTemperatura }})</span>
           <span>  -  {{item.visitaProdutoHotmarts[0].dataInsercao | date : 'dd/MM/yyyy'}}</span>
         </div>
         <div class="dgc-card-detalhe">
@@ -30,6 +30,7 @@
         </div>
         <div class="dgc-card-detalhe" *ngIf="item.contaGoogle!=null">
           <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>
+          <span *ngIf="item.contaRemarketing!=null">Remarketing: ({{item.contaRemarketing.nome}})</span>
         </div>
         <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0">
           <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}} ({{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}%)</span>

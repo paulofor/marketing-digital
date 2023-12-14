@@ -33,7 +33,7 @@ public abstract class ObtemListaHotmart extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new ProdutoAfiliadoHotmart_AtualizaAfiliadosImpl();
 	}
 
 

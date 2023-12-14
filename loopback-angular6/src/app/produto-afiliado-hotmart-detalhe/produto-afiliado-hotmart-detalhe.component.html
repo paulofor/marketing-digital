@@ -1,11 +1,13 @@
 <div class="dgc-painel" *ngIf="principal">
   <div class="dgc-painel-header" *ngIf="principal">
       <span>{{principal.nome}}</span>
+      <span class="dgc-direita">{{principal.hotmartId}}</span>
   </div>
 
   <div class="dgc-card">
     <div class="dgc-card-detalhe">
-      <span>{{principal.contaGoogle.nome}}</span>
+      <span>{{principal.contaGoogle.nome}} </span>
+      <span *ngIf="principal.contaRemarketing"> - {{principal.contaRemarketing.nome}}</span>
     </div>
     <div class="dgc-card-header">
       <a href="{{principal.urlFinal}}" target="_blank">{{principal.urlFinal}}</a>
@@ -15,6 +17,9 @@
     </div>
     <div class="dgc-card-detalhe">
       <span>You Tube:{{principal.urlYouTube}}</span>
+    </div>
+    <div class="dgc-card-detalhe">
+      <span>Work: {{principal.trabalho}}</span>
     </div>
     <div class="dgc-card-comandos">
       <button class="btn-primary btn-sm btn dgc-direita" (click)="editaProduto(principal)">Edita Produto</button>
@@ -72,6 +77,7 @@
          <button class="btn-primary btn-sm btn dgc-direita" (click)="editaPreco(item)">Edita Preço</button>
       </div>
     </div>
+
      
     <div class="dgc-card-comandos">
       <button class="btn-primary btn-sm btn" (click)="atualizaPreco()">Atualiza Preços</button>
@@ -81,15 +87,34 @@
 
   <div class="dgc-card">
     <div class="dgc-card-header">
+      Hotlinks
+    </div>
+    <div class="dgc-card-detalhe" *ngFor="let item of principal.produtoAfiliadoHotlinks">
+      <span>{{item.descricao}} - {{item.url}}</span>
+    </div>
+  </div>
+
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
       Pixel
     </div>
-    <div class="dgc-card-detalhe" *ngFor="let item of principal.ideiaPalavraChaves">
+    <div class="dgc-card-detalhe" >
+      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}}</span>
     </div>
+    <div class="dgc-card-detalhe" >
+      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}}</span>
+    </div>
+    <div class="dgc-card-detalhe" >
+      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}}</span>
+    </div>
+
+
   </div>
 
   <div class="dgc-card">
     <div class="dgc-card-header">
-      <span>Anúncios</span>
+      <span>Anúncios - Rede Pesquisa</span>
       <button class="dgc-direita" (click)="editaAnuncio(principal)">novo</button>
     </div>
     <div class="dgc-card">

@@ -327,6 +327,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 			// Displays the result.
 			String adGroupResourceName = response.getResults(0).getResourceName();
 			System.out.printf("Created ad group with resource name '%s'.%n", adGroupResourceName);
+			campanha.setCodigoAdsGrupoAnuncio(adGroupResourceName);
 			return adGroupResourceName;
 		}
 	}

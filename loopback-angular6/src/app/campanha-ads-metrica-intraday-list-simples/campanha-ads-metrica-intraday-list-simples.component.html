@@ -18,6 +18,15 @@
 			<span>impressão: {{item.impressao}}</span>
 		   </div>
 		   <div class="dgc-card-detalhe">
+			<span>ctr: {{(item.clique / item.impressao) * 100 | number: '1.2-2'}} %</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>cpm: {{ (item.custoDia / item.impressao) * 1000 | currency : 'BRL'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>1k: {{ item.cpc * 1000 | currency: 'BRL'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
 			   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
 		   </div>
 		   <div class="dgc-card-detalhe">

@@ -32,6 +32,18 @@
 		},
 		"suspensa": {
 			"type": "number"
+		},
+		"tipo": {
+			"type": "string"
+		},
+		"codigoTagRemarketing": {
+			"type": "string"
+		},
+		"snippetTagRemarketing": {
+			"type": "string"
+		},
+		"hitsTag": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -64,6 +76,16 @@
 		"campanhaAdsMetricaIntradays": {
 			"type": "hasMany",
 			"model": "CampanhaAdsMetricaIntraday",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoRemarketing": {
+			"type": "hasMany",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "contaGoogleRemarketingId"
+		},
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
 			"foreignKey": ""
 		}
 	},
@@ -103,6 +125,44 @@
 			"http": [
          		{
           			"path": "/listaAtivaParaMetricaCampanha",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaAtivaCampanha": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaAtivaCampanha",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaAtivaRemarketing": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaAtivaRemarketing",
    					"verb": "get"
  				}
  			]

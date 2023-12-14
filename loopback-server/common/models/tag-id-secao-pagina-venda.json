@@ -1,0 +1,30 @@
+{
+	"name": "TagIdSecaoPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"tagId": {
+			"type": "string"
+		},
+		"produtoAfiliadoHotmartId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

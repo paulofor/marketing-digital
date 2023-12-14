@@ -7,6 +7,8 @@ declare var Object: any;
 export interface LoadPaginaVendaInterface {
   "dataHora"?: Date;
   "tempoConsumido"?: number;
+  "visitante"?: string;
+  "qtdeVisita"?: number;
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
@@ -15,6 +17,8 @@ export interface LoadPaginaVendaInterface {
 export class LoadPaginaVenda implements LoadPaginaVendaInterface {
   "dataHora": Date;
   "tempoConsumido": number;
+  "visitante": string;
+  "qtdeVisita": number;
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
@@ -57,6 +61,14 @@ export class LoadPaginaVenda implements LoadPaginaVendaInterface {
         },
         "tempoConsumido": {
           name: 'tempoConsumido',
+          type: 'number'
+        },
+        "visitante": {
+          name: 'visitante',
+          type: 'string'
+        },
+        "qtdeVisita": {
+          name: 'qtdeVisita',
           type: 'number'
         },
         "id": {

@@ -1,0 +1,124 @@
+{
+	"name": "CampanhaAdsRedeDisplay",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"codigoAds": {
+			"type": "string"
+		},
+		"dataEnvioGoogle": {
+			"type": "date"
+		},
+		"custoAtual": {
+			"type": "number"
+		},
+		"nomeAds": {
+			"type": "string"
+		},
+		"codigoAdsGrupoAnuncio": {
+			"type": "string"
+		},
+		"prontaParaEnvio": {
+			"type": "number"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		},
+		"produtoAfiliadoHotmartId": {
+			"type": "number"
+		},
+		"paginaVendaId": {
+			"type": "number"
+		},
+		"faixaHorarioCampanhaAdsId": {
+			"type": "number"
+		},
+		"publicoAlvoAdsId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": ""
+		},
+		"paginaVenda": {
+			"type": "belongsTo",
+			"model": "PaginaVenda",
+			"foreignKey": ""
+		},
+		"faixaHorarioCampanhaAds": {
+			"type": "belongsTo",
+			"model": "FaixaHorarioCampanhaAds",
+			"foreignKey": ""
+		},
+		"publicoAlvoAds": {
+			"type": "belongsTo",
+			"model": "PublicoAlvoAds",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ObtemListaParaCriacao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaParaCriacao",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaCampanhaCriada": {
+			"accepts": [
+				{
+					"arg": "campanha",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaCampanhaCriada",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

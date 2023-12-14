@@ -1,0 +1,71 @@
+{
+	"name": "ProdutoAfiliadoHotlink",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"url": {
+			"type": "string"
+		},
+		"hotlink": {
+			"type": "string"
+		},
+		"descricao": {
+			"type": "string"
+		},
+		"hasHotLead": {
+			"type": "number"
+		},
+		"specialCampaign": {
+			"type": "number"
+		},
+		"hotmartId": {
+			"type": "number"
+		},
+		"id": {
+			"type": "number"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaProdutoHotlink": {
+			"accepts": [
+				{
+					"arg": "listaHotlink",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaProdutoHotlink",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

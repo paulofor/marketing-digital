@@ -17,6 +17,13 @@ public class VisitaProdutoPlataforma extends Model {
 	// Relacionamentos 1
 	// Relacionamentos N
 
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {

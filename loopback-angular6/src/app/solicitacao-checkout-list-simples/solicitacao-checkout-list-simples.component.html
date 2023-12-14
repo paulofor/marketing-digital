@@ -1,7 +1,6 @@
 <div class="dgc-painel">
 	<div class="dgc-painel-header">
 		<span>Solicitação Checkout</span>
-  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card" *ngFor="let item of listaBase">
@@ -9,9 +8,10 @@
 				<span>{{item.produtoAfiliadoHotmart.nome}} ({{item.dataHora | date : 'dd/MM/yyy HH:mm:ss' : 'UTC'}})</span>
 
 			</div>
-			<div class="dgc-card-detalhe">
-				  <span>{{item.hotmartId}}</span>
-		   </div>
+			<div class="dgc-card-detalhe dgc-painel-principal">
+				<span>{{item.visitante}}</span>
+			   	<span class="dgc-direita">{{item.hotmartId}}</span>
+			</div>
 		</div>
   	</div>
 </div>

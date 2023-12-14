@@ -19,6 +19,7 @@ export class PixelGoogleListComponent  extends BaseListComponent {
 
   getFiltro() {
     return {
+      'order' : 'id desc'
       };
   }
 

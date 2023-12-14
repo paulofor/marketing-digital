@@ -67,6 +67,43 @@ public class RepositorioProdutoAfiliadoHotmart extends ModelRepository<ProdutoAf
 		invokeStaticMethod("obtemProximoTrabalho", params,   new JsonObjectParser<ProdutoAfiliadoHotmart>(this, callback));
 	}
 
+	public synchronized void atualizaAfiliados(List<ProdutoAfiliadoHotmart> listaAfiliado ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/atualizaAfiliados","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.atualizaAfiliados");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("listaAfiliado",obtemLista(listaAfiliado));
+		invokeStaticMethod("atualizaAfiliados", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaPendenteInformacao(final ListCallback<ProdutoAfiliadoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/listaPendenteInformacao","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.listaPendenteInformacao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaPendenteInformacao", params,   new JsonArrayParser<ProdutoAfiliadoHotmart>(this, callback));
+	}
+
+	public synchronized void atualizaTemperaturaAtual(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/atualizaTemperaturaAtual","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.atualizaTemperaturaAtual");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("atualizaTemperaturaAtual", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaParaPesquisaHotlink(final ListCallback<ProdutoAfiliadoHotmart> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/listaParaPesquisaHotlink","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.listaParaPesquisaHotlink");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaPesquisaHotlink", params,   new JsonArrayParser<ProdutoAfiliadoHotmart>(this, callback));
+	}
+
+	public synchronized void atualizaUrlHotlink(ProdutoAfiliadoHotmart produto ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/atualizaUrlHotlink","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.atualizaUrlHotlink");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("produto", produto.getJSON());
+		invokeStaticMethod("atualizaUrlHotlink", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<ProdutoAfiliadoHotmart> listaEntrada) {
 		JSONArray lista = new JSONArray();

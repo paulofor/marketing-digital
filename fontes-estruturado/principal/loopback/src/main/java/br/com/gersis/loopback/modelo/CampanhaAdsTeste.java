@@ -30,6 +30,7 @@ public class CampanhaAdsTeste extends Model {
 	private int ativa;
 	private double cpaMax;
 	private double cpcMax;
+	private String codigoAdsGrupoAnuncio;
 	// Relacionamentos 1
 	private ModeloCampanhaAdsTeste ModeloCampanhaAdsTeste;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
@@ -39,6 +40,13 @@ public class CampanhaAdsTeste extends Model {
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
 	private List<CampanhaAdsMetrica> CampanhaAdsMetricas;
 	private List<CampanhaAdsMetricaIntraday> CampanhaAdsMetricaIntradays;
+
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -60,6 +68,7 @@ public class CampanhaAdsTeste extends Model {
 			obj.put("ativa", ativa);
 			obj.put("cpaMax", cpaMax);
 			obj.put("cpcMax", cpcMax);
+			obj.put("codigoAdsGrupoAnuncio", codigoAdsGrupoAnuncio);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -162,6 +171,12 @@ public class CampanhaAdsTeste extends Model {
 	}
 	public double getCpcMax() { 
 		return this.cpcMax;
+	}
+	public void setCodigoAdsGrupoAnuncio(String valor) { 
+		this.codigoAdsGrupoAnuncio = valor;
+	}
+	public String getCodigoAdsGrupoAnuncio() { 
+		return this.codigoAdsGrupoAnuncio;
 	}
 
 	public ModeloCampanhaAdsTeste getModeloCampanhaAdsTeste() {

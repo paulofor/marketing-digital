@@ -38,6 +38,14 @@ public class RepositorioTokenAcesso extends ModelRepository<TokenAcesso> {
 		invokeStaticMethod("obtemPorNome", params,   new JsonObjectParser<TokenAcesso>(this, callback));
 	}
 
+	public synchronized void registraAcesso(String nome ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("TokenAcessos/registraAcesso","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "TokenAcesso.registraAcesso");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("nome", nome);
+		invokeStaticMethod("registraAcesso", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<TokenAcesso> listaEntrada) {
 		JSONArray lista = new JSONArray();

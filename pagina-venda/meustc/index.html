@@ -12,36 +12,62 @@
     <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
     <script type="text/javascript" id="www-widgetapi-script"
         src="https://www.youtube.com/s/player/31e0b6d9/www-widgetapi.vflset/www-widgetapi.js" async=""></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log('executando')
-            fetch('proxy-load.php?id=262665')
-                .then(function (response) {
-                    console.log('Requisição GET para a outra URL feita com sucesso.', response);
-                })
-                .catch(function (error) {
-                    console.error('Erro ao fazer requisição GET para a outra URL:', error);
-                });
-            var links = document.querySelectorAll('.pagamento');
-            // Adiciona um ouvinte de eventos a cada elemento encontrado
-            links.forEach(function (link) {
-                document.querySelectorAll('.pagamento').forEach(function (link) {
-                    link.addEventListener('click', function (event) {
-                        fetch('proxy-checkout.php?id=262665')
-                            .then(function (response) {
-                                console.log('Requisição GET para a outra URL feita com sucesso.', response);
-                            })
-                            .catch(function (error) {
-                                console.error('Erro ao fazer requisição GET para a outra URL:', error);
-                            });
+    
+        <script>
+
+            function generateRandomValue() {
+                const array = new Uint32Array(2);
+                crypto.getRandomValues(array);
+                return array[0].toString(16) + array[1].toString(16);
+            }
+            function getCookie(name) {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Verifica se o cookie começa com o nome desejado
+                    if (cookie.startsWith(name + '=')) {
+                        return cookie.substring(name.length + 1);
+                    }
+                }
+                return null;
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                console.log('executando');
+                // Use a função getCookie para verificar se um cookie existe
+                let meuCookie = getCookie('digicomId');
+                console.log('meu cookie:', meuCookie);
+                if (!meuCookie) {
+                    // Se o cookie não existir, crie-o e envie como parâmetro para o PHP
+                    meuCookie = generateRandomValue(); // Defina o valor desejado para o cookie
+                    const expirationDate = new Date('2038-01-01'); // Define uma data futura (2038, por exemplo)
+                    document.cookie = 'digicomId=' + meuCookie + '; expires=${expirationDate.toUTCString()}; path=/'; // Define o cookie
+                }
+                fetch('proxy-load.php?id=262665&visitante=' + meuCookie)
+                    .then(function (response) {
+                        console.log('Requisição GET para a outra URL feita com sucesso.', response);
+                    })
+                    .catch(function (error) {
+                        console.error('Erro ao fazer requisição GET para a outra URL:', error);
+                    });
+                var links = document.querySelectorAll('.pagamento');
+                // Adiciona um ouvinte de eventos a cada elemento encontrado
+                links.forEach(function (link) {
+                    document.querySelectorAll('.pagamento').forEach(function (link) {
+                        link.addEventListener('click', function (event) {
+                            fetch('proxy-checkout.php?id=262665&visitante=' + meuCookie)
+                                .then(function (response) {
+                                    console.log('Requisição GET para a outra URL feita com sucesso.', response);
+                                })
+                                .catch(function (error) {
+                                    console.error('Erro ao fazer requisição GET para a outra URL:', error);
+                                });
+                        });
                     });
                 });
             });
-        });
-
-
-    </script>
-
+    
+    
+        </script>
 
     <script type="text/javascript" id="www-widgetapi-script"
         src="https://www.youtube.com/s/player/63e90c30/www-widgetapi.vflset/www-widgetapi.js" async=""></script>

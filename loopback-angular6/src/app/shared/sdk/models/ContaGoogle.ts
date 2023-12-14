@@ -5,7 +5,8 @@ import {
   ProdutoAfiliadoHotmart,
   CampanhaAdsMetrica,
   ContaGoogleMetricaMes,
-  CampanhaAdsMetricaIntraday
+  CampanhaAdsMetricaIntraday,
+  CampanhaAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
@@ -18,13 +19,19 @@ export interface ContaGoogleInterface {
   "urlAds"?: string;
   "idAds"?: string;
   "suspensa"?: number;
+  "tipo"?: string;
+  "codigoTagRemarketing"?: string;
+  "snippetTagRemarketing"?: string;
+  "hitsTag"?: number;
   "id"?: number;
   campanhaAdsTestes?: CampanhaAdsTeste[];
   pixelGoogles?: PixelGoogle[];
   produtoAfiliadoHotmarts?: ProdutoAfiliadoHotmart[];
+  produtoAfiliadoRemarketing?: ProdutoAfiliadoHotmart[];
   campanhaAdsMetricas?: CampanhaAdsMetrica[];
   contaGoogleMetricaMes?: ContaGoogleMetricaMes[];
   campanhaAdsMetricaIntradays?: CampanhaAdsMetricaIntraday[];
+  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
 }
 
 export class ContaGoogle implements ContaGoogleInterface {
@@ -36,13 +43,19 @@ export class ContaGoogle implements ContaGoogleInterface {
   "urlAds": string;
   "idAds": string;
   "suspensa": number;
+  "tipo": string;
+  "codigoTagRemarketing": string;
+  "snippetTagRemarketing": string;
+  "hitsTag": number;
   "id": number;
   campanhaAdsTestes: CampanhaAdsTeste[];
   pixelGoogles: PixelGoogle[];
   produtoAfiliadoHotmarts: ProdutoAfiliadoHotmart[];
+  produtoAfiliadoRemarketing: ProdutoAfiliadoHotmart[];
   campanhaAdsMetricas: CampanhaAdsMetrica[];
   contaGoogleMetricaMes: ContaGoogleMetricaMes[];
   campanhaAdsMetricaIntradays: CampanhaAdsMetricaIntraday[];
+  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   constructor(data?: ContaGoogleInterface) {
     Object.assign(this, data);
   }
@@ -108,6 +121,22 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'suspensa',
           type: 'number'
         },
+        "tipo": {
+          name: 'tipo',
+          type: 'string'
+        },
+        "codigoTagRemarketing": {
+          name: 'codigoTagRemarketing',
+          type: 'string'
+        },
+        "snippetTagRemarketing": {
+          name: 'snippetTagRemarketing',
+          type: 'string'
+        },
+        "hitsTag": {
+          name: 'hitsTag',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -138,6 +167,14 @@ export class ContaGoogle implements ContaGoogleInterface {
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'
         },
+        produtoAfiliadoRemarketing: {
+          name: 'produtoAfiliadoRemarketing',
+          type: 'ProdutoAfiliadoHotmart[]',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleRemarketingId'
+        },
         campanhaAdsMetricas: {
           name: 'campanhaAdsMetricas',
           type: 'CampanhaAdsMetrica[]',
@@ -158,6 +195,14 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'campanhaAdsMetricaIntradays',
           type: 'CampanhaAdsMetricaIntraday[]',
           model: 'CampanhaAdsMetricaIntraday',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        campanhaAdsRedeDisplays: {
+          name: 'campanhaAdsRedeDisplays',
+          type: 'CampanhaAdsRedeDisplay[]',
+          model: 'CampanhaAdsRedeDisplay',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'

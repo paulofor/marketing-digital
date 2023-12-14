@@ -22,6 +22,9 @@ public abstract class TokenAcesso_ObtemPorNome extends DaoAplicacao {
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom()) {
+			if (nome==null) {
+				throw new RuntimeException("nome precisa ser atribuido em TokenAcesso_ObtemPorNomeImpl ");
+			}
 			repTokenAcesso.obtemPorNome( nome , new ObjectCallback<TokenAcesso>() { 
 				public void onSuccess(TokenAcesso object) {
 					ds.setToken(object);

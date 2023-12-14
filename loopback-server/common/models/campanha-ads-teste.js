@@ -8,7 +8,8 @@ module.exports = function(Campanhaadsteste) {
         const sql = " update CampanhaAdsTeste " +
             " set codigoAds = " + campanha.codigoAds + " , " +
             " nomeAds = '" + campanha.nomeAds + "' , " +
-            " dataEnvioGoogle = now() , prontaParaTeste = 0 " +
+            " dataEnvioGoogle = now() , prontaParaTeste = 0,  " +
+            " codigoAdsGrupoAnuncio = '" + campanha.codigoAdsGrupoAnuncio + "' " +
             " where id = " + campanha.id;
         ds.connector.query(sql,callback);
     }

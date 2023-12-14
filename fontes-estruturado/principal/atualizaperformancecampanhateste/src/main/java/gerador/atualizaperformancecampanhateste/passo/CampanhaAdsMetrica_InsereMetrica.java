@@ -22,6 +22,9 @@ public abstract class CampanhaAdsMetrica_InsereMetrica extends DaoAplicacao {
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getMetricaCampanha())) {
+			if (metricaCampanha==null) {
+				throw new RuntimeException("metricaCampanha precisa ser atribuido em CampanhaAdsMetrica_InsereMetricaImpl ");
+			}
 			repCampanhaAdsMetrica.insereMetrica( metricaCampanha, new VoidCallback() { 
 				public void onSuccess() {
 					executaProximo();

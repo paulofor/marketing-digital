@@ -17,8 +17,17 @@ public class TokenAcesso extends Model {
 	private String nome;
 	private String token;
 	private String dataAtualizacao;
+	private int valido;
+	private String dataAcesso;
 	// Relacionamentos 1
 	// Relacionamentos N
+
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
 
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
@@ -27,6 +36,8 @@ public class TokenAcesso extends Model {
 			obj.put("nome", nome);
 			obj.put("token", token);
 			obj.put("dataAtualizacao", dataAtualizacao);
+			obj.put("valido", valido);
+			obj.put("dataAcesso", dataAcesso);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -51,6 +62,18 @@ public class TokenAcesso extends Model {
 	}
 	public String getDataAtualizacao() { 
 		return this.dataAtualizacao;
+	}
+	public void setValido(int valor) { 
+		this.valido = valor;
+	}
+	public int getValido() { 
+		return this.valido;
+	}
+	public void setDataAcesso(String valor) { 
+		this.dataAcesso = valor;
+	}
+	public String getDataAcesso() { 
+		return this.dataAcesso;
 	}
 
 }

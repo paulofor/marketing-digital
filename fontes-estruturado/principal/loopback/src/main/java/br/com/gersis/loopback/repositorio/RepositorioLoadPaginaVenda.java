@@ -30,11 +30,12 @@ public class RepositorioLoadPaginaVenda extends ModelRepository<LoadPaginaVenda>
 
 	// ***  Operações  ***
 
-	public synchronized void insereItem(int idHm ,final VoidCallback callback ) {
+	public synchronized void insereItem(int idHm ,String visitante ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("LoadPaginaVendas/insereItem","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "LoadPaginaVenda.insereItem");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("idHm", idHm);
+		params.put("visitante", visitante);
 		invokeStaticMethod("insereItem", params,   new EmptyResponseParser(callback));
 	}
 
@@ -43,6 +44,13 @@ public class RepositorioLoadPaginaVenda extends ModelRepository<LoadPaginaVenda>
 		this.getRestAdapter().getContract().addItem(contrato, "LoadPaginaVenda.ultimosAcessos");
 		Map<String, Object> params = new HashMap<String, Object>();
 		invokeStaticMethod("ultimosAcessos", params,   new JsonArrayParser<LoadPaginaVenda>(this, callback));
+	}
+
+	public synchronized void limpaMeuAcesso(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("LoadPaginaVendas/limpaMeuAcesso","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "LoadPaginaVenda.limpaMeuAcesso");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("limpaMeuAcesso", params,   new EmptyResponseParser(callback));
 	}
 
 

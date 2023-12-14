@@ -1,0 +1,33 @@
+{
+	"name": "FaixaHorarioCampanhaAds",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"horarioInicio": {
+			"type": "string"
+		},
+		"horarioFinal": {
+			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

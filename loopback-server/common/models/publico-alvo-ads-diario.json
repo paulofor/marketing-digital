@@ -1,0 +1,50 @@
+{
+	"name": "PublicoAlvoAdsDiario",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaListaPorConta": {
+			"accepts": [
+				{
+					"arg": "contaId",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "listaPublicoAlvo",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaListaPorConta",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

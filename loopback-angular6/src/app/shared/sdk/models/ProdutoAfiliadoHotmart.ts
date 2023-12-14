@@ -11,7 +11,10 @@ import {
   SolicitacaoCheckout,
   PlanoProduto,
   LinkCheckout,
-  PrecoProdutoAfiliado
+  PrecoProdutoAfiliado,
+  ProdutoAfiliadoHotlink,
+  TagIdSecaoPaginaVenda,
+  CampanhaAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
@@ -36,20 +39,34 @@ export interface ProdutoAfiliadoHotmartInterface {
   "lucroMedioProduto"?: number;
   "comentario"?: string;
   "percentualComissaoAtual"?: number;
+  "urlYouTube"?: string;
+  "contaGoogleRemarketingId"?: number;
+  "pixelGoogleCheckoutId"?: number;
+  "hotmartUcode"?: string;
+  "tagIdVideoVenda"?: string;
+  "salesPage"?: string;
+  "publicProfileLink"?: string;
+  "temperaturaAtual"?: number;
+  "possuiImagemRedeDisplay"?: number;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
   anuncioAds?: AnuncioAds[];
   pixelGoogle?: PixelGoogle;
-  produtoAfiliadoPaginaVenda?: PixelGoogle;
+  pixelGooglePaginaVenda?: PixelGoogle;
+  pixelGoogleCheckout?: PixelGoogle;
   contaGoogle?: ContaGoogle;
+  contaRemarketing?: ContaGoogle;
   campanhaAdsMetricas?: CampanhaAdsMetrica[];
   loadPaginaVendas?: LoadPaginaVenda[];
   solicitacaoCheckouts?: SolicitacaoCheckout[];
   planoProdutos?: PlanoProduto[];
   linkCheckouts?: LinkCheckout[];
   precoProdutoAfiliados?: PrecoProdutoAfiliado[];
+  produtoAfiliadoHotlinks?: ProdutoAfiliadoHotlink[];
+  tagIdSecaoPaginaVendas?: TagIdSecaoPaginaVenda[];
+  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -73,20 +90,34 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "lucroMedioProduto": number;
   "comentario": string;
   "percentualComissaoAtual": number;
+  "urlYouTube": string;
+  "contaGoogleRemarketingId": number;
+  "pixelGoogleCheckoutId": number;
+  "hotmartUcode": string;
+  "tagIdVideoVenda": string;
+  "salesPage": string;
+  "publicProfileLink": string;
+  "temperaturaAtual": number;
+  "possuiImagemRedeDisplay": number;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
   campanhaAdsTestes: CampanhaAdsTeste[];
   anuncioAds: AnuncioAds[];
   pixelGoogle: PixelGoogle;
-  produtoAfiliadoPaginaVenda: PixelGoogle;
+  pixelGooglePaginaVenda: PixelGoogle;
+  pixelGoogleCheckout: PixelGoogle;
   contaGoogle: ContaGoogle;
+  contaRemarketing: ContaGoogle;
   campanhaAdsMetricas: CampanhaAdsMetrica[];
   loadPaginaVendas: LoadPaginaVenda[];
   solicitacaoCheckouts: SolicitacaoCheckout[];
   planoProdutos: PlanoProduto[];
   linkCheckouts: LinkCheckout[];
   precoProdutoAfiliados: PrecoProdutoAfiliado[];
+  produtoAfiliadoHotlinks: ProdutoAfiliadoHotlink[];
+  tagIdSecaoPaginaVendas: TagIdSecaoPaginaVenda[];
+  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -200,6 +231,42 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'percentualComissaoAtual',
           type: 'number'
         },
+        "urlYouTube": {
+          name: 'urlYouTube',
+          type: 'string'
+        },
+        "contaGoogleRemarketingId": {
+          name: 'contaGoogleRemarketingId',
+          type: 'number'
+        },
+        "pixelGoogleCheckoutId": {
+          name: 'pixelGoogleCheckoutId',
+          type: 'number'
+        },
+        "hotmartUcode": {
+          name: 'hotmartUcode',
+          type: 'string'
+        },
+        "tagIdVideoVenda": {
+          name: 'tagIdVideoVenda',
+          type: 'string'
+        },
+        "salesPage": {
+          name: 'salesPage',
+          type: 'string'
+        },
+        "publicProfileLink": {
+          name: 'publicProfileLink',
+          type: 'string'
+        },
+        "temperaturaAtual": {
+          name: 'temperaturaAtual',
+          type: 'number'
+        },
+        "possuiImagemRedeDisplay": {
+          name: 'possuiImagemRedeDisplay',
+          type: 'number'
+        },
         "contaGoogleId": {
           name: 'contaGoogleId',
           type: 'number'
@@ -246,12 +313,20 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
                   keyFrom: 'pixelGoogleId',
           keyTo: 'id'
         },
-        produtoAfiliadoPaginaVenda: {
-          name: 'produtoAfiliadoPaginaVenda',
+        pixelGooglePaginaVenda: {
+          name: 'pixelGooglePaginaVenda',
           type: 'PixelGoogle',
           model: 'PixelGoogle',
           relationType: 'belongsTo',
                   keyFrom: 'pixelGooglePaginaVendaId',
+          keyTo: 'id'
+        },
+        pixelGoogleCheckout: {
+          name: 'pixelGoogleCheckout',
+          type: 'PixelGoogle',
+          model: 'PixelGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'pixelGoogleCheckoutId',
           keyTo: 'id'
         },
         contaGoogle: {
@@ -260,6 +335,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           model: 'ContaGoogle',
           relationType: 'belongsTo',
                   keyFrom: 'contaGoogleId',
+          keyTo: 'id'
+        },
+        contaRemarketing: {
+          name: 'contaRemarketing',
+          type: 'ContaGoogle',
+          model: 'ContaGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'contaGoogleRemarketingId',
           keyTo: 'id'
         },
         campanhaAdsMetricas: {
@@ -309,6 +392,30 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
+        },
+        produtoAfiliadoHotlinks: {
+          name: 'produtoAfiliadoHotlinks',
+          type: 'ProdutoAfiliadoHotlink[]',
+          model: 'ProdutoAfiliadoHotlink',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        tagIdSecaoPaginaVendas: {
+          name: 'tagIdSecaoPaginaVendas',
+          type: 'TagIdSecaoPaginaVenda[]',
+          model: 'TagIdSecaoPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'produtoAfiliadoHotmartId'
+        },
+        campanhaAdsRedeDisplays: {
+          name: 'campanhaAdsRedeDisplays',
+          type: 'CampanhaAdsRedeDisplay[]',
+          model: 'CampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'produtoAfiliadoHotmartId'
         },
       }
     }

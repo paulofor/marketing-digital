@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <title>Natflix Fitness</title>
     <meta name="robots" content="max-image-preview:large">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11408242632"></script>
     
-    
-    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11429766109"></script>
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11429766109');
+        gtag('event', 'conversion', {'send_to': 'AW-11429766109/gfiZCJa5jv4YEN3Hkcoq'});
+
+        gtag('config', 'G-CZ8T9JY5Q6');
+    </script>
+   
+
+    <script>
+
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('executando')
+            console.log('executando');
+            // Use a função getCookie para verificar se um cookie existe
             fetch('proxy-load.php?id=1422915')
                 .then(function (response) {
                     console.log('Requisição GET para a outra URL feita com sucesso.', response);
@@ -21,22 +32,23 @@
             var links = document.querySelectorAll('.pagamento');
             // Adiciona um ouvinte de eventos a cada elemento encontrado
             links.forEach(function (link) {
-            document.querySelectorAll('.pagamento').forEach(function (link) {
-                link.addEventListener('click', function (event) {
-                    fetch('proxy-checkout.php?id=1422915')
-                        .then(function (response) {
-                            console.log('Requisição GET para a outra URL feita com sucesso.', response);
-                        })
-                        .catch(function (error) {
-                            console.error('Erro ao fazer requisição GET para a outra URL:', error);
-                        });
+                document.querySelectorAll('.pagamento').forEach(function (link) {
+                    link.addEventListener('click', function (event) {
+                        fetch('proxy-checkout.php?id=1422915')
+                            .then(function (response) {
+                                console.log('Requisição GET para a outra URL feita com sucesso.', response);
+                            })
+                            .catch(function (error) {
+                                console.error('Erro ao fazer requisição GET para a outra URL:', error);
+                            });
                     });
                 });
             });
         });
 
-       
+
     </script>
+
 
 
 

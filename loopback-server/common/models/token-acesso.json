@@ -18,6 +18,12 @@
 		},
 		"dataAtualizacao": {
 			"type": "date"
+		},
+		"valido": {
+			"type": "number"
+		},
+		"dataAcesso": {
+			"type": "date"
 		}
 	},
 	"validations": [],
@@ -47,6 +53,31 @@
          		{
           			"path": "/obtemPorNome",
    					"verb": "get"
+ 				}
+ 			]
+		},
+		"RegistraAcesso": {
+			"accepts": [
+				{
+					"arg": "nome",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraAcesso",
+   					"verb": "post"
  				}
  			]
 		}

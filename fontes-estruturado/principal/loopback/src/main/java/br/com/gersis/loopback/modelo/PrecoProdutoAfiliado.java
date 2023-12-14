@@ -29,6 +29,13 @@ public class PrecoProdutoAfiliado extends Model {
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
 
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {

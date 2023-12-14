@@ -11,6 +11,9 @@
           <div class="dgc-card-header">
             <div style="overflow-x: hidden;">{{item.token}}</div>
           </div>
+          <div class="dgc-card-detalhe">
+            <div>Acesso: {{item.dataAcesso | date: 'dd/MM/yyyy HH:mm'}}</div>
+          </div>
           <div class="dgc-card-comandos">
               <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
           </div>

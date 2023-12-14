@@ -78,6 +78,15 @@ import { ContaGoogleMetricaMesApi } from './services/custom/ContaGoogleMetricaMe
 import { LinkCheckoutApi } from './services/custom/LinkCheckout';
 import { CampanhaAdsMetricaIntradayApi } from './services/custom/CampanhaAdsMetricaIntraday';
 import { PrecoProdutoAfiliadoApi } from './services/custom/PrecoProdutoAfiliado';
+import { ImagemAnuncioApi } from './services/custom/ImagemAnuncio';
+import { AnuncioAdsDisplayApi } from './services/custom/AnuncioAdsDisplay';
+import { VisitanteApi } from './services/custom/Visitante';
+import { VideoExecucaoApi } from './services/custom/VideoExecucao';
+import { ProdutoAfiliadoHotlinkApi } from './services/custom/ProdutoAfiliadoHotlink';
+import { TagIdSecaoPaginaVendaApi } from './services/custom/TagIdSecaoPaginaVenda';
+import { CampanhaAdsRedeDisplayApi } from './services/custom/CampanhaAdsRedeDisplay';
+import { OtimizacaoCampanhaAdsRedeDisplayApi } from './services/custom/OtimizacaoCampanhaAdsRedeDisplay';
+import { ListaRemarketingAdsApi } from './services/custom/ListaRemarketingAds';
 /**
 * @module SDKBrowserModule
 * @description
@@ -138,8 +147,18 @@ export class SDKBrowserModule {
         LinkCheckoutApi,
         CampanhaAdsMetricaIntradayApi,
         PrecoProdutoAfiliadoApi,
+        ImagemAnuncioApi,
+        AnuncioAdsDisplayApi,
+        VisitanteApi,
+        VideoExecucaoApi,
+        ProdutoAfiliadoHotlinkApi,
+        TagIdSecaoPaginaVendaApi,
+        CampanhaAdsRedeDisplayApi,
+        OtimizacaoCampanhaAdsRedeDisplayApi,
+        ListaRemarketingAdsApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

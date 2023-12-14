@@ -52,6 +52,14 @@
       </mat-select>
     </mat-form-field>
 
+    <mat-form-field class="example-full-width" *ngIf="listaConta">
+      <mat-select placeholder="Conta Google Remarketing"  #contaGoogleRemarketingId [(ngModel)]="item.contaGoogleRemarketingId" name="contaGoogleRemarketingId">
+        <mat-option *ngFor="let conta of listaContaRemarketing" [ngStyle]="{'color': conta.suspensa === 1 ? 'red' : 'inherit'}" [value]="conta.id">
+          {{ conta.gmail}} ({{conta.nome}})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <mat-form-field class="example-full-width">
       <input matInput #trabalho  [(ngModel)]="item.trabalho" name="trabalho" placeholder="Produto de trabalho" autocomplete="off"/>
     </mat-form-field> 
@@ -79,6 +87,10 @@
     <mat-form-field class="example-full-width">
       <input matInput #urlYouTube  [(ngModel)]="item.urlYouTube" name="urlYouTube" placeholder="Url YouTube" autocomplete="off"/>
     </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #possuiImagemRedeDisplay  [(ngModel)]="item.possuiImagemRedeDisplay" name="possuiImagemRedeDisplay" placeholder="Possui imagem para Rede Display" autocomplete="off"/>
+    </mat-form-field> 
 
     <mat-form-field class="example-full-width">
       <input matInput #comentario  [(ngModel)]="item.comentario" name="comentario" placeholder="Comentário" autocomplete="off"/>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
-import { CampanhaAdsMetricaApi } from '../shared/sdk';
+import { CampanhaAdsMetricaApi, ContaGoogleApi, ContaGoogleMetricaMesApi } from '../shared/sdk';
 import { CampanhaAdsMetricaListSimplesBaseComponent } from './campanha-ads-metrica-list-simples-base.component';
 
 @Component({
@@ -11,8 +11,19 @@ import { CampanhaAdsMetricaListSimplesBaseComponent } from './campanha-ads-metri
 })
 export class CampanhaAdsMetricaListSimplesComponent extends CampanhaAdsMetricaListSimplesBaseComponent {
 
-	constructor(protected srv: CampanhaAdsMetricaApi, protected router: ActivatedRoute, protected dialog: MatDialog) { 
+	resumoMes: any;
+	
+	
+	constructor(protected srv: CampanhaAdsMetricaApi, protected router: ActivatedRoute, protected dialog: MatDialog,
+		private srvConta:ContaGoogleMetricaMesApi) { 
 		super(srv,router,dialog);
+	}
+
+	preCarregaTela(): void {
+		this.srvConta.CustoTotalMes()
+			.subscribe((result) => {
+				this.resumoMes = result;
+			})
 	}
 
 	tipoCard(item) {
@@ -26,7 +37,7 @@ export class CampanhaAdsMetricaListSimplesComponent extends CampanhaAdsMetricaLi
 	getFiltro() {
 		return {
 			'order' : 'custoCampanha desc',
-			'include' : 'contaGoogle',
+			'include' : ['contaGoogle','produtoAfiliadoHotmart'],
 			'where' : {'maisRecente' : 1}
 		}
 	}

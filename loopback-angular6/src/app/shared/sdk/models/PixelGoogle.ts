@@ -19,7 +19,8 @@ export interface PixelGoogleInterface {
   "contaGoogleId"?: number;
   "id"?: number;
   produtoAfiliadoHotmarts?: ProdutoAfiliadoHotmart[];
-  pixelGooglePaginaVenda?: ProdutoAfiliadoHotmart[];
+  produtoAfiliadoPaginaVenda?: ProdutoAfiliadoHotmart[];
+  pixelGoogleCheckout?: ProdutoAfiliadoHotmart[];
   contaGoogle?: ContaGoogle;
 }
 
@@ -37,7 +38,8 @@ export class PixelGoogle implements PixelGoogleInterface {
   "contaGoogleId": number;
   "id": number;
   produtoAfiliadoHotmarts: ProdutoAfiliadoHotmart[];
-  pixelGooglePaginaVenda: ProdutoAfiliadoHotmart[];
+  produtoAfiliadoPaginaVenda: ProdutoAfiliadoHotmart[];
+  pixelGoogleCheckout: ProdutoAfiliadoHotmart[];
   contaGoogle: ContaGoogle;
   constructor(data?: PixelGoogleInterface) {
     Object.assign(this, data);
@@ -130,13 +132,21 @@ export class PixelGoogle implements PixelGoogleInterface {
                   keyFrom: 'id',
           keyTo: 'pixelGoogleId'
         },
-        pixelGooglePaginaVenda: {
-          name: 'pixelGooglePaginaVenda',
+        produtoAfiliadoPaginaVenda: {
+          name: 'produtoAfiliadoPaginaVenda',
           type: 'ProdutoAfiliadoHotmart[]',
           model: 'ProdutoAfiliadoHotmart',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'pixelGooglePaginaVendaId'
+        },
+        pixelGoogleCheckout: {
+          name: 'pixelGoogleCheckout',
+          type: 'ProdutoAfiliadoHotmart[]',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'pixelGoogleCheckoutId'
         },
         contaGoogle: {
           name: 'contaGoogle',

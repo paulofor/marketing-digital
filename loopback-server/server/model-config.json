@@ -150,5 +150,41 @@
   "PrecoProdutoAfiliado": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "ImagemAnuncio": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioAdsDisplay": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "Visitante": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "VideoExecucao": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoAfiliadoHotlink": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "TagIdSecaoPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "CampanhaAdsRedeDisplay": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "OtimizacaoCampanhaAdsRedeDisplay": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ListaRemarketingAds": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

@@ -33,7 +33,7 @@ import { HistoricoPorCodigoAdsComponent } from '../historico-por-codigo-ads/hist
 
 
 export const routes : Routes = [
-    { path: 'home' , component: HomeComponent },
+    { path: 'home' , component: TokenAcessoListComponent },
 
     { path: 'plataforma' , component: PlataformaListComponent },
     { path: 'produtoHotmart' , component : ProdutoHotmartListComponent },
