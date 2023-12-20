@@ -21,6 +21,8 @@ public class CampanhaAdsRedeDisplay extends Model {
 	private String nomeAds;
 	private String codigoAdsGrupoAnuncio;
 	private int prontaParaEnvio;
+	private String codigoAdsCampanha;
+	private String tipoCampanha;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
@@ -28,6 +30,7 @@ public class CampanhaAdsRedeDisplay extends Model {
 	private FaixaHorarioCampanhaAds FaixaHorarioCampanhaAds;
 	private PublicoAlvoAds PublicoAlvoAds;
 	// Relacionamentos N
+	private List<AnuncioCampanhaAdsDisplay> AnuncioCampanhaAdsDisplays;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -47,6 +50,8 @@ public class CampanhaAdsRedeDisplay extends Model {
 			obj.put("nomeAds", nomeAds);
 			obj.put("codigoAdsGrupoAnuncio", codigoAdsGrupoAnuncio);
 			obj.put("prontaParaEnvio", prontaParaEnvio);
+			obj.put("codigoAdsCampanha", codigoAdsCampanha);
+			obj.put("tipoCampanha", tipoCampanha);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -96,6 +101,18 @@ public class CampanhaAdsRedeDisplay extends Model {
 	public int getProntaParaEnvio() { 
 		return this.prontaParaEnvio;
 	}
+	public void setCodigoAdsCampanha(String valor) { 
+		this.codigoAdsCampanha = valor;
+	}
+	public String getCodigoAdsCampanha() { 
+		return this.codigoAdsCampanha;
+	}
+	public void setTipoCampanha(String valor) { 
+		this.tipoCampanha = valor;
+	}
+	public String getTipoCampanha() { 
+		return this.tipoCampanha;
+	}
 
 	public ContaGoogle getContaGoogle() {
 		return ContaGoogle;
@@ -131,5 +148,17 @@ public class CampanhaAdsRedeDisplay extends Model {
 	public void setPublicoAlvoAds(HashMap valor) {
 		this.PublicoAlvoAds = new PublicoAlvoAds();
 		BeanUtil.setProperties(this.PublicoAlvoAds, (Map<String, ? extends Object>) valor, true);
+	}
+	public List<AnuncioCampanhaAdsDisplay> getAnuncioCampanhaAdsDisplays() {
+		return  AnuncioCampanhaAdsDisplays;
+	}
+	public void setAnuncioCampanhaAdsDisplays(List<AnuncioCampanhaAdsDisplay> valores) {
+		this.AnuncioCampanhaAdsDisplays = new ArrayList<AnuncioCampanhaAdsDisplay>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AnuncioCampanhaAdsDisplay();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AnuncioCampanhaAdsDisplays.add((AnuncioCampanhaAdsDisplay) objeto);
+		}
 	}
 }

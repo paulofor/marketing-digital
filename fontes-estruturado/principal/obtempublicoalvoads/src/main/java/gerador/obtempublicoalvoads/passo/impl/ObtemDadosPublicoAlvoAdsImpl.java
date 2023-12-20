@@ -20,13 +20,20 @@ public class ObtemDadosPublicoAlvoAdsImpl extends PassoSqlGoogleAds {
 	@Override
 	protected boolean processaLinha(GoogleAdsRow linha, PublicoAlvoAdsDiario novo) {
 		System.out.println("Nome:" + linha.getUserList().getName());
-		System.out.println("Tamanho:" + linha.getUserList().getSizeForDisplay());
+		System.out.println("TamanhoDisplay:" + linha.getUserList().getSizeForDisplay());
+		System.out.println("TamanhoPesquisa:" + linha.getUserList().getSizeForSearch());
+		novo.setNome(linha.getUserList().getName());
+		novo.setResourceName(linha.getUserList().getResourceName());
+		novo.setTamanhoRedeDisplay((int)linha.getUserList().getSizeForDisplay());
+		novo.setTamanhoRedePesquisa((int)linha.getUserList().getSizeForSearch());
+		novo.setContaGoogleId(new Integer(this.conta.getId().toString()));
 		return true;
 	}
 
 	@Override
 	protected String getQuery() {
-	    String query = "SELECT user_list.name, user_list.size_for_display FROM user_list ";
+	    String query = "SELECT user_list.name, user_list.size_for_display, user_list.size_for_search, user_list.resource_name " +
+	    		" FROM user_list ";
 	    return query;
 	}
 

@@ -60,6 +60,15 @@
 		"codigoAdsGrupoAnuncio": {
 			"type": "string"
 		},
+		"codigoAdsCampanha": {
+			"type": "string"
+		},
+		"primaryStatus": {
+			"type": "string"
+		},
+		"primaryStatusReasons": {
+			"type": "string"
+		},
 		"modeloCampanhaAdsTesteId": {
 			"type": "number"
 		},
@@ -67,6 +76,9 @@
 			"type": "number"
 		},
 		"contaGoogleId": {
+			"type": "number"
+		},
+		"paginaVendaId": {
 			"type": "number"
 		}
 	},
@@ -85,6 +97,11 @@
 		"contaGoogle": {
 			"type": "belongsTo",
 			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
+		"paginaVenda": {
+			"type": "belongsTo",
+			"model": "PaginaVenda",
 			"foreignKey": ""
 		},
 		"anuncioCampanhaAdsTestes": {

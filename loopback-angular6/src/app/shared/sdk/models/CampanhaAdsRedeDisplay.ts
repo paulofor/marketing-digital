@@ -1,7 +1,10 @@
 /* tslint:disable */
 import {
   ContaGoogle,
-  ProdutoAfiliadoHotmart
+  ProdutoAfiliadoHotmart,
+  PublicoAlvoAds,
+  PaginaVenda,
+  AnuncioCampanhaAdsDisplay
 } from '../index';
 
 declare var Object: any;
@@ -13,12 +16,19 @@ export interface CampanhaAdsRedeDisplayInterface {
   "nomeAds"?: string;
   "codigoAdsGrupoAnuncio"?: string;
   "prontaParaEnvio"?: number;
+  "codigoAdsCampanha"?: string;
+  "tipoCampanha"?: string;
   "contaGoogleId"?: number;
   "produtoAfiliadoHotmartId"?: number;
   "paginaVendaId"?: number;
+  "faixaHorarioCampanhaAdsId"?: number;
+  "publicoAlvoAdsId"?: number;
   "id"?: number;
   contaGoogle?: ContaGoogle;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  publicoAlvoAds?: PublicoAlvoAds;
+  paginaVenda?: PaginaVenda;
+  anuncioCampanhaAdsDisplays?: AnuncioCampanhaAdsDisplay[];
 }
 
 export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
@@ -29,12 +39,19 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
   "nomeAds": string;
   "codigoAdsGrupoAnuncio": string;
   "prontaParaEnvio": number;
+  "codigoAdsCampanha": string;
+  "tipoCampanha": string;
   "contaGoogleId": number;
   "produtoAfiliadoHotmartId": number;
   "paginaVendaId": number;
+  "faixaHorarioCampanhaAdsId": number;
+  "publicoAlvoAdsId": number;
   "id": number;
   contaGoogle: ContaGoogle;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  publicoAlvoAds: PublicoAlvoAds;
+  paginaVenda: PaginaVenda;
+  anuncioCampanhaAdsDisplays: AnuncioCampanhaAdsDisplay[];
   constructor(data?: CampanhaAdsRedeDisplayInterface) {
     Object.assign(this, data);
   }
@@ -96,6 +113,14 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           name: 'prontaParaEnvio',
           type: 'number'
         },
+        "codigoAdsCampanha": {
+          name: 'codigoAdsCampanha',
+          type: 'string'
+        },
+        "tipoCampanha": {
+          name: 'tipoCampanha',
+          type: 'string'
+        },
         "contaGoogleId": {
           name: 'contaGoogleId',
           type: 'number'
@@ -106,6 +131,14 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
         },
         "paginaVendaId": {
           name: 'paginaVendaId',
+          type: 'number'
+        },
+        "faixaHorarioCampanhaAdsId": {
+          name: 'faixaHorarioCampanhaAdsId',
+          type: 'number'
+        },
+        "publicoAlvoAdsId": {
+          name: 'publicoAlvoAdsId',
           type: 'number'
         },
         "id": {
@@ -129,6 +162,30 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           relationType: 'belongsTo',
                   keyFrom: 'produtoAfiliadoHotmartId',
           keyTo: 'hotmartId'
+        },
+        publicoAlvoAds: {
+          name: 'publicoAlvoAds',
+          type: 'PublicoAlvoAds',
+          model: 'PublicoAlvoAds',
+          relationType: 'belongsTo',
+                  keyFrom: 'publicoAlvoAdsId',
+          keyTo: 'id'
+        },
+        paginaVenda: {
+          name: 'paginaVenda',
+          type: 'PaginaVenda',
+          model: 'PaginaVenda',
+          relationType: 'belongsTo',
+                  keyFrom: 'paginaVendaId',
+          keyTo: 'id'
+        },
+        anuncioCampanhaAdsDisplays: {
+          name: 'anuncioCampanhaAdsDisplays',
+          type: 'AnuncioCampanhaAdsDisplay[]',
+          model: 'AnuncioCampanhaAdsDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsRedeDisplayId'
         },
       }
     }

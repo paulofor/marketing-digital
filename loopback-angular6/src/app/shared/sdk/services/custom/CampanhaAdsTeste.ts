@@ -18,6 +18,7 @@ import { AnuncioCampanhaAdsTeste } from '../../models/AnuncioCampanhaAdsTeste';
 import { ContaGoogle } from '../../models/ContaGoogle';
 import { CampanhaAdsMetrica } from '../../models/CampanhaAdsMetrica';
 import { CampanhaAdsMetricaIntraday } from '../../models/CampanhaAdsMetricaIntraday';
+import { PaginaVenda } from '../../models/PaginaVenda';
 
 
 /**
@@ -494,6 +495,36 @@ export class CampanhaAdsTesteApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Busca relação paginaVenda de belongsTo.
+   *
+   * @param {any} id CampanhaAdsTeste id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAdsTeste` object.)
+   * </em>
+   */
+  public getPaginaVenda(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAdsTestes/:id/paginaVenda";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

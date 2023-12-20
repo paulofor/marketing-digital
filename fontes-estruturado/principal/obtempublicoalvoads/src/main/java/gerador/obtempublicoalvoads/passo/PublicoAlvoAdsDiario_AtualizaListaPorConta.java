@@ -16,14 +16,13 @@ public abstract class PublicoAlvoAdsDiario_AtualizaListaPorConta extends DaoApli
 	private int NUM_PASSO = 3;
 
 
-	protected int contaId;
 	protected List<PublicoAlvoAdsDiario> listaPublicoAlvo;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getContaCorrente(), ds.getListaPublico())) {
-			repPublicoAlvoAdsDiario.atualizaListaPorConta( contaId,listaPublicoAlvo, new VoidCallback() { 
+			repPublicoAlvoAdsDiario.atualizaListaPorConta( listaPublicoAlvo, new VoidCallback() { 
 				public void onSuccess() {
 					executaProximo();
 				}

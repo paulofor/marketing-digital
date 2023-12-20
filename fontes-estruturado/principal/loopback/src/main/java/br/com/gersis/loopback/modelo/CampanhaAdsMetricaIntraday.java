@@ -24,6 +24,8 @@ public class CampanhaAdsMetricaIntraday extends Model {
 	private int clique;
 	private int impressao;
 	private int conversao;
+	private String primaryStatus;
+	private String primaryStatusReasons;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private ContaGoogle ContaGoogle;
@@ -50,6 +52,8 @@ public class CampanhaAdsMetricaIntraday extends Model {
 			obj.put("clique", clique);
 			obj.put("impressao", impressao);
 			obj.put("conversao", conversao);
+			obj.put("primaryStatus", primaryStatus);
+			obj.put("primaryStatusReasons", primaryStatusReasons);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -116,6 +120,18 @@ public class CampanhaAdsMetricaIntraday extends Model {
 	}
 	public int getConversao() { 
 		return this.conversao;
+	}
+	public void setPrimaryStatus(String valor) { 
+		this.primaryStatus = valor;
+	}
+	public String getPrimaryStatus() { 
+		return this.primaryStatus;
+	}
+	public void setPrimaryStatusReasons(String valor) { 
+		this.primaryStatusReasons = valor;
+	}
+	public String getPrimaryStatusReasons() { 
+		return this.primaryStatusReasons;
 	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {

@@ -24,7 +24,8 @@ export class CampanhaAdsTesteDetalheComponent extends BaseItemIdComponent{
         {'relation':'anuncioCampanhaAdsTestes' , 'scope' : {'include' : 'anuncioAds'}},
         {'relation' : 'palavraChaveCampanhaAdsTestes' , 'scope' : {'include' : 'ideiaPalavraChave'}},
         {'relation' : 'produtoAfiliadoHotmart'} ,
-        {'relation' : 'modeloCampanhaAdsTeste'}
+        {'relation' : 'modeloCampanhaAdsTeste'} ,
+        {'relation' : 'contaGoogle'}
       ]
     }
   }

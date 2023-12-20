@@ -49,6 +49,11 @@
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
+		},
+		"paginaVendaPrecoProdutos": {
+			"type": "hasMany",
+			"model": "PaginaVendaPrecoProduto",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

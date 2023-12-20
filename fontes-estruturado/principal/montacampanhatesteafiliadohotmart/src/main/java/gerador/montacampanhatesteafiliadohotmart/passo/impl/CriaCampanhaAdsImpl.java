@@ -95,6 +95,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 			String campanha[] = resourceNameCampanha.split("/");
 			String codigoCampanha = campanha[campanha.length-1];
 			campanhaTesteCorrente.setCodigoAds(codigoCampanha);
+			campanhaTesteCorrente.setCodigoAdsCampanha(resourceNameCampanha);
 			this.saidaCampanhaTesteCorrente = campanhaTesteCorrente;
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);

@@ -30,11 +30,10 @@ public class RepositorioPublicoAlvoAdsDiario extends ModelRepository<PublicoAlvo
 
 	// ***  Operações  ***
 
-	public synchronized void atualizaListaPorConta(int contaId ,List<PublicoAlvoAdsDiario> listaPublicoAlvo ,final VoidCallback callback ) {
+	public synchronized void atualizaListaPorConta(List<PublicoAlvoAdsDiario> listaPublicoAlvo ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PublicoAlvoAdsDiarios/atualizaListaPorConta","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "PublicoAlvoAdsDiario.atualizaListaPorConta");
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("contaId", contaId);
 		params.put("listaPublicoAlvo",obtemLista(listaPublicoAlvo));
 		invokeStaticMethod("atualizaListaPorConta", params,   new EmptyResponseParser(callback));
 	}

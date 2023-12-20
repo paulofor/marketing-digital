@@ -36,6 +36,7 @@ public class ContaGoogle extends Model {
 	private List<CampanhaAdsMetricaIntraday> CampanhaAdsMetricaIntradays;
 	private List<ProdutoAfiliadoHotmart> produtoAfiliadoRemarketing;
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
+	private List<PublicoAlvoAdsDiario> PublicoAlvoAdsDiarios;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -234,6 +235,18 @@ public class ContaGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsRedeDisplays.add((CampanhaAdsRedeDisplay) objeto);
+		}
+	}
+	public List<PublicoAlvoAdsDiario> getPublicoAlvoAdsDiarios() {
+		return  PublicoAlvoAdsDiarios;
+	}
+	public void setPublicoAlvoAdsDiarios(List<PublicoAlvoAdsDiario> valores) {
+		this.PublicoAlvoAdsDiarios = new ArrayList<PublicoAlvoAdsDiario>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PublicoAlvoAdsDiario();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PublicoAlvoAdsDiarios.add((PublicoAlvoAdsDiario) objeto);
 		}
 	}
 }

@@ -20,6 +20,9 @@
 		},
 		"qtdeVisita": {
 			"type": "number"
+		},
+		"paginaVendaId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -28,6 +31,11 @@
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
+		},
+		"paginaVenda": {
+			"type": "belongsTo",
+			"model": "PaginaVenda",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],
@@ -43,6 +51,12 @@
 				{
 					"arg": "visitante",
 					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "tempo",
+					"type": "number",
    					"required": false,
     				"description": ""
 				}

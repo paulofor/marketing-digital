@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
-  ContaGoogle
+  ContaGoogle,
+  PublicoAlvoAdsDiario
 } from '../index';
 
 declare var Object: any;
@@ -22,6 +23,7 @@ export interface PixelGoogleInterface {
   produtoAfiliadoPaginaVenda?: ProdutoAfiliadoHotmart[];
   pixelGoogleCheckout?: ProdutoAfiliadoHotmart[];
   contaGoogle?: ContaGoogle;
+  publicoAlvoAdsDiarios?: PublicoAlvoAdsDiario[];
 }
 
 export class PixelGoogle implements PixelGoogleInterface {
@@ -41,6 +43,7 @@ export class PixelGoogle implements PixelGoogleInterface {
   produtoAfiliadoPaginaVenda: ProdutoAfiliadoHotmart[];
   pixelGoogleCheckout: ProdutoAfiliadoHotmart[];
   contaGoogle: ContaGoogle;
+  publicoAlvoAdsDiarios: PublicoAlvoAdsDiario[];
   constructor(data?: PixelGoogleInterface) {
     Object.assign(this, data);
   }
@@ -155,6 +158,14 @@ export class PixelGoogle implements PixelGoogleInterface {
           relationType: 'belongsTo',
                   keyFrom: 'contaGoogleId',
           keyTo: 'id'
+        },
+        publicoAlvoAdsDiarios: {
+          name: 'publicoAlvoAdsDiarios',
+          type: 'PublicoAlvoAdsDiario[]',
+          model: 'PublicoAlvoAdsDiario',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'pixelGoogleId'
         },
       }
     }

@@ -29,6 +29,8 @@ import { ProdutoObtemProximoTrabalhoComponent } from '../produto-obtem-proximo-t
 import { ListaBomCrescimentoTemperaturaComponent } from '../lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura.component';
 import { CampanhaAdsMetricaIntradayListSimplesComponent } from '../campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples.component';
 import { HistoricoPorCodigoAdsComponent } from '../historico-por-codigo-ads/historico-por-codigo-ads.component';
+import { AnuncioAdsDisplayPorProdutoListComponent } from '../anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component';
+import { ListaAltaMargemAltaTemperaturaComponent } from '../lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component';
 
 
 
@@ -69,6 +71,9 @@ export const routes : Routes = [
     { path: 'crescimentoTemperatura' , component: ListaBomCrescimentoTemperaturaComponent },
     { path: 'campanhaAdsMetricaIntradayListSimples' , component: CampanhaAdsMetricaIntradayListSimplesComponent },
     { path: 'historicoPorCodigoAds/:id' , component: HistoricoPorCodigoAdsComponent },
+    { path: 'anuncioAdsDisplayPorProdutoList/:id' , component: AnuncioAdsDisplayPorProdutoListComponent },
+
+    { path : 'listaAltaMargemAltaTemperatura' , component: ListaAltaMargemAltaTemperaturaComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

@@ -61,7 +61,7 @@ public class ConsultaGoogleAdsListaAtivaPorContaImpl extends ConsultaGoogleAdsLi
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String formattedToday = today.format(formatter);
 		
-		String query = "SELECT campaign.status, campaign.id, campaign.name, metrics.impressions, metrics.clicks, metrics.conversions, "
+		String query = "SELECT campaign.status, campaign.id, campaign.name, metrics.impressions, metrics.clicks, metrics.conversions, campaign.primary_status, campaign.primary_status_reasons, "
 				+ "campaign.advertising_channel_type, bidding_strategy.target_cpa.target_cpa_micros , campaign.bidding_strategy_type, metrics.ctr, metrics.cost_micros, metrics.ctr, metrics.average_cpc "
 				+ "FROM campaign WHERE segments.date = '" + formattedToday + "' and campaign.status = 'ENABLED'";
 		// "WHERE campaign.status = 'ENABLE'";
@@ -98,6 +98,8 @@ public class ConsultaGoogleAdsListaAtivaPorContaImpl extends ConsultaGoogleAdsLi
 		    	saida.setImpressao(new Long(linha.getMetrics().getImpressions()).intValue());
 		    	saida.setClique((new Long(linha.getMetrics().getClicks()).intValue()));
 		    	saida.setConversao((new Long((long) linha.getMetrics().getConversions())).intValue());
+		    	saida.setPrimaryStatus(linha.getCampaign().getPrimaryStatus().name());
+		    	//saida.setPrimaryStatusReasons(linha.getCampaign().getPr);
 				long custo = linha.getMetrics().getCostMicros();
 				double valor = (double) custo / 1000000L;
 				saida.setCustoDia(valor);

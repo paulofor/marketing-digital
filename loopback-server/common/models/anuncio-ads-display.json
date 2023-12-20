@@ -9,9 +9,59 @@
     	"Counts": true
   	},
 	"properties": {
+		"urlFinal": {
+			"type": "string"
+		},
+		"nomeEmpresa": {
+			"type": "string"
+		},
+		"titulo": {
+			"type": "string"
+		},
+		"tituloLongo": {
+			"type": "string"
+		},
+		"descricao": {
+			"type": "string"
+		},
+		"nomeImagem1200x628": {
+			"type": "string"
+		},
+		"nomeImagem1200x1200": {
+			"type": "string"
+		},
+		"nomeImagem960x1600": {
+			"type": "string"
+		},
+		"paginaVendaId": {
+			"type": "number"
+		},
+		"imagemConjuntoId": {
+			"type": "number"
+		}
 	},
 	"validations": [],
 	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"paginaVenda": {
+			"type": "belongsTo",
+			"model": "PaginaVenda",
+			"foreignKey": ""
+		},
+		"imagemConjunto": {
+			"type": "belongsTo",
+			"model": "ImagemConjunto",
+			"foreignKey": ""
+		},
+		"anuncioCampanhaAdsDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioCampanhaAdsDisplay",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {

@@ -29,6 +29,26 @@
 			"type": "hasMany",
 			"model": "PublicoAlvoAds",
 			"foreignKey": ""
+		},
+		"anuncioAdsDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioAdsDisplay",
+			"foreignKey": ""
+		},
+		"loadPaginaVendas": {
+			"type": "hasMany",
+			"model": "LoadPaginaVenda",
+			"foreignKey": ""
+		},
+		"paginaVendaPrecoProdutos": {
+			"type": "hasMany",
+			"model": "PaginaVendaPrecoProduto",
+			"foreignKey": ""
+		},
+		"campanhaAdsTestes": {
+			"type": "hasMany",
+			"model": "CampanhaAdsTeste",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

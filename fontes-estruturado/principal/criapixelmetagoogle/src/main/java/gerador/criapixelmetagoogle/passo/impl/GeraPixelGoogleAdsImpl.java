@@ -12,6 +12,7 @@ import java.util.Collections;
 
 import com.google.ads.googleads.lib.GoogleAdsClient;
 import com.google.ads.googleads.v13.common.CustomAudienceSegment;
+import com.google.ads.googleads.v13.common.TagSnippet;
 import com.google.ads.googleads.v13.enums.ConversionActionCategoryEnum.ConversionActionCategory;
 import com.google.ads.googleads.v13.enums.ConversionActionStatusEnum.ConversionActionStatus;
 import com.google.ads.googleads.v13.enums.ConversionActionTypeEnum.ConversionActionType;
@@ -29,6 +30,7 @@ import com.google.ads.googleads.v13.services.MutateConversionActionResult;
 import com.google.ads.googleads.v13.services.MutateConversionActionsResponse;
 import com.google.ads.googleads.v13.services.MutateCustomAudiencesResponse;
 
+import br.com.gersis.loopback.modelo.ContaGoogle;
 import br.com.gersis.loopback.modelo.PixelGoogle;
 import br.com.gersis.loopback.modelo.ProdutoAfiliadoHotmart;
 import gerador.criapixelmetagoogle.passo.GeraPixelGoogleAds;
@@ -43,18 +45,26 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 	@Override
 	protected boolean executaCustom( ProdutoAfiliadoHotmart produtoAfiliadoCorrente) {
 		if (produtoAfiliadoCorrente.getSigla()==null) {
-			throw new RuntimeException("Sem sigla");
+			throw new RuntimeException("Sem sigla no produto " + produtoAfiliadoCorrente.getNome());
 		}
 		if (produtoAfiliadoCorrente.getContaGoogle()==null) {
-			throw new RuntimeException("Sem conta google");
+			throw new RuntimeException("Sem conta google no produto " + produtoAfiliadoCorrente.getNome());
 		}
+		if (produtoAfiliadoCorrente.getContaRemarketing()==null) {
+			throw new RuntimeException("Sem conta google remarketing no produto " + produtoAfiliadoCorrente.getNome());
+		}
+		
+		System.out.println("Produto: " + produtoAfiliadoCorrente.getNome() + " , conta: " + produtoAfiliadoCorrente.getContaGoogle().getNome() + " , " +
+					produtoAfiliadoCorrente.getContaRemarketing().getNome());
+		
+		
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			String nomePixel = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_venda_" + produtoAfiliadoCorrente.getContaGoogle().getNome();
 			long codigoUsuario = new Long(produtoAfiliadoCorrente.getContaGoogle().getIdAds().replace("-", ""));
-			this.saidaPixelGoogle = criaPixel(googleAdsClient,nomePixel,codigoUsuario);
-			//criaMeta(googleAdsClient);
+			this.saidaPixelGoogle = criaPixel(googleAdsClient,nomePixel,codigoUsuario,produtoAfiliadoCorrente.getContaGoogle());
+			
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
 			System.exit(1);
@@ -225,7 +235,7 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 	}
 
 	*/
-	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel, long codigoUsuario) {
+	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel, long codigoUsuario, ContaGoogle conta) {
 
 		PixelGoogle pixel = null;
 		
@@ -259,6 +269,8 @@ public class GeraPixelGoogleAdsImpl extends GeraPixelGoogleAds {
 		    	pixel = new PixelGoogle();
 		    	pixel.setNome(nomePixel);
 		    	pixel.setIdentificador(result.getResourceName());
+		    	pixel.setContaGoogleId(new Integer(conta.getId().toString()));
+		    	
 		      System.out.printf(
 		          "New conversion action added with resource name: '%s'%n", result.getResourceName());
 		    }

@@ -1,0 +1,27 @@
+{
+	"name": "MercadoAlvo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoMercados": {
+			"type": "hasMany",
+			"model": "ProdutoMercado",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

@@ -9,20 +9,56 @@
     	"Counts": true
   	},
 	"properties": {
+		"data": {
+			"type": "date"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"tamanhoRedeDisplay": {
+			"type": "number"
+		},
+		"tamanhoRedePesquisa": {
+			"type": "number"
+		},
+		"resourceName": {
+			"type": "string"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		},
+		"maisRecente": {
+			"type": "number"
+		},
+		"hotmartId": {
+			"type": "number"
+		},
+		"pixelGoogleId": {
+			"type": "number"
+		}
 	},
 	"validations": [],
 	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"pixelGoogle": {
+			"type": "belongsTo",
+			"model": "PixelGoogle",
+			"foreignKey": ""
+		},
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {
 		"AtualizaListaPorConta": {
 			"accepts": [
-				{
-					"arg": "contaId",
-					"type": "number",
-   					"required": false,
-    				"description": ""
-				},
 				{
 					"arg": "listaPublicoAlvo",
 					"type": "array",

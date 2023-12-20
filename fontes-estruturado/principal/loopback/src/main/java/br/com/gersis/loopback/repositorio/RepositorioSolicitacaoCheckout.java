@@ -30,12 +30,13 @@ public class RepositorioSolicitacaoCheckout extends ModelRepository<SolicitacaoC
 
 	// ***  Operações  ***
 
-	public synchronized void insereItem(int idHm ,String visitante ,final VoidCallback callback ) {
+	public synchronized void insereItem(int idHm ,String visitante ,String url ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("SolicitacaoCheckouts/insereItem","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "SolicitacaoCheckout.insereItem");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("idHm", idHm);
 		params.put("visitante", visitante);
+		params.put("url", url);
 		invokeStaticMethod("insereItem", params,   new EmptyResponseParser(callback));
 	}
 

@@ -1,0 +1,41 @@
+{
+	"name": "ImagemConjunto",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"nomeImagem1200x628": {
+			"type": "string"
+		},
+		"nomeImagem1200x1200": {
+			"type": "string"
+		},
+		"nomeImagem960x1600": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"anuncioAdsDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioAdsDisplay",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

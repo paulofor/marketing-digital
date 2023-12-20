@@ -64,6 +64,11 @@
 			"type": "hasMany",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "pixelGoogleCheckoutId"
+		},
+		"publicoAlvoAdsDiarios": {
+			"type": "hasMany",
+			"model": "PublicoAlvoAdsDiario",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],
@@ -107,6 +112,50 @@
 			"http": [
          		{
           			"path": "/registraCriacao",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaAjusteComConta": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaAjusteComConta",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaAjuste": {
+			"accepts": [
+				{
+					"arg": "pixel",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaAjuste",
    					"verb": "post"
  				}
  			]

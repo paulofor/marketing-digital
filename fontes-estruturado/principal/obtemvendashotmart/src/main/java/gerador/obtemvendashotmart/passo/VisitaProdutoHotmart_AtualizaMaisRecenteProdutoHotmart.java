@@ -38,7 +38,7 @@ public abstract class VisitaProdutoHotmart_AtualizaMaisRecenteProdutoHotmart ext
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new VisitaProdutoHotmart_AjustaDeltaTemperaturaImpl();
+		return new DummyDaoBase();
 	}
 
 

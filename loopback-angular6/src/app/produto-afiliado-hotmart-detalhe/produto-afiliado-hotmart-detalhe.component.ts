@@ -67,7 +67,8 @@ export class ProdutoAfiliadoHotmartDetalheComponent extends ProdutoAfiliadoHotma
 			'pixelGoogle',
 			'pixelGoogleCheckout',
 			'pixelGooglePaginaVenda',
-			'produtoAfiliadoHotlinks'
+			'produtoAfiliadoHotlinks',
+			{'relation' : 'publicoAlvoAdsDiarios' , 'scope' : {'where' : {'maisRecente' : 1}}}
 
 		  ]
 		}

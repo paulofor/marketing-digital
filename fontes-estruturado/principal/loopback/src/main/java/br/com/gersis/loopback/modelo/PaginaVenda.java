@@ -20,6 +20,10 @@ public class PaginaVenda extends Model {
 	// Relacionamentos N
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<PublicoAlvoAds> PublicoAlvoAds;
+	private List<AnuncioAdsDisplay> AnuncioAdsDisplays;
+	private List<LoadPaginaVenda> LoadPaginaVendas;
+	private List<PaginaVendaPrecoProduto> PaginaVendaPrecoProdutos;
+	private List<CampanhaAdsTeste> CampanhaAdsTestes;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -76,6 +80,54 @@ public class PaginaVenda extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PublicoAlvoAds.add((PublicoAlvoAds) objeto);
+		}
+	}
+	public List<AnuncioAdsDisplay> getAnuncioAdsDisplays() {
+		return  AnuncioAdsDisplays;
+	}
+	public void setAnuncioAdsDisplays(List<AnuncioAdsDisplay> valores) {
+		this.AnuncioAdsDisplays = new ArrayList<AnuncioAdsDisplay>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AnuncioAdsDisplay();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AnuncioAdsDisplays.add((AnuncioAdsDisplay) objeto);
+		}
+	}
+	public List<LoadPaginaVenda> getLoadPaginaVendas() {
+		return  LoadPaginaVendas;
+	}
+	public void setLoadPaginaVendas(List<LoadPaginaVenda> valores) {
+		this.LoadPaginaVendas = new ArrayList<LoadPaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new LoadPaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.LoadPaginaVendas.add((LoadPaginaVenda) objeto);
+		}
+	}
+	public List<PaginaVendaPrecoProduto> getPaginaVendaPrecoProdutos() {
+		return  PaginaVendaPrecoProdutos;
+	}
+	public void setPaginaVendaPrecoProdutos(List<PaginaVendaPrecoProduto> valores) {
+		this.PaginaVendaPrecoProdutos = new ArrayList<PaginaVendaPrecoProduto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaPrecoProduto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaPrecoProdutos.add((PaginaVendaPrecoProduto) objeto);
+		}
+	}
+	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {
+		return  CampanhaAdsTestes;
+	}
+	public void setCampanhaAdsTestes(List<CampanhaAdsTeste> valores) {
+		this.CampanhaAdsTestes = new ArrayList<CampanhaAdsTeste>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CampanhaAdsTeste();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CampanhaAdsTestes.add((CampanhaAdsTeste) objeto);
 		}
 	}
 }

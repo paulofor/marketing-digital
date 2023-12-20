@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class VisitaProdutoHotmart_AjustaDeltaTemperatura extends DaoAplicacao { 
 
-	private int NUM_PASSO = 5;
+	private int NUM_PASSO = 6;
 
 
 
@@ -37,7 +37,7 @@ public abstract class VisitaProdutoHotmart_AjustaDeltaTemperatura extends DaoApl
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new ProdutoAfiliadoHotmart_AtualizaTemperaturaAtualImpl();
+		return new DummyDaoBase();
 	}
 
 

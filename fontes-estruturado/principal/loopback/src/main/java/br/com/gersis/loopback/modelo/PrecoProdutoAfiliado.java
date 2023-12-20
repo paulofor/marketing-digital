@@ -28,6 +28,7 @@ public class PrecoProdutoAfiliado extends Model {
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
+	private List<PaginaVendaPrecoProduto> PaginaVendaPrecoProdutos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -131,5 +132,17 @@ public class PrecoProdutoAfiliado extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public List<PaginaVendaPrecoProduto> getPaginaVendaPrecoProdutos() {
+		return  PaginaVendaPrecoProdutos;
+	}
+	public void setPaginaVendaPrecoProdutos(List<PaginaVendaPrecoProduto> valores) {
+		this.PaginaVendaPrecoProdutos = new ArrayList<PaginaVendaPrecoProduto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaPrecoProduto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaPrecoProdutos.add((PaginaVendaPrecoProduto) objeto);
+		}
 	}
 }

@@ -30,6 +30,12 @@
 		"prontaParaEnvio": {
 			"type": "number"
 		},
+		"codigoAdsCampanha": {
+			"type": "string"
+		},
+		"tipoCampanha": {
+			"type": "string"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		},
@@ -71,6 +77,11 @@
 		"publicoAlvoAds": {
 			"type": "belongsTo",
 			"model": "PublicoAlvoAds",
+			"foreignKey": ""
+		},
+		"anuncioCampanhaAdsDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioCampanhaAdsDisplay",
 			"foreignKey": ""
 		}
 	},

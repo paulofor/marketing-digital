@@ -21,7 +21,7 @@ export class ProdutoAfiliadoHotmartListComponent extends BaseListComponent {
   getFiltro() {
     return {
       'order' : 'temperaturaAtual desc',
-      'counts' : ['campanhaAdsTestes','anuncioAds'],
+      'counts' : ['campanhaAdsTestes','anuncioAds','anuncioAdsDisplay'],
       'include' : [
         'contaRemarketing',
         {

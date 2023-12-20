@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 import { LoadPaginaVenda } from '../../models/LoadPaginaVenda';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { ProdutoAfiliadoHotmart } from '../../models/ProdutoAfiliadoHotmart';
+import { PaginaVenda } from '../../models/PaginaVenda';
 
 
 /**
@@ -50,6 +51,36 @@ export class LoadPaginaVendaApi extends BaseLoopBackApi {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/LoadPaginaVendas/:id/produtoAfiliadoHotmart";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Busca relação paginaVenda de belongsTo.
+   *
+   * @param {any} id LoadPaginaVenda id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `LoadPaginaVenda` object.)
+   * </em>
+   */
+  public getPaginaVenda(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/LoadPaginaVendas/:id/paginaVenda";
     let _routeParams: any = {
       id: id
     };
@@ -131,6 +162,8 @@ export class LoadPaginaVendaApi extends BaseLoopBackApi {
    *
    * @param {string} visitante 
    *
+   * @param {number} tempo 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -140,7 +173,7 @@ export class LoadPaginaVendaApi extends BaseLoopBackApi {
    * This usually means the response is a `LoadPaginaVenda` object.)
    * </em>
    */
-  public InsereItem(idHm: any = {}, visitante: any = {}, customHeaders?: Function): Observable<any> {
+  public InsereItem(idHm: any = {}, visitante: any = {}, tempo: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/LoadPaginaVendas/insereItem";
@@ -149,6 +182,7 @@ export class LoadPaginaVendaApi extends BaseLoopBackApi {
     let _urlParams: any = {};
     if (typeof idHm !== 'undefined' && idHm !== null) _urlParams.idHm = idHm;
     if (typeof visitante !== 'undefined' && visitante !== null) _urlParams.visitante = visitante;
+    if (typeof tempo !== 'undefined' && tempo !== null) _urlParams.tempo = tempo;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

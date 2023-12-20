@@ -12,9 +12,14 @@ import {
   PlanoProduto,
   LinkCheckout,
   PrecoProdutoAfiliado,
+  AnuncioAdsDisplay,
   ProdutoAfiliadoHotlink,
   TagIdSecaoPaginaVenda,
-  CampanhaAdsRedeDisplay
+  CampanhaAdsRedeDisplay,
+  PublicoAlvoAds,
+  PublicoAlvoAdsDiario,
+  PaginaVenda,
+  ImagemConjunto
 } from '../index';
 
 declare var Object: any;
@@ -48,6 +53,7 @@ export interface ProdutoAfiliadoHotmartInterface {
   "publicProfileLink"?: string;
   "temperaturaAtual"?: number;
   "possuiImagemRedeDisplay"?: number;
+  "cpaInicial"?: number;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
@@ -64,9 +70,14 @@ export interface ProdutoAfiliadoHotmartInterface {
   planoProdutos?: PlanoProduto[];
   linkCheckouts?: LinkCheckout[];
   precoProdutoAfiliados?: PrecoProdutoAfiliado[];
+  anuncioAdsDisplays?: AnuncioAdsDisplay[];
   produtoAfiliadoHotlinks?: ProdutoAfiliadoHotlink[];
   tagIdSecaoPaginaVendas?: TagIdSecaoPaginaVenda[];
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
+  publicoAlvoAds?: PublicoAlvoAds[];
+  publicoAlvoAdsDiarios?: PublicoAlvoAdsDiario[];
+  paginaVendas?: PaginaVenda[];
+  imagemConjuntos?: ImagemConjunto[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -99,6 +110,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "publicProfileLink": string;
   "temperaturaAtual": number;
   "possuiImagemRedeDisplay": number;
+  "cpaInicial": number;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
@@ -115,9 +127,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   planoProdutos: PlanoProduto[];
   linkCheckouts: LinkCheckout[];
   precoProdutoAfiliados: PrecoProdutoAfiliado[];
+  anuncioAdsDisplays: AnuncioAdsDisplay[];
   produtoAfiliadoHotlinks: ProdutoAfiliadoHotlink[];
   tagIdSecaoPaginaVendas: TagIdSecaoPaginaVenda[];
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
+  publicoAlvoAds: PublicoAlvoAds[];
+  publicoAlvoAdsDiarios: PublicoAlvoAdsDiario[];
+  paginaVendas: PaginaVenda[];
+  imagemConjuntos: ImagemConjunto[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -267,6 +284,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'possuiImagemRedeDisplay',
           type: 'number'
         },
+        "cpaInicial": {
+          name: 'cpaInicial',
+          type: 'number'
+        },
         "contaGoogleId": {
           name: 'contaGoogleId',
           type: 'number'
@@ -393,6 +414,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
         },
+        anuncioAdsDisplays: {
+          name: 'anuncioAdsDisplays',
+          type: 'AnuncioAdsDisplay[]',
+          model: 'AnuncioAdsDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
         produtoAfiliadoHotlinks: {
           name: 'produtoAfiliadoHotlinks',
           type: 'ProdutoAfiliadoHotlink[]',
@@ -416,6 +445,38 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'produtoAfiliadoHotmartId'
+        },
+        publicoAlvoAds: {
+          name: 'publicoAlvoAds',
+          type: 'PublicoAlvoAds[]',
+          model: 'PublicoAlvoAds',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        publicoAlvoAdsDiarios: {
+          name: 'publicoAlvoAdsDiarios',
+          type: 'PublicoAlvoAdsDiario[]',
+          model: 'PublicoAlvoAdsDiario',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        paginaVendas: {
+          name: 'paginaVendas',
+          type: 'PaginaVenda[]',
+          model: 'PaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        imagemConjuntos: {
+          name: 'imagemConjuntos',
+          type: 'ImagemConjunto[]',
+          model: 'ImagemConjunto',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
         },
       }
     }

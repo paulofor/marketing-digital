@@ -31,10 +31,14 @@ public class CampanhaAdsTeste extends Model {
 	private double cpaMax;
 	private double cpcMax;
 	private String codigoAdsGrupoAnuncio;
+	private String codigoAdsCampanha;
+	private String primaryStatus;
+	private String primaryStatusReasons;
 	// Relacionamentos 1
 	private ModeloCampanhaAdsTeste ModeloCampanhaAdsTeste;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ContaGoogle ContaGoogle;
+	private PaginaVenda PaginaVenda;
 	// Relacionamentos N
 	private List<AnuncioCampanhaAdsTeste> AnuncioCampanhaAdsTestes;
 	private List<PalavraChaveCampanhaAdsTeste> PalavraChaveCampanhaAdsTestes;
@@ -69,6 +73,9 @@ public class CampanhaAdsTeste extends Model {
 			obj.put("cpaMax", cpaMax);
 			obj.put("cpcMax", cpcMax);
 			obj.put("codigoAdsGrupoAnuncio", codigoAdsGrupoAnuncio);
+			obj.put("codigoAdsCampanha", codigoAdsCampanha);
+			obj.put("primaryStatus", primaryStatus);
+			obj.put("primaryStatusReasons", primaryStatusReasons);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -178,6 +185,24 @@ public class CampanhaAdsTeste extends Model {
 	public String getCodigoAdsGrupoAnuncio() { 
 		return this.codigoAdsGrupoAnuncio;
 	}
+	public void setCodigoAdsCampanha(String valor) { 
+		this.codigoAdsCampanha = valor;
+	}
+	public String getCodigoAdsCampanha() { 
+		return this.codigoAdsCampanha;
+	}
+	public void setPrimaryStatus(String valor) { 
+		this.primaryStatus = valor;
+	}
+	public String getPrimaryStatus() { 
+		return this.primaryStatus;
+	}
+	public void setPrimaryStatusReasons(String valor) { 
+		this.primaryStatusReasons = valor;
+	}
+	public String getPrimaryStatusReasons() { 
+		return this.primaryStatusReasons;
+	}
 
 	public ModeloCampanhaAdsTeste getModeloCampanhaAdsTeste() {
 		return ModeloCampanhaAdsTeste;
@@ -199,6 +224,13 @@ public class CampanhaAdsTeste extends Model {
 	public void setContaGoogle(HashMap valor) {
 		this.ContaGoogle = new ContaGoogle();
 		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
+	}
+	public PaginaVenda getPaginaVenda() {
+		return PaginaVenda;
+	}
+	public void setPaginaVenda(HashMap valor) {
+		this.PaginaVenda = new PaginaVenda();
+		BeanUtil.setProperties(this.PaginaVenda, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<AnuncioCampanhaAdsTeste> getAnuncioCampanhaAdsTestes() {
 		return  AnuncioCampanhaAdsTestes;

@@ -21,6 +21,8 @@ public class PublicoAlvoAds extends Model {
 	private String contemUrl;
 	private double custoFormacaoAtual;
 	private int custoPorPessoaAtual;
+	private String resourceName;
+	private int contaGoogleId;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private PaginaVenda PaginaVenda;
@@ -45,6 +47,8 @@ public class PublicoAlvoAds extends Model {
 			obj.put("contemUrl", contemUrl);
 			obj.put("custoFormacaoAtual", custoFormacaoAtual);
 			obj.put("custoPorPessoaAtual", custoPorPessoaAtual);
+			obj.put("resourceName", resourceName);
+			obj.put("contaGoogleId", contaGoogleId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -93,6 +97,18 @@ public class PublicoAlvoAds extends Model {
 	}
 	public int getCustoPorPessoaAtual() { 
 		return this.custoPorPessoaAtual;
+	}
+	public void setResourceName(String valor) { 
+		this.resourceName = valor;
+	}
+	public String getResourceName() { 
+		return this.resourceName;
+	}
+	public void setContaGoogleId(int valor) { 
+		this.contaGoogleId = valor;
+	}
+	public int getContaGoogleId() { 
+		return this.contaGoogleId;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {

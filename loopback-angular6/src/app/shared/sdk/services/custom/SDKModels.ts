@@ -30,7 +30,6 @@ import { ContaGoogleMetricaMes } from '../../models/ContaGoogleMetricaMes';
 import { LinkCheckout } from '../../models/LinkCheckout';
 import { CampanhaAdsMetricaIntraday } from '../../models/CampanhaAdsMetricaIntraday';
 import { PrecoProdutoAfiliado } from '../../models/PrecoProdutoAfiliado';
-import { ImagemAnuncio } from '../../models/ImagemAnuncio';
 import { AnuncioAdsDisplay } from '../../models/AnuncioAdsDisplay';
 import { Visitante } from '../../models/Visitante';
 import { VideoExecucao } from '../../models/VideoExecucao';
@@ -39,6 +38,11 @@ import { TagIdSecaoPaginaVenda } from '../../models/TagIdSecaoPaginaVenda';
 import { CampanhaAdsRedeDisplay } from '../../models/CampanhaAdsRedeDisplay';
 import { OtimizacaoCampanhaAdsRedeDisplay } from '../../models/OtimizacaoCampanhaAdsRedeDisplay';
 import { ListaRemarketingAds } from '../../models/ListaRemarketingAds';
+import { PublicoAlvoAds } from '../../models/PublicoAlvoAds';
+import { PublicoAlvoAdsDiario } from '../../models/PublicoAlvoAdsDiario';
+import { PaginaVenda } from '../../models/PaginaVenda';
+import { AnuncioCampanhaAdsDisplay } from '../../models/AnuncioCampanhaAdsDisplay';
+import { ImagemConjunto } from '../../models/ImagemConjunto';
 
 export interface Models { [name: string]: any }
 
@@ -76,7 +80,6 @@ export class SDKModels {
     LinkCheckout: LinkCheckout,
     CampanhaAdsMetricaIntraday: CampanhaAdsMetricaIntraday,
     PrecoProdutoAfiliado: PrecoProdutoAfiliado,
-    ImagemAnuncio: ImagemAnuncio,
     AnuncioAdsDisplay: AnuncioAdsDisplay,
     Visitante: Visitante,
     VideoExecucao: VideoExecucao,
@@ -85,6 +88,11 @@ export class SDKModels {
     CampanhaAdsRedeDisplay: CampanhaAdsRedeDisplay,
     OtimizacaoCampanhaAdsRedeDisplay: OtimizacaoCampanhaAdsRedeDisplay,
     ListaRemarketingAds: ListaRemarketingAds,
+    PublicoAlvoAds: PublicoAlvoAds,
+    PublicoAlvoAdsDiario: PublicoAlvoAdsDiario,
+    PaginaVenda: PaginaVenda,
+    AnuncioCampanhaAdsDisplay: AnuncioCampanhaAdsDisplay,
+    ImagemConjunto: ImagemConjunto,
     
   };
 

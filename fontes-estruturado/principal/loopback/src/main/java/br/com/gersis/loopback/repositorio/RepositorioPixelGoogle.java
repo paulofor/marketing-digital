@@ -41,6 +41,21 @@ public class RepositorioPixelGoogle extends ModelRepository<PixelGoogle> {
 		invokeStaticMethod("registraCriacao", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void listaParaAjusteComConta(final ListCallback<PixelGoogle> callback ) {
+		RestContractItem contrato = new RestContractItem("PixelGoogles/listaParaAjusteComConta","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PixelGoogle.listaParaAjusteComConta");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaAjusteComConta", params,   new JsonArrayParser<PixelGoogle>(this, callback));
+	}
+
+	public synchronized void atualizaAjuste(PixelGoogle pixel ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("PixelGoogles/atualizaAjuste","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "PixelGoogle.atualizaAjuste");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("pixel", pixel.getJSON());
+		invokeStaticMethod("atualizaAjuste", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<PixelGoogle> listaEntrada) {
 		JSONArray lista = new JSONArray();

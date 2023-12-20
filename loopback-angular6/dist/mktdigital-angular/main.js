@@ -23,6 +23,312 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit-base.component.ts":
+/*!*************************************************************************************!*\
+  !*** ./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit-base.component.ts ***!
+  \*************************************************************************************/
+/*! exports provided: AnuncioAdsDisplayEditBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayEditBaseComponent", function() { return AnuncioAdsDisplayEditBaseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+var AnuncioAdsDisplayEditBaseComponent = /** @class */ (function () {
+    function AnuncioAdsDisplayEditBaseComponent(dialogRef, data, servico) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.servico = servico;
+    }
+    AnuncioAdsDisplayEditBaseComponent.prototype.ngOnInit = function () {
+        console.log("Data(BaseEdit):", this.data);
+        if (this.data.origem) {
+            this.origem = this.data.origem;
+        }
+        if (!this.data.item) {
+            console.log("fluxo nova");
+            this.item = this.criaItem();
+        }
+        else {
+            console.log('fluxo altera');
+            this.item = this.data.item;
+            console.log('Item(BaseEdit):', this.item);
+        }
+        this.montaCombos();
+        this.posItem();
+    };
+    AnuncioAdsDisplayEditBaseComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.preSubmit();
+        console.log('Submit(BaseEdit):', this.item);
+        this.servico.upsert(this.item, function (err, obj) {
+            if (err) {
+                console.log("ErroUpsert:" + JSON.stringify(err));
+            }
+            else {
+            }
+            _this.posSubmit();
+        }).subscribe(function (e) {
+            console.log(JSON.stringify(e));
+            _this.closeDialog();
+        });
+    };
+    AnuncioAdsDisplayEditBaseComponent.prototype.preSubmit = function () {
+    };
+    AnuncioAdsDisplayEditBaseComponent.prototype.closeDialog = function () {
+        this.dialogRef.close('Pizza!');
+    };
+    AnuncioAdsDisplayEditBaseComponent.prototype.criaItem = function () {
+        return new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["AnuncioAdsDisplay"]();
+    };
+    AnuncioAdsDisplayEditBaseComponent.prototype.montaCombos = function () {
+    };
+    AnuncioAdsDisplayEditBaseComponent.prototype.posItem = function () {
+    };
+    AnuncioAdsDisplayEditBaseComponent.prototype.posSubmit = function () {
+    };
+    AnuncioAdsDisplayEditBaseComponent = __decorate([
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["AnuncioAdsDisplayApi"]])
+    ], AnuncioAdsDisplayEditBaseComponent);
+    return AnuncioAdsDisplayEditBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>AnuncioAdsDisplay</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>\n"
+
+/***/ }),
+
+/***/ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: AnuncioAdsDisplayEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayEditComponent", function() { return AnuncioAdsDisplayEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _anuncio_ads_display_edit_base_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./anuncio-ads-display-edit-base.component */ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var AnuncioAdsDisplayEditComponent = /** @class */ (function (_super) {
+    __extends(AnuncioAdsDisplayEditComponent, _super);
+    function AnuncioAdsDisplayEditComponent(dialogRef, data, servico) {
+        var _this = _super.call(this, dialogRef, data, servico) || this;
+        _this.dialogRef = dialogRef;
+        _this.data = data;
+        _this.servico = servico;
+        return _this;
+    }
+    AnuncioAdsDisplayEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-anuncio-ads-display-edit',
+            template: __webpack_require__(/*! ./anuncio-ads-display-edit.component.html */ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.html"),
+            styles: [__webpack_require__(/*! ./anuncio-ads-display-edit.component.css */ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["AnuncioAdsDisplayApi"]])
+    ], AnuncioAdsDisplayEditComponent);
+    return AnuncioAdsDisplayEditComponent;
+}(_anuncio_ads_display_edit_base_component__WEBPACK_IMPORTED_MODULE_3__["AnuncioAdsDisplayEditBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list-base.component.ts":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list-base.component.ts ***!
+  \*************************************************************************************************************/
+/*! exports provided: AnuncioAdsDisplayPorProdutoListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayPorProdutoListBaseComponent", function() { return AnuncioAdsDisplayPorProdutoListBaseComponent; });
+var AnuncioAdsDisplayPorProdutoListBaseComponent = /** @class */ (function () {
+    function AnuncioAdsDisplayPorProdutoListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    AnuncioAdsDisplayPorProdutoListBaseComponent.prototype.posCarregaTela = function () { };
+    AnuncioAdsDisplayPorProdutoListBaseComponent.prototype.ngOnInit = function () {
+        this.carregaTela();
+    };
+    AnuncioAdsDisplayPorProdutoListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.router.params.subscribe(function (params) {
+            _this.idPrincipal = params['id'];
+            _this.srv.findById(_this.idPrincipal, _this.getFiltro())
+                .subscribe(function (result) {
+                _this.principal = result;
+                console.log('principal:', _this.principal);
+                _this.posCarregaTela();
+            });
+        });
+    };
+    AnuncioAdsDisplayPorProdutoListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return AnuncioAdsDisplayPorProdutoListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.css":
+/*!*********************************************************************************************************!*\
+  !*** ./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.css ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.html ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>AnuncioAdsDisplay</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.ts":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.ts ***!
+  \********************************************************************************************************/
+/*! exports provided: AnuncioAdsDisplayPorProdutoListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayPorProdutoListComponent", function() { return AnuncioAdsDisplayPorProdutoListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _anuncio_ads_display_por_produto_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./anuncio-ads-display-por-produto-list-base.component */ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var AnuncioAdsDisplayPorProdutoListComponent = /** @class */ (function (_super) {
+    __extends(AnuncioAdsDisplayPorProdutoListComponent, _super);
+    function AnuncioAdsDisplayPorProdutoListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    AnuncioAdsDisplayPorProdutoListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-anuncio-ads-display-por-produto-list',
+            template: __webpack_require__(/*! ./anuncio-ads-display-por-produto-list.component.html */ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.html"),
+            styles: [__webpack_require__(/*! ./anuncio-ads-display-por-produto-list.component.css */ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ProdutoAfiliadoHotmartApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], AnuncioAdsDisplayPorProdutoListComponent);
+    return AnuncioAdsDisplayPorProdutoListComponent;
+}(_anuncio_ads_display_por_produto_list_base_component__WEBPACK_IMPORTED_MODULE_4__["AnuncioAdsDisplayPorProdutoListBaseComponent"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/anuncio-ads-edita/anuncio-ads-edita.component.css":
 /*!*******************************************************************!*\
   !*** ./src/app/anuncio-ads-edita/anuncio-ads-edita.component.css ***!
@@ -308,6 +614,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lista_bom_crescimento_temperatura_lista_bom_crescimento_temperatura_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura.component */ "./src/app/lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura.component.ts");
 /* harmony import */ var _campanha_ads_metrica_intraday_list_simples_campanha_ads_metrica_intraday_list_simples_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples.component */ "./src/app/campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples.component.ts");
 /* harmony import */ var _historico_por_codigo_ads_historico_por_codigo_ads_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../historico-por-codigo-ads/historico-por-codigo-ads.component */ "./src/app/historico-por-codigo-ads/historico-por-codigo-ads.component.ts");
+/* harmony import */ var _anuncio_ads_display_por_produto_list_anuncio_ads_display_por_produto_list_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component */ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.ts");
+/* harmony import */ var _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component */ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.ts");
+
+
 
 
 
@@ -369,6 +679,8 @@ var routes = [
     { path: 'crescimentoTemperatura', component: _lista_bom_crescimento_temperatura_lista_bom_crescimento_temperatura_component__WEBPACK_IMPORTED_MODULE_27__["ListaBomCrescimentoTemperaturaComponent"] },
     { path: 'campanhaAdsMetricaIntradayListSimples', component: _campanha_ads_metrica_intraday_list_simples_campanha_ads_metrica_intraday_list_simples_component__WEBPACK_IMPORTED_MODULE_28__["CampanhaAdsMetricaIntradayListSimplesComponent"] },
     { path: 'historicoPorCodigoAds/:id', component: _historico_por_codigo_ads_historico_por_codigo_ads_component__WEBPACK_IMPORTED_MODULE_29__["HistoricoPorCodigoAdsComponent"] },
+    { path: 'anuncioAdsDisplayPorProdutoList/:id', component: _anuncio_ads_display_por_produto_list_anuncio_ads_display_por_produto_list_component__WEBPACK_IMPORTED_MODULE_30__["AnuncioAdsDisplayPorProdutoListComponent"] },
+    { path: 'listaAltaMargemAltaTemperatura', component: _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_31__["ListaAltaMargemAltaTemperaturaComponent"] },
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_0__["HomeComponent"] }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ];
@@ -515,6 +827,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _campanha_ads_metrica_intraday_list_simples_campanha_ads_metrica_intraday_list_simples_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples.component */ "./src/app/campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples.component.ts");
 /* harmony import */ var _historico_por_codigo_ads_historico_por_codigo_ads_component__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! ./historico-por-codigo-ads/historico-por-codigo-ads.component */ "./src/app/historico-por-codigo-ads/historico-por-codigo-ads.component.ts");
 /* harmony import */ var _preco_produto_afiliado_edit_preco_produto_afiliado_edit_component__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! ./preco-produto-afiliado-edit/preco-produto-afiliado-edit.component */ "./src/app/preco-produto-afiliado-edit/preco-produto-afiliado-edit.component.ts");
+/* harmony import */ var _anuncio_ads_display_edit_anuncio_ads_display_edit_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! ./anuncio-ads-display-edit/anuncio-ads-display-edit.component */ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.ts");
+/* harmony import */ var _anuncio_ads_display_por_produto_list_anuncio_ads_display_por_produto_list_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! ./anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component */ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.ts");
+/* harmony import */ var _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! ./lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component */ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -549,6 +864,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 //import { NgxImgModule } from 'ngx-img';
 
 //import { UploadModule } from './upload/upload.module';
+
+
+
 
 
 
@@ -645,7 +963,10 @@ var AppModule = /** @class */ (function () {
                 _lista_bom_crescimento_temperatura_lista_bom_crescimento_temperatura_component__WEBPACK_IMPORTED_MODULE_65__["ListaBomCrescimentoTemperaturaComponent"],
                 _campanha_ads_metrica_intraday_list_simples_campanha_ads_metrica_intraday_list_simples_component__WEBPACK_IMPORTED_MODULE_66__["CampanhaAdsMetricaIntradayListSimplesComponent"],
                 _historico_por_codigo_ads_historico_por_codigo_ads_component__WEBPACK_IMPORTED_MODULE_67__["HistoricoPorCodigoAdsComponent"],
-                _preco_produto_afiliado_edit_preco_produto_afiliado_edit_component__WEBPACK_IMPORTED_MODULE_68__["PrecoProdutoAfiliadoEditComponent"]
+                _preco_produto_afiliado_edit_preco_produto_afiliado_edit_component__WEBPACK_IMPORTED_MODULE_68__["PrecoProdutoAfiliadoEditComponent"],
+                _anuncio_ads_display_edit_anuncio_ads_display_edit_component__WEBPACK_IMPORTED_MODULE_69__["AnuncioAdsDisplayEditComponent"],
+                _anuncio_ads_display_por_produto_list_anuncio_ads_display_por_produto_list_component__WEBPACK_IMPORTED_MODULE_70__["AnuncioAdsDisplayPorProdutoListComponent"],
+                _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_71__["ListaAltaMargemAltaTemperaturaComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1120,7 +1441,7 @@ module.exports = ".dgc-card {\n    width: 160px;\n}\n\n.texto-fraco {\n    color
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"resumoDia\">\n\t\t<span>Custo: {{resumoDia.totalCusto | currency: 'BRL'}} , Cliques: {{resumoDia.totalClique}} , Impressão: {{resumoDia.totalImpressao}} </span>\n  \t\t<span class=\"dgc-direita\">{{resumoDia.totalCampanha}} campanhas</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card  {{tipoCard(item)}}\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>Custo: {{item.custoDia | currency: 'BRL'}}</span>\n  \t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>cpc: {{item.cpc | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>clique: {{item.clique}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>impressão: {{item.impressao}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>ctr: {{(item.clique / item.impressao) * 100 | number: '1.2-2'}} %</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>cpm: {{ (item.custoDia / item.impressao) * 1000 | currency : 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>1k: {{ item.cpc * 1000 | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span class=\"dgc-link\" routerLink=\"/historicoPorCodigoAds/{{item.codigoAds}}\">{{item.nomeCampanha}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.status}}</span>\n\t\t   </div>\n\t\t   \n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span *ngIf=\"item.contaGoogle\">Conta: {{item.contaGoogle.nome}}</span>\n\t\t   </div>\n\n\t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"resumoDia\">\n\t\t<span>Custo: {{resumoDia.totalCusto | currency: 'BRL'}} , Cliques: {{resumoDia.totalClique}} , Impressão: {{resumoDia.totalImpressao}} </span>\n  \t\t<span class=\"dgc-direita\">{{resumoDia.totalCampanha}} campanhas</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card  {{tipoCard(item)}}\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>Custo: {{item.custoDia | currency: 'BRL'}}</span>\n  \t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>cpc: {{item.cpc | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>clique: {{item.clique}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>impressão: {{item.impressao}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>ctr: {{(item.clique / item.impressao) * 100 | number: '1.2-2'}} %</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>cpm: {{ (item.custoDia / item.impressao) * 1000 | currency : 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>1k: {{ item.cpc * 1000 | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span class=\"dgc-link\" routerLink=\"/historicoPorCodigoAds/{{item.codigoAds}}\">{{item.nomeCampanha}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.status}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t <span>{{item.primaryStatus}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span *ngIf=\"item.contaGoogle\">Conta: {{item.contaGoogle.nome}}</span>\n\t\t   </div>\n\n\t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1294,7 +1615,7 @@ module.exports = ".dgc-card {\n    width: 220px;\n}\n\n.texto-fraco {\n    color
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Métricas de Campanhas</span>\n  \t\t<span class=\"dgc-direita\"  *ngIf=\"resumoMes\">Mês: {{resumoMes.custoTotal | currency : 'BRL'}}</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card {{tipoCard(item)}}\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>cpc: {{item.cpcMedio | currency: 'BRL'}}</span>\n\t\t\t\t<span class=\"dgc-direita\" style=\"color: red;\" *ngIf=\"(item.conversao>0)\">{{item.conversao}}</span>\n\t\t\t\t<span class=\"dgc-direita\" *ngIf=\"(item.conversao==0)\">{{item.conversao}}</span>\n \t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>cliques: {{item.clique}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>impressões: {{item.impressao}} ( ctr: {{ (item.clique / item.impressao) * 100 | number : '1.1-1'}} % )</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Custo: {{item.custoCampanha | currency: 'BRL'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Custo Conv: {{item.cpaMedio | currency: 'BRL'}} (Tg: {{item.cpaCampanha | currency : 'BRL'}})</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span routerLink=\"/historicoPorCodigoAds/{{item.codigoAds}}\">{{item.nomeCampanha}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.rede}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.estrategia}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.status}}</span>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span *ngIf=\"item.contaGoogle\">Conta: {{item.contaGoogle.nome}}</span>\n\t\t\t</div>\n\n\t\t\t\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Mais recente: {{item.maisRecente}}</span>\n\t\t\t</div>\n\n\t\t\t<div class=\"dgc-card-header\" *ngIf=\"item.produtoAfiliadoHotmart\">\n\t\t\t\t<span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.produtoAfiliadoHotmart.nome}}</span>\n\t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Métricas de Campanhas</span>\n  \t\t<span class=\"dgc-direita\"  *ngIf=\"resumoMes\">Mês: {{resumoMes.custoTotal | currency : 'BRL'}}</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card {{tipoCard(item)}}\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>cpc: {{item.cpcMedio | currency: 'BRL'}}</span>\n\t\t\t\t<span class=\"dgc-direita\" style=\"color: red;\" *ngIf=\"(item.conversao>0)\">{{item.conversao}}</span>\n\t\t\t\t<span class=\"dgc-direita\" *ngIf=\"(item.conversao==0)\">{{item.conversao}}</span>\n \t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>cliques: {{item.clique}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>impressões: {{item.impressao}} ( ctr: {{ (item.clique / item.impressao) * 100 | number : '1.1-1'}} % )</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Custo: {{item.custoCampanha | currency: 'BRL'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Custo Conv: {{item.cpaMedio | currency: 'BRL'}} (Tg: {{item.cpaCampanha | currency : 'BRL'}})</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span routerLink=\"/historicoPorCodigoAds/{{item.codigoAds}}\">{{item.nomeCampanha}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.rede}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.estrategia}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.status}}</span>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span *ngIf=\"item.contaGoogle\">Conta: {{item.contaGoogle.nome}}</span>\n\t\t\t</div>\n\n\t\t\n\n\t\t\t\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Mais recente: {{item.maisRecente}}</span>\n\t\t\t</div>\n\n\t\t\t<div class=\"dgc-card-header\" *ngIf=\"item.produtoAfiliadoHotmart\">\n\t\t\t\t<span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.produtoAfiliadoHotmart.nome}}</span>\n\t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1403,7 +1724,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\" *ngIf=\"principal\">\n      <span>{{principal.nome}}</span>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Anúncios\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let rel of principal.anuncioCampanhaAdsTestes\">\n      <span>{{rel.anuncioAds.titulo1}} / {{rel.anuncioAds.titulo2}} / {{rel.anuncioAds.titulo3}}</span>\n    </div>\n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncio(principal)\">Novo</button>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Palavras Chave\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let rel of principal.palavraChaveCampanhaAdsTestes\">\n      <span>\n        {{rel.ideiaPalavraChave.texto}} - {{rel.ideiaPalavraChave.mediaPesquisa}} - cpc: {{rel.ideiaPalavraChave.cpcMinimoTopPage | currency : 'BRL'}} até {{rel.ideiaPalavraChave.cpcMaximoTopPage | currency : 'BRL'}} [{{rel.ideiaPalavraChave.concorrencia}}]\n      </span>\n    </div>\n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn\" (click)=\"editaPalavraChave(principal)\">Alterar Palavras</button>\n    </div>\n  </div>\n\n</div>\n\n"
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\" *ngIf=\"principal\">\n      <span>{{principal.nome}}</span>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let rel of principal.anuncioCampanhaAdsTestes\">\n      <span>Group Ad: {{principal.codigoAdsGrupoAnuncio}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let rel of principal.anuncioCampanhaAdsTestes\">\n      <span>Conta: {{principal.contaGoogle.nome}} ( {{principal.contaGoogle.idAds}} ) </span>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Anúncios\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let rel of principal.anuncioCampanhaAdsTestes\">\n      <span>{{rel.anuncioAds.titulo1}} / {{rel.anuncioAds.titulo2}} / {{rel.anuncioAds.titulo3}}</span>\n    </div>\n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncio(principal)\">Novo</button>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Palavras Chave\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let rel of principal.palavraChaveCampanhaAdsTestes\">\n      <span>\n        {{rel.ideiaPalavraChave.texto}} - {{rel.ideiaPalavraChave.mediaPesquisa}} - cpc: {{rel.ideiaPalavraChave.cpcMinimoTopPage | currency : 'BRL'}} até {{rel.ideiaPalavraChave.cpcMaximoTopPage | currency : 'BRL'}} [{{rel.ideiaPalavraChave.concorrencia}}]\n      </span>\n    </div>\n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn\" (click)=\"editaPalavraChave(principal)\">Alterar Palavras</button>\n    </div>\n  </div>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -1465,7 +1786,8 @@ var CampanhaAdsTesteDetalheComponent = /** @class */ (function (_super) {
                 { 'relation': 'anuncioCampanhaAdsTestes', 'scope': { 'include': 'anuncioAds' } },
                 { 'relation': 'palavraChaveCampanhaAdsTestes', 'scope': { 'include': 'ideiaPalavraChave' } },
                 { 'relation': 'produtoAfiliadoHotmart' },
-                { 'relation': 'modeloCampanhaAdsTeste' }
+                { 'relation': 'modeloCampanhaAdsTeste' },
+                { 'relation': 'contaGoogle' }
             ]
         };
     };
@@ -3427,6 +3749,169 @@ var LinkCheckoutEditComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura-base.component.ts":
+/*!*********************************************************************************************************!*\
+  !*** ./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura-base.component.ts ***!
+  \*********************************************************************************************************/
+/*! exports provided: ListaAltaMargemAltaTemperaturaBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListaAltaMargemAltaTemperaturaBaseComponent", function() { return ListaAltaMargemAltaTemperaturaBaseComponent; });
+var ListaAltaMargemAltaTemperaturaBaseComponent = /** @class */ (function () {
+    function ListaAltaMargemAltaTemperaturaBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.preCarregaTela = function () { };
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.posCarregaLista = function () { };
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.getDialogo1 = function () {
+    };
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.getDialogo2 = function () {
+    };
+    ListaAltaMargemAltaTemperaturaBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return ListaAltaMargemAltaTemperaturaBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.css":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.css ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".dgc-card {\n    width: 23%;\n}"
+
+/***/ }),
+
+/***/ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.html ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produtos Margem maior 40% & Temperatura maior 60 ({{listaBase.length}})</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detlahe\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>\n\t\t    </div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>\n\t\t\t </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.ts":
+/*!****************************************************************************************************!*\
+  !*** ./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.ts ***!
+  \****************************************************************************************************/
+/*! exports provided: ListaAltaMargemAltaTemperaturaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListaAltaMargemAltaTemperaturaComponent", function() { return ListaAltaMargemAltaTemperaturaComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _lista_alta_margem_alta_temperatura_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lista-alta-margem-alta-temperatura-base.component */ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ListaAltaMargemAltaTemperaturaComponent = /** @class */ (function (_super) {
+    __extends(ListaAltaMargemAltaTemperaturaComponent, _super);
+    function ListaAltaMargemAltaTemperaturaComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    ListaAltaMargemAltaTemperaturaComponent.prototype.getFiltro = function () {
+        return {
+            'include': 'produtoAfiliadoHotmart',
+            'where': { 'and': [
+                    { 'afiliacaoPercentual': { 'gte': 40 } },
+                    { 'temperatura': { 'gte': 60 } },
+                    { 'maisRecente': 1 }
+                ] },
+            'order': 'temperatura desc'
+        };
+    };
+    ListaAltaMargemAltaTemperaturaComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lista-alta-margem-alta-temperatura',
+            template: __webpack_require__(/*! ./lista-alta-margem-alta-temperatura.component.html */ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.html"),
+            styles: [__webpack_require__(/*! ./lista-alta-margem-alta-temperatura.component.css */ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["VisitaProdutoHotmartApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], ListaAltaMargemAltaTemperaturaComponent);
+    return ListaAltaMargemAltaTemperaturaComponent;
+}(_lista_alta_margem_alta_temperatura_base_component__WEBPACK_IMPORTED_MODULE_4__["ListaAltaMargemAltaTemperaturaBaseComponent"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura-base.component.ts":
 /*!*******************************************************************************************************!*\
   !*** ./src/app/lista-bom-crescimento-temperatura/lista-bom-crescimento-temperatura-base.component.ts ***!
@@ -4712,7 +5197,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\" *ngIf=\"principal\">\n      <span>{{principal.nome}}</span>\n      <span class=\"dgc-direita\">{{principal.hotmartId}}</span>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-detalhe\">\n      <span>{{principal.contaGoogle.nome}} </span>\n      <span *ngIf=\"principal.contaRemarketing\"> - {{principal.contaRemarketing.nome}}</span>\n    </div>\n    <div class=\"dgc-card-header\">\n      <a href=\"{{principal.urlFinal}}\" target=\"_blank\">{{principal.urlFinal}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <a href=\"{{principal.urlPropria}}\" target=\"_blank\">{{principal.urlPropria}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <span>You Tube:{{principal.urlYouTube}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <span>Work: {{principal.trabalho}}</span>\n    </div>\n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn dgc-direita\" (click)=\"editaProduto(principal)\">Edita Produto</button>\n   </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Visitas\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.visitaProdutoHotmarts\">\n      {{item.dataInsercao | date : 'dd/MM/yyyy'}}\n      Temperatura: {{item.temperatura}} Comissão : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)\n    </div>\n  </div>\n\n    <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Palavras-Chave\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of  principal.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n      {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}} \n      Cpc: {{item.cpcMax | currency : 'BRL'}} {{item.cpcMin | currency : 'BRL'}}\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Precos\n    </div>\n    <div *ngFor=\"let item of principal.precoProdutoAfiliados\">\n      <div class=\"dgc-card-headeer\">\n        <span>{{item.nome}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span> {{item.parcelas}} X {{item.valorParcela | currency : 'BRL'}} = {{item.valorTotalParcelado | currency : 'BRL' }}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>A vista: {{item.valorAVista | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>comissão a vista: {{ item.valorComissao | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>comissão parcelada: {{ item.valorComissaoParcelado | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>CPC Desejado: {{item.cpcDesejado | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>{{item.urlCheckout}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n         <button class=\"btn-primary btn-sm btn dgc-direita\" (click)=\"editaPreco(item)\">Edita Preço</button>\n      </div>\n    </div>\n\n     \n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn\" (click)=\"atualizaPreco()\">Atualiza Preços</button>\n      <button class=\"btn-primary btn-sm btn\" (click)=\"editaPreco()\">Novo Preço</button>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Hotlinks\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.produtoAfiliadoHotlinks\">\n      <span>{{item.descricao}} - {{item.url}}</span>\n    </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Pixel\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}}</span>\n    </div>\n\n\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios - Rede Pesquisa</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncio(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-detalhe\">\n        Titulo1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo2\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo3\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 2\n      </div>\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncio(item)\">Editar</button>\n      </div>\n    </div>\n   \n  </div>\n\n</div>\n\n"
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\" *ngIf=\"principal\">\n      <span>{{principal.nome}}</span>\n      <span class=\"dgc-direita\">{{principal.hotmartId}}</span>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-detalhe\">\n      <span>{{principal.contaGoogle.nome}} </span>\n      <span *ngIf=\"principal.contaRemarketing\"> - {{principal.contaRemarketing.nome}}</span>\n    </div>\n    <div class=\"dgc-card-header\">\n      <a href=\"{{principal.urlFinal}}\" target=\"_blank\">{{principal.urlFinal}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <a href=\"{{principal.urlPropria}}\" target=\"_blank\">{{principal.urlPropria}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <span>You Tube:{{principal.urlYouTube}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <span>Work: {{principal.trabalho}}</span>\n    </div>\n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn dgc-direita\" (click)=\"editaProduto(principal)\">Edita Produto</button>\n   </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Visitas\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.visitaProdutoHotmarts\">\n      {{item.dataInsercao | date : 'dd/MM/yyyy'}}\n      Temperatura: {{item.temperatura}} Comissão : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)\n    </div>\n  </div>\n\n    <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Palavras-Chave\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of  principal.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n      {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}} \n      Cpc: {{item.cpcMax | currency : 'BRL'}} {{item.cpcMin | currency : 'BRL'}}\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Precos\n    </div>\n    <div *ngFor=\"let item of principal.precoProdutoAfiliados\">\n      <div class=\"dgc-card-headeer\">\n        <span>{{item.nome}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span> {{item.parcelas}} X {{item.valorParcela | currency : 'BRL'}} = {{item.valorTotalParcelado | currency : 'BRL' }}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>A vista: {{item.valorAVista | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>comissão a vista: {{ item.valorComissao | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>comissão parcelada: {{ item.valorComissaoParcelado | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>CPC Desejado: {{item.cpcDesejado | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>{{item.urlCheckout}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n         <button class=\"btn-primary btn-sm btn dgc-direita\" (click)=\"editaPreco(item)\">Edita Preço</button>\n      </div>\n    </div>\n\n     \n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn\" (click)=\"atualizaPreco()\">Atualiza Preços</button>\n      <button class=\"btn-primary btn-sm btn\" (click)=\"editaPreco()\">Novo Preço</button>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Hotlinks\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.produtoAfiliadoHotlinks\">\n      <span>{{item.descricao}} - {{item.hotlink}}</span>\n      <a href=\"{{item.hotlink}}\" target=\"_blank\">abrir</a>\n    </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Pixel\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}}</span>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Público Alvo\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.publicoAlvoAdsDiarios\">\n      <span>{{item.nome}} - Pesquisa {{item.tamanhoRedePesquisa}} - Display: {{item.tamanhoRedeDisplay}} ({{item.data | date : 'dd/MM/yyyy'}})</span>\n    </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios - Rede Pesquisa</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncio(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-detalhe\">\n        Titulo1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo2\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo3\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 2\n      </div>\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncio(item)\">Editar</button>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios - Rede Display</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncioDisplay(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncioDisplay(item)\">Editar</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>\n\n"
 
 /***/ }),
 
@@ -4818,7 +5303,8 @@ var ProdutoAfiliadoHotmartDetalheComponent = /** @class */ (function (_super) {
                 'pixelGoogle',
                 'pixelGoogleCheckout',
                 'pixelGooglePaginaVenda',
-                'produtoAfiliadoHotlinks'
+                'produtoAfiliadoHotlinks',
+                { 'relation': 'publicoAlvoAdsDiarios', 'scope': { 'where': { 'maisRecente': 1 } } }
             ]
         };
     };
@@ -4974,7 +5460,7 @@ module.exports = ".dgc-card {\n    width: 48%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\" *ngIf=\"listaBase\">\n      <span>Afiliados Hotmart ({{listaBase.length}})</span>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts.length>0\">\n          <span>Temperatura : {{item.visitaProdutoHotmarts[0].temperatura}} \n            ({{ item.visitaProdutoHotmarts[0].deltaTemperatura >= 0 ? '+' + item.visitaProdutoHotmarts[0].deltaTemperatura : item.visitaProdutoHotmarts[0].deltaTemperatura }})</span>\n          <span>  -  {{item.visitaProdutoHotmarts[0].dataInsercao | date : 'dd/MM/yyyy'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Cria Pixel: {{item.criaPixelVenda}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle!=null\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n          <span *ngIf=\"item.contaRemarketing!=null\">Remarketing: ({{item.contaRemarketing.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}} ({{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}%)</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" >\n          <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\" >\n          <div *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})\n          </div>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Trabalho: {{item.trabalho}}</span>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
+module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\" *ngIf=\"listaBase\">\n      <span>Afiliados Hotmart ({{listaBase.length}})</span>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts.length>0\">\n          <span>Temperatura : {{item.visitaProdutoHotmarts[0].temperatura}} \n            ({{ item.visitaProdutoHotmarts[0].deltaTemperatura >= 0 ? '+' + item.visitaProdutoHotmarts[0].deltaTemperatura : item.visitaProdutoHotmarts[0].deltaTemperatura }})</span>\n          <span>  -  {{item.visitaProdutoHotmarts[0].dataInsercao | date : 'dd/MM/yyyy'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Cria Pixel: {{item.criaPixelVenda}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle!=null\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n          <span *ngIf=\"item.contaRemarketing!=null\">Remarketing: ({{item.contaRemarketing.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}} ({{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}%)</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" >\n          <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\" >\n          <div *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})\n          </div>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Trabalho: {{item.trabalho}}</span>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAdsDisplayPorProdutoList' , item.hotmartId]\">Anúncio Rede Display ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -5028,7 +5514,7 @@ var ProdutoAfiliadoHotmartListComponent = /** @class */ (function (_super) {
     ProdutoAfiliadoHotmartListComponent.prototype.getFiltro = function () {
         return {
             'order': 'temperaturaAtual desc',
-            'counts': ['campanhaAdsTestes', 'anuncioAds'],
+            'counts': ['campanhaAdsTestes', 'anuncioAds', 'anuncioAdsDisplay'],
             'include': [
                 'contaRemarketing',
                 {
@@ -6017,7 +6503,7 @@ var ProdutosTopVendasComponent = /** @class */ (function (_super) {
 /*!*************************************!*\
   !*** ./src/app/shared/sdk/index.ts ***!
   \*************************************/
-/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, ImagemAnuncio, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, AccessToken, SDKToken, FireLoopRef, ErrorHandler, ImagemAnuncioApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, LoggerService */
+/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, AccessToken, SDKToken, FireLoopRef, ErrorHandler, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6065,193 +6551,213 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_custom_LinkCheckout__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./services/custom/LinkCheckout */ "./src/app/shared/sdk/services/custom/LinkCheckout.ts");
 /* harmony import */ var _services_custom_CampanhaAdsMetricaIntraday__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./services/custom/CampanhaAdsMetricaIntraday */ "./src/app/shared/sdk/services/custom/CampanhaAdsMetricaIntraday.ts");
 /* harmony import */ var _services_custom_PrecoProdutoAfiliado__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./services/custom/PrecoProdutoAfiliado */ "./src/app/shared/sdk/services/custom/PrecoProdutoAfiliado.ts");
-/* harmony import */ var _services_custom_ImagemAnuncio__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./services/custom/ImagemAnuncio */ "./src/app/shared/sdk/services/custom/ImagemAnuncio.ts");
-/* harmony import */ var _services_custom_AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./services/custom/AnuncioAdsDisplay */ "./src/app/shared/sdk/services/custom/AnuncioAdsDisplay.ts");
-/* harmony import */ var _services_custom_Visitante__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./services/custom/Visitante */ "./src/app/shared/sdk/services/custom/Visitante.ts");
-/* harmony import */ var _services_custom_VideoExecucao__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./services/custom/VideoExecucao */ "./src/app/shared/sdk/services/custom/VideoExecucao.ts");
-/* harmony import */ var _services_custom_ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./services/custom/ProdutoAfiliadoHotlink */ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoHotlink.ts");
-/* harmony import */ var _services_custom_TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./services/custom/TagIdSecaoPaginaVenda */ "./src/app/shared/sdk/services/custom/TagIdSecaoPaginaVenda.ts");
-/* harmony import */ var _services_custom_CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./services/custom/CampanhaAdsRedeDisplay */ "./src/app/shared/sdk/services/custom/CampanhaAdsRedeDisplay.ts");
-/* harmony import */ var _services_custom_OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./services/custom/OtimizacaoCampanhaAdsRedeDisplay */ "./src/app/shared/sdk/services/custom/OtimizacaoCampanhaAdsRedeDisplay.ts");
-/* harmony import */ var _services_custom_ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./services/custom/ListaRemarketingAds */ "./src/app/shared/sdk/services/custom/ListaRemarketingAds.ts");
-/* harmony import */ var _models_index__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./models/index */ "./src/app/shared/sdk/models/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["User"]; });
+/* harmony import */ var _services_custom_AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./services/custom/AnuncioAdsDisplay */ "./src/app/shared/sdk/services/custom/AnuncioAdsDisplay.ts");
+/* harmony import */ var _services_custom_Visitante__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./services/custom/Visitante */ "./src/app/shared/sdk/services/custom/Visitante.ts");
+/* harmony import */ var _services_custom_VideoExecucao__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./services/custom/VideoExecucao */ "./src/app/shared/sdk/services/custom/VideoExecucao.ts");
+/* harmony import */ var _services_custom_ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./services/custom/ProdutoAfiliadoHotlink */ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoHotlink.ts");
+/* harmony import */ var _services_custom_TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./services/custom/TagIdSecaoPaginaVenda */ "./src/app/shared/sdk/services/custom/TagIdSecaoPaginaVenda.ts");
+/* harmony import */ var _services_custom_CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./services/custom/CampanhaAdsRedeDisplay */ "./src/app/shared/sdk/services/custom/CampanhaAdsRedeDisplay.ts");
+/* harmony import */ var _services_custom_OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./services/custom/OtimizacaoCampanhaAdsRedeDisplay */ "./src/app/shared/sdk/services/custom/OtimizacaoCampanhaAdsRedeDisplay.ts");
+/* harmony import */ var _services_custom_ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./services/custom/ListaRemarketingAds */ "./src/app/shared/sdk/services/custom/ListaRemarketingAds.ts");
+/* harmony import */ var _services_custom_PublicoAlvoAds__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./services/custom/PublicoAlvoAds */ "./src/app/shared/sdk/services/custom/PublicoAlvoAds.ts");
+/* harmony import */ var _services_custom_PublicoAlvoAdsDiario__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./services/custom/PublicoAlvoAdsDiario */ "./src/app/shared/sdk/services/custom/PublicoAlvoAdsDiario.ts");
+/* harmony import */ var _services_custom_PaginaVenda__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./services/custom/PaginaVenda */ "./src/app/shared/sdk/services/custom/PaginaVenda.ts");
+/* harmony import */ var _services_custom_AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./services/custom/AnuncioCampanhaAdsDisplay */ "./src/app/shared/sdk/services/custom/AnuncioCampanhaAdsDisplay.ts");
+/* harmony import */ var _services_custom_ImagemConjunto__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./services/custom/ImagemConjunto */ "./src/app/shared/sdk/services/custom/ImagemConjunto.ts");
+/* harmony import */ var _models_index__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./models/index */ "./src/app/shared/sdk/models/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["User"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["PlataformaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PlataformaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ProdutoPlataforma"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoPlataforma"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["VisitaProdutoPlataforma"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["VisitaProdutoPlataforma"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ProdutoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["VisitaProdutoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["VisitaProdutoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcesso", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["TokenAcesso"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcesso", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["TokenAcesso"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChave", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["IdeiaPalavraChave"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChave", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["IdeiaPalavraChave"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["CampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["AnuncioCampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioCampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["PalavraCampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PalavraCampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ProdutoAfiliadoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoAfiliadoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["AgendaVisitaHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AgendaVisitaHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["CampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["AnuncioAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ModeloCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ModeloCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["PixelGoogle"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PixelGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["PalavraChaveCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PalavraChaveCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["AnuncioCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["FacebookConta"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["FacebookConta"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ProdutoAfiliadoMetrica"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoAfiliadoMetrica"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ContaGoogle"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ContaGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["CampanhaAdsMetrica"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAdsMetrica"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["LoadPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["LoadPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["SolicitacaoCheckout"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["SolicitacaoCheckout"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProduto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["PlanoProduto"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProduto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PlanoProduto"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMes", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ContaGoogleMetricaMes"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMes", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ContaGoogleMetricaMes"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["LinkCheckout"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["LinkCheckout"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntraday", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["CampanhaAdsMetricaIntraday"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntraday", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAdsMetricaIntraday"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["PrecoProdutoAfiliado"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PrecoProdutoAfiliado"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemAnuncio", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ImagemAnuncio"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioAdsDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["AnuncioAdsDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Visitante", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["Visitante"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Visitante", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["Visitante"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["VideoExecucao"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["VideoExecucao"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlink", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoAfiliadoHotlink"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlink", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ProdutoAfiliadoHotlink"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["TagIdSecaoPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["TagIdSecaoPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["CampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["OtimizacaoCampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["OtimizacaoCampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ListaRemarketingAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["ListaRemarketingAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PublicoAlvoAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["AccessToken"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiario", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PublicoAlvoAdsDiario"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["SDKToken"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _models_index__WEBPACK_IMPORTED_MODULE_51__["FireLoopRef"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioCampanhaAdsDisplay"]; });
 
-/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ErrorHandler"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjunto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ImagemConjunto"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemAnuncioApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ImagemAnuncioApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AccessToken"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["AnuncioAdsDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["SDKToken"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["VisitanteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["FireLoopRef"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["VideoExecucaoApi"]; });
+/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ErrorHandler"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ProdutoAfiliadoHotlinkApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["TagIdSecaoPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["TagIdSecaoPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["CampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ListaRemarketingAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ListaRemarketingAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PublicoAlvoAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["SDKModels"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiarioApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PublicoAlvoAdsDiarioApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["LoopBackAuth"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["BaseLoopBackApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAdsDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["RealTime"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ImagemConjuntoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["UserApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["SDKModels"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["PlataformaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["LoopBackAuth"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ProdutoPlataformaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["BaseLoopBackApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["VisitaProdutoPlataformaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["RealTime"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ProdutoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["UserApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["VisitaProdutoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PlataformaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcessoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["TokenAcessoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoPlataformaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChaveApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["IdeiaPalavraChaveApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["VisitaProdutoPlataformaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["CampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["AnuncioCampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["VisitaProdutoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["PalavraCampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcessoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["TokenAcessoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ProdutoAfiliadoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChaveApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["IdeiaPalavraChaveApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["AgendaVisitaHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["CampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["AnuncioAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PalavraCampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ModeloCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["PixelGoogleApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AgendaVisitaHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["PalavraChaveCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["AnuncioCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["FacebookContaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ModeloCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ProdutoAfiliadoMetricaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PixelGoogleApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ContaGoogleApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PalavraChaveCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["CampanhaAdsMetricaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["LoadPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["FacebookContaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["SolicitacaoCheckoutApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoMetricaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProdutoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["PlanoProdutoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ContaGoogleApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMesApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["ContaGoogleMetricaMesApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsMetricaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["LinkCheckoutApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["LoadPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntradayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["CampanhaAdsMetricaIntradayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["SolicitacaoCheckoutApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["PrecoProdutoAfiliadoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProdutoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PlanoProdutoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_52__["LoggerService"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMesApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ContaGoogleMetricaMesApi"]; });
 
-/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./lb.config */ "./src/app/shared/sdk/lb.config.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return _lb_config__WEBPACK_IMPORTED_MODULE_53__["LoopBackConfig"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["LinkCheckoutApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntradayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsMetricaIntradayApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PrecoProdutoAfiliadoApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioAdsDisplayApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["VisitanteApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["VideoExecucaoApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoHotlinkApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["LoggerService"]; });
+
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return _lb_config__WEBPACK_IMPORTED_MODULE_57__["LoopBackConfig"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseStorage", function() { return _storage_storage_swaps__WEBPACK_IMPORTED_MODULE_4__["BaseStorage"]; });
 
@@ -6305,6 +6811,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 * export class AppModule { }
 *
 **/
+
+
+
+
 
 
 
@@ -6411,15 +6921,19 @@ var SDKBrowserModule = /** @class */ (function () {
                 _services_custom_LinkCheckout__WEBPACK_IMPORTED_MODULE_39__["LinkCheckoutApi"],
                 _services_custom_CampanhaAdsMetricaIntraday__WEBPACK_IMPORTED_MODULE_40__["CampanhaAdsMetricaIntradayApi"],
                 _services_custom_PrecoProdutoAfiliado__WEBPACK_IMPORTED_MODULE_41__["PrecoProdutoAfiliadoApi"],
-                _services_custom_ImagemAnuncio__WEBPACK_IMPORTED_MODULE_42__["ImagemAnuncioApi"],
-                _services_custom_AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_43__["AnuncioAdsDisplayApi"],
-                _services_custom_Visitante__WEBPACK_IMPORTED_MODULE_44__["VisitanteApi"],
-                _services_custom_VideoExecucao__WEBPACK_IMPORTED_MODULE_45__["VideoExecucaoApi"],
-                _services_custom_ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_46__["ProdutoAfiliadoHotlinkApi"],
-                _services_custom_TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_47__["TagIdSecaoPaginaVendaApi"],
-                _services_custom_CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_48__["CampanhaAdsRedeDisplayApi"],
-                _services_custom_OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_49__["OtimizacaoCampanhaAdsRedeDisplayApi"],
-                _services_custom_ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_50__["ListaRemarketingAdsApi"],
+                _services_custom_AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_42__["AnuncioAdsDisplayApi"],
+                _services_custom_Visitante__WEBPACK_IMPORTED_MODULE_43__["VisitanteApi"],
+                _services_custom_VideoExecucao__WEBPACK_IMPORTED_MODULE_44__["VideoExecucaoApi"],
+                _services_custom_ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_45__["ProdutoAfiliadoHotlinkApi"],
+                _services_custom_TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_46__["TagIdSecaoPaginaVendaApi"],
+                _services_custom_CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_47__["CampanhaAdsRedeDisplayApi"],
+                _services_custom_OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_48__["OtimizacaoCampanhaAdsRedeDisplayApi"],
+                _services_custom_ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_49__["ListaRemarketingAdsApi"],
+                _services_custom_PublicoAlvoAds__WEBPACK_IMPORTED_MODULE_50__["PublicoAlvoAdsApi"],
+                _services_custom_PublicoAlvoAdsDiario__WEBPACK_IMPORTED_MODULE_51__["PublicoAlvoAdsDiarioApi"],
+                _services_custom_PaginaVenda__WEBPACK_IMPORTED_MODULE_52__["PaginaVendaApi"],
+                _services_custom_AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_53__["AnuncioCampanhaAdsDisplayApi"],
+                _services_custom_ImagemConjunto__WEBPACK_IMPORTED_MODULE_54__["ImagemConjuntoApi"],
                 internalStorageProvider,
                 { provide: _storage_storage_swaps__WEBPACK_IMPORTED_MODULE_4__["SDKStorage"], useClass: _storage_storage_browser__WEBPACK_IMPORTED_MODULE_9__["StorageBrowser"] }
             ]
@@ -6464,9 +6978,7 @@ var SDKBrowserModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return LoopBackConfig; });
-/* harmony import */ var src_app_constantes_base_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/constantes/base.url */ "./src/app/constantes/base.url.ts");
 /* tslint:disable */
-
 /**
 * @module LoopBackConfig
 * @description
@@ -6551,7 +7063,7 @@ var LoopBackConfig = /** @class */ (function () {
     LoopBackConfig.getRequestOptionsCredentials = function () {
         return LoopBackConfig.withCredentials;
     };
-    LoopBackConfig.path = src_app_constantes_base_url__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"];
+    LoopBackConfig.path = '//0.0.0.0:23101';
     LoopBackConfig.version = 'api';
     LoopBackConfig.authPrefix = '';
     LoopBackConfig.debug = true;
@@ -6744,7 +7256,6 @@ var AnuncioAds = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return AnuncioAdsDisplay; });
-/* tslint:disable */
 var AnuncioAdsDisplay = /** @class */ (function () {
     function AnuncioAdsDisplay(data) {
         Object.assign(this, data);
@@ -6779,12 +7290,89 @@ var AnuncioAdsDisplay = /** @class */ (function () {
             path: 'AnuncioAdsDisplays',
             idName: 'id',
             properties: {
+                "urlFinal": {
+                    name: 'urlFinal',
+                    type: 'string'
+                },
+                "nomeEmpresa": {
+                    name: 'nomeEmpresa',
+                    type: 'string'
+                },
+                "titulo": {
+                    name: 'titulo',
+                    type: 'string'
+                },
+                "tituloLongo": {
+                    name: 'tituloLongo',
+                    type: 'string'
+                },
+                "descricao": {
+                    name: 'descricao',
+                    type: 'string'
+                },
+                "nomeImagem1200x628": {
+                    name: 'nomeImagem1200x628',
+                    type: 'string'
+                },
+                "nomeImagem1200x1200": {
+                    name: 'nomeImagem1200x1200',
+                    type: 'string'
+                },
+                "nomeImagem960x1600": {
+                    name: 'nomeImagem960x1600',
+                    type: 'string'
+                },
+                "paginaVendaId": {
+                    name: 'paginaVendaId',
+                    type: 'number'
+                },
+                "imagemConjuntoId": {
+                    name: 'imagemConjuntoId',
+                    type: 'number'
+                },
                 "id": {
                     name: 'id',
                     type: 'number'
                 },
+                "hotmartId": {
+                    name: 'hotmartId',
+                    type: 'number'
+                },
             },
-            relations: {}
+            relations: {
+                produtoAfiliadoHotmart: {
+                    name: 'produtoAfiliadoHotmart',
+                    type: 'ProdutoAfiliadoHotmart',
+                    model: 'ProdutoAfiliadoHotmart',
+                    relationType: 'belongsTo',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+                paginaVenda: {
+                    name: 'paginaVenda',
+                    type: 'PaginaVenda',
+                    model: 'PaginaVenda',
+                    relationType: 'belongsTo',
+                    keyFrom: 'paginaVendaId',
+                    keyTo: 'id'
+                },
+                anuncioCampanhaAdsDisplays: {
+                    name: 'anuncioCampanhaAdsDisplays',
+                    type: 'AnuncioCampanhaAdsDisplay[]',
+                    model: 'AnuncioCampanhaAdsDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'anuncioAdsDisplayId'
+                },
+                imagemConjunto: {
+                    name: 'imagemConjunto',
+                    type: 'ImagemConjunto',
+                    model: 'ImagemConjunto',
+                    relationType: 'belongsTo',
+                    keyFrom: 'imagemConjuntoId',
+                    keyTo: 'id'
+                },
+            }
         };
     };
     return AnuncioAdsDisplay;
@@ -6872,6 +7460,86 @@ var AnuncioCampanhaAds = /** @class */ (function () {
         };
     };
     return AnuncioCampanhaAds;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/models/AnuncioCampanhaAdsDisplay.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/shared/sdk/models/AnuncioCampanhaAdsDisplay.ts ***!
+  \****************************************************************/
+/*! exports provided: AnuncioCampanhaAdsDisplay */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplay", function() { return AnuncioCampanhaAdsDisplay; });
+var AnuncioCampanhaAdsDisplay = /** @class */ (function () {
+    function AnuncioCampanhaAdsDisplay(data) {
+        Object.assign(this, data);
+    }
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `AnuncioCampanhaAdsDisplay`.
+     */
+    AnuncioCampanhaAdsDisplay.getModelName = function () {
+        return "AnuncioCampanhaAdsDisplay";
+    };
+    /**
+    * @method factory
+    * @author Jonathan Casarrubias
+    * @license MIT
+    * This method creates an instance of AnuncioCampanhaAdsDisplay for dynamic purposes.
+    **/
+    AnuncioCampanhaAdsDisplay.factory = function (data) {
+        return new AnuncioCampanhaAdsDisplay(data);
+    };
+    /**
+    * @method getModelDefinition
+    * @author Julien Ledun
+    * @license MIT
+    * This method returns an object that represents some of the model
+    * definitions.
+    **/
+    AnuncioCampanhaAdsDisplay.getModelDefinition = function () {
+        return {
+            name: 'AnuncioCampanhaAdsDisplay',
+            plural: 'AnuncioCampanhaAdsDisplays',
+            path: 'AnuncioCampanhaAdsDisplays',
+            idName: 'anuncioAdsDisplayId',
+            properties: {
+                "anuncioAdsDisplayId": {
+                    name: 'anuncioAdsDisplayId',
+                    type: 'number'
+                },
+                "campanhaAdsRedeDisplayId": {
+                    name: 'campanhaAdsRedeDisplayId',
+                    type: 'number'
+                },
+            },
+            relations: {
+                anuncioAdsDisplay: {
+                    name: 'anuncioAdsDisplay',
+                    type: 'AnuncioAdsDisplay',
+                    model: 'AnuncioAdsDisplay',
+                    relationType: 'belongsTo',
+                    keyFrom: 'anuncioAdsDisplayId',
+                    keyTo: 'id'
+                },
+                campanhaAdsRedeDisplay: {
+                    name: 'campanhaAdsRedeDisplay',
+                    type: 'CampanhaAdsRedeDisplay',
+                    model: 'CampanhaAdsRedeDisplay',
+                    relationType: 'belongsTo',
+                    keyFrom: 'campanhaAdsRedeDisplayId',
+                    keyTo: 'id'
+                },
+            }
+        };
+    };
+    return AnuncioCampanhaAdsDisplay;
 }());
 
 
@@ -7374,6 +8042,14 @@ var CampanhaAdsMetricaIntraday = /** @class */ (function () {
                     name: 'conversao',
                     type: 'number'
                 },
+                "primaryStatus": {
+                    name: 'primaryStatus',
+                    type: 'string'
+                },
+                "primaryStatusReasons": {
+                    name: 'primaryStatusReasons',
+                    type: 'string'
+                },
             },
             relations: {
                 campanhaAdsTeste: {
@@ -7474,6 +8150,14 @@ var CampanhaAdsRedeDisplay = /** @class */ (function () {
                     name: 'prontaParaEnvio',
                     type: 'number'
                 },
+                "codigoAdsCampanha": {
+                    name: 'codigoAdsCampanha',
+                    type: 'string'
+                },
+                "tipoCampanha": {
+                    name: 'tipoCampanha',
+                    type: 'string'
+                },
                 "contaGoogleId": {
                     name: 'contaGoogleId',
                     type: 'number'
@@ -7484,6 +8168,14 @@ var CampanhaAdsRedeDisplay = /** @class */ (function () {
                 },
                 "paginaVendaId": {
                     name: 'paginaVendaId',
+                    type: 'number'
+                },
+                "faixaHorarioCampanhaAdsId": {
+                    name: 'faixaHorarioCampanhaAdsId',
+                    type: 'number'
+                },
+                "publicoAlvoAdsId": {
+                    name: 'publicoAlvoAdsId',
                     type: 'number'
                 },
                 "id": {
@@ -7507,6 +8199,30 @@ var CampanhaAdsRedeDisplay = /** @class */ (function () {
                     relationType: 'belongsTo',
                     keyFrom: 'produtoAfiliadoHotmartId',
                     keyTo: 'hotmartId'
+                },
+                publicoAlvoAds: {
+                    name: 'publicoAlvoAds',
+                    type: 'PublicoAlvoAds',
+                    model: 'PublicoAlvoAds',
+                    relationType: 'belongsTo',
+                    keyFrom: 'publicoAlvoAdsId',
+                    keyTo: 'id'
+                },
+                paginaVenda: {
+                    name: 'paginaVenda',
+                    type: 'PaginaVenda',
+                    model: 'PaginaVenda',
+                    relationType: 'belongsTo',
+                    keyFrom: 'paginaVendaId',
+                    keyTo: 'id'
+                },
+                anuncioCampanhaAdsDisplays: {
+                    name: 'anuncioCampanhaAdsDisplays',
+                    type: 'AnuncioCampanhaAdsDisplay[]',
+                    model: 'AnuncioCampanhaAdsDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'campanhaAdsRedeDisplayId'
                 },
             }
         };
@@ -7630,6 +8346,18 @@ var CampanhaAdsTeste = /** @class */ (function () {
                     name: 'codigoAdsGrupoAnuncio',
                     type: 'string'
                 },
+                "codigoAdsCampanha": {
+                    name: 'codigoAdsCampanha',
+                    type: 'string'
+                },
+                "primaryStatus": {
+                    name: 'primaryStatus',
+                    type: 'string'
+                },
+                "primaryStatusReasons": {
+                    name: 'primaryStatusReasons',
+                    type: 'string'
+                },
                 "modeloCampanhaAdsTesteId": {
                     name: 'modeloCampanhaAdsTesteId',
                     type: 'number'
@@ -7640,6 +8368,10 @@ var CampanhaAdsTeste = /** @class */ (function () {
                 },
                 "contaGoogleId": {
                     name: 'contaGoogleId',
+                    type: 'number'
+                },
+                "paginaVendaId": {
+                    name: 'paginaVendaId',
                     type: 'number'
                 },
                 "id": {
@@ -7703,6 +8435,14 @@ var CampanhaAdsTeste = /** @class */ (function () {
                     relationType: 'hasMany',
                     keyFrom: 'id',
                     keyTo: 'codigoAds'
+                },
+                paginaVenda: {
+                    name: 'paginaVenda',
+                    type: 'PaginaVenda',
+                    model: 'PaginaVenda',
+                    relationType: 'belongsTo',
+                    keyFrom: 'paginaVendaId',
+                    keyTo: 'id'
                 },
             }
         };
@@ -7872,6 +8612,14 @@ var ContaGoogle = /** @class */ (function () {
                     name: 'campanhaAdsRedeDisplays',
                     type: 'CampanhaAdsRedeDisplay[]',
                     model: 'CampanhaAdsRedeDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'contaGoogleId'
+                },
+                publicoAlvoAdsDiarios: {
+                    name: 'publicoAlvoAdsDiarios',
+                    type: 'PublicoAlvoAdsDiario[]',
+                    model: 'PublicoAlvoAdsDiario',
                     relationType: 'hasMany',
                     keyFrom: 'id',
                     keyTo: 'contaGoogleId'
@@ -8556,36 +9304,35 @@ var IdeiaPalavraChave = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/shared/sdk/models/ImagemAnuncio.ts":
-/*!****************************************************!*\
-  !*** ./src/app/shared/sdk/models/ImagemAnuncio.ts ***!
-  \****************************************************/
-/*! exports provided: ImagemAnuncio */
+/***/ "./src/app/shared/sdk/models/ImagemConjunto.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/shared/sdk/models/ImagemConjunto.ts ***!
+  \*****************************************************/
+/*! exports provided: ImagemConjunto */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImagemAnuncio", function() { return ImagemAnuncio; });
-/* tslint:disable */
-var ImagemAnuncio = /** @class */ (function () {
-    function ImagemAnuncio(data) {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImagemConjunto", function() { return ImagemConjunto; });
+var ImagemConjunto = /** @class */ (function () {
+    function ImagemConjunto(data) {
         Object.assign(this, data);
     }
     /**
      * The name of the model represented by this $resource,
-     * i.e. `ImagemAnuncio`.
+     * i.e. `ImagemConjunto`.
      */
-    ImagemAnuncio.getModelName = function () {
-        return "ImagemAnuncio";
+    ImagemConjunto.getModelName = function () {
+        return "ImagemConjunto";
     };
     /**
     * @method factory
     * @author Jonathan Casarrubias
     * @license MIT
-    * This method creates an instance of ImagemAnuncio for dynamic purposes.
+    * This method creates an instance of ImagemConjunto for dynamic purposes.
     **/
-    ImagemAnuncio.factory = function (data) {
-        return new ImagemAnuncio(data);
+    ImagemConjunto.factory = function (data) {
+        return new ImagemConjunto(data);
     };
     /**
     * @method getModelDefinition
@@ -8594,30 +9341,59 @@ var ImagemAnuncio = /** @class */ (function () {
     * This method returns an object that represents some of the model
     * definitions.
     **/
-    ImagemAnuncio.getModelDefinition = function () {
+    ImagemConjunto.getModelDefinition = function () {
         return {
-            name: 'ImagemAnuncio',
-            plural: 'ImagemAnuncios',
-            path: 'ImagemAnuncios',
+            name: 'ImagemConjunto',
+            plural: 'ImagemConjuntos',
+            path: 'ImagemConjuntos',
             idName: 'id',
             properties: {
                 "nome": {
                     name: 'nome',
                     type: 'string'
                 },
-                "binarioImagem": {
-                    name: 'binarioImagem',
-                    type: 'any'
+                "nomeImagem1200x628": {
+                    name: 'nomeImagem1200x628',
+                    type: 'string'
+                },
+                "nomeImagem1200x1200": {
+                    name: 'nomeImagem1200x1200',
+                    type: 'string'
+                },
+                "nomeImagem960x1600": {
+                    name: 'nomeImagem960x1600',
+                    type: 'string'
                 },
                 "id": {
                     name: 'id',
                     type: 'number'
                 },
+                "hotmartId": {
+                    name: 'hotmartId',
+                    type: 'number'
+                },
             },
-            relations: {}
+            relations: {
+                produtoAfiliadoHotmart: {
+                    name: 'produtoAfiliadoHotmart',
+                    type: 'ProdutoAfiliadoHotmart',
+                    model: 'ProdutoAfiliadoHotmart',
+                    relationType: 'belongsTo',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+                anuncioAdsDisplays: {
+                    name: 'anuncioAdsDisplays',
+                    type: 'AnuncioAdsDisplay[]',
+                    model: 'AnuncioAdsDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'imagemConjuntoId'
+                },
+            }
         };
     };
-    return ImagemAnuncio;
+    return ImagemConjunto;
 }());
 
 
@@ -8824,6 +9600,10 @@ var LoadPaginaVenda = /** @class */ (function () {
                     name: 'qtdeVisita',
                     type: 'number'
                 },
+                "paginaVendaId": {
+                    name: 'paginaVendaId',
+                    type: 'number'
+                },
                 "id": {
                     name: 'id',
                     type: 'number'
@@ -8841,6 +9621,14 @@ var LoadPaginaVenda = /** @class */ (function () {
                     relationType: 'belongsTo',
                     keyFrom: 'hotmartId',
                     keyTo: 'hotmartId'
+                },
+                paginaVenda: {
+                    name: 'paginaVenda',
+                    type: 'PaginaVenda',
+                    model: 'PaginaVenda',
+                    relationType: 'belongsTo',
+                    keyFrom: 'paginaVendaId',
+                    keyTo: 'id'
                 },
             }
         };
@@ -9006,6 +9794,122 @@ var OtimizacaoCampanhaAdsRedeDisplay = /** @class */ (function () {
         };
     };
     return OtimizacaoCampanhaAdsRedeDisplay;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/models/PaginaVenda.ts":
+/*!**************************************************!*\
+  !*** ./src/app/shared/sdk/models/PaginaVenda.ts ***!
+  \**************************************************/
+/*! exports provided: PaginaVenda */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginaVenda", function() { return PaginaVenda; });
+var PaginaVenda = /** @class */ (function () {
+    function PaginaVenda(data) {
+        Object.assign(this, data);
+    }
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `PaginaVenda`.
+     */
+    PaginaVenda.getModelName = function () {
+        return "PaginaVenda";
+    };
+    /**
+    * @method factory
+    * @author Jonathan Casarrubias
+    * @license MIT
+    * This method creates an instance of PaginaVenda for dynamic purposes.
+    **/
+    PaginaVenda.factory = function (data) {
+        return new PaginaVenda(data);
+    };
+    /**
+    * @method getModelDefinition
+    * @author Julien Ledun
+    * @license MIT
+    * This method returns an object that represents some of the model
+    * definitions.
+    **/
+    PaginaVenda.getModelDefinition = function () {
+        return {
+            name: 'PaginaVenda',
+            plural: 'PaginaVendas',
+            path: 'PaginaVendas',
+            idName: 'id',
+            properties: {
+                "url": {
+                    name: 'url',
+                    type: 'string'
+                },
+                "id": {
+                    name: 'id',
+                    type: 'number'
+                },
+                "hotmartId": {
+                    name: 'hotmartId',
+                    type: 'number'
+                },
+            },
+            relations: {
+                produtoAfiliadoHotmart: {
+                    name: 'produtoAfiliadoHotmart',
+                    type: 'ProdutoAfiliadoHotmart',
+                    model: 'ProdutoAfiliadoHotmart',
+                    relationType: 'belongsTo',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+                campanhaAdsRedeDisplays: {
+                    name: 'campanhaAdsRedeDisplays',
+                    type: 'CampanhaAdsRedeDisplay[]',
+                    model: 'CampanhaAdsRedeDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'paginaVendaId'
+                },
+                publicoAlvoAds: {
+                    name: 'publicoAlvoAds',
+                    type: 'PublicoAlvoAds[]',
+                    model: 'PublicoAlvoAds',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'paginaVendaId'
+                },
+                anuncioAdsDisplays: {
+                    name: 'anuncioAdsDisplays',
+                    type: 'AnuncioAdsDisplay[]',
+                    model: 'AnuncioAdsDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'paginaVendaId'
+                },
+                loadPaginaVendas: {
+                    name: 'loadPaginaVendas',
+                    type: 'LoadPaginaVenda[]',
+                    model: 'LoadPaginaVenda',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'paginaVendaId'
+                },
+                campanhaAdsTestes: {
+                    name: 'campanhaAdsTestes',
+                    type: 'CampanhaAdsTeste[]',
+                    model: 'CampanhaAdsTeste',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'paginaVendaId'
+                },
+            }
+        };
+    };
+    return PaginaVenda;
 }());
 
 
@@ -9281,6 +10185,14 @@ var PixelGoogle = /** @class */ (function () {
                     relationType: 'belongsTo',
                     keyFrom: 'contaGoogleId',
                     keyTo: 'id'
+                },
+                publicoAlvoAdsDiarios: {
+                    name: 'publicoAlvoAdsDiarios',
+                    type: 'PublicoAlvoAdsDiario[]',
+                    model: 'PublicoAlvoAdsDiario',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'pixelGoogleId'
                 },
             }
         };
@@ -9804,6 +10716,10 @@ var ProdutoAfiliadoHotmart = /** @class */ (function () {
                     name: 'possuiImagemRedeDisplay',
                     type: 'number'
                 },
+                "cpaInicial": {
+                    name: 'cpaInicial',
+                    type: 'number'
+                },
                 "contaGoogleId": {
                     name: 'contaGoogleId',
                     type: 'number'
@@ -9930,6 +10846,14 @@ var ProdutoAfiliadoHotmart = /** @class */ (function () {
                     keyFrom: 'hotmartId',
                     keyTo: 'hotmartId'
                 },
+                anuncioAdsDisplays: {
+                    name: 'anuncioAdsDisplays',
+                    type: 'AnuncioAdsDisplay[]',
+                    model: 'AnuncioAdsDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
                 produtoAfiliadoHotlinks: {
                     name: 'produtoAfiliadoHotlinks',
                     type: 'ProdutoAfiliadoHotlink[]',
@@ -9953,6 +10877,38 @@ var ProdutoAfiliadoHotmart = /** @class */ (function () {
                     relationType: 'hasMany',
                     keyFrom: 'hotmartId',
                     keyTo: 'produtoAfiliadoHotmartId'
+                },
+                publicoAlvoAds: {
+                    name: 'publicoAlvoAds',
+                    type: 'PublicoAlvoAds[]',
+                    model: 'PublicoAlvoAds',
+                    relationType: 'hasMany',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+                publicoAlvoAdsDiarios: {
+                    name: 'publicoAlvoAdsDiarios',
+                    type: 'PublicoAlvoAdsDiario[]',
+                    model: 'PublicoAlvoAdsDiario',
+                    relationType: 'hasMany',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+                paginaVendas: {
+                    name: 'paginaVendas',
+                    type: 'PaginaVenda[]',
+                    model: 'PaginaVenda',
+                    relationType: 'hasMany',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+                imagemConjuntos: {
+                    name: 'imagemConjuntos',
+                    type: 'ImagemConjunto[]',
+                    model: 'ImagemConjunto',
+                    relationType: 'hasMany',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
                 },
             }
         };
@@ -10194,6 +11150,254 @@ var ProdutoPlataforma = /** @class */ (function () {
         };
     };
     return ProdutoPlataforma;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/models/PublicoAlvoAds.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/shared/sdk/models/PublicoAlvoAds.ts ***!
+  \*****************************************************/
+/*! exports provided: PublicoAlvoAds */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAds", function() { return PublicoAlvoAds; });
+var PublicoAlvoAds = /** @class */ (function () {
+    function PublicoAlvoAds(data) {
+        Object.assign(this, data);
+    }
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `PublicoAlvoAds`.
+     */
+    PublicoAlvoAds.getModelName = function () {
+        return "PublicoAlvoAds";
+    };
+    /**
+    * @method factory
+    * @author Jonathan Casarrubias
+    * @license MIT
+    * This method creates an instance of PublicoAlvoAds for dynamic purposes.
+    **/
+    PublicoAlvoAds.factory = function (data) {
+        return new PublicoAlvoAds(data);
+    };
+    /**
+    * @method getModelDefinition
+    * @author Julien Ledun
+    * @license MIT
+    * This method returns an object that represents some of the model
+    * definitions.
+    **/
+    PublicoAlvoAds.getModelDefinition = function () {
+        return {
+            name: 'PublicoAlvoAds',
+            plural: 'PublicoAlvoAds',
+            path: 'PublicoAlvoAds',
+            idName: 'id',
+            properties: {
+                "nome": {
+                    name: 'nome',
+                    type: 'string'
+                },
+                "tamanhoAtualRedePesquisa": {
+                    name: 'tamanhoAtualRedePesquisa',
+                    type: 'number'
+                },
+                "tamanhoAtualRedeDisplay": {
+                    name: 'tamanhoAtualRedeDisplay',
+                    type: 'number'
+                },
+                "tipo": {
+                    name: 'tipo',
+                    type: 'string'
+                },
+                "contemUrl": {
+                    name: 'contemUrl',
+                    type: 'string'
+                },
+                "custoFormacaoAtual": {
+                    name: 'custoFormacaoAtual',
+                    type: 'number'
+                },
+                "custoPorPessoaAtual": {
+                    name: 'custoPorPessoaAtual',
+                    type: 'number'
+                },
+                "resourceName": {
+                    name: 'resourceName',
+                    type: 'string'
+                },
+                "contaGoogleId": {
+                    name: 'contaGoogleId',
+                    type: 'number'
+                },
+                "paginaVendaId": {
+                    name: 'paginaVendaId',
+                    type: 'number'
+                },
+                "id": {
+                    name: 'id',
+                    type: 'number'
+                },
+                "hotmartId": {
+                    name: 'hotmartId',
+                    type: 'number'
+                },
+            },
+            relations: {
+                produtoAfiliadoHotmart: {
+                    name: 'produtoAfiliadoHotmart',
+                    type: 'ProdutoAfiliadoHotmart',
+                    model: 'ProdutoAfiliadoHotmart',
+                    relationType: 'belongsTo',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+                campanhaAdsRedeDisplays: {
+                    name: 'campanhaAdsRedeDisplays',
+                    type: 'CampanhaAdsRedeDisplay[]',
+                    model: 'CampanhaAdsRedeDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'publicoAlvoAdsId'
+                },
+                paginaVenda: {
+                    name: 'paginaVenda',
+                    type: 'PaginaVenda',
+                    model: 'PaginaVenda',
+                    relationType: 'belongsTo',
+                    keyFrom: 'paginaVendaId',
+                    keyTo: 'id'
+                },
+            }
+        };
+    };
+    return PublicoAlvoAds;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/models/PublicoAlvoAdsDiario.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/shared/sdk/models/PublicoAlvoAdsDiario.ts ***!
+  \***********************************************************/
+/*! exports provided: PublicoAlvoAdsDiario */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiario", function() { return PublicoAlvoAdsDiario; });
+var PublicoAlvoAdsDiario = /** @class */ (function () {
+    function PublicoAlvoAdsDiario(data) {
+        Object.assign(this, data);
+    }
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `PublicoAlvoAdsDiario`.
+     */
+    PublicoAlvoAdsDiario.getModelName = function () {
+        return "PublicoAlvoAdsDiario";
+    };
+    /**
+    * @method factory
+    * @author Jonathan Casarrubias
+    * @license MIT
+    * This method creates an instance of PublicoAlvoAdsDiario for dynamic purposes.
+    **/
+    PublicoAlvoAdsDiario.factory = function (data) {
+        return new PublicoAlvoAdsDiario(data);
+    };
+    /**
+    * @method getModelDefinition
+    * @author Julien Ledun
+    * @license MIT
+    * This method returns an object that represents some of the model
+    * definitions.
+    **/
+    PublicoAlvoAdsDiario.getModelDefinition = function () {
+        return {
+            name: 'PublicoAlvoAdsDiario',
+            plural: 'PublicoAlvoAdsDiarios',
+            path: 'PublicoAlvoAdsDiarios',
+            idName: 'id',
+            properties: {
+                "data": {
+                    name: 'data',
+                    type: 'Date'
+                },
+                "nome": {
+                    name: 'nome',
+                    type: 'string'
+                },
+                "tamanhoRedeDisplay": {
+                    name: 'tamanhoRedeDisplay',
+                    type: 'number'
+                },
+                "tamanhoRedePesquisa": {
+                    name: 'tamanhoRedePesquisa',
+                    type: 'number'
+                },
+                "resourceName": {
+                    name: 'resourceName',
+                    type: 'string'
+                },
+                "contaGoogleId": {
+                    name: 'contaGoogleId',
+                    type: 'number'
+                },
+                "maisRecente": {
+                    name: 'maisRecente',
+                    type: 'number'
+                },
+                "hotmartId": {
+                    name: 'hotmartId',
+                    type: 'number'
+                },
+                "pixelGoogleId": {
+                    name: 'pixelGoogleId',
+                    type: 'number'
+                },
+                "id": {
+                    name: 'id',
+                    type: 'number'
+                },
+            },
+            relations: {
+                produtoAfiliadoHotmart: {
+                    name: 'produtoAfiliadoHotmart',
+                    type: 'ProdutoAfiliadoHotmart',
+                    model: 'ProdutoAfiliadoHotmart',
+                    relationType: 'belongsTo',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+                pixelGoogle: {
+                    name: 'pixelGoogle',
+                    type: 'PixelGoogle',
+                    model: 'PixelGoogle',
+                    relationType: 'belongsTo',
+                    keyFrom: 'pixelGoogleId',
+                    keyTo: 'id'
+                },
+                contaGoogle: {
+                    name: 'contaGoogle',
+                    type: 'ContaGoogle',
+                    model: 'ContaGoogle',
+                    relationType: 'belongsTo',
+                    keyFrom: 'contaGoogleId',
+                    keyTo: 'id'
+                },
+            }
+        };
+    };
+    return PublicoAlvoAdsDiario;
 }());
 
 
@@ -10861,7 +12065,7 @@ var Visitante = /** @class */ (function () {
 /*!********************************************!*\
   !*** ./src/app/shared/sdk/models/index.ts ***!
   \********************************************/
-/*! exports provided: User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, ImagemAnuncio, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, AccessToken, SDKToken, FireLoopRef */
+/*! exports provided: User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, AccessToken, SDKToken, FireLoopRef */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10956,42 +12160,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PrecoProdutoAfiliado__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./PrecoProdutoAfiliado */ "./src/app/shared/sdk/models/PrecoProdutoAfiliado.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliado", function() { return _PrecoProdutoAfiliado__WEBPACK_IMPORTED_MODULE_29__["PrecoProdutoAfiliado"]; });
 
-/* harmony import */ var _ImagemAnuncio__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./ImagemAnuncio */ "./src/app/shared/sdk/models/ImagemAnuncio.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemAnuncio", function() { return _ImagemAnuncio__WEBPACK_IMPORTED_MODULE_30__["ImagemAnuncio"]; });
+/* harmony import */ var _AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./AnuncioAdsDisplay */ "./src/app/shared/sdk/models/AnuncioAdsDisplay.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return _AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_30__["AnuncioAdsDisplay"]; });
 
-/* harmony import */ var _AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./AnuncioAdsDisplay */ "./src/app/shared/sdk/models/AnuncioAdsDisplay.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return _AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_31__["AnuncioAdsDisplay"]; });
+/* harmony import */ var _Visitante__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./Visitante */ "./src/app/shared/sdk/models/Visitante.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Visitante", function() { return _Visitante__WEBPACK_IMPORTED_MODULE_31__["Visitante"]; });
 
-/* harmony import */ var _Visitante__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./Visitante */ "./src/app/shared/sdk/models/Visitante.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Visitante", function() { return _Visitante__WEBPACK_IMPORTED_MODULE_32__["Visitante"]; });
+/* harmony import */ var _VideoExecucao__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./VideoExecucao */ "./src/app/shared/sdk/models/VideoExecucao.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucao", function() { return _VideoExecucao__WEBPACK_IMPORTED_MODULE_32__["VideoExecucao"]; });
 
-/* harmony import */ var _VideoExecucao__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./VideoExecucao */ "./src/app/shared/sdk/models/VideoExecucao.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucao", function() { return _VideoExecucao__WEBPACK_IMPORTED_MODULE_33__["VideoExecucao"]; });
+/* harmony import */ var _ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./ProdutoAfiliadoHotlink */ "./src/app/shared/sdk/models/ProdutoAfiliadoHotlink.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlink", function() { return _ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_33__["ProdutoAfiliadoHotlink"]; });
 
-/* harmony import */ var _ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./ProdutoAfiliadoHotlink */ "./src/app/shared/sdk/models/ProdutoAfiliadoHotlink.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlink", function() { return _ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_34__["ProdutoAfiliadoHotlink"]; });
+/* harmony import */ var _TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./TagIdSecaoPaginaVenda */ "./src/app/shared/sdk/models/TagIdSecaoPaginaVenda.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVenda", function() { return _TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_34__["TagIdSecaoPaginaVenda"]; });
 
-/* harmony import */ var _TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./TagIdSecaoPaginaVenda */ "./src/app/shared/sdk/models/TagIdSecaoPaginaVenda.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVenda", function() { return _TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_35__["TagIdSecaoPaginaVenda"]; });
+/* harmony import */ var _CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./CampanhaAdsRedeDisplay */ "./src/app/shared/sdk/models/CampanhaAdsRedeDisplay.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplay", function() { return _CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_35__["CampanhaAdsRedeDisplay"]; });
 
-/* harmony import */ var _CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./CampanhaAdsRedeDisplay */ "./src/app/shared/sdk/models/CampanhaAdsRedeDisplay.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplay", function() { return _CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__["CampanhaAdsRedeDisplay"]; });
+/* harmony import */ var _OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./OtimizacaoCampanhaAdsRedeDisplay */ "./src/app/shared/sdk/models/OtimizacaoCampanhaAdsRedeDisplay.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplay", function() { return _OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__["OtimizacaoCampanhaAdsRedeDisplay"]; });
 
-/* harmony import */ var _OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./OtimizacaoCampanhaAdsRedeDisplay */ "./src/app/shared/sdk/models/OtimizacaoCampanhaAdsRedeDisplay.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplay", function() { return _OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_37__["OtimizacaoCampanhaAdsRedeDisplay"]; });
+/* harmony import */ var _ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./ListaRemarketingAds */ "./src/app/shared/sdk/models/ListaRemarketingAds.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAds", function() { return _ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_37__["ListaRemarketingAds"]; });
 
-/* harmony import */ var _ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./ListaRemarketingAds */ "./src/app/shared/sdk/models/ListaRemarketingAds.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAds", function() { return _ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_38__["ListaRemarketingAds"]; });
+/* harmony import */ var _PublicoAlvoAds__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./PublicoAlvoAds */ "./src/app/shared/sdk/models/PublicoAlvoAds.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAds", function() { return _PublicoAlvoAds__WEBPACK_IMPORTED_MODULE_38__["PublicoAlvoAds"]; });
 
-/* harmony import */ var _BaseModels__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./BaseModels */ "./src/app/shared/sdk/models/BaseModels.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_39__["AccessToken"]; });
+/* harmony import */ var _PublicoAlvoAdsDiario__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./PublicoAlvoAdsDiario */ "./src/app/shared/sdk/models/PublicoAlvoAdsDiario.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiario", function() { return _PublicoAlvoAdsDiario__WEBPACK_IMPORTED_MODULE_39__["PublicoAlvoAdsDiario"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_39__["SDKToken"]; });
+/* harmony import */ var _PaginaVenda__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./PaginaVenda */ "./src/app/shared/sdk/models/PaginaVenda.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVenda", function() { return _PaginaVenda__WEBPACK_IMPORTED_MODULE_40__["PaginaVenda"]; });
 
-/* harmony import */ var _FireLoopRef__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./FireLoopRef */ "./src/app/shared/sdk/models/FireLoopRef.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _FireLoopRef__WEBPACK_IMPORTED_MODULE_40__["FireLoopRef"]; });
+/* harmony import */ var _AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./AnuncioCampanhaAdsDisplay */ "./src/app/shared/sdk/models/AnuncioCampanhaAdsDisplay.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplay", function() { return _AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_41__["AnuncioCampanhaAdsDisplay"]; });
+
+/* harmony import */ var _ImagemConjunto__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./ImagemConjunto */ "./src/app/shared/sdk/models/ImagemConjunto.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjunto", function() { return _ImagemConjunto__WEBPACK_IMPORTED_MODULE_42__["ImagemConjunto"]; });
+
+/* harmony import */ var _BaseModels__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./BaseModels */ "./src/app/shared/sdk/models/BaseModels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_43__["AccessToken"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_43__["SDKToken"]; });
+
+/* harmony import */ var _FireLoopRef__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./FireLoopRef */ "./src/app/shared/sdk/models/FireLoopRef.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _FireLoopRef__WEBPACK_IMPORTED_MODULE_44__["FireLoopRef"]; });
 
 /* tslint:disable */
+
+
+
+
 
 
 
@@ -13102,6 +14322,307 @@ var AnuncioAdsDisplayApi = /** @class */ (function (_super) {
         return _this;
     }
     /**
+     * Busca relação produtoAfiliadoHotmart de belongsTo.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioAdsDisplayApi.prototype.getProdutoAfiliadoHotmart = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/produtoAfiliadoHotmart";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação paginaVenda de belongsTo.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioAdsDisplayApi.prototype.getPaginaVenda = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/paginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para anuncioCampanhaAdsDisplays.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioAdsDisplayApi.prototype.findByIdAnuncioCampanhaAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para anuncioCampanhaAdsDisplays.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    AnuncioAdsDisplayApi.prototype.destroyByIdAnuncioCampanhaAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para anuncioCampanhaAdsDisplays.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioAdsDisplayApi.prototype.updateByIdAnuncioCampanhaAdsDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação imagemConjunto de belongsTo.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioAdsDisplayApi.prototype.getImagemConjunto = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/imagemConjunto";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioCampanhaAdsDisplays consultas de AnuncioAdsDisplay.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioAdsDisplayApi.prototype.getAnuncioCampanhaAdsDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioCampanhaAdsDisplays deste modelo.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioAdsDisplayApi.prototype.createAnuncioCampanhaAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os anuncioCampanhaAdsDisplays deste modelo.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    AnuncioAdsDisplayApi.prototype.deleteAnuncioCampanhaAdsDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioCampanhaAdsDisplays contagens de AnuncioAdsDisplay.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    AnuncioAdsDisplayApi.prototype.countAnuncioCampanhaAdsDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Patch an existing model instance or insert a new one into the data source.
      *
      * @param {object} data Request data.
@@ -13153,6 +14674,39 @@ var AnuncioAdsDisplayApi = /** @class */ (function (_super) {
         var _method = "PATCH";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/AnuncioAdsDisplays/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioCampanhaAdsDisplays deste modelo.
+     *
+     * @param {any} id AnuncioAdsDisplay id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioAdsDisplayApi.prototype.createManyAnuncioCampanhaAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays";
         var _routeParams = {
             id: id
         };
@@ -13398,6 +14952,220 @@ var AnuncioCampanhaAdsApi = /** @class */ (function (_super) {
             _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
     ], AnuncioCampanhaAdsApi);
     return AnuncioCampanhaAdsApi;
+}(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/services/custom/AnuncioCampanhaAdsDisplay.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/AnuncioCampanhaAdsDisplay.ts ***!
+  \*************************************************************************/
+/*! exports provided: AnuncioCampanhaAdsDisplayApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return AnuncioCampanhaAdsDisplayApi; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony import */ var _core_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/base.service */ "./src/app/shared/sdk/services/core/base.service.ts");
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/shared/sdk/services/core/auth.service.ts");
+/* harmony import */ var _core_error_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/error.service */ "./src/app/shared/sdk/services/core/error.service.ts");
+/* harmony import */ var _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sockets/socket.connections */ "./src/app/shared/sdk/sockets/socket.connections.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/* tslint:disable */
+
+
+
+
+
+
+
+
+/**
+ * Api services for the `AnuncioCampanhaAdsDisplay` model.
+ */
+var AnuncioCampanhaAdsDisplayApi = /** @class */ (function (_super) {
+    __extends(AnuncioCampanhaAdsDisplayApi, _super);
+    function AnuncioCampanhaAdsDisplayApi(http, connection, models, auth, errorHandler) {
+        var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
+        _this.http = http;
+        _this.connection = connection;
+        _this.models = models;
+        _this.auth = auth;
+        _this.errorHandler = errorHandler;
+        return _this;
+    }
+    /**
+     * Busca relação anuncioAdsDisplay de belongsTo.
+     *
+     * @param {any} id AnuncioCampanhaAdsDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioCampanhaAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioCampanhaAdsDisplayApi.prototype.getAnuncioAdsDisplay = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioCampanhaAdsDisplays/:id/anuncioAdsDisplay";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação campanhaAdsRedeDisplay de belongsTo.
+     *
+     * @param {any} id AnuncioCampanhaAdsDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioCampanhaAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioCampanhaAdsDisplayApi.prototype.getCampanhaAdsRedeDisplay = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioCampanhaAdsDisplays/:id/campanhaAdsRedeDisplay";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - Model instance data
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioCampanhaAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioCampanhaAdsDisplayApi.prototype.patchOrCreate = function (data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioCampanhaAdsDisplays";
+        var _routeParams = {};
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param {any} id AnuncioCampanhaAdsDisplay id
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - An object of model property name/value pairs
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `AnuncioCampanhaAdsDisplay` object.)
+     * </em>
+     */
+    AnuncioCampanhaAdsDisplayApi.prototype.patchAttributes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/AnuncioCampanhaAdsDisplays/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `AnuncioCampanhaAdsDisplay`.
+     */
+    AnuncioCampanhaAdsDisplayApi.prototype.getModelName = function () {
+        return "AnuncioCampanhaAdsDisplay";
+    };
+    AnuncioCampanhaAdsDisplayApi = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"])),
+        __param(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"])),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"],
+            _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
+            _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
+    ], AnuncioCampanhaAdsDisplayApi);
+    return AnuncioCampanhaAdsDisplayApi;
 }(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
 
 
@@ -14890,6 +16658,276 @@ var CampanhaAdsRedeDisplayApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Busca relação publicoAlvoAds de belongsTo.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.getPublicoAlvoAds = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação paginaVenda de belongsTo.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.getPaginaVenda = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/paginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para anuncioCampanhaAdsDisplays.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.findByIdAnuncioCampanhaAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para anuncioCampanhaAdsDisplays.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    CampanhaAdsRedeDisplayApi.prototype.destroyByIdAnuncioCampanhaAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para anuncioCampanhaAdsDisplays.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.updateByIdAnuncioCampanhaAdsDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioCampanhaAdsDisplays consultas de CampanhaAdsRedeDisplay.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.getAnuncioCampanhaAdsDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/anuncioCampanhaAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioCampanhaAdsDisplays deste modelo.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.createAnuncioCampanhaAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/anuncioCampanhaAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os anuncioCampanhaAdsDisplays deste modelo.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    CampanhaAdsRedeDisplayApi.prototype.deleteAnuncioCampanhaAdsDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/anuncioCampanhaAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioCampanhaAdsDisplays contagens de CampanhaAdsRedeDisplay.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    CampanhaAdsRedeDisplayApi.prototype.countAnuncioCampanhaAdsDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/anuncioCampanhaAdsDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Patch an existing model instance or insert a new one into the data source.
      *
      * @param {object} data Request data.
@@ -14941,6 +16979,94 @@ var CampanhaAdsRedeDisplayApi = /** @class */ (function (_super) {
         var _method = "PATCH";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/CampanhaAdsRedeDisplays/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.ObtemListaParaCriacao = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/obtemListaParaCriacao";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `campanha` – `{object}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.AtualizaCampanhaCriada = function (campanha, customHeaders) {
+        if (campanha === void 0) { campanha = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/atualizaCampanhaCriada";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof campanha !== 'undefined' && campanha !== null)
+            _urlParams.campanha = campanha;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioCampanhaAdsDisplays deste modelo.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.createManyAnuncioCampanhaAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/anuncioCampanhaAdsDisplays";
         var _routeParams = {
             id: id
         };
@@ -15495,6 +17621,37 @@ var CampanhaAdsTesteApi = /** @class */ (function (_super) {
             data: data
         };
         var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação paginaVenda de belongsTo.
+     *
+     * @param {any} id CampanhaAdsTeste id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsTeste` object.)
+     * </em>
+     */
+    CampanhaAdsTesteApi.prototype.getPaginaVenda = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsTestes/:id/paginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -17089,6 +19246,97 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Localize um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.findByIdPublicoAlvoAdsDiarios = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ContaGoogleApi.prototype.destroyByIdPublicoAlvoAdsDiarios = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.updateByIdPublicoAlvoAdsDiarios = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * campanhaAdsTestes consultas de ContaGoogle.
      *
      * @param {any} id ContaGoogle id
@@ -18025,6 +20273,123 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * publicoAlvoAdsDiarios consultas de ContaGoogle.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.getPublicoAlvoAdsDiarios = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.createPublicoAlvoAdsDiarios = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ContaGoogleApi.prototype.deletePublicoAlvoAdsDiarios = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAdsDiarios contagens de ContaGoogle.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ContaGoogleApi.prototype.countPublicoAlvoAdsDiarios = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsDiarios/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Patch an existing model instance or insert a new one into the data source.
      *
      * @param {object} data Request data.
@@ -18436,6 +20801,39 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         var _method = "POST";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ContaGoogles/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.createManyPublicoAlvoAdsDiarios = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsDiarios";
         var _routeParams = {
             id: id
         };
@@ -19785,16 +22183,16 @@ var IdeiaPalavraChaveApi = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/app/shared/sdk/services/custom/ImagemAnuncio.ts":
-/*!*************************************************************!*\
-  !*** ./src/app/shared/sdk/services/custom/ImagemAnuncio.ts ***!
-  \*************************************************************/
-/*! exports provided: ImagemAnuncioApi */
+/***/ "./src/app/shared/sdk/services/custom/ImagemConjunto.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/ImagemConjunto.ts ***!
+  \**************************************************************/
+/*! exports provided: ImagemConjuntoApi */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImagemAnuncioApi", function() { return ImagemAnuncioApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return ImagemConjuntoApi; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
@@ -19835,11 +22233,11 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 /**
- * Api services for the `ImagemAnuncio` model.
+ * Api services for the `ImagemConjunto` model.
  */
-var ImagemAnuncioApi = /** @class */ (function (_super) {
-    __extends(ImagemAnuncioApi, _super);
-    function ImagemAnuncioApi(http, connection, models, auth, errorHandler) {
+var ImagemConjuntoApi = /** @class */ (function (_super) {
+    __extends(ImagemConjuntoApi, _super);
+    function ImagemConjuntoApi(http, connection, models, auth, errorHandler) {
         var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
         _this.http = http;
         _this.connection = connection;
@@ -19848,6 +22246,245 @@ var ImagemAnuncioApi = /** @class */ (function (_super) {
         _this.errorHandler = errorHandler;
         return _this;
     }
+    /**
+     * Busca relação produtoAfiliadoHotmart de belongsTo.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ImagemConjunto` object.)
+     * </em>
+     */
+    ImagemConjuntoApi.prototype.getProdutoAfiliadoHotmart = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/produtoAfiliadoHotmart";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ImagemConjunto` object.)
+     * </em>
+     */
+    ImagemConjuntoApi.prototype.findByIdAnuncioAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ImagemConjuntoApi.prototype.destroyByIdAnuncioAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ImagemConjunto` object.)
+     * </em>
+     */
+    ImagemConjuntoApi.prototype.updateByIdAnuncioAdsDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioAdsDisplays consultas de ImagemConjunto.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ImagemConjunto` object.)
+     * </em>
+     */
+    ImagemConjuntoApi.prototype.getAnuncioAdsDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ImagemConjunto` object.)
+     * </em>
+     */
+    ImagemConjuntoApi.prototype.createAnuncioAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ImagemConjuntoApi.prototype.deleteAnuncioAdsDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioAdsDisplays contagens de ImagemConjunto.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ImagemConjuntoApi.prototype.countAnuncioAdsDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/anuncioAdsDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
     /**
      * Patch an existing model instance or insert a new one into the data source.
      *
@@ -19861,14 +22498,14 @@ var ImagemAnuncioApi = /** @class */ (function (_super) {
      *
      * <em>
      * (The remote method definition does not provide any description.
-     * This usually means the response is a `ImagemAnuncio` object.)
+     * This usually means the response is a `ImagemConjunto` object.)
      * </em>
      */
-    ImagemAnuncioApi.prototype.patchOrCreate = function (data, customHeaders) {
+    ImagemConjuntoApi.prototype.patchOrCreate = function (data, customHeaders) {
         if (data === void 0) { data = {}; }
         var _method = "PATCH";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ImagemAnuncios";
+            "/ImagemConjuntos";
         var _routeParams = {};
         var _postBody = {
             data: data
@@ -19880,7 +22517,7 @@ var ImagemAnuncioApi = /** @class */ (function (_super) {
     /**
      * Patch attributes for a model instance and persist it into the data source.
      *
-     * @param {any} id ImagemAnuncio id
+     * @param {any} id ImagemConjunto id
      *
      * @param {object} data Request data.
      *
@@ -19892,14 +22529,47 @@ var ImagemAnuncioApi = /** @class */ (function (_super) {
      *
      * <em>
      * (The remote method definition does not provide any description.
-     * This usually means the response is a `ImagemAnuncio` object.)
+     * This usually means the response is a `ImagemConjunto` object.)
      * </em>
      */
-    ImagemAnuncioApi.prototype.patchAttributes = function (id, data, customHeaders) {
+    ImagemConjuntoApi.prototype.patchAttributes = function (id, data, customHeaders) {
         if (data === void 0) { data = {}; }
         var _method = "PATCH";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
-            "/ImagemAnuncios/:id";
+            "/ImagemConjuntos/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ImagemConjunto` object.)
+     * </em>
+     */
+    ImagemConjuntoApi.prototype.createManyAnuncioAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/anuncioAdsDisplays";
         var _routeParams = {
             id: id
         };
@@ -19912,12 +22582,12 @@ var ImagemAnuncioApi = /** @class */ (function (_super) {
     };
     /**
      * The name of the model represented by this $resource,
-     * i.e. `ImagemAnuncio`.
+     * i.e. `ImagemConjunto`.
      */
-    ImagemAnuncioApi.prototype.getModelName = function () {
-        return "ImagemAnuncio";
+    ImagemConjuntoApi.prototype.getModelName = function () {
+        return "ImagemConjunto";
     };
-    ImagemAnuncioApi = __decorate([
+    ImagemConjuntoApi = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
@@ -19929,8 +22599,8 @@ var ImagemAnuncioApi = /** @class */ (function (_super) {
             _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
             _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
             _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
-    ], ImagemAnuncioApi);
-    return ImagemAnuncioApi;
+    ], ImagemConjuntoApi);
+    return ImagemConjuntoApi;
 }(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
 
 
@@ -20367,6 +23037,37 @@ var LoadPaginaVendaApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Busca relação paginaVenda de belongsTo.
+     *
+     * @param {any} id LoadPaginaVenda id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `LoadPaginaVenda` object.)
+     * </em>
+     */
+    LoadPaginaVendaApi.prototype.getPaginaVenda = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/LoadPaginaVendas/:id/paginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Patch an existing model instance or insert a new one into the data source.
      *
      * @param {object} data Request data.
@@ -20437,6 +23138,8 @@ var LoadPaginaVendaApi = /** @class */ (function (_super) {
      *
      * @param {string} visitante
      *
+     * @param {number} tempo
+     *
      * @returns {object} An empty reference that will be
      *   populated with the actual data once the response is returned
      *   from the server.
@@ -20446,9 +23149,10 @@ var LoadPaginaVendaApi = /** @class */ (function (_super) {
      * This usually means the response is a `LoadPaginaVenda` object.)
      * </em>
      */
-    LoadPaginaVendaApi.prototype.InsereItem = function (idHm, visitante, customHeaders) {
+    LoadPaginaVendaApi.prototype.InsereItem = function (idHm, visitante, tempo, customHeaders) {
         if (idHm === void 0) { idHm = {}; }
         if (visitante === void 0) { visitante = {}; }
+        if (tempo === void 0) { tempo = {}; }
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/LoadPaginaVendas/insereItem";
@@ -20459,6 +23163,8 @@ var LoadPaginaVendaApi = /** @class */ (function (_super) {
             _urlParams.idHm = idHm;
         if (typeof visitante !== 'undefined' && visitante !== null)
             _urlParams.visitante = visitante;
+        if (typeof tempo !== 'undefined' && tempo !== null)
+            _urlParams.tempo = tempo;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -21080,6 +23786,1394 @@ var OtimizacaoCampanhaAdsRedeDisplayApi = /** @class */ (function (_super) {
             _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
     ], OtimizacaoCampanhaAdsRedeDisplayApi);
     return OtimizacaoCampanhaAdsRedeDisplayApi;
+}(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/services/custom/PaginaVenda.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/PaginaVenda.ts ***!
+  \***********************************************************/
+/*! exports provided: PaginaVendaApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaApi", function() { return PaginaVendaApi; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony import */ var _core_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/base.service */ "./src/app/shared/sdk/services/core/base.service.ts");
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/shared/sdk/services/core/auth.service.ts");
+/* harmony import */ var _core_error_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/error.service */ "./src/app/shared/sdk/services/core/error.service.ts");
+/* harmony import */ var _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sockets/socket.connections */ "./src/app/shared/sdk/sockets/socket.connections.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/* tslint:disable */
+
+
+
+
+
+
+
+
+/**
+ * Api services for the `PaginaVenda` model.
+ */
+var PaginaVendaApi = /** @class */ (function (_super) {
+    __extends(PaginaVendaApi, _super);
+    function PaginaVendaApi(http, connection, models, auth, errorHandler) {
+        var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
+        _this.http = http;
+        _this.connection = connection;
+        _this.models = models;
+        _this.auth = auth;
+        _this.errorHandler = errorHandler;
+        return _this;
+    }
+    /**
+     * Busca relação produtoAfiliadoHotmart de belongsTo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.getProdutoAfiliadoHotmart = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/produtoAfiliadoHotmart";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.findByIdCampanhaAdsRedeDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.destroyByIdCampanhaAdsRedeDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.updateByIdCampanhaAdsRedeDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para publicoAlvoAds.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAds
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.findByIdPublicoAlvoAds = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/publicoAlvoAds/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para publicoAlvoAds.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAds
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.destroyByIdPublicoAlvoAds = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/publicoAlvoAds/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para publicoAlvoAds.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAds
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.updateByIdPublicoAlvoAds = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/publicoAlvoAds/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.findByIdAnuncioAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.destroyByIdAnuncioAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.updateByIdAnuncioAdsDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para loadPaginaVendas.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para loadPaginaVendas
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.findByIdLoadPaginaVendas = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/loadPaginaVendas/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para loadPaginaVendas.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para loadPaginaVendas
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.destroyByIdLoadPaginaVendas = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/loadPaginaVendas/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para loadPaginaVendas.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para loadPaginaVendas
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.updateByIdLoadPaginaVendas = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/loadPaginaVendas/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para campanhaAdsTestes.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsTestes
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.findByIdCampanhaAdsTestes = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsTestes/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para campanhaAdsTestes.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsTestes
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.destroyByIdCampanhaAdsTestes = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsTestes/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para campanhaAdsTestes.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsTestes
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.updateByIdCampanhaAdsTestes = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsTestes/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsRedeDisplays consultas de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.getCampanhaAdsRedeDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createCampanhaAdsRedeDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.deleteCampanhaAdsRedeDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsRedeDisplays contagens de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PaginaVendaApi.prototype.countCampanhaAdsRedeDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsRedeDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAds consultas de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.getPublicoAlvoAds = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAds deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createPublicoAlvoAds = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os publicoAlvoAds deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.deletePublicoAlvoAds = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAds contagens de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PaginaVendaApi.prototype.countPublicoAlvoAds = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/publicoAlvoAds/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioAdsDisplays consultas de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.getAnuncioAdsDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createAnuncioAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.deleteAnuncioAdsDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioAdsDisplays contagens de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PaginaVendaApi.prototype.countAnuncioAdsDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/anuncioAdsDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * loadPaginaVendas consultas de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.getLoadPaginaVendas = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/loadPaginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no loadPaginaVendas deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createLoadPaginaVendas = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/loadPaginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os loadPaginaVendas deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.deleteLoadPaginaVendas = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/loadPaginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * loadPaginaVendas contagens de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PaginaVendaApi.prototype.countLoadPaginaVendas = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/loadPaginaVendas/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsTestes consultas de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.getCampanhaAdsTestes = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsTestes";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsTestes deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createCampanhaAdsTestes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsTestes";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os campanhaAdsTestes deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaApi.prototype.deleteCampanhaAdsTestes = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsTestes";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsTestes contagens de PaginaVenda.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PaginaVendaApi.prototype.countCampanhaAdsTestes = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsTestes/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - Model instance data
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.patchOrCreate = function (data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas";
+        var _routeParams = {};
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - An object of model property name/value pairs
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.patchAttributes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createManyCampanhaAdsRedeDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAds deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createManyPublicoAlvoAds = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createManyAnuncioAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no loadPaginaVendas deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createManyLoadPaginaVendas = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/loadPaginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsTestes deste modelo.
+     *
+     * @param {any} id PaginaVenda id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVenda` object.)
+     * </em>
+     */
+    PaginaVendaApi.prototype.createManyCampanhaAdsTestes = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendas/:id/campanhaAdsTestes";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `PaginaVenda`.
+     */
+    PaginaVendaApi.prototype.getModelName = function () {
+        return "PaginaVenda";
+    };
+    PaginaVendaApi = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"])),
+        __param(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"])),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"],
+            _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
+            _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
+    ], PaginaVendaApi);
+    return PaginaVendaApi;
 }(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
 
 
@@ -21856,6 +25950,97 @@ var PixelGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Localize um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.findByIdPublicoAlvoAdsDiarios = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PixelGoogleApi.prototype.destroyByIdPublicoAlvoAdsDiarios = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.updateByIdPublicoAlvoAdsDiarios = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * produtoAfiliadoHotmarts consultas de PixelGoogle.
      *
      * @param {any} id PixelGoogle id
@@ -22207,6 +26392,123 @@ var PixelGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * publicoAlvoAdsDiarios consultas de PixelGoogle.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.getPublicoAlvoAdsDiarios = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.createPublicoAlvoAdsDiarios = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PixelGoogleApi.prototype.deletePublicoAlvoAdsDiarios = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAdsDiarios contagens de PixelGoogle.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PixelGoogleApi.prototype.countPublicoAlvoAdsDiarios = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/publicoAlvoAdsDiarios/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Patch an existing model instance or insert a new one into the data source.
      *
      * @param {object} data Request data.
@@ -22315,6 +26617,61 @@ var PixelGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.ListaParaAjusteComConta = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/listaParaAjusteComConta";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `pixel` – `{object}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.AtualizaAjuste = function (pixel, customHeaders) {
+        if (pixel === void 0) { pixel = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/atualizaAjuste";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof pixel !== 'undefined' && pixel !== null)
+            _urlParams.pixel = pixel;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Cria uma nova instância no produtoAfiliadoHotmarts deste modelo.
      *
      * @param {any} id PixelGoogle id
@@ -22403,6 +26760,39 @@ var PixelGoogleApi = /** @class */ (function (_super) {
         var _method = "POST";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/PixelGoogles/:id/pixelGoogleCheckout";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id PixelGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PixelGoogle` object.)
+     * </em>
+     */
+    PixelGoogleApi.prototype.createManyPublicoAlvoAdsDiarios = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PixelGoogles/:id/publicoAlvoAdsDiarios";
         var _routeParams = {
             id: id
         };
@@ -24329,6 +28719,97 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Localize um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.findByIdAnuncioAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.destroyByIdAnuncioAdsDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para anuncioAdsDisplays.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para anuncioAdsDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.updateByIdAnuncioAdsDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/anuncioAdsDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Localize um item relacionado por ID para produtoAfiliadoHotlinks.
      *
      * @param {any} id ProdutoAfiliadoHotmart id
@@ -24590,6 +29071,370 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         var _method = "PUT";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ProdutoAfiliadoHotmarts/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para publicoAlvoAds.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAds
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.findByIdPublicoAlvoAds = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAds/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para publicoAlvoAds.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAds
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.destroyByIdPublicoAlvoAds = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAds/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para publicoAlvoAds.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAds
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.updateByIdPublicoAlvoAds = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAds/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.findByIdPublicoAlvoAdsDiarios = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.destroyByIdPublicoAlvoAdsDiarios = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para publicoAlvoAdsDiarios.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsDiarios
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.updateByIdPublicoAlvoAdsDiarios = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAdsDiarios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para paginaVendas.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para paginaVendas
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.findByIdPaginaVendas = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/paginaVendas/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para paginaVendas.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para paginaVendas
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.destroyByIdPaginaVendas = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/paginaVendas/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para paginaVendas.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para paginaVendas
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.updateByIdPaginaVendas = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/paginaVendas/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para imagemConjuntos.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para imagemConjuntos
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.findByIdImagemConjuntos = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/imagemConjuntos/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para imagemConjuntos.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para imagemConjuntos
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.destroyByIdImagemConjuntos = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/imagemConjuntos/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para imagemConjuntos.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {any} fk Chave estrangeira para imagemConjuntos
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.updateByIdImagemConjuntos = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/imagemConjuntos/:fk";
         var _routeParams = {
             id: id,
             fk: fk
@@ -25772,6 +30617,123 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * anuncioAdsDisplays consultas de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.getAnuncioAdsDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createAnuncioAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.deleteAnuncioAdsDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * anuncioAdsDisplays contagens de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoAfiliadoHotmartApi.prototype.countAnuncioAdsDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/anuncioAdsDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * produtoAfiliadoHotlinks consultas de ProdutoAfiliadoHotmart.
      *
      * @param {any} id ProdutoAfiliadoHotmart id
@@ -26112,6 +31074,474 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ProdutoAfiliadoHotmarts/:id/campanhaAdsRedeDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAds consultas de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.getPublicoAlvoAds = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAds deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createPublicoAlvoAds = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os publicoAlvoAds deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.deletePublicoAlvoAds = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAds contagens de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoAfiliadoHotmartApi.prototype.countPublicoAlvoAds = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAds/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAdsDiarios consultas de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.getPublicoAlvoAdsDiarios = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createPublicoAlvoAdsDiarios = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.deletePublicoAlvoAdsDiarios = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAdsDiarios contagens de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoAfiliadoHotmartApi.prototype.countPublicoAlvoAdsDiarios = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAdsDiarios/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * paginaVendas consultas de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.getPaginaVendas = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/paginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no paginaVendas deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createPaginaVendas = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/paginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os paginaVendas deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.deletePaginaVendas = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/paginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * paginaVendas contagens de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoAfiliadoHotmartApi.prototype.countPaginaVendas = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/paginaVendas/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * imagemConjuntos consultas de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.getImagemConjuntos = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/imagemConjuntos";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no imagemConjuntos deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createImagemConjuntos = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/imagemConjuntos";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os imagemConjuntos deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartApi.prototype.deleteImagemConjuntos = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/imagemConjuntos";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * imagemConjuntos contagens de ProdutoAfiliadoHotmart.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoAfiliadoHotmartApi.prototype.countImagemConjuntos = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/imagemConjuntos/count";
         var _routeParams = {
             id: id
         };
@@ -26789,6 +32219,39 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Cria uma nova instância no anuncioAdsDisplays deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createManyAnuncioAdsDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/anuncioAdsDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Cria uma nova instância no produtoAfiliadoHotlinks deste modelo.
      *
      * @param {any} id ProdutoAfiliadoHotmart id
@@ -26877,6 +32340,138 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
         var _method = "POST";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ProdutoAfiliadoHotmarts/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAds deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createManyPublicoAlvoAds = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAds";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsDiarios deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createManyPublicoAlvoAdsDiarios = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/publicoAlvoAdsDiarios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no paginaVendas deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createManyPaginaVendas = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/paginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no imagemConjuntos deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmart id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmart` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartApi.prototype.createManyImagemConjuntos = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmarts/:id/imagemConjuntos";
         var _routeParams = {
             id: id
         };
@@ -27484,6 +33079,737 @@ var ProdutoPlataformaApi = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/shared/sdk/services/custom/PublicoAlvoAds.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/PublicoAlvoAds.ts ***!
+  \**************************************************************/
+/*! exports provided: PublicoAlvoAdsApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsApi", function() { return PublicoAlvoAdsApi; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony import */ var _core_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/base.service */ "./src/app/shared/sdk/services/core/base.service.ts");
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/shared/sdk/services/core/auth.service.ts");
+/* harmony import */ var _core_error_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/error.service */ "./src/app/shared/sdk/services/core/error.service.ts");
+/* harmony import */ var _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sockets/socket.connections */ "./src/app/shared/sdk/sockets/socket.connections.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/* tslint:disable */
+
+
+
+
+
+
+
+
+/**
+ * Api services for the `PublicoAlvoAds` model.
+ */
+var PublicoAlvoAdsApi = /** @class */ (function (_super) {
+    __extends(PublicoAlvoAdsApi, _super);
+    function PublicoAlvoAdsApi(http, connection, models, auth, errorHandler) {
+        var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
+        _this.http = http;
+        _this.connection = connection;
+        _this.models = models;
+        _this.auth = auth;
+        _this.errorHandler = errorHandler;
+        return _this;
+    }
+    /**
+     * Busca relação produtoAfiliadoHotmart de belongsTo.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.getProdutoAfiliadoHotmart = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/produtoAfiliadoHotmart";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.findByIdCampanhaAdsRedeDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PublicoAlvoAdsApi.prototype.destroyByIdCampanhaAdsRedeDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.updateByIdCampanhaAdsRedeDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação paginaVenda de belongsTo.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.getPaginaVenda = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/paginaVenda";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsRedeDisplays consultas de PublicoAlvoAds.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.getCampanhaAdsRedeDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.createCampanhaAdsRedeDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PublicoAlvoAdsApi.prototype.deleteCampanhaAdsRedeDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsRedeDisplays contagens de PublicoAlvoAds.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PublicoAlvoAdsApi.prototype.countCampanhaAdsRedeDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/campanhaAdsRedeDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - Model instance data
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.patchOrCreate = function (data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds";
+        var _routeParams = {};
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - An object of model property name/value pairs
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.patchAttributes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PublicoAlvoAds id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAds` object.)
+     * </em>
+     */
+    PublicoAlvoAdsApi.prototype.createManyCampanhaAdsRedeDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAds/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `PublicoAlvoAds`.
+     */
+    PublicoAlvoAdsApi.prototype.getModelName = function () {
+        return "PublicoAlvoAds";
+    };
+    PublicoAlvoAdsApi = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"])),
+        __param(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"])),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"],
+            _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
+            _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
+    ], PublicoAlvoAdsApi);
+    return PublicoAlvoAdsApi;
+}(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/services/custom/PublicoAlvoAdsDiario.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/PublicoAlvoAdsDiario.ts ***!
+  \********************************************************************/
+/*! exports provided: PublicoAlvoAdsDiarioApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiarioApi", function() { return PublicoAlvoAdsDiarioApi; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony import */ var _core_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/base.service */ "./src/app/shared/sdk/services/core/base.service.ts");
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/shared/sdk/services/core/auth.service.ts");
+/* harmony import */ var _core_error_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/error.service */ "./src/app/shared/sdk/services/core/error.service.ts");
+/* harmony import */ var _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sockets/socket.connections */ "./src/app/shared/sdk/sockets/socket.connections.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/* tslint:disable */
+
+
+
+
+
+
+
+
+/**
+ * Api services for the `PublicoAlvoAdsDiario` model.
+ */
+var PublicoAlvoAdsDiarioApi = /** @class */ (function (_super) {
+    __extends(PublicoAlvoAdsDiarioApi, _super);
+    function PublicoAlvoAdsDiarioApi(http, connection, models, auth, errorHandler) {
+        var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
+        _this.http = http;
+        _this.connection = connection;
+        _this.models = models;
+        _this.auth = auth;
+        _this.errorHandler = errorHandler;
+        return _this;
+    }
+    /**
+     * Busca relação produtoAfiliadoHotmart de belongsTo.
+     *
+     * @param {any} id PublicoAlvoAdsDiario id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsDiario` object.)
+     * </em>
+     */
+    PublicoAlvoAdsDiarioApi.prototype.getProdutoAfiliadoHotmart = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsDiarios/:id/produtoAfiliadoHotmart";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação pixelGoogle de belongsTo.
+     *
+     * @param {any} id PublicoAlvoAdsDiario id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsDiario` object.)
+     * </em>
+     */
+    PublicoAlvoAdsDiarioApi.prototype.getPixelGoogle = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsDiarios/:id/pixelGoogle";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação contaGoogle de belongsTo.
+     *
+     * @param {any} id PublicoAlvoAdsDiario id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsDiario` object.)
+     * </em>
+     */
+    PublicoAlvoAdsDiarioApi.prototype.getContaGoogle = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsDiarios/:id/contaGoogle";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - Model instance data
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsDiario` object.)
+     * </em>
+     */
+    PublicoAlvoAdsDiarioApi.prototype.patchOrCreate = function (data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsDiarios";
+        var _routeParams = {};
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param {any} id PublicoAlvoAdsDiario id
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - An object of model property name/value pairs
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsDiario` object.)
+     * </em>
+     */
+    PublicoAlvoAdsDiarioApi.prototype.patchAttributes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsDiarios/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `listaPublicoAlvo` – `{any}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsDiario` object.)
+     * </em>
+     */
+    PublicoAlvoAdsDiarioApi.prototype.AtualizaListaPorConta = function (listaPublicoAlvo, customHeaders) {
+        if (listaPublicoAlvo === void 0) { listaPublicoAlvo = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsDiarios/atualizaListaPorConta";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof listaPublicoAlvo !== 'undefined' && listaPublicoAlvo !== null)
+            _urlParams.listaPublicoAlvo = listaPublicoAlvo;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `PublicoAlvoAdsDiario`.
+     */
+    PublicoAlvoAdsDiarioApi.prototype.getModelName = function () {
+        return "PublicoAlvoAdsDiario";
+    };
+    PublicoAlvoAdsDiarioApi = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"])),
+        __param(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"])),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"],
+            _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
+            _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
+    ], PublicoAlvoAdsDiarioApi);
+    return PublicoAlvoAdsDiarioApi;
+}(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/sdk/services/custom/SDKModels.ts":
 /*!*********************************************************!*\
   !*** ./src/app/shared/sdk/services/custom/SDKModels.ts ***!
@@ -27525,15 +33851,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_LinkCheckout__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../models/LinkCheckout */ "./src/app/shared/sdk/models/LinkCheckout.ts");
 /* harmony import */ var _models_CampanhaAdsMetricaIntraday__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../../models/CampanhaAdsMetricaIntraday */ "./src/app/shared/sdk/models/CampanhaAdsMetricaIntraday.ts");
 /* harmony import */ var _models_PrecoProdutoAfiliado__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../../models/PrecoProdutoAfiliado */ "./src/app/shared/sdk/models/PrecoProdutoAfiliado.ts");
-/* harmony import */ var _models_ImagemAnuncio__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../../models/ImagemAnuncio */ "./src/app/shared/sdk/models/ImagemAnuncio.ts");
-/* harmony import */ var _models_AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../../models/AnuncioAdsDisplay */ "./src/app/shared/sdk/models/AnuncioAdsDisplay.ts");
-/* harmony import */ var _models_Visitante__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../models/Visitante */ "./src/app/shared/sdk/models/Visitante.ts");
-/* harmony import */ var _models_VideoExecucao__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../models/VideoExecucao */ "./src/app/shared/sdk/models/VideoExecucao.ts");
-/* harmony import */ var _models_ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../../models/ProdutoAfiliadoHotlink */ "./src/app/shared/sdk/models/ProdutoAfiliadoHotlink.ts");
-/* harmony import */ var _models_TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../models/TagIdSecaoPaginaVenda */ "./src/app/shared/sdk/models/TagIdSecaoPaginaVenda.ts");
-/* harmony import */ var _models_CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../../models/CampanhaAdsRedeDisplay */ "./src/app/shared/sdk/models/CampanhaAdsRedeDisplay.ts");
-/* harmony import */ var _models_OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../models/OtimizacaoCampanhaAdsRedeDisplay */ "./src/app/shared/sdk/models/OtimizacaoCampanhaAdsRedeDisplay.ts");
-/* harmony import */ var _models_ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../models/ListaRemarketingAds */ "./src/app/shared/sdk/models/ListaRemarketingAds.ts");
+/* harmony import */ var _models_AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../../models/AnuncioAdsDisplay */ "./src/app/shared/sdk/models/AnuncioAdsDisplay.ts");
+/* harmony import */ var _models_Visitante__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../../models/Visitante */ "./src/app/shared/sdk/models/Visitante.ts");
+/* harmony import */ var _models_VideoExecucao__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../models/VideoExecucao */ "./src/app/shared/sdk/models/VideoExecucao.ts");
+/* harmony import */ var _models_ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../models/ProdutoAfiliadoHotlink */ "./src/app/shared/sdk/models/ProdutoAfiliadoHotlink.ts");
+/* harmony import */ var _models_TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../../models/TagIdSecaoPaginaVenda */ "./src/app/shared/sdk/models/TagIdSecaoPaginaVenda.ts");
+/* harmony import */ var _models_CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../models/CampanhaAdsRedeDisplay */ "./src/app/shared/sdk/models/CampanhaAdsRedeDisplay.ts");
+/* harmony import */ var _models_OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../../models/OtimizacaoCampanhaAdsRedeDisplay */ "./src/app/shared/sdk/models/OtimizacaoCampanhaAdsRedeDisplay.ts");
+/* harmony import */ var _models_ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../models/ListaRemarketingAds */ "./src/app/shared/sdk/models/ListaRemarketingAds.ts");
+/* harmony import */ var _models_PublicoAlvoAds__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../models/PublicoAlvoAds */ "./src/app/shared/sdk/models/PublicoAlvoAds.ts");
+/* harmony import */ var _models_PublicoAlvoAdsDiario__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../../models/PublicoAlvoAdsDiario */ "./src/app/shared/sdk/models/PublicoAlvoAdsDiario.ts");
+/* harmony import */ var _models_PaginaVenda__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../../models/PaginaVenda */ "./src/app/shared/sdk/models/PaginaVenda.ts");
+/* harmony import */ var _models_AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../../models/AnuncioCampanhaAdsDisplay */ "./src/app/shared/sdk/models/AnuncioCampanhaAdsDisplay.ts");
+/* harmony import */ var _models_ImagemConjunto__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../../models/ImagemConjunto */ "./src/app/shared/sdk/models/ImagemConjunto.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27541,6 +33871,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 /* tslint:disable */
+
+
+
+
 
 
 
@@ -27614,15 +33948,19 @@ var SDKModels = /** @class */ (function () {
             LinkCheckout: _models_LinkCheckout__WEBPACK_IMPORTED_MODULE_28__["LinkCheckout"],
             CampanhaAdsMetricaIntraday: _models_CampanhaAdsMetricaIntraday__WEBPACK_IMPORTED_MODULE_29__["CampanhaAdsMetricaIntraday"],
             PrecoProdutoAfiliado: _models_PrecoProdutoAfiliado__WEBPACK_IMPORTED_MODULE_30__["PrecoProdutoAfiliado"],
-            ImagemAnuncio: _models_ImagemAnuncio__WEBPACK_IMPORTED_MODULE_31__["ImagemAnuncio"],
-            AnuncioAdsDisplay: _models_AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_32__["AnuncioAdsDisplay"],
-            Visitante: _models_Visitante__WEBPACK_IMPORTED_MODULE_33__["Visitante"],
-            VideoExecucao: _models_VideoExecucao__WEBPACK_IMPORTED_MODULE_34__["VideoExecucao"],
-            ProdutoAfiliadoHotlink: _models_ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_35__["ProdutoAfiliadoHotlink"],
-            TagIdSecaoPaginaVenda: _models_TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_36__["TagIdSecaoPaginaVenda"],
-            CampanhaAdsRedeDisplay: _models_CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_37__["CampanhaAdsRedeDisplay"],
-            OtimizacaoCampanhaAdsRedeDisplay: _models_OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_38__["OtimizacaoCampanhaAdsRedeDisplay"],
-            ListaRemarketingAds: _models_ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_39__["ListaRemarketingAds"],
+            AnuncioAdsDisplay: _models_AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_31__["AnuncioAdsDisplay"],
+            Visitante: _models_Visitante__WEBPACK_IMPORTED_MODULE_32__["Visitante"],
+            VideoExecucao: _models_VideoExecucao__WEBPACK_IMPORTED_MODULE_33__["VideoExecucao"],
+            ProdutoAfiliadoHotlink: _models_ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_34__["ProdutoAfiliadoHotlink"],
+            TagIdSecaoPaginaVenda: _models_TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_35__["TagIdSecaoPaginaVenda"],
+            CampanhaAdsRedeDisplay: _models_CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__["CampanhaAdsRedeDisplay"],
+            OtimizacaoCampanhaAdsRedeDisplay: _models_OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_37__["OtimizacaoCampanhaAdsRedeDisplay"],
+            ListaRemarketingAds: _models_ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_38__["ListaRemarketingAds"],
+            PublicoAlvoAds: _models_PublicoAlvoAds__WEBPACK_IMPORTED_MODULE_39__["PublicoAlvoAds"],
+            PublicoAlvoAdsDiario: _models_PublicoAlvoAdsDiario__WEBPACK_IMPORTED_MODULE_40__["PublicoAlvoAdsDiario"],
+            PaginaVenda: _models_PaginaVenda__WEBPACK_IMPORTED_MODULE_41__["PaginaVenda"],
+            AnuncioCampanhaAdsDisplay: _models_AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_42__["AnuncioCampanhaAdsDisplay"],
+            ImagemConjunto: _models_ImagemConjunto__WEBPACK_IMPORTED_MODULE_43__["ImagemConjunto"],
         };
     }
     SDKModels.prototype.get = function (modelName) {
@@ -27809,6 +34147,8 @@ var SolicitacaoCheckoutApi = /** @class */ (function (_super) {
      *
      * @param {string} visitante
      *
+     * @param {string} url
+     *
      * @returns {object} An empty reference that will be
      *   populated with the actual data once the response is returned
      *   from the server.
@@ -27818,9 +34158,10 @@ var SolicitacaoCheckoutApi = /** @class */ (function (_super) {
      * This usually means the response is a `SolicitacaoCheckout` object.)
      * </em>
      */
-    SolicitacaoCheckoutApi.prototype.InsereItem = function (idHm, visitante, customHeaders) {
+    SolicitacaoCheckoutApi.prototype.InsereItem = function (idHm, visitante, url, customHeaders) {
         if (idHm === void 0) { idHm = {}; }
         if (visitante === void 0) { visitante = {}; }
+        if (url === void 0) { url = {}; }
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/SolicitacaoCheckouts/insereItem";
@@ -27831,6 +34172,8 @@ var SolicitacaoCheckoutApi = /** @class */ (function (_super) {
             _urlParams.idHm = idHm;
         if (typeof visitante !== 'undefined' && visitante !== null)
             _urlParams.visitante = visitante;
+        if (typeof url !== 'undefined' && url !== null)
+            _urlParams.url = url;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -30286,7 +36629,7 @@ var VisitanteApi = /** @class */ (function (_super) {
 /*!*****************************************************!*\
   !*** ./src/app/shared/sdk/services/custom/index.ts ***!
   \*****************************************************/
-/*! exports provided: ImagemAnuncioApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, SDKModels, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, LoggerService */
+/*! exports provided: TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, SDKModels, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30381,40 +36724,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PrecoProdutoAfiliado__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./PrecoProdutoAfiliado */ "./src/app/shared/sdk/services/custom/PrecoProdutoAfiliado.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliadoApi", function() { return _PrecoProdutoAfiliado__WEBPACK_IMPORTED_MODULE_29__["PrecoProdutoAfiliadoApi"]; });
 
-/* harmony import */ var _ImagemAnuncio__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./ImagemAnuncio */ "./src/app/shared/sdk/services/custom/ImagemAnuncio.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemAnuncioApi", function() { return _ImagemAnuncio__WEBPACK_IMPORTED_MODULE_30__["ImagemAnuncioApi"]; });
+/* harmony import */ var _AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./AnuncioAdsDisplay */ "./src/app/shared/sdk/services/custom/AnuncioAdsDisplay.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_30__["AnuncioAdsDisplayApi"]; });
 
-/* harmony import */ var _AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./AnuncioAdsDisplay */ "./src/app/shared/sdk/services/custom/AnuncioAdsDisplay.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _AnuncioAdsDisplay__WEBPACK_IMPORTED_MODULE_31__["AnuncioAdsDisplayApi"]; });
+/* harmony import */ var _Visitante__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./Visitante */ "./src/app/shared/sdk/services/custom/Visitante.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _Visitante__WEBPACK_IMPORTED_MODULE_31__["VisitanteApi"]; });
 
-/* harmony import */ var _Visitante__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./Visitante */ "./src/app/shared/sdk/services/custom/Visitante.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _Visitante__WEBPACK_IMPORTED_MODULE_32__["VisitanteApi"]; });
+/* harmony import */ var _VideoExecucao__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./VideoExecucao */ "./src/app/shared/sdk/services/custom/VideoExecucao.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _VideoExecucao__WEBPACK_IMPORTED_MODULE_32__["VideoExecucaoApi"]; });
 
-/* harmony import */ var _VideoExecucao__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./VideoExecucao */ "./src/app/shared/sdk/services/custom/VideoExecucao.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _VideoExecucao__WEBPACK_IMPORTED_MODULE_33__["VideoExecucaoApi"]; });
+/* harmony import */ var _ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./ProdutoAfiliadoHotlink */ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoHotlink.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_33__["ProdutoAfiliadoHotlinkApi"]; });
 
-/* harmony import */ var _ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./ProdutoAfiliadoHotlink */ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoHotlink.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _ProdutoAfiliadoHotlink__WEBPACK_IMPORTED_MODULE_34__["ProdutoAfiliadoHotlinkApi"]; });
+/* harmony import */ var _TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./TagIdSecaoPaginaVenda */ "./src/app/shared/sdk/services/custom/TagIdSecaoPaginaVenda.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_34__["TagIdSecaoPaginaVendaApi"]; });
 
-/* harmony import */ var _TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./TagIdSecaoPaginaVenda */ "./src/app/shared/sdk/services/custom/TagIdSecaoPaginaVenda.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _TagIdSecaoPaginaVenda__WEBPACK_IMPORTED_MODULE_35__["TagIdSecaoPaginaVendaApi"]; });
+/* harmony import */ var _CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./CampanhaAdsRedeDisplay */ "./src/app/shared/sdk/services/custom/CampanhaAdsRedeDisplay.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_35__["CampanhaAdsRedeDisplayApi"]; });
 
-/* harmony import */ var _CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./CampanhaAdsRedeDisplay */ "./src/app/shared/sdk/services/custom/CampanhaAdsRedeDisplay.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _CampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__["CampanhaAdsRedeDisplayApi"]; });
+/* harmony import */ var _OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./OtimizacaoCampanhaAdsRedeDisplay */ "./src/app/shared/sdk/services/custom/OtimizacaoCampanhaAdsRedeDisplay.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_36__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
 
-/* harmony import */ var _OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./OtimizacaoCampanhaAdsRedeDisplay */ "./src/app/shared/sdk/services/custom/OtimizacaoCampanhaAdsRedeDisplay.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _OtimizacaoCampanhaAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_37__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
+/* harmony import */ var _ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./ListaRemarketingAds */ "./src/app/shared/sdk/services/custom/ListaRemarketingAds.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_37__["ListaRemarketingAdsApi"]; });
 
-/* harmony import */ var _ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./ListaRemarketingAds */ "./src/app/shared/sdk/services/custom/ListaRemarketingAds.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _ListaRemarketingAds__WEBPACK_IMPORTED_MODULE_38__["ListaRemarketingAdsApi"]; });
+/* harmony import */ var _PublicoAlvoAds__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./PublicoAlvoAds */ "./src/app/shared/sdk/services/custom/PublicoAlvoAds.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsApi", function() { return _PublicoAlvoAds__WEBPACK_IMPORTED_MODULE_38__["PublicoAlvoAdsApi"]; });
 
-/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _SDKModels__WEBPACK_IMPORTED_MODULE_39__["SDKModels"]; });
+/* harmony import */ var _PublicoAlvoAdsDiario__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./PublicoAlvoAdsDiario */ "./src/app/shared/sdk/services/custom/PublicoAlvoAdsDiario.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiarioApi", function() { return _PublicoAlvoAdsDiario__WEBPACK_IMPORTED_MODULE_39__["PublicoAlvoAdsDiarioApi"]; });
 
-/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./logger.service */ "./src/app/shared/sdk/services/custom/logger.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _logger_service__WEBPACK_IMPORTED_MODULE_40__["LoggerService"]; });
+/* harmony import */ var _PaginaVenda__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./PaginaVenda */ "./src/app/shared/sdk/services/custom/PaginaVenda.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaApi", function() { return _PaginaVenda__WEBPACK_IMPORTED_MODULE_40__["PaginaVendaApi"]; });
+
+/* harmony import */ var _AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./AnuncioCampanhaAdsDisplay */ "./src/app/shared/sdk/services/custom/AnuncioCampanhaAdsDisplay.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return _AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_41__["AnuncioCampanhaAdsDisplayApi"]; });
+
+/* harmony import */ var _ImagemConjunto__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./ImagemConjunto */ "./src/app/shared/sdk/services/custom/ImagemConjunto.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _ImagemConjunto__WEBPACK_IMPORTED_MODULE_42__["ImagemConjuntoApi"]; });
+
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _SDKModels__WEBPACK_IMPORTED_MODULE_43__["SDKModels"]; });
+
+/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./logger.service */ "./src/app/shared/sdk/services/custom/logger.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _logger_service__WEBPACK_IMPORTED_MODULE_44__["LoggerService"]; });
 
 /* tslint:disable */
+
+
+
+
 
 
 
@@ -30557,7 +36916,7 @@ var LoggerService = /** @class */ (function () {
 /*!**********************************************!*\
   !*** ./src/app/shared/sdk/services/index.ts ***!
   \**********************************************/
-/*! exports provided: ErrorHandler, ImagemAnuncioApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, LoggerService */
+/*! exports provided: ErrorHandler, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30572,16 +36931,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["RealTime"]; });
 
 /* harmony import */ var _custom_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom/index */ "./src/app/shared/sdk/services/custom/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemAnuncioApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ImagemAnuncioApi"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["AnuncioAdsDisplayApi"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["VisitanteApi"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["VideoExecucaoApi"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoHotlinkApi"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["TagIdSecaoPaginaVendaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["CampanhaAdsRedeDisplayApi"]; });
@@ -30589,6 +36938,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ListaRemarketingAdsApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PublicoAlvoAdsApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiarioApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PublicoAlvoAdsDiarioApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PaginaVendaApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["AnuncioCampanhaAdsDisplayApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ImagemConjuntoApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["SDKModels"]; });
 
@@ -30651,6 +37010,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntradayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["CampanhaAdsMetricaIntradayApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliadoApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PrecoProdutoAfiliadoApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["AnuncioAdsDisplayApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["VisitanteApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["VideoExecucaoApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoHotlinkApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["LoggerService"]; });
 
@@ -31237,7 +37604,7 @@ var SDKStorage = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsMetricaIntradayListSimples\">\n        <i class=\"fa fa-search\"></i>\n        <p>Intraday</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/acessos\">\n        <i class=\"fa fa-search\"></i>\n        <p>Acessos</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/checkout\">\n        <i class=\"fa fa-search\"></i>\n        <p>Checkout</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/metricaCampanha\">\n        <i class=\"fa fa-search\"></i>\n        <p>Métricas de Campanhas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresCpc\">\n        <i class=\"fa fa-search\"></i>\n        <p>(usar essse) Melhores Cpc</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTop\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/estiloFanart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Estilo Fanart</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/crescimentoTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Crescimento Temperatura</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtosTopVendas\">\n        <i class=\"fa fa-search\"></i>\n        <p>Top 50 Vendas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTopPesquisa\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top Pesquisa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/afiliadoMedio\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Medio</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoTrabalho\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/workProduto/0\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work Passo a Passo</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/resumoVisitaHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Resumo Visita Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsTesteAtivaMetrica\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanha Ativa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pendenteEstrutura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pendente Estrutura</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
+module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsMetricaIntradayListSimples\">\n        <i class=\"fa fa-search\"></i>\n        <p>Intraday</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/acessos\">\n        <i class=\"fa fa-search\"></i>\n        <p>Acessos</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/checkout\">\n        <i class=\"fa fa-search\"></i>\n        <p>Checkout</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/metricaCampanha\">\n        <i class=\"fa fa-search\"></i>\n        <p>Métricas de Campanhas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresCpc\">\n        <i class=\"fa fa-search\"></i>\n        <p>(usar essse) Melhores Cpc</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTop\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/estiloFanart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Estilo Fanart</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/crescimentoTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Crescimento Temperatura</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/listaAltaMargemAltaTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Margem e Temperatura (40/60)</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtosTopVendas\">\n        <i class=\"fa fa-search\"></i>\n        <p>Top 50 Vendas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTopPesquisa\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top Pesquisa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/afiliadoMedio\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Medio</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoTrabalho\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/workProduto/0\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work Passo a Passo</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/resumoVisitaHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Resumo Visita Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsTesteAtivaMetrica\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanha Ativa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pendenteEstrutura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pendente Estrutura</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
 
 /***/ }),
 

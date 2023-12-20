@@ -90,7 +90,8 @@
       Hotlinks
     </div>
     <div class="dgc-card-detalhe" *ngFor="let item of principal.produtoAfiliadoHotlinks">
-      <span>{{item.descricao}} - {{item.url}}</span>
+      <span>{{item.descricao}} - {{item.hotlink}}</span>
+      <a href="{{item.hotlink}}" target="_blank">abrir</a>
     </div>
   </div>
 
@@ -108,9 +109,17 @@
     <div class="dgc-card-detalhe" >
       <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}}</span>
     </div>
-
-
   </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
+      Público Alvo
+    </div>
+    <div class="dgc-card-detalhe" *ngFor="let item of principal.publicoAlvoAdsDiarios">
+      <span>{{item.nome}} - Pesquisa {{item.tamanhoRedePesquisa}} - Display: {{item.tamanhoRedeDisplay}} ({{item.data | date : 'dd/MM/yyyy'}})</span>
+    </div>
+  </div>
+
 
   <div class="dgc-card">
     <div class="dgc-card-header">
@@ -137,8 +146,20 @@
         <button class="btn-primary btn-sm btn" (click)="editaAnuncio(item)">Editar</button>
       </div>
     </div>
-   
   </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
+      <span>Anúncios - Rede Display</span>
+      <button class="dgc-direita" (click)="editaAnuncioDisplay(principal)">novo</button>
+    </div>
+    <div class="dgc-card">
+      <div class="dgc-card-comandos">
+        <button class="btn-primary btn-sm btn" (click)="editaAnuncioDisplay(item)">Editar</button>
+      </div>
+    </div>
+  </div>
+
 
 </div>
 

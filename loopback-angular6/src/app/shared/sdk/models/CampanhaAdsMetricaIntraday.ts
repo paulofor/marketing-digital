@@ -16,6 +16,8 @@ export interface CampanhaAdsMetricaIntradayInterface {
   "clique"?: number;
   "impressao"?: number;
   "conversao"?: number;
+  "primaryStatus"?: string;
+  "primaryStatusReasons"?: string;
   campanhaAdsTeste?: CampanhaAdsTeste;
   contaGoogle?: ContaGoogle;
 }
@@ -31,6 +33,8 @@ export class CampanhaAdsMetricaIntraday implements CampanhaAdsMetricaIntradayInt
   "clique": number;
   "impressao": number;
   "conversao": number;
+  "primaryStatus": string;
+  "primaryStatusReasons": string;
   campanhaAdsTeste: CampanhaAdsTeste;
   contaGoogle: ContaGoogle;
   constructor(data?: CampanhaAdsMetricaIntradayInterface) {
@@ -105,6 +109,14 @@ export class CampanhaAdsMetricaIntraday implements CampanhaAdsMetricaIntradayInt
         "conversao": {
           name: 'conversao',
           type: 'number'
+        },
+        "primaryStatus": {
+          name: 'primaryStatus',
+          type: 'string'
+        },
+        "primaryStatusReasons": {
+          name: 'primaryStatusReasons',
+          type: 'string'
         },
       },
       relations: {

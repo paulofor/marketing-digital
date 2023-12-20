@@ -97,6 +97,9 @@
 		"possuiImagemRedeDisplay": {
 			"type": "number"
 		},
+		"cpaInicial": {
+			"type": "number"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}
@@ -201,6 +204,31 @@
 		"publicoAlvoAds": {
 			"type": "hasMany",
 			"model": "PublicoAlvoAds",
+			"foreignKey": "hotmartId"
+		},
+		"publicoAlvoAdsDiarios": {
+			"type": "hasMany",
+			"model": "PublicoAlvoAdsDiario",
+			"foreignKey": "hotmartId"
+		},
+		"anuncioAdsDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioAdsDisplay",
+			"foreignKey": "hotmartId"
+		},
+		"imagemConjuntos": {
+			"type": "hasMany",
+			"model": "ImagemConjunto",
+			"foreignKey": "hotmartId"
+		},
+		"metaVendas": {
+			"type": "hasMany",
+			"model": "MetaVenda",
+			"foreignKey": "hotmartId"
+		},
+		"produtoMercados": {
+			"type": "hasMany",
+			"model": "ProdutoMercado",
 			"foreignKey": "hotmartId"
 		}
 	},

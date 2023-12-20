@@ -41,7 +41,7 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioCampanhaAdsMetricaIntraday repCampanhaAdsMetricaIntraday = adapter.createRepository(RepositorioCampanhaAdsMetricaIntraday.class);
 	protected RepositorioPrecoProdutoAfiliado repPrecoProdutoAfiliado = adapter.createRepository(RepositorioPrecoProdutoAfiliado.class);
 	protected RepositorioAnuncioAdsDisplay repAnuncioAdsDisplay = adapter.createRepository(RepositorioAnuncioAdsDisplay.class);
-	protected RepositorioImagemAnuncio repImagemAnuncio = adapter.createRepository(RepositorioImagemAnuncio.class);
+	protected RepositorioImagemConjunto repImagemConjunto = adapter.createRepository(RepositorioImagemConjunto.class);
 	protected RepositorioVisitante repVisitante = adapter.createRepository(RepositorioVisitante.class);
 	protected RepositorioProdutoProprio repProdutoProprio = adapter.createRepository(RepositorioProdutoProprio.class);
 	protected RepositorioVideoExecucaoPaginaVenda repVideoExecucaoPaginaVenda = adapter.createRepository(RepositorioVideoExecucaoPaginaVenda.class);
@@ -54,6 +54,10 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioPublicoAlvoAdsDiario repPublicoAlvoAdsDiario = adapter.createRepository(RepositorioPublicoAlvoAdsDiario.class);
 	protected RepositorioFaixaHorarioCampanhaAds repFaixaHorarioCampanhaAds = adapter.createRepository(RepositorioFaixaHorarioCampanhaAds.class);
 	protected RepositorioAnuncioCampanhaAdsDisplay repAnuncioCampanhaAdsDisplay = adapter.createRepository(RepositorioAnuncioCampanhaAdsDisplay.class);
+	protected RepositorioMetaVenda repMetaVenda = adapter.createRepository(RepositorioMetaVenda.class);
+	protected RepositorioMercadoAlvo repMercadoAlvo = adapter.createRepository(RepositorioMercadoAlvo.class);
+	protected RepositorioProdutoMercado repProdutoMercado = adapter.createRepository(RepositorioProdutoMercado.class);
+	protected RepositorioPaginaVendaPrecoProduto repPaginaVendaPrecoProduto = adapter.createRepository(RepositorioPaginaVendaPrecoProduto.class);
 
 
 	@Override

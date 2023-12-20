@@ -87,6 +87,11 @@
 			"type": "hasMany",
 			"model": "CampanhaAdsRedeDisplay",
 			"foreignKey": ""
+		},
+		"publicoAlvoAdsDiarios": {
+			"type": "hasMany",
+			"model": "PublicoAlvoAdsDiario",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

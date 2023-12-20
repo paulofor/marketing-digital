@@ -49,7 +49,7 @@ public class BuscaPalavraChaveAdsImpl extends BuscaPalavraChaveAds {
 		}
 		try {
 			System.out.println("Palavras: " + saidaListaPalavraChave.size() + " wait..");
-			Thread.sleep(40000);
+			Thread.sleep(60000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

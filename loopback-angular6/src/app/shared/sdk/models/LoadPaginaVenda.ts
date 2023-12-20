@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  ProdutoAfiliadoHotmart
+  ProdutoAfiliadoHotmart,
+  PaginaVenda
 } from '../index';
 
 declare var Object: any;
@@ -9,9 +10,11 @@ export interface LoadPaginaVendaInterface {
   "tempoConsumido"?: number;
   "visitante"?: string;
   "qtdeVisita"?: number;
+  "paginaVendaId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  paginaVenda?: PaginaVenda;
 }
 
 export class LoadPaginaVenda implements LoadPaginaVendaInterface {
@@ -19,9 +22,11 @@ export class LoadPaginaVenda implements LoadPaginaVendaInterface {
   "tempoConsumido": number;
   "visitante": string;
   "qtdeVisita": number;
+  "paginaVendaId": number;
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  paginaVenda: PaginaVenda;
   constructor(data?: LoadPaginaVendaInterface) {
     Object.assign(this, data);
   }
@@ -71,6 +76,10 @@ export class LoadPaginaVenda implements LoadPaginaVendaInterface {
           name: 'qtdeVisita',
           type: 'number'
         },
+        "paginaVendaId": {
+          name: 'paginaVendaId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -88,6 +97,14 @@ export class LoadPaginaVenda implements LoadPaginaVendaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
+        },
+        paginaVenda: {
+          name: 'paginaVenda',
+          type: 'PaginaVenda',
+          model: 'PaginaVenda',
+          relationType: 'belongsTo',
+                  keyFrom: 'paginaVendaId',
+          keyTo: 'id'
         },
       }
     }

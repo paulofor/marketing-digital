@@ -77,6 +77,9 @@ import { ListaBomCrescimentoTemperaturaComponent } from './lista-bom-crescimento
 import { CampanhaAdsMetricaIntradayListSimplesComponent } from './campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples.component';
 import { HistoricoPorCodigoAdsComponent } from './historico-por-codigo-ads/historico-por-codigo-ads.component';
 import { PrecoProdutoAfiliadoEditComponent } from './preco-produto-afiliado-edit/preco-produto-afiliado-edit.component';
+import { AnuncioAdsDisplayEditComponent } from './anuncio-ads-display-edit/anuncio-ads-display-edit.component';
+import { AnuncioAdsDisplayPorProdutoListComponent } from './anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component';
+import { ListaAltaMargemAltaTemperaturaComponent } from './lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component';
 
 
 
@@ -130,7 +133,10 @@ registerLocaleData(localePt, 'pt-BR');
     ListaBomCrescimentoTemperaturaComponent,
     CampanhaAdsMetricaIntradayListSimplesComponent,
     HistoricoPorCodigoAdsComponent,
-    PrecoProdutoAfiliadoEditComponent
+    PrecoProdutoAfiliadoEditComponent,
+    AnuncioAdsDisplayEditComponent,
+    AnuncioAdsDisplayPorProdutoListComponent,
+    ListaAltaMargemAltaTemperaturaComponent
   ],
   imports: [
     BrowserModule,

@@ -78,7 +78,6 @@ import { ContaGoogleMetricaMesApi } from './services/custom/ContaGoogleMetricaMe
 import { LinkCheckoutApi } from './services/custom/LinkCheckout';
 import { CampanhaAdsMetricaIntradayApi } from './services/custom/CampanhaAdsMetricaIntraday';
 import { PrecoProdutoAfiliadoApi } from './services/custom/PrecoProdutoAfiliado';
-import { ImagemAnuncioApi } from './services/custom/ImagemAnuncio';
 import { AnuncioAdsDisplayApi } from './services/custom/AnuncioAdsDisplay';
 import { VisitanteApi } from './services/custom/Visitante';
 import { VideoExecucaoApi } from './services/custom/VideoExecucao';
@@ -87,6 +86,11 @@ import { TagIdSecaoPaginaVendaApi } from './services/custom/TagIdSecaoPaginaVend
 import { CampanhaAdsRedeDisplayApi } from './services/custom/CampanhaAdsRedeDisplay';
 import { OtimizacaoCampanhaAdsRedeDisplayApi } from './services/custom/OtimizacaoCampanhaAdsRedeDisplay';
 import { ListaRemarketingAdsApi } from './services/custom/ListaRemarketingAds';
+import { PublicoAlvoAdsApi } from './services/custom/PublicoAlvoAds';
+import { PublicoAlvoAdsDiarioApi } from './services/custom/PublicoAlvoAdsDiario';
+import { PaginaVendaApi } from './services/custom/PaginaVenda';
+import { AnuncioCampanhaAdsDisplayApi } from './services/custom/AnuncioCampanhaAdsDisplay';
+import { ImagemConjuntoApi } from './services/custom/ImagemConjunto';
 /**
 * @module SDKBrowserModule
 * @description
@@ -147,7 +151,6 @@ export class SDKBrowserModule {
         LinkCheckoutApi,
         CampanhaAdsMetricaIntradayApi,
         PrecoProdutoAfiliadoApi,
-        ImagemAnuncioApi,
         AnuncioAdsDisplayApi,
         VisitanteApi,
         VideoExecucaoApi,
@@ -156,9 +159,13 @@ export class SDKBrowserModule {
         CampanhaAdsRedeDisplayApi,
         OtimizacaoCampanhaAdsRedeDisplayApi,
         ListaRemarketingAdsApi,
+        PublicoAlvoAdsApi,
+        PublicoAlvoAdsDiarioApi,
+        PaginaVendaApi,
+        AnuncioCampanhaAdsDisplayApi,
+        ImagemConjuntoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-
       ]
     };
   }

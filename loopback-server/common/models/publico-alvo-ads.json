@@ -30,6 +30,12 @@
 		"custoPorPessoaAtual": {
 			"type": "number"
 		},
+		"resourceName": {
+			"type": "string"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		},
 		"paginaVendaId": {
 			"type": "number"
 		}

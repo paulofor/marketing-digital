@@ -6,7 +6,8 @@ import {
   AnuncioCampanhaAdsTeste,
   ContaGoogle,
   CampanhaAdsMetrica,
-  CampanhaAdsMetricaIntraday
+  CampanhaAdsMetricaIntraday,
+  PaginaVenda
 } from '../index';
 
 declare var Object: any;
@@ -28,9 +29,13 @@ export interface CampanhaAdsTesteInterface {
   "cpaMax"?: number;
   "cpcMax"?: number;
   "codigoAdsGrupoAnuncio"?: string;
+  "codigoAdsCampanha"?: string;
+  "primaryStatus"?: string;
+  "primaryStatusReasons"?: string;
   "modeloCampanhaAdsTesteId"?: number;
   "produtoAfiliadoHotmartId"?: number;
   "contaGoogleId"?: number;
+  "paginaVendaId"?: number;
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   modeloCampanhaAdsTeste?: ModeloCampanhaAdsTeste;
@@ -39,6 +44,7 @@ export interface CampanhaAdsTesteInterface {
   contaGoogle?: ContaGoogle;
   campanhaAdsMetricas?: CampanhaAdsMetrica[];
   campanhaAdsMetricaIntradays?: CampanhaAdsMetricaIntraday[];
+  paginaVenda?: PaginaVenda;
 }
 
 export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
@@ -59,9 +65,13 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   "cpaMax": number;
   "cpcMax": number;
   "codigoAdsGrupoAnuncio": string;
+  "codigoAdsCampanha": string;
+  "primaryStatus": string;
+  "primaryStatusReasons": string;
   "modeloCampanhaAdsTesteId": number;
   "produtoAfiliadoHotmartId": number;
   "contaGoogleId": number;
+  "paginaVendaId": number;
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   modeloCampanhaAdsTeste: ModeloCampanhaAdsTeste;
@@ -70,6 +80,7 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
   contaGoogle: ContaGoogle;
   campanhaAdsMetricas: CampanhaAdsMetrica[];
   campanhaAdsMetricaIntradays: CampanhaAdsMetricaIntraday[];
+  paginaVenda: PaginaVenda;
   constructor(data?: CampanhaAdsTesteInterface) {
     Object.assign(this, data);
   }
@@ -171,6 +182,18 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           name: 'codigoAdsGrupoAnuncio',
           type: 'string'
         },
+        "codigoAdsCampanha": {
+          name: 'codigoAdsCampanha',
+          type: 'string'
+        },
+        "primaryStatus": {
+          name: 'primaryStatus',
+          type: 'string'
+        },
+        "primaryStatusReasons": {
+          name: 'primaryStatusReasons',
+          type: 'string'
+        },
         "modeloCampanhaAdsTesteId": {
           name: 'modeloCampanhaAdsTesteId',
           type: 'number'
@@ -181,6 +204,10 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
         },
         "contaGoogleId": {
           name: 'contaGoogleId',
+          type: 'number'
+        },
+        "paginaVendaId": {
+          name: 'paginaVendaId',
           type: 'number'
         },
         "id": {
@@ -244,6 +271,14 @@ export class CampanhaAdsTeste implements CampanhaAdsTesteInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'codigoAds'
+        },
+        paginaVenda: {
+          name: 'paginaVenda',
+          type: 'PaginaVenda',
+          model: 'PaginaVenda',
+          relationType: 'belongsTo',
+                  keyFrom: 'paginaVendaId',
+          keyTo: 'id'
         },
       }
     }

@@ -43,6 +43,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private String publicProfileLink;
 	private int temperaturaAtual;
 	private int possuiImagemRedeDisplay;
+	private double cpaInicial;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -65,6 +66,11 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<PaginaVenda> PaginaVendas;
 	private List<PublicoAlvoAds> PublicoAlvoAds;
+	private List<PublicoAlvoAdsDiario> PublicoAlvoAdsDiarios;
+	private List<AnuncioAdsDisplay> AnuncioAdsDisplays;
+	private List<ImagemConjunto> ImagemConjuntos;
+	private List<MetaVenda> MetaVendas;
+	private List<ProdutoMercado> ProdutoMercados;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -106,6 +112,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("publicProfileLink", publicProfileLink);
 			obj.put("temperaturaAtual", temperaturaAtual);
 			obj.put("possuiImagemRedeDisplay", possuiImagemRedeDisplay);
+			obj.put("cpaInicial", cpaInicial);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -286,6 +293,12 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public int getPossuiImagemRedeDisplay() { 
 		return this.possuiImagemRedeDisplay;
+	}
+	public void setCpaInicial(double valor) { 
+		this.cpaInicial = valor;
+	}
+	public double getCpaInicial() { 
+		return this.cpaInicial;
 	}
 
 	public PixelGoogle getPixelGoogle() {
@@ -501,6 +514,66 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PublicoAlvoAds.add((PublicoAlvoAds) objeto);
+		}
+	}
+	public List<PublicoAlvoAdsDiario> getPublicoAlvoAdsDiarios() {
+		return  PublicoAlvoAdsDiarios;
+	}
+	public void setPublicoAlvoAdsDiarios(List<PublicoAlvoAdsDiario> valores) {
+		this.PublicoAlvoAdsDiarios = new ArrayList<PublicoAlvoAdsDiario>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PublicoAlvoAdsDiario();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PublicoAlvoAdsDiarios.add((PublicoAlvoAdsDiario) objeto);
+		}
+	}
+	public List<AnuncioAdsDisplay> getAnuncioAdsDisplays() {
+		return  AnuncioAdsDisplays;
+	}
+	public void setAnuncioAdsDisplays(List<AnuncioAdsDisplay> valores) {
+		this.AnuncioAdsDisplays = new ArrayList<AnuncioAdsDisplay>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AnuncioAdsDisplay();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AnuncioAdsDisplays.add((AnuncioAdsDisplay) objeto);
+		}
+	}
+	public List<ImagemConjunto> getImagemConjuntos() {
+		return  ImagemConjuntos;
+	}
+	public void setImagemConjuntos(List<ImagemConjunto> valores) {
+		this.ImagemConjuntos = new ArrayList<ImagemConjunto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ImagemConjunto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ImagemConjuntos.add((ImagemConjunto) objeto);
+		}
+	}
+	public List<MetaVenda> getMetaVendas() {
+		return  MetaVendas;
+	}
+	public void setMetaVendas(List<MetaVenda> valores) {
+		this.MetaVendas = new ArrayList<MetaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaVendas.add((MetaVenda) objeto);
+		}
+	}
+	public List<ProdutoMercado> getProdutoMercados() {
+		return  ProdutoMercados;
+	}
+	public void setProdutoMercados(List<ProdutoMercado> valores) {
+		this.ProdutoMercados = new ArrayList<ProdutoMercado>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoMercado();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoMercados.add((ProdutoMercado) objeto);
 		}
 	}
 }

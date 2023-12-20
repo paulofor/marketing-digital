@@ -1,0 +1,36 @@
+{
+	"name": "MetaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"dataPlano": {
+			"type": "date"
+		},
+		"qtdeVenda": {
+			"type": "number"
+		},
+		"valorVenda": {
+			"type": "number"
+		},
+		"versaoAtual": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

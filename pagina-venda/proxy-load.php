@@ -4,13 +4,18 @@ if (isset($_GET['id'])) {
     $hotmartId = $_GET['id'];
 
 
-    // Verifica se o parâmetro visitante também está presente
     if(isset($_GET['visitante'])) {
         $visitante = $_GET['visitante'];
         $url = 'http://tyche.ovh:23101/api/LoadPaginaVendas/insereItem?idHm=' . urlencode($hotmartId) . '&visitante=' . urlencode($visitante);
     } else {
-        $url = 'http://tyche.ovh:23101/api/LoadPaginaVendas/insereItem?idHm=' . urlencode($hotmartId);
+        if (isset($_GET['tempo'])) {
+            $tempo = $_GET['tempo'];
+            $url = 'http://tyche.ovh:23101/api/LoadPaginaVendas/insereItem?idHm=' . urlencode($hotmartId) . '&tempo=' . urlencode($tempo);
+        } else {
+            $url = 'http://tyche.ovh:23101/api/LoadPaginaVendas/insereItem?idHm=' . urlencode($hotmartId);
+        }
     }
+
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);

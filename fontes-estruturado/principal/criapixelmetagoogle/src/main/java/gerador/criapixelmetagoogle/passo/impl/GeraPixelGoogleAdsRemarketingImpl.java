@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Collections;
 
 import com.google.ads.googleads.lib.GoogleAdsClient;
+import com.google.ads.googleads.v13.common.TagSnippet;
 import com.google.ads.googleads.v13.enums.ConversionActionCategoryEnum.ConversionActionCategory;
 import com.google.ads.googleads.v13.enums.ConversionActionStatusEnum.ConversionActionStatus;
 import com.google.ads.googleads.v13.enums.ConversionActionTypeEnum.ConversionActionType;
@@ -16,9 +17,10 @@ import com.google.ads.googleads.v13.services.ConversionActionServiceClient;
 import com.google.ads.googleads.v13.services.MutateConversionActionResult;
 import com.google.ads.googleads.v13.services.MutateConversionActionsResponse;
 
+import br.com.gersis.loopback.modelo.ContaGoogle;
 import br.com.gersis.loopback.modelo.PixelGoogle;
 import br.com.gersis.loopback.modelo.ProdutoAfiliadoHotmart;
-import gerador.criapixelmetagoogle.passo.*;
+import gerador.criapixelmetagoogle.passo.GeraPixelGoogleAdsRemarketing;
 
 
 
@@ -39,8 +41,8 @@ public class GeraPixelGoogleAdsRemarketingImpl extends GeraPixelGoogleAdsRemarke
 			String nomePixelCheckout = "pxl_" + produtoAfiliadoCorrente.getSigla() + "_checkout_" + produtoAfiliadoCorrente.getContaRemarketing().getNome();
 
 			long codigoUsuario = new Long(produtoAfiliadoCorrente.getContaRemarketing().getIdAds().replace("-", ""));
-			this.saidaPixelGooglePaginaVenda = criaPixel(googleAdsClient,nomePixelPaginaVenda,codigoUsuario);
-			this.saidaPixelGoogleCheckout = criaPixel(googleAdsClient,nomePixelCheckout,codigoUsuario);
+			this.saidaPixelGooglePaginaVenda = criaPixel(googleAdsClient,nomePixelPaginaVenda,codigoUsuario,produtoAfiliadoCorrente.getContaRemarketing());
+			this.saidaPixelGoogleCheckout = criaPixel(googleAdsClient,nomePixelCheckout,codigoUsuario,produtoAfiliadoCorrente.getContaRemarketing());
 			//criaMeta(googleAdsClient);
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
@@ -212,7 +214,7 @@ public class GeraPixelGoogleAdsRemarketingImpl extends GeraPixelGoogleAdsRemarke
 	}
 
 	*/
-	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel, long codigoUsuario) {
+	private PixelGoogle criaPixel(GoogleAdsClient googleAdsClient, String nomePixel, long codigoUsuario, ContaGoogle conta) {
 
 		PixelGoogle pixel = null;
 		
@@ -246,7 +248,12 @@ public class GeraPixelGoogleAdsRemarketingImpl extends GeraPixelGoogleAdsRemarke
 		    	pixel = new PixelGoogle();
 		    	pixel.setNome(nomePixel);
 		    	pixel.setIdentificador(result.getResourceName());
-		      System.out.printf(
+		    	pixel.setContaGoogleId(new Integer(conta.getId().toString()));
+		    	ConversionAction conversao = result.getConversionAction();
+		    	for (TagSnippet tag : conversao.getTagSnippetsList()) {
+		    		System.out.println(tag);
+		    	}
+		    	System.out.printf(
 		          "New conversion action added with resource name: '%s'%n", result.getResourceName());
 		    }
 		  } catch (Exception e) {

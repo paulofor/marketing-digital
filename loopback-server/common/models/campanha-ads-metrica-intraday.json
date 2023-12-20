@@ -39,6 +39,12 @@
 		},
 		"conversao": {
 			"type": "number"
+		},
+		"primaryStatus": {
+			"type": "string"
+		},
+		"primaryStatusReasons": {
+			"type": "string"
 		}
 	},
 	"validations": [],

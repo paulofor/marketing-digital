@@ -151,10 +151,6 @@
     "dataSource": "mysqlds",
     "public": true
   },
-  "ImagemAnuncio": {
-    "dataSource": "mysqlds",
-    "public": true
-  },
   "AnuncioAdsDisplay": {
     "dataSource": "mysqlds",
     "public": true
@@ -184,6 +180,26 @@
     "public": true
   },
   "ListaRemarketingAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PublicoAlvoAds": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PublicoAlvoAdsDiario": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioCampanhaAdsDisplay": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ImagemConjunto": {
     "dataSource": "mysqlds",
     "public": true
   }

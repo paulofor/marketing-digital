@@ -24,12 +24,14 @@ public class PixelGoogle extends Model {
 	private String nomeMeta;
 	private String idAds;
 	private String snippet;
+	private int contaGoogleId;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
 	private List<ProdutoAfiliadoHotmart> ProdutoAfiliadoHotmarts;
 	private List<ProdutoAfiliadoHotmart> produtoAfiliadoPaginaVenda;
 	private List<ProdutoAfiliadoHotmart> pixelGoogleCheckout;
+	private List<PublicoAlvoAdsDiario> PublicoAlvoAdsDiarios;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -52,6 +54,7 @@ public class PixelGoogle extends Model {
 			obj.put("nomeMeta", nomeMeta);
 			obj.put("idAds", idAds);
 			obj.put("snippet", snippet);
+			obj.put("contaGoogleId", contaGoogleId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -119,6 +122,12 @@ public class PixelGoogle extends Model {
 	public String getSnippet() { 
 		return this.snippet;
 	}
+	public void setContaGoogleId(int valor) { 
+		this.contaGoogleId = valor;
+	}
+	public int getContaGoogleId() { 
+		return this.contaGoogleId;
+	}
 
 	public ContaGoogle getContaGoogle() {
 		return ContaGoogle;
@@ -161,6 +170,18 @@ public class PixelGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.pixelGoogleCheckout.add((ProdutoAfiliadoHotmart) objeto);
+		}
+	}
+	public List<PublicoAlvoAdsDiario> getPublicoAlvoAdsDiarios() {
+		return  PublicoAlvoAdsDiarios;
+	}
+	public void setPublicoAlvoAdsDiarios(List<PublicoAlvoAdsDiario> valores) {
+		this.PublicoAlvoAdsDiarios = new ArrayList<PublicoAlvoAdsDiario>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PublicoAlvoAdsDiario();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PublicoAlvoAdsDiarios.add((PublicoAlvoAdsDiario) objeto);
 		}
 	}
 }

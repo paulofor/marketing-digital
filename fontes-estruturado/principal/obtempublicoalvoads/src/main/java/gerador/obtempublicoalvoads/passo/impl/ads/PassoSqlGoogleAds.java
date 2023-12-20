@@ -17,14 +17,16 @@ import gerador.obtempublicoalvoads.passo.ObtemDadosPublicoAlvoAds;
 
 public abstract class PassoSqlGoogleAds extends ObtemDadosPublicoAlvoAds{
 
+	protected ContaGoogle conta = null;
 	
 	@Override
 	protected boolean executaCustom(ContaGoogle contaCorrente) {
 		System.out.println("Conta: " + contaCorrente.getNome());
+		this.conta = contaCorrente;
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
-			List<PublicoAlvoAdsDiario> metrica = consultaSql(googleAdsClient, contaCorrente);
+			List<PublicoAlvoAdsDiario> metrica = consultaSql(googleAdsClient);
 	        this.saidaListaPublico = metrica;
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
@@ -36,13 +38,13 @@ public abstract class PassoSqlGoogleAds extends ObtemDadosPublicoAlvoAds{
 		return true;
 	} 
 	
-	private List<PublicoAlvoAdsDiario> consultaSql(GoogleAdsClient googleAdsClient, ContaGoogle contaCorrente) {
+	private List<PublicoAlvoAdsDiario> consultaSql(GoogleAdsClient googleAdsClient) {
 		List<PublicoAlvoAdsDiario> listaSaida = new LinkedList<PublicoAlvoAdsDiario>();
 		try (GoogleAdsServiceClient googleAdsServiceClient = googleAdsClient.getLatestVersion()
 				.createGoogleAdsServiceClient()) {
 
 			SearchGoogleAdsRequest request = SearchGoogleAdsRequest.newBuilder()
-					.setCustomerId(Long.toString(getCodigoUsuario(contaCorrente))).setQuery(getQuery()).build();
+					.setCustomerId(Long.toString(getCodigoUsuario())).setQuery(getQuery()).build();
 			System.out.println("Vai fazer search");
 			SearchPagedResponse searchPagedResponse = googleAdsServiceClient.search(request);
 
@@ -70,8 +72,8 @@ public abstract class PassoSqlGoogleAds extends ObtemDadosPublicoAlvoAds{
 	private void processaInicio() {}
 
 
-	protected long getCodigoUsuario(ContaGoogle contaCorrente) {
-		String textoSemHifens = contaCorrente.getIdAds().replace("-", "");
+	protected long getCodigoUsuario() {
+		String textoSemHifens = this.conta.getIdAds().replace("-", "");
 		long codigoUsuario = Long.parseLong(textoSemHifens);
 		return codigoUsuario;
 	}
