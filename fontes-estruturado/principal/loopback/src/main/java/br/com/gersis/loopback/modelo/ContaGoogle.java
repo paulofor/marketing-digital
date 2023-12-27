@@ -26,6 +26,7 @@ public class ContaGoogle extends Model {
 	private String codigoTagRemarketing;
 	private String snippetTagRemarketing;
 	private int hitsTag;
+	private String dataAcessoIntraday;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
@@ -45,6 +46,13 @@ public class ContaGoogle extends Model {
 		this.setIdObjeto(id);
 	}
 
+	public int setIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long setIdLong() {
+		return new Long(getId().toString());
+	}
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -61,6 +69,7 @@ public class ContaGoogle extends Model {
 			obj.put("codigoTagRemarketing", codigoTagRemarketing);
 			obj.put("snippetTagRemarketing", snippetTagRemarketing);
 			obj.put("hitsTag", hitsTag);
+			obj.put("dataAcessoIntraday", dataAcessoIntraday);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -139,6 +148,12 @@ public class ContaGoogle extends Model {
 	}
 	public int getHitsTag() { 
 		return this.hitsTag;
+	}
+	public void setDataAcessoIntraday(String valor) { 
+		this.dataAcessoIntraday = valor;
+	}
+	public String getDataAcessoIntraday() { 
+		return this.dataAcessoIntraday;
 	}
 
 	public List<CampanhaAdsTeste> getCampanhaAdsTestes() {

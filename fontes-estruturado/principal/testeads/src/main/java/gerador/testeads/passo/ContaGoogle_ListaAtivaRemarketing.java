@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class ContaGoogle_ListaAtivaRemarketing extends DaoAplicacao { 
 
-	private int NUM_PASSO = 1;
+	private int NUM_PASSO = 2;
 
 
 
@@ -23,12 +23,8 @@ public abstract class ContaGoogle_ListaAtivaRemarketing extends DaoAplicacao {
 		if (executaCustom()) {
 			repContaGoogle.listaAtivaRemarketing(  new ListCallback<ContaGoogle>() { 
 				public void onSuccess(List<ContaGoogle> lista) {
-					for (ContaGoogle item : lista) {
-						ds.setContaCorrente(item);
-						executaProximoSemFinalizar();
-					}
-					preFinalizar();
-					finalizar();
+						ds.setContaCorrente(lista);
+						executaProximo();
 				}
 				public void onError(Throwable t) {
 					onErrorBase(t);
@@ -42,7 +38,7 @@ public abstract class ContaGoogle_ListaAtivaRemarketing extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new TesteObjetosImpl();
+		return new DummyDaoBase();
 	}
 
 

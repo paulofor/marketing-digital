@@ -31,6 +31,8 @@ import { CampanhaAdsMetricaIntradayListSimplesComponent } from '../campanha-ads-
 import { HistoricoPorCodigoAdsComponent } from '../historico-por-codigo-ads/historico-por-codigo-ads.component';
 import { AnuncioAdsDisplayPorProdutoListComponent } from '../anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component';
 import { ListaAltaMargemAltaTemperaturaComponent } from '../lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component';
+import { ListaSuperMargemComponent } from '../lista-super-margem/lista-super-margem.component';
+import { ContaGoogleDetalheComponent } from '../conta-google-detalhe/conta-google-detalhe.component';
 
 
 
@@ -52,6 +54,7 @@ export const routes : Routes = [
     { path: 'anuncioAds/:id' , component: AnuncioAdsListaComponent },
     { path: 'campanhaAdsTeste/:id' , component: CampanhaAdsTesteListaComponent },
     { path: 'campanhaAdsTesteDetalhe/:id' , component: CampanhaAdsTesteDetalheComponent },
+    { path: 'contaGoogleDetalhe/:id' , component: ContaGoogleDetalheComponent },
 
     { path: 'melhoresCpc' , component: IdeiaPalavraChaveListSimplesMelhoresCpcComponent },
     { path: 'melhoresTop' , component: IdeiaPalavraChaveListSimplesTopComponent },
@@ -74,6 +77,8 @@ export const routes : Routes = [
     { path: 'anuncioAdsDisplayPorProdutoList/:id' , component: AnuncioAdsDisplayPorProdutoListComponent },
 
     { path : 'listaAltaMargemAltaTemperatura' , component: ListaAltaMargemAltaTemperaturaComponent },
+    { path : 'listaSuperMargem' , component: ListaSuperMargemComponent },
+
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

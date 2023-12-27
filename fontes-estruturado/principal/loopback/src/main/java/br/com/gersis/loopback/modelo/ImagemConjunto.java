@@ -30,6 +30,13 @@ public class ImagemConjunto extends Model {
 		this.setIdObjeto(id);
 	}
 
+	public int setIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long setIdLong() {
+		return new Long(getId().toString());
+	}
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {

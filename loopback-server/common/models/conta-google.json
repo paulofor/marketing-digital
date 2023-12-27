@@ -44,6 +44,9 @@
 		},
 		"hitsTag": {
 			"type": "number"
+		},
+		"dataAcessoIntraday": {
+			"type": "date"
 		}
 	},
 	"validations": [],
@@ -168,6 +171,50 @@
 			"http": [
          		{
           			"path": "/listaAtivaRemarketing",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AcessouIntraday": {
+			"accepts": [
+				{
+					"arg": "idConta",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/acessouIntraday",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaCompleta": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaCompleta",
    					"verb": "get"
  				}
  			]

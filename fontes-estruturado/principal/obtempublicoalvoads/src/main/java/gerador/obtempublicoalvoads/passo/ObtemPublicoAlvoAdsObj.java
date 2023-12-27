@@ -12,7 +12,7 @@ public class ObtemPublicoAlvoAdsObj extends DaoAplicacao {
 	@Override
 	protected void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		ContaGoogle_ListaAtivaRemarketing exec = new ContaGoogle_ListaAtivaRemarketingImpl();
+		ContaGoogle_ListaCompleta exec = new ContaGoogle_ListaCompletaImpl();
 		exec.setComum(ds);
 		exec.executa();
 		executaFinalizacao(ds);

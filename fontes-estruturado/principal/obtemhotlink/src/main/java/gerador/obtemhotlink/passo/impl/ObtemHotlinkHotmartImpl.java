@@ -75,8 +75,12 @@ public class ObtemHotlinkHotmartImpl extends ObtemHotlinkHotmart  implements ICa
 		//ds.getListaVisita().clear();
 		System.out.println("Recebi objeto");
 		JSONObject hotlinks = result.getJSONObject("hotlinks");
-		this.produtoCorrente.setSalesPage(hotlinks.getString("salesPage"));
-		this.produtoCorrente.setPublicProfileLink(hotlinks.getString("publicProfileLink"));
+		try {
+			this.produtoCorrente.setSalesPage(hotlinks.getString("salesPage"));
+			this.produtoCorrente.setPublicProfileLink(hotlinks.getString("publicProfileLink"));
+		} catch (Exception e) {
+			System.out.println("Erro de json em : " + result.toString());
+		}
 		JSONArray paginas = hotlinks.getJSONArray("alternativePages");
 		System.out.println("Páginas:" + paginas.length());
 		for (int i=0; i<paginas.length(); i++) {

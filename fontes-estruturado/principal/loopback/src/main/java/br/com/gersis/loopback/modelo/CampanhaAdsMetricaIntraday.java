@@ -26,6 +26,7 @@ public class CampanhaAdsMetricaIntraday extends Model {
 	private int conversao;
 	private String primaryStatus;
 	private String primaryStatusReasons;
+	private String jsonAds;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private ContaGoogle ContaGoogle;
@@ -36,6 +37,13 @@ public class CampanhaAdsMetricaIntraday extends Model {
 	}
 	public void setId(Integer id) {
 		this.setIdObjeto(id);
+	}
+
+	public int setIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long setIdLong() {
+		return new Long(getId().toString());
 	}
 
 	public JSONObject getJSON() {
@@ -54,6 +62,7 @@ public class CampanhaAdsMetricaIntraday extends Model {
 			obj.put("conversao", conversao);
 			obj.put("primaryStatus", primaryStatus);
 			obj.put("primaryStatusReasons", primaryStatusReasons);
+			obj.put("jsonAds", jsonAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -132,6 +141,12 @@ public class CampanhaAdsMetricaIntraday extends Model {
 	}
 	public String getPrimaryStatusReasons() { 
 		return this.primaryStatusReasons;
+	}
+	public void setJsonAds(String valor) { 
+		this.jsonAds = valor;
+	}
+	public String getJsonAds() { 
+		return this.jsonAds;
 	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {

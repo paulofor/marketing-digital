@@ -2,19 +2,9 @@
 
 if (isset($_GET['id'])) {
     $hotmartId = $_GET['id'];
+    $dominioAtual = $_SERVER['HTTP_HOST'];
 
-
-    if(isset($_GET['visitante'])) {
-        $visitante = $_GET['visitante'];
-        $url = 'http://tyche.ovh:23101/api/LoadPaginaVendas/insereItem?idHm=' . urlencode($hotmartId) . '&visitante=' . urlencode($visitante);
-    } else {
-        if (isset($_GET['tempo'])) {
-            $tempo = $_GET['tempo'];
-            $url = 'http://tyche.ovh:23101/api/LoadPaginaVendas/insereItem?idHm=' . urlencode($hotmartId) . '&tempo=' . urlencode($tempo);
-        } else {
-            $url = 'http://tyche.ovh:23101/api/LoadPaginaVendas/insereItem?idHm=' . urlencode($hotmartId);
-        }
-    }
+    $url = 'http://tyche.ovh:23101/api/LoadPaginaVendas/insereItem?idHm=' . urlencode($hotmartId) . '&dominio=' . urlencode($dominioAtual);
 
 
     $ch = curl_init();

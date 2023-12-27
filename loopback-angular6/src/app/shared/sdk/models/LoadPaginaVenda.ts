@@ -10,6 +10,7 @@ export interface LoadPaginaVendaInterface {
   "tempoConsumido"?: number;
   "visitante"?: string;
   "qtdeVisita"?: number;
+  "dominio"?: string;
   "paginaVendaId"?: number;
   "id"?: number;
   "hotmartId"?: number;
@@ -22,6 +23,7 @@ export class LoadPaginaVenda implements LoadPaginaVendaInterface {
   "tempoConsumido": number;
   "visitante": string;
   "qtdeVisita": number;
+  "dominio": string;
   "paginaVendaId": number;
   "id": number;
   "hotmartId": number;
@@ -75,6 +77,10 @@ export class LoadPaginaVenda implements LoadPaginaVendaInterface {
         "qtdeVisita": {
           name: 'qtdeVisita',
           type: 'number'
+        },
+        "dominio": {
+          name: 'dominio',
+          type: 'string'
         },
         "paginaVendaId": {
           name: 'paginaVendaId',

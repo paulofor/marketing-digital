@@ -38,7 +38,7 @@ public abstract class CampanhaAdsMetricaIntraday_AtualizaIntraday extends DaoApl
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new ContaGoogle_AcessouIntradayImpl();
 	}
 
 

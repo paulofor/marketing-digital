@@ -44,6 +44,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private int temperaturaAtual;
 	private int possuiImagemRedeDisplay;
 	private double cpaInicial;
+	private String urlPresell;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -77,6 +78,13 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public void setId(Integer id) {
 		this.setIdObjeto(id);
+	}
+
+	public int setIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long setIdLong() {
+		return new Long(getId().toString());
 	}
 
 	public JSONObject getJSON() {
@@ -113,6 +121,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("temperaturaAtual", temperaturaAtual);
 			obj.put("possuiImagemRedeDisplay", possuiImagemRedeDisplay);
 			obj.put("cpaInicial", cpaInicial);
+			obj.put("urlPresell", urlPresell);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -299,6 +308,12 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public double getCpaInicial() { 
 		return this.cpaInicial;
+	}
+	public void setUrlPresell(String valor) { 
+		this.urlPresell = valor;
+	}
+	public String getUrlPresell() { 
+		return this.urlPresell;
 	}
 
 	public PixelGoogle getPixelGoogle() {

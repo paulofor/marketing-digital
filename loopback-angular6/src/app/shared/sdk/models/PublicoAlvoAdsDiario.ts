@@ -15,6 +15,7 @@ export interface PublicoAlvoAdsDiarioInterface {
   "contaGoogleId"?: number;
   "maisRecente"?: number;
   "hotmartId"?: number;
+  "jsonAds"?: string;
   "pixelGoogleId"?: number;
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
@@ -31,6 +32,7 @@ export class PublicoAlvoAdsDiario implements PublicoAlvoAdsDiarioInterface {
   "contaGoogleId": number;
   "maisRecente": number;
   "hotmartId": number;
+  "jsonAds": string;
   "pixelGoogleId": number;
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
@@ -100,6 +102,10 @@ export class PublicoAlvoAdsDiario implements PublicoAlvoAdsDiarioInterface {
         "hotmartId": {
           name: 'hotmartId',
           type: 'number'
+        },
+        "jsonAds": {
+          name: 'jsonAds',
+          type: 'string'
         },
         "pixelGoogleId": {
           name: 'pixelGoogleId',

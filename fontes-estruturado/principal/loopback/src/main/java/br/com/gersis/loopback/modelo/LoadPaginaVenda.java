@@ -18,6 +18,7 @@ public class LoadPaginaVenda extends Model {
 	private int tempoConsumido;
 	private String visitante;
 	private int qtdeVisita;
+	private String dominio;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private PaginaVenda PaginaVenda;
@@ -30,6 +31,13 @@ public class LoadPaginaVenda extends Model {
 		this.setIdObjeto(id);
 	}
 
+	public int setIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long setIdLong() {
+		return new Long(getId().toString());
+	}
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -38,6 +46,7 @@ public class LoadPaginaVenda extends Model {
 			obj.put("tempoConsumido", tempoConsumido);
 			obj.put("visitante", visitante);
 			obj.put("qtdeVisita", qtdeVisita);
+			obj.put("dominio", dominio);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -68,6 +77,12 @@ public class LoadPaginaVenda extends Model {
 	}
 	public int getQtdeVisita() { 
 		return this.qtdeVisita;
+	}
+	public void setDominio(String valor) { 
+		this.dominio = valor;
+	}
+	public String getDominio() { 
+		return this.dominio;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {

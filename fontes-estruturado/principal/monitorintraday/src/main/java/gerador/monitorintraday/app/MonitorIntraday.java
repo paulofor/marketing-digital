@@ -17,7 +17,7 @@ public class MonitorIntraday {
 
 	public static void main(String[] args) {
 		System.out.print("MonitorIntraday");
-		System.out.println("(18/12/2023 13:03:49)");
+		System.out.println("(25/12/2023 02:07:29)");
 		try {
 			carregaProp();
 			MonitorIntradayObj obj = new MonitorIntradayObj();
@@ -57,5 +57,6 @@ public class MonitorIntraday {
 		DaoBaseComum.setProximo("CampanhaAdsMetricaIntraday_DesligarTodos", new ContaGoogle_ListaAtivaParaMetricaCampanhaImpl());
 		DaoBaseComum.setProximo("ContaGoogle_ListaAtivaParaMetricaCampanha", new ConsultaGoogleAdsListaAtivaPorContaImpl());
 		DaoBaseComum.setProximo("ConsultaGoogleAdsListaAtivaPorConta", new CampanhaAdsMetricaIntraday_AtualizaIntradayImpl());
+		DaoBaseComum.setProximo("CampanhaAdsMetricaIntraday_AtualizaIntraday", new ContaGoogle_AcessouIntradayImpl());
 	}
 }

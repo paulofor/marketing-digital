@@ -1,0 +1,31 @@
+{
+	"name": "ContaHotmart",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"email": {
+			"type": "VARRCHAR(100)"
+		},
+		"senha": {
+			"type": "string"
+		},
+		"tokenAcesso": {
+			"type": "string"
+		},
+		"principal": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+	}
+}

@@ -33,6 +33,9 @@
 		"hotmartId": {
 			"type": "number"
 		},
+		"jsonAds": {
+			"type": "string"
+		},
 		"pixelGoogleId": {
 			"type": "number"
 		}

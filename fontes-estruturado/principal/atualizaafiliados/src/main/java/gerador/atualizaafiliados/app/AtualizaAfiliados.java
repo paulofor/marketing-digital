@@ -17,7 +17,7 @@ public class AtualizaAfiliados {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaAfiliados");
-		System.out.println("(18/12/2023 13:03:50)");
+		System.out.println("(25/12/2023 02:07:30)");
 		try {
 			carregaProp();
 			AtualizaAfiliadosObj obj = new AtualizaAfiliadosObj();
@@ -56,6 +56,8 @@ public class AtualizaAfiliados {
 		DaoBaseComum.setProximo("AtualizaAfiliadosObj", new TokenAcesso_ObtemPorNomeImpl());
 		DaoBaseComum.setProximo("TokenAcesso_ObtemPorNome", new ObtemListaHotmartImpl());
 		DaoBaseComum.setProximo("ObtemListaHotmart", new ProdutoAfiliadoHotmart_AtualizaAfiliadosImpl());
-		DaoBaseComum.setProximo("ProdutoAfiliadoHotmart_AtualizaAfiliados", new TokenAcesso_RegistraAcessoImpl());
+		DaoBaseComum.setProximo("ProdutoAfiliadoHotmart_AtualizaAfiliados", new ObtemListaHotmartPendenteImpl());
+		DaoBaseComum.setProximo("ObtemListaHotmartPendente", new ProdutoAfiliadoHotmartPendente_AtualizaPendenteImpl());
+		DaoBaseComum.setProximo("ProdutoAfiliadoHotmartPendente_AtualizaPendente", new TokenAcesso_RegistraAcessoImpl());
 	}
 }

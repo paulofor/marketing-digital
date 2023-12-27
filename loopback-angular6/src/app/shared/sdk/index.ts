@@ -91,6 +91,7 @@ import { PublicoAlvoAdsDiarioApi } from './services/custom/PublicoAlvoAdsDiario'
 import { PaginaVendaApi } from './services/custom/PaginaVenda';
 import { AnuncioCampanhaAdsDisplayApi } from './services/custom/AnuncioCampanhaAdsDisplay';
 import { ImagemConjuntoApi } from './services/custom/ImagemConjunto';
+import { ProdutoAfiliadoHotmartPendenteApi } from './services/custom/ProdutoAfiliadoHotmartPendente';
 /**
 * @module SDKBrowserModule
 * @description
@@ -164,6 +165,7 @@ export class SDKBrowserModule {
         PaginaVendaApi,
         AnuncioCampanhaAdsDisplayApi,
         ImagemConjuntoApi,
+        ProdutoAfiliadoHotmartPendenteApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

@@ -8,6 +8,7 @@ import java.util.List;
 public class DatasetAplicacao  implements IDatasetComum {
 	private TokenAcesso token;
 	private List<ProdutoAfiliadoHotmart> listaAfiliado;
+	private List<ProdutoAfiliadoHotmartPendente> listaPendente;
 
 
 	public void setToken(TokenAcesso valor) { 
@@ -21,5 +22,11 @@ public class DatasetAplicacao  implements IDatasetComum {
 	}
 	public List<ProdutoAfiliadoHotmart> getListaAfiliado() { 
 		return this.listaAfiliado;
+	}
+	public void setListaPendente(List<ProdutoAfiliadoHotmartPendente> valor) { 
+		this.listaPendente = valor;
+	}
+	public List<ProdutoAfiliadoHotmartPendente> getListaPendente() { 
+		return this.listaPendente;
 	}
 }

@@ -43,6 +43,7 @@ import { PublicoAlvoAdsDiario } from '../../models/PublicoAlvoAdsDiario';
 import { PaginaVenda } from '../../models/PaginaVenda';
 import { AnuncioCampanhaAdsDisplay } from '../../models/AnuncioCampanhaAdsDisplay';
 import { ImagemConjunto } from '../../models/ImagemConjunto';
+import { ProdutoAfiliadoHotmartPendente } from '../../models/ProdutoAfiliadoHotmartPendente';
 
 export interface Models { [name: string]: any }
 
@@ -93,6 +94,7 @@ export class SDKModels {
     PaginaVenda: PaginaVenda,
     AnuncioCampanhaAdsDisplay: AnuncioCampanhaAdsDisplay,
     ImagemConjunto: ImagemConjunto,
+    ProdutoAfiliadoHotmartPendente: ProdutoAfiliadoHotmartPendente,
     
   };
 

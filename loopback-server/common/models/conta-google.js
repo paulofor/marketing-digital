@@ -2,6 +2,18 @@
 
 module.exports = function(Contagoogle) {
 
+    Contagoogle.ListaCompleta = function(callback) {
+        Contagoogle.find(callback);
+    }
+
+
+    Contagoogle.AcessouIntraday = function(idConta, callback) {
+        const sql = "update ContaGoogle set dataAcessoIntraday = now() where id = " + idConta;
+        const ds = Contagoogle.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
+
     Contagoogle.ListaAtivaParaMetricaCampanha = function(callback) {
         const filtro = {'where' : {'ativo' : 1 }}
         Contagoogle.find(filtro,callback);

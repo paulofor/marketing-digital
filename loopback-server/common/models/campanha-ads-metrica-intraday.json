@@ -45,6 +45,9 @@
 		},
 		"primaryStatusReasons": {
 			"type": "string"
+		},
+		"jsonAds": {
+			"type": "string"
 		}
 	},
 	"validations": [],

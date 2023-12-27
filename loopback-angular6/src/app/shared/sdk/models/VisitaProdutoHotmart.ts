@@ -2,7 +2,8 @@
 import {
   IdeiaPalavraChave,
   ProdutoAfiliadoHotmart,
-  ProdutoAfiliadoMetrica
+  ProdutoAfiliadoMetrica,
+  ProdutoAfiliadoHotmartPendente
 } from '../index';
 
 declare var Object: any;
@@ -29,6 +30,7 @@ export interface VisitaProdutoHotmartInterface {
   ideiaPalavraChaves?: IdeiaPalavraChave[];
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   produtoAfiliadoMetricas?: ProdutoAfiliadoMetrica[];
+  produtoAfiliadoHotmartPendente?: ProdutoAfiliadoHotmartPendente;
 }
 
 export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
@@ -54,6 +56,7 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
   ideiaPalavraChaves: IdeiaPalavraChave[];
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   produtoAfiliadoMetricas: ProdutoAfiliadoMetrica[];
+  produtoAfiliadoHotmartPendente: ProdutoAfiliadoHotmartPendente;
   constructor(data?: VisitaProdutoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -186,6 +189,14 @@ export class VisitaProdutoHotmart implements VisitaProdutoHotmartInterface {
           type: 'ProdutoAfiliadoMetrica[]',
           model: 'ProdutoAfiliadoMetrica',
           relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        produtoAfiliadoHotmartPendente: {
+          name: 'produtoAfiliadoHotmartPendente',
+          type: 'ProdutoAfiliadoHotmartPendente',
+          model: 'ProdutoAfiliadoHotmartPendente',
+          relationType: 'belongsTo',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
         },

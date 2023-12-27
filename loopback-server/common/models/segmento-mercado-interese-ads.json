@@ -1,0 +1,38 @@
+{
+	"name": "SegmentoMercadoIntereseAds",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"tamanhoAtual": {
+			"type": "number"
+		},
+		"segmentoPaiId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"pai": {
+			"type": "belongsTo",
+			"model": "SegmentoMercadoIntereseAds",
+			"foreignKey": "segmentoPaiId"
+		},
+		"filho": {
+			"type": "hasMany",
+			"model": "SegmentoMercadoIntereseAds",
+			"foreignKey": "segmentoPaiId"
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

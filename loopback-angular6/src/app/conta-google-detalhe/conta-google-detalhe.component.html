@@ -1,0 +1,39 @@
+<div class="dgc-painel" *ngIf="principal">
+<div class="dgc-painel-header" *ngIf="principal">
+	<span>{{principal.nome}}</span>
+</div>
+
+<div class="dgc-card">
+	<div class="dgc-card-header">
+		<span>Público Alvo Atual</span>
+	</div>
+	<div class="dgc-painel-principal">
+		<div class="dgc-card dgc-card-interno" *ngFor="let publico of principal.publicoAlvoAdsDiarios">
+			<div class="dgc-card-header">{{publico.nome}}</div>
+			<div class="dgc-card-detalhe">Display: {{publico.tamanhoRedeDisplay}}</div>
+			<div class="dgc-card-detalhe">Pesquisa: {{publico.tamanhoRedeDisplay}}</div>
+			<div class="dgc-card-detalhe">{{publico.data | date: 'dd-MM-yyyy' }}</div>
+			<div class="dgc-card-comandos">
+				<button class="btn-primary btn-sm btn" (click)="json(publico)">JSON</button>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+	
+<div class="dgc-card">
+<div class="dgc-card-header">
+<span>Quadro 2</span>
+	</div>
+<div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeSaida">
+<span></span>
+</div>
+<div class="dgc-card-comandos">
+			</div> 
+  </div>
+<div class="dgc-card-comandos">
+<button class="btn-primary btn-sm btn" (click)="editaPasso()">Novo</button>
+</div> 
+</div>
+

@@ -38,7 +38,7 @@ public abstract class ProdutoAfiliadoHotmart_AtualizaAfiliados extends DaoAplica
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new TokenAcesso_RegistraAcessoImpl();
+		return new ObtemListaHotmartPendenteImpl();
 	}
 
 

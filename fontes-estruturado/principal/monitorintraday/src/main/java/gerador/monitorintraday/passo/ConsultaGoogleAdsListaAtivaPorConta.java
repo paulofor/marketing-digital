@@ -18,12 +18,14 @@ public abstract class ConsultaGoogleAdsListaAtivaPorConta extends DaoAplicacao {
 
 	// campos saida
 	protected List<CampanhaAdsMetricaIntraday>  saidaMetrica;
+	protected int  saidaSemErro;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getContaCorrente())) {
 			ds.setMetrica(saidaMetrica);
+			ds.setSemErro(saidaSemErro);
 			executaProximo();
 		} else {
 			finalizar();

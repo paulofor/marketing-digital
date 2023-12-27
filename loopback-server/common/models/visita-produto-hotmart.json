@@ -75,6 +75,11 @@
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
 		},
+		"produtoAfiliadoHotmartPendente": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmartPendente",
+			"foreignKey": "hotmartId"
+		},
 		"produtoAfiliadoMetricas": {
 			"type": "hasMany",
 			"model": "ProdutoAfiliadoMetrica",

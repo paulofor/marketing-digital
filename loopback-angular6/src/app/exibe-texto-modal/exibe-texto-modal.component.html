@@ -1,0 +1,14 @@
+<h2 *ngIf="texto" mat-dialog-title>Objeto</h2>
+
+<mat-dialog-content>
+    <pre>{{texto}}</pre>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="copiarTexto()" >Copiar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>
+
+
+
+

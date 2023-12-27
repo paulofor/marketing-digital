@@ -1,0 +1,53 @@
+{
+	"name": "ProdutoAfiliadoHotmartPendente",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"hotmartId": {
+			"type": "number"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"visitaProdutoHotmarts": {
+			"type": "hasMany",
+			"model": "VisitaProdutoHotmart",
+			"foreignKey": "hotmartId"
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaPendente": {
+			"accepts": [
+				{
+					"arg": "listaHotmartId",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaPendente",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

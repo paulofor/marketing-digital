@@ -54,6 +54,7 @@ export interface ProdutoAfiliadoHotmartInterface {
   "temperaturaAtual"?: number;
   "possuiImagemRedeDisplay"?: number;
   "cpaInicial"?: number;
+  "urlPresell"?: string;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
@@ -111,6 +112,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "temperaturaAtual": number;
   "possuiImagemRedeDisplay": number;
   "cpaInicial": number;
+  "urlPresell": string;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
@@ -287,6 +289,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
         "cpaInicial": {
           name: 'cpaInicial',
           type: 'number'
+        },
+        "urlPresell": {
+          name: 'urlPresell',
+          type: 'string'
         },
         "contaGoogleId": {
           name: 'contaGoogleId',

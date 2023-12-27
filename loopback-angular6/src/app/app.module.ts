@@ -80,6 +80,9 @@ import { PrecoProdutoAfiliadoEditComponent } from './preco-produto-afiliado-edit
 import { AnuncioAdsDisplayEditComponent } from './anuncio-ads-display-edit/anuncio-ads-display-edit.component';
 import { AnuncioAdsDisplayPorProdutoListComponent } from './anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component';
 import { ListaAltaMargemAltaTemperaturaComponent } from './lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component';
+import { ListaSuperMargemComponent } from './lista-super-margem/lista-super-margem.component';
+import { ExibeTextoModalComponent } from './exibe-texto-modal/exibe-texto-modal.component';
+import { ContaGoogleDetalheComponent } from './conta-google-detalhe/conta-google-detalhe.component';
 
 
 
@@ -136,7 +139,10 @@ registerLocaleData(localePt, 'pt-BR');
     PrecoProdutoAfiliadoEditComponent,
     AnuncioAdsDisplayEditComponent,
     AnuncioAdsDisplayPorProdutoListComponent,
-    ListaAltaMargemAltaTemperaturaComponent
+    ListaAltaMargemAltaTemperaturaComponent,
+    ListaSuperMargemComponent,
+    ExibeTextoModalComponent,
+    ContaGoogleDetalheComponent
   ],
   imports: [
     BrowserModule,
@@ -194,7 +200,8 @@ registerLocaleData(localePt, 'pt-BR');
     EscolheAnuncioParaCampanhaTesteComponent,
     EscolhePalavraChaveParaCampanhaTesteComponent,
     ContaGoogleEditComponent,
-    PrecoProdutoAfiliadoEditComponent
+    PrecoProdutoAfiliadoEditComponent,
+    ExibeTextoModalComponent
   ],
   bootstrap: [AppComponent]
 })

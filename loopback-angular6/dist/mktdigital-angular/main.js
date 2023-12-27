@@ -616,6 +616,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _historico_por_codigo_ads_historico_por_codigo_ads_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../historico-por-codigo-ads/historico-por-codigo-ads.component */ "./src/app/historico-por-codigo-ads/historico-por-codigo-ads.component.ts");
 /* harmony import */ var _anuncio_ads_display_por_produto_list_anuncio_ads_display_por_produto_list_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component */ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.ts");
 /* harmony import */ var _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component */ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.ts");
+/* harmony import */ var _lista_super_margem_lista_super_margem_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../lista-super-margem/lista-super-margem.component */ "./src/app/lista-super-margem/lista-super-margem.component.ts");
+/* harmony import */ var _conta_google_detalhe_conta_google_detalhe_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../conta-google-detalhe/conta-google-detalhe.component */ "./src/app/conta-google-detalhe/conta-google-detalhe.component.ts");
+
+
 
 
 
@@ -663,6 +667,7 @@ var routes = [
     { path: 'anuncioAds/:id', component: _anuncio_ads_lista_anuncio_ads_lista_component__WEBPACK_IMPORTED_MODULE_9__["AnuncioAdsListaComponent"] },
     { path: 'campanhaAdsTeste/:id', component: _campanha_ads_teste_lista_campanha_ads_teste_lista_component__WEBPACK_IMPORTED_MODULE_8__["CampanhaAdsTesteListaComponent"] },
     { path: 'campanhaAdsTesteDetalhe/:id', component: _campanha_ads_teste_detalhe_campanha_ads_teste_detalhe_component__WEBPACK_IMPORTED_MODULE_11__["CampanhaAdsTesteDetalheComponent"] },
+    { path: 'contaGoogleDetalhe/:id', component: _conta_google_detalhe_conta_google_detalhe_component__WEBPACK_IMPORTED_MODULE_33__["ContaGoogleDetalheComponent"] },
     { path: 'melhoresCpc', component: _ideia_palavra_chave_list_simples_melhores_cpc_ideia_palavra_chave_list_simples_melhores_cpc_component__WEBPACK_IMPORTED_MODULE_13__["IdeiaPalavraChaveListSimplesMelhoresCpcComponent"] },
     { path: 'melhoresTop', component: _ideia_palavra_chave_list_simples_top_ideia_palavra_chave_list_simples_top_component__WEBPACK_IMPORTED_MODULE_14__["IdeiaPalavraChaveListSimplesTopComponent"] },
     { path: 'melhoresTopPesquisa', component: _ideia_palavra_chave_list_simples_top_pesquisa_ideia_palavra_chave_list_simples_top_pesquisa_component__WEBPACK_IMPORTED_MODULE_15__["IdeiaPalavraChaveListSimplesTopPesquisaComponent"] },
@@ -681,6 +686,7 @@ var routes = [
     { path: 'historicoPorCodigoAds/:id', component: _historico_por_codigo_ads_historico_por_codigo_ads_component__WEBPACK_IMPORTED_MODULE_29__["HistoricoPorCodigoAdsComponent"] },
     { path: 'anuncioAdsDisplayPorProdutoList/:id', component: _anuncio_ads_display_por_produto_list_anuncio_ads_display_por_produto_list_component__WEBPACK_IMPORTED_MODULE_30__["AnuncioAdsDisplayPorProdutoListComponent"] },
     { path: 'listaAltaMargemAltaTemperatura', component: _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_31__["ListaAltaMargemAltaTemperaturaComponent"] },
+    { path: 'listaSuperMargem', component: _lista_super_margem_lista_super_margem_component__WEBPACK_IMPORTED_MODULE_32__["ListaSuperMargemComponent"] },
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_0__["HomeComponent"] }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ];
@@ -830,6 +836,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _anuncio_ads_display_edit_anuncio_ads_display_edit_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! ./anuncio-ads-display-edit/anuncio-ads-display-edit.component */ "./src/app/anuncio-ads-display-edit/anuncio-ads-display-edit.component.ts");
 /* harmony import */ var _anuncio_ads_display_por_produto_list_anuncio_ads_display_por_produto_list_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! ./anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component */ "./src/app/anuncio-ads-display-por-produto-list/anuncio-ads-display-por-produto-list.component.ts");
 /* harmony import */ var _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! ./lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component */ "./src/app/lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component.ts");
+/* harmony import */ var _lista_super_margem_lista_super_margem_component__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! ./lista-super-margem/lista-super-margem.component */ "./src/app/lista-super-margem/lista-super-margem.component.ts");
+/* harmony import */ var _exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! ./exibe-texto-modal/exibe-texto-modal.component */ "./src/app/exibe-texto-modal/exibe-texto-modal.component.ts");
+/* harmony import */ var _conta_google_detalhe_conta_google_detalhe_component__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! ./conta-google-detalhe/conta-google-detalhe.component */ "./src/app/conta-google-detalhe/conta-google-detalhe.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -864,6 +873,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 //import { NgxImgModule } from 'ngx-img';
 
 //import { UploadModule } from './upload/upload.module';
+
+
+
 
 
 
@@ -966,7 +978,10 @@ var AppModule = /** @class */ (function () {
                 _preco_produto_afiliado_edit_preco_produto_afiliado_edit_component__WEBPACK_IMPORTED_MODULE_68__["PrecoProdutoAfiliadoEditComponent"],
                 _anuncio_ads_display_edit_anuncio_ads_display_edit_component__WEBPACK_IMPORTED_MODULE_69__["AnuncioAdsDisplayEditComponent"],
                 _anuncio_ads_display_por_produto_list_anuncio_ads_display_por_produto_list_component__WEBPACK_IMPORTED_MODULE_70__["AnuncioAdsDisplayPorProdutoListComponent"],
-                _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_71__["ListaAltaMargemAltaTemperaturaComponent"]
+                _lista_alta_margem_alta_temperatura_lista_alta_margem_alta_temperatura_component__WEBPACK_IMPORTED_MODULE_71__["ListaAltaMargemAltaTemperaturaComponent"],
+                _lista_super_margem_lista_super_margem_component__WEBPACK_IMPORTED_MODULE_72__["ListaSuperMargemComponent"],
+                _exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_73__["ExibeTextoModalComponent"],
+                _conta_google_detalhe_conta_google_detalhe_component__WEBPACK_IMPORTED_MODULE_74__["ContaGoogleDetalheComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1023,7 +1038,8 @@ var AppModule = /** @class */ (function () {
                 _escolhe_anuncio_para_campanha_teste_escolhe_anuncio_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_46__["EscolheAnuncioParaCampanhaTesteComponent"],
                 _escolhe_palavra_chave_para_campanha_teste_escolhe_palavra_chave_para_campanha_teste_component__WEBPACK_IMPORTED_MODULE_47__["EscolhePalavraChaveParaCampanhaTesteComponent"],
                 _conta_google_edit_conta_google_edit_component__WEBPACK_IMPORTED_MODULE_49__["ContaGoogleEditComponent"],
-                _preco_produto_afiliado_edit_preco_produto_afiliado_edit_component__WEBPACK_IMPORTED_MODULE_68__["PrecoProdutoAfiliadoEditComponent"]
+                _preco_produto_afiliado_edit_preco_produto_afiliado_edit_component__WEBPACK_IMPORTED_MODULE_68__["PrecoProdutoAfiliadoEditComponent"],
+                _exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_73__["ExibeTextoModalComponent"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
@@ -1441,7 +1457,7 @@ module.exports = ".dgc-card {\n    width: 160px;\n}\n\n.texto-fraco {\n    color
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"resumoDia\">\n\t\t<span>Custo: {{resumoDia.totalCusto | currency: 'BRL'}} , Cliques: {{resumoDia.totalClique}} , Impressão: {{resumoDia.totalImpressao}} </span>\n  \t\t<span class=\"dgc-direita\">{{resumoDia.totalCampanha}} campanhas</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card  {{tipoCard(item)}}\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>Custo: {{item.custoDia | currency: 'BRL'}}</span>\n  \t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>cpc: {{item.cpc | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>clique: {{item.clique}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>impressão: {{item.impressao}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>ctr: {{(item.clique / item.impressao) * 100 | number: '1.2-2'}} %</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>cpm: {{ (item.custoDia / item.impressao) * 1000 | currency : 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>1k: {{ item.cpc * 1000 | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span class=\"dgc-link\" routerLink=\"/historicoPorCodigoAds/{{item.codigoAds}}\">{{item.nomeCampanha}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.status}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t <span>{{item.primaryStatus}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span *ngIf=\"item.contaGoogle\">Conta: {{item.contaGoogle.nome}}</span>\n\t\t   </div>\n\n\t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"resumoDia\">\n\t\t<span>Custo: {{resumoDia.totalCusto | currency: 'BRL'}} , Cliques: {{resumoDia.totalClique}} , Impressão: {{resumoDia.totalImpressao}} </span>\n  \t\t<span class=\"dgc-direita\">{{resumoDia.totalCampanha}} campanhas</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card  {{tipoCard(item)}}\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>Custo: {{item.custoDia | currency: 'BRL'}}</span>\n  \t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>cpc: {{item.cpc | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>clique: {{item.clique}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>impressão: {{item.impressao}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>ctr: {{(item.clique / item.impressao) * 100 | number: '1.2-2'}} %</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>cpm: {{ (item.custoDia / item.impressao) * 1000 | currency : 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>1k: {{ item.cpc * 1000 | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span class=\"dgc-link\" routerLink=\"/historicoPorCodigoAds/{{item.codigoAds}}\">{{item.nomeCampanha}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.status}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t <span>{{item.primaryStatus}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span *ngIf=\"item.contaGoogle\">Conta: {{item.contaGoogle.nome}}</span>\n\t\t   </div>\n\t\t   \t<div class=\"dgc-card-comandos\">\n            \t<button class=\"btn-primary btn-sm btn\" (click)=\"json(item)\">JSON</button>\n         \t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1460,6 +1476,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
 /* harmony import */ var _campanha_ads_metrica_intraday_list_simples_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./campanha-ads-metrica-intraday-list-simples-base.component */ "./src/app/campanha-ads-metrica-intraday-list-simples/campanha-ads-metrica-intraday-list-simples-base.component.ts");
+/* harmony import */ var _exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../exibe-texto-modal/exibe-texto-modal.component */ "./src/app/exibe-texto-modal/exibe-texto-modal.component.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1484,6 +1501,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var CampanhaAdsMetricaIntradayListSimplesComponent = /** @class */ (function (_super) {
     __extends(CampanhaAdsMetricaIntradayListSimplesComponent, _super);
     function CampanhaAdsMetricaIntradayListSimplesComponent(srv, router, dialog) {
@@ -1493,6 +1511,18 @@ var CampanhaAdsMetricaIntradayListSimplesComponent = /** @class */ (function (_s
         _this.dialog = dialog;
         return _this;
     }
+    CampanhaAdsMetricaIntradayListSimplesComponent.prototype.json = function (campanha) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(_exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_5__["ExibeTextoModalComponent"], {
+            width: '800px',
+            data: {
+                texto: campanha.jsonAds
+            }
+        });
+    };
     CampanhaAdsMetricaIntradayListSimplesComponent.prototype.preCarregaTela = function () {
         var _this = this;
         this.srv.TotaisDia()
@@ -2256,6 +2286,154 @@ var PERCENTUAL_AVISO = 1.5;
 
 /***/ }),
 
+/***/ "./src/app/conta-google-detalhe/conta-google-detalhe-base.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/conta-google-detalhe/conta-google-detalhe-base.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: ContaGoogleDetalheBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleDetalheBaseComponent", function() { return ContaGoogleDetalheBaseComponent; });
+var ContaGoogleDetalheBaseComponent = /** @class */ (function () {
+    function ContaGoogleDetalheBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    ContaGoogleDetalheBaseComponent.prototype.posCarregaTela = function () { };
+    ContaGoogleDetalheBaseComponent.prototype.ngOnInit = function () {
+        this.carregaTela();
+    };
+    ContaGoogleDetalheBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.router.params.subscribe(function (params) {
+            _this.idPrincipal = params['id'];
+            _this.srv.findById(_this.idPrincipal, _this.getFiltro())
+                .subscribe(function (result) {
+                _this.principal = result;
+                console.log('principal:', _this.principal);
+                _this.posCarregaTela();
+            });
+        });
+    };
+    ContaGoogleDetalheBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return ContaGoogleDetalheBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/conta-google-detalhe/conta-google-detalhe.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/conta-google-detalhe/conta-google-detalhe.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".dgc-card-interno {\n    width: 23%;\n}"
+
+/***/ }),
+
+/***/ "./src/app/conta-google-detalhe/conta-google-detalhe.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/conta-google-detalhe/conta-google-detalhe.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n<div class=\"dgc-painel-header\" *ngIf=\"principal\">\n\t<span>{{principal.nome}}</span>\n</div>\n\n<div class=\"dgc-card\">\n\t<div class=\"dgc-card-header\">\n\t\t<span>Público Alvo Atual</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card dgc-card-interno\" *ngFor=\"let publico of principal.publicoAlvoAdsDiarios\">\n\t\t\t<div class=\"dgc-card-header\">{{publico.nome}}</div>\n\t\t\t<div class=\"dgc-card-detalhe\">Display: {{publico.tamanhoRedeDisplay}}</div>\n\t\t\t<div class=\"dgc-card-detalhe\">Pesquisa: {{publico.tamanhoRedeDisplay}}</div>\n\t\t\t<div class=\"dgc-card-detalhe\">{{publico.data | date: 'dd-MM-yyyy' }}</div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"json(publico)\">JSON</button>\n\t\t\t</div>\n\t\t</div>\n\n\t</div>\n\n</div>\n\t\n<div class=\"dgc-card\">\n<div class=\"dgc-card-header\">\n<span>Quadro 2</span>\n\t</div>\n<div class=\"dgc-card-detalhe\" *ngFor=\"let rel of principal.processoEntidadeSaida\">\n<span></span>\n</div>\n<div class=\"dgc-card-comandos\">\n\t\t\t</div> \n  </div>\n<div class=\"dgc-card-comandos\">\n<button class=\"btn-primary btn-sm btn\" (click)=\"editaPasso()\">Novo</button>\n</div> \n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/conta-google-detalhe/conta-google-detalhe.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/conta-google-detalhe/conta-google-detalhe.component.ts ***!
+  \************************************************************************/
+/*! exports provided: ContaGoogleDetalheComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleDetalheComponent", function() { return ContaGoogleDetalheComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _conta_google_detalhe_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./conta-google-detalhe-base.component */ "./src/app/conta-google-detalhe/conta-google-detalhe-base.component.ts");
+/* harmony import */ var _exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../exibe-texto-modal/exibe-texto-modal.component */ "./src/app/exibe-texto-modal/exibe-texto-modal.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ContaGoogleDetalheComponent = /** @class */ (function (_super) {
+    __extends(ContaGoogleDetalheComponent, _super);
+    function ContaGoogleDetalheComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    ContaGoogleDetalheComponent.prototype.getFiltro = function () {
+        return {
+            'include': [
+                { 'relation': 'publicoAlvoAdsDiarios', 'scope': { 'where': { 'maisRecente': 1 } } }
+            ]
+        };
+    };
+    ContaGoogleDetalheComponent.prototype.json = function (segmento) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(_exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_5__["ExibeTextoModalComponent"], {
+            width: '800px',
+            data: {
+                texto: segmento.jsonAds
+            }
+        });
+    };
+    ContaGoogleDetalheComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-conta-google-detalhe',
+            template: __webpack_require__(/*! ./conta-google-detalhe.component.html */ "./src/app/conta-google-detalhe/conta-google-detalhe.component.html"),
+            styles: [__webpack_require__(/*! ./conta-google-detalhe.component.css */ "./src/app/conta-google-detalhe/conta-google-detalhe.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ContaGoogleApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], ContaGoogleDetalheComponent);
+    return ContaGoogleDetalheComponent;
+}(_conta_google_detalhe_base_component__WEBPACK_IMPORTED_MODULE_4__["ContaGoogleDetalheBaseComponent"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/conta-google-edit/conta-google-edit-base.component.ts":
 /*!***********************************************************************!*\
   !*** ./src/app/conta-google-edit/conta-google-edit-base.component.ts ***!
@@ -2537,7 +2715,7 @@ module.exports = ".dgc-card {\n    width: 250px;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Conta Google</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Suspensa: {{item.suspensa}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.idAds}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.tipo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.gmail}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Ativa: {{item.ativo}}</span>\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Tag Remarketing: {{item.codigoTagRemarketing}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Custo Mês: {{item.contaGoogleMetricaMes[0].custoAtual | currency: 'BRL'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Campanhas Ativas: {{item.contaGoogleMetricaMes[0].qtdeCampanhaAtiva}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Conta Google</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span class=\"dgc-link\" routerLink=\"/contaGoogleDetalhe/{{item.id}}\">{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Suspensa: {{item.suspensa}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.idAds}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.tipo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.gmail}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Ativa: {{item.ativo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Acesso: {{item.dataAcessoIntraday | date: 'dd/MM/yyyy HH:mm:ss' : 'UTC'}}</span>\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Tag Remarketing: {{item.codigoTagRemarketing}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Custo Mês: {{item.contaGoogleMetricaMes[0].custoAtual | currency: 'BRL'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Campanhas Ativas: {{item.contaGoogleMetricaMes[0].qtdeCampanhaAtiva}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -2840,6 +3018,96 @@ var EscolhePalavraChaveParaCampanhaTesteComponent = /** @class */ (function (_su
     ], EscolhePalavraChaveParaCampanhaTesteComponent);
     return EscolhePalavraChaveParaCampanhaTesteComponent;
 }(_base_component_base_seleciona_component__WEBPACK_IMPORTED_MODULE_2__["BaseSelecionaEditComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/exibe-texto-modal/exibe-texto-modal.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/exibe-texto-modal/exibe-texto-modal.component.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/exibe-texto-modal/exibe-texto-modal.component.html":
+/*!********************************************************************!*\
+  !*** ./src/app/exibe-texto-modal/exibe-texto-modal.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 *ngIf=\"texto\" mat-dialog-title>Objeto</h2>\n\n<mat-dialog-content>\n    <pre>{{texto}}</pre>\n</mat-dialog-content>\n\n<mat-dialog-actions>\n    <button mat-raised-button (click)=\"copiarTexto()\" >Copiar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n</mat-dialog-actions>\n\n\n\n\n"
+
+/***/ }),
+
+/***/ "./src/app/exibe-texto-modal/exibe-texto-modal.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/exibe-texto-modal/exibe-texto-modal.component.ts ***!
+  \******************************************************************/
+/*! exports provided: ExibeTextoModalComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExibeTextoModalComponent", function() { return ExibeTextoModalComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var ExibeTextoModalComponent = /** @class */ (function () {
+    function ExibeTextoModalComponent(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+    }
+    ExibeTextoModalComponent.prototype.ngOnInit = function () {
+        if (this.data.texto) {
+            this.texto = this.data.texto;
+        }
+    };
+    ExibeTextoModalComponent.prototype.copiarTexto = function () {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(this.texto).then(function () {
+                // Ação bem-sucedida
+                alert('Texto copiado para a área de transferência!');
+            }).catch(function (err) {
+                // Tratamento de erros, se houver
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+        else {
+            // Caso a API Clipboard não seja suportada
+            console.warn('A API Clipboard não é suportada neste navegador.');
+            // Implemente um fallback se necessário
+        }
+    };
+    ExibeTextoModalComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-exibe-texto-modal',
+            template: __webpack_require__(/*! ./exibe-texto-modal.component.html */ "./src/app/exibe-texto-modal/exibe-texto-modal.component.html"),
+            styles: [__webpack_require__(/*! ./exibe-texto-modal.component.css */ "./src/app/exibe-texto-modal/exibe-texto-modal.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object])
+    ], ExibeTextoModalComponent);
+    return ExibeTextoModalComponent;
+}());
 
 
 
@@ -3834,7 +4102,7 @@ module.exports = ".dgc-card {\n    width: 23%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produtos Margem maior 40% & Temperatura maior 60 ({{listaBase.length}})</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detlahe\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>\n\t\t    </div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>\n\t\t\t </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produtos Margem maior 40% & Temperatura maior 60 ({{listaBase.length}})</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmartPendente)\"> (pendente) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detlahe\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>\n\t\t    </div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>\n\t\t\t </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -3888,7 +4156,7 @@ var ListaAltaMargemAltaTemperaturaComponent = /** @class */ (function (_super) {
     }
     ListaAltaMargemAltaTemperaturaComponent.prototype.getFiltro = function () {
         return {
-            'include': 'produtoAfiliadoHotmart',
+            'include': ['produtoAfiliadoHotmart', 'produtoAfiliadoHotmartPendente'],
             'where': { 'and': [
                     { 'afiliacaoPercentual': { 'gte': 40 } },
                     { 'temperatura': { 'gte': 60 } },
@@ -3997,7 +4265,7 @@ module.exports = ".dgc-card {\n    width: 100%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Crescimento em Vendas</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( +{{item.deltaTemperatura}} )</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\" *ngFor=\"let palavra of item.ideiaPalavraChaves\">\n\t\t\t   <span>{{palavra.texto}} CPC: {{palavra.cpcMinimoTopPage}} - {{palavra.cpcMaximoTopPage}} Pesquisa: {{palavra.mediaPesquisa}} ({{palavra.dataAcesso | date: 'dd-MM-yyyy'}})</span>\n\t\t   </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Crescimento em Vendas</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmartPendente)\"> (pendente) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( +{{item.deltaTemperatura}} )</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\" *ngFor=\"let palavra of item.ideiaPalavraChaves\">\n\t\t\t   <span>{{palavra.texto}} CPC: {{palavra.cpcMinimoTopPage}} - {{palavra.cpcMaximoTopPage}} Pesquisa: {{palavra.mediaPesquisa}} ({{palavra.dataAcesso | date: 'dd-MM-yyyy'}})</span>\n\t\t   </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -4149,7 +4417,7 @@ module.exports = ".dgc-card {\n    width: 100%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>VisitaProdutoHotmart</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t   <span>Temp: {{item.temperatura}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\" *ngFor=\"let palavra of item.ideiaPalavraChaves\">\n\t\t\t   <span>{{palavra.texto}} CPC: {{palavra.cpcMinimoTopPage}} - {{palavra.cpcMaximoTopPage}} Pesquisa: {{palavra.mediaPesquisa}} ({{palavra.dataAcesso | date: 'dd-MM-yyyy'}})</span>\n\t\t   </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>VisitaProdutoHotmart</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmartPendente)\"> (pendente) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t   <span>Temp: {{item.temperatura}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\" *ngFor=\"let palavra of item.ideiaPalavraChaves\">\n\t\t\t   <span>{{palavra.texto}} CPC: {{palavra.cpcMinimoTopPage}} - {{palavra.cpcMaximoTopPage}} Pesquisa: {{palavra.mediaPesquisa}} ({{palavra.dataAcesso | date: 'dd-MM-yyyy'}})</span>\n\t\t   </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -4220,6 +4488,169 @@ var ListaEstiloFanartComponent = /** @class */ (function (_super) {
     ], ListaEstiloFanartComponent);
     return ListaEstiloFanartComponent;
 }(_lista_estilo_fanart_base_component__WEBPACK_IMPORTED_MODULE_4__["ListaEstiloFanartBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lista-super-margem/lista-super-margem-base.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/lista-super-margem/lista-super-margem-base.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: ListaSuperMargemBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListaSuperMargemBaseComponent", function() { return ListaSuperMargemBaseComponent; });
+var ListaSuperMargemBaseComponent = /** @class */ (function () {
+    function ListaSuperMargemBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    ListaSuperMargemBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    ListaSuperMargemBaseComponent.prototype.preCarregaTela = function () { };
+    ListaSuperMargemBaseComponent.prototype.posCarregaLista = function () { };
+    ListaSuperMargemBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    ListaSuperMargemBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ListaSuperMargemBaseComponent.prototype.getDialogo1 = function () {
+    };
+    ListaSuperMargemBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ListaSuperMargemBaseComponent.prototype.getDialogo2 = function () {
+    };
+    ListaSuperMargemBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return ListaSuperMargemBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/lista-super-margem/lista-super-margem.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/lista-super-margem/lista-super-margem.component.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".dgc-card {\n    width: 23%;\n}"
+
+/***/ }),
+
+/***/ "./src/app/lista-super-margem/lista-super-margem.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/lista-super-margem/lista-super-margem.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produtos Margem maior 60% & Temperatura maior 30 ({{listaBase.length}})</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmartPendente)\"> (pendente) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detlahe\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>\n\t\t    </div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>\n\t\t\t </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/lista-super-margem/lista-super-margem.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/lista-super-margem/lista-super-margem.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ListaSuperMargemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListaSuperMargemComponent", function() { return ListaSuperMargemComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _lista_super_margem_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lista-super-margem-base.component */ "./src/app/lista-super-margem/lista-super-margem-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ListaSuperMargemComponent = /** @class */ (function (_super) {
+    __extends(ListaSuperMargemComponent, _super);
+    function ListaSuperMargemComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    ListaSuperMargemComponent.prototype.getFiltro = function () {
+        return {
+            'include': ['produtoAfiliadoHotmart', 'produtoAfiliadoHotmartPendente'],
+            'where': { 'and': [
+                    { 'afiliacaoPercentual': { 'gte': 60 } },
+                    { 'temperatura': { 'gte': 30 } },
+                    { 'maisRecente': 1 }
+                ] },
+            'order': 'temperatura desc'
+        };
+    };
+    ListaSuperMargemComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lista-super-margem',
+            template: __webpack_require__(/*! ./lista-super-margem.component.html */ "./src/app/lista-super-margem/lista-super-margem.component.html"),
+            styles: [__webpack_require__(/*! ./lista-super-margem.component.css */ "./src/app/lista-super-margem/lista-super-margem.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["VisitaProdutoHotmartApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], ListaSuperMargemComponent);
+    return ListaSuperMargemComponent;
+}(_lista_super_margem_base_component__WEBPACK_IMPORTED_MODULE_4__["ListaSuperMargemBaseComponent"]));
 
 
 
@@ -4310,7 +4741,7 @@ module.exports = ".dgc-card {\n    width: 31%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Load da Página de Venda</span>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.produtoAfiliadoHotmart.nome}}\n\t\t\t\t ({{item.dataHora | date : 'dd/MM/yyy HH:mm:ss' : 'UTC'}})</span>\n\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe dgc-painel-principal\">\n\t\t\t\t<span>{{item.visitante}} ({{(item.qtdeVisita>0?item.qtdeVisita:'versão sem cookie')}})</span>\n\t\t\t   \t<span class=\"dgc-direita\">{{item.hotmartId}}</span>\n\t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Load da Página de Venda</span>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.produtoAfiliadoHotmart.nome}}\n\t\t\t\t ({{item.dataHora | date : 'dd/MM/yyy HH:mm:ss' : 'UTC'}})</span>\n\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe dgc-painel-principal\">\n\t\t\t\t<span>{{item.visitante}} ({{(item.qtdeVisita>0?item.qtdeVisita:'versão sem cookie')}})</span>\n\t\t\t   \t<span class=\"dgc-direita\">{{item.hotmartId}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.dominio}}</span>\n\t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -5197,7 +5628,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\" *ngIf=\"principal\">\n      <span>{{principal.nome}}</span>\n      <span class=\"dgc-direita\">{{principal.hotmartId}}</span>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-detalhe\">\n      <span>{{principal.contaGoogle.nome}} </span>\n      <span *ngIf=\"principal.contaRemarketing\"> - {{principal.contaRemarketing.nome}}</span>\n    </div>\n    <div class=\"dgc-card-header\">\n      <a href=\"{{principal.urlFinal}}\" target=\"_blank\">{{principal.urlFinal}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <a href=\"{{principal.urlPropria}}\" target=\"_blank\">{{principal.urlPropria}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <span>You Tube:{{principal.urlYouTube}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <span>Work: {{principal.trabalho}}</span>\n    </div>\n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn dgc-direita\" (click)=\"editaProduto(principal)\">Edita Produto</button>\n   </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Visitas\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.visitaProdutoHotmarts\">\n      {{item.dataInsercao | date : 'dd/MM/yyyy'}}\n      Temperatura: {{item.temperatura}} Comissão : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)\n    </div>\n  </div>\n\n    <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Palavras-Chave\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of  principal.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n      {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}} \n      Cpc: {{item.cpcMax | currency : 'BRL'}} {{item.cpcMin | currency : 'BRL'}}\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Precos\n    </div>\n    <div *ngFor=\"let item of principal.precoProdutoAfiliados\">\n      <div class=\"dgc-card-headeer\">\n        <span>{{item.nome}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span> {{item.parcelas}} X {{item.valorParcela | currency : 'BRL'}} = {{item.valorTotalParcelado | currency : 'BRL' }}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>A vista: {{item.valorAVista | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>comissão a vista: {{ item.valorComissao | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>comissão parcelada: {{ item.valorComissaoParcelado | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>CPC Desejado: {{item.cpcDesejado | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>{{item.urlCheckout}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n         <button class=\"btn-primary btn-sm btn dgc-direita\" (click)=\"editaPreco(item)\">Edita Preço</button>\n      </div>\n    </div>\n\n     \n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn\" (click)=\"atualizaPreco()\">Atualiza Preços</button>\n      <button class=\"btn-primary btn-sm btn\" (click)=\"editaPreco()\">Novo Preço</button>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Hotlinks\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.produtoAfiliadoHotlinks\">\n      <span>{{item.descricao}} - {{item.hotlink}}</span>\n      <a href=\"{{item.hotlink}}\" target=\"_blank\">abrir</a>\n    </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Pixel\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}}</span>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Público Alvo\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.publicoAlvoAdsDiarios\">\n      <span>{{item.nome}} - Pesquisa {{item.tamanhoRedePesquisa}} - Display: {{item.tamanhoRedeDisplay}} ({{item.data | date : 'dd/MM/yyyy'}})</span>\n    </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios - Rede Pesquisa</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncio(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-detalhe\">\n        Titulo1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo2\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo3\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 2\n      </div>\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncio(item)\">Editar</button>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios - Rede Display</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncioDisplay(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncioDisplay(item)\">Editar</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>\n\n"
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n  <div class=\"dgc-painel-header\" *ngIf=\"principal\">\n      <span>{{principal.nome}}</span>\n      <span class=\"dgc-direita\">{{principal.hotmartId}}</span>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-detalhe\">\n      <span>{{principal.contaGoogle.nome}} </span>\n      <span *ngIf=\"principal.contaRemarketing\"> - {{principal.contaRemarketing.nome}}</span>\n    </div>\n    <div class=\"dgc-card-header\">\n      <a href=\"{{principal.urlFinal}}\" target=\"_blank\">{{principal.urlFinal}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <a href=\"{{principal.urlPropria}}\" target=\"_blank\">{{principal.urlPropria}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      Presell: <a href=\"{{principal.urlPresell}}\" target=\"_blank\">{{principal.urlPresell}}</a>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <span>You Tube:{{principal.urlYouTube}}</span>\n    </div>\n    <div class=\"dgc-card-detalhe\">\n      <span>Work: {{principal.trabalho}}</span>\n    </div>\n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn dgc-direita\" (click)=\"editaProduto(principal)\">Edita Produto</button>\n   </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Visitas\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.visitaProdutoHotmarts\">\n      {{item.dataInsercao | date : 'dd/MM/yyyy'}}\n      Temperatura: {{item.temperatura}} Comissão : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)\n    </div>\n  </div>\n\n    <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Palavras-Chave\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of  principal.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n      {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}} \n      Cpc: {{item.cpcMax | currency : 'BRL'}} {{item.cpcMin | currency : 'BRL'}}\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Precos\n    </div>\n    <div *ngFor=\"let item of principal.precoProdutoAfiliados\">\n      <div class=\"dgc-card-headeer\">\n        <span>{{item.nome}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span> {{item.parcelas}} X {{item.valorParcela | currency : 'BRL'}} = {{item.valorTotalParcelado | currency : 'BRL' }}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>A vista: {{item.valorAVista | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>comissão a vista: {{ item.valorComissao | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>comissão parcelada: {{ item.valorComissaoParcelado | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>CPC Desejado: {{item.cpcDesejado | currency : 'BRL'}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        <span>{{item.urlCheckout}}</span>\n      </div>\n      <div class=\"dgc-card-detalhe\">\n         <button class=\"btn-primary btn-sm btn dgc-direita\" (click)=\"editaPreco(item)\">Edita Preço</button>\n      </div>\n    </div>\n\n     \n    <div class=\"dgc-card-comandos\">\n      <button class=\"btn-primary btn-sm btn\" (click)=\"atualizaPreco()\">Atualiza Preços</button>\n      <button class=\"btn-primary btn-sm btn\" (click)=\"editaPreco()\">Novo Preço</button>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Hotlinks\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.produtoAfiliadoHotlinks\">\n      <span>{{item.descricao}} - {{item.hotlink}}</span>\n      <a href=\"{{item.hotlink}}\" target=\"_blank\">abrir</a>\n    </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Pixel\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}} \n        ( {{(principal.pixelGoogle?principal.pixelGoogle.codigo1:'-')}} )</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}} \n        ( {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.codigo1:'-')}} )</span>\n    </div>\n    <div class=\"dgc-card-detalhe\" >\n      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}} \n        ( {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.codigo1:'-')}} )</span>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      Público Alvo\n    </div>\n    <div class=\"dgc-card-detalhe\" *ngFor=\"let item of principal.publicoAlvoAdsDiarios\">\n      <span>{{item.nome}} - Pesquisa {{item.tamanhoRedePesquisa}} - Display: {{item.tamanhoRedeDisplay}} ({{item.data | date : 'dd/MM/yyyy'}})</span>\n    </div>\n  </div>\n\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios - Rede Pesquisa</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncio(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-detalhe\">\n        Titulo1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo2\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Titulo3\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 1\n      </div>\n      <div class=\"dgc-card-detalhe\">\n        Descrição 2\n      </div>\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncio(item)\">Editar</button>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"dgc-card\">\n    <div class=\"dgc-card-header\">\n      <span>Anúncios - Rede Display</span>\n      <button class=\"dgc-direita\" (click)=\"editaAnuncioDisplay(principal)\">novo</button>\n    </div>\n    <div class=\"dgc-card\">\n      <div class=\"dgc-card-comandos\">\n        <button class=\"btn-primary btn-sm btn\" (click)=\"editaAnuncioDisplay(item)\">Editar</button>\n      </div>\n    </div>\n  </div>\n\n\n</div>\n\n"
 
 /***/ }),
 
@@ -5342,7 +5773,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Produto Afiliado Hotmart</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #hotmartId [(ngModel)]=\"item.hotmartId\" name=\"hotmartId\" placeholder=\"Hotmart Id\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlFinal [(ngModel)]=\"item.urlFinal\" name=\"urlFinal\" placeholder=\"Url Final\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlTracking [(ngModel)]=\"item.urlTracking\" name=\"urlTracking\" placeholder=\"Url Tracking\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput maxlength=\"1\" #geraTesteCampanha [(ngModel)]=\"item.geraTesteCampanha\" name=\"geraTesteCampanha\" placeholder=\"Gera Campanha de Teste (0/1)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #sigla maxlength=\"8\" [(ngModel)]=\"item.sigla\" name=\"sigla\" placeholder=\"Sigla (8 caracteres)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #precoReal  [(ngModel)]=\"item.precoReal\" name=\"precoReal\" placeholder=\"Comissão Valor Real\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #vendaTotal  [(ngModel)]=\"item.vendaTotal\" name=\"vendaTotal\" placeholder=\"Valor Venda\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #qtdeVenda  [(ngModel)]=\"item.qtdeVenda\" name=\"qtdeVenda\" placeholder=\"Quantdade Venda\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #criaPixelVenda  [(ngModel)]=\"item.criaPixelVenda\" name=\"criaPixelVenda\" placeholder=\"Cria Pixel\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Corrente\"  #contaGoogleId [(ngModel)]=\"item.contaGoogleId\" name=\"contaGoogleId\">\n        <mat-option *ngFor=\"let conta of listaConta\" [ngStyle]=\"{'color': conta.suspensa === 1 ? 'red' : 'inherit'}\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Remarketing\"  #contaGoogleRemarketingId [(ngModel)]=\"item.contaGoogleRemarketingId\" name=\"contaGoogleRemarketingId\">\n        <mat-option *ngFor=\"let conta of listaContaRemarketing\" [ngStyle]=\"{'color': conta.suspensa === 1 ? 'red' : 'inherit'}\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #trabalho  [(ngModel)]=\"item.trabalho\" name=\"trabalho\" placeholder=\"Produto de trabalho\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlPropria  [(ngModel)]=\"item.urlPropria\" name=\"urlPropria\" placeholder=\"Url Própria\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #complementoAnuncio  [(ngModel)]=\"item.complementoAnuncio\" name=\"complementoAnuncio\" placeholder=\"Sufixo Anúncio\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #rejeicaoUrlOriginal  [(ngModel)]=\"item.rejeicaoUrlOriginal\" name=\"rejeicaoUrlOriginal\" placeholder=\"Rejeição Url Original\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #precoMedioProduto  [(ngModel)]=\"item.precoMedioProduto\" name=\"precoMedioProduto\" placeholder=\"Preço Médio Produto\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #lucroMedioProduto  [(ngModel)]=\"item.lucroMedioProduto\" name=\"lucroMedioProduto\" placeholder=\"Lucro Médio Produto\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlYouTube  [(ngModel)]=\"item.urlYouTube\" name=\"urlYouTube\" placeholder=\"Url YouTube\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #possuiImagemRedeDisplay  [(ngModel)]=\"item.possuiImagemRedeDisplay\" name=\"possuiImagemRedeDisplay\" placeholder=\"Possui imagem para Rede Display\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #comentario  [(ngModel)]=\"item.comentario\" name=\"comentario\" placeholder=\"Comentário\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Produto Afiliado Hotmart</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n  <mat-dialog-content>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #hotmartId [(ngModel)]=\"item.hotmartId\" name=\"hotmartId\" placeholder=\"Hotmart Id\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlPresell [(ngModel)]=\"item.urlPresell\" name=\"urlPresell\" placeholder=\"Url Presell\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlFinal [(ngModel)]=\"item.urlFinal\" name=\"urlFinal\" placeholder=\"Url Final\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlTracking [(ngModel)]=\"item.urlTracking\" name=\"urlTracking\" placeholder=\"Url Tracking\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput maxlength=\"1\" #geraTesteCampanha [(ngModel)]=\"item.geraTesteCampanha\" name=\"geraTesteCampanha\" placeholder=\"Gera Campanha de Teste (0/1)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #sigla maxlength=\"8\" [(ngModel)]=\"item.sigla\" name=\"sigla\" placeholder=\"Sigla (8 caracteres)\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #precoReal  [(ngModel)]=\"item.precoReal\" name=\"precoReal\" placeholder=\"Comissão Valor Real\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #vendaTotal  [(ngModel)]=\"item.vendaTotal\" name=\"vendaTotal\" placeholder=\"Valor Venda\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #qtdeVenda  [(ngModel)]=\"item.qtdeVenda\" name=\"qtdeVenda\" placeholder=\"Quantdade Venda\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #criaPixelVenda  [(ngModel)]=\"item.criaPixelVenda\" name=\"criaPixelVenda\" placeholder=\"Cria Pixel\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Corrente\"  #contaGoogleId [(ngModel)]=\"item.contaGoogleId\" name=\"contaGoogleId\">\n        <mat-option *ngFor=\"let conta of listaConta\" [ngStyle]=\"{'color': conta.suspensa === 1 ? 'red' : 'inherit'}\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n      <mat-select placeholder=\"Conta Google Remarketing\"  #contaGoogleRemarketingId [(ngModel)]=\"item.contaGoogleRemarketingId\" name=\"contaGoogleRemarketingId\">\n        <mat-option *ngFor=\"let conta of listaContaRemarketing\" [ngStyle]=\"{'color': conta.suspensa === 1 ? 'red' : 'inherit'}\" [value]=\"conta.id\">\n          {{ conta.gmail}} ({{conta.nome}})\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #trabalho  [(ngModel)]=\"item.trabalho\" name=\"trabalho\" placeholder=\"Produto de trabalho\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlPropria  [(ngModel)]=\"item.urlPropria\" name=\"urlPropria\" placeholder=\"Url Própria\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #complementoAnuncio  [(ngModel)]=\"item.complementoAnuncio\" name=\"complementoAnuncio\" placeholder=\"Sufixo Anúncio\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #rejeicaoUrlOriginal  [(ngModel)]=\"item.rejeicaoUrlOriginal\" name=\"rejeicaoUrlOriginal\" placeholder=\"Rejeição Url Original\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #precoMedioProduto  [(ngModel)]=\"item.precoMedioProduto\" name=\"precoMedioProduto\" placeholder=\"Preço Médio Produto\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #lucroMedioProduto  [(ngModel)]=\"item.lucroMedioProduto\" name=\"lucroMedioProduto\" placeholder=\"Lucro Médio Produto\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #urlYouTube  [(ngModel)]=\"item.urlYouTube\" name=\"urlYouTube\" placeholder=\"Url YouTube\" autocomplete=\"off\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #possuiImagemRedeDisplay  [(ngModel)]=\"item.possuiImagemRedeDisplay\" name=\"possuiImagemRedeDisplay\" placeholder=\"Possui imagem para Rede Display\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n    <mat-form-field class=\"example-full-width\">\n      <input matInput #comentario  [(ngModel)]=\"item.comentario\" name=\"comentario\" placeholder=\"Comentário\" autocomplete=\"off\"/>\n    </mat-form-field> \n\n\n  </mat-dialog-content>\n\n  <mat-dialog-actions>\n    <button mat-raised-button>Salvar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n  </mat-dialog-actions>\n\n</form>\n"
 
 /***/ }),
 
@@ -6503,7 +6934,7 @@ var ProdutosTopVendasComponent = /** @class */ (function (_super) {
 /*!*************************************!*\
   !*** ./src/app/shared/sdk/index.ts ***!
   \*************************************/
-/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, AccessToken, SDKToken, FireLoopRef, ErrorHandler, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, LoggerService */
+/*! exports provided: SDKBrowserModule, CookieBrowser, StorageBrowser, LoopBackConfig, BaseStorage, InternalStorage, SDKStorage, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, ProdutoAfiliadoHotmartPendente, AccessToken, SDKToken, FireLoopRef, ErrorHandler, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6564,200 +6995,205 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_custom_PaginaVenda__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./services/custom/PaginaVenda */ "./src/app/shared/sdk/services/custom/PaginaVenda.ts");
 /* harmony import */ var _services_custom_AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./services/custom/AnuncioCampanhaAdsDisplay */ "./src/app/shared/sdk/services/custom/AnuncioCampanhaAdsDisplay.ts");
 /* harmony import */ var _services_custom_ImagemConjunto__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./services/custom/ImagemConjunto */ "./src/app/shared/sdk/services/custom/ImagemConjunto.ts");
-/* harmony import */ var _models_index__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./models/index */ "./src/app/shared/sdk/models/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["User"]; });
+/* harmony import */ var _services_custom_ProdutoAfiliadoHotmartPendente__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./services/custom/ProdutoAfiliadoHotmartPendente */ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoHotmartPendente.ts");
+/* harmony import */ var _models_index__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./models/index */ "./src/app/shared/sdk/models/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["User"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PlataformaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PlataformaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoPlataforma"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoPlataforma"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["VisitaProdutoPlataforma"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["VisitaProdutoPlataforma"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["VisitaProdutoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["VisitaProdutoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcesso", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["TokenAcesso"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcesso", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["TokenAcesso"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChave", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["IdeiaPalavraChave"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChave", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["IdeiaPalavraChave"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioCampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PalavraCampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PalavraCampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoAfiliadoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AgendaVisitaHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["AgendaVisitaHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ModeloCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ModeloCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PixelGoogle"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PixelGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PalavraChaveCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PalavraChaveCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["FacebookConta"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["FacebookConta"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoAfiliadoMetrica"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoMetrica"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ContaGoogle"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ContaGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAdsMetrica"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsMetrica"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["LoadPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["LoadPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["SolicitacaoCheckout"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["SolicitacaoCheckout"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProduto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PlanoProduto"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProduto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PlanoProduto"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMes", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ContaGoogleMetricaMes"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMes", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ContaGoogleMetricaMes"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["LinkCheckout"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["LinkCheckout"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntraday", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAdsMetricaIntraday"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntraday", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsMetricaIntraday"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PrecoProdutoAfiliado"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PrecoProdutoAfiliado"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioAdsDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioAdsDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Visitante", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["Visitante"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Visitante", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["Visitante"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["VideoExecucao"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["VideoExecucao"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlink", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ProdutoAfiliadoHotlink"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlink", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoHotlink"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["TagIdSecaoPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["TagIdSecaoPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["CampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["OtimizacaoCampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["OtimizacaoCampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ListaRemarketingAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ListaRemarketingAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PublicoAlvoAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PublicoAlvoAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiario", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PublicoAlvoAdsDiario"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiario", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PublicoAlvoAdsDiario"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["PaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["PaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AnuncioCampanhaAdsDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAdsDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjunto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["ImagemConjunto"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjunto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ImagemConjunto"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["AccessToken"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendente", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoHotmartPendente"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["SDKToken"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["AccessToken"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _models_index__WEBPACK_IMPORTED_MODULE_55__["FireLoopRef"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["SDKToken"]; });
 
-/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ErrorHandler"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _models_index__WEBPACK_IMPORTED_MODULE_56__["FireLoopRef"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["TagIdSecaoPaginaVendaApi"]; });
+/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ErrorHandler"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["CampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ListaRemarketingAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ListaRemarketingAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PublicoAlvoAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PublicoAlvoAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiarioApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PublicoAlvoAdsDiarioApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiarioApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PublicoAlvoAdsDiarioApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAdsDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["AnuncioCampanhaAdsDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ImagemConjuntoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ImagemConjuntoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["SDKModels"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendenteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ProdutoAfiliadoHotmartPendenteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["LoopBackAuth"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["SDKModels"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["BaseLoopBackApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["LoopBackAuth"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["RealTime"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["BaseLoopBackApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["UserApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["RealTime"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PlataformaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["UserApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoPlataformaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PlataformaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["VisitaProdutoPlataformaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ProdutoPlataformaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["VisitaProdutoPlataformaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["VisitaProdutoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ProdutoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcessoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["TokenAcessoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["VisitaProdutoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChaveApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["IdeiaPalavraChaveApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcessoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["TokenAcessoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChaveApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["IdeiaPalavraChaveApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["CampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PalavraCampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["AnuncioCampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PalavraCampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AgendaVisitaHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ProdutoAfiliadoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["AgendaVisitaHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["CampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ModeloCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["AnuncioAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PixelGoogleApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ModeloCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PalavraChaveCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PixelGoogleApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PalavraChaveCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["FacebookContaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["AnuncioCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoMetricaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["FacebookContaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ContaGoogleApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ProdutoAfiliadoMetricaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsMetricaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ContaGoogleApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["LoadPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["CampanhaAdsMetricaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["SolicitacaoCheckoutApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["LoadPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProdutoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PlanoProdutoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["SolicitacaoCheckoutApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMesApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ContaGoogleMetricaMesApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProdutoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PlanoProdutoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["LinkCheckoutApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMesApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ContaGoogleMetricaMesApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntradayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["CampanhaAdsMetricaIntradayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["LinkCheckoutApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["PrecoProdutoAfiliadoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntradayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["CampanhaAdsMetricaIntradayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["AnuncioAdsDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["PrecoProdutoAfiliadoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["VisitanteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["AnuncioAdsDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["VideoExecucaoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["VisitanteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["ProdutoAfiliadoHotlinkApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["VideoExecucaoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_56__["LoggerService"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["ProdutoAfiliadoHotlinkApi"]; });
 
-/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./lb.config */ "./src/app/shared/sdk/lb.config.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return _lb_config__WEBPACK_IMPORTED_MODULE_57__["LoopBackConfig"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["TagIdSecaoPaginaVendaApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_57__["LoggerService"]; });
+
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return _lb_config__WEBPACK_IMPORTED_MODULE_58__["LoopBackConfig"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseStorage", function() { return _storage_storage_swaps__WEBPACK_IMPORTED_MODULE_4__["BaseStorage"]; });
 
@@ -6811,6 +7247,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 * export class AppModule { }
 *
 **/
+
 
 
 
@@ -6934,6 +7371,7 @@ var SDKBrowserModule = /** @class */ (function () {
                 _services_custom_PaginaVenda__WEBPACK_IMPORTED_MODULE_52__["PaginaVendaApi"],
                 _services_custom_AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_53__["AnuncioCampanhaAdsDisplayApi"],
                 _services_custom_ImagemConjunto__WEBPACK_IMPORTED_MODULE_54__["ImagemConjuntoApi"],
+                _services_custom_ProdutoAfiliadoHotmartPendente__WEBPACK_IMPORTED_MODULE_55__["ProdutoAfiliadoHotmartPendenteApi"],
                 internalStorageProvider,
                 { provide: _storage_storage_swaps__WEBPACK_IMPORTED_MODULE_4__["SDKStorage"], useClass: _storage_storage_browser__WEBPACK_IMPORTED_MODULE_9__["StorageBrowser"] }
             ]
@@ -6978,7 +7416,9 @@ var SDKBrowserModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return LoopBackConfig; });
+/* harmony import */ var src_app_constantes_base_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/constantes/base.url */ "./src/app/constantes/base.url.ts");
 /* tslint:disable */
+
 /**
 * @module LoopBackConfig
 * @description
@@ -7063,7 +7503,7 @@ var LoopBackConfig = /** @class */ (function () {
     LoopBackConfig.getRequestOptionsCredentials = function () {
         return LoopBackConfig.withCredentials;
     };
-    LoopBackConfig.path = '//0.0.0.0:23101';
+    LoopBackConfig.path = src_app_constantes_base_url__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"];
     LoopBackConfig.version = 'api';
     LoopBackConfig.authPrefix = '';
     LoopBackConfig.debug = true;
@@ -8050,6 +8490,10 @@ var CampanhaAdsMetricaIntraday = /** @class */ (function () {
                     name: 'primaryStatusReasons',
                     type: 'string'
                 },
+                "jsonAds": {
+                    name: 'jsonAds',
+                    type: 'string'
+                },
             },
             relations: {
                 campanhaAdsTeste: {
@@ -8545,6 +8989,10 @@ var ContaGoogle = /** @class */ (function () {
                 "hitsTag": {
                     name: 'hitsTag',
                     type: 'number'
+                },
+                "dataAcessoIntraday": {
+                    name: 'dataAcessoIntraday',
+                    type: 'Date'
                 },
                 "id": {
                     name: 'id',
@@ -9599,6 +10047,10 @@ var LoadPaginaVenda = /** @class */ (function () {
                 "qtdeVisita": {
                     name: 'qtdeVisita',
                     type: 'number'
+                },
+                "dominio": {
+                    name: 'dominio',
+                    type: 'string'
                 },
                 "paginaVendaId": {
                     name: 'paginaVendaId',
@@ -10720,6 +11172,10 @@ var ProdutoAfiliadoHotmart = /** @class */ (function () {
                     name: 'cpaInicial',
                     type: 'number'
                 },
+                "urlPresell": {
+                    name: 'urlPresell',
+                    type: 'string'
+                },
                 "contaGoogleId": {
                     name: 'contaGoogleId',
                     type: 'number'
@@ -10914,6 +11370,74 @@ var ProdutoAfiliadoHotmart = /** @class */ (function () {
         };
     };
     return ProdutoAfiliadoHotmart;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/models/ProdutoAfiliadoHotmartPendente.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/shared/sdk/models/ProdutoAfiliadoHotmartPendente.ts ***!
+  \*********************************************************************/
+/*! exports provided: ProdutoAfiliadoHotmartPendente */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendente", function() { return ProdutoAfiliadoHotmartPendente; });
+var ProdutoAfiliadoHotmartPendente = /** @class */ (function () {
+    function ProdutoAfiliadoHotmartPendente(data) {
+        Object.assign(this, data);
+    }
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `ProdutoAfiliadoHotmartPendente`.
+     */
+    ProdutoAfiliadoHotmartPendente.getModelName = function () {
+        return "ProdutoAfiliadoHotmartPendente";
+    };
+    /**
+    * @method factory
+    * @author Jonathan Casarrubias
+    * @license MIT
+    * This method creates an instance of ProdutoAfiliadoHotmartPendente for dynamic purposes.
+    **/
+    ProdutoAfiliadoHotmartPendente.factory = function (data) {
+        return new ProdutoAfiliadoHotmartPendente(data);
+    };
+    /**
+    * @method getModelDefinition
+    * @author Julien Ledun
+    * @license MIT
+    * This method returns an object that represents some of the model
+    * definitions.
+    **/
+    ProdutoAfiliadoHotmartPendente.getModelDefinition = function () {
+        return {
+            name: 'ProdutoAfiliadoHotmartPendente',
+            plural: 'ProdutoAfiliadoHotmartPendentes',
+            path: 'ProdutoAfiliadoHotmartPendentes',
+            idName: 'hotmartId',
+            properties: {
+                "hotmartId": {
+                    name: 'hotmartId',
+                    type: 'number'
+                },
+            },
+            relations: {
+                visitaProdutoHotmarts: {
+                    name: 'visitaProdutoHotmarts',
+                    type: 'VisitaProdutoHotmart[]',
+                    model: 'VisitaProdutoHotmart',
+                    relationType: 'hasMany',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
+            }
+        };
+    };
+    return ProdutoAfiliadoHotmartPendente;
 }());
 
 
@@ -11359,6 +11883,10 @@ var PublicoAlvoAdsDiario = /** @class */ (function () {
                 "hotmartId": {
                     name: 'hotmartId',
                     type: 'number'
+                },
+                "jsonAds": {
+                    name: 'jsonAds',
+                    type: 'string'
                 },
                 "pixelGoogleId": {
                     name: 'pixelGoogleId',
@@ -11931,6 +12459,14 @@ var VisitaProdutoHotmart = /** @class */ (function () {
                     keyFrom: 'hotmartId',
                     keyTo: 'hotmartId'
                 },
+                produtoAfiliadoHotmartPendente: {
+                    name: 'produtoAfiliadoHotmartPendente',
+                    type: 'ProdutoAfiliadoHotmartPendente',
+                    model: 'ProdutoAfiliadoHotmartPendente',
+                    relationType: 'belongsTo',
+                    keyFrom: 'hotmartId',
+                    keyTo: 'hotmartId'
+                },
             }
         };
     };
@@ -12065,7 +12601,7 @@ var Visitante = /** @class */ (function () {
 /*!********************************************!*\
   !*** ./src/app/shared/sdk/models/index.ts ***!
   \********************************************/
-/*! exports provided: User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, AccessToken, SDKToken, FireLoopRef */
+/*! exports provided: User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, ProdutoAfiliadoHotmartPendente, AccessToken, SDKToken, FireLoopRef */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12199,15 +12735,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ImagemConjunto__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./ImagemConjunto */ "./src/app/shared/sdk/models/ImagemConjunto.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjunto", function() { return _ImagemConjunto__WEBPACK_IMPORTED_MODULE_42__["ImagemConjunto"]; });
 
-/* harmony import */ var _BaseModels__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./BaseModels */ "./src/app/shared/sdk/models/BaseModels.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_43__["AccessToken"]; });
+/* harmony import */ var _ProdutoAfiliadoHotmartPendente__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./ProdutoAfiliadoHotmartPendente */ "./src/app/shared/sdk/models/ProdutoAfiliadoHotmartPendente.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendente", function() { return _ProdutoAfiliadoHotmartPendente__WEBPACK_IMPORTED_MODULE_43__["ProdutoAfiliadoHotmartPendente"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_43__["SDKToken"]; });
+/* harmony import */ var _BaseModels__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./BaseModels */ "./src/app/shared/sdk/models/BaseModels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_44__["AccessToken"]; });
 
-/* harmony import */ var _FireLoopRef__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./FireLoopRef */ "./src/app/shared/sdk/models/FireLoopRef.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _FireLoopRef__WEBPACK_IMPORTED_MODULE_44__["FireLoopRef"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_44__["SDKToken"]; });
+
+/* harmony import */ var _FireLoopRef__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./FireLoopRef */ "./src/app/shared/sdk/models/FireLoopRef.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _FireLoopRef__WEBPACK_IMPORTED_MODULE_45__["FireLoopRef"]; });
 
 /* tslint:disable */
+
 
 
 
@@ -20548,6 +21088,61 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `idConta` – `{number}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.AcessouIntraday = function (idConta, customHeaders) {
+        if (idConta === void 0) { idConta = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/acessouIntraday";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof idConta !== 'undefined' && idConta !== null)
+            _urlParams.idConta = idConta;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.ListaCompleta = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/listaCompleta";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Cria uma nova instância no campanhaAdsTestes deste modelo.
      *
      * @param {any} id ContaGoogle id
@@ -23140,6 +23735,8 @@ var LoadPaginaVendaApi = /** @class */ (function (_super) {
      *
      * @param {number} tempo
      *
+     * @param {string} dominio
+     *
      * @returns {object} An empty reference that will be
      *   populated with the actual data once the response is returned
      *   from the server.
@@ -23149,10 +23746,11 @@ var LoadPaginaVendaApi = /** @class */ (function (_super) {
      * This usually means the response is a `LoadPaginaVenda` object.)
      * </em>
      */
-    LoadPaginaVendaApi.prototype.InsereItem = function (idHm, visitante, tempo, customHeaders) {
+    LoadPaginaVendaApi.prototype.InsereItem = function (idHm, visitante, tempo, dominio, customHeaders) {
         if (idHm === void 0) { idHm = {}; }
         if (visitante === void 0) { visitante = {}; }
         if (tempo === void 0) { tempo = {}; }
+        if (dominio === void 0) { dominio = {}; }
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/LoadPaginaVendas/insereItem";
@@ -23165,6 +23763,8 @@ var LoadPaginaVendaApi = /** @class */ (function (_super) {
             _urlParams.visitante = visitante;
         if (typeof tempo !== 'undefined' && tempo !== null)
             _urlParams.tempo = tempo;
+        if (typeof dominio !== 'undefined' && dominio !== null)
+            _urlParams.dominio = dominio;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -32509,6 +33109,430 @@ var ProdutoAfiliadoHotmartApi = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoHotmartPendente.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/ProdutoAfiliadoHotmartPendente.ts ***!
+  \******************************************************************************/
+/*! exports provided: ProdutoAfiliadoHotmartPendenteApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendenteApi", function() { return ProdutoAfiliadoHotmartPendenteApi; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony import */ var _core_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/base.service */ "./src/app/shared/sdk/services/core/base.service.ts");
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/shared/sdk/services/core/auth.service.ts");
+/* harmony import */ var _core_error_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/error.service */ "./src/app/shared/sdk/services/core/error.service.ts");
+/* harmony import */ var _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sockets/socket.connections */ "./src/app/shared/sdk/sockets/socket.connections.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/* tslint:disable */
+
+
+
+
+
+
+
+
+/**
+ * Api services for the `ProdutoAfiliadoHotmartPendente` model.
+ */
+var ProdutoAfiliadoHotmartPendenteApi = /** @class */ (function (_super) {
+    __extends(ProdutoAfiliadoHotmartPendenteApi, _super);
+    function ProdutoAfiliadoHotmartPendenteApi(http, connection, models, auth, errorHandler) {
+        var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
+        _this.http = http;
+        _this.connection = connection;
+        _this.models = models;
+        _this.auth = auth;
+        _this.errorHandler = errorHandler;
+        return _this;
+    }
+    /**
+     * Localize um item relacionado por ID para visitaProdutoHotmarts.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @param {any} fk Chave estrangeira para visitaProdutoHotmarts
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmartPendente` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.findByIdVisitaProdutoHotmarts = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id/visitaProdutoHotmarts/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para visitaProdutoHotmarts.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @param {any} fk Chave estrangeira para visitaProdutoHotmarts
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.destroyByIdVisitaProdutoHotmarts = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id/visitaProdutoHotmarts/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para visitaProdutoHotmarts.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @param {any} fk Chave estrangeira para visitaProdutoHotmarts
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmartPendente` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.updateByIdVisitaProdutoHotmarts = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id/visitaProdutoHotmarts/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * visitaProdutoHotmarts consultas de ProdutoAfiliadoHotmartPendente.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmartPendente` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.getVisitaProdutoHotmarts = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id/visitaProdutoHotmarts";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no visitaProdutoHotmarts deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmartPendente` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.createVisitaProdutoHotmarts = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id/visitaProdutoHotmarts";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os visitaProdutoHotmarts deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.deleteVisitaProdutoHotmarts = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id/visitaProdutoHotmarts";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * visitaProdutoHotmarts contagens de ProdutoAfiliadoHotmartPendente.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.countVisitaProdutoHotmarts = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id/visitaProdutoHotmarts/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - Model instance data
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmartPendente` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.patchOrCreate = function (data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes";
+        var _routeParams = {};
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - An object of model property name/value pairs
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmartPendente` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.patchAttributes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `listaHotmartId` – `{any}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmartPendente` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.AtualizaPendente = function (listaHotmartId, customHeaders) {
+        if (listaHotmartId === void 0) { listaHotmartId = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/atualizaPendente";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof listaHotmartId !== 'undefined' && listaHotmartId !== null)
+            _urlParams.listaHotmartId = listaHotmartId;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no visitaProdutoHotmarts deste modelo.
+     *
+     * @param {any} id ProdutoAfiliadoHotmartPendente id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoAfiliadoHotmartPendente` object.)
+     * </em>
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.createManyVisitaProdutoHotmarts = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoAfiliadoHotmartPendentes/:id/visitaProdutoHotmarts";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `ProdutoAfiliadoHotmartPendente`.
+     */
+    ProdutoAfiliadoHotmartPendenteApi.prototype.getModelName = function () {
+        return "ProdutoAfiliadoHotmartPendente";
+    };
+    ProdutoAfiliadoHotmartPendenteApi = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"])),
+        __param(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"])),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"],
+            _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
+            _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
+    ], ProdutoAfiliadoHotmartPendenteApi);
+    return ProdutoAfiliadoHotmartPendenteApi;
+}(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoMetrica.ts":
 /*!**********************************************************************!*\
   !*** ./src/app/shared/sdk/services/custom/ProdutoAfiliadoMetrica.ts ***!
@@ -33864,6 +34888,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_PaginaVenda__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../../models/PaginaVenda */ "./src/app/shared/sdk/models/PaginaVenda.ts");
 /* harmony import */ var _models_AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../../models/AnuncioCampanhaAdsDisplay */ "./src/app/shared/sdk/models/AnuncioCampanhaAdsDisplay.ts");
 /* harmony import */ var _models_ImagemConjunto__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../../models/ImagemConjunto */ "./src/app/shared/sdk/models/ImagemConjunto.ts");
+/* harmony import */ var _models_ProdutoAfiliadoHotmartPendente__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../../models/ProdutoAfiliadoHotmartPendente */ "./src/app/shared/sdk/models/ProdutoAfiliadoHotmartPendente.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -33871,6 +34896,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 /* tslint:disable */
+
 
 
 
@@ -33961,6 +34987,7 @@ var SDKModels = /** @class */ (function () {
             PaginaVenda: _models_PaginaVenda__WEBPACK_IMPORTED_MODULE_41__["PaginaVenda"],
             AnuncioCampanhaAdsDisplay: _models_AnuncioCampanhaAdsDisplay__WEBPACK_IMPORTED_MODULE_42__["AnuncioCampanhaAdsDisplay"],
             ImagemConjunto: _models_ImagemConjunto__WEBPACK_IMPORTED_MODULE_43__["ImagemConjunto"],
+            ProdutoAfiliadoHotmartPendente: _models_ProdutoAfiliadoHotmartPendente__WEBPACK_IMPORTED_MODULE_44__["ProdutoAfiliadoHotmartPendente"],
         };
     }
     SDKModels.prototype.get = function (modelName) {
@@ -35702,6 +36729,37 @@ var VisitaProdutoHotmartApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Busca relação produtoAfiliadoHotmartPendente de belongsTo.
+     *
+     * @param {any} id VisitaProdutoHotmart id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `VisitaProdutoHotmart` object.)
+     * </em>
+     */
+    VisitaProdutoHotmartApi.prototype.getProdutoAfiliadoHotmartPendente = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/VisitaProdutoHotmarts/:id/produtoAfiliadoHotmartPendente";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * ideiaPalavraChaves consultas de VisitaProdutoHotmart.
      *
      * @param {any} id VisitaProdutoHotmart id
@@ -36629,7 +37687,7 @@ var VisitanteApi = /** @class */ (function (_super) {
 /*!*****************************************************!*\
   !*** ./src/app/shared/sdk/services/custom/index.ts ***!
   \*****************************************************/
-/*! exports provided: TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, SDKModels, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, LoggerService */
+/*! exports provided: CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SDKModels, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36763,13 +37821,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ImagemConjunto__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./ImagemConjunto */ "./src/app/shared/sdk/services/custom/ImagemConjunto.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _ImagemConjunto__WEBPACK_IMPORTED_MODULE_42__["ImagemConjuntoApi"]; });
 
-/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _SDKModels__WEBPACK_IMPORTED_MODULE_43__["SDKModels"]; });
+/* harmony import */ var _ProdutoAfiliadoHotmartPendente__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./ProdutoAfiliadoHotmartPendente */ "./src/app/shared/sdk/services/custom/ProdutoAfiliadoHotmartPendente.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendenteApi", function() { return _ProdutoAfiliadoHotmartPendente__WEBPACK_IMPORTED_MODULE_43__["ProdutoAfiliadoHotmartPendenteApi"]; });
 
-/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./logger.service */ "./src/app/shared/sdk/services/custom/logger.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _logger_service__WEBPACK_IMPORTED_MODULE_44__["LoggerService"]; });
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _SDKModels__WEBPACK_IMPORTED_MODULE_44__["SDKModels"]; });
+
+/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./logger.service */ "./src/app/shared/sdk/services/custom/logger.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _logger_service__WEBPACK_IMPORTED_MODULE_45__["LoggerService"]; });
 
 /* tslint:disable */
+
 
 
 
@@ -36916,7 +37978,7 @@ var LoggerService = /** @class */ (function () {
 /*!**********************************************!*\
   !*** ./src/app/shared/sdk/services/index.ts ***!
   \**********************************************/
-/*! exports provided: ErrorHandler, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, LoggerService */
+/*! exports provided: ErrorHandler, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36931,8 +37993,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["RealTime"]; });
 
 /* harmony import */ var _custom_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom/index */ "./src/app/shared/sdk/services/custom/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["TagIdSecaoPaginaVendaApi"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["CampanhaAdsRedeDisplayApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
@@ -36948,6 +38008,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["AnuncioCampanhaAdsDisplayApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ImagemConjuntoApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendenteApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoHotmartPendenteApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["SDKModels"]; });
 
@@ -37018,6 +38080,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["VideoExecucaoApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ProdutoAfiliadoHotlinkApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["TagIdSecaoPaginaVendaApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["LoggerService"]; });
 
@@ -37604,7 +38668,7 @@ var SDKStorage = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsMetricaIntradayListSimples\">\n        <i class=\"fa fa-search\"></i>\n        <p>Intraday</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/acessos\">\n        <i class=\"fa fa-search\"></i>\n        <p>Acessos</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/checkout\">\n        <i class=\"fa fa-search\"></i>\n        <p>Checkout</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/metricaCampanha\">\n        <i class=\"fa fa-search\"></i>\n        <p>Métricas de Campanhas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresCpc\">\n        <i class=\"fa fa-search\"></i>\n        <p>(usar essse) Melhores Cpc</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTop\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/estiloFanart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Estilo Fanart</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/crescimentoTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Crescimento Temperatura</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/listaAltaMargemAltaTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Margem e Temperatura (40/60)</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtosTopVendas\">\n        <i class=\"fa fa-search\"></i>\n        <p>Top 50 Vendas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTopPesquisa\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top Pesquisa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/afiliadoMedio\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Medio</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoTrabalho\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/workProduto/0\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work Passo a Passo</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/resumoVisitaHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Resumo Visita Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsTesteAtivaMetrica\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanha Ativa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pendenteEstrutura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pendente Estrutura</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
+module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsMetricaIntradayListSimples\">\n        <i class=\"fa fa-search\"></i>\n        <p>Intraday</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/acessos\">\n        <i class=\"fa fa-search\"></i>\n        <p>Acessos</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/checkout\">\n        <i class=\"fa fa-search\"></i>\n        <p>Checkout</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/metricaCampanha\">\n        <i class=\"fa fa-search\"></i>\n        <p>Métricas de Campanhas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresCpc\">\n        <i class=\"fa fa-search\"></i>\n        <p>(usar essse) Melhores Cpc</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTop\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/estiloFanart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Estilo Fanart</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/crescimentoTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Crescimento Temperatura</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/listaAltaMargemAltaTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Margem e Temperatura (40/60)</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/listaSuperMargem\">\n        <i class=\"fa fa-search\"></i>\n        <p>Super Margem</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtosTopVendas\">\n        <i class=\"fa fa-search\"></i>\n        <p>Top 50 Vendas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTopPesquisa\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top Pesquisa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/afiliadoMedio\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Medio</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoTrabalho\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/workProduto/0\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work Passo a Passo</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/resumoVisitaHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Resumo Visita Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsTesteAtivaMetrica\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanha Ativa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pendenteEstrutura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pendente Estrutura</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
 
 /***/ }),
 

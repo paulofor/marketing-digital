@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automaquiagem</title>
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #000000; /* Alterando para preto (#000000) */
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; /* Distribui os elementos ao redor */
+    }
+
+    .elemento {
+      flex: 1 1 30%; /* Define a flexibilidade dos elementos */
+      margin: 10px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      box-sizing: border-box; /* Garante que padding não aumente o tamanho do elemento */
+    }
+
+    /* Estilo para a primeira seção */
+    section:nth-child(odd) {
+      background-color: black;
+      color: white;
+    }
+
+  /* ... (seus estilos CSS existentes) ... */
+
+  .titulo-section {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #000000; /* Alterando para preto (#000000) */
+    }
+
+    .titulo {
+      font-size: 50px; /* Alterando o tamanho da fonte para 50px */
+      margin-bottom: 10px;
+      color: #ffffff; /* Definindo a cor do texto como branco (#ffffff) */
+    }
+
+    .subtitulo {
+      font-size: 42px;
+      color: #ffffff; /* Cor do subtítulo */
+    }
+
+
+    /* Media query para dispositivos com largura de tela menor que 768px (exemplo: dispositivos móveis) */
+    @media screen and (max-width: 768px) {
+      .elemento {
+        flex: 1 1 100%; /* Altera a flexibilidade para ocupar toda a largura disponível */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="recursos/logo_lv.jpg" alt="Logo da Empresa">
+  </header>
+
+  <!-- Nova seção para o título -->
+  <section class="titulo-section">
+    <div class="titulo">O segredo da Automaquiagem</div>
+    <div class="subtitulo">Você Bonita e Pronta para Qualquer Ocasião</div>
+  </section>
+
+
+  <section>
+    <div class="container">
+      <div class="elemento">Elemento 1</div>
+      <div class="elemento">Elemento 2</div>
+      <div class="elemento">Elemento 3</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="elemento">Elemento 4</div>
+      <div class="elemento">Elemento 5</div>
+      <div class="elemento">Elemento 6</div>
+    </div>
+  </section>
+</body>
+</html>

@@ -12,7 +12,7 @@ public class TesteAdsObj extends DaoAplicacao {
 	@Override
 	protected void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		ContaGoogle_ListaAtivaRemarketing exec = new ContaGoogle_ListaAtivaRemarketingImpl();
+		TesteObjetos exec = new TesteObjetosImpl();
 		exec.setComum(ds);
 		exec.executa();
 		executaFinalizacao(ds);

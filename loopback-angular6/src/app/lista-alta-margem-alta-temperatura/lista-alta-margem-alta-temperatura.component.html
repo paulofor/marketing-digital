@@ -8,6 +8,7 @@
 				<span *ngIf="(!item.produtoAfiliadoHotmart)">{{item.nome}}</span>
 				<span *ngIf="(item.produtoAfiliadoHotmart)" class="dgc-link" routerLink="/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}">{{item.nome}}</span>
 				<span *ngIf="(item.produtoAfiliadoHotmart)"> (afiliado) </span>
+				<span *ngIf="(item.produtoAfiliadoHotmartPendente)"> (pendente) </span>
 			</div>
 			<div class="dgc-card-detlahe">
 			   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>

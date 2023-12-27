@@ -35,6 +35,7 @@ public class VisitaProdutoHotmart extends Model {
 	private int deltaTemperatura;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
+	private ProdutoAfiliadoHotmartPendente ProdutoAfiliadoHotmartPendente;
 	// Relacionamentos N
 	private List<ProdutoAfiliadoMetrica> ProdutoAfiliadoMetricas;
 	private List<IdeiaPalavraChave> IdeiaPalavraChaves;
@@ -44,6 +45,13 @@ public class VisitaProdutoHotmart extends Model {
 	}
 	public void setId(Integer id) {
 		this.setIdObjeto(id);
+	}
+
+	public int setIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long setIdLong() {
+		return new Long(getId().toString());
 	}
 
 	public JSONObject getJSON() {
@@ -197,6 +205,13 @@ public class VisitaProdutoHotmart extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotmartPendente getProdutoAfiliadoHotmartPendente() {
+		return ProdutoAfiliadoHotmartPendente;
+	}
+	public void setProdutoAfiliadoHotmartPendente(HashMap valor) {
+		this.ProdutoAfiliadoHotmartPendente = new ProdutoAfiliadoHotmartPendente();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotmartPendente, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ProdutoAfiliadoMetrica> getProdutoAfiliadoMetricas() {
 		return  ProdutoAfiliadoMetricas;

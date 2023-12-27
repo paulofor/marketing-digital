@@ -17,7 +17,7 @@ export class ListaAltaMargemAltaTemperaturaComponent extends ListaAltaMargemAlta
 
 	getFiltro() {
 		return {
-			'include' : 'produtoAfiliadoHotmart',
+			'include' : ['produtoAfiliadoHotmart','produtoAfiliadoHotmartPendente'],
 			'where' : {'and' : [
 				{'afiliacaoPercentual' : {'gte' : 40}},
 				{'temperatura' : {'gte' : 60}},

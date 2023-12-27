@@ -42,5 +42,6 @@ export * from './PublicoAlvoAdsDiario';
 export * from './PaginaVenda';
 export * from './AnuncioCampanhaAdsDisplay';
 export * from './ImagemConjunto';
+export * from './ProdutoAfiliadoHotmartPendente';
 export * from './BaseModels';
 export * from './FireLoopRef';

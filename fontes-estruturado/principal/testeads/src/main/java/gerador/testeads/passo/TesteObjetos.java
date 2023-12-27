@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class TesteObjetos extends DaoAplicacao { 
 
-	private int NUM_PASSO = 2;
+	private int NUM_PASSO = 1;
 
 
 	// campos saida
@@ -21,7 +21,7 @@ public abstract class TesteObjetos extends DaoAplicacao {
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		if (executaCustom(ds.getContaCorrente())) {
+		if (executaCustom()) {
 			executaProximo();
 		} else {
 			finalizar();
@@ -31,11 +31,11 @@ public abstract class TesteObjetos extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new ContaGoogle_ListaAtivaRemarketingImpl();
 	}
 
 
-	protected boolean executaCustom( ContaGoogle contaCorrente ) { return true; }
+	protected boolean executaCustom() { return true; }
 
 	protected void preFinalizar() { return; }
 

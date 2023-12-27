@@ -16,6 +16,9 @@
       <a href="{{principal.urlPropria}}" target="_blank">{{principal.urlPropria}}</a>
     </div>
     <div class="dgc-card-detalhe">
+      Presell: <a href="{{principal.urlPresell}}" target="_blank">{{principal.urlPresell}}</a>
+    </div>
+    <div class="dgc-card-detalhe">
       <span>You Tube:{{principal.urlYouTube}}</span>
     </div>
     <div class="dgc-card-detalhe">
@@ -101,13 +104,16 @@
       Pixel
     </div>
     <div class="dgc-card-detalhe" >
-      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}}</span>
+      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}} 
+        ( {{(principal.pixelGoogle?principal.pixelGoogle.codigo1:'-')}} )</span>
     </div>
     <div class="dgc-card-detalhe" >
-      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}}</span>
+      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}} 
+        ( {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.codigo1:'-')}} )</span>
     </div>
     <div class="dgc-card-detalhe" >
-      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}}</span>
+      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}} 
+        ( {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.codigo1:'-')}} )</span>
     </div>
   </div>
 

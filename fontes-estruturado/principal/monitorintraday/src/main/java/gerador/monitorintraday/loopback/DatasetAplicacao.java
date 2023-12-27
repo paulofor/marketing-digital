@@ -8,6 +8,7 @@ import java.util.List;
 public class DatasetAplicacao  implements IDatasetComum {
 	private ContaGoogle contaCorrente;
 	private List<CampanhaAdsMetricaIntraday> metrica;
+	private int semErro;
 
 
 	public void setContaCorrente(ContaGoogle valor) { 
@@ -21,5 +22,11 @@ public class DatasetAplicacao  implements IDatasetComum {
 	}
 	public List<CampanhaAdsMetricaIntraday> getMetrica() { 
 		return this.metrica;
+	}
+	public void setSemErro(int valor) { 
+		this.semErro = valor;
+	}
+	public int getSemErro() { 
+		return this.semErro;
 	}
 }

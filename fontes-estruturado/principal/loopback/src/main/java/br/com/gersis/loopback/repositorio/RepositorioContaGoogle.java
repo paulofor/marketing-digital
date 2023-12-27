@@ -58,6 +58,21 @@ public class RepositorioContaGoogle extends ModelRepository<ContaGoogle> {
 		invokeStaticMethod("listaAtivaRemarketing", params,   new JsonArrayParser<ContaGoogle>(this, callback));
 	}
 
+	public synchronized void acessouIntraday(int idConta ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ContaGoogles/acessouIntraday","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ContaGoogle.acessouIntraday");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idConta", idConta);
+		invokeStaticMethod("acessouIntraday", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaCompleta(final ListCallback<ContaGoogle> callback ) {
+		RestContractItem contrato = new RestContractItem("ContaGoogles/listaCompleta","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ContaGoogle.listaCompleta");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaCompleta", params,   new JsonArrayParser<ContaGoogle>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<ContaGoogle> listaEntrada) {
 		JSONArray lista = new JSONArray();

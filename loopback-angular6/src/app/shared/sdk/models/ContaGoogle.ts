@@ -24,6 +24,7 @@ export interface ContaGoogleInterface {
   "codigoTagRemarketing"?: string;
   "snippetTagRemarketing"?: string;
   "hitsTag"?: number;
+  "dataAcessoIntraday"?: Date;
   "id"?: number;
   campanhaAdsTestes?: CampanhaAdsTeste[];
   pixelGoogles?: PixelGoogle[];
@@ -49,6 +50,7 @@ export class ContaGoogle implements ContaGoogleInterface {
   "codigoTagRemarketing": string;
   "snippetTagRemarketing": string;
   "hitsTag": number;
+  "dataAcessoIntraday": Date;
   "id": number;
   campanhaAdsTestes: CampanhaAdsTeste[];
   pixelGoogles: PixelGoogle[];
@@ -139,6 +141,10 @@ export class ContaGoogle implements ContaGoogleInterface {
         "hitsTag": {
           name: 'hitsTag',
           type: 'number'
+        },
+        "dataAcessoIntraday": {
+          name: 'dataAcessoIntraday',
+          type: 'Date'
         },
         "id": {
           name: 'id',

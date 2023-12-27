@@ -37,7 +37,7 @@ public abstract class CampanhaAdsMetrica_LimpaMaisRecente extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new ContaGoogle_ListaAtivaParaMetricaCampanhaImpl();
+		return new ContaGoogle_ListaCompletaImpl();
 	}
 
 

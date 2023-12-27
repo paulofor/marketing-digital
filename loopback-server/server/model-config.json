@@ -202,5 +202,9 @@
   "ImagemConjunto": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "ProdutoAfiliadoHotmartPendente": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

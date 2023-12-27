@@ -164,6 +164,8 @@ export class LoadPaginaVendaApi extends BaseLoopBackApi {
    *
    * @param {number} tempo 
    *
+   * @param {string} dominio 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -173,7 +175,7 @@ export class LoadPaginaVendaApi extends BaseLoopBackApi {
    * This usually means the response is a `LoadPaginaVenda` object.)
    * </em>
    */
-  public InsereItem(idHm: any = {}, visitante: any = {}, tempo: any = {}, customHeaders?: Function): Observable<any> {
+  public InsereItem(idHm: any = {}, visitante: any = {}, tempo: any = {}, dominio: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/LoadPaginaVendas/insereItem";
@@ -183,6 +185,7 @@ export class LoadPaginaVendaApi extends BaseLoopBackApi {
     if (typeof idHm !== 'undefined' && idHm !== null) _urlParams.idHm = idHm;
     if (typeof visitante !== 'undefined' && visitante !== null) _urlParams.visitante = visitante;
     if (typeof tempo !== 'undefined' && tempo !== null) _urlParams.tempo = tempo;
+    if (typeof dominio !== 'undefined' && dominio !== null) _urlParams.dominio = dominio;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

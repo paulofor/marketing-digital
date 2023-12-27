@@ -22,6 +22,7 @@ public class PublicoAlvoAdsDiario extends Model {
 	private int contaGoogleId;
 	private int maisRecente;
 	private int hotmartId;
+	private String jsonAds;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private PixelGoogle PixelGoogle;
@@ -33,6 +34,13 @@ public class PublicoAlvoAdsDiario extends Model {
 	}
 	public void setId(Integer id) {
 		this.setIdObjeto(id);
+	}
+
+	public int setIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long setIdLong() {
+		return new Long(getId().toString());
 	}
 
 	public JSONObject getJSON() {
@@ -47,6 +55,7 @@ public class PublicoAlvoAdsDiario extends Model {
 			obj.put("contaGoogleId", contaGoogleId);
 			obj.put("maisRecente", maisRecente);
 			obj.put("hotmartId", hotmartId);
+			obj.put("jsonAds", jsonAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -101,6 +110,12 @@ public class PublicoAlvoAdsDiario extends Model {
 	}
 	public int getHotmartId() { 
 		return this.hotmartId;
+	}
+	public void setJsonAds(String valor) { 
+		this.jsonAds = valor;
+	}
+	public String getJsonAds() { 
+		return this.jsonAds;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {

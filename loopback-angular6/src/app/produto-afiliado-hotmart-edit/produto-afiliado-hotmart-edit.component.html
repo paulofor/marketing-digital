@@ -13,6 +13,10 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
+      <input matInput #urlPresell [(ngModel)]="item.urlPresell" name="urlPresell" placeholder="Url Presell" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
       <input matInput #urlFinal [(ngModel)]="item.urlFinal" name="urlFinal" placeholder="Url Final" autocomplete="off"/>
     </mat-form-field>
 
