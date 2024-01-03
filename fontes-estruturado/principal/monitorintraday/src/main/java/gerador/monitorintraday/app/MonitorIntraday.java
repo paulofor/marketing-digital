@@ -17,7 +17,7 @@ public class MonitorIntraday {
 
 	public static void main(String[] args) {
 		System.out.print("MonitorIntraday");
-		System.out.println("(25/12/2023 02:07:29)");
+		System.out.println("(02/01/2024 23:27:16)");
 		try {
 			carregaProp();
 			MonitorIntradayObj obj = new MonitorIntradayObj();
@@ -54,9 +54,12 @@ public class MonitorIntraday {
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
 		DaoBaseComum.setProximo("MonitorIntradayObj", new CampanhaAdsMetricaIntraday_DesligarTodosImpl());
-		DaoBaseComum.setProximo("CampanhaAdsMetricaIntraday_DesligarTodos", new ContaGoogle_ListaAtivaParaMetricaCampanhaImpl());
-		DaoBaseComum.setProximo("ContaGoogle_ListaAtivaParaMetricaCampanha", new ConsultaGoogleAdsListaAtivaPorContaImpl());
-		DaoBaseComum.setProximo("ConsultaGoogleAdsListaAtivaPorConta", new CampanhaAdsMetricaIntraday_AtualizaIntradayImpl());
+		DaoBaseComum.setProximo("CampanhaAdsMetricaIntraday_DesligarTodos", new ContaGoogle_ListaCompletaImpl());
+		DaoBaseComum.setProximo("ContaGoogle_ListaCompleta", new ConsultaGoogleAdsListaAtivaPorContaImpl());
+		DaoBaseComum.setProximo("ConsultaGoogleAdsListaAtivaPorConta", new ConsultaGoogleGrupoAdsListaAtivaPorContaImpl());
+		DaoBaseComum.setProximo("ConsultaGoogleGrupoAdsListaAtivaPorConta", new ConsultaGoogleGrupoAudienciaAdsListaAtivaPorContaImpl());
+		DaoBaseComum.setProximo("ConsultaGoogleGrupoAudienciaAdsListaAtivaPorConta", new ConsultaGoogleGrupoLocaisAdsListaAtivaPorContaImpl());
+		DaoBaseComum.setProximo("ConsultaGoogleGrupoLocaisAdsListaAtivaPorConta", new CampanhaAdsMetricaIntraday_AtualizaIntradayImpl());
 		DaoBaseComum.setProximo("CampanhaAdsMetricaIntraday_AtualizaIntraday", new ContaGoogle_AcessouIntradayImpl());
 	}
 }

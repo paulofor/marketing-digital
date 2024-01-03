@@ -13,6 +13,9 @@
             ({{ item.visitaProdutoHotmarts[0].deltaTemperatura >= 0 ? '+' + item.visitaProdutoHotmarts[0].deltaTemperatura : item.visitaProdutoHotmarts[0].deltaTemperatura }})</span>
           <span>  -  {{item.visitaProdutoHotmarts[0].dataInsercao | date : 'dd/MM/yyyy'}}</span>
         </div>
+        <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0">
+          <span>{{item.visitaProdutoHotmarts[0].categoria}}</span>
+        </div>
         <div class="dgc-card-detalhe">
           <span>Final: {{item.urlFinal}}</span>
         </div>
@@ -35,6 +38,7 @@
         <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0">
           <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}} ({{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}%)</span>
         </div>
+
         <div class="dgc-card-detalhe" >
           <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>
         </div>

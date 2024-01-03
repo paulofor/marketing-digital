@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página com Efeito de Deslocamento do Cabeçalho</title>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilo para o cabeçalho fixo */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000; /* Garante que o cabeçalho esteja acima do conteúdo */
+      transition: top 0.3s ease-in-out; /* Adiciona uma transição suave ao cabeçalho */
+    }
+
+    /* Estilo para o corpo da página */
+    body {
+      padding-top: 60px; /* Ajuste de acordo com a altura do cabeçalho */
+    }
+
+    /* Estilo para a seção */
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+    }
+
+    /* Cores de fundo diferentes para as seções */
+    #secao1 {
+      background-color: #f0f0f0;
+    }
+
+    #secao2 {
+      background-color: #e0e0e0;
+    }
+
+    /* Simulação de conteúdo para as seções */
+    section:nth-child(odd) {
+      color: #333333;
+    }
+
+    section:nth-child(even) {
+      color: #666666;
+    }
+
+    /* Estilo para mover o conteúdo para baixo do cabeçalho quando este é fixado */
+    .paddin-top-fixed-header {
+      padding-top: 100px; /* Ajuste para o conteúdo ser exibido abaixo do cabeçalho */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Conteúdo do cabeçalho -->
+    <nav>
+      <ul>
+        <li><a href="#secao1">Seção 1</a></li>
+        <li><a href="#secao2">Seção 2</a></li>
+        <!-- Outros links do menu -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção 1 -->
+  <section id="secao1">
+    Seção 1
+  </section>
+
+  <!-- Seção 2 -->
+  <section id="secao2">
+    Seção 2
+  </section>
+
+  <!-- Outras seções e conteúdos -->
+
+  <script>
+    // Adiciona ou remove a classe de ajuste do padding-top ao cabeçalho fixo
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 0) {
+        header.classList.add('paddin-top-fixed-header');
+      } else {
+        header.classList.remove('paddin-top-fixed-header');
+      }
+    });
+  </script>
+</body>
+</html>

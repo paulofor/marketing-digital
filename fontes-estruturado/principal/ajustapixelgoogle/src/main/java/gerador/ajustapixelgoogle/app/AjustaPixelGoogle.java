@@ -17,7 +17,7 @@ public class AjustaPixelGoogle {
 
 	public static void main(String[] args) {
 		System.out.print("AjustaPixelGoogle");
-		System.out.println("(25/12/2023 02:07:33)");
+		System.out.println("(02/01/2024 23:27:20)");
 		try {
 			carregaProp();
 			AjustaPixelGoogleObj obj = new AjustaPixelGoogleObj();

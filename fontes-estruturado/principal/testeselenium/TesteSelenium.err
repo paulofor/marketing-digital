@@ -1,0 +1,161 @@
+java.lang.IllegalStateException: The driver executable is a directory: /usr/local/bin
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:585)
+	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:148)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:141)
+	at org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:35)
+	at org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:159)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:355)
+	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:94)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
+	at gerador.testeselenium.passo.impl.ExecutaSeleniumImpl.executaCustom(ExecutaSeleniumImpl.java:19)
+	at gerador.testeselenium.passo.ExecutaSelenium.executaImpl(ExecutaSelenium.java:24)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.passo.TesteSeleniumObj.executaImpl(TesteSeleniumObj.java:17)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.app.TesteSelenium.main(TesteSelenium.java:24)
+org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 94
+Current browser version is 104.0.5112.79 with binary path /usr/bin/google-chrome
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'computador', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-38-generic', java.version: '1.8.0_201'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: #0 0x5622821128f3 <unknown>
+#1 0x562281bf7ba8 <unknown>
+#2 0x562281c1e9d1 <unknown>
+#3 0x562281c1a213 <unknown>
+#4 0x562281c169ef <unknown>
+#5 0x562281c50995 <unknown>
+#6 0x562281c4ad63 <unknown>
+#7 0x562281c21144 <unknown>
+#8 0x562281c22135 <unknown>
+#9 0x562282141c3e <unknown>
+#10 0x5622821576b7 <unknown>
+#11 0x562282142b95 <unknown>
+#12 0x562282158b05 <unknown>
+#13 0x5622821372ab <unknown>
+#14 0x562282173248 <unknown>
+#15 0x5622821733c8 <unknown>
+#16 0x56228218e33d <unknown>
+#17 0x7fe9d5b8f6ba start_thread
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:498)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
+	at gerador.testeselenium.passo.impl.ExecutaSeleniumImpl.executaCustom(ExecutaSeleniumImpl.java:19)
+	at gerador.testeselenium.passo.ExecutaSelenium.executaImpl(ExecutaSelenium.java:24)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.passo.TesteSeleniumObj.executaImpl(TesteSeleniumObj.java:17)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.app.TesteSelenium.main(TesteSelenium.java:24)
+org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=104.0.5112.79)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'computador', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-38-generic', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.1sEYIg}, goog:chromeOptions: {debuggerAddress: localhost:41137}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8721cf3471632a85e343498d5b60fb66
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.getTagName(RemoteWebElement.java:128)
+	at gerador.testeselenium.passo.impl.ExecutaSeleniumImpl.executaCustom(ExecutaSeleniumImpl.java:34)
+	at gerador.testeselenium.passo.ExecutaSelenium.executaImpl(ExecutaSelenium.java:24)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.passo.TesteSeleniumObj.executaImpl(TesteSeleniumObj.java:17)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.app.TesteSelenium.main(TesteSelenium.java:24)
+org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=104.0.5112.79)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'computador', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-38-generic', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.kUGSRV}, goog:chromeOptions: {debuggerAddress: localhost:39035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 282dddf19140d27e2c13c5cbd89a455d
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.getTagName(RemoteWebElement.java:128)
+	at gerador.testeselenium.passo.impl.ExecutaSeleniumImpl.executaCustom(ExecutaSeleniumImpl.java:38)
+	at gerador.testeselenium.passo.ExecutaSelenium.executaImpl(ExecutaSelenium.java:24)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.passo.TesteSeleniumObj.executaImpl(TesteSeleniumObj.java:17)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.app.TesteSelenium.main(TesteSelenium.java:24)
+org.openqa.selenium.InvalidSelectorException: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=104.0.5112.79)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'computador', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-38-generic', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /tmp/.com.google.Chrome.joEBHn}, goog:chromeOptions: {debuggerAddress: localhost:37737}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e4f9ba817bb408916789665668f6be2
+*** Element info: {Using=css selector, value=> div[data-element_type='container']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:204)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementsByCssSelector(RemoteWebElement.java:257)
+	at org.openqa.selenium.By$ByCssSelector.findElements(By.java:441)
+	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:177)
+	at gerador.testeselenium.passo.impl.ExecutaSeleniumImpl.executaCustom(ExecutaSeleniumImpl.java:30)
+	at gerador.testeselenium.passo.ExecutaSelenium.executaImpl(ExecutaSelenium.java:24)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.passo.TesteSeleniumObj.executaImpl(TesteSeleniumObj.java:17)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.app.TesteSelenium.main(TesteSelenium.java:24)
+java.lang.NullPointerException
+	at gerador.testeselenium.passo.impl.ExecutaSeleniumImpl.limpaElemento(ExecutaSeleniumImpl.java:107)
+	at gerador.testeselenium.passo.impl.ExecutaSeleniumImpl.executaCustom(ExecutaSeleniumImpl.java:48)
+	at gerador.testeselenium.passo.ExecutaSelenium.executaImpl(ExecutaSelenium.java:24)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.passo.TesteSeleniumObj.executaImpl(TesteSeleniumObj.java:17)
+	at br.com.gersis.daobase.DaoBase.executa(DaoBase.java:40)
+	at gerador.testeselenium.app.TesteSelenium.main(TesteSelenium.java:24)

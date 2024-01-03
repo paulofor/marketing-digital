@@ -17,7 +17,7 @@ public class TesteChatGpt {
 
 	public static void main(String[] args) {
 		System.out.print("TesteChatGpt");
-		System.out.println("(25/12/2023 02:07:34)");
+		System.out.println("(02/01/2024 23:27:21)");
 		try {
 			carregaProp();
 			TesteChatGptObj obj = new TesteChatGptObj();
@@ -53,5 +53,6 @@ public class TesteChatGpt {
 
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
+		DaoBaseComum.setProximo("TesteChatGptObj", new ExecutaTesteImpl());
 	}
 }

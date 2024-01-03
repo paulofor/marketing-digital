@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class CampanhaAdsMetricaIntraday_AtualizaIntraday extends DaoAplicacao { 
 
-	private int NUM_PASSO = 4;
+	private int NUM_PASSO = 7;
 
 
 	protected List<CampanhaAdsMetricaIntraday> metricaIntraday;

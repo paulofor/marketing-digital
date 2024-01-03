@@ -198,7 +198,9 @@ public class TesteObjetosImpl extends PassoSqlGoogleAds {
 	//private String codigoUsuario = "1673393597";
 	//private String codigoUsuario = "8993161829"; // rmkt_001 
 	//private String codigoUsuario = "1895963249"; // conta_010
-	private String codigoUsuario = "5565958327"; // feo
+	//private String codigoUsuario = "5565958327"; // feo
+	private String codigoUsuario = "8216080692" ; //  Mercado Feminino
+	
 	
 	@Override
 	protected boolean executaCustom() {
@@ -207,14 +209,16 @@ public class TesteObjetosImpl extends PassoSqlGoogleAds {
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			
 		
-			/*
+			
 			preencheLista();
 			System.out.println("Total: " + this.lista.size());
 			for (TesteAds item : lista) {
-				this.consultaSql(googleAdsClient, item.getSql(), item.getTabela(), 11);
+				//item.setCampanha("customers/8216080692/campaigns/20911634398");
+				item.setGrupoAnuncio("customers/8216080692/adGroups/156693127665");
+				this.consultaSql(googleAdsClient, item.getSql(), item.getTabela(), 1169);
 			}
 			
-			
+			/*
 			/* Obtendo os codigos de pixel 
 			String query = "SELECT conversion_action.tag_snippets, conversion_action.app_id, conversion_action.attribution_model_settings.attribution_model, conversion_action.attribution_model_settings.data_driven_model_status, conversion_action.category, conversion_action.click_through_lookback_window_days, conversion_action.counting_type, conversion_action.firebase_settings.event_name, conversion_action.firebase_settings.project_id, conversion_action.firebase_settings.property_id, conversion_action.firebase_settings.property_name, conversion_action.id, conversion_action.include_in_conversions_metric, conversion_action.mobile_app_vendor, conversion_action.name, conversion_action.origin, conversion_action.owner_customer, conversion_action.phone_call_duration_seconds, conversion_action.primary_for_goal, conversion_action.resource_name, conversion_action.status, conversion_action.third_party_app_analytics_settings.event_name, conversion_action.third_party_app_analytics_settings.provider_name, conversion_action.type, conversion_action.value_settings.always_use_default_value, conversion_action.value_settings.default_currency_code, conversion_action.value_settings.default_value, conversion_action.view_through_lookback_window_days FROM conversion_action WHERE conversion_action.resource_name = 'customers/8993161829/conversionActions/6709031963'";
 			*/
@@ -249,8 +253,8 @@ public class TesteObjetosImpl extends PassoSqlGoogleAds {
 			//this.consultaSql(googleAdsClient, contaCorrente, query);
 			
 			//custom_audience
-			String query = "SELECT custom_audience.description, custom_audience.id, custom_audience.members, custom_audience.name, custom_audience.resource_name, custom_audience.status, custom_audience.type, customer.auto_tagging_enabled, customer.call_reporting_setting.call_conversion_action, customer.call_reporting_setting.call_conversion_reporting_enabled, customer.call_reporting_setting.call_reporting_enabled, customer.conversion_tracking_setting.accepted_customer_data_terms, customer.conversion_tracking_setting.conversion_tracking_id, customer.conversion_tracking_setting.conversion_tracking_status, customer.conversion_tracking_setting.cross_account_conversion_tracking_id, customer.conversion_tracking_setting.enhanced_conversions_for_leads_enabled, customer.conversion_tracking_setting.google_ads_conversion_customer, customer.currency_code, customer.descriptive_name, customer.final_url_suffix, customer.has_partners_badge, customer.id, customer.image_asset_auto_migration_done, customer.image_asset_auto_migration_done_date_time, customer.location_asset_auto_migration_done, customer.location_asset_auto_migration_done_date_time, customer.manager, customer.optimization_score, customer.tracking_url_template, customer.time_zone, customer.test_account, customer.status, customer.resource_name, customer.remarketing_setting.google_global_site_tag, customer.pay_per_conversion_eligibility_failure_reasons, customer.optimization_score_weight FROM custom_audience";
-			this.consultaSql(googleAdsClient, query);
+			//String query = "SELECT custom_audience.description, custom_audience.id, custom_audience.members, custom_audience.name, custom_audience.resource_name, custom_audience.status, custom_audience.type, customer.auto_tagging_enabled, customer.call_reporting_setting.call_conversion_action, customer.call_reporting_setting.call_conversion_reporting_enabled, customer.call_reporting_setting.call_reporting_enabled, customer.conversion_tracking_setting.accepted_customer_data_terms, customer.conversion_tracking_setting.conversion_tracking_id, customer.conversion_tracking_setting.conversion_tracking_status, customer.conversion_tracking_setting.cross_account_conversion_tracking_id, customer.conversion_tracking_setting.enhanced_conversions_for_leads_enabled, customer.conversion_tracking_setting.google_ads_conversion_customer, customer.currency_code, customer.descriptive_name, customer.final_url_suffix, customer.has_partners_badge, customer.id, customer.image_asset_auto_migration_done, customer.image_asset_auto_migration_done_date_time, customer.location_asset_auto_migration_done, customer.location_asset_auto_migration_done_date_time, customer.manager, customer.optimization_score, customer.tracking_url_template, customer.time_zone, customer.test_account, customer.status, customer.resource_name, customer.remarketing_setting.google_global_site_tag, customer.pay_per_conversion_eligibility_failure_reasons, customer.optimization_score_weight FROM custom_audience";
+			//this.consultaSql(googleAdsClient, query);
 			
 			//custom_interest
 			//String query = "SELECT custom_interest.description, custom_interest.id, custom_interest.members, custom_interest.name, custom_interest.resource_name, custom_interest.status, custom_interest.type, customer.auto_tagging_enabled, customer.call_reporting_setting.call_conversion_action, customer.call_reporting_setting.call_conversion_reporting_enabled, customer.call_reporting_setting.call_reporting_enabled, customer.conversion_tracking_setting.accepted_customer_data_terms, customer.conversion_tracking_setting.conversion_tracking_id, customer.conversion_tracking_setting.conversion_tracking_status, customer.conversion_tracking_setting.cross_account_conversion_tracking_id, customer.conversion_tracking_setting.enhanced_conversions_for_leads_enabled, customer.conversion_tracking_setting.google_ads_conversion_customer, customer.currency_code, customer.descriptive_name, customer.final_url_suffix, customer.has_partners_badge, customer.id, customer.image_asset_auto_migration_done, customer.image_asset_auto_migration_done_date_time, customer.location_asset_auto_migration_done, customer.location_asset_auto_migration_done_date_time, customer.manager, customer.optimization_score, customer.optimization_score_weight, customer.pay_per_conversion_eligibility_failure_reasons, customer.tracking_url_template, customer.time_zone, customer.test_account, customer.status, customer.resource_name, customer.remarketing_setting.google_global_site_tag FROM custom_interest";

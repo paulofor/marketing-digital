@@ -37,7 +37,7 @@ public abstract class CampanhaAdsMetricaIntraday_DesligarTodos extends DaoAplica
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new ContaGoogle_ListaAtivaParaMetricaCampanhaImpl();
+		return new ContaGoogle_ListaCompletaImpl();
 	}
 
 

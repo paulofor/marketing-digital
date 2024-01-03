@@ -19,6 +19,12 @@ export interface CampanhaAdsMetricaIntradayInterface {
   "primaryStatus"?: string;
   "primaryStatusReasons"?: string;
   "jsonAds"?: string;
+  "jsonGrupoAnuncio"?: string;
+  "resourceNameCampanha"?: string;
+  "jsonGrupoAudiencia"?: string;
+  "jsonProgramacao"?: string;
+  "jsonGrupoLocais"?: string;
+  "resourceNameGrupo"?: string;
   campanhaAdsTeste?: CampanhaAdsTeste;
   contaGoogle?: ContaGoogle;
 }
@@ -37,6 +43,12 @@ export class CampanhaAdsMetricaIntraday implements CampanhaAdsMetricaIntradayInt
   "primaryStatus": string;
   "primaryStatusReasons": string;
   "jsonAds": string;
+  "jsonGrupoAnuncio": string;
+  "resourceNameCampanha": string;
+  "jsonGrupoAudiencia": string;
+  "jsonProgramacao": string;
+  "jsonGrupoLocais": string;
+  "resourceNameGrupo": string;
   campanhaAdsTeste: CampanhaAdsTeste;
   contaGoogle: ContaGoogle;
   constructor(data?: CampanhaAdsMetricaIntradayInterface) {
@@ -122,6 +134,30 @@ export class CampanhaAdsMetricaIntraday implements CampanhaAdsMetricaIntradayInt
         },
         "jsonAds": {
           name: 'jsonAds',
+          type: 'string'
+        },
+        "jsonGrupoAnuncio": {
+          name: 'jsonGrupoAnuncio',
+          type: 'string'
+        },
+        "resourceNameCampanha": {
+          name: 'resourceNameCampanha',
+          type: 'string'
+        },
+        "jsonGrupoAudiencia": {
+          name: 'jsonGrupoAudiencia',
+          type: 'string'
+        },
+        "jsonProgramacao": {
+          name: 'jsonProgramacao',
+          type: 'string'
+        },
+        "jsonGrupoLocais": {
+          name: 'jsonGrupoLocais',
+          type: 'string'
+        },
+        "resourceNameGrupo": {
+          name: 'resourceNameGrupo',
           type: 'string'
         },
       },

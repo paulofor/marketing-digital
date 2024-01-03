@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página com Efeito de Deslocamento do Cabeçalho</title>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilo para o cabeçalho fixo */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000; /* Certifica-se de que o cabeçalho esteja acima do conteúdo */
+    }
+
+    /* Espaço para conteúdo para evitar sobreposição */
+    body {
+      padding-top: 60px; /* Ajuste de acordo com a altura do cabeçalho */
+    }
+
+    /* Estilos para as seções */
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+      scroll-margin-top: 60px; /* Ajuste para garantir que o cabeçalho não sobreponha o início da seção */
+    }
+
+    /* Cores de fundo diferentes para seções */
+    #secao1 {
+      background-color: #f0f0f0;
+    }
+
+    #secao2 {
+      background-color: #e0e0e0;
+    }
+
+    /* Simulação de conteúdo para as seções */
+    section:nth-child(odd) {
+      color: #333333;
+    }
+
+    section:nth-child(even) {
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#secao1">Seção 1</a></li>
+        <li><a href="#secao2">Seção 2</a></li>
+        <!-- Outros links do menu -->
+      </ul>
+    </nav>
+  </header>
+
+  <section id="secao1">
+    Seção 1
+  </section>
+
+  <section id="secao2">
+    Seção 2
+  </section>
+  <!-- Outras seções e conteúdos -->
+
+</body>
+</html>

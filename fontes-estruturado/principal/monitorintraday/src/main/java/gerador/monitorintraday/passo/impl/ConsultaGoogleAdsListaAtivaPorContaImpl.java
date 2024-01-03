@@ -37,10 +37,13 @@ public class ConsultaGoogleAdsListaAtivaPorContaImpl extends ConsultaGoogleAdsLi
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			
 			// Access and print individual fields
-	        System.out.println("Developer Token: " + googleAdsClient.getDeveloperToken());
-	        System.out.println("Login Customer ID: " + googleAdsClient.getLoginCustomerId());
-	        System.out.println("Credenciais: " + googleAdsClient.getCredentials().toString());
+	        //System.out.println("Developer Token: " + googleAdsClient.getDeveloperToken());
+	        //System.out.println("Login Customer ID: " + googleAdsClient.getLoginCustomerId());
+	        //System.out.println("Credenciais: " + googleAdsClient.getCredentials().toString());
 
+			System.out.println();
+			System.out.println("Conta: " + contaCorrente.getNome());
+			
 			List<CampanhaAdsMetricaIntraday> metrica = consultaSql(googleAdsClient, contaCorrente);
 			this.saidaMetrica = metrica;
 		} catch (FileNotFoundException fnfe) {
@@ -71,8 +74,7 @@ public class ConsultaGoogleAdsListaAtivaPorContaImpl extends ConsultaGoogleAdsLi
 				+ "bidding_strategy.target_cpa.target_cpa_micros , metrics.ctr, metrics.cost_micros, metrics.ctr, metrics.average_cpc "
 				+ "FROM campaign WHERE segments.date = '" + formattedToday + "' and campaign.status = 'ENABLED'";
 	
-		;
-		System.out.println("Query:" + query);
+		//System.out.println("Query:" + query);
 
 		List<CampanhaAdsMetricaIntraday> listaMetrica = new ArrayList<CampanhaAdsMetricaIntraday>();
 		// Definindo o Locale como US
@@ -107,6 +109,7 @@ public class ConsultaGoogleAdsListaAtivaPorContaImpl extends ConsultaGoogleAdsLi
 		    	saida.setConversao((new Long((long) linha.getMetrics().getConversions())).intValue());
 		    	saida.setPrimaryStatus(linha.getCampaign().getPrimaryStatus().name());
 		    	saida.setJsonAds(linha.toString());
+		    	saida.setResourceNameCampanha(linha.getCampaign().getResourceName());
 		    	//saida.setPrimaryStatusReasons(linha.getCampaign().getPr);
 				long custo = linha.getMetrics().getCostMicros();
 				double valor = (double) custo / 1000000L;

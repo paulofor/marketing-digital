@@ -25,11 +25,39 @@ export class CampanhaAdsMetricaIntradayListSimplesComponent extends CampanhaAdsM
         this.dialog.open(ExibeTextoModalComponent, {
             width: '800px',
             data: {
-                texto: campanha.jsonAds
+                texto: campanha.jsonAds,
+				titulo: "Campanha"
             }
         });
     }
 
+
+	jsonGrupo(campanha) {
+        this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(ExibeTextoModalComponent, {
+            width: '800px',
+            data: {
+                texto: campanha.jsonGrupoAnuncio,
+				titulo: "Grupo Anúncio"
+            }
+        });
+    }
+
+
+	jsonAudiencia(campanha) {
+        this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(ExibeTextoModalComponent, {
+            width: '800px',
+            data: {
+                texto: campanha.jsonGrupoAudiencia,
+				titulo: "Audiência Grupo"
+            }
+        });
+    }
 
 	preCarregaTela() {
 		this.srv.TotaisDia()

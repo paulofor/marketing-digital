@@ -8,7 +8,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class ExibeTextoModalComponent implements OnInit {
 
-  texto:string;
+  texto:string = "Objeto";
+  titulo:string
 
 
   constructor(protected dialogRef: MatDialogRef<any>
@@ -18,6 +19,9 @@ export class ExibeTextoModalComponent implements OnInit {
   ngOnInit() {
     if (this.data.texto) {
       this.texto = this.data.texto;
+    }
+    if (this.data.titulo) {
+      this.titulo = this.data.titulo;
     }
   }
 

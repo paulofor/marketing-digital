@@ -13,6 +13,7 @@ public class CampanhaAdsMetricaIntraday_AtualizaIntradayImpl extends CampanhaAds
 	@Override
 	protected boolean executaCustom(List<CampanhaAdsMetricaIntraday> metrica) {
 		this.metricaIntraday = metrica;
+		if (metrica.size()==0) return false;
 		return true;
 	} 
 

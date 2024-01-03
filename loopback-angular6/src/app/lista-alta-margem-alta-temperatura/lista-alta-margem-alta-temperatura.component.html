@@ -19,6 +19,9 @@
 			 <div class="dgc-card-detalhe">
 				<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>
 			 </div>
+			 <div class="dgc-card-detalhe">
+				<span>{{item.categoria }}</span>
+			 </div>
 			<div class="dgc-card-comandos">
 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
 			</div>

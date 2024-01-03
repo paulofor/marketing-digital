@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll Parallax</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: #333; /* Cor do texto */
+    }
+
+    .parallax-container {
+      position: relative;
+      height: 200vh; /* Aumentei para 200% da altura da viewport para mais conteúdo */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .parallax-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: -1;
+    }
+
+    .content {
+      z-index: 1;
+      color: #fff;
+      margin: 50vh 0; /* Margem para espaçamento entre os conteúdos */
+    }
+
+    /* Estilos específicos para os títulos e parágrafos */
+    h1, h2 {
+      color: #fff; /* Cor dos títulos */
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #eee; /* Cor dos parágrafos */
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-container">
+    <img class="parallax-image" src="imagem/minha-imagem-fundo.jpg" alt="Imagem de Fundo">
+    <div class="content">
+      <h1>Seu Texto Descritivo</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis cursus enim.</p>
+    </div>
+
+    <!-- Mais conteúdo para aumentar a altura da página -->
+    <div class="content">
+      <h2>Outro Título</h2>
+      <p>Aliquam erat volutpat. Vivamus nec ligula id est pretium ullamcorper. Proin lobortis gravida massa, a lacinia lacus sollicitudin et.</p>
+    </div>
+
+    <div class="content">
+      <h2>Mais Texto</h2>
+      <p>Nulla vestibulum, est in pulvinar pellentesque, risus purus lacinia justo, vel laoreet est ex in libero.</p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const parallax = document.querySelector('.parallax-image');
+      let scrollPosition = window.scrollY;
+      parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+    });
+  </script>
+</body>
+</html>

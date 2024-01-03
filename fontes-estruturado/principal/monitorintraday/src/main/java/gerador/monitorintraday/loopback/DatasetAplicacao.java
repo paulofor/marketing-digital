@@ -9,6 +9,7 @@ public class DatasetAplicacao  implements IDatasetComum {
 	private ContaGoogle contaCorrente;
 	private List<CampanhaAdsMetricaIntraday> metrica;
 	private int semErro;
+	private List<String> campanhaResourceName;
 
 
 	public void setContaCorrente(ContaGoogle valor) { 
@@ -28,5 +29,11 @@ public class DatasetAplicacao  implements IDatasetComum {
 	}
 	public int getSemErro() { 
 		return this.semErro;
+	}
+	public void setCampanhaResourceName(List<String> valor) { 
+		this.campanhaResourceName = valor;
+	}
+	public List<String> getCampanhaResourceName() { 
+		return this.campanhaResourceName;
 	}
 }

@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automaquiagem</title>
-  
+  <title>Automaquiagem - Aprenda os Segredos da Beleza</title>
+  <meta name="description" content="Aprenda os segredos da automaquiagem e fique linda em qualquer ocasião!">
+  <link rel="canonical" href="URL_DA_SUA_PAGINA_PREFERENCIAL">
+
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
 
     header {
-      background-color: #000000; /* Alterando para preto (#000000) */
+      background-color: #000000;
+      /* Alterando para preto (#000000) */
       text-align: center;
       padding: 20px 0;
     }
@@ -31,16 +36,11 @@
     .container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around; /* Distribui os elementos ao redor */
+      justify-content: space-around;
+      /* Distribui os elementos ao redor */
     }
 
-    .elemento {
-      flex: 1 1 30%; /* Define a flexibilidade dos elementos */
-      margin: 10px;
-      padding: 20px;
-      background-color: #f0f0f0;
-      box-sizing: border-box; /* Garante que padding não aumente o tamanho do elemento */
-    }
+
 
     /* Estilo para a primeira seção */
     section:nth-child(odd) {
@@ -48,34 +48,449 @@
       color: white;
     }
 
-  /* ... (seus estilos CSS existentes) ... */
+    /* ... (seus estilos CSS existentes) ... */
 
-  .titulo-section {
+    .titulo-section {
       text-align: center;
       padding: 20px 0;
-      background-color: #000000; /* Alterando para preto (#000000) */
+      background-color: #000000;
+      /* Alterando para preto (#000000) */
     }
 
     .titulo {
-      font-size: 50px; /* Alterando o tamanho da fonte para 50px */
+      font-size: 50px;
+      /* Alterando o tamanho da fonte para 50px */
       margin-bottom: 10px;
-      color: #ffffff; /* Definindo a cor do texto como branco (#ffffff) */
+      color: #ffffff;
+      /* Definindo a cor do texto como branco (#ffffff) */
     }
 
     .subtitulo {
       font-size: 42px;
-      color: #ffffff; /* Cor do subtítulo */
+      color: #ffffff;
+      /* Cor do subtítulo */
+    }
+
+    /* Estilo para a seção do botão de call to action */
+    .cta-section {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #f0f0f0;
+    }
+
+    .cta-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      background-color: #ff5733;
+      color: white;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Estilizando o botão quando o mouse passa por cima */
+    .cta-button:hover {
+      background-color: #e64c00;
+    }
+
+    /* Estilo para a seção 1 */
+    #secao1 {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    /* Estilo para o subtítulo */
+    #secao1 .subtitulo {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para as imagens com texto descritivo */
+    #secao1 .imagens-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    #secao1 .imagem {
+      width: 40%;
+      margin: 10px;
+    }
+
+    #secao1 .imagem img {
+      width: 100%;
+      display: block;
+      border-radius: 5px;
+      max-width: 285px;
+      /* Limita a largura máxima da imagem */
+      max-height: 285px;
+      /* Limita a altura máxima da imagem */
+      margin: 0 auto;
+      /* Centraliza horizontalmente a imagem */
+    }
+
+    #secao1 .imagem p {
+      margin-top: 10px;
+    }
+
+    /* Estilos para a nova seção com duas colunas */
+    #secao2 {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      /* Alinha ao topo */
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      flex-wrap: wrap;
+      /* Permite que as colunas virem linhas quando necessário */
+    }
+
+    #secao2 .column {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      /* Garante que a coluna ocupe toda a largura possível */
+    }
+
+    #secao2 .column:first-child {
+      max-width: 383px;
+      /* Largura máxima da coluna da imagem */
+    }
+
+    #secao2 .column:first-child img {
+      width: 100%;
+      /* Para garantir que a imagem não exceda a largura da coluna */
+      height: auto;
+      /* Altura automática proporcional */
+      max-width: 383px;
+      /* Largura máxima da imagem */
+    }
+
+    #secao2 .column:last-child {
+      max-width: calc(100% - 383px);
+      /* Largura máxima da coluna do texto */
+      padding-left: 20px;
+      /* Adiciona um espaçamento à esquerda do texto */
+    }
+
+    /* Estilo para o título da nova seção */
+    #secao2 .column:last-child h2 {
+      font-size: 42px;
+      /* Tamanho do título: 42 pixels */
+      margin-bottom: 10px;
+      color: #000000;
+      /* Define a cor do texto como preto */
+    }
+
+    /* Estilo para o texto da nova seção */
+    #secao2 .column:last-child p {
+      font-size: 19px;
+      /* Tamanho do texto: 19 pixels */
+      color: #000000;
+      /* Cor preta para o texto */
+    }
+
+    /* Media query para telas menores, como dispositivos móveis */
+    @media screen and (max-width: 768px) {
+      #secao2 .column:first-child {
+        max-width: 100%;
+        /* Largura máxima para a coluna da imagem */
+      }
+
+      #secao2 .column:first-child img {
+        max-width: 100%;
+        /* Largura máxima para a imagem */
+      }
+
+      #secao2 .column:last-child {
+        max-width: 100%;
+        /* Largura máxima para a coluna do texto */
+        padding: 10px;
+        /* Adiciona um espaçamento interno */
+      }
     }
 
 
     /* Media query para dispositivos com largura de tela menor que 768px (exemplo: dispositivos móveis) */
     @media screen and (max-width: 768px) {
       .elemento {
-        flex: 1 1 100%; /* Altera a flexibilidade para ocupar toda a largura disponível */
+        flex: 1 1 100%;
+        /* Altera a flexibilidade para ocupar toda a largura disponível */
       }
+    }
+
+    /* Media query para telas grandes */
+    @media screen and (min-width: 768px) {
+      #secao1 .imagens-container {
+        justify-content: space-between;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
+
+
+
+    /* Estilos para a section3 */
+    #section3 {
+      background-color: #000000;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    #section3 div {
+      margin-bottom: 40px;
+      /* Espaço abaixo de cada bloco de texto */
+    }
+
+    #section3 h3 {
+      font-size: 36px;
+      /* Tamanho de fonte para o título h3 */
+      color: #ff0000;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      /* Espaço abaixo do título h3 */
+    }
+
+    #section3 p {
+      font-size: 18px;
+      color: #ffffff;
+      margin-top: 4px;
+      max-width: 100%;
+      margin-bottom: 40px;
+      /* Espaço abaixo do parágrafo */
+    }
+
+    #section3 img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      /* Distribui os elementos ao redor */
+    }
+
+
+    #section3 .elemento {
+      background-color: #000000;
+      /* Cor preta */
+      /* Outros estilos existentes para a classe .elemento */
+      flex: 1 1 30%;
+      margin: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      width: 315px;
+    }
+
+    #section3 .elementos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      /* Distribui os elementos ao redor */
+    }
+
+    #section3 .elemento img:nth-of-type(1) {
+      width: 262px;
+      /* Largura da primeira imagem */
+    }
+
+    #section3 .elemento img:nth-of-type(2) {
+      width: 258px;
+      /* Largura da segunda imagem */
+    }
+
+    #section3 .elemento img:nth-of-type(3) {
+      width: 262px;
+      /* Largura da terceira imagem */
+    }
+
+    #section3 .nova-linha {
+      font-size: 36px;
+    }
+
+    /* Media query para telas menores */
+    @media screen and (max-width: 768px) {
+      #section3 h3 {
+        font-size: 22px;
+        /* Tamanho de fonte menor para o título h3 */
+      }
+
+      #section3 img {
+        max-width: 90%;
+      }
+
+      #section3 .elementos-container {
+        flex-direction: column;
+        /* Alinha os elementos verticalmente */
+        align-items: center;
+        /* Centraliza os elementos */
+      }
+
+      #section3 .elemento {
+        width: 90%;
+        /* Largura ocupando 90% do contêiner */
+        margin: 10px 0;
+        /* Adiciona espaçamento entre os elementos */
+      }
+    }
+
+    #section4 {
+      background-color: #f2f2f2;
+    }
+
+    #section4 .container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    #section4 h1 {
+      background-color: rgb(231, 170, 39);
+      color: rgb(255, 255, 255);
+      padding: 10px;
+      text-align: center;
+    }
+
+    #section4 h1 span {
+      color: #0db5bc;
+    }
+
+
+    #section4 .list-container {
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #section4 .list-item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 35px 0 35px 75px;
+    }
+
+    #section4 .list-title b {
+      color: rgb(0, 0, 0);
+    }
+
+    #section4 .number-item {
+      background-color: rgba(184, 211, 252, 0);
+      border: 1px solid rgb(218, 165, 32);
+      border-radius: 50%;
+      color: rgb(0, 0, 0);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #section4 .image-combo {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: absolute;
+      z-index: 99999;
+      width: 70px;
+      height: 64px;
+      left: 0;
+      transform: translate(0);
+    }
+
+    #section4 .number {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 26px;
+      position: absolute;
+      top: 50%;
+      border-radius: 50%;
+      color: #fff;
+      z-index: 55;
+      padding: 7px;
+      -webkit-transform: translate(-50%, -50%);
+      left: 30px;
+      width: 70px;
+      height: 64px;
+    }
+
+    #section4 .border-bullet {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 26px;
+      color: #fff;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      width: 80%;
+      height: 85%;
+      position: absolute;
+      top: 50%;
+      border: 2px solid;
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      left: 45%;
+      border-color: rgb(218, 165, 32);
+    }
+
+    #section4 .number-item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      font-family: 'Ubuntu', sans-serif;
+      color: #fff;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      font-size: 25px !important;
     }
   </style>
 </head>
+
 <body>
   <header>
     <img class="logo" src="recursos/logo_lv.jpg" alt="Logo da Empresa">
@@ -87,21 +502,2104 @@
     <div class="subtitulo">Você Bonita e Pronta para Qualquer Ocasião</div>
   </section>
 
+  <!-- Seção 1 -->
+  <section id="secao1">
+    <div class="subtitulo">Eleve sua autoestima! Se sinta bem, bonita, maquiada e empoderada!</div>
 
-  <section>
-    <div class="container">
-      <div class="elemento">Elemento 1</div>
-      <div class="elemento">Elemento 2</div>
-      <div class="elemento">Elemento 3</div>
+    <!-- Container para as imagens com textos descritivos -->
+    <div class="imagens-container">
+      <div class="imagem">
+        <img src="recursos/compara1.jpeg" alt="Comparação Dia">
+        <p>Seja para o dia a dia!</p>
+      </div>
+      <div class="imagem">
+        <img src="recursos/compara2.jpeg" alt="Comparação Noite">
+        <p>Seja para arrasar a noite!</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="cta-section">
+    <a href="https://go.hotmart.com/V88563614U?ap=2d26" class="cta-button">Compre Agora!</a>
+  </section>
+
+  <section id="secao2">
+    <div class="column">
+      <img src="recursos/l3vb.jpg" alt="Imagem">
+    </div>
+    <div class="column">
+      <h2>Lucas Vieira</h2>
+      <p>Lucas Vieira começou a trabalhar na área de maquiagem em 2007 quando morava na cidade de 10 mil habitantes
+        chamada Governador Dix-Sept Rosado, no Rio Grande do Norte.</p>
+      <p>O talento, habilidade, sonho e a vontade de crescer eram tão fortes que há seis anos ele se mudou para o Rio de
+        Janeiro e hoje é escalado para jobs importantes ao lado de famosas como Giovanna Antonelli, Bruna Marquezine,
+        Deborah Secco, Gio Ewbank, Adriane Galisteu e Mariana Ximenez.</p>
+      <p>Mas Lucas Vieira ainda tinha o desejo de tornar especial um momento que já é incrível, o casamento! Assim, com
+        esse amor pelo que faz e dono de uma técnica de makeup na qual desenvolveu com a combinação das cores e o sútil
+        toque dos pincéis, Lucas se tornou o maquiador mais desejado pelas noivas.</p>
+      <p>Seu diferencial é produzir sempre uma maquiagem e um penteado atemporal e eterno, sem exageros.</p>
+      <p>Lucas ministra cursos vips de maquiagem e automaquiagem, também realiza workshops e masterclasses por todo
+        brasil.</p>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="elemento">Elemento 4</div>
-      <div class="elemento">Elemento 5</div>
-      <div class="elemento">Elemento 6</div>
+  <section id="section3">
+    <div>
+      <h3>Atenção</h3>
+      <p>Uma maquiagem mal feita, exagerada, craquelada, borrada ou com tons errados, irá passar uma imagem negativa. É
+        muito raro alguém te alertar quando sua make não está legal...</p>
+    </div>
+    <img src="recursos/A9kblI2.png" alt="Resultados da Maquiagem Errada" />
+    <h4 class="nova-linha">Nunca mais..</h4>
+    <div class="elementos-container">
+      <div class="elemento">
+        <img src="recursos/dr.jpg" alt="Imagem 1">
+        <p>Nunca mais desperdice dinheiro com maquiagens que você nunca usará!</p>
+      </div>
+      <div class="elemento">
+        <img src="recursos/amiga.jpg" alt="Imagem 2">
+        <p>Nunca mais dependa da sua amiga para te maquiar!</p>
+      </div>
+      <div class="elemento">
+        <img src="recursos/errado.jpg" alt="Imagem 3">
+        <p>Nunca mais Invista seu tempo com tutorias de automaquiagem que irão te gerar mais duvidas do que realmente
+          ajudar.</p>
+      </div>
     </div>
   </section>
+
+
+  <style>
+    #section5 {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      background-repeat: no-repeat;
+      padding: 50px 0;
+      position: relative;
+      background-position: center 0;
+      background-size: cover;
+      overflow: hidden;
+      font-family: 'Raleway', sans-serif;
+      background-attachment: fixed;
+    }
+
+    #section5 .list-title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      text-align: left;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      color: #a1a1a1;
+      margin-bottom: 8px;
+      font-size: 22px !important;
+    }
+
+    #section5 .list-item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 35px 0 35px 75px;
+    }
+
+    #section5 .list-text {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      text-align: left;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      color: #000;
+      line-height: 1.2;
+      font-size: 14px !important;
+    }
+
+    #section5 .container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1000px;
+      position: relative;
+      width: 100%;
+      padding: 20px 20px;
+      z-index: 1;
+      text-align: center;
+      background-color: rgb(242, 242, 242);
+    }
+
+    #section5 .col {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    #section5 .list-container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin: 0 auto;
+      max-width: 430px;
+    }
+
+    #section5 .image-combo {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: absolute;
+      z-index: 99999;
+      width: 70px;
+      height: 64px;
+      left: 0;
+      transform: translate(0);
+    }
+
+    #section5 .number {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 26px;
+      position: absolute;
+      top: 50%;
+      border-radius: 50%;
+      color: #fff;
+      z-index: 55;
+      padding: 7px;
+      -webkit-transform: translate(-50%, -50%);
+      left: 30px;
+      width: 70px;
+      height: 64px;
+    }
+
+    #section5 .border-bullet {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 26px;
+      color: #fff;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      width: 80%;
+      height: 85%;
+      position: absolute;
+      top: 50%;
+      border: 2px solid;
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      left: 45%;
+      border-color: rgb(218, 165, 32);
+    }
+
+    #section5 .number-item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      font-family: 'Ubuntu', sans-serif;
+      color: #fff;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      font-size: 25px !important;
+    }
+  </style>
+
+
+  <section id="section5">
+    <div class="component-bg" style="background-color: rgb(242, 242, 242);"></div>
+    <div class="container">
+      <h1 class="title Medium Medium-rich">
+        <font class="klickart-font klickart-font-bg"
+          style="background-color: rgb(231, 170, 39); color: rgb(255, 255, 255);">O QUE VOCÊ</font><br><span
+          style="color:#0db5bc"><b class="medium-b">
+            <font class="klickart-font" style="color: rgb(218, 165, 32);">ENCONTRARÁ NO CURSO?</font>
+          </b></span>
+      </h1>
+      <div class="list-container" id="klickart-collection-1h21bvfanf3g00" style="">
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b>
+                <font class="klickart-font" style="color: rgb(0, 0, 0);">No meu curso você..</font>
+              </b></div>
+            <div class="list-text">Aprende passo a passo em como aprender a se<b class="medium-b"> maquiar de forma
+                correta e sem desperdiçar dinheiro</b> com acúmulos de produtos desnecessários.&nbsp;</div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg klickart-edit-icon="svg" fill="rgb(0, 0, 0)" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 115 104">
+                  <path
+                    d="M56 9.3c21.3 0 39 15.5 42.4 35.9L114 53l-15.9 7.9c-4 19.6-21.3 34.4-42.1 34.4 -23.7 0-43-19.3-43-43S32.2 9.3 56 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item">1</div>
+            </div>
+          </div>
+          <div class="line"></div>
+        </div>
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b>
+                <font class="klickart-font" style="color: rgb(0, 0, 0);">Toda Mulher...</font>
+              </b></div>
+            <div class="list-text">Gosta de estar bonita, maquiada e pronta para qualquer ocasião. E nem sempre temos um
+              profissional que esteja disponível para aquela reunião ou evento de última hora. <b class="medium-b">No
+                curso vamos resolver este problema, e EU garanto</b> que essa forma prática que eu desenvolvi para te
+              ensinar, com sua prática diária, será possível absorver com facilidade a técnica que eu uso.&nbsp;</div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg klickart-edit-icon="svg" fill="rgb(0, 0, 0)" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 115 104">
+                  <path
+                    d="M56 9.3c21.3 0 39 15.5 42.4 35.9L114 53l-15.9 7.9c-4 19.6-21.3 34.4-42.1 34.4 -23.7 0-43-19.3-43-43S32.2 9.3 56 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item" style="">2</div>
+            </div>
+          </div>
+          <div class="line"></div>
+        </div>
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b class="medium-b">
+                <font class="klickart-font" style="color: rgb(11, 11, 11);">Vou te ensinar...</font>
+              </b></div>
+            <div class="list-text">Como preparar sua pele para começar a maquiagem. Esse <b class="medium-b">é um ponto
+                fundamental para que sua make fixe</b> e dure por muito tempo.<div><br></div>
+            </div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg klickart-edit-icon="svg" fill="rgb(0, 0, 0)" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 115 104">
+                  <path
+                    d="M58 9.3c-21.3 0-39 15.5-42.4 35.9L0 53l15.9 7.9c4 19.6 21.3 34.4 42.1 34.4 23.7 0 43-19.3 43-43S81.7 9.3 58 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item" style="background-color: rgba(184, 211, 252, 0);">
+                <font class="klickart-font klickart-font-bg" style="background-color: rgba(184, 211, 252, 0);">3</font>
+              </div>
+            </div>
+          </div>
+          <div class="line"></div>
+        </div>
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b>
+                <font class="klickart-font" style="color: rgb(0, 0, 0);">Vou te dar dicas...</font>
+              </b></div>
+            <div class="list-text">Sobre qual a<b class="medium-b"> melhor base para a sua pele </b>e como deve ser a
+              aplicação.</div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg klickart-edit-icon="svg" fill="rgb(0, 0, 0)" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 115 104">
+                  <path
+                    d="M56 9.3c21.3 0 39 15.5 42.4 35.9L114 53l-15.9 7.9c-4 19.6-21.3 34.4-42.1 34.4 -23.7 0-43-19.3-43-43S32.2 9.3 56 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item">4</div>
+            </div>
+          </div>
+          <div class="line"></div>
+        </div>
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b>
+                <font class="klickart-font" style="color: rgb(0, 0, 0);">Vou te dar dicas..</font>
+              </b></div>
+            <div class="list-text">De como <b class="medium-b">corrigir as imperfeições</b> de pele, olhos, etc.</div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg klickart-edit-icon="svg" fill="rgb(0, 0, 0)" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 115 104">
+                  <path
+                    d="M58 9.3c-21.3 0-39 15.5-42.4 35.9L0 53l15.9 7.9c4 19.6 21.3 34.4 42.1 34.4 23.7 0 43-19.3 43-43S81.7 9.3 58 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item">5</div>
+            </div>
+          </div>
+          <div class="line"></div>
+        </div>
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b>
+                <font class="klickart-font" style="color: rgb(0, 0, 0);">Vou detalhar...</font>
+              </b></div>
+            <div class="list-text">Os <b class="medium-b">pontos exatos que você pode&nbsp;</b>aplicar o produto pra
+              fazer o contorno e a iluminação do seu rosto.</div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg klickart-edit-icon="svg" fill="rgb(0, 0, 0)" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 115 104">
+                  <path
+                    d="M56 9.3c21.3 0 39 15.5 42.4 35.9L114 53l-15.9 7.9c-4 19.6-21.3 34.4-42.1 34.4 -23.7 0-43-19.3-43-43S32.2 9.3 56 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item">6</div>
+            </div>
+          </div>
+          <div class="line" style=""></div>
+        </div>
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b>
+                <font class="klickart-font" style="color: rgb(0, 0, 0);">Vou ensinar...</font>
+              </b></div>
+            <div class="list-text"> <b class="medium-b">Técnicas e truques</b> para aplicação de cílios, delineador
+              gatinho e gliter</div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg klickart-edit-icon="svg" fill="rgb(0, 0, 0)" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 115 104">
+                  <path
+                    d="M58 9.3c-21.3 0-39 15.5-42.4 35.9L0 53l15.9 7.9c4 19.6 21.3 34.4 42.1 34.4 23.7 0 43-19.3 43-43S81.7 9.3 58 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item">7</div>
+            </div>
+          </div>
+          <div class="line"></div>
+        </div>
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b>
+                <font class="klickart-font" style="color: rgb(0, 0, 0);">E para finalizar...</font>
+              </b></div>
+            <div class="list-text">Transformaremos uma make leve do dia a dia em uma <b class="medium-b">make power para
+                arrasar na noite.</b> </div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 104" fill="rgb(0, 0, 0)"
+                  klickart-edit-icon="svg">
+                  <path
+                    d="M56 9.3c21.3 0 39 15.5 42.4 35.9L114 53l-15.9 7.9c-4 19.6-21.3 34.4-42.1 34.4 -23.7 0-43-19.3-43-43S32.2 9.3 56 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item">8</div>
+            </div>
+          </div>
+          <div class="line" style=""></div>
+        </div>
+        <div class="list-item">
+          <div class="col text">
+            <div class="list-title"><b class="medium-b">
+                <font class="klickart-font" style="color: rgb(0, 0, 0);">Material de Apoio</font>
+              </b></div>
+            <div class="list-text">Em todas as aulas há PDF detalhando os produtos e materiais utilizados para facilitar
+              o aprendizado.</div>
+          </div>
+          <div class="image-combo" klickart-edit-highlight-hide-buttons="">
+            <div class="number" klickart-edit-not-highlight="" style="">
+              <div><svg klickart-edit-icon="svg" fill="#313131" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 115 104">
+                  <path
+                    d="M58 9.3c-21.3 0-39 15.5-42.4 35.9L0 53l15.9 7.9c4 19.6 21.3 34.4 42.1 34.4 23.7 0 43-19.3 43-43S81.7 9.3 58 9.3z">
+                  </path>
+                </svg></div>
+              <div class="border-bullet" style="border-color: rgb(218, 165, 32);"></div>
+              <div class="number-item">9</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    #section6 {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+      background-attachment: fixed;
+    }
+
+    #section6 .container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1000px;
+      position: relative;
+      width: 100%;
+      padding-top: 49px;
+      padding-bottom: 40px;
+    }
+
+    #section6 h2.title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-weight: normal;
+      margin: 0;
+      color: #525252;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 21px !important;
+      line-height: 1.2 !important;
+      background-color: rgb(242, 242, 242);
+
+    }
+
+    #section6 h3.title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-weight: normal;
+      margin: 0;
+      color: #525252;
+      text-align: left;
+      margin-bottom: 10px;
+      font-size: 18px !important;
+      line-height: 1.1 !important;
+      padding-left: 10px;
+    }
+
+    #section6 .list {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Open Sans', sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      text-align: left;
+      margin: 60px auto 20px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    #section6 .ico {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Open Sans', sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      text-align: center;
+      flex: 1 1 auto;
+      width: 51px;
+      height: 51px;
+    }
+
+    #section6 .item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Open Sans', sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      padding: 20px;
+      display: flex;
+      position: relative;
+      vertical-align: top;
+      margin: 0 0 30px;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    #section6 .description-wrap {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      width: 100%;
+      flex: 1 1 auto;
+    }
+
+
+
+    #section6 .description {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Open Sans', sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-weight: 400;
+      color: #555555;
+      font-size: 18px !important;
+      line-height: 1.1 !important;
+      padding-left: 10px;
+      text-align: left;
+    }
+  </style>
+
+  <section id="section6">
+    <div class="container" style="background-color: rgb(242, 242, 242);">
+      <h2 class="title" style="background-color: rgb(242, 242, 242);"><b>DESCRIÇÃO DAS AULAS:<br>+de 15 horas de Vídeo
+          Aulas</b></h2>
+      <div class="list">
+        <div class="item"> <span class="ico"><svg fill="rgb(218, 165, 32)" viewBox="10 10 250 250"
+              enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Módulo 1: Apresentação</b></h3>
+            <div class="description" style="text-align: left;">- Aula preparatória para tudo que você irá aprender<br>
+            </div>
+          </div>
+        </div>
+        <div class="item"> <span class="ico"><svg klickart-edit-icon="svg" fill="rgb(218, 165, 32)"
+              viewBox="10 10 250 250" enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Modulo 2: Processo da Automaquiagem</b></h3>
+            <div class="description" style="text-align: left;">- Passo a passo para a maquiagem perfeita; <br>- Como
+              transformar uma maquiagem do dia para a noite; <br><br> </div>
+          </div>
+        </div>
+        <div class="item"> <span class="ico"><svg klickart-edit-icon="svg" fill="rgb(218, 165, 32)"
+              viewBox="10 10 250 250" enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Modulo 3: Maquiagem com Produtos Nacionais</b></h3>
+            <div class="description" style="text-align: left;">- Pele de Celebridade com produtos acessíveis; <br>-
+              Maquiagem monocromática (rosa); <br>- Delineador dos Sonhos; <br>- Esfumado Black poderoso; <br>- Cut
+              Crease.</div>
+          </div>
+        </div>
+        <div class="item" style=""> <span class="ico"><svg klickart-edit-icon="svg" fill="rgb(218, 165, 32)"
+              viewBox="10 10 250 250" enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Modulo 4: Maquiagem para Pele Negra&nbsp;</b></h3>
+            <div class="description" style="text-align: left;">- Preparação para Pele Negra<br>-Maquiagem para o Dia em
+              Pele Negra<div>-Maquiagem para a Noite em Pele Negra</div>
+            </div>
+          </div>
+        </div>
+        <div class="item" style=""> <span class="ico"><svg klickart-edit-icon="svg" fill="rgb(218, 165, 32)"
+              viewBox="10 10 250 250" enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Modulo 5: Maquiagem para Pele Madura<br></b></h3>
+            <div class="description Medium Medium-rich"> - Preparação da Pele Madura 45+<br>- Maquiagem para Pele
+              Madura&nbsp;45+<br>
+              <div>- Maquiagem para pele madura 55+</div>
+            </div>
+          </div>
+        </div>
+        <div class="item"> <span class="ico"><svg klickart-edit-icon="svg" fill="rgb(218, 165, 32)"
+              viewBox="10 10 250 250" enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Modulo 6: Pincéis e Materiais <br></b></h3>
+            <div class="description" style="text-align: left;">- Tipos de Pincéis; <br>- Tipos de Materiais. <br>- Como
+              Limpar seus Pincéis.</div>
+          </div>
+        </div>
+        <div class="item" style=""> <span class="ico"><svg klickart-edit-icon="svg" fill="rgb(218, 165, 32)"
+              viewBox="10 10 250 250" enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Modulo 7: Penteados</b></h3>
+            <div class="description" style="text-align: left;">- Cabelo "Podrinho"<br>- Coque Alto <br>- Trança
+              Boxeadora </div>
+          </div>
+        </div>
+        <div class="item"> <span class="ico"><svg klickart-edit-icon="svg" fill="rgb(218, 165, 32)"
+              viewBox="10 10 250 250" enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Modulo Extra 1: Maquiagem Glam com Glitter</b></h3>
+            <div class="description" style="text-align: left;">- Passo a passo da Maquiagem (parte 1); <br>- Passo a
+              passo da Maquiagem (parte 2); <br>- Passo a passo da Maquiagem (parte 3). </div>
+          </div>
+        </div>
+        <div class="item"> <span class="ico"><svg klickart-edit-icon="svg" fill="rgb(218, 165, 32)"
+              viewBox="10 10 250 250" enable-background="new 10 10 250 250">
+              <path
+                d="M135,37c54.038,0,98,43.963,98,98s-43.962,98-98,98c-54.037,0-98-43.963-98-98S80.963,37,135,37 M135,10 C65.965,10,10,65.965,10,135s55.965,125,125,125s125-55.965,125-125S204.035,10,135,10L135,10z">
+              </path>
+              <path
+                d="M163.01,130.301l-34.916-24.02c-1.748-1.201-4.014-1.338-5.889-0.354c-1.875,0.992-3.053,2.936-3.053,5.051v48.043 c0,2.115,1.178,4.059,3.053,5.051c0.834,0.436,1.742,0.652,2.652,0.652c1.135,0,2.266-0.338,3.236-1.004l34.916-24.021 c1.545-1.063,2.473-2.824,2.473-4.699C165.482,133.123,164.555,131.363,163.01,130.301z">
+              </path>
+              <path
+                d="M135,35C79.771,35,35,79.771,35,135s44.771,100,100,100s100-44.771,100-100S190.229,35,135,35z M135,193.535 c-32.33,0-58.535-26.205-58.535-58.535S102.67,76.465,135,76.465S193.535,102.67,193.535,135S167.33,193.535,135,193.535z">
+              </path>
+            </svg></span>
+          <div class="description-wrap">
+            <h3 class="title"><b class="medium-b">Modulo Extra 2: Aulas Para Marcas Diversas</b></h3>
+            <div class="description" style="text-align: left;">- Maquiagem Fresh para o Verão; <br>- Maquiagem Glam;
+              <br>- Maquiagem Metálica; <br>- Maquiagem Violeta; <br>- Delineador Gatinho com Deborah Secco; <br>- Quiz
+              da Beleza com Deborah Secco; <br>- Vilã vs. Mocinha com Deborah Secco; <br>- Trança Coração com Nívea
+              Stelmann.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+
+  </script>
+
+  <!---
+  <section id="section7">
+    <div class="container" style="background-color: rgb(0, 0, 0);">
+      <div class="section-heading">
+        <h2 class="section-title">
+          <font color="#c0c0c0"><b>COMECE COM OS MATERIAIS E PRODUTOS QUE VOCÊ TEM EM CASA</b></font>
+        </h2>
+        <div class="section-subtitle Medium Medium-rich">
+          <font class="klickart-font" style="color: rgb(192, 192, 192);">Assim você conomizará tempo e dinheiro
+            comprando apenas o que precisa</font>
+        </div>
+      </div>
+      <div class="section-player">
+        <div>
+          <div class="embed-responsive embed-responsive-16by9" klickart-edit-not-highlight="" style="overflow: hidden;">
+            <iframe frameborder="0" allowfullscreen=""
+              src="https://scripts.converteai.net/74042c53-dfa7-44e4-8bcb-7ddb468bdd1f/players/641b1d971e83d300097452c1/embed.html"
+              id="ifr_641b1d971e83d300097452c1" style="position:absolute;top:0;left:0;width:100%;height:100%;"
+              referrerpolicy="origin"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <style>
+    #section8 {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      background-repeat: no-repeat;
+      position: relative;
+      background-position: center 0;
+      background-size: cover;
+      overflow: hidden;
+      padding: 30px 0 0;
+      background-attachment: fixed;
+      background-color: rgb(242, 242, 242);
+    }
+
+    #section8 .container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1000px;
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    #section8 .events-photo-agenda-content {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      background-color: #fff;
+      background-attachment: scroll;
+    }
+
+    #section8 .events-photo-description {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      color: #1faa8b;
+      font-size: 18px;
+      margin-bottom: 30px;
+      text-align: left;
+      display: none;
+    }
+
+    #section8 .events-photo-agenda {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin: -10px -20px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #section8 .events-photo-agenda-item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      vertical-align: top;
+      padding: 10px;
+      display: block;
+      margin: 0 auto 30px;
+      max-width: 300px;
+    }
+
+    #section8 .events-photo-agenda-item-header {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      max-height: 210px;
+      overflow: hidden;
+    }
+
+    #section8 .events-photo-agenda-item-content {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      padding: 15px 20px 20px;
+    }
+
+    #section8 img {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      border: 0;
+      vertical-align: middle;
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+  </style>
+
+  <section id="section8">
+    <div class="container">
+      <div class="events-photo-description">Há sempre um plano sob medida para as suas necessidades
+      </div>
+      <div class="events-photo-agenda" id="klickart-collection-h5v15amn6tg00">
+        <div class="events-photo-agenda-item">
+          <div class="events-photo-agenda-content">
+            <div class="events-photo-agenda-item-header"><img src="recursos/pele_madura.jpg"
+                alt="Maquiagem para Pele Madura" style="width: 299px;"></div>
+            <div class="events-photo-agenda-item-content">
+              <h3 style="text-align: center;">
+                <font style="font-size: 22px;"><b class="medium-b">Aula - Maquiagem Para Pele
+                    Madura</b></font>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="events-photo-agenda-item">
+          <div class="events-photo-agenda-content" klickart-edit-not-highlight=""
+            style="background-attachment: scroll;">
+            <div class="events-photo-agenda-item-header"><img src="recursos/glitter32.jpg" alt="Glitter"
+                klickart-image-source="src" style="width: 755px;"
+                last-local-image-source="https://static-public.pages.hotmart.com/uploads/media/file/1133890/glitter32.jpg"
+                previous-value="https://static-public.pages.hotmart.com/uploads/media/file/1133890/glitter32.jpg"></div>
+            <div class="events-photo-agenda-item-content">
+              <h3 style="text-align: center;">
+                <font class="klickart-fontSize" style="font-size: 22px;"><b class="medium-b">Aula - Maquiagem com
+                    Glitter</b></font>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="events-photo-agenda-item" style="">
+          <div class="events-photo-agenda-content" klickart-edit-not-highlight=""
+            style="background-attachment: scroll;">
+            <div class="events-photo-agenda-item-header"><img src="recursos/pincel_3.jpg" alt="Pincel"
+                klickart-image-source="src">
+            </div>
+            <div class="events-photo-agenda-item-content">
+              <h3 style="text-align: center;"><b class="medium-b">
+                  <font class="klickart-fontSize" style="font-size: 22px;">Aula - Tipos de Pincéis</font>
+                </b></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    #section9 {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+      padding: 45px 0 120px;
+      background-attachment: fixed;
+    }
+
+    #section9 .container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Montserrat", sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1000px;
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    #section9 .quality-2-title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font: 36px/1.3 "Slabo 13px", sans-serif;
+      text-align: center;
+      margin: 0 auto 50px;
+      line-height: 1px;
+      color: rgb(246, 215, 224);
+    }
+
+    #section9 .quality-2-description {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Montserrat", sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-size: 18px;
+      color: #59686e;
+      margin: 0 auto 45px;
+      max-width: 800px;
+      text-align: center;
+      display: none;
+    }
+
+    #section9 .quality-2-list {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Montserrat", sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      text-align: center;
+      margin: -10px auto -45px;
+      padding-top: 25px;
+    }
+
+    #section9 .quality-2-item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      width: 100%;
+      display: inline-block;
+      position: relative;
+      padding: 15px;
+      vertical-align: top;
+      margin: -15px 0;
+      margin-bottom: 45px;
+      max-width: 315px;
+      margin-left: 0;
+    }
+
+    #section9 .img-responsive {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      border: 0;
+      vertical-align: middle;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 25px;
+      width: 268px;
+    }
+
+    #section9 .title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.1;
+      margin-top: 10px;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: rgb(255, 70, 0);
+    }
+  </style>
+
+  <section id="section9">
+    <div class="container" style="background-color: rgb(0, 0, 0);">
+      <h2 class="quality-2-title">
+        <font color="#c0c0c0" class="klickart-lineHeight klickart-font"
+          style="line-height: 54.8px; color: rgb(192, 192, 192);">ESTE CURSO É INDICADO PARA:</font>
+      </h2>
+      <div class="quality-2-description">Comprando agora a ferramenta incrível, você receberá:
+      </div>
+      <div class="quality-2-list">
+        <div class="quality-2-item">
+          <img class="img-responsive" src="recursos/maquiagem_trabalho_1.jpg" alt="Imagem" style="width: 268px;">
+          <h4 class="title" style="color: rgb(255, 70, 0);">
+            <font class="klickart-font" style="color: rgb(192, 192, 192);">TRABALHO</font>
+            <div><br></div>
+            <div>
+              <font class="klickart-font" style="color: rgb(192, 192, 192);">Uma mulher bem maquiada passa a imagem de
+                organizada, equilibrada e lider.</font>
+            </div>
+          </h4>
+        </div>
+        <div class="quality-2-item">
+          <img class="img-responsive" src="recursos/maquiagem_dia_a_dia_1.jpg" alt="Imagem" style="width: 259px;">
+          <h4 class="title">
+            <font style="color: rgb(192, 192, 192);">DIA A DIA</font>
+            <div>
+              <font style="color: rgb(192, 192, 192);"><br></font>
+            </div>
+            <div>
+              <font style="color: rgb(192, 192, 192);">Estará preparada para realizar aquela
+                maquiagem para o dia a dia de forma rápida, mesmo que seja para um simples encontro com as amigas.
+              </font>
+            </div>
+          </h4>
+        </div>
+        <div class="quality-2-item">
+          <img class="img-responsive" src="recursos/maquiagem_festa.jpg" alt="Imagem"
+            style="border-radius: 0%; width: 996px;">
+          <h4 class="title">
+            <font style="color: rgb(192, 192, 192);">
+              <font style="color: rgb(192, 192, 192);">EVENTOS E FESTAS</font><br><br>
+              <font style="color: rgb(192, 192, 192);">Você irá arrasar na balada ou aquele evento
+                que pede uma make poderosa.&nbsp;</font>
+            </font>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    #section10 {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      background-repeat: no-repeat;
+      font-family: "Roboto", sans-serif;
+      position: relative;
+      background-position: center 0;
+      background-size: cover;
+      padding: 40px 0;
+      text-align: center;
+      background-attachment: fixed;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+    #section10 .container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1000px;
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    #section10 .table-images-title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-weight: normal;
+      margin: 0;
+      text-align: center;
+      line-height: 1.2;
+      position: relative;
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: rgb(192, 192, 192);
+    }
+
+    #section10 .table-images-box {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #section10 .item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: relative;
+      float: left;
+      overflow: hidden;
+      padding: 10px;
+      width: 100%;
+    }
+
+    #section10 .image-layer {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    #section10 .img-responsive {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      border: 0;
+      vertical-align: middle;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      width: 324px;
+      max-width: 324px;
+    }
+
+    #section10 .layer {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: 0.35s ease-in-out;
+      background-attachment: scroll;
+      background-color: rgba(0, 0, 0, 0);
+    }
+  </style>
+
+
+  <section id="section10">
+    <div class="container" style="background-color: rgb(0, 0, 0);">
+      <h2 class="table-images-title" style="color: rgb(192, 192, 192);"><b>
+          <font style="color: rgb(246, 215, 224);">
+            <font style="color: rgb(235, 235, 235);">ALUNAS </font>
+            <font style="color: rgb(235, 235, 235);">COM RESULTADOS REAIS</font>
+          </font>
+        </b></h2>
+      <div class="table-images-box" style="">
+        <div class="item">
+          <div class="image-layer">
+            <img class="img-responsive" src="recursos/CtW5WLw.jpg" alt="Título do Vídeo">
+            <div class="layer" style="background-attachment: scroll; background-color: rgba(0, 0, 0, 0);"></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image-layer">
+            <img class="img-responsive" src="recursos/HIprKUc.jpg" alt="">
+            <div class="layer" style="background-attachment: scroll;"></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image-layer">
+            <img class="img-responsive" src="recursos/ZmOOETB.jpg" alt="Título do Vídeo">
+            <div class="layer" klickart-edit-not-highlight="" style="background-attachment: scroll;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    #section11 {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      background-repeat: no-repeat;
+      font-family: "Roboto", sans-serif;
+      position: relative;
+      background-position: center 0;
+      background-size: cover;
+      padding: 40px 0;
+      text-align: center;
+      background-attachment: fixed;
+      padding-top: 51px;
+      padding-bottom: 0px;
+    }
+
+    #section11 .container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1000px;
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    #section11 .table-images-title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-weight: normal;
+      margin: 0;
+      line-height: 1.2;
+      position: relative;
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: rgb(192, 192, 192);
+      text-align: center;
+    }
+
+    #section11 .table-images-description {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: "Open Sans", sans-serif;
+      font-size: 18px;
+      color: #638db6;
+      line-height: 1.4;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    #section11 .table-images-box {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #section11 .item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: relative;
+      float: left;
+      overflow: hidden;
+      padding: 10px;
+      width: 100%;
+    }
+
+    #section11 .image-layer {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: relative;
+      width: 324px;
+    }
+
+    #section11 .img-responsive {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      border: 0;
+      vertical-align: middle;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      width: 3072px;
+    }
+
+    #section11 .subtitle {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Roboto", sans-serif;
+      color: #fff;
+      text-align: left;
+      line-height: 1.6;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+  </style>
+
+
+  <section id="section11">
+    <div class="container" style="background-color: rgb(242, 242, 242);">
+      <h2 class="table-images-title" style="color: rgb(192, 192, 192); text-align: center;"><b>
+          <font style="color: rgb(60, 19, 36);">
+            <font style="color: rgb(161, 161, 161);">CELEBRIDADES CONFIARAM E INDICARAM MEU CURSO
+            </font>
+            <font style="color: rgb(161, 161, 161);">PARA </font>
+            <font style="color: rgb(161, 161, 161);">SUAS SEGUIDORAS</font>
+          </font>
+        </b></h2>
+      <div class="table-images-description" style="text-align: center;">
+        <font class="klickart-font" style="color: rgb(60, 19, 36);"><u class="medium-u">
+            <font class="klickart-font" style="color: rgb(0, 0, 0);">Elas confiaram no meu trabalho e nas técnicas que
+              desenvolvi para ajudar as mulheres a aprender se maquiar e ficar empoderada.&nbsp;</font>
+          </u></font>
+      </div>
+      <div class="table-images-box">
+        <div class="item">
+          <div class="image-layer">
+            <img class="img-responsive" src="recursos/bruna.jpeg" alt="Título do Vídeo" style="width: 3072px;">
+            <span style="font-size: 18px; background-attachment: scroll; background-color: rgba(0, 0, 0, 0);">
+              <b>BRUNA MARQUEZINE</b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="image-layer">
+          <img class="img-responsive" src="recursos/giovanni.jpeg" alt="Título do Vídeo" style="width: 310px;">
+          <div class="text" style="background-attachment: scroll;">
+            <span class="subtitle">
+              <span style="font-size: 18px;background-attachment: scroll; background-color: rgba(0, 0, 0, 0);">
+                <b>GIOVANNA ANTONELLI</b>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="image-layer">
+          <img class="img-responsive" src="recursos/galisteu.jpeg" alt="Título do Vídeo">
+          <div class="text" style="background-attachment: scroll;">
+            <span class="subtitle">
+              <span style="font-size: 18px;background-attachment: scroll; background-color: rgba(0, 0, 0, 0);">
+                <b>ADRIANE GALISTEU</b>
+              </span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <style>
+    #section12 {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      background-repeat: no-repeat;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+      background-position: center 0;
+      background-size: cover;
+      padding: 45px 0;
+      background-attachment: fixed;
+    }
+
+    #section12 .container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Open Sans', sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1000px;
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    #section12 .image-title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-weight: normal;
+      margin: 0;
+      line-height: 1.3;
+      margin-bottom: 30px;
+      font-size: 26px;
+      color: rgb(110, 166, 228);
+      text-align: center;
+    }
+
+    #section12 .img_ressponsive {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Open Sans', sans-serif;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      border: 0;
+      vertical-align: middle;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      width: 344px;
+    }
+  </style>
+
+
+  <section id="section12">
+    <div class="container" style="background-color: rgb(0, 0, 0);">
+      <h2 class="image-title" style="color: rgb(110, 166, 228); text-align: center;"><b>
+          <font style="color: rgb(255, 255, 255); font-size: 34px;">CERTIFICADO DIGITAL</font>
+          <font style="font-size: 34px; color: rgb(255, 255, 255);">&nbsp;</font>
+        </b>
+      </h2>
+      <img class="img-responsive" src="recursos/V0KRdTY.jpg" alt="Imagem" style="width: 344px;">
+      <p></p>
+    </div>
+  </section>
+
+  <style>
+    #section13 {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      background-repeat: no-repeat;
+      font-family: 'Roboto', sans-serif;
+      padding: 45px 0;
+      position: relative;
+      background-position: center 0;
+      background-size: cover;
+      text-align: center;
+      background-attachment: fixed;
+    }
+
+    #section13 .container {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1000px;
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    #section13 .plans-icon-title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      line-height: 1.1;
+      font-weight: normal;
+      margin: 0;
+      font-family: "Slabo 13px", sans-serif;
+      font-size: 34px;
+      color: rgb(55, 62, 76);
+      text-align: center;
+      margin-bottom: 15px;
+      margin-top: 0;
+    }
+
+    #section13 .plans-wrapper {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      padding: 20px 0;
+      margin: -20px 0 -70px;
+    }
+
+    #section3 header {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Roboto', sans-serif;
+      word-wrap: break-word;
+      background-color: #000000;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+
+    #section13 .image-title {}
+
+    #section13 .img-responsive {}
+
+    #section13 .plans-col {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      float: none !important;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 -2px 50px;
+    }
+
+    #section13 .plans-icon-item {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      position: relative;
+      border: 1px solid #d7d7d7;
+      border-radius: 3px;
+      padding: 15px;
+      background-attachment: scroll;
+      background-color: rgb(242, 242, 242);
+    }
+
+    #section13 .icon-title {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    #section13 .plans-icon-line {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      display: block;
+      width: 54px;
+      border-bottom: 1px solid rgb(255, 150, 0);
+      margin: -10px auto 20px;
+      padding-top: 10px;
+      border-color: rgb(229, 151, 40);
+
+    }
+
+    #section13 .plans-icon-price {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 60px;
+      margin-bottom: 46px;
+      line-height: 1;
+      color: rgb(229, 151, 40);
+    }
+
+    #section13 .text-price {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased !important;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1;
+      color: rgb(229, 151, 40);
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-size: 16px;
+      display: block;
+    }
+
+    #section13 .plans-description {
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      font-size: 16px;
+      color: rgb(55, 62, 76);
+    }
+
+    .sifrao {}
+
+    .coins {}
+  </style>
+
+
+  <section id="section13">
+    <div class="container" style="background-color: rgb(242, 242, 242);">
+      <h2 class="plans-icon-title"><b>VALOR PROMOCIONAL PAGAMENTO ÚNICO</b></h2>
+      <div class="plans-wrapper">
+        <div class="plans-col">
+          <div class="plans-icon-item" style="background-attachment: scroll; background-color: rgb(242, 242, 242);">
+            <header>
+              <span class="icon-title">
+                <svg klickart-edit-icon="svg" fill="rgb(229, 151, 40)" viewBox="0 0 1792 1792">
+                  <path
+                    d="M704 1536q0 52-38 90t-90 38-90-38-38-90 38-90 90-38 90 38 38 90zm896 0q0 52-38 90t-90 38-90-38-38-90 38-90 90-38 90 38 38 90zm128-1088v512q0 24-16.5 42.5t-40.5 21.5l-1044 122q13 60 13 70 0 16-24 64h920q26 0 45 19t19 45-19 45-45 19h-1024q-26 0-45-19t-19-45q0-11 8-31.5t16-36 21.5-40 15.5-29.5l-177-823h-204q-26 0-45-19t-19-45 19-45 45-19h256q16 0 28.5 6.5t19.5 15.5 13 24.5 8 26 5.5 29.5 4.5 26h1201q26 0 45 19t19 45z">
+                  </path>
+                </svg>
+              </span>
+              <div class="plans-icon-line" style="border-color: rgb(229, 151, 40);"></div>
+            </header>
+            <div class="plans-icon-price" style="color: rgb(229, 151, 40);">
+              <b class="medium-b">
+                <span class="text-price" style="color: rgb(255, 74, 33);">De <s class="medium-s">R$147,00</s>
+                  por<br></span>
+                <span class="sifrao">9X R$<span style="font-size: 60px;">10</span></span>
+                <span class="coins">,91*</span>
+              </b>
+              <span class="text-price">ou R$87,00 a.v.</span>
+            </div>
+            <div class="plans-description">
+              <span class="medium-b">
+                <b class="medium-b"></b>
+              </span>
+              <b class="medium-b">
+                <font class="klickart-fontSize" style="font-size: 17px;">Acesso ao curso completo! </font>
+              </b><br>
+              <b class="medium-b">
+                <font class="klickart-fontSize" style="font-size: 17px;">Material de Apoio em PDF. </font>
+              </b><br>
+              <b class="medium-b">
+                <font class="klickart-fontSize" style="font-size: 17px;">Bônus: Maquaigem pele madura.&nbsp;</font>
+              </b><br>
+              <b class="medium-b">
+                <font class="klickart-fontSize" style="font-size: 17px;">Bônus: Maquiagem com gliter.</font>
+              </b>
+              <div><span style="font-size: 17px;"><b>Bônus: Tipos de Pincéis.</b></span></div>
+              <div><span style="font-size: 17px;"><b>Bônus: Trança Boxeadora.<br>Bônus: Dicas de
+                    materiais.<br></b></span><br><b class="medium-b">
+                  <font class="klickart-font" style="color: rgb(229, 151, 40);">• 24&nbsp; Meses de Acesso</font>
+                </b> </div>
+            </div>
+            <a href="https://pay.hotmart.com/O16026845E?off=ow41rpwx&amp;checkoutMode=10&amp;split=9"
+              class="plans-icon-button" klickart-edit-link-type="default" klickart-edit-link-href-klickbox="#"
+              klickart-edit-link-href-faq-question="#" id="klickart-link29lpcglucd9g00"
+              style="background-attachment: scroll; background-color: rgb(229, 151, 40);"><span><b
+                  class="medium-b">QUERO MINHA VAGA!</b></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section14">
+    <div class="component-bg" style="background-color: rgb(0, 0, 0);" klickart-edit-background-mask-visible="true">
+    </div>
+    <div class="container"> <span class="satisfaction-image" style=""><img
+          src="//static-public.pages.hotmart.com/uploads/media/file/1115909/257gbaq.png" klickart-edit-icon="img"
+          style="width: 220px;"></span>
+      <div class="satisfaction-col">
+        <h1 class="satisfaction-title" style="text-align: center;"><b class="medium-b">
+            <font class="klickart-font klickart-font-bg klickart-fontSize"
+              style="background-color: rgba(255, 255, 255, 0); color: rgb(218, 165, 32); font-size: 31px;">7 Dias de
+              Garantia Incondicional! Satisfação Garantida ou seu Dinheiro de Volta!</font>
+          </b></h1>
+        <h2 class="satisfaction-subtitle" style="display:none">ou seu dinheiro de volta</h2>
+        <div class="satisfaction-text" style="">
+          <font class="klickart-font" style="color: rgb(192, 192, 192);"></font>Se você seguir o passo a passo, aplicar
+          e praticar o que eu ensinei, e mesmo assim não tiver evolução na sua maquiagem basta enviar um e-mail para
+          contato@lucasvieiramakeup.com pedindo o reembolso que nós devolveremos o seu dinheiro. O prazo é de 7 dias,
+          sem letras miúdas, simplesmente devolveremos!<font class="klickart-font" style="color: rgb(192, 192, 192);">
+          </font>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section15"></section>
+  <div class="component-bg" style="background-color: rgb(217, 217, 217);" klickart-edit-background-mask-visible="true">
+  </div>
+  <div class="container">
+    <h2 class="faq-title"><b class="medium-b">DÚVIDAS FREQUENTES</b></h2>
+    <div class="faq-questions" id="klickart-collection-7f40c2hmb5l00">
+      <div class="faq-question faq-accordion">
+        <h3 class="title Medium Medium-rich" klickart-edit-faq-question="section_faq_item_1">As Aulas São Online?</h3>
+        <div class="fl-faq-separator">
+          <div class="fl-faq-plus"></div>
+        </div>
+        <div class="content">
+          <div>Sim, as aulas são online e você poderá e ver e rever quantas vezes quiser dentro do prazo de 24 meses, do
+            conforto da sua casa e de qualquer dispositivo com acesso a internet.</div>
+        </div>
+      </div>
+      <div class="faq-question faq-accordion">
+        <h3 class="title Medium Medium-rich" klickart-edit-faq-question="section_faq_item_2">Qual a validade do curso?
+        </h3>
+        <div class="fl-faq-separator">
+          <div class="fl-faq-plus"></div>
+        </div>
+        <div class="content">
+          <div class="Medium Medium-rich">Você terá acesso ao curso por 24 meses incluindo todas as atualizações que
+            surgirem dentro deste período.&nbsp;</div>
+        </div>
+      </div>
+      <div class="faq-question faq-accordion">
+        <h3 class="title" klickart-edit-faq-question="section_faq_item_3">O Curso tem certificado?</h3>
+        <div class="fl-faq-separator">
+          <div class="fl-faq-plus"></div>
+        </div>
+        <div class="content">
+          <div>SIM, certificado digital de curso livre com assinatura do Lucas Vieira.</div>
+        </div>
+      </div>
+      <div class="faq-question faq-accordion">
+        <h3 class="title" klickart-edit-faq-question="section_faq_item_5">Preciso ter algum conhecimento para entrar no
+          curso?</h3>
+        <div class="fl-faq-separator">
+          <div class="fl-faq-plus"></div>
+        </div>
+        <div class="content">
+          <div>Não, o objetivo é você aprender o passo a passo para uma maquiagem perfeita começando do zero!
+            Desenvolvido para iniciantes e pessoas interessadas em desenvolver suas técnicas com as maquiagens que tiver
+            em casa.</div>
+        </div>
+      </div>
+      <div class="faq-question faq-accordion" style="">
+        <h3 class="title" klickart-edit-faq-question="section_faq_item_1-1d5gn4ian" style="">Quantas aulas e tempo
+          estimado de conteúdo?</h3>
+        <div class="fl-faq-separator">
+          <div class="fl-faq-plus"></div>
+        </div>
+        <div class="content">
+          <div style="">São mais de 15 horas de video-aulas diversas em 30 aulas diferentes! Aula de produtos e
+            materiais, bases e pinceis, penteados, pele madura, pele negra e muitas outras. Focado para começar do zero
+            e aprender de uma vez por todas.<br>Cada aula tem seu PDF com todos os produtos e materiais que foram usados
+            e você poderá deixar suas duvidas abaixo de cada video que, o Lucas Vieira, responderá para te ajudar!</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-content" data-klickart-delay-options="{&quot;enabled&quot;:false,&quot;time&quot;:&quot;0&quot;}"
+      style=""> <a class="general-button success modal-trigger" href="#section-14463395"
+        style="background-attachment: scroll; background-color: rgb(218, 165, 32);" klickart-edit-not-highlight=""
+        klickart-edit-link-type="section" klickart-edit-link-href-klickbox="#" klickart-edit-link-href-faq-question="#"
+        id="klickart-linkbtdeg8teq5600"><span class="Medium Medium-rich"><b>QUERO APRENDER A ME
+            MAQUIAR&nbsp;</b></span></a> </div>
+  </div>
+  </section>
+
 </body>
+
 </html>

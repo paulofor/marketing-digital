@@ -35,7 +35,7 @@ public abstract class ConsultaGoogleAdsListaAtivaPorConta extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new CampanhaAdsMetricaIntraday_AtualizaIntradayImpl();
+		return new ConsultaGoogleGrupoAdsListaAtivaPorContaImpl();
 	}
 
 

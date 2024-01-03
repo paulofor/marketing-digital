@@ -48,6 +48,24 @@
 		},
 		"jsonAds": {
 			"type": "string"
+		},
+		"jsonGrupoAnuncio": {
+			"type": "string"
+		},
+		"resourceNameCampanha": {
+			"type": "string"
+		},
+		"jsonGrupoAudiencia": {
+			"type": "string"
+		},
+		"jsonProgramacao": {
+			"type": "string"
+		},
+		"jsonGrupoLocais": {
+			"type": "string"
+		},
+		"resourceNameGrupo": {
+			"type": "string"
 		}
 	},
 	"validations": [],

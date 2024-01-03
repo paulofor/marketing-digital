@@ -7,6 +7,7 @@
 		<div class="dgc-card" *ngFor="let item of listaBase">
  			<div class="dgc-card-header">
  				<span class="dgc-link" routerLink="/contaGoogleDetalhe/{{item.id}}">{{item.nome}}</span>
+				<span class="dgc-direita">#{{item.id}}</span>
  			</div>
 			 <div class="dgc-card-detalhe">
 				<span>Suspensa: {{item.suspensa}}</span>

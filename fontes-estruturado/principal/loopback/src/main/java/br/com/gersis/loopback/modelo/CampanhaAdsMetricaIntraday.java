@@ -27,6 +27,12 @@ public class CampanhaAdsMetricaIntraday extends Model {
 	private String primaryStatus;
 	private String primaryStatusReasons;
 	private String jsonAds;
+	private String jsonGrupoAnuncio;
+	private String resourceNameCampanha;
+	private String jsonGrupoAudiencia;
+	private String jsonProgramacao;
+	private String jsonGrupoLocais;
+	private String resourceNameGrupo;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private ContaGoogle ContaGoogle;
@@ -63,6 +69,12 @@ public class CampanhaAdsMetricaIntraday extends Model {
 			obj.put("primaryStatus", primaryStatus);
 			obj.put("primaryStatusReasons", primaryStatusReasons);
 			obj.put("jsonAds", jsonAds);
+			obj.put("jsonGrupoAnuncio", jsonGrupoAnuncio);
+			obj.put("resourceNameCampanha", resourceNameCampanha);
+			obj.put("jsonGrupoAudiencia", jsonGrupoAudiencia);
+			obj.put("jsonProgramacao", jsonProgramacao);
+			obj.put("jsonGrupoLocais", jsonGrupoLocais);
+			obj.put("resourceNameGrupo", resourceNameGrupo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -147,6 +159,42 @@ public class CampanhaAdsMetricaIntraday extends Model {
 	}
 	public String getJsonAds() { 
 		return this.jsonAds;
+	}
+	public void setJsonGrupoAnuncio(String valor) { 
+		this.jsonGrupoAnuncio = valor;
+	}
+	public String getJsonGrupoAnuncio() { 
+		return this.jsonGrupoAnuncio;
+	}
+	public void setResourceNameCampanha(String valor) { 
+		this.resourceNameCampanha = valor;
+	}
+	public String getResourceNameCampanha() { 
+		return this.resourceNameCampanha;
+	}
+	public void setJsonGrupoAudiencia(String valor) { 
+		this.jsonGrupoAudiencia = valor;
+	}
+	public String getJsonGrupoAudiencia() { 
+		return this.jsonGrupoAudiencia;
+	}
+	public void setJsonProgramacao(String valor) { 
+		this.jsonProgramacao = valor;
+	}
+	public String getJsonProgramacao() { 
+		return this.jsonProgramacao;
+	}
+	public void setJsonGrupoLocais(String valor) { 
+		this.jsonGrupoLocais = valor;
+	}
+	public String getJsonGrupoLocais() { 
+		return this.jsonGrupoLocais;
+	}
+	public void setResourceNameGrupo(String valor) { 
+		this.resourceNameGrupo = valor;
+	}
+	public String getResourceNameGrupo() { 
+		return this.resourceNameGrupo;
 	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {

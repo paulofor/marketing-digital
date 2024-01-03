@@ -21,8 +21,20 @@ module.exports = function(Campanhaadsmetricaintraday) {
 
     Campanhaadsmetricaintraday.DesligarTodos = function(callback) {
         const sql = "update CampanhaAdsMetricaIntraday set status = 'DESLIGADO' ";
+        const sqlHistorico = "INSERT INTO CampanhaAdsMetricaIntradayHist " +
+            " ( " +
+            " codigoAds, cpc, custoDia, status, contaGoogleId, nomeCampanha, clique, impressao, conversao, primaryStatus, " +
+            " primaryStatusReasons, jsonAds, resourceNameCampanha, jsonGrupoAnuncio, jsonGrupoAudiencia, jsonProgramacao, " +
+            " resourceNameGrupo, dataHora, dia " +
+            " ) " +
+            " SELECT codigoAds, cpc, custoDia, status, contaGoogleId, nomeCampanha, clique, impressao, conversao, primaryStatus, " +
+            " primaryStatusReasons, jsonAds, resourceNameCampanha, jsonGrupoAnuncio, jsonGrupoAudiencia, jsonProgramacao, " +
+            " resourceNameGrupo, NOW() as dataHora, NOW() as dia FROM CampanhaAdsMetricaIntraday;"
         const ds = Campanhaadsmetricaintraday.dataSource;
-        ds.connector.query(sql,callback);
+        ds.connector.query(sqlHistorico, (err,result) => {
+            ds.connector.query(sql,callback);
+        })
+        
     }
 
 

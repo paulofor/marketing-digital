@@ -1457,7 +1457,7 @@ module.exports = ".dgc-card {\n    width: 160px;\n}\n\n.texto-fraco {\n    color
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"resumoDia\">\n\t\t<span>Custo: {{resumoDia.totalCusto | currency: 'BRL'}} , Cliques: {{resumoDia.totalClique}} , Impressão: {{resumoDia.totalImpressao}} </span>\n  \t\t<span class=\"dgc-direita\">{{resumoDia.totalCampanha}} campanhas</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card  {{tipoCard(item)}}\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>Custo: {{item.custoDia | currency: 'BRL'}}</span>\n  \t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>cpc: {{item.cpc | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>clique: {{item.clique}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>impressão: {{item.impressao}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>ctr: {{(item.clique / item.impressao) * 100 | number: '1.2-2'}} %</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>cpm: {{ (item.custoDia / item.impressao) * 1000 | currency : 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>1k: {{ item.cpc * 1000 | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span class=\"dgc-link\" routerLink=\"/historicoPorCodigoAds/{{item.codigoAds}}\">{{item.nomeCampanha}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.status}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t <span>{{item.primaryStatus}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span *ngIf=\"item.contaGoogle\">Conta: {{item.contaGoogle.nome}}</span>\n\t\t   </div>\n\t\t   \t<div class=\"dgc-card-comandos\">\n            \t<button class=\"btn-primary btn-sm btn\" (click)=\"json(item)\">JSON</button>\n         \t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"resumoDia\">\n\t\t<span>Custo: {{resumoDia.totalCusto | currency: 'BRL'}} , Cliques: {{resumoDia.totalClique}} , Impressão: {{resumoDia.totalImpressao}} </span>\n  \t\t<span class=\"dgc-direita\">{{resumoDia.totalCampanha}} campanhas</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card  {{tipoCard(item)}}\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>Custo: {{item.custoDia | currency: 'BRL'}}</span>\n  \t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>cpc: {{item.cpc | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>clique: {{item.clique}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>impressão: {{item.impressao}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>ctr: {{(item.clique / item.impressao) * 100 | number: '1.2-2'}} %</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>cpm: {{ (item.custoDia / item.impressao) * 1000 | currency : 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t<span>1k: {{ item.cpc * 1000 | currency: 'BRL'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span class=\"dgc-link\" routerLink=\"/historicoPorCodigoAds/{{item.codigoAds}}\">{{item.nomeCampanha}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span>{{item.status}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t <span>{{item.primaryStatus}}</span>\n\t\t   </div>\n\t\t   <div class=\"dgc-card-detalhe\">\n\t\t\t   <span *ngIf=\"item.contaGoogle\">Conta: {{item.contaGoogle.nome}}</span>\n\t\t   </div>\n\t\t   \t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"jsonAudiencia(item)\">Audiencia</button>\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"jsonGrupo(item)\">Grupo</button>\n            \t<button class=\"btn-primary btn-sm btn\" (click)=\"json(item)\">Campanha</button>\n         \t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1519,7 +1519,34 @@ var CampanhaAdsMetricaIntradayListSimplesComponent = /** @class */ (function (_s
         this.dialog.open(_exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_5__["ExibeTextoModalComponent"], {
             width: '800px',
             data: {
-                texto: campanha.jsonAds
+                texto: campanha.jsonAds,
+                titulo: "Campanha"
+            }
+        });
+    };
+    CampanhaAdsMetricaIntradayListSimplesComponent.prototype.jsonGrupo = function (campanha) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(_exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_5__["ExibeTextoModalComponent"], {
+            width: '800px',
+            data: {
+                texto: campanha.jsonGrupoAnuncio,
+                titulo: "Grupo Anúncio"
+            }
+        });
+    };
+    CampanhaAdsMetricaIntradayListSimplesComponent.prototype.jsonAudiencia = function (campanha) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(_exibe_texto_modal_exibe_texto_modal_component__WEBPACK_IMPORTED_MODULE_5__["ExibeTextoModalComponent"], {
+            width: '800px',
+            data: {
+                texto: campanha.jsonGrupoAudiencia,
+                titulo: "Audiência Grupo"
             }
         });
     };
@@ -2715,7 +2742,7 @@ module.exports = ".dgc-card {\n    width: 250px;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Conta Google</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span class=\"dgc-link\" routerLink=\"/contaGoogleDetalhe/{{item.id}}\">{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Suspensa: {{item.suspensa}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.idAds}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.tipo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.gmail}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Ativa: {{item.ativo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Acesso: {{item.dataAcessoIntraday | date: 'dd/MM/yyyy HH:mm:ss' : 'UTC'}}</span>\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Tag Remarketing: {{item.codigoTagRemarketing}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Custo Mês: {{item.contaGoogleMetricaMes[0].custoAtual | currency: 'BRL'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Campanhas Ativas: {{item.contaGoogleMetricaMes[0].qtdeCampanhaAtiva}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Conta Google</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span class=\"dgc-link\" routerLink=\"/contaGoogleDetalhe/{{item.id}}\">{{item.nome}}</span>\n\t\t\t\t<span class=\"dgc-direita\">#{{item.id}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Suspensa: {{item.suspensa}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.idAds}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.tipo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.gmail}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Ativa: {{item.ativo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Acesso: {{item.dataAcessoIntraday | date: 'dd/MM/yyyy HH:mm:ss' : 'UTC'}}</span>\n\t\t\t</div>\n\t\t\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Tag Remarketing: {{item.codigoTagRemarketing}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Custo Mês: {{item.contaGoogleMetricaMes[0].custoAtual | currency: 'BRL'}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Campanhas Ativas: {{item.contaGoogleMetricaMes[0].qtdeCampanhaAtiva}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -3041,7 +3068,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"texto\" mat-dialog-title>Objeto</h2>\n\n<mat-dialog-content>\n    <pre>{{texto}}</pre>\n</mat-dialog-content>\n\n<mat-dialog-actions>\n    <button mat-raised-button (click)=\"copiarTexto()\" >Copiar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n</mat-dialog-actions>\n\n\n\n\n"
+module.exports = "<h2 *ngIf=\"texto\" mat-dialog-title>{{titulo}}</h2>\n\n<mat-dialog-content>\n    <pre>{{texto}}</pre>\n</mat-dialog-content>\n\n<mat-dialog-actions>\n    <button mat-raised-button (click)=\"copiarTexto()\" >Copiar</button>\n    <button mat-raised-button mat-dialog-close>Fechar</button>\n</mat-dialog-actions>\n\n\n\n\n"
 
 /***/ }),
 
@@ -3075,10 +3102,14 @@ var ExibeTextoModalComponent = /** @class */ (function () {
     function ExibeTextoModalComponent(dialogRef, data) {
         this.dialogRef = dialogRef;
         this.data = data;
+        this.texto = "Objeto";
     }
     ExibeTextoModalComponent.prototype.ngOnInit = function () {
         if (this.data.texto) {
             this.texto = this.data.texto;
+        }
+        if (this.data.titulo) {
+            this.titulo = this.data.titulo;
         }
     };
     ExibeTextoModalComponent.prototype.copiarTexto = function () {
@@ -4102,7 +4133,7 @@ module.exports = ".dgc-card {\n    width: 23%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produtos Margem maior 40% & Temperatura maior 60 ({{listaBase.length}})</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmartPendente)\"> (pendente) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detlahe\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>\n\t\t    </div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>\n\t\t\t </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produtos Margem maior 40% & Temperatura maior 60 ({{listaBase.length}})</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmartPendente)\"> (pendente) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detlahe\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>\n\t\t    </div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.categoria }}</span>\n\t\t\t </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -4578,7 +4609,7 @@ module.exports = ".dgc-card {\n    width: 23%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produtos Margem maior 60% & Temperatura maior 30 ({{listaBase.length}})</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmartPendente)\"> (pendente) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detlahe\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>\n\t\t    </div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>\n\t\t\t </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produtos Margem maior 60% & Temperatura maior 30 ({{listaBase.length}})</span>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span *ngIf=\"(!item.produtoAfiliadoHotmart)\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\" class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmart)\"> (afiliado) </span>\n\t\t\t\t<span *ngIf=\"(item.produtoAfiliadoHotmartPendente)\"> (pendente) </span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detlahe\">\n\t\t\t   <span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>\n\t\t    </div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>\n\t\t\t </div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.categoria }}</span>\n\t\t\t </div>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n\t\t\t</div>\n\t\t</div>\n  \t</div>\n</div>"
 
 /***/ }),
 
@@ -5891,7 +5922,7 @@ module.exports = ".dgc-card {\n    width: 48%;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\" *ngIf=\"listaBase\">\n      <span>Afiliados Hotmart ({{listaBase.length}})</span>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts.length>0\">\n          <span>Temperatura : {{item.visitaProdutoHotmarts[0].temperatura}} \n            ({{ item.visitaProdutoHotmarts[0].deltaTemperatura >= 0 ? '+' + item.visitaProdutoHotmarts[0].deltaTemperatura : item.visitaProdutoHotmarts[0].deltaTemperatura }})</span>\n          <span>  -  {{item.visitaProdutoHotmarts[0].dataInsercao | date : 'dd/MM/yyyy'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Cria Pixel: {{item.criaPixelVenda}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle!=null\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n          <span *ngIf=\"item.contaRemarketing!=null\">Remarketing: ({{item.contaRemarketing.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}} ({{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}%)</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" >\n          <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\" >\n          <div *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})\n          </div>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Trabalho: {{item.trabalho}}</span>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAdsDisplayPorProdutoList' , item.hotmartId]\">Anúncio Rede Display ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
+module.exports = "<div class=\"dgc-painel\">\n  <div class=\"dgc-painel-header\" *ngIf=\"listaBase\">\n      <span>Afiliados Hotmart ({{listaBase.length}})</span>\n  </div>\n  <div *ngIf=\"listaBase\" class=\"dgc-painel-principal\">\n    <div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n        <div class=\"dgc-card-header\">\n          <span class=\"dgc-link\" routerLink=\"/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}\">{{item.nome}}</span>\n          <span class=\"dgc-direita\"># {{item.hotmartId}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts.length>0\">\n          <span>Temperatura : {{item.visitaProdutoHotmarts[0].temperatura}} \n            ({{ item.visitaProdutoHotmarts[0].deltaTemperatura >= 0 ? '+' + item.visitaProdutoHotmarts[0].deltaTemperatura : item.visitaProdutoHotmarts[0].deltaTemperatura }})</span>\n          <span>  -  {{item.visitaProdutoHotmarts[0].dataInsercao | date : 'dd/MM/yyyy'}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>{{item.visitaProdutoHotmarts[0].categoria}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Final: {{item.urlFinal}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Tracking: {{item.urlTracking}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Campanha de Teste: {{item.geraTesteCampanha}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Cria Pixel: {{item.criaPixelVenda}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Sigla: {{item.sigla}}</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.contaGoogle!=null\">\n          <span>Conta Google: {{item.contaGoogle.gmail}} ({{item.contaGoogle.nome}})</span>\n          <span *ngIf=\"item.contaRemarketing!=null\">Remarketing: ({{item.contaRemarketing.nome}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\">\n          <span>Comissão: {{item.visitaProdutoHotmarts[0].afiliacaoValor | currency : 'BRL'}} ({{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}%)</span>\n        </div>\n\n        <div class=\"dgc-card-detalhe\" >\n          <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>\n        </div>\n        <div class=\"dgc-card-detalhe\" *ngIf=\"item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0\" >\n          <div *ngFor=\"let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas\">\n            {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})\n          </div>\n        </div>\n        <div class=\"dgc-card-detalhe\">\n          <span>Trabalho: {{item.trabalho}}</span>\n        </div>\n        <div class=\"dgc-card-comandos\">\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAdsDisplayPorProdutoList' , item.hotmartId]\">Anúncio Rede Display ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/anuncioAds' , item.hotmartId]\">Anúncio Google ({{item.anuncioAdsCount}})</button>\n            <button class=\"btn-primary btn-sm btn\"  [routerLink]=\"['/campanhaAdsTeste' , item.hotmartId]\">Campanha Teste Google ({{item.campanhaAdsTestesCount}})</button>\n            <button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n        </div>\n    </div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -8492,6 +8523,30 @@ var CampanhaAdsMetricaIntraday = /** @class */ (function () {
                 },
                 "jsonAds": {
                     name: 'jsonAds',
+                    type: 'string'
+                },
+                "jsonGrupoAnuncio": {
+                    name: 'jsonGrupoAnuncio',
+                    type: 'string'
+                },
+                "resourceNameCampanha": {
+                    name: 'resourceNameCampanha',
+                    type: 'string'
+                },
+                "jsonGrupoAudiencia": {
+                    name: 'jsonGrupoAudiencia',
+                    type: 'string'
+                },
+                "jsonProgramacao": {
+                    name: 'jsonProgramacao',
+                    type: 'string'
+                },
+                "jsonGrupoLocais": {
+                    name: 'jsonGrupoLocais',
+                    type: 'string'
+                },
+                "resourceNameGrupo": {
+                    name: 'resourceNameGrupo',
                     type: 'string'
                 },
             },
