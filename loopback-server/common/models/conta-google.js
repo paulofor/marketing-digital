@@ -3,7 +3,8 @@
 module.exports = function(Contagoogle) {
 
     Contagoogle.ListaCompleta = function(callback) {
-        Contagoogle.find(callback);
+        const filtro = {'where' : {'ativo' : 1 }}
+        Contagoogle.find(filtro,callback);
     }
 
 

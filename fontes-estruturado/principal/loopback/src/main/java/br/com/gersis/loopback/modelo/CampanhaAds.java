@@ -27,10 +27,10 @@ public class CampanhaAds extends Model {
 		this.setIdObjeto(id);
 	}
 
-	public int setIdInteger() {
+	public int getIdInteger() {
 		return new Integer(getId().toString());
 	}
-	public long setIdLong() {
+	public long getIdLong() {
 		return new Long(getId().toString());
 	}
 

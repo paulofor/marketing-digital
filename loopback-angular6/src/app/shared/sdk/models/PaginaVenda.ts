@@ -1,36 +1,46 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
+  ProdutoAfiliadoHotlink,
   CampanhaAdsRedeDisplay,
   PublicoAlvoAds,
   AnuncioAdsDisplay,
   LoadPaginaVenda,
-  CampanhaAdsTeste
+  CampanhaAdsTeste,
+  PaginaVendaSecao
 } from '../index';
 
 declare var Object: any;
 export interface PaginaVendaInterface {
   "url"?: string;
+  "precoProduto"?: string;
+  "produtoAfiliadoHotlinkId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  produtoAfiliadoHotlink?: ProdutoAfiliadoHotlink;
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   publicoAlvoAds?: PublicoAlvoAds[];
   anuncioAdsDisplays?: AnuncioAdsDisplay[];
   loadPaginaVendas?: LoadPaginaVenda[];
   campanhaAdsTestes?: CampanhaAdsTeste[];
+  paginaVendaSecaos?: PaginaVendaSecao[];
 }
 
 export class PaginaVenda implements PaginaVendaInterface {
   "url": string;
+  "precoProduto": string;
+  "produtoAfiliadoHotlinkId": number;
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  produtoAfiliadoHotlink: ProdutoAfiliadoHotlink;
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   publicoAlvoAds: PublicoAlvoAds[];
   anuncioAdsDisplays: AnuncioAdsDisplay[];
   loadPaginaVendas: LoadPaginaVenda[];
   campanhaAdsTestes: CampanhaAdsTeste[];
+  paginaVendaSecaos: PaginaVendaSecao[];
   constructor(data?: PaginaVendaInterface) {
     Object.assign(this, data);
   }
@@ -68,6 +78,14 @@ export class PaginaVenda implements PaginaVendaInterface {
           name: 'url',
           type: 'string'
         },
+        "precoProduto": {
+          name: 'precoProduto',
+          type: 'string'
+        },
+        "produtoAfiliadoHotlinkId": {
+          name: 'produtoAfiliadoHotlinkId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -85,6 +103,14 @@ export class PaginaVenda implements PaginaVendaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
+        },
+        produtoAfiliadoHotlink: {
+          name: 'produtoAfiliadoHotlink',
+          type: 'ProdutoAfiliadoHotlink',
+          model: 'ProdutoAfiliadoHotlink',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoAfiliadoHotlinkId',
+          keyTo: 'id'
         },
         campanhaAdsRedeDisplays: {
           name: 'campanhaAdsRedeDisplays',
@@ -122,6 +148,14 @@ export class PaginaVenda implements PaginaVendaInterface {
           name: 'campanhaAdsTestes',
           type: 'CampanhaAdsTeste[]',
           model: 'CampanhaAdsTeste',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'paginaVendaId'
+        },
+        paginaVendaSecaos: {
+          name: 'paginaVendaSecaos',
+          type: 'PaginaVendaSecao[]',
+          model: 'PaginaVendaSecao',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'paginaVendaId'

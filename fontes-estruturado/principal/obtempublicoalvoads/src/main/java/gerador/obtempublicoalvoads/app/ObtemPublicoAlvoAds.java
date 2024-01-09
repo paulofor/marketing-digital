@@ -17,7 +17,7 @@ public class ObtemPublicoAlvoAds {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemPublicoAlvoAds");
-		System.out.println("(02/01/2024 23:27:19)");
+		System.out.println("(09/01/2024 10:03:31)");
 		try {
 			carregaProp();
 			ObtemPublicoAlvoAdsObj obj = new ObtemPublicoAlvoAdsObj();
@@ -56,5 +56,7 @@ public class ObtemPublicoAlvoAds {
 		DaoBaseComum.setProximo("ObtemPublicoAlvoAdsObj", new ContaGoogle_ListaCompletaImpl());
 		DaoBaseComum.setProximo("ContaGoogle_ListaCompleta", new ObtemDadosPublicoAlvoAdsImpl());
 		DaoBaseComum.setProximo("ObtemDadosPublicoAlvoAds", new PublicoAlvoAdsDiario_AtualizaListaPorContaImpl());
+		DaoBaseComum.setProximo("PublicoAlvoAdsDiario_AtualizaListaPorConta", new ObtemDadosSegmentoPersonalizadoImpl());
+		DaoBaseComum.setProximo("ObtemDadosSegmentoPersonalizado", new SegmentoMercadoAdsPersonalizado_AtualizaListaPorContaImpl());
 	}
 }

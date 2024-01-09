@@ -31,7 +31,7 @@ public abstract class TesteObjetos extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new ContaGoogle_ListaAtivaRemarketingImpl();
+		return new DummyDaoBase();
 	}
 
 

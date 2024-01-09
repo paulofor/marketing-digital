@@ -1,0 +1,100 @@
+Computador
+Internet
+Software
+Hardware
+Mouse
+Teclado
+Monitor
+Sistema operacional
+Navegador
+Rede
+Wi-Fi
+Bluetooth
+Firewall
+Antivírus
+VPN (Rede Privada Virtual)
+E-mail
+Smartphone
+Aplicativo
+Download
+Upload
+Armazenamento em nuvem
+Backup
+URL (Localizador Uniforme de Recursos)
+Cache
+Spam
+Modem
+Ethernet
+Servidor
+Domínio
+HTML (Linguagem de Marcação de Hipertexto)
+CSS (Folhas de Estilo em Cascata)
+JavaScript
+Banco de dados
+SQL (Linguagem de Consulta Estruturada)
+API (Interface de Programação de Aplicativos)
+PHP
+Java
+Python
+Ruby
+C++
+C#
+Firmware
+Malware
+Phishing
+Criptografia
+Segurança da informação
+Algoritmo
+Big Data
+Análise de dados
+Machine Learning
+Inteligência Artificial
+Realidade Virtual
+Realidade Aumentada
+IoT (Internet das Coisas)
+Cibersegurança
+Hackers
+Ransomware
+Data mining
+Cloud Computing
+SaaS (Software como Serviço)
+PaaS (Plataforma como Serviço)
+IaaS (Infraestrutura como Serviço)
+CMS (Sistema de Gerenciamento de Conteúdo)
+UX (Experiência do Usuário)
+UI (Interface do Usuário)
+API RESTful
+Framework
+Git
+Repositório
+DevOps
+Scrum
+Agile
+Sprint
+Bug
+Debugging
+HTML5
+CSS3
+Streaming
+Metadados
+Ferramentas de produtividade
+Rede social
+Compartilhamento de arquivos
+Webinar
+E-commerce
+Blockchain
+UX/UI Design
+Chatbot
+Fintech
+Gamificação
+Deep Learning
+Edge Computing
+APIs abertas
+Multifactor Authentication (Autenticação Multifator)
+Analytics
+Crowdsourcing
+Nanotecnologia
+Wearables
+Impressão 3D
+Smart Home (Casa Inteligente)
+Banda larga

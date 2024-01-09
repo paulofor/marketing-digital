@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  ProdutoAfiliadoHotmart
+  ProdutoAfiliadoHotmart,
+  PaginaVenda
 } from '../index';
 
 declare var Object: any;
@@ -13,6 +14,7 @@ export interface ProdutoAfiliadoHotlinkInterface {
   "hotmartId"?: number;
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  paginaVendas?: PaginaVenda[];
 }
 
 export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
@@ -24,6 +26,7 @@ export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
   "hotmartId": number;
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  paginaVendas: PaginaVenda[];
   constructor(data?: ProdutoAfiliadoHotlinkInterface) {
     Object.assign(this, data);
   }
@@ -94,6 +97,14 @@ export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
           relationType: 'belongsTo',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
+        },
+        paginaVendas: {
+          name: 'paginaVendas',
+          type: 'PaginaVenda[]',
+          model: 'PaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoAfiliadoHotlinkId'
         },
       }
     }

@@ -38,6 +38,7 @@ public class ContaGoogle extends Model {
 	private List<ProdutoAfiliadoHotmart> produtoAfiliadoRemarketing;
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<PublicoAlvoAdsDiario> PublicoAlvoAdsDiarios;
+	private List<SegmentoMercadoAdsPersonalizado> SegmentoMercadoAdsPersonalizados;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -46,10 +47,10 @@ public class ContaGoogle extends Model {
 		this.setIdObjeto(id);
 	}
 
-	public int setIdInteger() {
+	public int getIdInteger() {
 		return new Integer(getId().toString());
 	}
-	public long setIdLong() {
+	public long getIdLong() {
 		return new Long(getId().toString());
 	}
 
@@ -262,6 +263,18 @@ public class ContaGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PublicoAlvoAdsDiarios.add((PublicoAlvoAdsDiario) objeto);
+		}
+	}
+	public List<SegmentoMercadoAdsPersonalizado> getSegmentoMercadoAdsPersonalizados() {
+		return  SegmentoMercadoAdsPersonalizados;
+	}
+	public void setSegmentoMercadoAdsPersonalizados(List<SegmentoMercadoAdsPersonalizado> valores) {
+		this.SegmentoMercadoAdsPersonalizados = new ArrayList<SegmentoMercadoAdsPersonalizado>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new SegmentoMercadoAdsPersonalizado();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.SegmentoMercadoAdsPersonalizados.add((SegmentoMercadoAdsPersonalizado) objeto);
 		}
 	}
 }

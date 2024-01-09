@@ -11,6 +11,12 @@
 	"properties": {
 		"url": {
 			"type": "string"
+		},
+		"precoProduto": {
+			"type": "string"
+		},
+		"produtoAfiliadoHotlinkId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -19,6 +25,11 @@
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
+		},
+		"produtoAfiliadoHotlink": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotlink",
+			"foreignKey": ""
 		},
 		"campanhaAdsRedeDisplays": {
 			"type": "hasMany",
@@ -48,6 +59,11 @@
 		"campanhaAdsTestes": {
 			"type": "hasMany",
 			"model": "CampanhaAdsTeste",
+			"foreignKey": ""
+		},
+		"paginaVendaSecaos": {
+			"type": "hasMany",
+			"model": "PaginaVendaSecao",
 			"foreignKey": ""
 		}
 	},

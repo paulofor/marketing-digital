@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Storytelling com Parallax</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .parallax-container {
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      perspective: 1px;
+    }
+
+    .parallax-content {
+      position: relative;
+      transform-style: preserve-3d;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2em;
+    }
+
+    .parallax-content::after {
+      content: "";
+      background-image: url('imagem/iamgem2.png');
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      transform: translateZ(-1px) scale(2);
+    }
+
+    .parallax-text {
+      position: relative;
+      transform: translateZ(0);
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parallax-container">
+    <div class="parallax-content">
+      <div class="parallax-text">
+        <h1>Descubra um Mundo Novo</h1>
+        <p>Explore lugares incríveis e crie memórias para toda a vida.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container">
+    <div class="parallax-content">
+      <div class="parallax-text">
+        <h2>Uma Aventura Inesquecível</h2>
+        <p>Embarque em jornadas que transformarão sua visão do mundo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adicione mais seções conforme necessário -->
+
+</body>
+</html>

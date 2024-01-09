@@ -1,0 +1,38 @@
+{
+	"name": "ProdutoProprioVersao",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"numero": {
+			"type": "number"
+		},
+		"correnteProducao": {
+			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"produtoProprioItemNivel1s": {
+			"type": "hasMany",
+			"model": "ProdutoProprioItemNivel1",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

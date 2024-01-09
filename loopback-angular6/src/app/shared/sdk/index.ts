@@ -45,7 +45,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
-
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -92,6 +91,12 @@ import { PaginaVendaApi } from './services/custom/PaginaVenda';
 import { AnuncioCampanhaAdsDisplayApi } from './services/custom/AnuncioCampanhaAdsDisplay';
 import { ImagemConjuntoApi } from './services/custom/ImagemConjunto';
 import { ProdutoAfiliadoHotmartPendenteApi } from './services/custom/ProdutoAfiliadoHotmartPendente';
+import { SegmentoMercadoAdsPersonalizadoApi } from './services/custom/SegmentoMercadoAdsPersonalizado';
+import { PaginaVendaSecaoApi } from './services/custom/PaginaVendaSecao';
+import { SecaoWebApi } from './services/custom/SecaoWeb';
+import { ProdutoProprioApi } from './services/custom/ProdutoProprio';
+import { ProdutoProprioVersaoApi } from './services/custom/ProdutoProprioVersao';
+import { ProdutoProprioItemNivel1Api } from './services/custom/ProdutoProprioItemNivel1';
 /**
 * @module SDKBrowserModule
 * @description
@@ -166,6 +171,12 @@ export class SDKBrowserModule {
         AnuncioCampanhaAdsDisplayApi,
         ImagemConjuntoApi,
         ProdutoAfiliadoHotmartPendenteApi,
+        SegmentoMercadoAdsPersonalizadoApi,
+        PaginaVendaSecaoApi,
+        SecaoWebApi,
+        ProdutoProprioApi,
+        ProdutoProprioVersaoApi,
+        ProdutoProprioItemNivel1Api,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

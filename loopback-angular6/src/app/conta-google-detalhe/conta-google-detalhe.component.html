@@ -1,39 +1,89 @@
 <div class="dgc-painel" *ngIf="principal">
-<div class="dgc-painel-header" *ngIf="principal">
-	<span>{{principal.nome}}</span>
-</div>
-
-<div class="dgc-card">
-	<div class="dgc-card-header">
-		<span>Público Alvo Atual</span>
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
 	</div>
-	<div class="dgc-painel-principal">
-		<div class="dgc-card dgc-card-interno" *ngFor="let publico of principal.publicoAlvoAdsDiarios">
-			<div class="dgc-card-header">{{publico.nome}}</div>
-			<div class="dgc-card-detalhe">Display: {{publico.tamanhoRedeDisplay}}</div>
-			<div class="dgc-card-detalhe">Pesquisa: {{publico.tamanhoRedeDisplay}}</div>
-			<div class="dgc-card-detalhe">{{publico.data | date: 'dd-MM-yyyy' }}</div>
-			<div class="dgc-card-comandos">
-				<button class="btn-primary btn-sm btn" (click)="json(publico)">JSON</button>
-			</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Campanhas</span>
 		</div>
+		<div class="dgc-painel-principal">
+			<div class="dgc-card dgc-card-interno" *ngFor="let item of principal.campanhaAdsMetricas">
+				<div class="dgc-card-header">
+					<span>cpc: {{item.cpcMedio | currency: 'BRL'}}</span>
+				   <span class="dgc-direita" style="color: red;" *ngIf="(item.conversao>0)">{{item.conversao}}</span>
+				   <span class="dgc-direita" *ngIf="(item.conversao==0)">{{item.conversao}}</span>
+				</div>
+			   <div class="dgc-card-detalhe">
+				   <span>cliques: {{item.clique}}</span>
+			   </div>
+			   <div class="dgc-card-detalhe">
+				   <span>impressões: {{item.impressao}} ( ctr: {{ (item.clique / item.impressao) * 100 | number : '1.1-1'}} % )</span>
+			   </div>
+			   <div class="dgc-card-detalhe">
+				   <span>Custo: {{item.custoCampanha | currency: 'BRL'}}</span>
+			   </div>
+			   <div class="dgc-card-detalhe">
+				   <span>Custo Conv: {{item.cpaMedio | currency: 'BRL'}} (Tg: {{item.cpaCampanha | currency : 'BRL'}})</span>
+			   </div>
+			   <div class="dgc-card-detalhe">
+				   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
+			   </div>
+			   <div class="dgc-card-header">
+				   <span routerLink="/historicoPorCodigoAds/{{item.codigoAds}}">{{item.nomeCampanha}}</span>
+			   </div>
+			   <div class="dgc-card-detalhe">
+				   <span>{{item.rede}}</span>
+			   </div>
+			   <div class="dgc-card-detalhe">
+				   <span>{{item.estrategia}}</span>
+			   </div>
+			   <div class="dgc-card-detalhe">
+				   <span>{{item.status}}</span>
+			   </div>
+			   <div class="dgc-card-comandos">
+				<button class="btn-primary btn-sm btn" (click)="json(item)">JSON</button>
+			    </div>
+			</div>
 
+		</div>
 	</div>
 
-</div>
-	
-<div class="dgc-card">
-<div class="dgc-card-header">
-<span>Quadro 2</span>
-	</div>
-<div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeSaida">
-<span></span>
-</div>
-<div class="dgc-card-comandos">
-			</div> 
-  </div>
-<div class="dgc-card-comandos">
-<button class="btn-primary btn-sm btn" (click)="editaPasso()">Novo</button>
-</div> 
-</div>
 
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Público Alvo Atual</span>
+		</div>
+		<div class="dgc-painel-principal">
+			<div class="dgc-card dgc-card-interno" *ngFor="let publico of principal.publicoAlvoAdsDiarios">
+				<div class="dgc-card-header">{{publico.nome}}</div>
+				<div class="dgc-card-detalhe">Display: {{publico.tamanhoRedeDisplay}}</div>
+				<div class="dgc-card-detalhe">Pesquisa: {{publico.tamanhoRedeDisplay}}</div>
+				<div class="dgc-card-detalhe">{{publico.data | date: 'dd-MM-yyyy HH:mm:ss' }}</div>
+				<div class="dgc-card-comandos">
+					<button class="btn-primary btn-sm btn" (click)="json(publico)">JSON</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Segmentos</span>
+		</div>
+		<div class="dgc-painel-principal">
+			<div class="dgc-card dgc-card-interno" *ngFor="let segmento of principal.segmentoMercadoAdsPersonalizados">
+				<div class="dgc-card-header">{{segmento.nome}}</div>
+				<div class="dgc-card-detalhe">{{segmento.dataColeta | date: 'dd-MM-yyyy HH:mm:ss' }}</div>
+				<div class="dgc-card-comandos">
+					<button class="btn-primary btn-sm btn" (click)="json(segmento)">JSON</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+</div>

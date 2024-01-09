@@ -34,6 +34,7 @@ public class CampanhaAdsMetrica extends Model {
 	private int hotmartId;
 	private double cpaMedio;
 	private double cpaCampanha;
+	private String jsonAds;
 	// Relacionamentos 1
 	private CampanhaAdsTeste CampanhaAdsTeste;
 	private ContaGoogle ContaGoogle;
@@ -47,10 +48,10 @@ public class CampanhaAdsMetrica extends Model {
 		this.setIdObjeto(id);
 	}
 
-	public int setIdInteger() {
+	public int getIdInteger() {
 		return new Integer(getId().toString());
 	}
-	public long setIdLong() {
+	public long getIdLong() {
 		return new Long(getId().toString());
 	}
 
@@ -78,6 +79,7 @@ public class CampanhaAdsMetrica extends Model {
 			obj.put("hotmartId", hotmartId);
 			obj.put("cpaMedio", cpaMedio);
 			obj.put("cpaCampanha", cpaCampanha);
+			obj.put("jsonAds", jsonAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -204,6 +206,12 @@ public class CampanhaAdsMetrica extends Model {
 	}
 	public double getCpaCampanha() { 
 		return this.cpaCampanha;
+	}
+	public void setJsonAds(String valor) { 
+		this.jsonAds = valor;
+	}
+	public String getJsonAds() { 
+		return this.jsonAds;
 	}
 
 	public CampanhaAdsTeste getCampanhaAdsTeste() {

@@ -1,71 +1,661 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste Selnium<>/title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste Selnium</title>
+</head>
+<style>
+body{
+accent-color: auto;
+align-content: normal;
+align-items: normal;
+align-self: auto;
+alignment-baseline: auto;
+animation-delay: 0s;
+animation-direction: normal;
+animation-duration: 0s;
+animation-fill-mode: none;
+animation-iteration-count: 1;
+animation-name: none;
+animation-play-state: running;
+animation-timing-function: ease;
+app-region: none;
+appearance: none;
+backdrop-filter: none;
+backface-visibility: visible;
+background-attachment: scroll;
+background-blend-mode: normal;
+background-clip: border-box;
+background-color: rgb(255, 255, 255);
+background-image: none;
+background-origin: padding-box;
+background-position: 0% 0%;
+background-repeat: repeat;
+background-size: auto;
+baseline-shift: 0px;
+block-size: 15131.9px;
+border-block-end-color: rgb(51, 51, 51);
+border-block-end-style: none;
+border-block-end-width: 0px;
+border-block-start-color: rgb(51, 51, 51);
+border-block-start-style: none;
+border-block-start-width: 0px;
+border-bottom-color: rgb(51, 51, 51);
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-collapse: separate;
+border-end-end-radius: 0px;
+border-end-start-radius: 0px;
+border-image-outset: 0;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-inline-end-color: rgb(51, 51, 51);
+border-inline-end-style: none;
+border-inline-end-width: 0px;
+border-inline-start-color: rgb(51, 51, 51);
+border-inline-start-style: none;
+border-inline-start-width: 0px;
+border-left-color: rgb(51, 51, 51);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(51, 51, 51);
+border-right-style: none;
+border-right-width: 0px;
+border-start-end-radius: 0px;
+border-start-start-radius: 0px;
+border-top-color: rgb(51, 51, 51);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-top-style: none;
+border-top-width: 0px;
+bottom: auto;
+box-shadow: none;
+box-sizing: border-box;
+break-after: auto;
+break-before: auto;
+break-inside: auto;
+buffered-rendering: auto;
+caption-side: top;
+caret-color: rgb(51, 51, 51);
+clear: none;
+clip: auto;
+clip-path: none;
+clip-rule: nonzero;
+color: rgb(51, 51, 51);
+color-interpolation: srgb;
+color-interpolation-filters: linearrgb;
+color-rendering: auto;
+column-count: auto;
+column-gap: normal;
+column-rule-color: rgb(51, 51, 51);
+column-rule-style: none;
+column-rule-width: 0px;
+column-span: none;
+column-width: auto;
+contain-intrinsic-block-size: none;
+contain-intrinsic-height: none;
+contain-intrinsic-inline-size: none;
+contain-intrinsic-size: none;
+contain-intrinsic-width: none;
+content: normal;
+cursor: auto;
+cx: 0px;
+cy: 0px;
+d: none;
+direction: ltr;
+display: block;
+dominant-baseline: auto;
+empty-cells: show;
+fill: rgb(0, 0, 0);
+fill-opacity: 1;
+fill-rule: nonzero;
+filter: none;
+flex-basis: auto;
+flex-direction: row;
+flex-grow: 0;
+flex-shrink: 1;
+flex-wrap: nowrap;
+float: none;
+flood-color: rgb(0, 0, 0);
+flood-opacity: 1;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+font-kerning: auto;
+font-optical-sizing: auto;
+font-palette: normal;
+font-size: 16px;
+font-stretch: 100%;
+font-style: normal;
+font-synthesis-small-caps: auto;
+font-synthesis-style: auto;
+font-synthesis-weight: auto;
+font-variant: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-weight: 400;
+grid-auto-columns: auto;
+grid-auto-flow: row;
+grid-auto-rows: auto;
+grid-column-end: auto;
+grid-column-start: auto;
+grid-row-end: auto;
+grid-row-start: auto;
+grid-template-areas: none;
+grid-template-columns: none;
+grid-template-rows: none;
+height: 15131.9px;
+hyphens: manual;
+image-orientation: from-image;
+image-rendering: auto;
+inline-size: 1035px;
+inset-block-end: auto;
+inset-block-start: auto;
+inset-inline-end: auto;
+inset-inline-start: auto;
+isolation: auto;
+justify-content: normal;
+justify-items: normal;
+justify-self: auto;
+left: auto;
+letter-spacing: normal;
+lighting-color: rgb(255, 255, 255);
+line-break: auto;
+line-height: 24px;
+list-style-image: none;
+list-style-position: outside;
+list-style-type: disc;
+margin-block-end: 0px;
+margin-block-start: 0px;
+margin-bottom: 0px;
+margin-inline-end: 0px;
+margin-inline-start: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+marker-end: none;
+marker-mid: none;
+marker-start: none;
+mask-type: luminance;
+max-block-size: none;
+max-height: none;
+max-inline-size: none;
+max-width: none;
+min-block-size: 0px;
+min-height: 0px;
+min-inline-size: 0px;
+min-width: 0px;
+mix-blend-mode: normal;
+object-fit: fill;
+object-position: 50% 50%;
+object-view-box: none;
+offset-distance: 0px;
+offset-path: none;
+offset-rotate: auto 0deg;
+opacity: 1;
+order: 0;
+orphans: 2;
+outline-color: rgb(51, 51, 51);
+outline-offset: 0px;
+outline-style: none;
+outline-width: 0px;
+overflow-anchor: auto;
+overflow-clip-margin: 0px;
+overflow-wrap: normal;
+overflow-x: visible;
+overflow-y: visible;
+overscroll-behavior-block: auto;
+overscroll-behavior-inline: auto;
+padding-block-end: 0px;
+padding-block-start: 0px;
+padding-bottom: 0px;
+padding-inline-end: 0px;
+padding-inline-start: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+paint-order: normal;
+perspective: none;
+perspective-origin: 517.5px 7565.97px;
+pointer-events: auto;
+position: static;
+r: 0px;
+resize: none;
+right: auto;
+rotate: none;
+row-gap: normal;
+ruby-position: over;
+rx: auto;
+ry: auto;
+scale: none;
+scroll-behavior: auto;
+scroll-margin-block-end: 0px;
+scroll-margin-block-start: 0px;
+scroll-margin-inline-end: 0px;
+scroll-margin-inline-start: 0px;
+scroll-padding-block-end: auto;
+scroll-padding-block-start: auto;
+scroll-padding-inline-end: auto;
+scroll-padding-inline-start: auto;
+scrollbar-gutter: auto;
+shape-image-threshold: 0;
+shape-margin: 0px;
+shape-outside: none;
+shape-rendering: auto;
+speak: normal;
+stop-color: rgb(0, 0, 0);
+stop-opacity: 1;
+stroke: none;
+stroke-dasharray: none;
+stroke-dashoffset: 0px;
+stroke-linecap: butt;
+stroke-linejoin: miter;
+stroke-miterlimit: 4;
+stroke-opacity: 1;
+stroke-width: 1px;
+tab-size: 8;
+table-layout: auto;
+text-align: start;
+text-align-last: auto;
+text-anchor: start;
+text-decoration: none solid rgb(51, 51, 51);
+text-decoration-color: rgb(51, 51, 51);
+text-decoration-line: none;
+text-decoration-skip-ink: auto;
+text-decoration-style: solid;
+text-emphasis-color: rgb(51, 51, 51);
+text-emphasis-position: over;
+text-emphasis-style: none;
+text-indent: 0px;
+text-overflow: clip;
+text-rendering: auto;
+text-shadow: none;
+text-size-adjust: 100%;
+text-transform: none;
+text-underline-position: auto;
+top: auto;
+touch-action: auto;
+transform: none;
+transform-origin: 517.5px 7565.97px;
+transform-style: flat;
+transition-delay: 0s;
+transition-duration: 0s;
+transition-property: all;
+transition-timing-function: ease;
+translate: none;
+unicode-bidi: normal;
+user-select: auto;
+vector-effect: none;
+vertical-align: baseline;
+visibility: visible;
+white-space: normal;
+widows: 2;
+width: 1035px;
+will-change: auto;
+word-break: normal;
+word-spacing: 0px;
+writing-mode: horizontal-tb;
+x: 0px;
+y: 0px;
+z-index: auto;
+zoom: 1;
+-webkit-border-horizontal-spacing: 0px;
+-webkit-border-image: none;
+-webkit-border-vertical-spacing: 0px;
+-webkit-box-align: stretch;
+-webkit-box-decoration-break: slice;
+-webkit-box-direction: normal;
+-webkit-box-flex: 0;
+-webkit-box-ordinal-group: 1;
+-webkit-box-orient: horizontal;
+-webkit-box-pack: start;
+-webkit-box-reflect: none;
+-webkit-font-smoothing: antialiased;
+-webkit-highlight: none;
+-webkit-hyphenate-character: auto;
+-webkit-line-break: auto;
+-webkit-line-clamp: none;
+-webkit-locale: "pt-BR";
+-webkit-mask-box-image: none;
+-webkit-mask-box-image-outset: 0;
+-webkit-mask-box-image-repeat: stretch;
+-webkit-mask-box-image-slice: 0 fill;
+-webkit-mask-box-image-source: none;
+-webkit-mask-box-image-width: auto;
+-webkit-mask-clip: border-box;
+-webkit-mask-composite: source-over;
+-webkit-mask-image: none;
+-webkit-mask-origin: border-box;
+-webkit-mask-position: 0% 0%;
+-webkit-mask-repeat: repeat;
+-webkit-mask-size: auto;
+-webkit-print-color-adjust: economy;
+-webkit-rtl-ordering: logical;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0.18);
+-webkit-text-combine: none;
+-webkit-text-decorations-in-effect: none;
+-webkit-text-fill-color: rgb(51, 51, 51);
+-webkit-text-orientation: vertical-right;
+-webkit-text-security: none;
+-webkit-text-stroke-color: rgb(51, 51, 51);
+-webkit-text-stroke-width: 0px;
+-webkit-user-drag: auto;
+-webkit-user-modify: read-only;
+-webkit-writing-mode: horizontal-tb;
 
-<body>
+}
+</style>
+<body class="home page-template page-template-elementor_canvas page page-id-4709 e-lazyload elementor-default elementor-template-canvas elementor-kit-9 elementor-page elementor-page-4709 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" id="element_924309"><div data-elementor-type="wp-page" data-elementor-id="4709" class="elementor elementor-4709" id="section11"><div class=""><div class=""><div class=""><div class="">
+<img src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-83.svg" decoding="async" width="335" height="40" class="attachment-full size-full wp-image-4711 entered litespeed-loaded" alt=""><noscript><img decoding="async" width="335" height="40" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-83.svg" class="attachment-full size-full wp-image-4711" alt="" /></noscript></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><h2 class="">Descubra o <span style="color: #fff; background-color: #A64142;">método mais rápido</span> para se tornar uma <span style="color: #fff; background-color: #A64142;">expert em depilação profissional</span></h2></div></div><div class=""><div class=""><h2 class="">mesmo que você esteja <span style="font-weight: 700;">começando do absoluto zero.</span></h2></div></div><div class=""><div class=""><h2 class="">Essa é a sua oportunidade de garantir uma vaga no curso mais avançado e completo do Brasil e se destacar no mercado por oferecer um serviço impecável de depilação. <span style="font-weight: 700;">Assista o vídeo...</span></h2></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><iframe class="" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Oportunidade Exclusiva" width="640" height="360" src="https://www.youtube.com/embed/C4plj2tbBQI?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fpriscillafidelisacademy.com.br&amp;widgetid=1" id="widget2"></iframe></div></div></div><div class=""><div class="">
+<img src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Prod-Preto-3Logotipo.svg" decoding="async" width="221" height="81" class="attachment-full size-full wp-image-4713 entered litespeed-loaded" alt=""><noscript><img decoding="async" width="221" height="81" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Prod-Preto-3Logotipo.svg" class="attachment-full size-full wp-image-4713" alt="" /></noscript></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class="">
+<a class="" href="https://pay.hotmart.com/W13417955P?checkoutMode=10" target="_blank">
+<span class="">
+<span class="">sim, quero começar agora!</span>
+</span>
+</a></div></div></div><div class=""><div class=""><h2 class=""><span style="border-radius: 100px; padding: 10px 50px 10px 50px; background-image: linear-gradient(#00000099, #00000010); ">De <span style="text-decoration-line: line-through;">R$547,00</span> por R$229,00</span></h2></div></div><div class=""><div class=""><h2 class="">Aproveite o valor <span style="color: #A64142;">promocional</span></h2></div></div><div class=""><div class="">
+<img src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1775.svg" decoding="async" width="71" height="97" class="attachment-full size-full wp-image-4714 entered litespeed-loaded" alt=""><noscript><img decoding="async" width="71" height="97" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1775.svg" class="attachment-full size-full wp-image-4714" alt="" /></noscript></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36868-1.png.webp 750w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36868-1-300x208.png.webp 300w" sizes="(max-width: 750px) 100vw, 750px" type="image/webp"><img src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36868-1.png" decoding="async" width="750" height="520" class="attachment-full size-full wp-image-4716 webpexpress-processed entered litespeed-loaded" alt="" sizes="(max-width: 750px) 100vw, 750px" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36868-1.png 750w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36868-1-300x208.png 300w"><noscript><img decoding="async" width="750" height="520" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36868-1.png" class="attachment-full size-full wp-image-4716 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36868-1.png 750w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36868-1-300x208.png 300w" sizes="(max-width: 750px) 100vw, 750px"></noscript></picture></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36877.png.webp 480w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36877-300x294.png.webp 300w" sizes="(max-width: 480px) 100vw, 480px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="480" height="471" class="attachment-full size-full wp-image-4819 webpexpress-processed" alt=""><noscript><img decoding="async" width="480" height="471" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36877.png" class="attachment-full size-full wp-image-4819 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36877.png 480w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36877-300x294.png 300w" sizes="(max-width: 480px) 100vw, 480px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">O Curso Depilação Profissional</h2></div></div><div class=""><div class=""><h2 class="">não é um simples curso!</h2></div></div><div class=""><div class=""><h2 class="">Ele foi pensado exclusivamente para você que deseja mudar de vida através da Estética. Todas as aulas foram pensadas e desenvolvidas para que você aprenda tudo o que me fez ter sucesso na área e se torne uma verdadeira especialista em Depilação, mesmo que esteja começando do zero. Irei literalmente pegar em suas mãos e seguiremos juntas até você alcançar o sucesso e ser dona do seu próprio negócio, poder trabalhar de casa ou de sua própria clínica e conquistar a sua independência financeira.</h2></div></div></div></div></div></div><div class=""><div class=""><h2 class="">Agora você pode se tornar uma profissional  <span style="font-weight: 700; color: #A64142;">em tempo recorde e eficiente!</span></h2></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">PORQUE <span style="font-weight: 700; color: #A64142;">DENTRO DO CURSO DEPILAÇÃO PROFISSIONAL VOCÊ VAI:</span></h2></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="75" height="75" class="attachment-full size-full wp-image-4720" alt=""><noscript><img decoding="async" width="75" height="75" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36868.svg" class="attachment-full size-full wp-image-4720" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Ter <span style="font-weight: 700;">acesso imediato</span> a todas as <span style="font-weight: 700;">aulas práticas</span> (em vídeo) e módulos do curso.</h2></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="75" height="75" class="attachment-full size-full wp-image-4721" alt=""><noscript><img decoding="async" width="75" height="75" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36869.svg" class="attachment-full size-full wp-image-4721" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Ter <span style="font-weight: 700;">suporte VIP</span> e exclusivo da Priscilla Fidelis <span style="font-weight: 700; color: #B74A4B;" ..<="" span=""></span></h2></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="75" height="75" class="attachment-full size-full wp-image-4722" alt=""><noscript><img decoding="async" width="75" height="75" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36870.svg" class="attachment-full size-full wp-image-4722" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Ter acesso a <span style="font-weight: 700; color: #B74A4B;">métodos profissionais</span> e que são utilizados pelas melhores profissionais do país!</h2></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="75" height="75" class="attachment-full size-full wp-image-4723" alt=""><noscript><img decoding="async" width="75" height="75" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36871.svg" class="attachment-full size-full wp-image-4723" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Ter acesso a <span style="font-weight: 700; color: #B74A4B;">comunidade no Facebook e Telegram, exclusiva</span> para alunas do curso Depilação Profissional.</h2></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="75" height="75" class="attachment-full size-full wp-image-4724" alt=""><noscript><img decoding="async" width="75" height="75" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36872.svg" class="attachment-full size-full wp-image-4724" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Ter acesso a <span style="font-weight: 700; color: #B74A4B;">aulas com fácil entendimento</span> para que qualquer pessoa consiga se tornar uma profissional <span style="font-weight: 700; color: #B74A4B;">mesmo que tenha zero experiência</span> na área.</h2></div></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36825.png.webp 445w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36825-300x93.png.webp 300w" sizes="(max-width: 445px) 100vw, 445px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="445" height="138" class="attachment-full size-full wp-image-4725 webpexpress-processed" alt=""><noscript><img decoding="async" width="445" height="138" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36825.png" class="attachment-full size-full wp-image-4725 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36825.png 445w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36825-300x93.png 300w" sizes="(max-width: 445px) 100vw, 445px"></noscript></picture></div></div><div class=""><div class=""><div class="">
+<a class="" href="https://pay.hotmart.com/W13417955P?checkoutMode=10" target="_blank">
+<span class="">
+<span class="">quero me tornar uma profissional <br> o mais rápido possível</span>
+</span>
+</a></div></div></div><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="175" height="31" class="attachment-full size-full wp-image-4726" alt=""><noscript><img decoding="async" width="175" height="31" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-2167.svg" class="attachment-full size-full wp-image-4726" alt="" /></noscript></div></div><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="71" height="97" class="attachment-full size-full wp-image-4714" alt=""><noscript><img decoding="async" width="71" height="97" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1775.svg" class="attachment-full size-full wp-image-4714" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Ainda está em dúvida se este curso é para você?</h2></div></div><div class=""><div class=""><h2 class="">Leia os depoimentos inspiradores de algumas alunas do curso Depilação Profissional.</h2></div></div><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-26.png.webp 339w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-26-300x94.png.webp 300w" sizes="(max-width: 339px) 100vw, 339px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="339" height="106" class="attachment-full size-full wp-image-4728 webpexpress-processed" alt=""><noscript><img decoding="async" width="339" height="106" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-26.png" class="attachment-full size-full wp-image-4728 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-26.png 339w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-26-300x94.png 300w" sizes="(max-width: 339px) 100vw, 339px"></noscript></picture></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-27.png.webp 340w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-27-300x90.png.webp 300w" sizes="(max-width: 340px) 100vw, 340px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="340" height="102" class="attachment-full size-full wp-image-4729 webpexpress-processed" alt=""><noscript><img decoding="async" width="340" height="102" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-27.png" class="attachment-full size-full wp-image-4729 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-27.png 340w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-27-300x90.png 300w" sizes="(max-width: 340px) 100vw, 340px"></noscript></picture></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-28.png.webp 340w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-28-300x100.png.webp 300w" sizes="(max-width: 340px) 100vw, 340px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="340" height="113" class="attachment-full size-full wp-image-4730 webpexpress-processed" alt=""><noscript><img decoding="async" width="340" height="113" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-28.png" class="attachment-full size-full wp-image-4730 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-28.png 340w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-28-300x100.png 300w" sizes="(max-width: 340px) 100vw, 340px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-29.png.webp 335w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-29-300x122.png.webp 300w" sizes="(max-width: 335px) 100vw, 335px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="335" height="136" class="attachment-full size-full wp-image-4731 webpexpress-processed" alt=""><noscript><img decoding="async" width="335" height="136" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-29.png" class="attachment-full size-full wp-image-4731 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-29.png 335w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-29-300x122.png 300w" sizes="(max-width: 335px) 100vw, 335px"></noscript></picture></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-30.png.webp 339w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-30-300x86.png.webp 300w" sizes="(max-width: 339px) 100vw, 339px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="339" height="97" class="attachment-full size-full wp-image-4732 webpexpress-processed" alt=""><noscript><img decoding="async" width="339" height="97" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-30.png" class="attachment-full size-full wp-image-4732 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-30.png 339w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-30-300x86.png 300w" sizes="(max-width: 339px) 100vw, 339px"></noscript></picture></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-31.png.webp 339w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-31-300x125.png.webp 300w" sizes="(max-width: 339px) 100vw, 339px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="339" height="141" class="attachment-full size-full wp-image-4733 webpexpress-processed" alt=""><noscript><img decoding="async" width="339" height="141" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-31.png" class="attachment-full size-full wp-image-4733 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-31.png 339w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-31-300x125.png 300w" sizes="(max-width: 339px) 100vw, 339px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-32.png.webp 339w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-32-300x101.png.webp 300w" sizes="(max-width: 339px) 100vw, 339px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="339" height="114" class="attachment-full size-full wp-image-4734 webpexpress-processed" alt=""><noscript><img decoding="async" width="339" height="114" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-32.png" class="attachment-full size-full wp-image-4734 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-32.png 339w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-32-300x101.png 300w" sizes="(max-width: 339px) 100vw, 339px"></noscript></picture></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-33.png.webp 340w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-33-300x86.png.webp 300w" sizes="(max-width: 340px) 100vw, 340px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="340" height="97" class="attachment-full size-full wp-image-4735 webpexpress-processed" alt=""><noscript><img decoding="async" width="340" height="97" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-33.png" class="attachment-full size-full wp-image-4735 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-33.png 340w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-33-300x86.png 300w" sizes="(max-width: 340px) 100vw, 340px"></noscript></picture></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-34.png.webp 340w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-34-300x90.png.webp 300w" sizes="(max-width: 340px) 100vw, 340px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="340" height="102" class="attachment-full size-full wp-image-4736 webpexpress-processed" alt=""><noscript><img decoding="async" width="340" height="102" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-34.png" class="attachment-full size-full wp-image-4736 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-34.png 340w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-34-300x90.png 300w" sizes="(max-width: 340px) 100vw, 340px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-35.png.webp 340w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-35-300x94.png.webp 300w" sizes="(max-width: 340px) 100vw, 340px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="340" height="106" class="attachment-full size-full wp-image-4737 webpexpress-processed" alt=""><noscript><img decoding="async" width="340" height="106" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-35.png" class="attachment-full size-full wp-image-4737 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-35.png 340w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-35-300x94.png 300w" sizes="(max-width: 340px) 100vw, 340px"></noscript></picture></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-36.png.webp 339w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-36-300x131.png.webp 300w" sizes="(max-width: 339px) 100vw, 339px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="339" height="148" class="attachment-full size-full wp-image-4738 webpexpress-processed" alt=""><noscript><img decoding="async" width="339" height="148" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-36.png" class="attachment-full size-full wp-image-4738 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-36.png 339w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-36-300x131.png 300w" sizes="(max-width: 339px) 100vw, 339px"></noscript></picture></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><figure class=""><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="37" height="37" class="attachment-full size-full wp-image-4739" alt=""><noscript><img decoding="async" width="37" height="37" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Exclude.svg" class="attachment-full size-full wp-image-4739" alt="" /></noscript></figure><div class=""><h3 class="">São <span style="font-weight: 700;" :="">140 aulas</span> divididas em <span style="font-weight: 700;">30 módulos</span></h3></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h3 class="">
+<span class="">VEJA O QUE VOCÊ VAI </span>
+<span class="">
+<span class="">APRENDER:</span>
+</span></h3></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div id="elementor-tab-title-1371" class="" role="button" aria-controls="elementor-tab-content-1371" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 0</span> <br> Módulo Apoio</a></div><div id="elementor-tab-content-1371" class="" role="region" aria-labelledby="elementor-tab-title-1371"><p>– Aprenda usar a Plataforma<br>– Normas da ANVISA<br>– Higiene<br>– Biossegurança<br>– Cabine de Depilação e contraindicações<br>– Comunidade exclusiva de alunas no Facebook<br>– Entrada ao grupo exclusivo para a alunas no Telegram<br>– Mentoria com a Professora</p></div></div><div class=""><div id="elementor-tab-title-1372" class="" role="button" aria-controls="elementor-tab-content-1372" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 2</span> <br> PRODUTOS / MATERIAIS</a></div><div id="elementor-tab-content-1372" class="" role="region" aria-labelledby="elementor-tab-title-1372"><p>– Tipos de ceras e métodos</p><p>– Como aquecer a cera método espanhol</p><p>– Como aquecer a cera método rool on</p><p>– Produtos de Pré e Pós Depilação</p><p>– EPIs – Equipamentos de proteção individual</p></div></div><div class=""><div id="elementor-tab-title-1373" class="" role="button" aria-controls="elementor-tab-content-1373" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 4</span> <br> DEPILAÇÃO ÍNTIMA / VIRILHA</a></div><div id="elementor-tab-content-1373" class="" role="region" aria-labelledby="elementor-tab-title-1373"><p>– Depilação virilha simples</p><p>– Depilação virilha cavada</p><p>– Depilação virilha completa&nbsp;</p><p>– Depilação virilha completa&nbsp;</p><p>– Depilação virilha + ânus</p><p>– Depilação glúteo/nádegas</p><p>– Depilação virilha + ajuda do cliente</p><p>– Depilação virilha com a cera verde&nbsp;</p><p>– Aprenda usar a linha para fazer o mapeamento da virilha</p></div></div><div class=""><div id="elementor-tab-title-1374" class="" role="button" aria-controls="elementor-tab-content-1374" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 6</span> <br> DEPILAÇÃO AXILAS E BRAÇOS</a></div><div id="elementor-tab-content-1374" class="" role="region" aria-labelledby="elementor-tab-title-1374"><p>– Depilação axilas em 12 minutos</p><p>– Depilação nos braços</p><p>– Depilação Axilas com a técnica do copo de isopor</p><p>– Depilação Axilas com a técnica da escovinha (Novidade)</p><p>– Ordem certa de produtos para Epilação Axilas</p><p>– Axilas Pele sensível – Reativa</p><p>– Depilação Braço método Rool on</p></div></div><div class=""><div id="elementor-tab-title-1375" class="" role="button" aria-controls="elementor-tab-content-1375" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 8</span> <br> DEPILAÇÃO MASCULINA</a></div><div id="elementor-tab-content-1375" class="" role="region" aria-labelledby="elementor-tab-title-1375"><p>– Depilação&nbsp; axilas 1</p><p>– Depilação&nbsp; axilas 2</p><p>– Depilação&nbsp; axilas 3</p><p>– Depilação&nbsp; costas</p><p>– Depilação pescoço</p><p>– Depilação&nbsp; Peitoral e Abdômen&nbsp;</p><p>– Depilação&nbsp; Pernas completa</p><p>– Depilação&nbsp; Virilha completa</p></div></div><div class=""><div id="elementor-tab-title-1376" class="" role="button" aria-controls="elementor-tab-content-1376" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 10</span> <br> BIOSSEGURANÇA</a></div><div id="elementor-tab-content-1376" class="" role="region" aria-labelledby="elementor-tab-title-1376"><p>– Tipos de riscos e prevenções</p><p>– Microbiologia</p><p>– Métodos de Controle</p><p>– Materiais para esterilização</p><p>– Limpeza e desinfecção ambiente</p><p>– Higiene das mãos</p><p>– Uso de EPI’s</p></div></div><div class=""><div id="elementor-tab-title-1377" class="" role="button" aria-controls="elementor-tab-content-1377" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0">DEPILAÇÃO EM GESTANTES</a></div><div id="elementor-tab-content-1377" class="" role="region" aria-labelledby="elementor-tab-title-1377"><p>Conhecendo sua mentora de gestantes</p><p>Material de apoio</p><p>Proibidos e permitidos</p><p>Depilação intima</p><p>Depilação perna + interno de coxa&nbsp;<br></p><p></p></div></div><div class=""><div id="elementor-tab-title-1378" class="" role="button" aria-controls="elementor-tab-content-1378" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 12</span> <br> MÁSCARAS HIDROPLÁSTICA E GELATINOSAS</a></div><div id="elementor-tab-content-1378" class="" role="region" aria-labelledby="elementor-tab-title-1378"><p>– Passo a Passo de aplicação</p><p>– Todas as informações sobre a técnica</p></div></div><div class=""><div id="elementor-tab-title-1379" class="" role="button" aria-controls="elementor-tab-content-1379" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 14</span> <br> MINI CURSO DE CRIAÇÃO DE ARTES PARA DIVULGAÇÃO</a></div><div id="elementor-tab-content-1379" class="" role="region" aria-labelledby="elementor-tab-title-1379"><p>– Conheça os Programas</p><p>– Aprenda usar o Canva</p><p>– Aplicando Cores e Imagens</p><p>– Imagens prontas para divulgação do seu trabalho</p><p>– Aprenda criar seu cartão de Visitas e Banners</p></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div id="elementor-tab-title-2001" class="" role="button" aria-controls="elementor-tab-content-2001" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 1</span> <br> ARQUIVOS EM PDF</a></div><div id="elementor-tab-content-2001" class="" role="region" aria-labelledby="elementor-tab-title-2001"><p>– Apostila completa de depilação</p><p>– Ficha pronta de Anamnese Depilação</p><p>– Ficha pronta de Anamnese Argiloterapia</p><p>– O Guia prático da intercorrência</p></div></div><div class=""><div id="elementor-tab-title-2002" class="" role="button" aria-controls="elementor-tab-content-2002" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 3</span> <br> DEPILAÇÃO FACIAL</a></div><div id="elementor-tab-content-2002" class="" role="region" aria-labelledby="elementor-tab-title-2002"><p>– Depilação Facial completa</p><p>– Depilação Facial/costeleta</p><p>– Depilação Buço</p><p>– Depilação Orelhas</p><p>– Depilação Nariz/Narina</p></div></div><div class=""><div id="elementor-tab-title-2003" class="" role="button" aria-controls="elementor-tab-content-2003" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 5</span> <br> DEPILAÇÃO PERNAS E INTERNO DE COXA</a></div><div id="elementor-tab-content-2003" class="" role="region" aria-labelledby="elementor-tab-title-2003"><p>– Depilação meia perna</p><p>– Depilação perna completa</p><p>– Depilação método Roll-on&nbsp;</p><p>– Depilação pernas método espanhol</p><p>– Depilação nos joelhos&nbsp;</p><p>– Depilação pés e dedos&nbsp;</p><p>– Depilação coxa + interno de coxa (método exclusivo)</p></div></div><div class=""><div id="elementor-tab-title-2004" class="" role="button" aria-controls="elementor-tab-content-2004" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 7</span> <br> ESPECIAL HIDROSSOLÚVEL</a></div><div id="elementor-tab-content-2004" class="" role="region" aria-labelledby="elementor-tab-title-2004"><p>– Aprenda preparar a cera para aplicação</p><p>– Hidrossolúvel em axilas</p><p>– Depilação íntima hidrossolúvel</p><p>– Pós Depilação com máscara de porcelana</p></div></div><div class=""><div id="elementor-tab-title-2005" class="" role="button" aria-controls="elementor-tab-content-2005" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 9</span> <br> ELETROTERAPIA AVANÇADA</a></div><div id="elementor-tab-content-2005" class="" role="region" aria-labelledby="elementor-tab-title-2005"><p>– O que é Alta frequência (eletroterapia)</p><p>– Aprenda como aplicar na pele de forma segura e eficiente</p><p>– Aplicação em virilhas</p><p>– Aplicação em axilas</p><p>– Tratamento capilar com alta frequência</p></div></div><div class=""><div id="elementor-tab-title-2006" class="" role="button" aria-controls="elementor-tab-content-2006" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 11</span> <br> INTERCORRÊNCIA</a></div><div id="elementor-tab-content-2006" class="" role="region" aria-labelledby="elementor-tab-title-2006"><p>– O Guia Prático da intercorrência</p><p>– Produtos Home Care</p><p>– Máscara de porcelana (SPA da Epilação)</p><p>– Entrando em ação na intercorrência interno de coxa</p></div></div><div class=""><div id="elementor-tab-title-2007" class="" role="button" aria-controls="elementor-tab-content-2007" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 13</span> <br> ESPECIAL CAIXINHA DE DÚVIDAS</a></div><div id="elementor-tab-content-2007" class="" role="region" aria-labelledby="elementor-tab-title-2007"><p>– Coringas no Home Care</p><p>– Técnica da escovinha</p><p>– Qual melhor método para gestantes</p><p>– Apresento minha maca de depilação</p><p>– Qual posicionamento ter se a cliente relatar alergia</p><p>– Lapidando o interno de coxa</p><p>– Porque devemos fazer avaliação no cliente</p></div></div><div class=""><div id="elementor-tab-title-2008" class="" role="button" aria-controls="elementor-tab-content-2008" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo 15</span> <br> DIÁRIO DE DÚVIDAS FREQUENTES</a></div><div id="elementor-tab-content-2008" class="" role="region" aria-labelledby="elementor-tab-title-2008"><p>– Foliculite</p><p>– Pseudofoliculite (pelo encravado)</p><p>– Tudo sobre pré e pós depilação</p><p>– Clareamento associado ao alta frequência</p><p>– Acne + argila verde</p><p>– Método Rool on</p><p>– O ponto da cera</p><p>– A melhor idade para receber a primeira depilação</p></div></div><div class=""><div id="elementor-tab-title-2009" class="" role="button" aria-controls="elementor-tab-content-2009" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo Extra</span> <br> MÓDULO EXTRA 2.0</a></div><div id="elementor-tab-content-2009" class="" role="region" aria-labelledby="elementor-tab-title-2009"><p>– A troca do talco por argila (intenda sobre essa evolução)</p><p>– Tudo sobre os produtos de pré e pós depilação</p><p>– Aprenda como encontrar o ponto ideal da cera ( os segredos do sucesso estão aqui)</p><p>– Depilação método Hidrossolúvel</p><p>– Depilação método Express</p><p>– Depilação barriga e umbigo</p><p>– Esfoliação Corporal</p><p>– Massagem pós depilação</p><p>– Foliculite Prevenção/como tratar</p><p>– Aprenda a individualizar a cera com o&nbsp;copo de isopor</p><p>-Tatuagem temporária</p></div></div><div class=""><div id="elementor-tab-title-20010" class="" role="button" aria-controls="elementor-tab-content-20010" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0"><span style="font-weight: 300; font-size: 14px;">Módulo Extra</span> <br> MÓDULO EXTRA 2.1</a></div><div id="elementor-tab-content-20010" class="" role="region" aria-labelledby="elementor-tab-title-20010"><p>– Como se posicionar nas redes sociais usando as ferramentas das redes sociais</p><p>– Depilação Virilha Cavada</p><p>– Depilação Coxa (método espanhol)</p><p>– Especial Método hidrossolúvel</p><p>– Como Iniciar, Quais produtos e estrutura precisa ter</p><p>– Dicas para a cera não grudar no método Roll on</p><p>– LIVE (Como superar as dificuldades na estética)</p><p>– Quando adquirir conhecimentos?</p><p>– Aprenda a limpar a sua termo cera</p><p>– Conheça o plástico protetor para termocera</p></div></div></div></div></div></div></div></div></div><div class=""><div class=""><h2 class="">Você <span style="font-weight: 700; color: #A64142;">acha que acabou?</span></h2></div></div><div class=""><div class=""><div class="">
+<span class="">
+</span></div></div></div><div class=""><div class=""><h2 class="">Se você adquirir o curso Depilação profissional ainda hoje você ganhará <span style="font-weight: 900;">8 bônus exclusivos</span> e um certificado de conclusão para comprovar o seu profissionalismo!</h2></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36873.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="187" height="209" class="attachment-full size-full wp-image-4750 webpexpress-processed" alt=""><noscript><img decoding="async" width="187" height="209" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36873.png" class="attachment-full size-full wp-image-4750 webpexpress-processed" alt=""></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="112" height="25" class="attachment-full size-full wp-image-4751" alt=""><noscript><img decoding="async" width="112" height="25" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1764.svg" class="attachment-full size-full wp-image-4751" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">mentoria online</h2></div></div><div class=""><div class=""><h2 class="">Você terá suporte comigo para tirar suas dúvidas.</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">De <span style="text-decoration-line: line-through; color: #ff0000;">R$997</span></h2></div></div><div class=""><div class=""><h3 class="">
+<span class="">Por:</span>
+<span class="">
+<span class="">GRÁTIS</span>
+</span></h3></div></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Mask-group.png.webp 187w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Mask-group-150x150.png.webp 150w" sizes="(max-width: 187px) 100vw, 187px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="187" height="187" class="attachment-full size-full wp-image-4752 webpexpress-processed" alt=""><noscript><img decoding="async" width="187" height="187" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Mask-group.png" class="attachment-full size-full wp-image-4752 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Mask-group.png 187w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Mask-group-150x150.png 150w" sizes="(max-width: 187px) 100vw, 187px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="112" height="25" class="attachment-full size-full wp-image-4753" alt=""><noscript><img decoding="async" width="112" height="25" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1765.svg" class="attachment-full size-full wp-image-4753" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">protocolo de clareamento facial e corporal</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">De <span style="text-decoration-line: line-through; color: #ff0000;">R$197</span></h2></div></div><div class=""><div class=""><h3 class="">
+<span class="">Por:</span>
+<span class="">
+<span class="">GRÁTIS</span>
+</span></h3></div></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Bonus-3.png.webp 187w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Bonus-3-150x150.png.webp 150w" sizes="(max-width: 187px) 100vw, 187px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="187" height="187" class="attachment-full size-full wp-image-4856 webpexpress-processed" alt=""><noscript><img decoding="async" width="187" height="187" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Bonus-3.png" class="attachment-full size-full wp-image-4856 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Bonus-3.png 187w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Bonus-3-150x150.png 150w" sizes="(max-width: 187px) 100vw, 187px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="112" height="25" class="attachment-full size-full wp-image-4758" alt=""><noscript><img decoding="async" width="112" height="25" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1766.svg" class="attachment-full size-full wp-image-4758" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">depilação egípcia</h2></div></div><div class=""><div class=""><h2 class="">Aprenda a usar a linha de forma Profissional</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">De <span style="text-decoration-line: line-through; color: #ff0000;">R$997</span></h2></div></div><div class=""><div class=""><h3 class="">
+<span class="">Por:</span>
+<span class="">
+<span class="">GRÁTIS</span>
+</span></h3></div></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Bonus-4.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="224" height="210" class="attachment-full size-full wp-image-4854 webpexpress-processed" alt=""><noscript><img decoding="async" width="224" height="210" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Bonus-4.png" class="attachment-full size-full wp-image-4854 webpexpress-processed" alt=""></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="112" height="25" class="attachment-full size-full wp-image-4760" alt=""><noscript><img decoding="async" width="112" height="25" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1767.svg" class="attachment-full size-full wp-image-4760" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">tabela</h2></div></div><div class=""><div class=""><h2 class="">Com sugestão de preços</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">De <span style="text-decoration-line: line-through; color: #ff0000;">R$59</span></h2></div></div><div class=""><div class=""><h3 class="">
+<span class="">Por:</span>
+<span class="">
+<span class="">GRÁTIS</span>
+</span></h3></div></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Bonus-5-1.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="192" height="187" class="attachment-full size-full wp-image-4857 webpexpress-processed" alt=""><noscript><img decoding="async" width="192" height="187" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Bonus-5-1.png" class="attachment-full size-full wp-image-4857 webpexpress-processed" alt=""></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="112" height="25" class="attachment-full size-full wp-image-4762" alt=""><noscript><img decoding="async" width="112" height="25" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1768.svg" class="attachment-full size-full wp-image-4762" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">ebook</h2></div></div><div class=""><div class=""><h2 class="">Argiloterapia</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">De <span style="text-decoration-line: line-through; color: #ff0000;">R$59</span></h2></div></div><div class=""><div class=""><h3 class="">
+<span class="">Por:</span>
+<span class="">
+<span class="">GRÁTIS</span>
+</span></h3></div></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36863.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="196" height="209" class="attachment-full size-full wp-image-4763 webpexpress-processed" alt=""><noscript><img decoding="async" width="196" height="209" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36863.png" class="attachment-full size-full wp-image-4763 webpexpress-processed" alt=""></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="112" height="25" class="attachment-full size-full wp-image-4764" alt=""><noscript><img decoding="async" width="112" height="25" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1769.svg" class="attachment-full size-full wp-image-4764" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">fornecedores</h2></div></div><div class=""><div class=""><h2 class="">Contato para compra de produtos em lojas parceiras com cupom de desconto para alunos</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">De <span style="text-decoration-line: line-through; color: #ff0000;">R$59</span></h2></div></div><div class=""><div class=""><h3 class="">
+<span class="">Por:</span>
+<span class="">
+<span class="">GRÁTIS</span>
+</span></h3></div></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Bonus-7.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="222" height="228" class="attachment-full size-full wp-image-4855 webpexpress-processed" alt=""><noscript><img decoding="async" width="222" height="228" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Bonus-7.png" class="attachment-full size-full wp-image-4855 webpexpress-processed" alt=""></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="112" height="25" class="attachment-full size-full wp-image-4765" alt=""><noscript><img decoding="async" width="112" height="25" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1799.svg" class="attachment-full size-full wp-image-4765" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Mini Curso</h2></div></div><div class=""><div class=""><h2 class="">Descubra como usar as Redes Sociais para alavancar seus resultados</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">De <span style="text-decoration-line: line-through; color: #ff0000;">R$997</span></h2></div></div><div class=""><div class=""><h3 class="">
+<span class="">Por:</span>
+<span class="">
+<span class="">GRÁTIS</span>
+</span></h3></div></div></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Bonus-8.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="236" height="242" class="attachment-full size-full wp-image-4858 webpexpress-processed" alt=""><noscript><img decoding="async" width="236" height="242" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Bonus-8.png" class="attachment-full size-full wp-image-4858 webpexpress-processed" alt=""></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="112" height="25" class="attachment-full size-full wp-image-4766" alt=""><noscript><img decoding="async" width="112" height="25" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1800.svg" class="attachment-full size-full wp-image-4766" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Mini Curso</h2></div></div><div class=""><div class=""><h2 class="">Aprenda usar o Canva de forma profissional</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">De <span style="text-decoration-line: line-through; color: #ff0000;">R$197</span></h2></div></div><div class=""><div class=""><h3 class="">
+<span class="">Por:</span>
+<span class="">
+<span class="">GRÁTIS</span>
+</span></h3></div></div></div></div></div></div></div></div><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Icon-Pdf.png.webp 445w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Icon-Pdf-300x93.png.webp 300w" sizes="(max-width: 445px) 100vw, 445px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="445" height="138" class="attachment-full size-full wp-image-4860 webpexpress-processed" alt=""><noscript><img decoding="async" width="445" height="138" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Icon-Pdf.png" class="attachment-full size-full wp-image-4860 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Icon-Pdf.png 445w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Icon-Pdf-300x93.png 300w" sizes="(max-width: 445px) 100vw, 445px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><h2 class="">PDFS DO CURSO</h2></div></div><div class=""><div class=""><ul class=""><li class="">
+<span class="">
+<i aria-hidden="true" class="fas fa-check-square"></i>						</span>
+<span class=""><b>Apostila</b> Completa de depilação</span></li><li class="">
+<span class="">
+<i aria-hidden="true" class="fas fa-check-square"></i>						</span>
+<span class=""><b>Ficha</b> pronta de Anamnese Depilação</span></li><li class="">
+<span class="">
+<i aria-hidden="true" class="fas fa-check-square"></i>						</span>
+<span class=""><b>Ficha</b> pronta de Anamnese Argiloterapia</span></li><li class="">
+<span class="">
+<i aria-hidden="true" class="fas fa-check-square"></i>						</span>
+<span class="">O Guia prático da <b>intercorrência</b></span></li></ul></div></div></div><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/PDFS.png.webp 500w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/PDFS-300x259.png.webp 300w" sizes="(max-width: 500px) 100vw, 500px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="500" height="432" class="attachment-full size-full wp-image-4853 webpexpress-processed" alt=""><noscript><img decoding="async" width="500" height="432" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/PDFS.png" class="attachment-full size-full wp-image-4853 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/PDFS.png 500w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/PDFS-300x259.png 300w" sizes="(max-width: 500px) 100vw, 500px"></noscript></picture></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h2 class=""><b>Aproveite</b> essa oportunidade imperdível de deslanchar sua carreira e <span style="font-weight: 700; color: #A64142;">construir seu próprio negócio.</span></h2></div></div><div class=""><div class=""><h2 class="">OFERTA POR TEMPO LIMITADO!</h2></div></div><div class=""><div class=""><div class=""><div class=""><span class="">23</span> <span class="">horas</span></div><div class=""><span class="">59</span> <span class="">minutos</span></div><div class=""><span class="">13</span> <span class="">segundos</span></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Certificado-1.png.webp 426w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Certificado-1-300x234.png.webp 300w" sizes="(max-width: 426px) 100vw, 426px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="426" height="332" class="attachment-full size-full wp-image-4911 webpexpress-processed" alt=""><noscript><img decoding="async" width="426" height="332" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Certificado-1.png" class="attachment-full size-full wp-image-4911 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Certificado-1.png 426w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Certificado-1-300x234.png 300w" sizes="(max-width: 426px) 100vw, 426px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h2 class=""><span style="font-weight: 700;">Certificado</span> de conclusão</h2></div></div><div class=""><div class=""><h2 class="">Ao finalizar as aulas você irá receber o certificado de conclusão do curso Depilação Profissional de nível Profissionalizante reconhecido em qualquer lugar.Você continuará tendo acesso a todas as atualizações que forem lançadas ao decorrer de 12 meses e contará com a mentoria online por 3 meses com a Professora Priscilla Fidelis.</h2></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><figure class=""><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="87" height="87" class="attachment-full size-full wp-image-4785" alt=""><noscript><img decoding="async" width="87" height="87" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1770-1.svg" class="attachment-full size-full wp-image-4785" alt="" /></noscript></figure><div class=""><h3 class=""><span style="font-weight: 700;">Suporte VIP</span> Exclusivo <br>no <span style="font-weight: 700;">WhatsApp</span></h3><p class="">Você terá acesso direto a Professora Priscilla Fidelis no WhatsApp para tirar todas as suas dúvidas diretamente com ela.</p></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/MOCKUP-SUPORTE.png.webp 358w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/MOCKUP-SUPORTE-300x297.png.webp 300w" sizes="(max-width: 358px) 100vw, 358px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="358" height="354" class="attachment-full size-full wp-image-4916 webpexpress-processed" alt=""><noscript><img decoding="async" width="358" height="354" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/MOCKUP-SUPORTE.png" class="attachment-full size-full wp-image-4916 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/MOCKUP-SUPORTE.png 358w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/MOCKUP-SUPORTE-300x297.png 300w" sizes="(max-width: 358px) 100vw, 358px"></noscript></picture></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36875.png.webp 557w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36875-300x282.png.webp 300w" sizes="(max-width: 557px) 100vw, 557px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="557" height="523" class="attachment-full size-full wp-image-4789 webpexpress-processed" alt=""><noscript><img decoding="async" width="557" height="523" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36875.png" class="attachment-full size-full wp-image-4789 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36875.png 557w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36875-300x282.png 300w" sizes="(max-width: 557px) 100vw, 557px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h2 class=""><span style="font-weight: 700;">Grupo Secreto</span> para as Alunas no <span style="font-weight: 700;">Telegram e no Facebook</span></h2></div></div><div class=""><div class=""><h2 class="">Você participará de um grupo seleto e privado onde receberá todas atualizações de conteúdo em primeira mão, tendo também a oportunidade de fazer Networking com várias outras pessoas da mesma área.</h2></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><h2 class="">OFERTA POR TEMPO LIMITADO!</h2></div></div><div class=""><div class=""><h2 class="">VALOR NORMAL: R$547</h2></div></div><div class=""><div class=""><div class=""><div class="">
+<span class="">
+<i aria-hidden="true" class="fas fa-check-circle"></i>				</span></div><div class=""><h3 class="">
+<span>
+TODOS OS <span style="font-weight: 700;">8 BÔNUS:</span> R$3.494					</span></h3></div></div></div></div><div class=""><div class=""><h2 class="">TOTAL = <span style="text-decoration-line: line-through; font-weight: 700;"> R$4.041,00</span></h2></div></div><div class=""><div class=""><h2 class="">MAS AGORA Por apenas:</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">12x de</h2></div></div><div class=""><div class=""><h2 class="">R$<span style="font-size: 96px; font-weight: 700;">22</span>,86</h2></div></div><div class=""><div class=""><h2 class="">Ou R$229,00 <span style="font-weight: 700;">a vista!</span></h2></div></div></div></div></div></div><div class=""><div class=""><div class="">
+<a class="" href="https://pay.hotmart.com/W13417955P?checkoutMode=10" target="_blank">
+<span class="">
+<span class="">sim, quero começar agora MESMO!</span>
+</span>
+</a></div></div></div><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="304" height="33" class="attachment-full size-full wp-image-4790" alt=""><noscript><img decoding="async" width="304" height="33" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36848.svg" class="attachment-full size-full wp-image-4790" alt="" /></noscript></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="278" height="195" class="attachment-large size-large wp-image-4791" alt=""><noscript><img decoding="async" width="278" height="195" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1750.svg" class="attachment-large size-large wp-image-4791" alt="" /></noscript></div></div><div class=""><div class=""><h2 class="">Ainda não tem certeza? Não se preocupe.</h2></div></div><div class=""><div class=""><h2 class="">Se você não gostar do conteúdo que foi descrito acima, <span style="font-weight: 700;">você tem 7 dias para pedir a garantia</span> e eu devolverei 100% do seu dinheiro.</h2></div></div></div></div></div></div><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="71" height="97" class="attachment-full size-full wp-image-4714" alt=""><noscript><img decoding="async" width="71" height="97" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1775.svg" class="attachment-full size-full wp-image-4714" alt="" /></noscript></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h2 class=""><span style=" padding: 0px 10px 0px 10px; background-color: #A64142;">Cases de sucesso:</span></h2></div></div><div class=""><div class=""><h2 class="">Alunas que estão aplicando o método da Priscilla Fidelis e <span style="font-weight: 700;"> estão conquistando resultados extraordinários</span></h2></div></div><div class="" aria-roledescription="carousel" aria-label="Carousel | Horizontal scrolling: Arrow Left &amp; Right"><div class=""><div class="swiper-container swiper-container-initialized swiper-container-horizontal" dir="ltr"><div class="swiper-wrapper" aria-live="off" style="transform: translate3d(-1051px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" role="group" aria-roledescription="slide" aria-label="2 of 4" style="width: 334.333px; margin-right: 16px;" aria-hidden="true" inert=""><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-22.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 22"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-22.png" alt="image 22"></noscript></picture></figure></div><div class="swiper-slide swiper-slide-duplicate" role="group" aria-roledescription="slide" aria-label="3 of 4" style="width: 334.333px; margin-right: 16px;" aria-hidden="true" inert=""><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-23.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 23"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-23.png" alt="image 23"></noscript></picture></figure></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" role="group" aria-roledescription="slide" aria-label="4 of 4" style="width: 334.333px; margin-right: 16px;" aria-hidden="true" inert=""><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-24.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 24"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-24.png" alt="image 24"></noscript></picture></figure></div><div class="swiper-slide swiper-slide-active" role="group" aria-roledescription="slide" aria-label="1 of 4" style="width: 334.333px; margin-right: 16px;"><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-21.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 21"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-21.png" alt="image 21"></noscript></picture></figure></div><div class="swiper-slide swiper-slide-next" role="group" aria-roledescription="slide" aria-label="2 of 4" style="width: 334.333px; margin-right: 16px;"><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-22.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 22"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-22.png" alt="image 22"></noscript></picture></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 of 4" style="width: 334.333px; margin-right: 16px;"><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-23.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 23"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-23.png" alt="image 23"></noscript></picture></figure></div><div class="swiper-slide swiper-slide-duplicate-prev" role="group" aria-roledescription="slide" aria-label="4 of 4" style="width: 334.333px; margin-right: 16px;" aria-hidden="true" inert=""><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-24.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 24"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-24.png" alt="image 24"></noscript></picture></figure></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" role="group" aria-roledescription="slide" aria-label="1 of 4" style="width: 334.333px; margin-right: 16px;" aria-hidden="true" inert=""><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-21.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 21"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-21.png" alt="image 21"></noscript></picture></figure></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" role="group" aria-roledescription="slide" aria-label="2 of 4" style="width: 334.333px; margin-right: 16px;" aria-hidden="true" inert=""><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-22.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 22"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-22.png" alt="image 22"></noscript></picture></figure></div><div class="swiper-slide swiper-slide-duplicate" role="group" aria-roledescription="slide" aria-label="3 of 4" style="width: 334.333px; margin-right: 16px;" aria-hidden="true" inert=""><figure class="swiper-slide-inner"><picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/image-23.png.webp" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" class="swiper-slide-image webpexpress-processed" alt="image 23"><noscript><img decoding="async" class="swiper-slide-image webpexpress-processed" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/image-23.png" alt="image 23"></noscript></picture></figure></div></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div></div></div></div></div><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36825.png.webp 445w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-36825-300x93.png.webp 300w" sizes="(max-width: 445px) 100vw, 445px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="445" height="138" class="attachment-full size-full wp-image-4725 webpexpress-processed" alt=""><noscript><img decoding="async" width="445" height="138" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36825.png" class="attachment-full size-full wp-image-4725 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36825.png 445w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36825-300x93.png 300w" sizes="(max-width: 445px) 100vw, 445px"></noscript></picture></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<picture><source srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-1760.png.webp 708w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/07/Group-1760-300x254.png.webp 300w" sizes="(max-width: 708px) 100vw, 708px" type="image/webp"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="708" height="599" class="attachment-full size-full wp-image-4809 webpexpress-processed" alt=""><noscript><img decoding="async" width="708" height="599" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1760.png" class="attachment-full size-full wp-image-4809 webpexpress-processed" alt="" srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1760.png 708w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-1760-300x254.png 300w" sizes="(max-width: 708px) 100vw, 708px"></noscript></picture></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">Olá! Sou a Priscilla Fidelis, uma profissional apaixonada pela área da beleza, casada e mãe. Com mais de 8 anos de experiência nesse setor, minha trajetória tem sido marcada por conquistas e um compromisso inabalável com a excelência.
+<br><br>
+Sou formada em administração de empresas, o que me proporcionou uma visão abrangente e estratégica para aprimorar o negócio da depilação profissional. Ao longo da minha carreira, tornei-me uma referência nesse ramo, participando exclusivamente dos maiores eventos do área. Essas oportunidades únicas me permitiram compartilhar meus conhecimentos e técnicas com profissionais talentosos de todo o país.
+<br><br>
+Uma das maiores realizações da minha carreira é ter formado mais de 20 mil alunas, capacitando-as para se destacarem na área da depilação profissional. Ver essas profissionais alcançando sucesso e desenvolvendo suas carreiras é a minha maior motivação.
+<br><br>
+Estou comprometida em fornecer um curso abrangente, com base em minha vasta experiência e nos melhores padrões da depilação.
+Meu objetivo é capacitar você com todas as habilidades e conhecimentos necessários para se tornar uma especialista em depilação profissional.
+<br><br>
+Junte-se a mim nessa jornada e vamos alcançar juntos novos patamares de sucesso na área da depilação profissional!</h2></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="237" height="143" class="attachment-full size-full wp-image-4810" alt=""><noscript><img decoding="async" width="237" height="143" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-36876.svg" class="attachment-full size-full wp-image-4810" alt="" /></noscript></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div id="elementor-tab-title-2671" class="" role="button" aria-controls="elementor-tab-content-2671" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0">Como vou receber acesso ao curso?</a></div><div id="elementor-tab-content-2671" class="" role="region" aria-labelledby="elementor-tab-title-2671"><p>Após o pagamento, você receberá automaticamente em seu e-mail cadastrado os seus dados de acesso. Caso não encontre este e-mail, procure em sua caixa de spam e, ainda não encontrando, entre em contato com a equipe de suporte através do e-mail</p></div></div><div class=""><div id="elementor-tab-title-2672" class="" role="button" aria-controls="elementor-tab-content-2672" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0">Esse valor é único ou mensal?</a></div><div id="elementor-tab-content-2672" class="" role="region" aria-labelledby="elementor-tab-title-2672"><p>Seu investimento é único, você não irá pagar mensalidade.</p></div></div><div class=""><div id="elementor-tab-title-2673" class="" role="button" aria-controls="elementor-tab-content-2673" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0">Quem ministra as aulas?</a></div><div id="elementor-tab-content-2673" class="" role="region" aria-labelledby="elementor-tab-title-2673"><p>O curso é ministrado por Priscilla Fidelis e mentores especialistas supervisionados pela equipe Priscilla Fidelis Academy</p></div></div><div class=""><div id="elementor-tab-title-2674" class="" role="button" aria-controls="elementor-tab-content-2674" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0">Quanto tempo tenho de acesso?</a></div><div id="elementor-tab-content-2674" class="" role="region" aria-labelledby="elementor-tab-title-2674"><p>Você terá 12 meses de acesso, podendo assistir quantas vezes quiser nesse período.</p></div></div><div class=""><div id="elementor-tab-title-2675" class="" role="button" aria-controls="elementor-tab-content-2675" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0">Como funciona o suporte?</a></div><div id="elementor-tab-content-2675" class="" role="region" aria-labelledby="elementor-tab-title-2675"><p>O suporte é individual (vip) pelo WhatsApp exclusivo para alunos. São 3 meses de suporte a partir da data de compra.</p></div></div><div class=""><div id="elementor-tab-title-2676" class="" role="button" aria-controls="elementor-tab-content-2676" aria-expanded="false">
+<span class="" aria-hidden="true">
+<span class=""><i class="fas fa-plus"></i></span>
+<span class=""><i class="fas fa-minus"></i></span>
+</span>
+<a class="" tabindex="0">Como vou receber o certificado?</a></div><div id="elementor-tab-content-2676" class="" role="region" aria-labelledby="elementor-tab-title-2676"><p>Ao concluir 100% as aulas, após 7 dias da compra você poderá emitir seu certificado dentro da plataforma em PDF, baixar e imprimir.</p></div></div></div></div></div></div></div></div></div><div class=""><div class=""><h2 class=""><span style="border-radius: 100px; padding: 10px 128px 10px 128px; background-image: linear-gradient(#00000099, #00000010); ">De <span style="text-decoration-line: line-through;">R$547,00</span> por R$229,00</span></h2></div></div><div class=""><div class=""><h2 class=""><span style="border-radius: 100px; padding: 10px 48px 10px 48px; background-image: linear-gradient(#00000099, #00000010); ">De <span style="text-decoration-line: line-through;">R$547,00</span> por R$229,00</span></h2></div></div><div class=""><div class=""><h2 class="">Aproveite o valor <span style="color: #A64142;">promocional</span></h2></div></div><div class=""><div class=""><div class="">
+<a class="" href="https://pay.hotmart.com/W13417955P?checkoutMode=10" target="_blank">
+<span class="">
+<span class="">quero me tornar uma <br> profissional agora mesmo</span>
+</span>
+</a></div></div></div><div class=""><div class="">
+<img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" width="175" height="31" class="attachment-large size-large wp-image-4726" alt=""><noscript><img decoding="async" width="175" height="31" src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-2167.svg" class="attachment-large size-large wp-image-4726" alt="" /></noscript></div></div></div></div><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><div class=""><h2 class="">PRISCILLA FIDELIS ACADEMY ©2023 – Todos os Direitos Reservados – CNPJ 28.840.009/0001-20</h2></div></div><div class=""><div class=""><div class=""><div class=""><h2 class=""><a href="https://priscillafidelisacademy.com.br/termos-de-uso/"><span style="background-color: #323232; padding: 4px 12px 4px 12px; border-radius: 8px 0px 0px 8px;">TERMOS DE USO</span></a></h2></div></div><div class=""><div class=""><h2 class=""><a href="https://priscillafidelisacademy.com.br/politica-de-privacidade/"><span style="background-color: #323232; padding: 4px 12px 4px 12px; border-radius: 0px 8px 8px 0px;">POLÍTICA DE PRIVACIDADE</span></a></h2></div></div></div></div></div></div><div class=""><div class=""><div class=""><div class=""><h2 class="">meus <span style="font-weight: 700;">canais:</span></h2></div></div><div class=""><div class=""><div class="">
+<span class="">
+<a class="" href="https://www.instagram.com/priscillafidelisoficial/" target="_blank">
+<span class=""></span>
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none"><path d="M33.6875 0H10.3125C4.61706 0 0 4.61706 0 10.3125V33.6875C0 39.3829 4.61706 44 10.3125 44H33.6875C39.3829 44 44 39.3829 44 33.6875V10.3125C44 4.61706 39.3829 0 33.6875 0Z" fill="url(#paint0_radial_1311_329)"></path><path d="M33.6875 0H10.3125C4.61706 0 0 4.61706 0 10.3125V33.6875C0 39.3829 4.61706 44 10.3125 44H33.6875C39.3829 44 44 39.3829 44 33.6875V10.3125C44 4.61706 39.3829 0 33.6875 0Z" fill="url(#paint1_radial_1311_329)"></path><path d="M22.0015 4.8125C17.3338 4.8125 16.7478 4.83295 14.9146 4.91631C13.0848 5.00019 11.8358 5.2898 10.743 5.71484C9.61245 6.15381 8.65356 6.74111 7.69828 7.69673C6.74214 8.65219 6.15484 9.61108 5.7145 10.7412C5.28825 11.8343 4.9983 13.0838 4.91597 14.9127C4.83398 16.7461 4.8125 17.3322 4.8125 22.0002C4.8125 26.6681 4.83313 27.2522 4.91631 29.0854C5.00053 30.9152 5.29014 32.1642 5.71484 33.257C6.15416 34.3875 6.74145 35.3464 7.69708 36.3017C8.65219 37.2579 9.61108 37.8465 10.7408 38.2855C11.8345 38.7105 13.0836 39.0002 14.9131 39.084C16.7465 39.1674 17.3319 39.1878 21.9995 39.1878C26.6678 39.1878 27.2518 39.1674 29.085 39.084C30.9148 39.0002 32.1652 38.7105 33.2588 38.2855C34.3889 37.8465 35.3464 37.2579 36.3014 36.3017C37.2575 35.3464 37.8446 34.3875 38.2852 33.2575C38.7076 32.1642 38.9977 30.9148 39.0837 29.0857C39.166 27.2525 39.1875 26.6681 39.1875 22.0002C39.1875 17.3322 39.166 16.7465 39.0837 14.9131C38.9977 13.0833 38.7076 11.8345 38.2852 10.7417C37.8446 9.61108 37.2575 8.65219 36.3014 7.69673C35.3454 6.74077 34.3893 6.15347 33.2578 5.71502C32.1621 5.2898 30.9124 5.00002 29.0826 4.91631C27.2492 4.83295 26.6655 4.8125 21.9962 4.8125H22.0015ZM20.4597 7.90986C20.9174 7.90917 21.428 7.90986 22.0015 7.90986C26.5908 7.90986 27.1346 7.92636 28.9468 8.00869C30.6226 8.08534 31.5322 8.36533 32.138 8.60063C32.9402 8.91206 33.512 9.28452 34.1132 9.88625C34.7148 10.4878 35.0871 11.0607 35.3994 11.8628C35.6347 12.4678 35.915 13.3774 35.9913 15.0532C36.0736 16.8651 36.0915 17.4092 36.0915 21.9962C36.0915 26.5832 36.0736 27.1275 35.9913 28.9393C35.9147 30.6151 35.6347 31.5246 35.3994 32.1298C35.0879 32.9319 34.7148 33.5031 34.1132 34.1043C33.5117 34.7059 32.9405 35.0781 32.138 35.3898C31.5329 35.6261 30.6226 35.9054 28.9468 35.982C27.1349 36.0644 26.5908 36.0822 22.0015 36.0822C17.4121 36.0822 16.8682 36.0644 15.0564 35.982C13.3806 35.9047 12.4711 35.6247 11.8647 35.3894C11.0627 35.0778 10.4897 34.7055 9.88814 34.104C9.28658 33.5024 8.9143 32.9309 8.602 32.1284C8.3667 31.5233 8.08637 30.6137 8.01006 28.9379C7.92773 27.126 7.91123 26.5818 7.91123 21.9919C7.91123 17.4022 7.92773 16.8608 8.01006 15.0489C8.08672 13.3731 8.3667 12.4635 8.602 11.8577C8.91361 11.0555 9.28658 10.4827 9.88831 9.88109C10.4899 9.27953 11.0627 8.90708 11.8649 8.59495C12.4707 8.35862 13.3806 8.07933 15.0564 8.00233C16.642 7.93066 17.2564 7.90917 20.4597 7.90556V7.90986ZM31.1762 10.7637C30.0376 10.7637 29.1137 11.6866 29.1137 12.8255C29.1137 13.9642 30.0376 14.888 31.1762 14.888C32.3149 14.888 33.2387 13.9642 33.2387 12.8255C33.2387 11.6868 32.3149 10.763 31.1762 10.763V10.7637ZM22.0015 13.1735C17.1272 13.1735 13.1751 17.1256 13.1751 22.0002C13.1751 26.8747 17.1272 30.8249 22.0015 30.8249C26.8761 30.8249 30.8268 26.8747 30.8268 22.0002C30.8268 17.1258 26.8758 13.1735 22.0012 13.1735H22.0015ZM22.0015 16.2709C25.1656 16.2709 27.7308 18.8358 27.7308 22.0002C27.7308 25.1642 25.1656 27.7295 22.0015 27.7295C18.8373 27.7295 16.2724 25.1642 16.2724 22.0002C16.2724 18.8358 18.8373 16.2709 22.0015 16.2709Z" fill="white"></path><defs><radialGradient id="paint0_radial_1311_329" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.6875 47.3889) rotate(-90) scale(43.6073 40.5582)"><stop stop-color="#FFDD55"></stop><stop offset="0.1" stop-color="#FFDD55"></stop><stop offset="0.5" stop-color="#FF543E"></stop><stop offset="1" stop-color="#C837AB"></stop></radialGradient><radialGradient id="paint1_radial_1311_329" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-7.37017 3.16955) rotate(78.681) scale(19.4927 80.3495)"><stop stop-color="#3771C8"></stop><stop offset="0.128" stop-color="#3771C8"></stop><stop offset="1" stop-color="#6600FF" stop-opacity="0"></stop></radialGradient></defs></svg>					</a>
+</span>
+<span class="">
+<a class="" href="https://www.youtube.com/@Priscillafidelisoficial" target="_blank">
+<span class=""></span>
+<svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M27.4997 9.16602C29.459 9.16602 31.4688 9.21643 33.4168 9.29893L35.7176 9.40893L37.9199 9.53956L39.9824 9.67935L41.8661 9.82602C43.9104 9.98249 45.834 10.8549 47.2986 12.2896C48.7631 13.7244 49.6748 15.6298 49.8732 17.6704L49.9649 18.6443L50.1368 20.7298C50.2972 22.8908 50.4163 25.2466 50.4163 27.4993C50.4163 29.7521 50.2972 32.1079 50.1368 34.2689L49.9649 36.3543C49.9351 36.6889 49.9053 37.0121 49.8732 37.3283C49.6747 39.3693 48.7627 41.2749 47.2977 42.7097C45.8327 44.1446 43.9085 45.0167 41.8638 45.1727L39.9847 45.3171L37.9222 45.4591L35.7176 45.5898L33.4168 45.6998C31.4455 45.7854 29.4727 45.8297 27.4997 45.8327C25.5266 45.8297 23.5538 45.7854 21.5826 45.6998L19.2818 45.5898L17.0795 45.4591L15.017 45.3171L13.1332 45.1727C11.0889 45.0162 9.16531 44.1438 7.70076 42.709C6.2362 41.2743 5.32453 39.3689 5.12613 37.3283L5.03447 36.3543L4.86259 34.2689C4.68736 32.0165 4.59411 29.7585 4.58301 27.4993C4.58301 25.2466 4.70217 22.8908 4.86259 20.7298L5.03447 18.6443C5.06426 18.3098 5.09405 17.9866 5.12613 17.6704C5.32446 15.6301 6.2358 13.7251 7.69988 12.2903C9.16397 10.8556 11.0871 9.983 13.1309 9.82602L15.0124 9.67935L17.0749 9.53956L19.2795 9.40893L21.5803 9.29893C23.5523 9.2133 25.5258 9.16898 27.4997 9.16602ZM22.9163 21.9421V33.0566C22.9163 34.1154 24.0622 34.7754 24.9788 34.2483L34.6038 28.691C34.8133 28.5705 34.9872 28.3968 35.1082 28.1876C35.2292 27.9784 35.2929 27.741 35.2929 27.4993C35.2929 27.2577 35.2292 27.0203 35.1082 26.8111C34.9872 26.6019 34.8133 26.4282 34.6038 26.3077L24.9788 20.7527C24.7697 20.632 24.5326 20.5684 24.2911 20.5685C24.0497 20.5685 23.8125 20.6321 23.6035 20.7529C23.3944 20.8737 23.2208 21.0474 23.1002 21.2565C22.9796 21.4657 22.9162 21.7029 22.9163 21.9443V21.9421Z" fill="#FF0000"></path></svg>					</a>
+</span></div></div></div></div></div></div></div><div class=""><div class=""><div class="">
+<span class="">
+</span></div></div></div><div class=""><div class=""><h2 class="">Este site não faz parte do site do Facebook ou do Facebook Inc. Além disso, este site não é endossado pelo Facebook de qualquer maneira. FACEBOOK é uma marca comercial de FACEBOOK, Inc.
+Aviso: Qualquer menção ou informação referente a valores citada neste site e de seus produtos e serviços são somente ilustrativas não devem ser consideradas promessa de resultado ou ganho comum, exato ou promessa de renda no futuro. As dicas e sugestões das aulas contidas no site não garantem qualquer tipo de resultados, uma vez que isso depende exclusivamente do trabalho e dedicação individual de cada um. Todas as informações dos visitantes, como nome e e-mail são protegidas, e não serão compartilhadas, divulgadas, ou vendidas para terceiros. Ao se registrar nesse site, o usuário cadastrado poderá receber outras promoções de cursos sobre marketing digital, empreendedorismo e negócios.</h2></div></div></div></div></div> <script type="text/javascript">const lazyloadRunObserver = () => {
+					const dataAttribute = 'data-e-bg-lazyload';
+					const lazyloadBackgrounds = document.querySelectorAll( `[${ dataAttribute }]:not(.lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+					entries.forEach( ( entry ) => {
+						if ( entry.isIntersecting ) {
+							let lazyloadBackground = entry.target;
+							const lazyloadSelector = lazyloadBackground.getAttribute( dataAttribute );
+							if ( lazyloadSelector ) {
+								lazyloadBackground = entry.target.querySelector( lazyloadSelector );
+							}
+							if( lazyloadBackground ) {
+								lazyloadBackground.classList.add( 'lazyloaded' );
+							}
+							lazyloadBackgroundObserver.unobserve( entry.target );
+						}
+					});
+					}, { rootMargin: '100px 0px 100px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );</script> <noscript><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=1019242678949638&ev=PageView&noscript=1&cd%5Bpage_title%5D=Depila%C3%A7%C3%A3o+Profissional+V2&cd%5Bpost_type%5D=page&cd%5Bpost_id%5D=4709&cd%5Bplugin%5D=PixelYourSite&cd%5Buser_role%5D=guest&cd%5Bevent_url%5D=priscillafidelisacademy.com.br%2F" alt=""></noscript> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/74a303557555b02c84d8b3e9b1f64675.js?ver=92fcf" id="elementor-pro-webpack-runtime-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/72aa388760dc89528e0f3aa912539c47.js?ver=c6591" id="elementor-webpack-runtime-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/428008147481fdb0a781056729c6b21a.js?ver=6f248" id="elementor-frontend-modules-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/1f8582c41403c00fe446cad3d2efca80.js?ver=a888f" id="wp-polyfill-inert-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/281804f074fb794a9ce3ce76c86b78c2.js?ver=0f95a" id="regenerator-runtime-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/7ad2438fe5cd60d612c5cf5af4ec222b.js?ver=9fe16" id="wp-polyfill-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/3fd39401a36f38362e5a14857f32f4a2.js?ver=756c5" id="wp-hooks-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/cae92f45358455691e831084303190e6.js?ver=e7a3b" id="wp-i18n-js"></script> <script id="wp-i18n-js-after">wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );</script> <script id="elementor-pro-frontend-js-before">var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/priscillafidelisacademy.com.br\/wp-admin\/admin-ajax.php","nonce":"2871844bc6","urls":{"assets":"https:\/\/priscillafidelisacademy.com.br\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/priscillafidelisacademy.com.br\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"pt_BR","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/priscillafidelisacademy.com.br\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};</script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/f74f6846dbd9258d11d220c3549d98eb.js?ver=0518e" id="elementor-pro-frontend-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/59d63b00929783e4f88e8f2c2fdb736d.js?ver=48354" id="elementor-waypoints-js"></script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/43f214ef809a803b4717cdd75ae11e6a.js?ver=d6d29" id="jquery-ui-core-js"></script> <script id="elementor-frontend-js-before">var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Celular em modo retrato","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Celular em modo paisagem","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Retrato","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Paisagem do tablet","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.16.4","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"additional_custom_breakpoints":true,"container":true,"container_grid":true,"theme_builder_v2":true,"landing-pages":true,"e_lazyload":true,"page-transitions":true,"notes":true,"loop":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/priscillafidelisacademy.com.br\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":4709,"title":"Priscilla%20Fidelis%20Academy%20%E2%80%93%20Trasformando%20a%20vida%20de%20milhares%20de%20pessoas","excerpt":"","featuredImage":false}};</script> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/033ac66296e10cab0d5c8094e18a8f4e.js?ver=d537e" id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span> <script data-optimized="1" src="https://priscillafidelisacademy.com.br/wp-content/litespeed/js/0f025fb73824b89b991145da4ac90e23.js?ver=9d38d" id="pro-elements-handlers-js"></script><svg style="display: none;" class="e-font-icon-svg-symbols"></svg> 
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHMHT4J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <script data-no-optimize="1">!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).LazyLoad=e()}(this,function(){"use strict";function e(){return(e=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n,a=arguments[e];for(n in a)Object.prototype.hasOwnProperty.call(a,n)&&(t[n]=a[n])}return t}).apply(this,arguments)}function i(t){return e({},it,t)}function o(t,e){var n,a="LazyLoad::Initialized",i=new t(e);try{n=new CustomEvent(a,{detail:{instance:i}})}catch(t){(n=document.createEvent("CustomEvent")).initCustomEvent(a,!1,!1,{instance:i})}window.dispatchEvent(n)}function l(t,e){return t.getAttribute(gt+e)}function c(t){return l(t,bt)}function s(t,e){return function(t,e,n){e=gt+e;null!==n?t.setAttribute(e,n):t.removeAttribute(e)}(t,bt,e)}function r(t){return s(t,null),0}function u(t){return null===c(t)}function d(t){return c(t)===vt}function f(t,e,n,a){t&&(void 0===a?void 0===n?t(e):t(e,n):t(e,n,a))}function _(t,e){nt?t.classList.add(e):t.className+=(t.className?" ":"")+e}function v(t,e){nt?t.classList.remove(e):t.className=t.className.replace(new RegExp("(^|\\s+)"+e+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,"")}function g(t){return t.llTempImage}function b(t,e){!e||(e=e._observer)&&e.unobserve(t)}function p(t,e){t&&(t.loadingCount+=e)}function h(t,e){t&&(t.toLoadCount=e)}function n(t){for(var e,n=[],a=0;e=t.children[a];a+=1)"SOURCE"===e.tagName&&n.push(e);return n}function m(t,e){(t=t.parentNode)&&"PICTURE"===t.tagName&&n(t).forEach(e)}function a(t,e){n(t).forEach(e)}function E(t){return!!t[st]}function I(t){return t[st]}function y(t){return delete t[st]}function A(e,t){var n;E(e)||(n={},t.forEach(function(t){n[t]=e.getAttribute(t)}),e[st]=n)}function k(a,t){var i;E(a)&&(i=I(a),t.forEach(function(t){var e,n;e=a,(t=i[n=t])?e.setAttribute(n,t):e.removeAttribute(n)}))}function L(t,e,n){_(t,e.class_loading),s(t,ut),n&&(p(n,1),f(e.callback_loading,t,n))}function w(t,e,n){n&&t.setAttribute(e,n)}function x(t,e){w(t,ct,l(t,e.data_sizes)),w(t,rt,l(t,e.data_srcset)),w(t,ot,l(t,e.data_src))}function O(t,e,n){var a=l(t,e.data_bg_multi),i=l(t,e.data_bg_multi_hidpi);(a=at&&i?i:a)&&(t.style.backgroundImage=a,n=n,_(t=t,(e=e).class_applied),s(t,ft),n&&(e.unobserve_completed&&b(t,e),f(e.callback_applied,t,n)))}function N(t,e){!e||0<e.loadingCount||0<e.toLoadCount||f(t.callback_finish,e)}function C(t,e,n){t.addEventListener(e,n),t.llEvLisnrs[e]=n}function M(t){return!!t.llEvLisnrs}function z(t){if(M(t)){var e,n,a=t.llEvLisnrs;for(e in a){var i=a[e];n=e,i=i,t.removeEventListener(n,i)}delete t.llEvLisnrs}}function R(t,e,n){var a;delete t.llTempImage,p(n,-1),(a=n)&&--a.toLoadCount,v(t,e.class_loading),e.unobserve_completed&&b(t,n)}function T(o,r,c){var l=g(o)||o;M(l)||function(t,e,n){M(t)||(t.llEvLisnrs={});var a="VIDEO"===t.tagName?"loadeddata":"load";C(t,a,e),C(t,"error",n)}(l,function(t){var e,n,a,i;n=r,a=c,i=d(e=o),R(e,n,a),_(e,n.class_loaded),s(e,dt),f(n.callback_loaded,e,a),i||N(n,a),z(l)},function(t){var e,n,a,i;n=r,a=c,i=d(e=o),R(e,n,a),_(e,n.class_error),s(e,_t),f(n.callback_error,e,a),i||N(n,a),z(l)})}function G(t,e,n){var a,i,o,r,c;t.llTempImage=document.createElement("IMG"),T(t,e,n),E(c=t)||(c[st]={backgroundImage:c.style.backgroundImage}),o=n,r=l(a=t,(i=e).data_bg),c=l(a,i.data_bg_hidpi),(r=at&&c?c:r)&&(a.style.backgroundImage='url("'.concat(r,'")'),g(a).setAttribute(ot,r),L(a,i,o)),O(t,e,n)}function D(t,e,n){var a;T(t,e,n),a=e,e=n,(t=It[(n=t).tagName])&&(t(n,a),L(n,a,e))}function V(t,e,n){var a;a=t,(-1<yt.indexOf(a.tagName)?D:G)(t,e,n)}function F(t,e,n){var a;t.setAttribute("loading","lazy"),T(t,e,n),a=e,(e=It[(n=t).tagName])&&e(n,a),s(t,vt)}function j(t){t.removeAttribute(ot),t.removeAttribute(rt),t.removeAttribute(ct)}function P(t){m(t,function(t){k(t,Et)}),k(t,Et)}function S(t){var e;(e=At[t.tagName])?e(t):E(e=t)&&(t=I(e),e.style.backgroundImage=t.backgroundImage)}function U(t,e){var n;S(t),n=e,u(e=t)||d(e)||(v(e,n.class_entered),v(e,n.class_exited),v(e,n.class_applied),v(e,n.class_loading),v(e,n.class_loaded),v(e,n.class_error)),r(t),y(t)}function $(t,e,n,a){var i;n.cancel_on_exit&&(c(t)!==ut||"IMG"===t.tagName&&(z(t),m(i=t,function(t){j(t)}),j(i),P(t),v(t,n.class_loading),p(a,-1),r(t),f(n.callback_cancel,t,e,a)))}function q(t,e,n,a){var i,o,r=(o=t,0<=pt.indexOf(c(o)));s(t,"entered"),_(t,n.class_entered),v(t,n.class_exited),i=t,o=a,n.unobserve_entered&&b(i,o),f(n.callback_enter,t,e,a),r||V(t,n,a)}function H(t){return t.use_native&&"loading"in HTMLImageElement.prototype}function B(t,i,o){t.forEach(function(t){return(a=t).isIntersecting||0<a.intersectionRatio?q(t.target,t,i,o):(e=t.target,n=t,a=i,t=o,void(u(e)||(_(e,a.class_exited),$(e,n,a,t),f(a.callback_exit,e,n,t))));var e,n,a})}function J(e,n){var t;et&&!H(e)&&(n._observer=new IntersectionObserver(function(t){B(t,e,n)},{root:(t=e).container===document?null:t.container,rootMargin:t.thresholds||t.threshold+"px"}))}function K(t){return Array.prototype.slice.call(t)}function Q(t){return t.container.querySelectorAll(t.elements_selector)}function W(t){return c(t)===_t}function X(t,e){return e=t||Q(e),K(e).filter(u)}function Y(e,t){var n;(n=Q(e),K(n).filter(W)).forEach(function(t){v(t,e.class_error),r(t)}),t.update()}function t(t,e){var n,a,t=i(t);this._settings=t,this.loadingCount=0,J(t,this),n=t,a=this,Z&&window.addEventListener("online",function(){Y(n,a)}),this.update(e)}var Z="undefined"!=typeof window,tt=Z&&!("onscroll"in window)||"undefined"!=typeof navigator&&/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),et=Z&&"IntersectionObserver"in window,nt=Z&&"classList"in document.createElement("p"),at=Z&&1<window.devicePixelRatio,it={elements_selector:".lazy",container:tt||Z?document:null,threshold:300,thresholds:null,data_src:"src",data_srcset:"srcset",data_sizes:"sizes",data_bg:"bg",data_bg_hidpi:"bg-hidpi",data_bg_multi:"bg-multi",data_bg_multi_hidpi:"bg-multi-hidpi",data_poster:"poster",class_applied:"applied",class_loading:"litespeed-loading",class_loaded:"litespeed-loaded",class_error:"error",class_entered:"entered",class_exited:"exited",unobserve_completed:!0,unobserve_entered:!1,cancel_on_exit:!0,callback_enter:null,callback_exit:null,callback_applied:null,callback_loading:null,callback_loaded:null,callback_error:null,callback_finish:null,callback_cancel:null,use_native:!1},ot="src",rt="srcset",ct="sizes",lt="poster",st="llOriginalAttrs",ut="loading",dt="loaded",ft="applied",_t="error",vt="native",gt="data-",bt="ll-status",pt=[ut,dt,ft,_t],ht=[ot],mt=[ot,lt],Et=[ot,rt,ct],It={IMG:function(t,e){m(t,function(t){A(t,Et),x(t,e)}),A(t,Et),x(t,e)},IFRAME:function(t,e){A(t,ht),w(t,ot,l(t,e.data_src))},VIDEO:function(t,e){a(t,function(t){A(t,ht),w(t,ot,l(t,e.data_src))}),A(t,mt),w(t,lt,l(t,e.data_poster)),w(t,ot,l(t,e.data_src)),t.load()}},yt=["IMG","IFRAME","VIDEO"],At={IMG:P,IFRAME:function(t){k(t,ht)},VIDEO:function(t){a(t,function(t){k(t,ht)}),k(t,mt),t.load()}},kt=["IMG","IFRAME","VIDEO"];return t.prototype={update:function(t){var e,n,a,i=this._settings,o=X(t,i);{if(h(this,o.length),!tt&&et)return H(i)?(e=i,n=this,o.forEach(function(t){-1!==kt.indexOf(t.tagName)&&F(t,e,n)}),void h(n,0)):(t=this._observer,i=o,t.disconnect(),a=t,void i.forEach(function(t){a.observe(t)}));this.loadAll(o)}},destroy:function(){this._observer&&this._observer.disconnect(),Q(this._settings).forEach(function(t){y(t)}),delete this._observer,delete this._settings,delete this.loadingCount,delete this.toLoadCount},loadAll:function(t){var e=this,n=this._settings;X(t,n).forEach(function(t){b(t,e),V(t,n,e)})},restoreAll:function(){var e=this._settings;Q(e).forEach(function(t){U(t,e)})}},t.load=function(t,e){e=i(e);V(t,e)},t.resetStatus=function(t){r(t)},Z&&function(t,e){if(e)if(e.length)for(var n,a=0;n=e[a];a+=1)o(t,n);else o(t,e)}(t,window.lazyLoadOptions),t});!function(e,t){"use strict";function a(){t.body.classList.add("litespeed_lazyloaded")}function n(){console.log("[LiteSpeed] Start Lazy Load Images"),d=new LazyLoad({elements_selector:"[data-lazyloaded]",callback_finish:a}),o=function(){d.update()},e.MutationObserver&&new MutationObserver(o).observe(t.documentElement,{childList:!0,subtree:!0,attributes:!0})}var d,o;e.addEventListener?e.addEventListener("load",n,!1):e.attachEvent("onload",n)}(window,document);</script>
+<!-- Page optimized by LiteSpeed Cache @2024-01-06 19:04:36 -->
 
-    <! ---- Novo Elmento --->
-        <div class="elementor-element elementor-element-9829df6 e-flex e-con-boxed e-con e-parent">
-            <div class="e-con-inner">
-                <div
-                    class="elementor-element elementor-element-d742934 elementor-hidden-mobile elementor-widget elementor-widget-image">
-                    <div class="elementor-widget-container">
-                        <picture>
-                            <source
-                                srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/11/Banner-PV-PRI.png.webp 1440w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/11/Banner-PV-PRI-300x96.png.webp 300w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/11/Banner-PV-PRI-1024x327.png.webp 1024w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/11/Banner-PV-PRI-768x245.png.webp 768w"
-                                sizes="(max-width: 1440px) 100vw, 1440px" type="image/webp"><img
-                                src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI.png"
-                                fetchpriority="high" decoding="async" width="1440" height="460"
-                                class="attachment-full size-full wp-image-5069 webpexpress-processed entered litespeed-loaded"
-                                alt="" sizes="(max-width: 1440px) 100vw, 1440px"
-                                srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI.png 1440w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI-300x96.png 300w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI-1024x327.png 1024w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI-768x245.png 768w"><noscript><img
-                                    fetchpriority="high" decoding="async" width="1440" height="460"
-                                    src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI.png"
-                                    class="attachment-full size-full wp-image-5069 webpexpress-processed" alt=""
-                                    srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI.png 1440w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI-300x96.png 300w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI-1024x327.png 1024w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-PRI-768x245.png 768w"
-                                    sizes="(max-width: 1440px) 100vw, 1440px"></noscript>
-                        </picture>
-                    </div>
-                </div>
-                <div
-                    class="elementor-element elementor-element-9880e32 elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image">
-                    <div class="elementor-widget-container">
-                        <picture>
-                            <source
-                                srcset="https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/11/Banner-PV-mob-PRI.png.webp 1263w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/11/Banner-PV-mob-PRI-300x144.png.webp 300w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/11/Banner-PV-mob-PRI-1024x492.png.webp 1024w, https://priscillafidelisacademy.com.br/wp-content/webp-express/webp-images/uploads/2023/11/Banner-PV-mob-PRI-768x369.png.webp 768w"
-                                sizes="(max-width: 1263px) 100vw, 1263px" type="image/webp"><img
-                                src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                                decoding="async" width="1263" height="607"
-                                class="attachment-full size-full wp-image-5071 webpexpress-processed"
-                                alt=""><noscript><img decoding="async" width="1263" height="607"
-                                    src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-mob-PRI.png"
-                                    class="attachment-full size-full wp-image-5071 webpexpress-processed" alt=""
-                                    srcset="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-mob-PRI.png 1263w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-mob-PRI-300x144.png 300w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-mob-PRI-1024x492.png 1024w, https://priscillafidelisacademy.com.br/wp-content/uploads/2023/11/Banner-PV-mob-PRI-768x369.png 768w"
-                                    sizes="(max-width: 1263px) 100vw, 1263px"></noscript>
-                        </picture>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <! ---- Novo Elmento --->
-            <div class="elementor-element elementor-element-24fb008 e-flex e-con-boxed e-con e-parent">
-                <div class="e-con-inner">
-                    <div class="elementor-element elementor-element-e804a16 elementor-widget elementor-widget-image">
-                        <div class="elementor-widget-container">
-                            <img src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-83.svg"
-                                decoding="async" width="335" height="40"
-                                class="attachment-full size-full wp-image-4711 entered litespeed-loaded"
-                                alt=""><noscript><img decoding="async" width="335" height="40"
-                                    src="https://priscillafidelisacademy.com.br/wp-content/uploads/2023/07/Group-83.svg"
-                                    class="attachment-full size-full wp-image-4711" alt="" /></noscript>
-                        </div>
-                    </div>
-                </div>
-            </div>
-</body>
-
-</html>
+<!-- Page supported by LiteSpeed Cache 5.6 on 2024-01-06 19:04:36 -->
+<!-- QUIC.cloud UCSS in queue --><script src="https://priscillafidelisacademy.com.br/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6"></script></body></html>

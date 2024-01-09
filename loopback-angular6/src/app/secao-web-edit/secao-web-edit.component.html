@@ -1,0 +1,45 @@
+<h2 *ngIf="item" mat-dialog-title>SecaoWeb</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #categoria [(ngModel)]="item.categoria" name="categoria" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<mat-select #categoria [(ngModel)]="item.categoria" name="categoria" placeholder="Categoria">
+			  <mat-option value="TITULO_MANCHETE">Título/Manchete Impactante:</mat-option>
+			  <mat-option value="PROBLEMA_SOLUCAO">Problema/Solução</mat-option>
+			  <mat-option value="BENEFICIO_RECURSO">Benefícios/Recursos</mat-option>
+			  <mat-option value="DESCRICAO_PRODUTO">Descrição do Produto</mat-option>
+			  <mat-option value="DEPOIMENTO_PROVASOCIAL">Depoimentos/Provas Sociais</mat-option>
+			  <mat-option value="CALL_TO_ACTION">Call to Action</mat-option>
+			  <mat-option value="FAQ">FAQ</mat-option>
+			  <mat-option value="DEVOLUCAO">Garantia/Politica de Devolução</mat-option>
+			  <mat-option value="PRECO_PACOTE">Preços e Pacotes</mat-option>
+			  <mat-option value="SOBRE_NOS">Sobre Nós</mat-option>
+			</mat-select>
+		  </mat-form-field>
+
+
+		<mat-form-field class="example-full-width">
+			<textarea rows="2" matInput #style [(ngModel)]="item.style" name="style"
+				placeholder="CSS">
+			</textarea>
+		</mat-form-field>
+		<mat-form-field class="example-full-width">
+			<textarea rows="2" matInput #descricao2 [(ngModel)]="item.html" name="html"
+				placeholder="HTML">
+			</textarea>
+		</mat-form-field>
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

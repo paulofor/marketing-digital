@@ -19,7 +19,12 @@ export class ContaGoogleDetalheComponent extends ContaGoogleDetalheBaseComponent
 	getFiltro() {
 		return {
 			'include' : [
-				{ 'relation' : 'publicoAlvoAdsDiarios' , 'scope' : {'where' : {'maisRecente' : 1 }}}
+				{ 'relation' : 'publicoAlvoAdsDiarios' , 'scope' : {'where' : {'maisRecente' : 1 }}},
+				{ 'relation' : 'segmentoMercadoAdsPersonalizados' , 'scope' : {'where' : {'maisRecente' : 1 }}},
+				{ 'relation' : 'campanhaAdsMetricas' , 'scope' : {
+					'where' : {'maisRecente' : 1 },
+					'order' : 'custoCampanha desc'
+				}}
 			]
 		}
 	}

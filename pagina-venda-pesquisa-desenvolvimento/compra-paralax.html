@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página de Vendas com Efeito Paralaxe</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .parallax-container {
+    position: relative;
+    height: 100vh; /* Altura total da tela */
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px; /* Define perspectiva para a camada de fundo */
+  }
+  .parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('recursos/imagem3.png'); /* Adicione o link para sua imagem de fundo */
+    background-size: cover;
+    z-index: -1;
+    transform: translateZ(-2px) scale(3); /* Ajusta a escala e o movimento de paralaxe */
+  }
+  .content {
+    padding: 20px;
+    color: #fff;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: #ffc400;
+  }
+</style>
+</head>
+<body>
+  <div class="parallax-container">
+    <div class="parallax-bg"></div>
+    <div class="content">
+      <h1>Exemplo de Página de Vendas com Efeito Paralaxe</h1>
+      <p>Este é o conteúdo da sua página de vendas. Aqui você pode adicionar informações sobre o produto ou serviço que está vendendo.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique euismod urna id tincidunt. Sed vehicula magna ac ante maximus sodales.</p>
+      <a href="#comprar" class="cta-button">Comprar Agora</a>
+    </div>
+  </div>
+
+  <!-- Seção Adicional -->
+  <section id="comprar" style="background-color: #fff; padding: 50px 0; text-align: center;">
+    <h2>Compre Agora!</h2>
+    <p>Aqui você pode adicionar mais detalhes sobre o processo de compra ou destacar ofertas especiais.</p>
+    <a href="#topo" class="cta-button">Voltar ao Topo</a>
+  </section>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      let scrollPosition = window.pageYOffset;
+
+      // Aplica o efeito de paralaxe à camada de fundo
+      document.querySelector('.parallax-bg').style.transform = `translateY(${scrollPosition * 0.3}px)`;
+    });
+  </script>
+</body>
+</html>

@@ -38,7 +38,7 @@ public abstract class PublicoAlvoAdsDiario_AtualizaListaPorConta extends DaoApli
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new ObtemDadosSegmentoPersonalizadoImpl();
 	}
 
 

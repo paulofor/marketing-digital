@@ -68,6 +68,9 @@
 		},
 		"cpaCampanha": {
 			"type": "number"
+		},
+		"jsonAds": {
+			"type": "string"
 		}
 	},
 	"validations": [],

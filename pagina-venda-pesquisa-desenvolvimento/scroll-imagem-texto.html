@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll Effect</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 200vh; /* Altura maior que a tela para criar scroll */
+      overflow-x: hidden; /* Esconder a barra de rolagem horizontal */
+    }
+
+    .container {
+      position: relative;
+      height: 100vh; /* 100% da altura da tela */
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      height: auto; /* Para manter a proporção da imagem */
+      display: block;
+    }
+
+    .text {
+      position: fixed; /* Posicionamento fixo para o texto */
+      top: 40%; /* Posicionamento vertical ajustado */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para melhorar a legibilidade */
+      z-index: 1; /* Colocar o texto acima da imagem */
+    }
+
+    .text h1 {
+      font-size: 3em; /* Tamanho do título aumentado */
+      margin: 0;
+    }
+
+    .text p {
+      font-size: 1.5em; /* Tamanho do texto aumentado */
+    }
+
+    /* Estilos para o cabeçalho fixo */
+    .header {
+      display: none; /* Inicialmente escondido */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px; /* Altura do cabeçalho */
+      background-color: yellow; /* Cor amarela (pode ser ajustada) */
+      z-index: 2; /* Colocar o cabeçalho acima de tudo */
+    }
+  </style>
+</head>
+<body>
+  <div class="header"></div>
+  <div class="container">
+    <img src="recursos/fundo-efeito.jpeg" alt="Imagem">
+  </div>
+  <div class="text">
+    <h1>Seu Texto Aqui</h1>
+    <p>Texto adicional...</p>
+  </div>
+  <!-- Espaço extra para criar scroll -->
+  <div style="height: 100vh;"></div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      const image = document.querySelector('img');
+      const imageBottom = image.getBoundingClientRect().bottom;
+      
+      if (imageBottom <= 0) {
+        header.style.display = 'block';
+      } else {
+        header.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

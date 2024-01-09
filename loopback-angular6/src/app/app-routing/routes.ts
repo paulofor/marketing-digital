@@ -33,6 +33,8 @@ import { AnuncioAdsDisplayPorProdutoListComponent } from '../anuncio-ads-display
 import { ListaAltaMargemAltaTemperaturaComponent } from '../lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component';
 import { ListaSuperMargemComponent } from '../lista-super-margem/lista-super-margem.component';
 import { ContaGoogleDetalheComponent } from '../conta-google-detalhe/conta-google-detalhe.component';
+import { PaginaVendaPorProdutoListComponent } from '../pagina-venda-por-produto-list/pagina-venda-por-produto-list.component';
+import { SecaoWebPorProdutoListComponent } from '../secao-web-por-produto-list/secao-web-por-produto-list.component';
 
 
 
@@ -79,6 +81,8 @@ export const routes : Routes = [
     { path : 'listaAltaMargemAltaTemperatura' , component: ListaAltaMargemAltaTemperaturaComponent },
     { path : 'listaSuperMargem' , component: ListaSuperMargemComponent },
 
+    { path : 'paginaVendaPorProduto/:hotmartId' , component: PaginaVendaPorProdutoListComponent },
+    { path : 'secaoWebPorProduto/:hotmartId' , component: SecaoWebPorProdutoListComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

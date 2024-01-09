@@ -14,8 +14,11 @@ import org.json.JSONObject;
 public class ProdutoProprio extends Model {
 
 
+	private String nome;
+	private String status;
 	// Relacionamentos 1
 	// Relacionamentos N
+	private List<ProdutoProprioVersao> ProdutoProprioVersaos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -24,10 +27,10 @@ public class ProdutoProprio extends Model {
 		this.setIdObjeto(id);
 	}
 
-	public int setIdInteger() {
+	public int getIdInteger() {
 		return new Integer(getId().toString());
 	}
-	public long setIdLong() {
+	public long getIdLong() {
 		return new Long(getId().toString());
 	}
 
@@ -35,6 +38,8 @@ public class ProdutoProprio extends Model {
 		JSONObject obj = new JSONObject();
 		try {
 			obj.put("id",getId());
+			obj.put("nome", nome);
+			obj.put("status", status);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -42,5 +47,29 @@ public class ProdutoProprio extends Model {
 	}
 
 
+	public void setNome(String valor) { 
+		this.nome = valor;
+	}
+	public String getNome() { 
+		return this.nome;
+	}
+	public void setStatus(String valor) { 
+		this.status = valor;
+	}
+	public String getStatus() { 
+		return this.status;
+	}
 
+	public List<ProdutoProprioVersao> getProdutoProprioVersaos() {
+		return  ProdutoProprioVersaos;
+	}
+	public void setProdutoProprioVersaos(List<ProdutoProprioVersao> valores) {
+		this.ProdutoProprioVersaos = new ArrayList<ProdutoProprioVersao>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoProprioVersao();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoProprioVersaos.add((ProdutoProprioVersao) objeto);
+		}
+	}
 }

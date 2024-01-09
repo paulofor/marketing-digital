@@ -27,6 +27,7 @@ export interface CampanhaAdsMetricaInterface {
   "hotmartId"?: number;
   "cpaMedio"?: number;
   "cpaCampanha"?: number;
+  "jsonAds"?: string;
   "id"?: number;
   campanhaAdsTeste?: CampanhaAdsTeste;
   contaGoogle?: ContaGoogle;
@@ -54,6 +55,7 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
   "hotmartId": number;
   "cpaMedio": number;
   "cpaCampanha": number;
+  "jsonAds": string;
   "id": number;
   campanhaAdsTeste: CampanhaAdsTeste;
   contaGoogle: ContaGoogle;
@@ -170,6 +172,10 @@ export class CampanhaAdsMetrica implements CampanhaAdsMetricaInterface {
         "cpaCampanha": {
           name: 'cpaCampanha',
           type: 'number'
+        },
+        "jsonAds": {
+          name: 'jsonAds',
+          type: 'string'
         },
         "id": {
           name: 'id',

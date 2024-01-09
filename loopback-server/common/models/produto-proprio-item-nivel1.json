@@ -1,0 +1,86 @@
+{
+	"name": "ProdutoProprioItemNivel1",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"posicao": {
+			"type": "number"
+		},
+		"json": {
+			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"produtoProprioVersaoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprioVersao": {
+			"type": "belongsTo",
+			"model": "ProdutoProprioVersao",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"atualizaItem": {
+			"accepts": [
+				{
+					"arg": "item",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaItem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"obtemListaVersaoCorrente": {
+			"accepts": [
+				{
+					"arg": "idProdutoProprio",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaVersaoCorrente",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

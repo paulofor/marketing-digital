@@ -23,6 +23,7 @@ public class ProdutoAfiliadoHotlink extends Model {
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
+	private List<PaginaVenda> PaginaVendas;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -31,10 +32,10 @@ public class ProdutoAfiliadoHotlink extends Model {
 		this.setIdObjeto(id);
 	}
 
-	public int setIdInteger() {
+	public int getIdInteger() {
 		return new Integer(getId().toString());
 	}
-	public long setIdLong() {
+	public long getIdLong() {
 		return new Long(getId().toString());
 	}
 
@@ -98,5 +99,17 @@ public class ProdutoAfiliadoHotlink extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public List<PaginaVenda> getPaginaVendas() {
+		return  PaginaVendas;
+	}
+	public void setPaginaVendas(List<PaginaVenda> valores) {
+		this.PaginaVendas = new ArrayList<PaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendas.add((PaginaVenda) objeto);
+		}
 	}
 }

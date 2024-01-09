@@ -1,0 +1,7 @@
+45.90.62.130 - - [09/Jan/2024:00:02:58 -0300] "GET / HTTP/1.1" 200 3477 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+89.104.101.78 - - [09/Jan/2024:00:02:59 -0300] "GET /favicon.ico HTTP/1.1" 404 499 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+187.35.195.213 - - [09/Jan/2024:00:04:24 -0300] "-" 408 5186 "-" "-"
+187.35.195.213 - - [09/Jan/2024:00:04:24 -0300] "-" 408 5186 "-" "-"
+66.249.64.131 - - [09/Jan/2024:00:09:50 -0300] "GET /robots.txt HTTP/1.1" 404 499 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.64.132 - - [09/Jan/2024:00:09:51 -0300] "GET / HTTP/1.1" 200 3477 "-" "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.199 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+141.255.165.66 - - [09/Jan/2024:00:13:02 -0300] "POST /boaform/admin/formLogin HTTP/1.1" 404 493 "http://191.252.92.222:80/admin/login.asp" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0"

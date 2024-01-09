@@ -17,7 +17,7 @@ public class CriaCampanhaAdsRedeDisplay {
 
 	public static void main(String[] args) {
 		System.out.print("CriaCampanhaAdsRedeDisplay");
-		System.out.println("(02/01/2024 23:27:18)");
+		System.out.println("(09/01/2024 10:03:30)");
 		try {
 			carregaProp();
 			CriaCampanhaAdsRedeDisplayObj obj = new CriaCampanhaAdsRedeDisplayObj();

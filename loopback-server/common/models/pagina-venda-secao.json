@@ -1,0 +1,40 @@
+{
+	"name": "PaginaVendaSecao",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"secaoWebId": {
+			"type": "number"
+			,"id": true
+		},
+		"paginaVendaId": {
+			"type": "number"
+			,"id": true
+		},
+		"posicao": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"secaoWeb": {
+			"type": "belongsTo",
+			"model": "SecaoWeb",
+			"foreignKey": ""
+		},
+		"paginaVenda": {
+			"type": "belongsTo",
+			"model": "PaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

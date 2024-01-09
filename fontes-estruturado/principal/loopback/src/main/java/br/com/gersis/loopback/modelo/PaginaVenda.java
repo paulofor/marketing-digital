@@ -15,8 +15,10 @@ public class PaginaVenda extends Model {
 
 
 	private String url;
+	private String precoProduto;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
+	private ProdutoAfiliadoHotlink ProdutoAfiliadoHotlink;
 	// Relacionamentos N
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<PublicoAlvoAds> PublicoAlvoAds;
@@ -24,6 +26,7 @@ public class PaginaVenda extends Model {
 	private List<LoadPaginaVenda> LoadPaginaVendas;
 	private List<PaginaVendaPrecoProduto> PaginaVendaPrecoProdutos;
 	private List<CampanhaAdsTeste> CampanhaAdsTestes;
+	private List<PaginaVendaSecao> PaginaVendaSecaos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -32,10 +35,10 @@ public class PaginaVenda extends Model {
 		this.setIdObjeto(id);
 	}
 
-	public int setIdInteger() {
+	public int getIdInteger() {
 		return new Integer(getId().toString());
 	}
-	public long setIdLong() {
+	public long getIdLong() {
 		return new Long(getId().toString());
 	}
 
@@ -44,6 +47,7 @@ public class PaginaVenda extends Model {
 		try {
 			obj.put("id",getId());
 			obj.put("url", url);
+			obj.put("precoProduto", precoProduto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -57,6 +61,12 @@ public class PaginaVenda extends Model {
 	public String getUrl() { 
 		return this.url;
 	}
+	public void setPrecoProduto(String valor) { 
+		this.precoProduto = valor;
+	}
+	public String getPrecoProduto() { 
+		return this.precoProduto;
+	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
 		return ProdutoAfiliadoHotmart;
@@ -64,6 +74,13 @@ public class PaginaVenda extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotlink getProdutoAfiliadoHotlink() {
+		return ProdutoAfiliadoHotlink;
+	}
+	public void setProdutoAfiliadoHotlink(HashMap valor) {
+		this.ProdutoAfiliadoHotlink = new ProdutoAfiliadoHotlink();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotlink, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<CampanhaAdsRedeDisplay> getCampanhaAdsRedeDisplays() {
 		return  CampanhaAdsRedeDisplays;
@@ -135,6 +152,18 @@ public class PaginaVenda extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CampanhaAdsTestes.add((CampanhaAdsTeste) objeto);
+		}
+	}
+	public List<PaginaVendaSecao> getPaginaVendaSecaos() {
+		return  PaginaVendaSecaos;
+	}
+	public void setPaginaVendaSecaos(List<PaginaVendaSecao> valores) {
+		this.PaginaVendaSecaos = new ArrayList<PaginaVendaSecao>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaSecao();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaSecaos.add((PaginaVendaSecao) objeto);
 		}
 	}
 }

@@ -206,5 +206,29 @@
   "ProdutoAfiliadoHotmartPendente": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "SegmentoMercadoAdsPersonalizado": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaVendaSecao": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "SecaoWeb": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoProprio": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoProprioVersao": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoProprioItemNivel1": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

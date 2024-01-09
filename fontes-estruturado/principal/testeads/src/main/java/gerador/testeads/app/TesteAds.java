@@ -17,7 +17,7 @@ public class TesteAds {
 
 	public static void main(String[] args) {
 		System.out.print("TesteAds");
-		System.out.println("(02/01/2024 23:27:20)");
+		System.out.println("(09/01/2024 10:03:31)");
 		try {
 			carregaProp();
 			TesteAdsObj obj = new TesteAdsObj();
@@ -54,6 +54,5 @@ public class TesteAds {
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
 		DaoBaseComum.setProximo("TesteAdsObj", new TesteObjetosImpl());
-		DaoBaseComum.setProximo("TesteObjetos", new ContaGoogle_ListaAtivaRemarketingImpl());
 	}
 }

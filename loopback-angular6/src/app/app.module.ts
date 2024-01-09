@@ -83,6 +83,10 @@ import { ListaAltaMargemAltaTemperaturaComponent } from './lista-alta-margem-alt
 import { ListaSuperMargemComponent } from './lista-super-margem/lista-super-margem.component';
 import { ExibeTextoModalComponent } from './exibe-texto-modal/exibe-texto-modal.component';
 import { ContaGoogleDetalheComponent } from './conta-google-detalhe/conta-google-detalhe.component';
+import { PaginaVendaPorProdutoListComponent } from './pagina-venda-por-produto-list/pagina-venda-por-produto-list.component';
+import { PaginaVendaEditComponent } from './pagina-venda-edit/pagina-venda-edit.component';
+import { SecaoWebEditComponent } from './secao-web-edit/secao-web-edit.component';
+import { SecaoWebPorProdutoListComponent } from './secao-web-por-produto-list/secao-web-por-produto-list.component';
 
 
 
@@ -142,7 +146,11 @@ registerLocaleData(localePt, 'pt-BR');
     ListaAltaMargemAltaTemperaturaComponent,
     ListaSuperMargemComponent,
     ExibeTextoModalComponent,
-    ContaGoogleDetalheComponent
+    ContaGoogleDetalheComponent,
+    PaginaVendaPorProdutoListComponent,
+    PaginaVendaEditComponent,
+    SecaoWebEditComponent,
+    SecaoWebPorProdutoListComponent
   ],
   imports: [
     BrowserModule,
@@ -201,7 +209,9 @@ registerLocaleData(localePt, 'pt-BR');
     EscolhePalavraChaveParaCampanhaTesteComponent,
     ContaGoogleEditComponent,
     PrecoProdutoAfiliadoEditComponent,
-    ExibeTextoModalComponent
+    ExibeTextoModalComponent,
+    PaginaVendaEditComponent,
+    SecaoWebEditComponent
   ],
   bootstrap: [AppComponent]
 })

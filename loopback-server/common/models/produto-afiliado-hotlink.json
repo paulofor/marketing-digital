@@ -38,6 +38,11 @@
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
+		},
+		"paginaVendas": {
+			"type": "hasMany",
+			"model": "PaginaVenda",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

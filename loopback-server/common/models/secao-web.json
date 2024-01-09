@@ -1,0 +1,33 @@
+{
+	"name": "SecaoWeb",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"html": {
+			"type": "string"
+		},
+		"style": {
+			"type": "string"
+		},
+		"categoria": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"paginaVendaSecaos": {
+			"type": "hasMany",
+			"model": "PaginaVendaSecao",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

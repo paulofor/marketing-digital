@@ -95,6 +95,11 @@
 			"type": "hasMany",
 			"model": "PublicoAlvoAdsDiario",
 			"foreignKey": ""
+		},
+		"segmentoMercadoAdsPersonalizados": {
+			"type": "hasMany",
+			"model": "SegmentoMercadoAdsPersonalizado",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

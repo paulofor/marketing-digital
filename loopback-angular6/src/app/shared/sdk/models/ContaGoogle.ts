@@ -7,7 +7,8 @@ import {
   ContaGoogleMetricaMes,
   CampanhaAdsMetricaIntraday,
   CampanhaAdsRedeDisplay,
-  PublicoAlvoAdsDiario
+  PublicoAlvoAdsDiario,
+  SegmentoMercadoAdsPersonalizado
 } from '../index';
 
 declare var Object: any;
@@ -35,6 +36,7 @@ export interface ContaGoogleInterface {
   campanhaAdsMetricaIntradays?: CampanhaAdsMetricaIntraday[];
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   publicoAlvoAdsDiarios?: PublicoAlvoAdsDiario[];
+  segmentoMercadoAdsPersonalizados?: SegmentoMercadoAdsPersonalizado[];
 }
 
 export class ContaGoogle implements ContaGoogleInterface {
@@ -61,6 +63,7 @@ export class ContaGoogle implements ContaGoogleInterface {
   campanhaAdsMetricaIntradays: CampanhaAdsMetricaIntraday[];
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   publicoAlvoAdsDiarios: PublicoAlvoAdsDiario[];
+  segmentoMercadoAdsPersonalizados: SegmentoMercadoAdsPersonalizado[];
   constructor(data?: ContaGoogleInterface) {
     Object.assign(this, data);
   }
@@ -220,6 +223,14 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'publicoAlvoAdsDiarios',
           type: 'PublicoAlvoAdsDiario[]',
           model: 'PublicoAlvoAdsDiario',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        segmentoMercadoAdsPersonalizados: {
+          name: 'segmentoMercadoAdsPersonalizados',
+          type: 'SegmentoMercadoAdsPersonalizado[]',
+          model: 'SegmentoMercadoAdsPersonalizado',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'

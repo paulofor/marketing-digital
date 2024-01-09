@@ -30,6 +30,13 @@ public class RepositorioProdutoProprio extends ModelRepository<ProdutoProprio> {
 
 	// ***  Operações  ***
 
+	public synchronized void obtemParaGeracao(final ObjectCallback<ProdutoProprio> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoProprios/obtemParaGeracao","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoProprio.obtemParaGeracao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemParaGeracao", params,   new JsonObjectParser<ProdutoProprio>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<ProdutoProprio> listaEntrada) {
 		JSONArray lista = new JSONArray();

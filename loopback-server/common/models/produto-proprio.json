@@ -9,11 +9,41 @@
     	"Counts": true
   	},
 	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"status": {
+			"type": "string"
+		}
 	},
 	"validations": [],
 	"relations": {
+		"produtoProprioVersaos": {
+			"type": "hasMany",
+			"model": "ProdutoProprioVersao",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {
+		"obtemParaGeracao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemParaGeracao",
+   					"verb": "get"
+ 				}
+ 			]
+		}
 	}
 }

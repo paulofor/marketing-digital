@@ -44,6 +44,12 @@ import { PaginaVenda } from '../../models/PaginaVenda';
 import { AnuncioCampanhaAdsDisplay } from '../../models/AnuncioCampanhaAdsDisplay';
 import { ImagemConjunto } from '../../models/ImagemConjunto';
 import { ProdutoAfiliadoHotmartPendente } from '../../models/ProdutoAfiliadoHotmartPendente';
+import { SegmentoMercadoAdsPersonalizado } from '../../models/SegmentoMercadoAdsPersonalizado';
+import { PaginaVendaSecao } from '../../models/PaginaVendaSecao';
+import { SecaoWeb } from '../../models/SecaoWeb';
+import { ProdutoProprio } from '../../models/ProdutoProprio';
+import { ProdutoProprioVersao } from '../../models/ProdutoProprioVersao';
+import { ProdutoProprioItemNivel1 } from '../../models/ProdutoProprioItemNivel1';
 
 export interface Models { [name: string]: any }
 
@@ -95,6 +101,12 @@ export class SDKModels {
     AnuncioCampanhaAdsDisplay: AnuncioCampanhaAdsDisplay,
     ImagemConjunto: ImagemConjunto,
     ProdutoAfiliadoHotmartPendente: ProdutoAfiliadoHotmartPendente,
+    SegmentoMercadoAdsPersonalizado: SegmentoMercadoAdsPersonalizado,
+    PaginaVendaSecao: PaginaVendaSecao,
+    SecaoWeb: SecaoWeb,
+    ProdutoProprio: ProdutoProprio,
+    ProdutoProprioVersao: ProdutoProprioVersao,
+    ProdutoProprioItemNivel1: ProdutoProprioItemNivel1,
     
   };
 
