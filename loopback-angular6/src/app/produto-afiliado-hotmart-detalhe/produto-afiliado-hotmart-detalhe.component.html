@@ -1,12 +1,12 @@
 <div class="dgc-painel" *ngIf="principal">
   <div class="dgc-painel-header" *ngIf="principal">
-      <span>{{principal.nome}}</span>
-      <span class="dgc-direita">{{principal.hotmartId}}</span>
+    <span>{{principal.nome}}</span>
+    <span class="dgc-direita">{{principal.hotmartId}}</span>
   </div>
 
   <div class="dgc-card">
     <div class="dgc-card-detalhe">
-      <span>{{principal.contaGoogle.nome}} </span>
+      <span *ngIf="principal.contaGoogle">{{principal.contaGoogle.nome}} </span>
       <span *ngIf="principal.contaRemarketing"> - {{principal.contaRemarketing.nome}}</span>
     </div>
     <div class="dgc-card-header">
@@ -22,11 +22,14 @@
       <span>You Tube:{{principal.urlYouTube}}</span>
     </div>
     <div class="dgc-card-detalhe">
+      Página de Venda: <a href="{{principal.salesPage}}" target="_blank">{{principal.salesPage}}</a>
+    </div>
+    <div class="dgc-card-detalhe">
       <span>Work: {{principal.trabalho}}</span>
     </div>
     <div class="dgc-card-comandos">
       <button class="btn-primary btn-sm btn dgc-direita" (click)="editaProduto(principal)">Edita Produto</button>
-   </div>
+    </div>
   </div>
 
 
@@ -36,16 +39,17 @@
     </div>
     <div class="dgc-card-detalhe" *ngFor="let item of principal.visitaProdutoHotmarts">
       {{item.dataInsercao | date : 'dd/MM/yyyy'}}
-      Temperatura: {{item.temperatura}} Comissão : {{item.afiliacaoValor | currency : 'BRL'}} ({{item.afiliacaoPercentual}}%)
+      Temperatura: {{item.temperatura}} Comissão : {{item.afiliacaoValor | currency : 'BRL'}}
+      ({{item.afiliacaoPercentual}}%)
     </div>
   </div>
 
-    <div class="dgc-card">
+  <div class="dgc-card">
     <div class="dgc-card-header">
       Palavras-Chave
     </div>
     <div class="dgc-card-detalhe" *ngFor="let item of  principal.visitaProdutoHotmarts[0].produtoAfiliadoMetricas">
-      {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}} 
+      {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}}
       Cpc: {{item.cpcMax | currency : 'BRL'}} {{item.cpcMin | currency : 'BRL'}}
     </div>
   </div>
@@ -59,7 +63,8 @@
         <span>{{item.nome}}</span>
       </div>
       <div class="dgc-card-detalhe">
-        <span> {{item.parcelas}} X {{item.valorParcela | currency : 'BRL'}} = {{item.valorTotalParcelado | currency : 'BRL' }}</span>
+        <span> {{item.parcelas}} X {{item.valorParcela | currency : 'BRL'}} = {{item.valorTotalParcelado | currency :
+          'BRL' }}</span>
       </div>
       <div class="dgc-card-detalhe">
         <span>A vista: {{item.valorAVista | currency : 'BRL'}}</span>
@@ -77,11 +82,11 @@
         <span>{{item.urlCheckout}}</span>
       </div>
       <div class="dgc-card-detalhe">
-         <button class="btn-primary btn-sm btn dgc-direita" (click)="editaPreco(item)">Edita Preço</button>
+        <button class="btn-primary btn-sm btn dgc-direita" (click)="editaPreco(item)">Edita Preço</button>
       </div>
     </div>
 
-     
+
     <div class="dgc-card-comandos">
       <button class="btn-primary btn-sm btn" (click)="atualizaPreco()">Atualiza Preços</button>
       <button class="btn-primary btn-sm btn" (click)="editaPreco()">Novo Preço</button>
@@ -103,16 +108,16 @@
     <div class="dgc-card-header">
       Pixel
     </div>
-    <div class="dgc-card-detalhe" >
-      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}} 
+    <div class="dgc-card-detalhe">
+      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}}
         ( {{(principal.pixelGoogle?principal.pixelGoogle.codigo1:'-')}} )</span>
     </div>
-    <div class="dgc-card-detalhe" >
-      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}} 
+    <div class="dgc-card-detalhe">
+      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}}
         ( {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.codigo1:'-')}} )</span>
     </div>
-    <div class="dgc-card-detalhe" >
-      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}} 
+    <div class="dgc-card-detalhe">
+      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}}
         ( {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.codigo1:'-')}} )</span>
     </div>
   </div>
@@ -122,9 +127,46 @@
       Público Alvo
     </div>
     <div class="dgc-card-detalhe" *ngFor="let item of principal.publicoAlvoAdsDiarios">
-      <span>{{item.nome}} - Pesquisa {{item.tamanhoRedePesquisa}} - Display: {{item.tamanhoRedeDisplay}} ({{item.data | date : 'dd/MM/yyyy'}})</span>
+      <span>{{item.nome}} - Pesquisa {{item.tamanhoRedePesquisa}} - Display: {{item.tamanhoRedeDisplay}} ({{item.data |
+        date : 'dd/MM/yyyy'}})</span>
     </div>
   </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
+      Páginas Venda - Versões
+    </div>
+    <div class="dgc-card-header" *ngFor="let item of principal.versaoPaginaVendas">
+      <span class="dgc-link" routerLink="/versaoPaginaVendaDetalhe/{{item.id}}">
+        {{item.versao}} ( modelo: {{item.modeloPaginaVenda.versao}}) - Cria: {{item.cria}}
+      </span>
+
+      <div class="dgc-direita">
+        <button class="btn-primary btn-sm btn" (click)="versaoPaginaVenda(item)">Alterar</button>
+      </div>
+    </div>
+    <div class="dgc-card-comandos">
+      <button class="btn-primary btn-sm btn" (click)="versaoPaginaVenda()">Novo</button>
+    </div>
+  </div>
+
+  <div class="dgc-card">
+    <div class="dgc-card-header">
+      Solicitação Imagem
+    </div>
+    <div *ngFor="let item of principal.dallESolicitacaoImagems">
+      <div class="dgc-card-detalhe">
+        <span>{{item.prompt}}</span>
+      </div>
+      <div class="dgc-card-comandos">
+        <button class="btn-primary btn-sm btn" (click)="dallESolicitacao(item)">Alterar</button>
+      </div>
+    </div>
+    <div class="dgc-card-comandos">
+      <button class="btn-primary btn-sm btn" (click)="dallESolicitacao()">Novo</button>
+    </div>
+  </div>
+
 
 
   <div class="dgc-card">
@@ -168,4 +210,3 @@
 
 
 </div>
-

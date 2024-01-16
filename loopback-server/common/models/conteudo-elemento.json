@@ -1,0 +1,46 @@
+{
+	"name": "ConteudoElemento",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"valor": {
+			"type": "string"
+		},
+		"elementoModeloPaginaVendaId": {
+			"type": "number"
+		},
+		"modeloPaginaVendaId": {
+			"type": "number"
+		},
+		"versaoPaginaVendaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"elementoModeloPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ElementoModeloPaginaVenda",
+			"foreignKey": ""
+		},
+		"modeloPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ModeloPaginaVenda",
+			"foreignKey": ""
+		},
+		"versaoPaginaVenda": {
+			"type": "belongsTo",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

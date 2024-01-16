@@ -1,0 +1,116 @@
+{
+	"name": "VersaoPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"hotmartId": {
+			"type": "number"
+		},
+		"versao": {
+			"type": "string"
+		},
+		"cria": {
+			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"modeloPaginaVendaId": {
+			"type": "number"
+		},
+		"produtoAfiliadoClickbankId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"modeloPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ModeloPaginaVenda",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoClickbank": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoClickbank",
+			"foreignKey": ""
+		},
+		"conteudoElementos": {
+			"type": "hasMany",
+			"model": "ConteudoElemento",
+			"foreignKey": ""
+		},
+		"arquivoPaginaVendas": {
+			"type": "hasMany",
+			"model": "ArquivoPaginaVenda",
+			"foreignKey": ""
+		},
+		"versaoImagemPaginaVendas": {
+			"type": "hasMany",
+			"model": "VersaoImagemPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ObtemListaCriacao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaCriacao",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ObtemPorId": {
+			"accepts": [
+				{
+					"arg": "idVersao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemPorId",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

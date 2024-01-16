@@ -72,6 +72,8 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<ImagemConjunto> ImagemConjuntos;
 	private List<MetaVenda> MetaVendas;
 	private List<ProdutoMercado> ProdutoMercados;
+	private List<DalleSolicitacaoImagem> DalleSolicitacaoImagems;
+	private List<VersaoPaginaVenda> VersaoPaginaVendas;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -589,6 +591,30 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoMercados.add((ProdutoMercado) objeto);
+		}
+	}
+	public List<DalleSolicitacaoImagem> getDalleSolicitacaoImagems() {
+		return  DalleSolicitacaoImagems;
+	}
+	public void setDalleSolicitacaoImagems(List<DalleSolicitacaoImagem> valores) {
+		this.DalleSolicitacaoImagems = new ArrayList<DalleSolicitacaoImagem>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new DalleSolicitacaoImagem();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.DalleSolicitacaoImagems.add((DalleSolicitacaoImagem) objeto);
+		}
+	}
+	public List<VersaoPaginaVenda> getVersaoPaginaVendas() {
+		return  VersaoPaginaVendas;
+	}
+	public void setVersaoPaginaVendas(List<VersaoPaginaVenda> valores) {
+		this.VersaoPaginaVendas = new ArrayList<VersaoPaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new VersaoPaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.VersaoPaginaVendas.add((VersaoPaginaVenda) objeto);
 		}
 	}
 }

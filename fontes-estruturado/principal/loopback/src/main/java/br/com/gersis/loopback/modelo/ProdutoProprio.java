@@ -19,6 +19,7 @@ public class ProdutoProprio extends Model {
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<ProdutoProprioVersao> ProdutoProprioVersaos;
+	private List<VersaoPaginaVenda> VersaoPaginaVendas;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -70,6 +71,18 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoProprioVersaos.add((ProdutoProprioVersao) objeto);
+		}
+	}
+	public List<VersaoPaginaVenda> getVersaoPaginaVendas() {
+		return  VersaoPaginaVendas;
+	}
+	public void setVersaoPaginaVendas(List<VersaoPaginaVenda> valores) {
+		this.VersaoPaginaVendas = new ArrayList<VersaoPaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new VersaoPaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.VersaoPaginaVendas.add((VersaoPaginaVenda) objeto);
 		}
 	}
 }

@@ -87,6 +87,25 @@ import { PaginaVendaPorProdutoListComponent } from './pagina-venda-por-produto-l
 import { PaginaVendaEditComponent } from './pagina-venda-edit/pagina-venda-edit.component';
 import { SecaoWebEditComponent } from './secao-web-edit/secao-web-edit.component';
 import { SecaoWebPorProdutoListComponent } from './secao-web-por-produto-list/secao-web-por-produto-list.component';
+import { ExperimentoModeloListComponent } from './experimento-modelo-list/experimento-modelo-list.component';
+import { ExperimentoModeloEditComponent } from './experimento-modelo-edit/experimento-modelo-edit.component';
+import { ExperimentoModeloDetalheComponent } from './experimento-modelo-detalhe/experimento-modelo-detalhe.component';
+import { EvolucaoExperimentoEditComponent } from './evolucao-experimento-edit/evolucao-experimento-edit.component';
+import { CampanhaAdsExperimentoEditComponent } from './campanha-ads-experimento-edit/campanha-ads-experimento-edit.component';
+import { ModeloPaginaVendaListComponent } from './modelo-pagina-venda-list/modelo-pagina-venda-list.component';
+import { ModeloPaginaVendaEditComponent } from './modelo-pagina-venda-edit/modelo-pagina-venda-edit.component';
+import { ModeloPaginaVendaDetalheComponent } from './modelo-pagina-venda-detalhe/modelo-pagina-venda-detalhe.component';
+import { DalleSolicitacaoImagemEditComponent } from './dalle-solicitacao-imagem-edit/dalle-solicitacao-imagem-edit.component';
+import { ElementoModeloPaginaVendaListComponent } from './elemento-modelo-pagina-venda-list/elemento-modelo-pagina-venda-list.component';
+import { ElementoModeloPaginaVendaEditComponent } from './elemento-modelo-pagina-venda-edit/elemento-modelo-pagina-venda-edit.component';
+import { PosicaoElementoPaginaVendaEditRelComponent } from './posicao-elemento-pagina-venda-edit-rel/posicao-elemento-pagina-venda-edit-rel.component';
+import { PosicaoElementoPaginaVendaEditComponent } from './posicao-elemento-pagina-venda-edit/posicao-elemento-pagina-venda-edit.component';
+import { VersaoPaginaVendaEditComponent } from './versao-pagina-venda-edit/versao-pagina-venda-edit.component';
+import { VersaoPaginaVendaDetalheComponent } from './versao-pagina-venda-detalhe/versao-pagina-venda-detalhe.component';
+import { ConteudoElementoEditComponent } from './conteudo-elemento-edit/conteudo-elemento-edit.component';
+import { ModeloPaginaVendaFonteEditComponent } from './modelo-pagina-venda-fonte-edit/modelo-pagina-venda-fonte-edit.component';
+import { VersaoImagemPaginaVendaEditRelComponent } from './versao-imagem-pagina-venda-edit-rel/versao-imagem-pagina-venda-edit-rel.component';
+import { DalleSolicitacaoImagemPorProdutoListComponent } from './dalle-solicitacao-imagem-por-produto-list/dalle-solicitacao-imagem-por-produto-list.component';
 
 
 
@@ -150,7 +169,26 @@ registerLocaleData(localePt, 'pt-BR');
     PaginaVendaPorProdutoListComponent,
     PaginaVendaEditComponent,
     SecaoWebEditComponent,
-    SecaoWebPorProdutoListComponent
+    SecaoWebPorProdutoListComponent,
+    ExperimentoModeloListComponent,
+    ExperimentoModeloEditComponent,
+    ExperimentoModeloDetalheComponent,
+    EvolucaoExperimentoEditComponent,
+    CampanhaAdsExperimentoEditComponent,
+    ModeloPaginaVendaListComponent,
+    ModeloPaginaVendaEditComponent,
+    ModeloPaginaVendaDetalheComponent,
+    DalleSolicitacaoImagemEditComponent,
+    ElementoModeloPaginaVendaListComponent,
+    ElementoModeloPaginaVendaEditComponent,
+    PosicaoElementoPaginaVendaEditRelComponent,
+    PosicaoElementoPaginaVendaEditComponent,
+    VersaoPaginaVendaEditComponent,
+    VersaoPaginaVendaDetalheComponent,
+    ConteudoElementoEditComponent,
+    ModeloPaginaVendaFonteEditComponent,
+    VersaoImagemPaginaVendaEditRelComponent,
+    DalleSolicitacaoImagemPorProdutoListComponent
   ],
   imports: [
     BrowserModule,
@@ -211,7 +249,19 @@ registerLocaleData(localePt, 'pt-BR');
     PrecoProdutoAfiliadoEditComponent,
     ExibeTextoModalComponent,
     PaginaVendaEditComponent,
-    SecaoWebEditComponent
+    SecaoWebEditComponent,
+    ExperimentoModeloEditComponent,
+    CampanhaAdsExperimentoEditComponent,
+    EvolucaoExperimentoEditComponent,
+    ModeloPaginaVendaEditComponent,
+    ElementoModeloPaginaVendaEditComponent,
+    PosicaoElementoPaginaVendaEditRelComponent,
+    PosicaoElementoPaginaVendaEditComponent,
+    VersaoPaginaVendaEditComponent,
+    ConteudoElementoEditComponent,
+    ModeloPaginaVendaFonteEditComponent,
+    DalleSolicitacaoImagemEditComponent,
+    VersaoImagemPaginaVendaEditRelComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -28,9 +28,9 @@ module.exports = function(Visitaprodutohotmart) {
     Visitaprodutohotmart.ListaBomCrescimentoTemperatura = function(callback) {
         const sql = " select hotmartId " +
             " from VisitaProdutoHotmart " +
-            " where deltaTemperatura >= 15 " +
-            " and (afiliacaoPercentual >= 40 or afiliacaoPercentual=0) " +
-            " and afiliacaoValor >= 10 and afiliacaoValor <= 600 " +
+            " where deltaTemperatura >= 10 " +
+            " and (afiliacaoPercentual >= 40 ) " +
+            " and afiliacaoValor >= 20 and afiliacaoValor <= 600 " +
             " and maisRecente = 1 " +
             " order by temperatura desc ";
         let ds = Visitaprodutohotmart.dataSource;
@@ -39,7 +39,12 @@ module.exports = function(Visitaprodutohotmart) {
             // Mapeando a lista para obter apenas os IDs
             var idsParaFiltrar = result.map(item => item.hotmartId);
             const filtro = {
-                'include' : {'relation': 'ideiaPalavraChaves', 'scope' : {'order' : 'mediaPesquisa desc', 'limit' : 15}},
+                'include' : 
+                [
+                    {'relation': 'ideiaPalavraChaves', 'scope' : {'order' : 'mediaPesquisa desc', 'limit' : 15}},
+                    'produtoAfiliadoHotmart', 
+                    'produtoAfiliadoHotmartPendente'
+                ] ,
                 'order' : 'temperatura desc',
                 'where': {
                     'and' : [

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de Scroll</title>
+    <style>
+        /* Estilos opcionais para a página */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .section {
+            height: 1000px;
+            /* Altura de cada seção */
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+
+<script>
+    let fetchedPositions = {
+        10: false,
+        40: false
+    };
+
+    function fetchScrollData(position) {
+        console.log('vai fazer fetch posicao');
+        fetch('proxy-scroll.php?id=1409642&pos=' + position)
+            .then(function (response) {
+                console.log('Requisição GET para a outra URL feita com sucesso.', response);
+            })
+            .catch(function (error) {
+                console.error('Erro ao fazer requisição GET para a outra URL:', error);
+            });
+    }
+
+    function checkScrollPercentage() {
+        const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = window.scrollY;
+        const scrollPercentage = (scrolled / totalHeight) * 100;
+        if (!fetchedPositions[10] && scrollPercentage >= 10 && scrollPercentage < 20) {
+            fetchScrollData(10);
+            fetchedPositions[10] = true;
+        } else if (!fetchedPositions[40] && scrollPercentage >= 40 && scrollPercentage < 50) {
+            fetchScrollData(40);
+            fetchedPositions[40] = true;
+        }
+    }
+
+    function throttle(callback, limit) {
+        let ticking = false;
+        return function () {
+            if (!ticking) {
+                callback.apply(this, arguments);
+                ticking = true;
+                setTimeout(function () {
+                    ticking = false;
+                }, limit);
+            }
+        };
+    }
+
+    const throttledScroll = throttle(checkScrollPercentage, 200);
+    window.addEventListener('scroll', throttledScroll);
+
+</script>
+
+
+<body>
+    <div class="content">
+        <h1>Teste de Scroll</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut efficitur justo. Integer facilisis eros
+            in vestibulum accumsan. Duis lacinia sapien eu efficitur consequat. Nam ullamcorper sapien at ipsum
+            fermentum, ac aliquam elit tristique.</p>
+        <!-- Seções para criar uma página longa -->
+        <div class="section" id="section1">
+            <h2>Seção 1</h2>
+            <p>Conteúdo da seção 1.</p>
+        </div>
+        <div class="section" id="section2">
+            <h2>Seção 2</h2>
+            <p>Conteúdo da seção 2.</p>
+        </div>
+        <!-- Adicione mais seções conforme necessário -->
+    </div>
+</body>
+
+</html>

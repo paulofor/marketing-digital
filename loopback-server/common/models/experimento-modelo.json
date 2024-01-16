@@ -1,0 +1,38 @@
+{
+	"name": "ExperimentoModelo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"descricao": {
+			"type": "string"
+		},
+		"dataInicial": {
+			"type": "date"
+		},
+		"custoAtual": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"evolucaoExperimentos": {
+			"type": "hasMany",
+			"model": "EvolucaoExperimento",
+			"foreignKey": ""
+		},
+		"campanhaAdsExperimentos": {
+			"type": "hasMany",
+			"model": "CampanhaAdsExperimento",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

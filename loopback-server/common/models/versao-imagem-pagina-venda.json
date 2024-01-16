@@ -1,0 +1,68 @@
+{
+	"name": "VersaoImagemPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"versaoPaginaVendaId": {
+			"type": "number"
+			,"id": true
+		},
+		"dalleSolicitacaoImagemId": {
+			"type": "number"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"versaoPaginaVenda": {
+			"type": "belongsTo",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": ""
+		},
+		"dalleSolicitacaoImagem": {
+			"type": "belongsTo",
+			"model": "DalleSolicitacaoImagem",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaRelacionamento": {
+			"accepts": [
+				{
+					"arg": "item",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaRelacionamento",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

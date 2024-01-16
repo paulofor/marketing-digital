@@ -233,6 +233,16 @@
 			"type": "hasMany",
 			"model": "ProdutoMercado",
 			"foreignKey": "hotmartId"
+		},
+		"dalleSolicitacaoImagems": {
+			"type": "hasMany",
+			"model": "DalleSolicitacaoImagem",
+			"foreignKey": "hotmartId"
+		},
+		"versaoPaginaVendas": {
+			"type": "hasMany",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": "hotmartId"
 		}
 	},
 	"acls": [],

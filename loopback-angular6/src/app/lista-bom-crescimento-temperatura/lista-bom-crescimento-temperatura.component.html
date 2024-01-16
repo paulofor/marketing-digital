@@ -1,25 +1,32 @@
 <div class="dgc-painel">
-	<div class="dgc-painel-header">
-		<span>Crescimento em Vendas</span>
-  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+	<div class="dgc-painel-header" *ngIf="listaBase">
+		<span>Crescimento em Vendas ( {{listaBase.length}} ) </span>
+		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card" *ngFor="let item of listaBase">
 			<div class="dgc-card-header">
 				<span *ngIf="(!item.produtoAfiliadoHotmart)">{{item.nome}}</span>
-				<span *ngIf="(item.produtoAfiliadoHotmart)" class="dgc-link" routerLink="/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}">{{item.nome}}</span>
+				<span *ngIf="(item.produtoAfiliadoHotmart)" class="dgc-link"
+					routerLink="/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}">{{item.nome}}</span>
 				<span *ngIf="(item.produtoAfiliadoHotmart)"> (afiliado) </span>
 				<span *ngIf="(item.produtoAfiliadoHotmartPendente)"> (pendente) </span>
 			</div>
-			<div class="dgc-card-header">
-			   <span>Temp: {{item.temperatura}} ( +{{item.deltaTemperatura}} )</span>
-		   </div>
-		   <div class="dgc-card-detalhe" *ngFor="let palavra of item.ideiaPalavraChaves">
-			   <span>{{palavra.texto}} CPC: {{palavra.cpcMinimoTopPage}} - {{palavra.cpcMaximoTopPage}} Pesquisa: {{palavra.mediaPesquisa}} ({{palavra.dataAcesso | date: 'dd-MM-yyyy'}})</span>
-		   </div>
+			<div class="dgc-card-detlahe">
+				<span>Temp: {{item.temperatura}} ( {{item.deltaTemperatura}} )</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>{{item.categoria }}</span>
+			</div>
 			<div class="dgc-card-comandos">
 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
 			</div>
 		</div>
-  	</div>
+	</div>
 </div>

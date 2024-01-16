@@ -1,0 +1,127 @@
+{
+	"name": "DalleSolicitacaoImagem",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"dimensao": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		},
+		"prompt": {
+			"type": "string"
+		},
+		"enviar": {
+			"type": "number"
+		},
+		"hotmartId": {
+			"type": "number"
+		},
+		"objetivo": {
+			"type": "string"
+		},
+		"arquivo": {
+			"type": "string"
+		},
+		"quantidadeImagem": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"imagemPaginaVendas": {
+			"type": "hasMany",
+			"model": "ImagemPaginaVenda",
+			"foreignKey": ""
+		},
+		"versaoImagemPaginaVendas": {
+			"type": "hasMany",
+			"model": "VersaoImagemPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ObtemProximo": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemProximo",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaUrl": {
+			"accepts": [
+				{
+					"arg": "idSolicitacao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "url",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaUrl",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaGerarImagem": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGerarImagem",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

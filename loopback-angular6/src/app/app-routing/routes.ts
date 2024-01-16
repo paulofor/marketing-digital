@@ -35,6 +35,13 @@ import { ListaSuperMargemComponent } from '../lista-super-margem/lista-super-mar
 import { ContaGoogleDetalheComponent } from '../conta-google-detalhe/conta-google-detalhe.component';
 import { PaginaVendaPorProdutoListComponent } from '../pagina-venda-por-produto-list/pagina-venda-por-produto-list.component';
 import { SecaoWebPorProdutoListComponent } from '../secao-web-por-produto-list/secao-web-por-produto-list.component';
+import { ExperimentoModeloListComponent } from '../experimento-modelo-list/experimento-modelo-list.component';
+import { ExperimentoModeloDetalheComponent } from '../experimento-modelo-detalhe/experimento-modelo-detalhe.component';
+import { ModeloPaginaVendaListComponent } from '../modelo-pagina-venda-list/modelo-pagina-venda-list.component';
+import { ElementoModeloPaginaVendaListComponent } from '../elemento-modelo-pagina-venda-list/elemento-modelo-pagina-venda-list.component';
+import { ModeloPaginaVendaDetalheComponent } from '../modelo-pagina-venda-detalhe/modelo-pagina-venda-detalhe.component';
+import { VersaoPaginaVendaDetalheComponent } from '../versao-pagina-venda-detalhe/versao-pagina-venda-detalhe.component';
+import { DalleSolicitacaoImagemPorProdutoListComponent } from '../dalle-solicitacao-imagem-por-produto-list/dalle-solicitacao-imagem-por-produto-list.component';
 
 
 
@@ -84,6 +91,17 @@ export const routes : Routes = [
     { path : 'paginaVendaPorProduto/:hotmartId' , component: PaginaVendaPorProdutoListComponent },
     { path : 'secaoWebPorProduto/:hotmartId' , component: SecaoWebPorProdutoListComponent },
 
+    { path : 'experimentoModeloList' , component: ExperimentoModeloListComponent },
+    { path : 'experimentoModeloDetalhe/:id' , component: ExperimentoModeloDetalheComponent },
+
+    { path : 'modeloPaginaVenda' , component: ModeloPaginaVendaListComponent },
+    { path : 'elmentoModeloPaginaVenda' , component: ElementoModeloPaginaVendaListComponent },
+    { path : 'modeloPaginaVendaDetalhe/:id' , component: ModeloPaginaVendaDetalheComponent },
+
+    { path: 'solicitacaoImagemPorProduto/:id' , component : DalleSolicitacaoImagemPorProdutoListComponent },
+
+    { path: 'versaoPaginaVendaDetalhe/:id' , component: VersaoPaginaVendaDetalheComponent },
+  
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

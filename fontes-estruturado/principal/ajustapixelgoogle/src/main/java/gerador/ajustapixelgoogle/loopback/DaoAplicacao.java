@@ -68,6 +68,20 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioProdutoProprioVersao repProdutoProprioVersao = adapter.createRepository(RepositorioProdutoProprioVersao.class);
 	protected RepositorioProdutoProprioItemNivel1 repProdutoProprioItemNivel1 = adapter.createRepository(RepositorioProdutoProprioItemNivel1.class);
 	protected RepositorioProdutoAmpliado repProdutoAmpliado = adapter.createRepository(RepositorioProdutoAmpliado.class);
+	protected RepositorioPaginaVendaScroll repPaginaVendaScroll = adapter.createRepository(RepositorioPaginaVendaScroll.class);
+	protected RepositorioExperimentoModelo repExperimentoModelo = adapter.createRepository(RepositorioExperimentoModelo.class);
+	protected RepositorioEvolucaoExperimento repEvolucaoExperimento = adapter.createRepository(RepositorioEvolucaoExperimento.class);
+	protected RepositorioCampanhaAdsExperimento repCampanhaAdsExperimento = adapter.createRepository(RepositorioCampanhaAdsExperimento.class);
+	protected RepositorioDalleSolicitacaoImagem repDalleSolicitacaoImagem = adapter.createRepository(RepositorioDalleSolicitacaoImagem.class);
+	protected RepositorioModeloPaginaVenda repModeloPaginaVenda = adapter.createRepository(RepositorioModeloPaginaVenda.class);
+	protected RepositorioPosicaoElementoPaginaVenda repPosicaoElementoPaginaVenda = adapter.createRepository(RepositorioPosicaoElementoPaginaVenda.class);
+	protected RepositorioElementoModeloPaginaVenda repElementoModeloPaginaVenda = adapter.createRepository(RepositorioElementoModeloPaginaVenda.class);
+	protected RepositorioVersaoPaginaVenda repVersaoPaginaVenda = adapter.createRepository(RepositorioVersaoPaginaVenda.class);
+	protected RepositorioConteudoElemento repConteudoElemento = adapter.createRepository(RepositorioConteudoElemento.class);
+	protected RepositorioImagemPaginaVenda repImagemPaginaVenda = adapter.createRepository(RepositorioImagemPaginaVenda.class);
+	protected RepositorioArquivoPaginaVenda repArquivoPaginaVenda = adapter.createRepository(RepositorioArquivoPaginaVenda.class);
+	protected RepositorioProdutoAfiliadoClickbank repProdutoAfiliadoClickbank = adapter.createRepository(RepositorioProdutoAfiliadoClickbank.class);
+	protected RepositorioVersaoImagemPaginaVenda repVersaoImagemPaginaVenda = adapter.createRepository(RepositorioVersaoImagemPaginaVenda.class);
 
 
 	@Override

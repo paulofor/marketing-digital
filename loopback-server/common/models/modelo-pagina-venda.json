@@ -1,0 +1,43 @@
+{
+	"name": "ModeloPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"versao": {
+			"type": "string"
+		},
+		"dataCriacao": {
+			"type": "date"
+		},
+		"codigoFonte": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"posicaoElementoPaginaVendas": {
+			"type": "hasMany",
+			"model": "PosicaoElementoPaginaVenda",
+			"foreignKey": ""
+		},
+		"conteudoElementos": {
+			"type": "hasMany",
+			"model": "ConteudoElemento",
+			"foreignKey": ""
+		},
+		"versaoPaginaVendas": {
+			"type": "hasMany",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

@@ -50,6 +50,20 @@ import { SecaoWeb } from '../../models/SecaoWeb';
 import { ProdutoProprio } from '../../models/ProdutoProprio';
 import { ProdutoProprioVersao } from '../../models/ProdutoProprioVersao';
 import { ProdutoProprioItemNivel1 } from '../../models/ProdutoProprioItemNivel1';
+import { PaginaVendaScroll } from '../../models/PaginaVendaScroll';
+import { EvolucaoExperimento } from '../../models/EvolucaoExperimento';
+import { CampanhaAdsExperimento } from '../../models/CampanhaAdsExperimento';
+import { ExperimentoModelo } from '../../models/ExperimentoModelo';
+import { ModeloPaginaVenda } from '../../models/ModeloPaginaVenda';
+import { PosicaoElementoPaginaVenda } from '../../models/PosicaoElementoPaginaVenda';
+import { ElementoModeloPaginaVenda } from '../../models/ElementoModeloPaginaVenda';
+import { VersaoPaginaVenda } from '../../models/VersaoPaginaVenda';
+import { ConteudoElemento } from '../../models/ConteudoElemento';
+import { DalleSolicitacaoImagem } from '../../models/DalleSolicitacaoImagem';
+import { ArquivoPaginaVenda } from '../../models/ArquivoPaginaVenda';
+import { ImagemPaginaVenda } from '../../models/ImagemPaginaVenda';
+import { ProdutoAfiliadoClickbank } from '../../models/ProdutoAfiliadoClickbank';
+import { VersaoImagemPaginaVenda } from '../../models/VersaoImagemPaginaVenda';
 
 export interface Models { [name: string]: any }
 
@@ -107,6 +121,20 @@ export class SDKModels {
     ProdutoProprio: ProdutoProprio,
     ProdutoProprioVersao: ProdutoProprioVersao,
     ProdutoProprioItemNivel1: ProdutoProprioItemNivel1,
+    PaginaVendaScroll: PaginaVendaScroll,
+    EvolucaoExperimento: EvolucaoExperimento,
+    CampanhaAdsExperimento: CampanhaAdsExperimento,
+    ExperimentoModelo: ExperimentoModelo,
+    ModeloPaginaVenda: ModeloPaginaVenda,
+    PosicaoElementoPaginaVenda: PosicaoElementoPaginaVenda,
+    ElementoModeloPaginaVenda: ElementoModeloPaginaVenda,
+    VersaoPaginaVenda: VersaoPaginaVenda,
+    ConteudoElemento: ConteudoElemento,
+    DalleSolicitacaoImagem: DalleSolicitacaoImagem,
+    ArquivoPaginaVenda: ArquivoPaginaVenda,
+    ImagemPaginaVenda: ImagemPaginaVenda,
+    ProdutoAfiliadoClickbank: ProdutoAfiliadoClickbank,
+    VersaoImagemPaginaVenda: VersaoImagemPaginaVenda,
     
   };
 

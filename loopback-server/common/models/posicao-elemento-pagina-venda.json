@@ -1,0 +1,71 @@
+{
+	"name": "PosicaoElementoPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"modeloPaginaVendaId": {
+			"type": "number"
+			,"id": true
+		},
+		"elementoModeloPaginaVendaId": {
+			"type": "number"
+			,"id": true
+		},
+		"posicao": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"modeloPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ModeloPaginaVenda",
+			"foreignKey": ""
+		},
+		"elementoModeloPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ElementoModeloPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaRelacionamento": {
+			"accepts": [
+				{
+					"arg": "idPrincipal",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaRelacionamento",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

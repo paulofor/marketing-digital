@@ -45,6 +45,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
+
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -97,6 +98,20 @@ import { SecaoWebApi } from './services/custom/SecaoWeb';
 import { ProdutoProprioApi } from './services/custom/ProdutoProprio';
 import { ProdutoProprioVersaoApi } from './services/custom/ProdutoProprioVersao';
 import { ProdutoProprioItemNivel1Api } from './services/custom/ProdutoProprioItemNivel1';
+import { PaginaVendaScrollApi } from './services/custom/PaginaVendaScroll';
+import { EvolucaoExperimentoApi } from './services/custom/EvolucaoExperimento';
+import { CampanhaAdsExperimentoApi } from './services/custom/CampanhaAdsExperimento';
+import { ExperimentoModeloApi } from './services/custom/ExperimentoModelo';
+import { ModeloPaginaVendaApi } from './services/custom/ModeloPaginaVenda';
+import { PosicaoElementoPaginaVendaApi } from './services/custom/PosicaoElementoPaginaVenda';
+import { ElementoModeloPaginaVendaApi } from './services/custom/ElementoModeloPaginaVenda';
+import { VersaoPaginaVendaApi } from './services/custom/VersaoPaginaVenda';
+import { ConteudoElementoApi } from './services/custom/ConteudoElemento';
+import { DalleSolicitacaoImagemApi } from './services/custom/DalleSolicitacaoImagem';
+import { ArquivoPaginaVendaApi } from './services/custom/ArquivoPaginaVenda';
+import { ImagemPaginaVendaApi } from './services/custom/ImagemPaginaVenda';
+import { ProdutoAfiliadoClickbankApi } from './services/custom/ProdutoAfiliadoClickbank';
+import { VersaoImagemPaginaVendaApi } from './services/custom/VersaoImagemPaginaVenda';
 /**
 * @module SDKBrowserModule
 * @description
@@ -177,6 +192,20 @@ export class SDKBrowserModule {
         ProdutoProprioApi,
         ProdutoProprioVersaoApi,
         ProdutoProprioItemNivel1Api,
+        PaginaVendaScrollApi,
+        EvolucaoExperimentoApi,
+        CampanhaAdsExperimentoApi,
+        ExperimentoModeloApi,
+        ModeloPaginaVendaApi,
+        PosicaoElementoPaginaVendaApi,
+        ElementoModeloPaginaVendaApi,
+        VersaoPaginaVendaApi,
+        ConteudoElementoApi,
+        DalleSolicitacaoImagemApi,
+        ArquivoPaginaVendaApi,
+        ImagemPaginaVendaApi,
+        ProdutoAfiliadoClickbankApi,
+        VersaoImagemPaginaVendaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

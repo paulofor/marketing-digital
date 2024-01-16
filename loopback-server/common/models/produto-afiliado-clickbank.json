@@ -1,0 +1,24 @@
+{
+	"name": "ProdutoAfiliadoClickbank",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+	},
+	"validations": [],
+	"relations": {
+		"versaoPaginaVendas": {
+			"type": "hasMany",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

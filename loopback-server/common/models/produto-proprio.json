@@ -22,6 +22,11 @@
 			"type": "hasMany",
 			"model": "ProdutoProprioVersao",
 			"foreignKey": ""
+		},
+		"versaoPaginaVendas": {
+			"type": "hasMany",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

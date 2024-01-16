@@ -1,0 +1,43 @@
+<div class="dgc-painel" *ngIf="principal">
+	<div class="dgc-painel-header" *ngIf="principal">
+		<pre>{{principal.descricao}}</pre>
+		<div class="dgc-direita">{{principal.custoAtual | currency : 'BRL'}}</div>
+	</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Evolução</span>
+		</div>
+
+		<div *ngFor="let item of principal.evolucaoExperimentos">
+			<div class="dgc-card-header">
+				<span>{{item.dataImplementacao | date : 'dd/MM/yyyy' : 'UTC'}}: {{item.acao}}</span>
+			</div>
+			<div class="dgc-card-header">
+				<span>{{item.dataFinalizacao | date : 'dd/MM/yyyy' : 'UTC'}}: {{item.resultado}}</span>
+				<div class="dgc-direita">
+				<button class="btn-primary btn-sm btn dgc-direita" (click)="editaEvolucao(item)">Altera</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaEvolucao()">Novo</button>
+		</div>
+	</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Campanhas</span>
+		</div>
+		<div class="dgc-card-header" *ngFor="let item of principal.campanhaAdsExperimentos">
+			<span>{{item.nomeCampanha}} - {{item.resourceNameCampanha}}</span>
+			<div class="dgc-direita">
+			<button class="btn-primary btn-sm btn dgc-direita" (click)="editaCampanha(item)">Altera</button>
+			</div>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaCampanha()">Novo</button>
+		</div>
+	</div>
+</div>

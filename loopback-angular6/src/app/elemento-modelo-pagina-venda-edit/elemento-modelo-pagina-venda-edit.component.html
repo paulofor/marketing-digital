@@ -1,0 +1,27 @@
+<h2 *ngIf="item" mat-dialog-title>ElementoModeloPaginaVenda</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #rotulo [(ngModel)]="item.rotulo" name="rotulo" placeholder="Rótulo" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #nomeVariavel [(ngModel)]="item.nomeVariavel" name="nomeVariavel" placeholder="Nome Varáviel" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #fonte [(ngModel)]="item.fonte" name="fonte" placeholder="Fonte" />
+		</mat-form-field>
+
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

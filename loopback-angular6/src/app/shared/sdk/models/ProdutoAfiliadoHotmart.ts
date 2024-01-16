@@ -19,7 +19,9 @@ import {
   PublicoAlvoAds,
   PublicoAlvoAdsDiario,
   PaginaVenda,
-  ImagemConjunto
+  ImagemConjunto,
+  VersaoPaginaVenda,
+  DalleSolicitacaoImagem
 } from '../index';
 
 declare var Object: any;
@@ -79,6 +81,8 @@ export interface ProdutoAfiliadoHotmartInterface {
   publicoAlvoAdsDiarios?: PublicoAlvoAdsDiario[];
   paginaVendas?: PaginaVenda[];
   imagemConjuntos?: ImagemConjunto[];
+  versaoPaginaVendas?: VersaoPaginaVenda[];
+  dalleSolicitacaoImagems?: DalleSolicitacaoImagem[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -137,6 +141,8 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   publicoAlvoAdsDiarios: PublicoAlvoAdsDiario[];
   paginaVendas: PaginaVenda[];
   imagemConjuntos: ImagemConjunto[];
+  versaoPaginaVendas: VersaoPaginaVenda[];
+  dalleSolicitacaoImagems: DalleSolicitacaoImagem[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -480,6 +486,22 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'imagemConjuntos',
           type: 'ImagemConjunto[]',
           model: 'ImagemConjunto',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        versaoPaginaVendas: {
+          name: 'versaoPaginaVendas',
+          type: 'VersaoPaginaVenda[]',
+          model: 'VersaoPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        dalleSolicitacaoImagems: {
+          name: 'dalleSolicitacaoImagems',
+          type: 'DalleSolicitacaoImagem[]',
+          model: 'DalleSolicitacaoImagem',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'

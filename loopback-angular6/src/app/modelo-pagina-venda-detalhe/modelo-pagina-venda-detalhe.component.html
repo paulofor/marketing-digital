@@ -1,0 +1,37 @@
+<div class="dgc-painel" *ngIf="principal">
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.versao}}</span>
+	</div>
+
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Elementos de Tela</span>
+		</div>
+		<div class="dgc-card-detalhe" *ngFor="let rel of principal.posicaoElementoPaginaVendas">
+			<span>{{rel.posicao}} - </span>
+			<span>{{rel.elementoModeloPaginaVenda.rotulo}}</span>
+			<div class="dgc-direita">
+				<button class="btn-primary btn-sm btn" (click)="alteraPosicao(rel)">Alterar</button>
+			</div>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="alteraElementos()">Alterar</button>
+		</div>
+	</div>
+
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Fonte</span>
+		</div>
+		<div>
+			<pre>{{principal.codigoFonte}}</pre>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="alteraFonte()">Alterar</button>
+		</div>
+	</div>
+
+
+</div>

@@ -1,0 +1,69 @@
+{
+	"name": "ImagemPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"urlOriginal": {
+			"type": "string"
+		},
+		"arquivoLocal": {
+			"type": "string"
+		},
+		"promptRevisado": {
+			"type": "string"
+		},
+		"dalleSolicitacaoImagemId": {
+			"type": "number"
+		},
+		"disponivel": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"dalleSolicitacaoImagem": {
+			"type": "belongsTo",
+			"model": "DalleSolicitacaoImagem",
+			"foreignKey": ""
+		},
+		"arquivoPaginaVendas": {
+			"type": "hasMany",
+			"model": "ArquivoPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"RegistraImagem": {
+			"accepts": [
+				{
+					"arg": "imagens",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraImagem",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

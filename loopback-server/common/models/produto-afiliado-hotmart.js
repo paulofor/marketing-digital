@@ -14,7 +14,7 @@ module.exports = function(Produtoafiliadohotmart) {
 
 
     Produtoafiliadohotmart.ListaParaPesquisaHotlink = function(callback) {
-        const filtro = {'where' : {'trabalho' : 1}}
+        const filtro = {}
         Produtoafiliadohotmart.find(filtro,callback);
     }
 

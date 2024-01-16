@@ -51,6 +51,7 @@
           <span>Trabalho: {{item.trabalho}}</span>
         </div>
         <div class="dgc-card-comandos">
+            <button class="btn-primary btn-sm btn"  [routerLink]="['/solicitacaoImagemPorProduto' , item.hotmartId]">Dall-E</button>
             <button class="btn-primary btn-sm btn"  [routerLink]="['/paginaVendaPorProduto' , item.hotmartId]">Pagina Venda</button>
             <button class="btn-primary btn-sm btn"  [routerLink]="['/secaoWebPorProduto' , item.hotmartId]">Seção Web</button>
             <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAdsDisplayPorProdutoList' , item.hotmartId]">Anúncio Rede Display ({{item.anuncioAdsCount}})</button>

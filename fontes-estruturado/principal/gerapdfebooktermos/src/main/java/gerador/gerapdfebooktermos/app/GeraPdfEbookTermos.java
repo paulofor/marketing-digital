@@ -17,7 +17,7 @@ public class GeraPdfEbookTermos {
 
 	public static void main(String[] args) {
 		System.out.print("GeraPdfEbookTermos");
-		System.out.println("(09/01/2024 10:03:36)");
+		System.out.println("(16/01/2024 14:15:07)");
 		try {
 			carregaProp();
 			GeraPdfEbookTermosObj obj = new GeraPdfEbookTermosObj();
@@ -48,7 +48,6 @@ public class GeraPdfEbookTermos {
 		//prop.load(input);
 		//UrlLoopback = prop.getProperty("loopback.url");
 		UrlLoopback = "http://vps-40d69db1.vps.ovh.ca:23101/api";
-		UrlLoopback = "http://localhost:23101/api";
 		DaoBaseComum.setUrl(UrlLoopback);
 	}
 

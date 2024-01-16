@@ -1,0 +1,39 @@
+{
+	"name": "EvolucaoExperimento",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"acao": {
+			"type": "string"
+		},
+		"resultado": {
+			"type": "string"
+		},
+		"dataImplementacao": {
+			"type": "date"
+		},
+		"dataFinalizacao": {
+			"type": "date"
+		},
+		"experimentoModeloId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"experimentoModelo": {
+			"type": "belongsTo",
+			"model": "ExperimentoModelo",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

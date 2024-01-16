@@ -14,7 +14,8 @@ public class ExecutaTesteImpl extends ExecutaTeste {
 
 	@Override
 	protected boolean executaCustom() {
-		String prompt = "Quem descobriu o Brasil ?";
+		//String prompt = "Quem descobriu o Brasil ?";
+		String prompt = "Me de uma eplicacao sobre o termo computador";
 		String resposta = fazerRequisicao(prompt);
 		System.out.println("Resposta do ChatGPT: " + resposta);
 		return true;
@@ -31,7 +32,7 @@ public class ExecutaTesteImpl extends ExecutaTeste {
 			String apiKey = prop.getProperty("api_key");
 
 			String endpoint = "https://api.openai.com/v1/completions";
-			int maxTokens = 7;
+			int maxTokens = 200;
 			float temperature = 0.0f;
 
 			URL url = new URL(endpoint);

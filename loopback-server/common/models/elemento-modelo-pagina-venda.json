@@ -1,0 +1,66 @@
+{
+	"name": "ElementoModeloPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"rotulo": {
+			"type": "string"
+		},
+		"tipo": {
+			"type": "string"
+		},
+		"fonte": {
+			"type": "string"
+		},
+		"nomeVariavel": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"posicaoElementoPaginaVendas": {
+			"type": "hasMany",
+			"model": "PosicaoElementoPaginaVenda",
+			"foreignKey": ""
+		},
+		"conteudoElementos": {
+			"type": "hasMany",
+			"model": "ConteudoElemento",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ListaComConteudoPorVersaoPagina": {
+			"accepts": [
+				{
+					"arg": "idVersao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaComConteudoPorVersaoPagina",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

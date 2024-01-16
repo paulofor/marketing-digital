@@ -230,5 +230,61 @@
   "ProdutoProprioItemNivel1": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "PaginaVendaScroll": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "EvolucaoExperimento": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "CampanhaAdsExperimento": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ExperimentoModelo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ModeloPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PosicaoElementoPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ElementoModeloPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "VersaoPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ConteudoElemento": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "DalleSolicitacaoImagem": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ArquivoPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ImagemPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoAfiliadoClickbank": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "VersaoImagemPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

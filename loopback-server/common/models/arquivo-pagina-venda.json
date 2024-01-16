@@ -1,0 +1,43 @@
+{
+	"name": "ArquivoPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"imagemPaginaVendaId": {
+			"type": "number"
+			,"id": true
+		},
+		"versaoPaginaVendaId": {
+			"type": "number"
+			,"id": true
+		},
+		"url": {
+			"type": "string"
+		},
+		"codigoMetrica": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"imagemPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ImagemPaginaVenda",
+			"foreignKey": ""
+		},
+		"versaoPaginaVenda": {
+			"type": "belongsTo",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

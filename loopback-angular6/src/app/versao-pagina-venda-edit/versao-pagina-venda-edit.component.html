@@ -1,0 +1,31 @@
+<h2 *ngIf="item" mat-dialog-title>Versao Pagina Venda - {{origem.nome}}</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #versao [(ngModel)]="item.versao" name="versao" placeholder="Versão" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaModeloPaginaVenda">
+			<mat-select placeholder="Modelo Página Venda" #modeloPaginaVendaId [(ngModel)]="item.modeloPaginaVendaId"
+				name="modeloPaginaVendaId">
+				<mat-option *ngFor="let modelo of listaModeloPaginaVenda" [value]="modelo.id">
+					{{ modelo.versao}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #cria [(ngModel)]="item.cria" name="cria" placeholder="Cria" />
+		</mat-form-field>
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

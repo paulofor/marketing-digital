@@ -1,0 +1,22 @@
+<h2 *ngIf="item" mat-dialog-title>DalleSolicitacaoImagem</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+		<input matInput #quantidadeImagem [(ngModel)]="item.quantidadeImagem" name="quantidadeImagem" placeholder="Quantidade" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<textarea rows="8" matInput #prompt [(ngModel)]="item.prompt" name="prompt" placeholder="Prompt" ></textarea>
+		  </mat-form-field>
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

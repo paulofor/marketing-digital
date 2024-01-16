@@ -1,0 +1,33 @@
+{
+	"name": "CampanhaAdsExperimento",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"resourceNameCampanha": {
+			"type": "string"
+		},
+		"nomeCampanha": {
+			"type": "string"
+		},
+		"experimentoModeloId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"experimentoModelo": {
+			"type": "belongsTo",
+			"model": "ExperimentoModelo",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

@@ -1,0 +1,59 @@
+{
+	"name": "PaginaVendaScroll",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"hotmartId": {
+			"type": "number"
+		},
+		"dataHora": {
+			"type": "date"
+		},
+		"posicaoScroll": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+		"insereItem": {
+			"accepts": [
+				{
+					"arg": "hotmartId",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "posicao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereItem",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}
