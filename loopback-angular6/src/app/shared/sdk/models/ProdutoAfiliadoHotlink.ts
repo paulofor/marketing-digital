@@ -1,7 +1,9 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
-  PaginaVenda
+  PaginaVenda,
+  ImagemPaginaVenda,
+  PaginaVendaPropria
 } from '../index';
 
 declare var Object: any;
@@ -15,6 +17,8 @@ export interface ProdutoAfiliadoHotlinkInterface {
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   paginaVendas?: PaginaVenda[];
+  imagemPaginaVendas?: ImagemPaginaVenda[];
+  paginaVendaProprias?: PaginaVendaPropria[];
 }
 
 export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
@@ -27,6 +31,8 @@ export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   paginaVendas: PaginaVenda[];
+  imagemPaginaVendas: ImagemPaginaVenda[];
+  paginaVendaProprias: PaginaVendaPropria[];
   constructor(data?: ProdutoAfiliadoHotlinkInterface) {
     Object.assign(this, data);
   }
@@ -102,6 +108,22 @@ export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
           name: 'paginaVendas',
           type: 'PaginaVenda[]',
           model: 'PaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoAfiliadoHotlinkId'
+        },
+        imagemPaginaVendas: {
+          name: 'imagemPaginaVendas',
+          type: 'ImagemPaginaVenda[]',
+          model: 'ImagemPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'hotmartId'
+        },
+        paginaVendaProprias: {
+          name: 'paginaVendaProprias',
+          type: 'PaginaVendaPropria[]',
+          model: 'PaginaVendaPropria',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoAfiliadoHotlinkId'

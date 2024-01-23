@@ -1,6 +1,6 @@
 package gerador.testeselenium.passo.exemplos;
 
-public class Desafio19Dias extends ExemploBase{
+public class Desafio19Dias extends SeleniumUtil{
 	
 	private String url = "https://desafio19dias.com/?ref=U88208988H";
 

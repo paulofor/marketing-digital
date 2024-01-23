@@ -26,7 +26,7 @@
 				<span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
 			</div>
 			<div class="dgc-card-header">
-				<span routerLink="/historicoPorCodigoAds/{{item.codigoAds}}">{{item.nomeCampanha}}</span>
+				<span class="dgc-link" routerLink="/historicoPorCodigoAds/{{item.codigoAds}}">{{item.nomeCampanha}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>{{item.rede}}</span>
@@ -51,6 +51,10 @@
 
 			<div class="dgc-card-header" *ngIf="item.produtoAfiliadoHotmart">
 				<span class="dgc-link" routerLink="/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}">{{item.produtoAfiliadoHotmart.nome}}</span>
+			</div>
+
+			<div class="dgc-card-detalhe">
+				<span class="dgc-link" routerLink="/campanhaAdsMetricaIntradayPorCampanhaList/{{item.codigoAds}}">Intraday</span>
 			</div>
  		</div>
   	</div>

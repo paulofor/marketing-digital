@@ -1,5 +1,6 @@
 package gerador.geraimagemdalle.passo.impl;
 
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
@@ -19,10 +20,12 @@ import gerador.geraimagemdalle.passo.ImportaImagem;
 
 public class ImportaImagemImpl extends ImportaImagem {
 
-	private String PATH_IMAGENS = "/var/www/palfmarketing.online/imagens";
+	private String PATH_IMAGENS = "/var/www/palfmarketing.online/www/imagens";
 	private String SSH_HOST = "191.252.92.222";
 	private String SSH_USER = "root";
 	private int SSH_PORT = 22;
+	private String TEMP_FILE = "imagens";
+	private String PREFIXO_URL = "https://www.palfmarketing.online/imagens";
 
 	SecureRandom random = new SecureRandom();
 
@@ -31,16 +34,24 @@ public class ImportaImagemImpl extends ImportaImagem {
 		
 		Properties prop = new Properties();
 		String path = "/etc/openai/config.properties"; 
-		String passSSH = prop.getProperty("pass_ssh");
-		
+
 		try {
+			
+			FileInputStream input = new FileInputStream(path);
+			prop.load(input);
+			String passSSH = prop.getProperty("pass_ssh");
+			
 			for (ImagemPaginaVenda imagem : listaImagem) {
 				String imagemUrl = imagem.getUrlOriginal();
 				String nomeArquivo = this.generateRandomHex() + ".png";
 				imagem.setArquivoLocal(nomeArquivo);
 				String destino = PATH_IMAGENS + "/" + imagem.getArquivoLocal();
-				this.downloadImageAndSendViaSSH(imagemUrl, destino, SSH_HOST, SSH_PORT, SSH_USER, passSSH);
+				String arquivoLocal = TEMP_FILE + "/" + nomeArquivo;
+				String urlFinal = PREFIXO_URL + "/" + nomeArquivo;
+				imagem.setUrlFinal(urlFinal);
+				this.downloadImageAndSendViaSSH(imagemUrl, arquivoLocal, SSH_HOST, SSH_PORT, SSH_USER, passSSH, destino);
 			}
+			this.saidaListaImagem = listaImagem;
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(-1);
@@ -51,7 +62,7 @@ public class ImportaImagemImpl extends ImportaImagem {
 	}
 
 	public void downloadImageAndSendViaSSH(String imageUrl, String destinationPath, String sshHost, int sshPort,
-			String sshUser, String sshPassword) throws Exception {
+			String sshUser, String sshPassword, String arquivoFinal) throws Exception {
 		// Crie uma URL object for the image
 		URL url = new URL(imageUrl);
 
@@ -86,7 +97,7 @@ public class ImportaImagemImpl extends ImportaImagem {
 		channelSftp.connect();
 
 		// Enviar o arquivo.
-		channelSftp.put(destinationPath, outputPath.toString());
+		channelSftp.put(destinationPath, arquivoFinal);
 
 		// Feche o canal e a sessão.
 		channelSftp.exit();

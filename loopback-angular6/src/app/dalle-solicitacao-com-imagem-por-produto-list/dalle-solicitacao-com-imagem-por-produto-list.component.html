@@ -1,0 +1,26 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header" *ngIf="produto">
+		<span>{{produto.nome}} - DALL-E</span>
+		<div class="dgc-direita">
+			<button [routerLink]="['/solicitacaoImagemPorProduto' , produto.hotmartId]"
+				class="btn btn-primary btn-sm dgc-botao-comando dgc-direita"
+				style="margin-right: 8px;">solicitações</button>
+			<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+		</div>
+	</div>
+	<div class="dgc-painel-principal" *ngIf="listaBase">
+		<div class="dgc-card" *ngFor="let item of listaBase">
+			<div class="imagem-container">
+				<div *ngFor="let imagem of item.imagemPaginaVendas" class="imagem-item"  >
+					<img src="{{imagem.urlFinal}}" [ngStyle]="{'border': imagem.disponivel === 1 ? '2px solid #333' : 'none'}"/>
+					<div class="botoes-container">
+						<button (click)="marcarDisponivel(imagem)">Disponível</button>
+						<button (click)="detalhar(imagem)">Detalhar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>

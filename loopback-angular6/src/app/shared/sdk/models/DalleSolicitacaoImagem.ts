@@ -15,6 +15,7 @@ export interface DalleSolicitacaoImagemInterface {
   "objetivo"?: string;
   "arquivo"?: string;
   "quantidadeImagem"?: number;
+  "dataProcessamento"?: Date;
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   imagemPaginaVendas?: ImagemPaginaVenda[];
@@ -30,6 +31,7 @@ export class DalleSolicitacaoImagem implements DalleSolicitacaoImagemInterface {
   "objetivo": string;
   "arquivo": string;
   "quantidadeImagem": number;
+  "dataProcessamento": Date;
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   imagemPaginaVendas: ImagemPaginaVenda[];
@@ -98,6 +100,10 @@ export class DalleSolicitacaoImagem implements DalleSolicitacaoImagemInterface {
         "quantidadeImagem": {
           name: 'quantidadeImagem',
           type: 'number'
+        },
+        "dataProcessamento": {
+          name: 'dataProcessamento',
+          type: 'Date'
         },
         "id": {
           name: 'id',

@@ -5,6 +5,15 @@
   </div>
 
   <div class="dgc-card">
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/solicitacaoImagemPorProduto' , principal.hotmartId]">Dall-E</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/paginaVendaPorProduto' , principal.hotmartId]">Pagina Venda</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/secaoWebPorProduto' , principal.hotmartId]">Seção Web</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAdsDisplayPorProdutoList' , principal.hotmartId]">Anúncio Rede Display</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , principal.hotmartId]">Anúncio Google</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , principal.hotmartId]">Campanha Teste Google</button>
+  </div>
+
+  <div class="dgc-card">
     <div class="dgc-card-detalhe">
       <span *ngIf="principal.contaGoogle">{{principal.contaGoogle.nome}} </span>
       <span *ngIf="principal.contaRemarketing"> - {{principal.contaRemarketing.nome}}</span>
@@ -44,13 +53,14 @@
     </div>
   </div>
 
-  <div class="dgc-card">
+  <div class="dgc-card" *ngIf="listaPalavra">
     <div class="dgc-card-header">
       Palavras-Chave
-    </div>
-    <div class="dgc-card-detalhe" *ngFor="let item of  principal.visitaProdutoHotmarts[0].produtoAfiliadoMetricas">
-      {{item.palavra}} Volume Pesquisa: {{item.mediaPesquisaPalavra}}
-      Cpc: {{item.cpcMax | currency : 'BRL'}} {{item.cpcMin | currency : 'BRL'}}
+    </div>  
+    <div class="dgc-card-detalhe" *ngFor="let item of  listaPalavra">
+      {{item.texto}} Volume: {{item.mediaPesquisa}}
+      Cpc: {{item.cpcMaximoTopPage | currency : 'BRL'}} {{item.cpcMinimoTopPage | currency : 'BRL'}}
+      Data: {{item.dataAcesso | date : 'dd/MM/yyyy'}}
     </div>
   </div>
 
@@ -150,6 +160,7 @@
     </div>
   </div>
 
+  <!--
   <div class="dgc-card">
     <div class="dgc-card-header">
       Solicitação Imagem
@@ -166,7 +177,7 @@
       <button class="btn-primary btn-sm btn" (click)="dallESolicitacao()">Novo</button>
     </div>
   </div>
-
+-->
 
 
   <div class="dgc-card">

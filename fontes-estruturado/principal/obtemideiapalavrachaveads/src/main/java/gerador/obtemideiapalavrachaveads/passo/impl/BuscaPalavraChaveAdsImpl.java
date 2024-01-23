@@ -26,10 +26,10 @@ import gerador.obtemideiapalavrachaveads.passo.BuscaPalavraChaveAds;
 public class BuscaPalavraChaveAdsImpl extends BuscaPalavraChaveAds {
 
 	//private static Long CODIGO_USUARIO = 7966834741L;
-	private static Long CODIGO_USUARIO = 1520745633L; // 5328916093
+	private static Long CODIGO_USUARIO = 1010295829L; // 5328916093
 	//private static Long CODIGO_USUARIO = 5328916093L;
 	
-	private static String ID_CLIENTE = "955320384157-poo08ek3dl0b08punh6927icg776meti.apps.googleusercontent.com";
+	//private static String ID_CLIENTE = "955320384157-poo08ek3dl0b08punh6927icg776meti.apps.googleusercontent.com";
 	
 	@Override
 	protected boolean executaCustom(VisitaProdutoHotmart visitaCorrente) {
@@ -49,7 +49,7 @@ public class BuscaPalavraChaveAdsImpl extends BuscaPalavraChaveAds {
 		}
 		try {
 			System.out.println("Palavras: " + saidaListaPalavraChave.size() + " wait..");
-			Thread.sleep(60000);
+			Thread.sleep(30000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

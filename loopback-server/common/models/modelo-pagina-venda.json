@@ -17,6 +17,9 @@
 		},
 		"codigoFonte": {
 			"type": "string"
+		},
+		"descricao": {
+			"type": "string"
 		}
 	},
 	"validations": [],

@@ -38,7 +38,7 @@ public abstract class ImagemPaginaVenda_RegistraImagem extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new DalleSolicitacaoImagem_RegistraProcessamentoImpl();
 	}
 
 

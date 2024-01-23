@@ -39,6 +39,7 @@ public class ContaGoogle extends Model {
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<PublicoAlvoAdsDiario> PublicoAlvoAdsDiarios;
 	private List<SegmentoMercadoAdsPersonalizado> SegmentoMercadoAdsPersonalizados;
+	private List<PixelAdsSegmentoMercado> PixelAdsSegmentoMercados;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -275,6 +276,18 @@ public class ContaGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.SegmentoMercadoAdsPersonalizados.add((SegmentoMercadoAdsPersonalizado) objeto);
+		}
+	}
+	public List<PixelAdsSegmentoMercado> getPixelAdsSegmentoMercados() {
+		return  PixelAdsSegmentoMercados;
+	}
+	public void setPixelAdsSegmentoMercados(List<PixelAdsSegmentoMercado> valores) {
+		this.PixelAdsSegmentoMercados = new ArrayList<PixelAdsSegmentoMercado>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PixelAdsSegmentoMercado();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PixelAdsSegmentoMercados.add((PixelAdsSegmentoMercado) objeto);
 		}
 	}
 }

@@ -38,6 +38,14 @@ public class RepositorioImagemPaginaVenda extends ModelRepository<ImagemPaginaVe
 		invokeStaticMethod("registraImagem", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void alteraDisponivel(int idImagem ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ImagemPaginaVendas/alteraDisponivel","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ImagemPaginaVenda.alteraDisponivel");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idImagem", idImagem);
+		invokeStaticMethod("alteraDisponivel", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<ImagemPaginaVenda> listaEntrada) {
 		JSONArray lista = new JSONArray();

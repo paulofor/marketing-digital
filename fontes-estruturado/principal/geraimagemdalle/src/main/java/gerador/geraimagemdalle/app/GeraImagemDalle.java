@@ -17,7 +17,7 @@ public class GeraImagemDalle {
 
 	public static void main(String[] args) {
 		System.out.print("GeraImagemDalle");
-		System.out.println("(16/01/2024 14:15:10)");
+		System.out.println("(23/01/2024 16:35:15)");
 		try {
 			carregaProp();
 			GeraImagemDalleObj obj = new GeraImagemDalleObj();
@@ -57,5 +57,6 @@ public class GeraImagemDalle {
 		DaoBaseComum.setProximo("DalleSolicitacaoImagem_ListaParaGerarImagem", new GeraImagemImpl());
 		DaoBaseComum.setProximo("GeraImagem", new ImportaImagemImpl());
 		DaoBaseComum.setProximo("ImportaImagem", new ImagemPaginaVenda_RegistraImagemImpl());
+		DaoBaseComum.setProximo("ImagemPaginaVenda_RegistraImagem", new DalleSolicitacaoImagem_RegistraProcessamentoImpl());
 	}
 }

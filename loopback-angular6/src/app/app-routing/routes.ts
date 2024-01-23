@@ -42,6 +42,9 @@ import { ElementoModeloPaginaVendaListComponent } from '../elemento-modelo-pagin
 import { ModeloPaginaVendaDetalheComponent } from '../modelo-pagina-venda-detalhe/modelo-pagina-venda-detalhe.component';
 import { VersaoPaginaVendaDetalheComponent } from '../versao-pagina-venda-detalhe/versao-pagina-venda-detalhe.component';
 import { DalleSolicitacaoImagemPorProdutoListComponent } from '../dalle-solicitacao-imagem-por-produto-list/dalle-solicitacao-imagem-por-produto-list.component';
+import { DalleSolicitacaoComImagemPorProdutoListComponent } from '../dalle-solicitacao-com-imagem-por-produto-list/dalle-solicitacao-com-imagem-por-produto-list.component';
+import { CampanhaAdsMetricaIntradayPorCampanhaListComponent } from '../campanha-ads-metrica-intraday-por-campanha-list/campanha-ads-metrica-intraday-por-campanha-list.component';
+import { CampanhaAdsMetricaIntradayCtrListComponent } from '../campanha-ads-metrica-intraday-ctr-list/campanha-ads-metrica-intraday-ctr-list.component';
 
 
 
@@ -99,9 +102,14 @@ export const routes : Routes = [
     { path : 'modeloPaginaVendaDetalhe/:id' , component: ModeloPaginaVendaDetalheComponent },
 
     { path: 'solicitacaoImagemPorProduto/:id' , component : DalleSolicitacaoImagemPorProdutoListComponent },
+    { path: 'dalleComImagemPorProduto/:id' , component: DalleSolicitacaoComImagemPorProdutoListComponent },
 
     { path: 'versaoPaginaVendaDetalhe/:id' , component: VersaoPaginaVendaDetalheComponent },
   
+    { path: 'campanhaAdsMetricaIntradayPorCampanhaList/:id' , component: CampanhaAdsMetricaIntradayPorCampanhaListComponent },
+    
+    { path: 'campanhaAdsMetricaIntradayCtrList' , component: CampanhaAdsMetricaIntradayCtrListComponent },
+
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

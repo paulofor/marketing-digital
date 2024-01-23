@@ -53,7 +53,7 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioPublicoAlvoAds repPublicoAlvoAds = adapter.createRepository(RepositorioPublicoAlvoAds.class);
 	protected RepositorioPublicoAlvoAdsDiario repPublicoAlvoAdsDiario = adapter.createRepository(RepositorioPublicoAlvoAdsDiario.class);
 	protected RepositorioFaixaHorarioCampanhaAds repFaixaHorarioCampanhaAds = adapter.createRepository(RepositorioFaixaHorarioCampanhaAds.class);
-	protected RepositorioAnuncioCampanhaAdsDisplay repAnuncioCampanhaAdsDisplay = adapter.createRepository(RepositorioAnuncioCampanhaAdsDisplay.class);
+	protected RepositorioAnuncioCampanhaAdsRedeDisplay repAnuncioCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioAnuncioCampanhaAdsRedeDisplay.class);
 	protected RepositorioMetaVenda repMetaVenda = adapter.createRepository(RepositorioMetaVenda.class);
 	protected RepositorioMercadoAlvo repMercadoAlvo = adapter.createRepository(RepositorioMercadoAlvo.class);
 	protected RepositorioProdutoMercado repProdutoMercado = adapter.createRepository(RepositorioProdutoMercado.class);
@@ -82,6 +82,12 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioArquivoPaginaVenda repArquivoPaginaVenda = adapter.createRepository(RepositorioArquivoPaginaVenda.class);
 	protected RepositorioProdutoAfiliadoClickbank repProdutoAfiliadoClickbank = adapter.createRepository(RepositorioProdutoAfiliadoClickbank.class);
 	protected RepositorioVersaoImagemPaginaVenda repVersaoImagemPaginaVenda = adapter.createRepository(RepositorioVersaoImagemPaginaVenda.class);
+	protected RepositorioPixelAdsSegmentoMercado repPixelAdsSegmentoMercado = adapter.createRepository(RepositorioPixelAdsSegmentoMercado.class);
+	protected RepositorioPaginaVendaPropria repPaginaVendaPropria = adapter.createRepository(RepositorioPaginaVendaPropria.class);
+	protected RepositorioGrupoCampanhaAdsRedeDisplay repGrupoCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioGrupoCampanhaAdsRedeDisplay.class);
+	protected RepositorioLoadPaginaVendaPropria repLoadPaginaVendaPropria = adapter.createRepository(RepositorioLoadPaginaVendaPropria.class);
+	protected RepositorioScrollPaginaVendaPropria repScrollPaginaVendaPropria = adapter.createRepository(RepositorioScrollPaginaVendaPropria.class);
+	protected RepositorioSolicitacaoCheckoutPaginaVendaPropria repSolicitacaoCheckoutPaginaVendaPropria = adapter.createRepository(RepositorioSolicitacaoCheckoutPaginaVendaPropria.class);
 
 
 	@Override

@@ -5,7 +5,13 @@
 	<mat-dialog-content>
 
 		<mat-form-field class="example-full-width">
-		<input matInput #nome [(ngModel)]="item.versao" name="versao" placeholder="Versão" />
+			<input matInput #nome [(ngModel)]="item.versao" name="versao" placeholder="Versão" />
+		</mat-form-field>
+
+
+		<mat-form-field class="example-full-width">
+			<textarea rows="4" matInput #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição">
+			</textarea>
 		</mat-form-field>
 
 

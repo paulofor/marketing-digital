@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Parallax Simples</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: montserrat, sans-serif;
+
+        }
+
+        .parallax-container {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 1px;
+        }
+
+        .parallax-content {
+            position: relative;
+            transform-style: preserve-3d;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(216, 211, 211);
+            font-size: 2em;
+        }
+
+        .parallax-content::after {
+            content: "";
+            background-image: url('https://www.palfmarketing.online/imagens/c82513e187c0cb1fcff2250982d1e5.png');
+            background-size: 100% auto;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .parallax-text {
+            position: relative;
+            transform: translateZ(0);
+            padding: 20px;
+            background: rgba(234, 135, 135, 0.7);
+            max-width: 70%;
+            margin: 0 auto;
+            height: 20vh; /* Altura ajustada para 40vh */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.5;
+            top: 25vh; /* Ajuste positivo para mover o quadro para baixo */
+        }
+
+        .cta-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: hsl(57, 100%, 60%);
+            color: #fff;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1>Seção 1</h1>
+                <p>Conteúdo da primeira seção.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1>Seção 2</h1>
+                <p>Conteúdo da segunda seção.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="cta-button">Chamada para Ação</a>
+
+</body>
+
+</html>

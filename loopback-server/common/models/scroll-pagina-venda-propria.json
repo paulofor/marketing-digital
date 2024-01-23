@@ -1,0 +1,67 @@
+{
+	"name": "ScrollPaginaVendaPropria",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"codigoPaginaVendaPropria": {
+			"type": "string"
+		},
+		"dataHora": {
+			"type": "date"
+		},
+		"codigoLoad": {
+			"type": "string"
+		},
+		"paginaVendaPropriaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"paginaVendaPropria": {
+			"type": "belongsTo",
+			"model": "PaginaVendaPropria",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"InsereItem": {
+			"accepts": [
+				{
+					"arg": "codigoPagina",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "posicao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereItem",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

@@ -53,6 +53,22 @@ public class RepositorioDalleSolicitacaoImagem extends ModelRepository<DalleSoli
 		invokeStaticMethod("listaParaGerarImagem", params,   new JsonArrayParser<DalleSolicitacaoImagem>(this, callback));
 	}
 
+	public synchronized void registraProcessamento(int idSolicitacao ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("DalleSolicitacaoImagems/registraProcessamento","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "DalleSolicitacaoImagem.registraProcessamento");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idSolicitacao", idSolicitacao);
+		invokeStaticMethod("registraProcessamento", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void inverteEnviar(int idSolicitacao ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("DalleSolicitacaoImagems/inverteEnviar","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "DalleSolicitacaoImagem.inverteEnviar");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idSolicitacao", idSolicitacao);
+		invokeStaticMethod("inverteEnviar", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<DalleSolicitacaoImagem> listaEntrada) {
 		JSONArray lista = new JSONArray();

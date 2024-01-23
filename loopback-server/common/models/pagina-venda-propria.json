@@ -1,0 +1,138 @@
+{
+	"name": "PaginaVendaPropria",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"hotmartId": {
+			"type": "number"
+		},
+		"codigoUrl": {
+			"type": "string"
+		},
+		"status": {
+			"type": "string"
+		},
+		"versaoPaginaVendaId": {
+			"type": "number"
+		},
+		"imagemPaginaVendaId": {
+			"type": "number"
+		},
+		"html": {
+			"type": "string"
+		},
+		"css": {
+			"type": "string"
+		},
+		"tipoGeracao": {
+			"type": "string"
+		},
+		"produtoAfiliadoHotlinkId": {
+			"type": "number"
+		},
+		"pixelAdsSegmentoMercadoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"imagemPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ImagemPaginaVenda",
+			"foreignKey": ""
+		},
+		"versaoPaginaVenda": {
+			"type": "belongsTo",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotlink": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotlink",
+			"foreignKey": ""
+		},
+		"pixelAdsSegmentoMercado": {
+			"type": "belongsTo",
+			"model": "PixelAdsSegmentoMercado",
+			"foreignKey": ""
+		},
+		"loadPaginaVendas": {
+			"type": "hasMany",
+			"model": "LoadPaginaVenda",
+			"foreignKey": ""
+		},
+		"paginaVendaScrolls": {
+			"type": "hasMany",
+			"model": "PaginaVendaScroll",
+			"foreignKey": ""
+		},
+		"loadPaginaVendaProprias": {
+			"type": "hasMany",
+			"model": "LoadPaginaVendaPropria",
+			"foreignKey": ""
+		},
+		"scrollPaginaVendaProprias": {
+			"type": "hasMany",
+			"model": "ScrollPaginaVendaPropria",
+			"foreignKey": ""
+		},
+		"solicitacaoCheckoutPaginaVendaProprias": {
+			"type": "hasMany",
+			"model": "SolicitacaoCheckoutPaginaVendaPropria",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"InserePaginaVenda": {
+			"accepts": [
+				{
+					"arg": "listaPagina",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/inserePaginaVenda",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ObtemListaPublicacao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaPublicacao",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

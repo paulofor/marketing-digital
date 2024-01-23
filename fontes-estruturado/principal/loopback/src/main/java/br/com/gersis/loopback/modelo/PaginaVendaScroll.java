@@ -18,6 +18,7 @@ public class PaginaVendaScroll extends Model {
 	private String dataHora;
 	private int posicaoScroll;
 	// Relacionamentos 1
+	private PaginaVendaPropria PaginaVendaPropria;
 	// Relacionamentos N
 
 	public void setId(Long id) {
@@ -67,4 +68,11 @@ public class PaginaVendaScroll extends Model {
 		return this.posicaoScroll;
 	}
 
+	public PaginaVendaPropria getPaginaVendaPropria() {
+		return PaginaVendaPropria;
+	}
+	public void setPaginaVendaPropria(HashMap valor) {
+		this.PaginaVendaPropria = new PaginaVendaPropria();
+		BeanUtil.setProperties(this.PaginaVendaPropria, (Map<String, ? extends Object>) valor, true);
+	}
 }

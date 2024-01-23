@@ -22,6 +22,7 @@ public class LoadPaginaVenda extends Model {
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private PaginaVenda PaginaVenda;
+	private PaginaVendaPropria PaginaVendaPropria;
 	// Relacionamentos N
 
 	public void setId(Long id) {
@@ -98,5 +99,12 @@ public class LoadPaginaVenda extends Model {
 	public void setPaginaVenda(HashMap valor) {
 		this.PaginaVenda = new PaginaVenda();
 		BeanUtil.setProperties(this.PaginaVenda, (Map<String, ? extends Object>) valor, true);
+	}
+	public PaginaVendaPropria getPaginaVendaPropria() {
+		return PaginaVendaPropria;
+	}
+	public void setPaginaVendaPropria(HashMap valor) {
+		this.PaginaVendaPropria = new PaginaVendaPropria();
+		BeanUtil.setProperties(this.PaginaVendaPropria, (Map<String, ? extends Object>) valor, true);
 	}
 }

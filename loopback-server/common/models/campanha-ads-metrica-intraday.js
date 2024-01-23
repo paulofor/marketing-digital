@@ -3,6 +3,23 @@
 module.exports = function(Campanhaadsmetricaintraday) {
 
 
+
+    Campanhaadsmetricaintraday.MelhoresCtrHistorico = function(callback) {
+        const sql = "SELECT * FROM CampanhaAdsMetricaIntradayHist " +
+            " where impressao > 100 and dataHora >= DATE_SUB(now(), INTERVAL 60 DAY) " + 
+            " order by (clique/impressao) desc " +
+            " limit 30";
+        const ds = Campanhaadsmetricaintraday.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
+    Campanhaadsmetricaintraday.ListaHistorico = function(codigoAds,limite,callback) {
+        const sql = "select * from CampanhaAdsMetricaIntradayHist where codigoAds = '" + codigoAds + "' and clique > 0 order by dataHora desc limit " + limite;
+        const ds = Campanhaadsmetricaintraday.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
+
     Campanhaadsmetricaintraday.TotaisDia = function(callback) {
         const sql = "select sum(clique) as totalClique, sum(custoDia) as totalCusto, count(*) as totalCampanha , sum(conversao) as totalConversao, " +
             " sum(impressao) as totalImpressao " +

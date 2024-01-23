@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   ProdutoProprioVersao,
-  VersaoPaginaVenda
+  VersaoPaginaVenda,
+  ImagemPaginaVenda
 } from '../index';
 
 declare var Object: any;
@@ -11,6 +12,7 @@ export interface ProdutoProprioInterface {
   "id"?: number;
   produtoProprioVersaos?: ProdutoProprioVersao[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
+  imagemPaginaVendas?: ImagemPaginaVenda[];
 }
 
 export class ProdutoProprio implements ProdutoProprioInterface {
@@ -19,6 +21,7 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   "id": number;
   produtoProprioVersaos: ProdutoProprioVersao[];
   versaoPaginaVendas: VersaoPaginaVenda[];
+  imagemPaginaVendas: ImagemPaginaVenda[];
   constructor(data?: ProdutoProprioInterface) {
     Object.assign(this, data);
   }
@@ -78,6 +81,14 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'versaoPaginaVendas',
           type: 'VersaoPaginaVenda[]',
           model: 'VersaoPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        imagemPaginaVendas: {
+          name: 'imagemPaginaVendas',
+          type: 'ImagemPaginaVenda[]',
+          model: 'ImagemPaginaVenda',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'

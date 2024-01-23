@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Automaquiagem com Lucas Vieira</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #first-section {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #first-text {
+            position: absolute;
+            bottom: -20vh;
+            /* Posição inicial abaixo da imagem */
+            transition: bottom 0.5s ease;
+            /* Adiciona uma transição suave ao movimento */
+        }
+
+
+        .parallax-container {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 1px;
+        }
+
+        .parallax-content {
+            position: relative;
+            transform-style: preserve-3d;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        .parallax-content::after {
+            content: "";
+            background-image: url('https://www.palfmarketing.online/imagens/080bd9f2dce7e8b8f7d5e443e31163.png');
+            background-size: 100% auto;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            /* Evita que a imagem se repita na vertical */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+
+
+        .parallax-text {
+            position: relative;
+            transform: translateZ(0);
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 70%;
+            /* Ajusta a largura máxima do quadro de texto */
+            margin: 0 auto;
+            /* Centraliza o quadro de texto na página */
+            height: 60vh;
+            /* Ajusta a altura do quadro de texto, você pode alterar este valor conforme necessário */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parallax-container" id="first-section">
+        <div class="parallax-content">
+            <div class="parallax-text" id="first-text">
+                <h1>Programa Desafio 19 dias</h1>
+                <p>Perca gordura localizada com método natural</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h2>Estágios Transformadores</h2>
+                <p>1- Desentoxicação<br>2- Transformação<br>3- Ativação do seu corpo<br>4- Aceleração<br>5- Finalização</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Adicione mais seções conforme necessário -->
+
+</body>
+
+</html>

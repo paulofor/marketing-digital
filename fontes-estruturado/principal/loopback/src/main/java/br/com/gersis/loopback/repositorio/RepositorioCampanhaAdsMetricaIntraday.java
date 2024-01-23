@@ -59,6 +59,22 @@ public class RepositorioCampanhaAdsMetricaIntraday extends ModelRepository<Campa
 		invokeStaticMethod("limpaDia", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void listaHistorico(String codigoAds ,int limite ,final ListCallback<CampanhaAdsMetricaIntraday> callback ) {
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/listaHistorico","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetricaIntraday.listaHistorico");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("codigoAds", codigoAds);
+		params.put("limite", limite);
+		invokeStaticMethod("listaHistorico", params,   new JsonArrayParser<CampanhaAdsMetricaIntraday>(this, callback));
+	}
+
+	public synchronized void melhoresCtrHistorico(final ListCallback<CampanhaAdsMetricaIntraday> callback ) {
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/melhoresCtrHistorico","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetricaIntraday.melhoresCtrHistorico");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("melhoresCtrHistorico", params,   new JsonArrayParser<CampanhaAdsMetricaIntraday>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<CampanhaAdsMetricaIntraday> listaEntrada) {
 		JSONArray lista = new JSONArray();

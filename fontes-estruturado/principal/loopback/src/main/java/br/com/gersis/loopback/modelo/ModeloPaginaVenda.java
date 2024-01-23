@@ -17,6 +17,7 @@ public class ModeloPaginaVenda extends Model {
 	private String versao;
 	private String dataCriacao;
 	private String codigoFonte;
+	private String descricao;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<PosicaoElementoPaginaVenda> PosicaoElementoPaginaVendas;
@@ -44,6 +45,7 @@ public class ModeloPaginaVenda extends Model {
 			obj.put("versao", versao);
 			obj.put("dataCriacao", dataCriacao);
 			obj.put("codigoFonte", codigoFonte);
+			obj.put("descricao", descricao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -68,6 +70,12 @@ public class ModeloPaginaVenda extends Model {
 	}
 	public String getCodigoFonte() { 
 		return this.codigoFonte;
+	}
+	public void setDescricao(String valor) { 
+		this.descricao = valor;
+	}
+	public String getDescricao() { 
+		return this.descricao;
 	}
 
 	public List<PosicaoElementoPaginaVenda> getPosicaoElementoPaginaVendas() {

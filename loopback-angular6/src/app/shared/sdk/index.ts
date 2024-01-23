@@ -112,6 +112,13 @@ import { ArquivoPaginaVendaApi } from './services/custom/ArquivoPaginaVenda';
 import { ImagemPaginaVendaApi } from './services/custom/ImagemPaginaVenda';
 import { ProdutoAfiliadoClickbankApi } from './services/custom/ProdutoAfiliadoClickbank';
 import { VersaoImagemPaginaVendaApi } from './services/custom/VersaoImagemPaginaVenda';
+import { PixelAdsSegmentoMercadoApi } from './services/custom/PixelAdsSegmentoMercado';
+import { PaginaVendaPropriaApi } from './services/custom/PaginaVendaPropria';
+import { LoadPaginaVendaPropriaApi } from './services/custom/LoadPaginaVendaPropria';
+import { ScrollPaginaVendaPropriaApi } from './services/custom/ScrollPaginaVendaPropria';
+import { AnuncioCampanhaAdsRedeDisplayApi } from './services/custom/AnuncioCampanhaAdsRedeDisplay';
+import { GrupoCampanhaAdsRedeDisplayApi } from './services/custom/GrupoCampanhaAdsRedeDisplay';
+import { SolicitacaoCheckoutPaginaVendaPropriaApi } from './services/custom/SolicitacaoCheckoutPaginaVendaPropria';
 /**
 * @module SDKBrowserModule
 * @description
@@ -206,6 +213,13 @@ export class SDKBrowserModule {
         ImagemPaginaVendaApi,
         ProdutoAfiliadoClickbankApi,
         VersaoImagemPaginaVendaApi,
+        PixelAdsSegmentoMercadoApi,
+        PaginaVendaPropriaApi,
+        LoadPaginaVendaPropriaApi,
+        ScrollPaginaVendaPropriaApi,
+        AnuncioCampanhaAdsRedeDisplayApi,
+        GrupoCampanhaAdsRedeDisplayApi,
+        SolicitacaoCheckoutPaginaVendaPropriaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

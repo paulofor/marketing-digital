@@ -6,7 +6,8 @@ import {
   ConteudoElemento,
   ArquivoPaginaVenda,
   ProdutoAfiliadoClickbank,
-  VersaoImagemPaginaVenda
+  VersaoImagemPaginaVenda,
+  PaginaVendaPropria
 } from '../index';
 
 declare var Object: any;
@@ -25,6 +26,7 @@ export interface VersaoPaginaVendaInterface {
   arquivoPaginaVendas?: ArquivoPaginaVenda[];
   produtoAfiliadoClickbank?: ProdutoAfiliadoClickbank;
   versaoImagemPaginaVendas?: VersaoImagemPaginaVenda[];
+  paginaVendaProprias?: PaginaVendaPropria[];
 }
 
 export class VersaoPaginaVenda implements VersaoPaginaVendaInterface {
@@ -42,6 +44,7 @@ export class VersaoPaginaVenda implements VersaoPaginaVendaInterface {
   arquivoPaginaVendas: ArquivoPaginaVenda[];
   produtoAfiliadoClickbank: ProdutoAfiliadoClickbank;
   versaoImagemPaginaVendas: VersaoImagemPaginaVenda[];
+  paginaVendaProprias: PaginaVendaPropria[];
   constructor(data?: VersaoPaginaVendaInterface) {
     Object.assign(this, data);
   }
@@ -157,6 +160,14 @@ export class VersaoPaginaVenda implements VersaoPaginaVendaInterface {
           name: 'versaoImagemPaginaVendas',
           type: 'VersaoImagemPaginaVenda[]',
           model: 'VersaoImagemPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoPaginaVendaId'
+        },
+        paginaVendaProprias: {
+          name: 'paginaVendaProprias',
+          type: 'PaginaVendaPropria[]',
+          model: 'PaginaVendaPropria',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'versaoPaginaVendaId'

@@ -254,6 +254,31 @@
    					"verb": "get"
  				}
  			]
+		},
+		"AtualizaMaisRecentePorProduto": {
+			"accepts": [
+				{
+					"arg": "hotmartId",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaMaisRecentePorProduto",
+   					"verb": "post"
+ 				}
+ 			]
 		}
 	}
 }

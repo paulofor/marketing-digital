@@ -64,6 +64,13 @@ import { ArquivoPaginaVenda } from '../../models/ArquivoPaginaVenda';
 import { ImagemPaginaVenda } from '../../models/ImagemPaginaVenda';
 import { ProdutoAfiliadoClickbank } from '../../models/ProdutoAfiliadoClickbank';
 import { VersaoImagemPaginaVenda } from '../../models/VersaoImagemPaginaVenda';
+import { PixelAdsSegmentoMercado } from '../../models/PixelAdsSegmentoMercado';
+import { PaginaVendaPropria } from '../../models/PaginaVendaPropria';
+import { LoadPaginaVendaPropria } from '../../models/LoadPaginaVendaPropria';
+import { ScrollPaginaVendaPropria } from '../../models/ScrollPaginaVendaPropria';
+import { AnuncioCampanhaAdsRedeDisplay } from '../../models/AnuncioCampanhaAdsRedeDisplay';
+import { GrupoCampanhaAdsRedeDisplay } from '../../models/GrupoCampanhaAdsRedeDisplay';
+import { SolicitacaoCheckoutPaginaVendaPropria } from '../../models/SolicitacaoCheckoutPaginaVendaPropria';
 
 export interface Models { [name: string]: any }
 
@@ -135,6 +142,13 @@ export class SDKModels {
     ImagemPaginaVenda: ImagemPaginaVenda,
     ProdutoAfiliadoClickbank: ProdutoAfiliadoClickbank,
     VersaoImagemPaginaVenda: VersaoImagemPaginaVenda,
+    PixelAdsSegmentoMercado: PixelAdsSegmentoMercado,
+    PaginaVendaPropria: PaginaVendaPropria,
+    LoadPaginaVendaPropria: LoadPaginaVendaPropria,
+    ScrollPaginaVendaPropria: ScrollPaginaVendaPropria,
+    AnuncioCampanhaAdsRedeDisplay: AnuncioCampanhaAdsRedeDisplay,
+    GrupoCampanhaAdsRedeDisplay: GrupoCampanhaAdsRedeDisplay,
+    SolicitacaoCheckoutPaginaVendaPropria: SolicitacaoCheckoutPaginaVendaPropria,
     
   };
 

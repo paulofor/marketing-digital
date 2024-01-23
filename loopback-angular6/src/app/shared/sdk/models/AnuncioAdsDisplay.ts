@@ -2,8 +2,8 @@
 import {
   ProdutoAfiliadoHotmart,
   PaginaVenda,
-  AnuncioCampanhaAdsDisplay,
-  ImagemConjunto
+  ImagemConjunto,
+  AnuncioCampanhaAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
@@ -22,8 +22,8 @@ export interface AnuncioAdsDisplayInterface {
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   paginaVenda?: PaginaVenda;
-  anuncioCampanhaAdsDisplays?: AnuncioCampanhaAdsDisplay[];
   imagemConjunto?: ImagemConjunto;
+  anuncioCampanhaAdsRedeDisplays?: AnuncioCampanhaAdsRedeDisplay[];
 }
 
 export class AnuncioAdsDisplay implements AnuncioAdsDisplayInterface {
@@ -41,8 +41,8 @@ export class AnuncioAdsDisplay implements AnuncioAdsDisplayInterface {
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   paginaVenda: PaginaVenda;
-  anuncioCampanhaAdsDisplays: AnuncioCampanhaAdsDisplay[];
   imagemConjunto: ImagemConjunto;
+  anuncioCampanhaAdsRedeDisplays: AnuncioCampanhaAdsRedeDisplay[];
   constructor(data?: AnuncioAdsDisplayInterface) {
     Object.assign(this, data);
   }
@@ -142,14 +142,6 @@ export class AnuncioAdsDisplay implements AnuncioAdsDisplayInterface {
                   keyFrom: 'paginaVendaId',
           keyTo: 'id'
         },
-        anuncioCampanhaAdsDisplays: {
-          name: 'anuncioCampanhaAdsDisplays',
-          type: 'AnuncioCampanhaAdsDisplay[]',
-          model: 'AnuncioCampanhaAdsDisplay',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'anuncioAdsDisplayId'
-        },
         imagemConjunto: {
           name: 'imagemConjunto',
           type: 'ImagemConjunto',
@@ -157,6 +149,14 @@ export class AnuncioAdsDisplay implements AnuncioAdsDisplayInterface {
           relationType: 'belongsTo',
                   keyFrom: 'imagemConjuntoId',
           keyTo: 'id'
+        },
+        anuncioCampanhaAdsRedeDisplays: {
+          name: 'anuncioCampanhaAdsRedeDisplays',
+          type: 'AnuncioCampanhaAdsRedeDisplay[]',
+          model: 'AnuncioCampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'anuncioAdsDisplayId'
         },
       }
     }

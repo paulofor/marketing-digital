@@ -286,5 +286,33 @@
   "VersaoImagemPaginaVenda": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "PixelAdsSegmentoMercado": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaVendaPropria": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "LoadPaginaVendaPropria": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ScrollPaginaVendaPropria": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioCampanhaAdsRedeDisplay": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GrupoCampanhaAdsRedeDisplay": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "SolicitacaoCheckoutPaginaVendaPropria": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

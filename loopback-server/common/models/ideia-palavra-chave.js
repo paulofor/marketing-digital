@@ -100,16 +100,22 @@ module.exports = function(Ideiapalavrachave) {
 
 
     Ideiapalavrachave.RecebeLista = function(lista, hotmartId, callback) {
-        for (let i=0; i<lista.length; i++) {
-            let item = lista[i];
-            //console.log(item);
-            item['dataAcesso'] = new Date();
-            Ideiapalavrachave.create(item);
-        }
-        const sql = "update VisitaProdutoHotmart set possuiPalavraChave = 1 " +
-            " where maisRecente = 1 and hotmartId = " + hotmartId;
+        const sqlLimpa = "update IdeiaPalavraChave set maisRecente = 0 where hotmartId = " + hotmartId;
         let ds = Ideiapalavrachave.dataSource;
-        ds.connector.query(sql,callback);
+        ds.connector.query(sqlLimpa, (err,result) => {
+            for (let i=0; i<lista.length; i++) {
+                let item = lista[i];
+                item['dataAcesso'] = new Date();
+                item['maisRecente'] = 1;
+                console.log(item);
+                Ideiapalavrachave.create(item, (err,result) => {
+                    console.log('err:' , err);
+                });
+            }
+            const sql = "update VisitaProdutoHotmart set possuiPalavraChave = 1 " +
+                " where maisRecente = 1 and hotmartId = " + hotmartId;
+            ds.connector.query(sql,callback);
+        })
     } 
 
     Ideiapalavrachave.MelhoresUltimaData = function(limiteMensal,callback) {

@@ -17,7 +17,7 @@ public class TesteGoogleAnalytics {
 
 	public static void main(String[] args) {
 		System.out.print("TesteGoogleAnalytics");
-		System.out.println("(16/01/2024 14:15:06)");
+		System.out.println("(23/01/2024 16:35:11)");
 		try {
 			carregaProp();
 			TesteGoogleAnalyticsObj obj = new TesteGoogleAnalyticsObj();

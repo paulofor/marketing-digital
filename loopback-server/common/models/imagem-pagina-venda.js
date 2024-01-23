@@ -2,6 +2,15 @@
 
 module.exports = function(Imagempaginavenda) {
 
+
+    Imagempaginavenda.AlteraDisponivel = function(idImagem, callback) {
+        const sql = "UPDATE ImagemPaginaVenda SET disponivel = CASE WHEN disponivel = 0 THEN 1 WHEN disponivel = 1 THEN 0 END " +
+            " WHERE id = " + idImagem;
+        const ds = Imagempaginavenda.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
+
     Imagempaginavenda.RegistraImagem = function(imagens, callback) {
         imagens.forEach(function(item, index, array) {
             Imagempaginavenda.create(item, function(err, result) {

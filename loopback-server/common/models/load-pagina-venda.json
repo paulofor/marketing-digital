@@ -26,6 +26,9 @@
 		},
 		"paginaVendaId": {
 			"type": "number"
+		},
+		"paginaVendaPropriaId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -38,6 +41,11 @@
 		"paginaVenda": {
 			"type": "belongsTo",
 			"model": "PaginaVenda",
+			"foreignKey": ""
+		},
+		"paginaVendaPropria": {
+			"type": "belongsTo",
+			"model": "PaginaVendaPropria",
 			"foreignKey": ""
 		}
 	},

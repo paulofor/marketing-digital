@@ -43,7 +43,12 @@
 		   <div class="dgc-card-detalhe">
 			   <span>Mais recente: {{item.maisRecente}}</span>
 		   </div>
-
+		   <div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="jsonLocais(item)">Locais</button>
+			<button class="btn-primary btn-sm btn" (click)="jsonAudiencia(item)">Audiencia</button>
+			<button class="btn-primary btn-sm btn" (click)="jsonGrupo(item)">Grupo</button>
+			<button class="btn-primary btn-sm btn" (click)="json(item)">Campanha</button>
+		  </div>
 		</div>
   	</div>
 </div>

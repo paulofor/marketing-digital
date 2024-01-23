@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
-import { PrecoProdutoAfiliadoApi, ProdutoAfiliadoHotmartApi } from '../shared/sdk';
+import { IdeiaPalavraChave, IdeiaPalavraChaveApi, PrecoProdutoAfiliadoApi, ProdutoAfiliadoHotmartApi } from '../shared/sdk';
 import { ProdutoAfiliadoHotmartDetalheBaseComponent } from './produto-afiliado-hotmart-detalhe-base.component';
 import { PrecoProdutoAfiliadoEditComponent } from '../preco-produto-afiliado-edit/preco-produto-afiliado-edit.component';
 import { ProdutoAfiliadoHotmartEditComponent } from '../produto-afiliado-hotmart-edit/produto-afiliado-hotmart-edit.component';
@@ -15,9 +15,20 @@ import { DalleSolicitacaoImagemEditComponent } from '../dalle-solicitacao-imagem
 })
 export class ProdutoAfiliadoHotmartDetalheComponent extends ProdutoAfiliadoHotmartDetalheBaseComponent {
 
+
+	listaPalavra:IdeiaPalavraChave[];
+
 	constructor(protected srv: ProdutoAfiliadoHotmartApi, protected router: ActivatedRoute, protected dialog: MatDialog,
-			private srvPreco:PrecoProdutoAfiliadoApi) { 
+			private srvPreco:PrecoProdutoAfiliadoApi, private srvPalavraChave:IdeiaPalavraChaveApi) { 
 		super(srv,router,dialog);
+	}
+	posCarregaTela(): void {
+		let filtro = { 'order' : 'mediaPesquisa desc', 'where' : {'and' : [{'hotmartId' : this.principal.hotmartId}, {'maisRecente' : 1}] } }
+		this.srvPalavraChave.find(filtro)
+			.subscribe((result:IdeiaPalavraChave[]) => {
+				console.log('Palavra-Chave:' , result);
+				this.listaPalavra = result;
+			})
 	}
 
 	editaProduto(edicao) {

@@ -17,7 +17,7 @@ public class ObtemIdeiaPalavraChaveAds {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemIdeiaPalavraChaveAds");
-		System.out.println("(16/01/2024 14:15:00)");
+		System.out.println("(23/01/2024 16:35:03)");
 		try {
 			carregaProp();
 			ObtemIdeiaPalavraChaveAdsObj obj = new ObtemIdeiaPalavraChaveAdsObj();
@@ -56,7 +56,6 @@ public class ObtemIdeiaPalavraChaveAds {
 		DaoBaseComum.setProximo("ObtemIdeiaPalavraChaveAdsObj", new VisitaProdutoHotmart_ListaParaPesquisaPalavraChaveImpl());
 		DaoBaseComum.setProximo("VisitaProdutoHotmart_ListaParaPesquisaPalavraChave", new BuscaPalavraChaveAdsImpl());
 		DaoBaseComum.setProximo("BuscaPalavraChaveAds", new IdeiaPalavraChave_RecebeListaImpl());
-		DaoBaseComum.setProximo("IdeiaPalavraChave_RecebeLista", new IdeiaPalavraChave_AtualizaMaisRecentePalavraChaveImpl());
-		DaoBaseComum.setProximo("IdeiaPalavraChave_AtualizaMaisRecentePalavraChave", new IdeiaPalavraChave_CalculaCpcAlvoImpl());
+		DaoBaseComum.setProximo("IdeiaPalavraChave_RecebeLista", new IdeiaPalavraChave_CalculaCpcAlvoImpl());
 	}
 }

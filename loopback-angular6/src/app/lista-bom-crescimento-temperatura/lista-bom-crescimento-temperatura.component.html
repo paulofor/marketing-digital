@@ -19,10 +19,16 @@
 				<span>Comissão: {{item.afiliacaoValor | currency : 'BRL'}} ( {{item.afiliacaoPercentual}} % )</span>
 			</div>
 			<div class="dgc-card-detalhe">
+				<span>Nota: {{item.reviewRating | number : '1.2-2'}} ( {{item.totalAnswers}} )</span>
+			</div>
+			<div class="dgc-card-detalhe">
 				<span>Data: {{item.dataInsercao | date: 'dd/MM/yyyy' }}</span>
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>{{item.categoria }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>{{item.formato }}</span>
 			</div>
 			<div class="dgc-card-comandos">
 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>

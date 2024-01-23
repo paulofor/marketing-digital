@@ -18,6 +18,7 @@ import { ConteudoElemento } from '../../models/ConteudoElemento';
 import { ArquivoPaginaVenda } from '../../models/ArquivoPaginaVenda';
 import { ProdutoAfiliadoClickbank } from '../../models/ProdutoAfiliadoClickbank';
 import { VersaoImagemPaginaVenda } from '../../models/VersaoImagemPaginaVenda';
+import { PaginaVendaPropria } from '../../models/PaginaVendaPropria';
 
 
 /**
@@ -436,6 +437,99 @@ export class VersaoPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
+   * Localize um item relacionado por ID para paginaVendaProprias.
+   *
+   * @param {any} id VersaoPaginaVenda id
+   *
+   * @param {any} fk Chave estrangeira para paginaVendaProprias
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoPaginaVenda` object.)
+   * </em>
+   */
+  public findByIdPaginaVendaProprias(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/:id/paginaVendaProprias/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para paginaVendaProprias.
+   *
+   * @param {any} id VersaoPaginaVenda id
+   *
+   * @param {any} fk Chave estrangeira para paginaVendaProprias
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdPaginaVendaProprias(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/:id/paginaVendaProprias/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para paginaVendaProprias.
+   *
+   * @param {any} id VersaoPaginaVenda id
+   *
+   * @param {any} fk Chave estrangeira para paginaVendaProprias
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoPaginaVenda` object.)
+   * </em>
+   */
+  public updateByIdPaginaVendaProprias(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/:id/paginaVendaProprias/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * conteudoElementos consultas de VersaoPaginaVenda.
    *
    * @param {any} id VersaoPaginaVenda id
@@ -784,6 +878,122 @@ export class VersaoPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
+   * paginaVendaProprias consultas de VersaoPaginaVenda.
+   *
+   * @param {any} id VersaoPaginaVenda id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoPaginaVenda` object.)
+   * </em>
+   */
+  public getPaginaVendaProprias(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/:id/paginaVendaProprias";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no paginaVendaProprias deste modelo.
+   *
+   * @param {any} id VersaoPaginaVenda id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoPaginaVenda` object.)
+   * </em>
+   */
+  public createPaginaVendaProprias(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/:id/paginaVendaProprias";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os paginaVendaProprias deste modelo.
+   *
+   * @param {any} id VersaoPaginaVenda id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deletePaginaVendaProprias(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/:id/paginaVendaProprias";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * paginaVendaProprias contagens de VersaoPaginaVenda.
+   *
+   * @param {any} id VersaoPaginaVenda id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countPaginaVendaProprias(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/:id/paginaVendaProprias/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Patch an existing model instance or insert a new one into the data source.
    *
    * @param {object} data Request data.
@@ -899,6 +1109,61 @@ export class VersaoPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoPaginaVenda` object.)
+   * </em>
+   */
+  public ObtemListaCriacaoPaginaPropria(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/obtemListaCriacaoPaginaPropria";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idVersao` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoPaginaVenda` object.)
+   * </em>
+   */
+  public CriouPaginaVendaPropria(idVersao: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/criouPaginaVendaPropria";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idVersao !== 'undefined' && idVersao !== null) _urlParams.idVersao = idVersao;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Cria uma nova instância no conteudoElementos deste modelo.
    *
    * @param {any} id VersaoPaginaVenda id
@@ -986,6 +1251,39 @@ export class VersaoPaginaVendaApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/VersaoPaginaVendas/:id/versaoImagemPaginaVendas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no paginaVendaProprias deste modelo.
+   *
+   * @param {any} id VersaoPaginaVenda id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoPaginaVenda` object.)
+   * </em>
+   */
+  public createManyPaginaVendaProprias(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoPaginaVendas/:id/paginaVendaProprias";
     let _routeParams: any = {
       id: id
     };

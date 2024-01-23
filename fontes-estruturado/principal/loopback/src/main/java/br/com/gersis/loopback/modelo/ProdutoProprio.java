@@ -20,6 +20,7 @@ public class ProdutoProprio extends Model {
 	// Relacionamentos N
 	private List<ProdutoProprioVersao> ProdutoProprioVersaos;
 	private List<VersaoPaginaVenda> VersaoPaginaVendas;
+	private List<ImagemPaginaVenda> ImagemPaginaVendas;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -83,6 +84,18 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.VersaoPaginaVendas.add((VersaoPaginaVenda) objeto);
+		}
+	}
+	public List<ImagemPaginaVenda> getImagemPaginaVendas() {
+		return  ImagemPaginaVendas;
+	}
+	public void setImagemPaginaVendas(List<ImagemPaginaVenda> valores) {
+		this.ImagemPaginaVendas = new ArrayList<ImagemPaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ImagemPaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ImagemPaginaVendas.add((ImagemPaginaVenda) objeto);
 		}
 	}
 }

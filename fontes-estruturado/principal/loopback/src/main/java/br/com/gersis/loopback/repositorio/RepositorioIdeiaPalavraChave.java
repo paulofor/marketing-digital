@@ -90,6 +90,14 @@ public class RepositorioIdeiaPalavraChave extends ModelRepository<IdeiaPalavraCh
 		invokeStaticMethod("listaTopPesquisa", params,   new JsonArrayParser<IdeiaPalavraChave>(this, callback));
 	}
 
+	public synchronized void atualizaMaisRecentePorProduto(int hotmartId ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/atualizaMaisRecentePorProduto","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "IdeiaPalavraChave.atualizaMaisRecentePorProduto");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("hotmartId", hotmartId);
+		invokeStaticMethod("atualizaMaisRecentePorProduto", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<IdeiaPalavraChave> listaEntrada) {
 		JSONArray lista = new JSONArray();

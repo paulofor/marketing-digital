@@ -64,6 +64,11 @@
 			"type": "hasMany",
 			"model": "VersaoImagemPaginaVenda",
 			"foreignKey": ""
+		},
+		"paginaVendaProprias": {
+			"type": "hasMany",
+			"model": "PaginaVendaPropria",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],
@@ -109,6 +114,50 @@
          		{
           			"path": "/obtemPorId",
    					"verb": "get"
+ 				}
+ 			]
+		},
+		"ObtemListaCriacaoPaginaPropria": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaCriacaoPaginaPropria",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"CriouPaginaVendaPropria": {
+			"accepts": [
+				{
+					"arg": "idVersao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/criouPaginaVendaPropria",
+   					"verb": "post"
  				}
  			]
 		}

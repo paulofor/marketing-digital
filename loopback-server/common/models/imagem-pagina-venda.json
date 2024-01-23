@@ -23,6 +23,15 @@
 		},
 		"disponivel": {
 			"type": "number"
+		},
+		"urlFinal": {
+			"type": "string"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"hotmartId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -32,9 +41,24 @@
 			"model": "DalleSolicitacaoImagem",
 			"foreignKey": ""
 		},
+		"produtoAfiliadoHotlink": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotlink",
+			"foreignKey": "hotmartId"
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
 		"arquivoPaginaVendas": {
 			"type": "hasMany",
 			"model": "ArquivoPaginaVenda",
+			"foreignKey": ""
+		},
+		"paginaVendaProprias": {
+			"type": "hasMany",
+			"model": "PaginaVendaPropria",
 			"foreignKey": ""
 		}
 	},
@@ -61,6 +85,31 @@
 			"http": [
          		{
           			"path": "/registraImagem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"AlteraDisponivel": {
+			"accepts": [
+				{
+					"arg": "idImagem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/alteraDisponivel",
    					"verb": "post"
  				}
  			]

@@ -13,8 +13,8 @@ import { AnuncioAdsDisplay } from '../../models/AnuncioAdsDisplay';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { ProdutoAfiliadoHotmart } from '../../models/ProdutoAfiliadoHotmart';
 import { PaginaVenda } from '../../models/PaginaVenda';
-import { AnuncioCampanhaAdsDisplay } from '../../models/AnuncioCampanhaAdsDisplay';
 import { ImagemConjunto } from '../../models/ImagemConjunto';
+import { AnuncioCampanhaAdsRedeDisplay } from '../../models/AnuncioCampanhaAdsRedeDisplay';
 
 
 /**
@@ -94,99 +94,6 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
   }
 
   /**
-   * Localize um item relacionado por ID para anuncioCampanhaAdsDisplays.
-   *
-   * @param {any} id AnuncioAdsDisplay id
-   *
-   * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AnuncioAdsDisplay` object.)
-   * </em>
-   */
-  public findByIdAnuncioCampanhaAdsDisplays(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Excluir um item relacionado por ID para anuncioCampanhaAdsDisplays.
-   *
-   * @param {any} id AnuncioAdsDisplay id
-   *
-   * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyByIdAnuncioCampanhaAdsDisplays(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Atualizar um item relacionado por ID para anuncioCampanhaAdsDisplays.
-   *
-   * @param {any} id AnuncioAdsDisplay id
-   *
-   * @param {any} fk Chave estrangeira para anuncioCampanhaAdsDisplays
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `AnuncioAdsDisplay` object.)
-   * </em>
-   */
-  public updateByIdAnuncioCampanhaAdsDisplays(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * Busca relação imagemConjunto de belongsTo.
    *
    * @param {any} id AnuncioAdsDisplay id
@@ -217,7 +124,100 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
   }
 
   /**
-   * anuncioCampanhaAdsDisplays consultas de AnuncioAdsDisplay.
+   * Localize um item relacionado por ID para anuncioCampanhaAdsRedeDisplays.
+   *
+   * @param {any} id AnuncioAdsDisplay id
+   *
+   * @param {any} fk Chave estrangeira para anuncioCampanhaAdsRedeDisplays
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AnuncioAdsDisplay` object.)
+   * </em>
+   */
+  public findByIdAnuncioCampanhaAdsRedeDisplays(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsRedeDisplays/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para anuncioCampanhaAdsRedeDisplays.
+   *
+   * @param {any} id AnuncioAdsDisplay id
+   *
+   * @param {any} fk Chave estrangeira para anuncioCampanhaAdsRedeDisplays
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdAnuncioCampanhaAdsRedeDisplays(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsRedeDisplays/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para anuncioCampanhaAdsRedeDisplays.
+   *
+   * @param {any} id AnuncioAdsDisplay id
+   *
+   * @param {any} fk Chave estrangeira para anuncioCampanhaAdsRedeDisplays
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `AnuncioAdsDisplay` object.)
+   * </em>
+   */
+  public updateByIdAnuncioCampanhaAdsRedeDisplays(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsRedeDisplays/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * anuncioCampanhaAdsRedeDisplays consultas de AnuncioAdsDisplay.
    *
    * @param {any} id AnuncioAdsDisplay id
    *
@@ -232,10 +232,10 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
    * This usually means the response is a `AnuncioAdsDisplay` object.)
    * </em>
    */
-  public getAnuncioCampanhaAdsDisplays(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getAnuncioCampanhaAdsRedeDisplays(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays";
+    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsRedeDisplays";
     let _routeParams: any = {
       id: id
     };
@@ -247,7 +247,7 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no anuncioCampanhaAdsDisplays deste modelo.
+   * Cria uma nova instância no anuncioCampanhaAdsRedeDisplays deste modelo.
    *
    * @param {any} id AnuncioAdsDisplay id
    *
@@ -264,10 +264,10 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
    * This usually means the response is a `AnuncioAdsDisplay` object.)
    * </em>
    */
-  public createAnuncioCampanhaAdsDisplays(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createAnuncioCampanhaAdsRedeDisplays(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays";
+    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsRedeDisplays";
     let _routeParams: any = {
       id: id
     };
@@ -280,7 +280,7 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
   }
 
   /**
-   * Exclui todos os anuncioCampanhaAdsDisplays deste modelo.
+   * Exclui todos os anuncioCampanhaAdsRedeDisplays deste modelo.
    *
    * @param {any} id AnuncioAdsDisplay id
    *
@@ -290,10 +290,10 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteAnuncioCampanhaAdsDisplays(id: any, customHeaders?: Function): Observable<any> {
+  public deleteAnuncioCampanhaAdsRedeDisplays(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays";
+    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsRedeDisplays";
     let _routeParams: any = {
       id: id
     };
@@ -304,7 +304,7 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
   }
 
   /**
-   * anuncioCampanhaAdsDisplays contagens de AnuncioAdsDisplay.
+   * anuncioCampanhaAdsRedeDisplays contagens de AnuncioAdsDisplay.
    *
    * @param {any} id AnuncioAdsDisplay id
    *
@@ -318,10 +318,10 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countAnuncioCampanhaAdsDisplays(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countAnuncioCampanhaAdsRedeDisplays(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays/count";
+    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsRedeDisplays/count";
     let _routeParams: any = {
       id: id
     };
@@ -395,7 +395,7 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no anuncioCampanhaAdsDisplays deste modelo.
+   * Cria uma nova instância no anuncioCampanhaAdsRedeDisplays deste modelo.
    *
    * @param {any} id AnuncioAdsDisplay id
    *
@@ -412,10 +412,10 @@ export class AnuncioAdsDisplayApi extends BaseLoopBackApi {
    * This usually means the response is a `AnuncioAdsDisplay` object.)
    * </em>
    */
-  public createManyAnuncioCampanhaAdsDisplays(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyAnuncioCampanhaAdsRedeDisplays(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsDisplays";
+    "/AnuncioAdsDisplays/:id/anuncioCampanhaAdsRedeDisplays";
     let _routeParams: any = {
       id: id
     };

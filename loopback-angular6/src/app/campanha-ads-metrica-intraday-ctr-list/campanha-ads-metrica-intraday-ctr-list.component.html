@@ -1,0 +1,52 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header" >
+		<span>Melhores CTR em 90 dias</span>
+	</div>
+	<div class="dgc-painel-principal" *ngIf="listaBase">
+		<div class="dgc-card" *ngFor="let item of listaBase">
+			<div class="dgc-card-header">
+				<span>Custo: {{item.custoDia | currency: 'BRL'}}</span>
+  		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>cpc: {{item.cpc | currency: 'BRL'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>clique: {{item.clique}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>impressão: {{item.impressao}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>ctr: {{(item.clique / item.impressao) * 100 | number: '1.2-2'}} %</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>cpm: {{ (item.custoDia / item.impressao) * 1000 | currency : 'BRL'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			<span>1k: {{ item.cpc * 1000 | currency: 'BRL'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.dataHora | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span class="dgc-link" routerLink="/historicoPorCodigoAds/{{item.codigoAds}}">{{item.nomeCampanha}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span>{{item.status}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			 <span>{{item.primaryStatus}}</span>
+		   </div>
+		   <div class="dgc-card-detalhe">
+			   <span *ngIf="item.contaGoogle">Conta: {{item.contaGoogle.nome}}</span>
+		   </div>
+		   	<div class="dgc-card-comandos">
+				<button class="btn-primary btn-sm btn" (click)="jsonLocais(item)">Locais</button>
+				<button class="btn-primary btn-sm btn" (click)="jsonAudiencia(item)">Audiencia</button>
+				<button class="btn-primary btn-sm btn" (click)="jsonGrupo(item)">Grupo</button>
+            	<button class="btn-primary btn-sm btn" (click)="json(item)">Campanha</button>
+         	</div>
+		</div>
+  	</div>
+</div>
+

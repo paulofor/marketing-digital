@@ -19,9 +19,6 @@ public class ObtemIdeiaPalavraChaveAdsObj extends DaoAplicacao {
 		finalizar();
 	}
 	private void executaFinalizacao(DatasetAplicacao ds) {
-		DaoBase finalizacao1 = new IdeiaPalavraChave_AtualizaMaisRecentePalavraChaveImpl();
-		finalizacao1.setComum(ds);
-		finalizacao1.executa();
 		DaoBase finalizacao1 = new IdeiaPalavraChave_CalculaCpcAlvoImpl();
 		finalizacao1.setComum(ds);
 		finalizacao1.executa();

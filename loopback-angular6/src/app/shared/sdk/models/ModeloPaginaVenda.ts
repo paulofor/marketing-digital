@@ -10,6 +10,7 @@ export interface ModeloPaginaVendaInterface {
   "versao"?: string;
   "dataCriacao"?: Date;
   "codigoFonte"?: string;
+  "descricao"?: string;
   "id"?: number;
   posicaoElementoPaginaVendas?: PosicaoElementoPaginaVenda[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
@@ -20,6 +21,7 @@ export class ModeloPaginaVenda implements ModeloPaginaVendaInterface {
   "versao": string;
   "dataCriacao": Date;
   "codigoFonte": string;
+  "descricao": string;
   "id": number;
   posicaoElementoPaginaVendas: PosicaoElementoPaginaVenda[];
   versaoPaginaVendas: VersaoPaginaVenda[];
@@ -67,6 +69,10 @@ export class ModeloPaginaVenda implements ModeloPaginaVendaInterface {
         },
         "codigoFonte": {
           name: 'codigoFonte',
+          type: 'string'
+        },
+        "descricao": {
+          name: 'descricao',
           type: 'string'
         },
         "id": {

@@ -36,6 +36,7 @@ export class PosicaoElementoPaginaVendaEditRelBaseComponent implements OnInit {
 	carregaTela() {
 		this.srvDestino.find(this.getFiltro())
 			.subscribe((result:any[]) => {
+				console.log('PosicaoElementoPaginaVendaEditRelComponent:', result);
 				this.listaBase = result;
 			})
 	}

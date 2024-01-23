@@ -15,7 +15,7 @@ import gerador.criapaginavenda.passo.GeraArquivoVersao;
 public class GeraArquivoVersaoImpl extends GeraArquivoVersao {
 	
 	
-	private String DIRETORIO_TEMP = "/home/usuario/aplicacoes/MarketingDigital/pagina-venda-temp";
+	private String DIRETORIO_TEMP = "pagina-venda-temp";
 
 	@Override
 	protected boolean executaCustom(VersaoPaginaVenda versaoCorrenteCompleta) {

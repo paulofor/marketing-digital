@@ -1,6 +1,7 @@
 <div class="dgc-painel" *ngIf="principal">
 	<div class="dgc-painel-header" *ngIf="principal">
-		<span *ngIf="principal.produtoAfiliadoHotmart">{{principal.produtoAfiliadoHotmart.nome}} - </span>
+		<span *ngIf="principal.produtoAfiliadoHotmart">{{principal.produtoAfiliadoHotmart.nome}}</span>
+		<a href="{{principal.produtoAfiliadoHotmart.urlPropria}}">P.Venda</a>
 		<span class="dgc-direita">Versão: {{principal.versao}}</span>
 	</div>
 
@@ -17,13 +18,11 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="dgc-card">
-		<div *ngFor="let item of principal.versaoImagemPaginaVendas">
-			<div class="dgc-card-header">
-				{{item.dalleSolicitacaoImagem.prompt}}
+		<div style="display: flex;">
+			<div *ngFor="let item of principal.arquivoPaginaVendas">
+				<img src="{{item.imagemPaginaVenda.urlFinal}}" style="width: 200px; margin-right: 8px;"/>
 			</div>
-			
 		</div>
 		<div class="dgc-card-comandos">
 			<button class="btn-primary btn-sm btn" (click)="atualizaImagem()">Alterar</button>

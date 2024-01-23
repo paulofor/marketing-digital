@@ -1,0 +1,85 @@
+{
+	"name": "LoadPaginaVendaPropria",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"codigoPaginaVendaPropria": {
+			"type": "string"
+		},
+		"utmSource": {
+			"type": "string"
+		},
+		"utmMedium": {
+			"type": "string"
+		},
+		"utmCampaign": {
+			"type": "string"
+		},
+		"utmTerm": {
+			"type": "string"
+		},
+		"utmContent": {
+			"type": "string"
+		},
+		"codigoLoad": {
+			"type": "string"
+		},
+		"paginaVendaPropriaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"paginaVendaPropria": {
+			"type": "belongsTo",
+			"model": "PaginaVendaPropria",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"InsereItem": {
+			"accepts": [
+				{
+					"arg": "codigoPagina",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "utmCampaign",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "utmContent",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereItem",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

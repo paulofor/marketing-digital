@@ -43,6 +43,16 @@
 			"type": "hasMany",
 			"model": "PaginaVenda",
 			"foreignKey": ""
+		},
+		"imagemPaginaVendas": {
+			"type": "hasMany",
+			"model": "ImagemPaginaVenda",
+			"foreignKey": "hotmartId"
+		},
+		"paginaVendaProprias": {
+			"type": "hasMany",
+			"model": "PaginaVendaPropria",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

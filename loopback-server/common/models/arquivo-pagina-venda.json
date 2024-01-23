@@ -39,5 +39,36 @@
 	},
 	"acls": [],
 	"methods": {
+		"AtualizaRelacionamento": {
+			"accepts": [
+				{
+					"arg": "item",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaRelacionamento",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

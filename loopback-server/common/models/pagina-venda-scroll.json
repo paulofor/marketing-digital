@@ -17,10 +17,18 @@
 		},
 		"posicaoScroll": {
 			"type": "number"
+		},
+		"paginaVendaPropriaId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
+		"paginaVendaPropria": {
+			"type": "belongsTo",
+			"model": "PaginaVendaPropria",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {

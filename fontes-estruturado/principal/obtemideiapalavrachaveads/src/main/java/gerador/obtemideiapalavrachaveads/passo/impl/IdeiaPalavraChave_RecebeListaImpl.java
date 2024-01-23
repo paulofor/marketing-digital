@@ -16,7 +16,7 @@ public class IdeiaPalavraChave_RecebeListaImpl extends IdeiaPalavraChave_RecebeL
 	protected boolean executaCustom(VisitaProdutoHotmart visitaCorrente, List<IdeiaPalavraChave> listaPalavraChave) {
 		this.listaPalavra = listaPalavraChave;
 		this.hotmartId = visitaCorrente.getHotmartId();
-		if (this.listaPalavra.size() > 0 && this.listaPalavra.size() < 30) return true;
+		if (this.listaPalavra.size() > 0 && this.listaPalavra.size() < 100) return true;
 		else return false;
 	} 
 

@@ -1,18 +1,25 @@
 /* tslint:disable */
+import {
+  PaginaVendaPropria
+} from '../index';
 
 declare var Object: any;
 export interface PaginaVendaScrollInterface {
   "hotmartId"?: number;
   "dataHora"?: Date;
   "posicaoScroll"?: number;
+  "paginaVendaPropriaId"?: number;
   "id"?: number;
+  paginaVendaPropria?: PaginaVendaPropria;
 }
 
 export class PaginaVendaScroll implements PaginaVendaScrollInterface {
   "hotmartId": number;
   "dataHora": Date;
   "posicaoScroll": number;
+  "paginaVendaPropriaId": number;
   "id": number;
+  paginaVendaPropria: PaginaVendaPropria;
   constructor(data?: PaginaVendaScrollInterface) {
     Object.assign(this, data);
   }
@@ -58,12 +65,24 @@ export class PaginaVendaScroll implements PaginaVendaScrollInterface {
           name: 'posicaoScroll',
           type: 'number'
         },
+        "paginaVendaPropriaId": {
+          name: 'paginaVendaPropriaId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        paginaVendaPropria: {
+          name: 'paginaVendaPropria',
+          type: 'PaginaVendaPropria',
+          model: 'PaginaVendaPropria',
+          relationType: 'belongsTo',
+                  keyFrom: 'paginaVendaPropriaId',
+          keyTo: 'id'
+        },
       }
     }
   }

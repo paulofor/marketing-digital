@@ -164,6 +164,56 @@
    					"verb": "post"
  				}
  			]
+		},
+		"ListaHistorico": {
+			"accepts": [
+				{
+					"arg": "codigoAds",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "limite",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaHistorico",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"MelhoresCtrHistorico": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/melhoresCtrHistorico",
+   					"verb": "get"
+ 				}
+ 			]
 		}
 	}
 }

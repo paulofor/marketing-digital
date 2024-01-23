@@ -22,9 +22,9 @@ public class ObtemVendasHotmartObj extends DaoAplicacao {
 		DaoBase finalizacao1 = new ProdutoAfiliadoHotmart_AtualizaTemperaturaAtualImpl();
 		finalizacao1.setComum(ds);
 		finalizacao1.executa();
-		DaoBase finalizacao1 = new VisitaProdutoHotmart_AjustaDeltaTemperaturaImpl();
-		finalizacao1.setComum(ds);
-		finalizacao1.executa();
+		DaoBase finalizacao2 = new VisitaProdutoHotmart_AjustaDeltaTemperaturaImpl();
+		finalizacao2.setComum(ds);
+		finalizacao2.executa();
 	}
 	public int getNumPasso() {
 		return 1;

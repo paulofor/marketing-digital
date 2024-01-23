@@ -45,6 +45,21 @@ public class RepositorioVersaoPaginaVenda extends ModelRepository<VersaoPaginaVe
 		invokeStaticMethod("obtemPorId", params,   new JsonObjectParser<VersaoPaginaVenda>(this, callback));
 	}
 
+	public synchronized void obtemListaCriacaoPaginaPropria(final ListCallback<VersaoPaginaVenda> callback ) {
+		RestContractItem contrato = new RestContractItem("VersaoPaginaVendas/obtemListaCriacaoPaginaPropria","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "VersaoPaginaVenda.obtemListaCriacaoPaginaPropria");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemListaCriacaoPaginaPropria", params,   new JsonArrayParser<VersaoPaginaVenda>(this, callback));
+	}
+
+	public synchronized void criouPaginaVendaPropria(int idVersao ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("VersaoPaginaVendas/criouPaginaVendaPropria","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "VersaoPaginaVenda.criouPaginaVendaPropria");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idVersao", idVersao);
+		invokeStaticMethod("criouPaginaVendaPropria", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<VersaoPaginaVenda> listaEntrada) {
 		JSONArray lista = new JSONArray();

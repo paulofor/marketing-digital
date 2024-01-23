@@ -22,6 +22,7 @@ public class DalleSolicitacaoImagem extends Model {
 	private String objetivo;
 	private String arquivo;
 	private int quantidadeImagem;
+	private String dataProcessamento;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
@@ -54,6 +55,7 @@ public class DalleSolicitacaoImagem extends Model {
 			obj.put("objetivo", objetivo);
 			obj.put("arquivo", arquivo);
 			obj.put("quantidadeImagem", quantidadeImagem);
+			obj.put("dataProcessamento", dataProcessamento);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -108,6 +110,12 @@ public class DalleSolicitacaoImagem extends Model {
 	}
 	public int getQuantidadeImagem() { 
 		return this.quantidadeImagem;
+	}
+	public void setDataProcessamento(String valor) { 
+		this.dataProcessamento = valor;
+	}
+	public String getDataProcessamento() { 
+		return this.dataProcessamento;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {

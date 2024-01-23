@@ -32,6 +32,9 @@
 		},
 		"quantidadeImagem": {
 			"type": "number"
+		},
+		"dataProcessamento": {
+			"type": "date"
 		}
 	},
 	"validations": [],
@@ -120,6 +123,56 @@
          		{
           			"path": "/listaParaGerarImagem",
    					"verb": "get"
+ 				}
+ 			]
+		},
+		"RegistraProcessamento": {
+			"accepts": [
+				{
+					"arg": "idSolicitacao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraProcessamento",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"InverteEnviar": {
+			"accepts": [
+				{
+					"arg": "idSolicitacao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/inverteEnviar",
+   					"verb": "post"
  				}
  			]
 		}

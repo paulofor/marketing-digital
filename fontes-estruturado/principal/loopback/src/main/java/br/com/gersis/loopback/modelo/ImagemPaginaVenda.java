@@ -19,10 +19,16 @@ public class ImagemPaginaVenda extends Model {
 	private String promptRevisado;
 	private int dalleSolicitacaoImagemId;
 	private int disponivel;
+	private String urlFinal;
+	private int produtoProprioId;
+	private int hotmartId;
 	// Relacionamentos 1
 	private DalleSolicitacaoImagem DalleSolicitacaoImagem;
+	private ProdutoAfiliadoHotlink ProdutoAfiliadoHotlink;
+	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
 	private List<ArquivoPaginaVenda> ArquivoPaginaVendas;
+	private List<PaginaVendaPropria> PaginaVendaProprias;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -47,6 +53,9 @@ public class ImagemPaginaVenda extends Model {
 			obj.put("promptRevisado", promptRevisado);
 			obj.put("dalleSolicitacaoImagemId", dalleSolicitacaoImagemId);
 			obj.put("disponivel", disponivel);
+			obj.put("urlFinal", urlFinal);
+			obj.put("produtoProprioId", produtoProprioId);
+			obj.put("hotmartId", hotmartId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -84,6 +93,24 @@ public class ImagemPaginaVenda extends Model {
 	public int getDisponivel() { 
 		return this.disponivel;
 	}
+	public void setUrlFinal(String valor) { 
+		this.urlFinal = valor;
+	}
+	public String getUrlFinal() { 
+		return this.urlFinal;
+	}
+	public void setProdutoProprioId(int valor) { 
+		this.produtoProprioId = valor;
+	}
+	public int getProdutoProprioId() { 
+		return this.produtoProprioId;
+	}
+	public void setHotmartId(int valor) { 
+		this.hotmartId = valor;
+	}
+	public int getHotmartId() { 
+		return this.hotmartId;
+	}
 
 	public DalleSolicitacaoImagem getDalleSolicitacaoImagem() {
 		return DalleSolicitacaoImagem;
@@ -91,6 +118,20 @@ public class ImagemPaginaVenda extends Model {
 	public void setDalleSolicitacaoImagem(HashMap valor) {
 		this.DalleSolicitacaoImagem = new DalleSolicitacaoImagem();
 		BeanUtil.setProperties(this.DalleSolicitacaoImagem, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotlink getProdutoAfiliadoHotlink() {
+		return ProdutoAfiliadoHotlink;
+	}
+	public void setProdutoAfiliadoHotlink(HashMap valor) {
+		this.ProdutoAfiliadoHotlink = new ProdutoAfiliadoHotlink();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotlink, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoProprio getProdutoProprio() {
+		return ProdutoProprio;
+	}
+	public void setProdutoProprio(HashMap valor) {
+		this.ProdutoProprio = new ProdutoProprio();
+		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ArquivoPaginaVenda> getArquivoPaginaVendas() {
 		return  ArquivoPaginaVendas;
@@ -102,6 +143,18 @@ public class ImagemPaginaVenda extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ArquivoPaginaVendas.add((ArquivoPaginaVenda) objeto);
+		}
+	}
+	public List<PaginaVendaPropria> getPaginaVendaProprias() {
+		return  PaginaVendaProprias;
+	}
+	public void setPaginaVendaProprias(List<PaginaVendaPropria> valores) {
+		this.PaginaVendaProprias = new ArrayList<PaginaVendaPropria>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaPropria();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaProprias.add((PaginaVendaPropria) objeto);
 		}
 	}
 }

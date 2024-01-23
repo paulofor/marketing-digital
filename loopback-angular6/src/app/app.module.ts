@@ -106,6 +106,10 @@ import { ConteudoElementoEditComponent } from './conteudo-elemento-edit/conteudo
 import { ModeloPaginaVendaFonteEditComponent } from './modelo-pagina-venda-fonte-edit/modelo-pagina-venda-fonte-edit.component';
 import { VersaoImagemPaginaVendaEditRelComponent } from './versao-imagem-pagina-venda-edit-rel/versao-imagem-pagina-venda-edit-rel.component';
 import { DalleSolicitacaoImagemPorProdutoListComponent } from './dalle-solicitacao-imagem-por-produto-list/dalle-solicitacao-imagem-por-produto-list.component';
+import { DalleSolicitacaoComImagemPorProdutoListComponent } from './dalle-solicitacao-com-imagem-por-produto-list/dalle-solicitacao-com-imagem-por-produto-list.component';
+import { ArquivoPaginaVendaEditRelComponent } from './arquivo-pagina-venda-edit-rel/arquivo-pagina-venda-edit-rel.component';
+import { CampanhaAdsMetricaIntradayPorCampanhaListComponent } from './campanha-ads-metrica-intraday-por-campanha-list/campanha-ads-metrica-intraday-por-campanha-list.component';
+import { CampanhaAdsMetricaIntradayCtrListComponent } from './campanha-ads-metrica-intraday-ctr-list/campanha-ads-metrica-intraday-ctr-list.component';
 
 
 
@@ -188,7 +192,11 @@ registerLocaleData(localePt, 'pt-BR');
     ConteudoElementoEditComponent,
     ModeloPaginaVendaFonteEditComponent,
     VersaoImagemPaginaVendaEditRelComponent,
-    DalleSolicitacaoImagemPorProdutoListComponent
+    DalleSolicitacaoImagemPorProdutoListComponent,
+    DalleSolicitacaoComImagemPorProdutoListComponent,
+    ArquivoPaginaVendaEditRelComponent,
+    CampanhaAdsMetricaIntradayPorCampanhaListComponent,
+    CampanhaAdsMetricaIntradayCtrListComponent
   ],
   imports: [
     BrowserModule,
@@ -261,7 +269,8 @@ registerLocaleData(localePt, 'pt-BR');
     ConteudoElementoEditComponent,
     ModeloPaginaVendaFonteEditComponent,
     DalleSolicitacaoImagemEditComponent,
-    VersaoImagemPaginaVendaEditRelComponent
+    VersaoImagemPaginaVendaEditRelComponent,
+    ArquivoPaginaVendaEditRelComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -5,6 +5,7 @@ import { ElementoModeloPaginaVenda, ElementoModeloPaginaVendaApi, VersaoPaginaVe
 import { VersaoPaginaVendaDetalheBaseComponent } from './versao-pagina-venda-detalhe-base.component';
 import { ConteudoElementoEditComponent } from '../conteudo-elemento-edit/conteudo-elemento-edit.component';
 import { VersaoImagemPaginaVendaEditRelComponent } from '../versao-imagem-pagina-venda-edit-rel/versao-imagem-pagina-venda-edit-rel.component';
+import { ArquivoPaginaVendaEditRelComponent } from '../arquivo-pagina-venda-edit-rel/arquivo-pagina-venda-edit-rel.component';
 
 @Component({
 	selector: 'app-versao-pagina-venda-detalhe',
@@ -39,7 +40,7 @@ export class VersaoPaginaVendaDetalheComponent extends VersaoPaginaVendaDetalheB
         this.dialog.afterAllClosed.subscribe(result => {
             this.carregaTela();
         });
-        this.dialog.open(VersaoImagemPaginaVendaEditRelComponent, {
+        this.dialog.open(ArquivoPaginaVendaEditRelComponent, {
             width: '800px',
             data: {
                 origem: this.principal
@@ -55,8 +56,8 @@ export class VersaoPaginaVendaDetalheComponent extends VersaoPaginaVendaDetalheB
 		return {
 			'include' : [
 				'produtoAfiliadoHotmart',
-				{'relation' : 'versaoImagemPaginaVendas' , 'scope' : {
-					'include' : 'dalleSolicitacaoImagem'}}
+				{'relation' : 'arquivoPaginaVendas' , 'scope' : {
+					'include' : 'imagemPaginaVenda'}}
 			]
 		}
 	}

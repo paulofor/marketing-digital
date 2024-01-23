@@ -31,28 +31,10 @@ import java.io.IOException;
  */
 public class GenerateForecastMetrics {
 
-  private static class GenerateForecastMetricParams extends CodeSampleParams {
-
-    @Parameter(
-        names = ArgumentNames.CUSTOMER_ID,
-        description = "The customer in which to create a new keyword plan.")
-    public Long customerId;
-
-    @Parameter(
-        names = ArgumentNames.KEYWORD_PLAN_ID,
-        description = "The keyword plan ID for which to generate metrics.")
-    public Long keywordPlanId;
-  }
+ 
 
   public static void main(String[] args) {
-    GenerateForecastMetricParams params = new GenerateForecastMetricParams();
-    if (!params.parseArguments(args)) {
-
-      // Optional, specify the customer ID for which the call is made.
-      params.customerId = Long.valueOf("INSERT_CUSTOMER_ID");
-
-      params.keywordPlanId = Long.valueOf("INSERT_KEYWORD_PLAN_ID");
-    }
+ 
     GoogleAdsClient googleAdsClient = null;
     try {
       googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();

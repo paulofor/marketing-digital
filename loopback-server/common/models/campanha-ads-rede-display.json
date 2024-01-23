@@ -79,9 +79,9 @@
 			"model": "PublicoAlvoAds",
 			"foreignKey": ""
 		},
-		"anuncioCampanhaAdsDisplays": {
+		"anuncioCampanhaAdsRedeDisplays": {
 			"type": "hasMany",
-			"model": "AnuncioCampanhaAdsDisplay",
+			"model": "AnuncioCampanhaAdsRedeDisplay",
 			"foreignKey": ""
 		}
 	},

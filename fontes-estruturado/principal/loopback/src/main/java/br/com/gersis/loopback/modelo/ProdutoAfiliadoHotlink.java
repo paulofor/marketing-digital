@@ -24,6 +24,8 @@ public class ProdutoAfiliadoHotlink extends Model {
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
 	private List<PaginaVenda> PaginaVendas;
+	private List<ImagemPaginaVenda> ImagemPaginaVendas;
+	private List<PaginaVendaPropria> PaginaVendaProprias;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -110,6 +112,30 @@ public class ProdutoAfiliadoHotlink extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PaginaVendas.add((PaginaVenda) objeto);
+		}
+	}
+	public List<ImagemPaginaVenda> getImagemPaginaVendas() {
+		return  ImagemPaginaVendas;
+	}
+	public void setImagemPaginaVendas(List<ImagemPaginaVenda> valores) {
+		this.ImagemPaginaVendas = new ArrayList<ImagemPaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ImagemPaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ImagemPaginaVendas.add((ImagemPaginaVenda) objeto);
+		}
+	}
+	public List<PaginaVendaPropria> getPaginaVendaProprias() {
+		return  PaginaVendaProprias;
+	}
+	public void setPaginaVendaProprias(List<PaginaVendaPropria> valores) {
+		this.PaginaVendaProprias = new ArrayList<PaginaVendaPropria>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaPropria();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaProprias.add((PaginaVendaPropria) objeto);
 		}
 	}
 }

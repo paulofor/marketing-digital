@@ -1,0 +1,868 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <script data-cfasync="false" data-no-defer="1" data-no-minify="1"
+        data-no-optimize="1">var ewww_webp_supported = !1; function check_webp_feature(A, e) { var w; e = void 0 !== e ? e : function () { }, ewww_webp_supported ? e(ewww_webp_supported) : ((w = new Image).onload = function () { ewww_webp_supported = 0 < w.width && 0 < w.height, e && e(ewww_webp_supported) }, w.onerror = function () { e && e(!1) }, w.src = "data:image/webp;base64," + { alpha: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==" }[A]) } check_webp_feature("alpha");</script>
+    <script data-cfasync="false" data-no-defer="1" data-no-minify="1"
+        data-no-optimize="1">var Arrive = function (c, w) { "use strict"; if (c.MutationObserver && "undefined" != typeof HTMLElement) { var r, a = 0, u = (r = HTMLElement.prototype.matches || HTMLElement.prototype.webkitMatchesSelector || HTMLElement.prototype.mozMatchesSelector || HTMLElement.prototype.msMatchesSelector, { matchesSelector: function (e, t) { return e instanceof HTMLElement && r.call(e, t) }, addMethod: function (e, t, r) { var a = e[t]; e[t] = function () { return r.length == arguments.length ? r.apply(this, arguments) : "function" == typeof a ? a.apply(this, arguments) : void 0 } }, callCallbacks: function (e, t) { t && t.options.onceOnly && 1 == t.firedElems.length && (e = [e[0]]); for (var r, a = 0; r = e[a]; a++)r && r.callback && r.callback.call(r.elem, r.elem); t && t.options.onceOnly && 1 == t.firedElems.length && t.me.unbindEventWithSelectorAndCallback.call(t.target, t.selector, t.callback) }, checkChildNodesRecursively: function (e, t, r, a) { for (var i, n = 0; i = e[n]; n++)r(i, t, a) && a.push({ callback: t.callback, elem: i }), 0 < i.childNodes.length && u.checkChildNodesRecursively(i.childNodes, t, r, a) }, mergeArrays: function (e, t) { var r, a = {}; for (r in e) e.hasOwnProperty(r) && (a[r] = e[r]); for (r in t) t.hasOwnProperty(r) && (a[r] = t[r]); return a }, toElementsArray: function (e) { return e = void 0 !== e && ("number" != typeof e.length || e === c) ? [e] : e } }), e = (l.prototype.addEvent = function (e, t, r, a) { a = { target: e, selector: t, options: r, callback: a, firedElems: [] }; return this._beforeAdding && this._beforeAdding(a), this._eventsBucket.push(a), a }, l.prototype.removeEvent = function (e) { for (var t, r = this._eventsBucket.length - 1; t = this._eventsBucket[r]; r--)e(t) && (this._beforeRemoving && this._beforeRemoving(t), (t = this._eventsBucket.splice(r, 1)) && t.length && (t[0].callback = null)) }, l.prototype.beforeAdding = function (e) { this._beforeAdding = e }, l.prototype.beforeRemoving = function (e) { this._beforeRemoving = e }, l), t = function (i, n) { var o = new e, l = this, s = { fireOnAttributesModification: !1 }; return o.beforeAdding(function (t) { var e = t.target; e !== c.document && e !== c || (e = document.getElementsByTagName("html")[0]); var r = new MutationObserver(function (e) { n.call(this, e, t) }), a = i(t.options); r.observe(e, a), t.observer = r, t.me = l }), o.beforeRemoving(function (e) { e.observer.disconnect() }), this.bindEvent = function (e, t, r) { t = u.mergeArrays(s, t); for (var a = u.toElementsArray(this), i = 0; i < a.length; i++)o.addEvent(a[i], e, t, r) }, this.unbindEvent = function () { var r = u.toElementsArray(this); o.removeEvent(function (e) { for (var t = 0; t < r.length; t++)if (this === w || e.target === r[t]) return !0; return !1 }) }, this.unbindEventWithSelectorOrCallback = function (r) { var a = u.toElementsArray(this), i = r, e = "function" == typeof r ? function (e) { for (var t = 0; t < a.length; t++)if ((this === w || e.target === a[t]) && e.callback === i) return !0; return !1 } : function (e) { for (var t = 0; t < a.length; t++)if ((this === w || e.target === a[t]) && e.selector === r) return !0; return !1 }; o.removeEvent(e) }, this.unbindEventWithSelectorAndCallback = function (r, a) { var i = u.toElementsArray(this); o.removeEvent(function (e) { for (var t = 0; t < i.length; t++)if ((this === w || e.target === i[t]) && e.selector === r && e.callback === a) return !0; return !1 }) }, this }, i = new function () { var s = { fireOnAttributesModification: !1, onceOnly: !1, existing: !1 }; function n(e, t, r) { return !(!u.matchesSelector(e, t.selector) || (e._id === w && (e._id = a++), -1 != t.firedElems.indexOf(e._id))) && (t.firedElems.push(e._id), !0) } var c = (i = new t(function (e) { var t = { attributes: !1, childList: !0, subtree: !0 }; return e.fireOnAttributesModification && (t.attributes = !0), t }, function (e, i) { e.forEach(function (e) { var t = e.addedNodes, r = e.target, a = []; null !== t && 0 < t.length ? u.checkChildNodesRecursively(t, i, n, a) : "attributes" === e.type && n(r, i) && a.push({ callback: i.callback, elem: r }), u.callCallbacks(a, i) }) })).bindEvent; return i.bindEvent = function (e, t, r) { t = void 0 === r ? (r = t, s) : u.mergeArrays(s, t); var a = u.toElementsArray(this); if (t.existing) { for (var i = [], n = 0; n < a.length; n++)for (var o = a[n].querySelectorAll(e), l = 0; l < o.length; l++)i.push({ callback: r, elem: o[l] }); if (t.onceOnly && i.length) return r.call(i[0].elem, i[0].elem); setTimeout(u.callCallbacks, 1, i) } c.call(this, e, t, r) }, i }, o = new function () { var a = {}; function i(e, t) { return u.matchesSelector(e, t.selector) } var n = (o = new t(function () { return { childList: !0, subtree: !0 } }, function (e, r) { e.forEach(function (e) { var t = e.removedNodes, e = []; null !== t && 0 < t.length && u.checkChildNodesRecursively(t, r, i, e), u.callCallbacks(e, r) }) })).bindEvent; return o.bindEvent = function (e, t, r) { t = void 0 === r ? (r = t, a) : u.mergeArrays(a, t), n.call(this, e, t, r) }, o }; d(HTMLElement.prototype), d(NodeList.prototype), d(HTMLCollection.prototype), d(HTMLDocument.prototype), d(Window.prototype); var n = {}; return s(i, n, "unbindAllArrive"), s(o, n, "unbindAllLeave"), n } function l() { this._eventsBucket = [], this._beforeAdding = null, this._beforeRemoving = null } function s(e, t, r) { u.addMethod(t, r, e.unbindEvent), u.addMethod(t, r, e.unbindEventWithSelectorOrCallback), u.addMethod(t, r, e.unbindEventWithSelectorAndCallback) } function d(e) { e.arrive = i.bindEvent, s(i, e, "unbindArrive"), e.leave = o.bindEvent, s(o, e, "unbindLeave") } }(window, void 0), ewww_webp_supported = !1; function check_webp_feature(e, t) { var r; ewww_webp_supported ? t(ewww_webp_supported) : ((r = new Image).onload = function () { ewww_webp_supported = 0 < r.width && 0 < r.height, t(ewww_webp_supported) }, r.onerror = function () { t(!1) }, r.src = "data:image/webp;base64," + { alpha: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==", animation: "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA" }[e]) } function ewwwLoadImages(e) { if (e) { for (var t = document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"), r = 0, a = t.length; r < a; r++)ewwwAttr(t[r], "data-src", t[r].getAttribute("data-webp")), ewwwAttr(t[r], "data-thumbnail", t[r].getAttribute("data-webp-thumbnail")); for (var i = document.querySelectorAll(".rev_slider ul li"), r = 0, a = i.length; r < a; r++) { ewwwAttr(i[r], "data-thumb", i[r].getAttribute("data-webp-thumb")); for (var n = 1; n < 11;)ewwwAttr(i[r], "data-param" + n, i[r].getAttribute("data-webp-param" + n)), n++ } for (r = 0, a = (i = document.querySelectorAll(".rev_slider img")).length; r < a; r++)ewwwAttr(i[r], "data-lazyload", i[r].getAttribute("data-webp-lazyload")); for (var o = document.querySelectorAll("div.woocommerce-product-gallery__image"), r = 0, a = o.length; r < a; r++)ewwwAttr(o[r], "data-thumb", o[r].getAttribute("data-webp-thumb")) } for (var l = document.querySelectorAll("video"), r = 0, a = l.length; r < a; r++)ewwwAttr(l[r], "poster", e ? l[r].getAttribute("data-poster-webp") : l[r].getAttribute("data-poster-image")); for (var s, c = document.querySelectorAll("img.ewww_webp_lazy_load"), r = 0, a = c.length; r < a; r++)e && (ewwwAttr(c[r], "data-lazy-srcset", c[r].getAttribute("data-lazy-srcset-webp")), ewwwAttr(c[r], "data-srcset", c[r].getAttribute("data-srcset-webp")), ewwwAttr(c[r], "data-lazy-src", c[r].getAttribute("data-lazy-src-webp")), ewwwAttr(c[r], "data-src", c[r].getAttribute("data-src-webp")), ewwwAttr(c[r], "data-orig-file", c[r].getAttribute("data-webp-orig-file")), ewwwAttr(c[r], "data-medium-file", c[r].getAttribute("data-webp-medium-file")), ewwwAttr(c[r], "data-large-file", c[r].getAttribute("data-webp-large-file")), null != (s = c[r].getAttribute("srcset")) && !1 !== s && s.includes("R0lGOD") && ewwwAttr(c[r], "src", c[r].getAttribute("data-lazy-src-webp"))), c[r].className = c[r].className.replace(/\bewww_webp_lazy_load\b/, ""); for (var w = document.querySelectorAll(".ewww_webp"), r = 0, a = w.length; r < a; r++)e ? (ewwwAttr(w[r], "srcset", w[r].getAttribute("data-srcset-webp")), ewwwAttr(w[r], "src", w[r].getAttribute("data-src-webp")), ewwwAttr(w[r], "data-orig-file", w[r].getAttribute("data-webp-orig-file")), ewwwAttr(w[r], "data-medium-file", w[r].getAttribute("data-webp-medium-file")), ewwwAttr(w[r], "data-large-file", w[r].getAttribute("data-webp-large-file")), ewwwAttr(w[r], "data-large_image", w[r].getAttribute("data-webp-large_image")), ewwwAttr(w[r], "data-src", w[r].getAttribute("data-webp-src"))) : (ewwwAttr(w[r], "srcset", w[r].getAttribute("data-srcset-img")), ewwwAttr(w[r], "src", w[r].getAttribute("data-src-img"))), w[r].className = w[r].className.replace(/\bewww_webp\b/, "ewww_webp_loaded"); window.jQuery && jQuery.fn.isotope && jQuery.fn.imagesLoaded && (jQuery(".fusion-posts-container-infinite").imagesLoaded(function () { jQuery(".fusion-posts-container-infinite").hasClass("isotope") && jQuery(".fusion-posts-container-infinite").isotope() }), jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function () { jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope() })) } function ewwwWebPInit(e) { ewwwLoadImages(e), ewwwNggLoadGalleries(e), document.arrive(".ewww_webp", function () { ewwwLoadImages(e) }), document.arrive(".ewww_webp_lazy_load", function () { ewwwLoadImages(e) }), document.arrive("videos", function () { ewwwLoadImages(e) }), "loading" == document.readyState ? document.addEventListener("DOMContentLoaded", ewwwJSONParserInit) : ("undefined" != typeof galleries && ewwwNggParseGalleries(e), ewwwWooParseVariations(e)) } function ewwwAttr(e, t, r) { null != r && !1 !== r && e.setAttribute(t, r) } function ewwwJSONParserInit() { "undefined" != typeof galleries && check_webp_feature("alpha", ewwwNggParseGalleries), check_webp_feature("alpha", ewwwWooParseVariations) } function ewwwWooParseVariations(e) { if (e) for (var t = document.querySelectorAll("form.variations_form"), r = 0, a = t.length; r < a; r++) { var i = t[r].getAttribute("data-product_variations"), n = !1; try { for (var o in i = JSON.parse(i)) void 0 !== i[o] && void 0 !== i[o].image && (void 0 !== i[o].image.src_webp && (i[o].image.src = i[o].image.src_webp, n = !0), void 0 !== i[o].image.srcset_webp && (i[o].image.srcset = i[o].image.srcset_webp, n = !0), void 0 !== i[o].image.full_src_webp && (i[o].image.full_src = i[o].image.full_src_webp, n = !0), void 0 !== i[o].image.gallery_thumbnail_src_webp && (i[o].image.gallery_thumbnail_src = i[o].image.gallery_thumbnail_src_webp, n = !0), void 0 !== i[o].image.thumb_src_webp && (i[o].image.thumb_src = i[o].image.thumb_src_webp, n = !0)); n && ewwwAttr(t[r], "data-product_variations", JSON.stringify(i)) } catch (e) { } } } function ewwwNggParseGalleries(e) { if (e) for (var t in galleries) { var r = galleries[t]; galleries[t].images_list = ewwwNggParseImageList(r.images_list) } } function ewwwNggLoadGalleries(e) { e && document.addEventListener("ngg.galleria.themeadded", function (e, t) { window.ngg_galleria._create_backup = window.ngg_galleria.create, window.ngg_galleria.create = function (e, t) { var r = $(e).data("id"); return galleries["gallery_" + r].images_list = ewwwNggParseImageList(galleries["gallery_" + r].images_list), window.ngg_galleria._create_backup(e, t) } }) } function ewwwNggParseImageList(e) { for (var t in e) { var r = e[t]; if (void 0 !== r["image-webp"] && (e[t].image = r["image-webp"], delete e[t]["image-webp"]), void 0 !== r["thumb-webp"] && (e[t].thumb = r["thumb-webp"], delete e[t]["thumb-webp"]), void 0 !== r.full_image_webp && (e[t].full_image = r.full_image_webp, delete e[t].full_image_webp), void 0 !== r.srcsets) for (var a in r.srcsets) nggSrcset = r.srcsets[a], void 0 !== r.srcsets[a + "-webp"] && (e[t].srcsets[a] = r.srcsets[a + "-webp"], delete e[t].srcsets[a + "-webp"]); if (void 0 !== r.full_srcsets) for (var i in r.full_srcsets) nggFSrcset = r.full_srcsets[i], void 0 !== r.full_srcsets[i + "-webp"] && (e[t].full_srcsets[i] = r.full_srcsets[i + "-webp"], delete e[t].full_srcsets[i + "-webp"]) } return e } check_webp_feature("alpha", ewwwWebPInit);</script>
+    <title>Termos de Uso – Desafio 19 Dias</title>
+    <meta name="robots" content="max-image-preview:large">
+    <link rel="alternate" type="application/rss+xml" title="Feed para Desafio 19 Dias »"
+        href="https://desafio19dias.com/feed/">
+    <link rel="alternate" type="application/rss+xml" title="Feed de comentários para Desafio 19 Dias »"
+        href="https://desafio19dias.com/comments/feed/">
+    <link rel="stylesheet" id="wp-block-library-css"
+        href="https://desafio19dias.com/wp-includes/css/dist/block-library/style.min.css?ver=6.3" media="all">
+    <style id="classic-theme-styles-inline-css">
+        /*! This file is auto-generated */
+        .wp-block-button__link {
+            color: #fff;
+            background-color: #32373c;
+            border-radius: 9999px;
+            box-shadow: none;
+            text-decoration: none;
+            padding: calc(.667em + 2px) calc(1.333em + 2px);
+            font-size: 1.125em
+        }
+
+        .wp-block-file__button {
+            background: #32373c;
+            color: #fff;
+            text-decoration: none
+        }
+    </style>
+    <style id="global-styles-inline-css">
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+            --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+            --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+            --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+        }
+
+        :where(.is-layout-flex) {
+            gap: 0.5em;
+        }
+
+        :where(.is-layout-grid) {
+            gap: 0.5em;
+        }
+
+        body .is-layout-flow>.alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-flow>.alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-flow>.aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained>.alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-constrained>.alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-constrained>.aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+            max-width: var(--wp--style--global--content-size);
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained>.alignwide {
+            max-width: var(--wp--style--global--wide-size);
+        }
+
+        body .is-layout-flex {
+            display: flex;
+        }
+
+        body .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        body .is-layout-flex>* {
+            margin: 0;
+        }
+
+        body .is-layout-grid {
+            display: grid;
+        }
+
+        body .is-layout-grid>* {
+            margin: 0;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+
+        .wp-block-navigation a:where(:not(.wp-element-button)) {
+            color: inherit;
+        }
+
+        :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+
+        .wp-block-pullquote {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+    </style>
+    <link rel="stylesheet" id="hello-elementor-css"
+        href="https://desafio19dias.com/wp-content/themes/hello-elementor/style.min.css?ver=2.8.1" media="all">
+    <link rel="stylesheet" id="hello-elementor-theme-style-css"
+        href="https://desafio19dias.com/wp-content/themes/hello-elementor/theme.min.css?ver=2.8.1" media="all">
+    <link rel="stylesheet" id="elementor-frontend-css"
+        href="https://desafio19dias.com/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.15.2"
+        media="all">
+    <link rel="stylesheet" id="elementor-post-11-css"
+        href="https://desafio19dias.com/wp-content/uploads/elementor/css/post-11.css?ver=1692214639" media="all">
+    <link rel="stylesheet" id="elementor-lazyload-css"
+        href="https://desafio19dias.com/wp-content/plugins/elementor/assets/css/modules/lazyload/frontend.min.css?ver=3.15.2"
+        media="all">
+    <link rel="stylesheet" id="swiper-css"
+        href="https://desafio19dias.com/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6"
+        media="all">
+    <link rel="stylesheet" id="elementor-global-css"
+        href="https://desafio19dias.com/wp-content/uploads/elementor/css/global.css?ver=1692214639" media="all">
+    <link rel="stylesheet" id="elementor-post-4278-css"
+        href="https://desafio19dias.com/wp-content/uploads/elementor/css/post-4278.css?ver=1692220218" media="all">
+    <link rel="stylesheet" id="google-fonts-1-css"
+        href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=6.3"
+        media="all">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <script src="https://desafio19dias.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js"
+        type="text/javascript"></script>
+    <script src="https://desafio19dias.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"
+        type="text/javascript"></script>
+    <link rel="https://api.w.org/" href="https://desafio19dias.com/wp-json/">
+    <link rel="alternate" type="application/json" href="https://desafio19dias.com/wp-json/wp/v2/pages/4278">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://desafio19dias.com/xmlrpc.php?rsd">
+    <link rel="canonical" href="https://desafio19dias.com/termos/">
+    <link rel="shortlink" href="https://desafio19dias.com/?p=4278">
+    <link rel="alternate" type="application/json+oembed"
+        href="https://desafio19dias.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdesafio19dias.com%2Ftermos%2F">
+    <link rel="alternate" type="text/xml+oembed"
+        href="https://desafio19dias.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdesafio19dias.com%2Ftermos%2F&amp;format=xml">
+    <meta name="generator"
+        content="Elementor 3.15.2; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+    <noscript>
+        <style>
+            .lazyload[data-src] {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <style>
+        .lazyload {
+            background-image: none !important;
+        }
+
+        .lazyload:before {
+            background-image: none !important;
+        }
+    </style>
+    <style>
+        .wp-block-gallery.is-cropped .blocks-gallery-item picture {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="icon" href="https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-32x32.png"
+        sizes="32x32">
+    <link rel="icon" href="https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-192x192.png"
+        sizes="192x192">
+    <link rel="apple-touch-icon"
+        href="https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-180x180.png">
+    <meta name="msapplication-TileImage"
+        content="https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-270x270.png">
+    <style id="wp-custom-css">
+        .elementor-swiper-button.elementor-swiper-button-prev {
+            background: #FF5700;
+            border-radius: 50px;
+            padding: 7px 8px 7px 8px;
+        }
+
+        .elementor-swiper-button.elementor-swiper-button-next {
+            background: #FF5700;
+            border-radius: 50px;
+            padding: 7px 8px 7px 8px;
+        }
+
+        header#site-header {
+            display: none !important;
+        }
+
+        footer#site-footer {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body
+    class="page-template-default page page-id-4278 e-lazyload elementor-default elementor-kit-11 elementor-page elementor-page-4278 webp-support e--ua-isTouchDevice e--ua-appleWebkit e--ua-safari e--ua-webkit"
+    data-elementor-device-mode="mobile">
+    <script data-cfasync="false" data-no-defer="1" data-no-minify="1"
+        data-no-optimize="1">if (typeof ewww_webp_supported === "undefined") { var ewww_webp_supported = !1 } if (ewww_webp_supported) { document.body.classList.add("webp-support") }</script>
+    <a class="skip-link screen-reader-text" href="#content">Pular para o conteúdo</a>
+    <header id="site-header" class="site-header dynamic-header menu-dropdown-tablet" role="banner">
+        <div class="header-inner">
+            <div class="site-branding show-title">
+                <h1 class="site-title show">
+                    <a href="https://desafio19dias.com/" title="Inicial" rel="home">
+                        Desafio 19 Dias </a>
+                </h1>
+            </div>
+        </div>
+    </header>
+    <main id="content" class="site-main post-4278 page type-page status-publish hentry">
+        <div class="page-content">
+            <div data-elementor-type="wp-page" data-elementor-id="4278" class="elementor elementor-4278">
+                <div class="elementor-element elementor-element-832baad e-flex e-con-boxed e-con" data-id="832baad"
+                    data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+                    <div class="e-con-inner">
+                        <div class="elementor-element elementor-element-9891bc5 e-flex e-con-boxed e-con"
+                            data-id="9891bc5" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+                            <div class="e-con-inner">
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-8b2596f e-flex e-con-boxed e-con"
+                            data-id="8b2596f" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+                            <div class="e-con-inner">
+                                <div class="elementor-element elementor-element-316bfbe elementor-icon-list--layout-inline elementor-align-right elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                    data-id="316bfbe" data-element_type="widget" data-widget_type="icon-list.default">
+                                    <div class="elementor-widget-container">
+                                        <link rel="stylesheet"
+                                            href="https://desafio19dias.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+                                        <ul class="elementor-icon-list-items elementor-inline-items">
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <span class="elementor-icon-list-icon">
+                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-genderless"
+                                                        viewBox="0 0 288 512" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M144 176c44.1 0 80 35.9 80 80s-35.9 80-80 80-80-35.9-80-80 35.9-80 80-80m0-64C64.5 112 0 176.5 0 256s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144z">
+                                                        </path>
+                                                    </svg> </span>
+                                                <span class="elementor-icon-list-text"></span>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <a href="https://desafio19dias.com/">
+                                                    <span class="elementor-icon-list-text">Início</span>
+                                                </a>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <span class="elementor-icon-list-icon">
+                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-genderless"
+                                                        viewBox="0 0 288 512" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M144 176c44.1 0 80 35.9 80 80s-35.9 80-80 80-80-35.9-80-80 35.9-80 80-80m0-64C64.5 112 0 176.5 0 256s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144z">
+                                                        </path>
+                                                    </svg> </span>
+                                                <span class="elementor-icon-list-text"></span>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <a href="/termos">
+                                                    <span class="elementor-icon-list-text">Termos de Uso</span>
+                                                </a>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <span class="elementor-icon-list-icon">
+                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-genderless"
+                                                        viewBox="0 0 288 512" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M144 176c44.1 0 80 35.9 80 80s-35.9 80-80 80-80-35.9-80-80 35.9-80 80-80m0-64C64.5 112 0 176.5 0 256s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144z">
+                                                        </path>
+                                                    </svg> </span>
+                                                <span class="elementor-icon-list-text"></span>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <a href="/privacidade">
+                                                    <span class="elementor-icon-list-text">Políticas de
+                                                        Privacidade</span>
+                                                </a>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <span class="elementor-icon-list-icon">
+                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-genderless"
+                                                        viewBox="0 0 288 512" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M144 176c44.1 0 80 35.9 80 80s-35.9 80-80 80-80-35.9-80-80 35.9-80 80-80m0-64C64.5 112 0 176.5 0 256s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144z">
+                                                        </path>
+                                                    </svg> </span>
+                                                <span class="elementor-icon-list-text"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="elementor-element elementor-element-f459469 e-flex e-con-boxed e-con" data-id="f459469"
+                    data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+                    <div class="e-con-inner">
+                        <div class="elementor-element elementor-element-bcdf9f7 elementor-widget__width-initial elementor-widget elementor-widget-image"
+                            data-id="bcdf9f7" data-element_type="widget" data-widget_type="image.default">
+                            <div class="elementor-widget-container">
+                                <style>
+                                    /*! elementor - v3.15.0 - 09-08-2023 */
+                                    .elementor-widget-image {
+                                        text-align: center
+                                    }
+
+                                    .elementor-widget-image a {
+                                        display: inline-block
+                                    }
+
+                                    .elementor-widget-image a img[src$=".svg"] {
+                                        width: 48px
+                                    }
+
+                                    .elementor-widget-image img {
+                                        vertical-align: middle;
+                                        display: inline-block
+                                    }
+                                </style> <img decoding="async" fetchpriority="high" width="768" height="284"
+                                    src="https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-768x284.png"
+                                    class="attachment-medium_large size-medium_large wp-image-1937 lazyautosizes lazyloaded"
+                                    alt=""
+                                    data-src="https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-768x284.png"
+                                    data-srcset="https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-768x284.png 768w, https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-300x111.png 300w, https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586.png 1024w"
+                                    data-sizes="auto" data-eio-rwidth="768" data-eio-rheight="284" sizes="375px"
+                                    srcset="https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-768x284.png 768w, https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-300x111.png 300w, https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586.png 1024w"><noscript><img
+                                        decoding="async" fetchpriority="high" width="768" height="284"
+                                        src="https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-768x284.png"
+                                        class="attachment-medium_large size-medium_large wp-image-1937" alt=""
+                                        srcset="https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-768x284.png 768w, https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586-300x111.png 300w, https://desafio19dias.com/wp-content/uploads/2021/06/D19-Logo-App2-e1675186898586.png 1024w"
+                                        sizes="(max-width: 768px) 100vw, 768px" data-eio="l" /></noscript>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="elementor-element elementor-element-b1c0b90 e-flex e-con-boxed e-con" data-id="b1c0b90"
+                    data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+                    <div class="e-con-inner">
+                        <div class="elementor-element elementor-element-e62910f elementor-widget elementor-widget-text-editor"
+                            data-id="e62910f" data-element_type="widget" data-widget_type="text-editor.default">
+                            <div class="elementor-widget-container">
+                                <style>
+                                    /*! elementor - v3.15.0 - 09-08-2023 */
+                                    .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+                                        background-color: #69727d;
+                                        color: #fff
+                                    }
+
+                                    .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+                                        color: #69727d;
+                                        border: 3px solid;
+                                        background-color: transparent
+                                    }
+
+                                    .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
+                                        margin-top: 8px
+                                    }
+
+                                    .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
+                                        width: 1em;
+                                        height: 1em
+                                    }
+
+                                    .elementor-widget-text-editor .elementor-drop-cap {
+                                        float: left;
+                                        text-align: center;
+                                        line-height: 1;
+                                        font-size: 50px
+                                    }
+
+                                    .elementor-widget-text-editor .elementor-drop-cap-letter {
+                                        display: inline-block
+                                    }
+                                </style>
+                                <p>&nbsp;</p>
+                                <h1 style="font-family: Roboto, sans-serif; color: #7a7a7a;">Termos de Uso</h1>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-e65482d elementor-widget__width-initial elementor-widget elementor-widget-text-editor"
+                            data-id="e65482d" data-element_type="widget" data-widget_type="text-editor.default">
+                            <div class="elementor-widget-container">
+                                <p><b>1. Termo de Aceitação</b></p>
+                                <p>Ao usar o site Desafio 19 Dias, você concorda em cumprir todos os termos de uso, leis
+                                    e regulamentos aplicáveis. Você é responsável por cumprir todas as leis locais. Se
+                                    você não concordar com estes termos, não pode usar ou acessar este site. O conteúdo
+                                    do site é protegido por leis de direitos autorais e marcas registradas.</p>
+                                <p>&nbsp;</p>
+                                <p><b>2. Permissão de Uso</b></p>
+                                <p>Você pode baixar temporariamente (por um período de 7 dias) uma cópia dos materiais
+                                    (informações ou software) do site Desafio 19 Dias para visualização pessoal e não
+                                    comercial. Esta permissão é concedida por meio de uma licença e não transfere o
+                                    título. Sob esta licença, você não pode: modificar ou copiar os materiais, usá-los
+                                    para fins comerciais ou exibição pública, tentar descompilar ou fazer engenharia
+                                    reversa de software, remover direitos autorais ou outras notificações de
+                                    propriedade, ou transferir os materiais para outra pessoa. A licença pode ser
+                                    rescindida a qualquer momento se você violar as restrições ou por Desafio 19 Dias.
+                                    Ao finalizar a visualização dos materiais ou após o término da licença, você deve
+                                    apagar todos os materiais baixados.</p>
+                                <p>&nbsp;</p>
+                                <p><b>3. Isenção de Responsabilidade</b></p>
+                                <p>O site Desafio 19 dias se exime de qualquer responsabilidade quanto ao uso indevido
+                                    das informações disponibilizadas neste site, incluindo danos físicos, psicológicos
+                                    ou financeiros decorrentes do uso inadequado de conselhos, informações ou
+                                    recomendações encontradas neste site.</p>
+                                <p>&nbsp;</p>
+                                <p><b>4. Não garantia de resultados</b></p>
+                                <p>O site Desafio 19 dias não garante que os resultados descritos ou alcançados através
+                                    do uso do site sejam universais ou que sejam alcançados por todos os usuários. O
+                                    desempenho pode variar de acordo com as condições físicas, saúde, hábitos
+                                    alimentares e outros fatores pessoais.</p>
+                                <p>&nbsp;</p>
+                                <p><b>5. Indispensável consulta e orientação médica</b></p>
+                                <p>O site Desafio 19 dias destaca que a consulta e orientação médica são indispensáveis
+                                    antes de iniciar qualquer programa de condicionamento físico ou mudança de hábitos
+                                    alimentares. O site não se responsabiliza por problemas de saúde ou lesões
+                                    decorrentes da falta de orientação médica adequada.</p>
+                                <p>&nbsp;</p>
+                                <p><b>6. Garantia</b></p>
+                                <p>Desafio 19 Dias fornece os materiais “como estão”, sem garantias expressas ou
+                                    implícitas e nega todas as outras garantias, incluindo garantias de comercialização,
+                                    adequação a um fim específico ou não infração de propriedade intelectual. Desafio 19
+                                    Dias não garante a precisão, confiabilidade ou resultados prováveis dos materiais
+                                    exibidos no site ou em sites vinculados.</p>
+                                <p>Isenção de Responsabilidade Desafio 19 Dias e seus fornecedores não serão
+                                    responsáveis por quaisquer danos, incluindo perda de dados ou lucro, decorrentes do
+                                    uso ou incapacidade de usar os materiais do site.</p>
+                                <p>&nbsp;</p>
+                                <p><b>7. Precisão do Material</b></p>
+                                <p>Os materiais exibidos no site Desafio 19 dias podem incluir erros técnicos,
+                                    tipográficos ou fotográficos e Desafio 19 dias não garante a exatidão, integridade
+                                    ou qualidade desses materiais. Em nenhum caso, Desafio 19 dias será responsável por
+                                    quaisquer perdas ou danos de qualquer natureza decorrentes do mau uso de qualquer
+                                    material exibido no site. É de responsabilidade do usuário verificar a exatidão das
+                                    informações contidas nos materiais exibidos no site, bem como utilizar de seus
+                                    conhecimentos, de orientações médicas e profissionais qualificados para a tomada de
+                                    decisões.</p>
+                                <p>&nbsp;</p>
+                                <p><b>8. Caráter do Conteúdo</b></p>
+                                <p>O conteúdo exibido no site é meramente informativo e não deve ser utilizado como
+                                    substituto de consulta e orientação médica ou de outro profissional qualificado. É
+                                    altamente recomendável que antes de fazer qualquer mudança em sua alimentação,
+                                    rotina de exercícios ou outra ação que possa impactar sua saúde, você consulte um
+                                    profissional qualificado.</p>
+                                <p>&nbsp;</p>
+                                <p><b>9. Modificações</b></p>
+                                <p>O Desafio 19 Dias pode revisar estes termos de uso a qualquer momento, sem aviso
+                                    prévio. Ao continuar a usar o site após tais revisões, você concorda em cumprir e
+                                    estar vinculado por estes termos de uso revisados.</p>
+                                <p>&nbsp;</p>
+                                <p><b>10. Leis Aplicáveis</b></p>
+                                <p>Você concorda em se submeter à jurisdição brasileira exclusiva dos tribunais para
+                                    qualquer questão relacionada a esses termos de uso e ao seu uso do site.</p>
+                                <p>&nbsp;</p>
+                                <p><b>11. Divisibilidade</b></p>
+                                <p>Se qualquer disposição destes termos de uso for considerada inválida ou inaplicável,
+                                    essa disposição será considerada separável e não afetará a validade e aplicabilidade
+                                    das disposições restantes.</p>
+                                <p>&nbsp;</p>
+                                <p><b>12. Isenção de Licenças</b></p>
+                                <p>Nada contido nestes termos de uso ou em qualquer material exibido no site concederá a
+                                    você ou a terceiros quaisquer direitos de licença ou sublicença sob quaisquer
+                                    patentes, marcas registradas, segredos comerciais ou outros direitos de propriedade
+                                    de Desafio 19 Dias ou de terceiros.</p>
+                                <p>&nbsp;</p>
+                                <p><b>13. Conteúdo de Terceiros</b></p>
+                                <p>Alguns conteúdos exibidos no site podem ser fornecidos por terceiros e não são de
+                                    responsabilidade de Desafio 19 Dias. O uso de tais conteúdos é regido pelos termos
+                                    de uso destes terceiros.</p>
+                                <p>&nbsp;</p>
+                                <p><b>14. Integridade do Contrato</b></p>
+                                <p>Estes termos de uso, juntamente com a política de privacidade do site, constituem o
+                                    acordo integral entre você e Desafio 19 Dias quanto ao seu uso do site.</p>
+                                <p>&nbsp;</p>
+                                <p><b>15. Rescisão</b></p>
+                                <p>Desafio 19 Dias pode, a seu exclusivo critério, rescindir ou suspender sua licença de
+                                    uso do site a qualquer momento e sem aviso prévio, por qualquer motivo, incluindo,
+                                    sem limitação, a violação destes termos de uso. Na rescisão, você deve imediatamente
+                                    destruir todos os materiais baixados ou obtidos do site, e qualquer cópia desses
+                                    materiais, independentemente de serem gerados por você ou por terceiros.</p>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                                <p>Com estas informações, você se declara ciente e de acordo dos termos de uso
+                                    aplicáveis ao uso do site Desafio 19 Dias. Se tiver alguma dúvida ou precisar de
+                                    esclarecimentos, entre em contato conosco por meio de nossos canais de atendimento.
+                                </p>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="elementor-element elementor-element-7a792cd e-flex e-con-boxed e-con" data-id="7a792cd"
+                    data-element_type="container"
+                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}">
+                    <div class="e-con-inner">
+                        <div class="elementor-element elementor-element-f8deeaa e-con-full e-flex e-con"
+                            data-id="f8deeaa" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+                            <div class="elementor-element elementor-element-aab7c4f elementor-widget elementor-widget-image"
+                                data-id="aab7c4f" data-element_type="widget" data-widget_type="image.default">
+                                <div class="elementor-widget-container">
+                                    <img decoding="async" width="512" height="193"
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAADBAQAAAACRKDVvAAAAAnRSTlMAAHaTzTgAAAAjSURBVGje7cExAQAAAMKg9U9tDQ+gAAAAAAAAAAAAAAAAzg0xAQABP2RzFAAAAABJRU5ErkJggg=="
+                                        class="attachment-medium_large size-medium_large wp-image-1938 lazyload" alt=""
+                                        data-src="https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-e1675194572230.png"
+                                        data-srcset="https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-e1675194572230.png 512w, https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-e1675194572230-300x113.png 300w"
+                                        data-sizes="auto" data-eio-rwidth="512" data-eio-rheight="193"><noscript><img
+                                            decoding="async" width="512" height="193"
+                                            src="https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-e1675194572230.png"
+                                            class="attachment-medium_large size-medium_large wp-image-1938" alt=""
+                                            srcset="https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-e1675194572230.png 512w, https://desafio19dias.com/wp-content/uploads/2021/06/cropped-D19-Logo-App2-e1675194572230-300x113.png 300w"
+                                            sizes="(max-width: 512px) 100vw, 512px" data-eio="l" /></noscript>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-5a1dbfb e-flex e-con-boxed e-con"
+                            data-id="5a1dbfb" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+                            <div class="e-con-inner">
+                                <div class="elementor-element elementor-element-00b91b4 elementor-icon-list--layout-inline elementor-align-right elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                    data-id="00b91b4" data-element_type="widget" data-widget_type="icon-list.default">
+                                    <div class="elementor-widget-container">
+                                        <ul class="elementor-icon-list-items elementor-inline-items">
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <a href="https://desafio19dias.com/">
+                                                    <span class="elementor-icon-list-text">Início</span>
+                                                </a>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <span class="elementor-icon-list-text">|</span>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <a href="/termos">
+                                                    <span class="elementor-icon-list-text">Termos de Uso</span>
+                                                </a>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <span class="elementor-icon-list-text">|</span>
+                                            </li>
+                                            <li class="elementor-icon-list-item elementor-inline-item">
+                                                <a href="/privacidade">
+                                                    <span class="elementor-icon-list-text">Políticas de
+                                                        Privacidade</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-tags">
+            </div>
+        </div>
+    </main>
+    <footer id="site-footer" class="site-footer dynamic-footer footer-has-copyright" role="contentinfo">
+        <div class="footer-inner">
+            <div class="site-branding show-logo">
+            </div>
+            <div class="copyright show">
+                <p>Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>

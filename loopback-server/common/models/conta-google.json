@@ -100,6 +100,11 @@
 			"type": "hasMany",
 			"model": "SegmentoMercadoAdsPersonalizado",
 			"foreignKey": ""
+		},
+		"pixelAdsSegmentoMercados": {
+			"type": "hasMany",
+			"model": "PixelAdsSegmentoMercado",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

@@ -26,6 +26,7 @@ public class VersaoPaginaVenda extends Model {
 	private List<ConteudoElemento> ConteudoElementos;
 	private List<ArquivoPaginaVenda> ArquivoPaginaVendas;
 	private List<VersaoImagemPaginaVenda> VersaoImagemPaginaVendas;
+	private List<PaginaVendaPropria> PaginaVendaProprias;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -136,6 +137,18 @@ public class VersaoPaginaVenda extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.VersaoImagemPaginaVendas.add((VersaoImagemPaginaVenda) objeto);
+		}
+	}
+	public List<PaginaVendaPropria> getPaginaVendaProprias() {
+		return  PaginaVendaProprias;
+	}
+	public void setPaginaVendaProprias(List<PaginaVendaPropria> valores) {
+		this.PaginaVendaProprias = new ArrayList<PaginaVendaPropria>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaPropria();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaProprias.add((PaginaVendaPropria) objeto);
 		}
 	}
 }

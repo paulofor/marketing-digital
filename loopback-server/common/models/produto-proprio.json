@@ -27,6 +27,11 @@
 			"type": "hasMany",
 			"model": "VersaoPaginaVenda",
 			"foreignKey": ""
+		},
+		"imagemPaginaVendas": {
+			"type": "hasMany",
+			"model": "ImagemPaginaVenda",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

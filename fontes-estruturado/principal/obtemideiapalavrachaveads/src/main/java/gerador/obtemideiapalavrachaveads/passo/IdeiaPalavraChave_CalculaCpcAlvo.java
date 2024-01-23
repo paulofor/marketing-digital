@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class IdeiaPalavraChave_CalculaCpcAlvo extends DaoAplicacao { 
 
-	private int NUM_PASSO = 5;
+	private int NUM_PASSO = 4;
 
 
 

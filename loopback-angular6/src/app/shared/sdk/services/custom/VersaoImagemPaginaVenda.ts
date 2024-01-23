@@ -160,7 +160,7 @@ export class VersaoImagemPaginaVendaApi extends BaseLoopBackApi {
    *
    * @param {object} data Request data.
    *
-   *  - `item` – `{object}` - 
+   *  - `item` – `{number}` - 
    *
    *  - `lista` – `{any}` - 
    *

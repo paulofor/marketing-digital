@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Automaquiagem com Lucas Vieira</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #first-section {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #first-text {
+            position: absolute;
+            bottom: -20vh;
+            /* Posição inicial abaixo da imagem */
+            transition: bottom 0.5s ease;
+            /* Adiciona uma transição suave ao movimento */
+        }
+
+
+        .parallax-container {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 1px;
+        }
+
+        .parallax-content {
+            position: relative;
+            transform-style: preserve-3d;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        .parallax-content::after {
+            content: "";
+            background-image: url('https://www.palfmarketing.online/imagens/9b239b6726f2445d3af897fdfaaef9.png');
+            background-size: 100% auto;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            /* Evita que a imagem se repita na vertical */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+
+
+        .parallax-text {
+            position: relative;
+            transform: translateZ(0);
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 70%;
+            /* Ajusta a largura máxima do quadro de texto */
+            margin: 0 auto;
+            /* Centraliza o quadro de texto na página */
+            height: 60vh;
+            /* Ajusta a altura do quadro de texto, você pode alterar este valor conforme necessário */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  
+             margin: 50px auto 0; /* Adicione um valor ao margin-top (por exemplo, 50px) */
+
+
+        }
+
+        .cta-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: hsl(57, 100%, 60%);
+            /* Cor chamativa, ajustável conforme necessário */
+            color: #fff;
+            padding: 20px 40px;
+            /* Tamanho do botão aumentado */
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            font-size: 36px;
+            font-weight: bold; /* Peso da letra aumentado */
+            /* Tamanho do texto aumentado */
+            /* Adicione outros estilos conforme necessário */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parallax-container" id="first-section">
+        <div class="parallax-content">
+            <div class="parallax-text" id="first-text">
+                <h1>Emagrecimento Totalmente Natural</h1>
+                <p>Descubra o Método Revolucionário para Perder Gordura Localizada de Maneira Saudável!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <p>Transforme seu Corpo em Apenas 19 Dias com um Programa de Reeducação Alimentar, Detox Poderoso e Exercícios Caseiros. Mais de 70.000 Mulheres Já Alcançaram Sucesso – Agora é Sua Vez!</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="cta-button">Apenas: R$ 47,00 <br>Quero o meu !</a>
+
+    <!-- Adicione mais seções conforme necessário -->
+
+</body>
+
+</html>

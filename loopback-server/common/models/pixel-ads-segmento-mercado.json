@@ -1,0 +1,35 @@
+{
+	"name": "PixelAdsSegmentoMercado",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
+		"paginaVendaProprias": {
+			"type": "hasMany",
+			"model": "PaginaVendaPropria",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

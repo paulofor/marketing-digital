@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { CampanhaAdsMetrica, CampanhaAdsMetricaApi } from '../shared/sdk';
 import { HistoricoPorCodigoAdsBaseComponent } from './historico-por-codigo-ads-base.component';
+import { ExibeTextoModalComponent } from '../exibe-texto-modal/exibe-texto-modal.component';
 
 @Component({
 	selector: 'app-historico-por-codigo-ads',
@@ -29,6 +30,46 @@ export class HistoricoPorCodigoAdsComponent extends HistoricoPorCodigoAdsBaseCom
 		  })
     }
 
-	
+	json(campanha) {
+        this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(ExibeTextoModalComponent, {
+            width: '800px',
+            data: {
+                texto: campanha.jsonAds,
+				titulo: "Campanha"
+            }
+        });
+    }
+
+
+	jsonGrupo(campanha) {
+        this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(ExibeTextoModalComponent, {
+            width: '800px',
+            data: {
+                texto: campanha.jsonGrupoAnuncio,
+				titulo: "Grupo Anúncio"
+            }
+        });
+    }
+
+
+	jsonAudiencia(campanha) {
+        this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(ExibeTextoModalComponent, {
+            width: '800px',
+            data: {
+                texto: campanha.jsonGrupoAudiencia,
+				titulo: "Audiência Grupo"
+            }
+        });
+    }
+
 	
 }

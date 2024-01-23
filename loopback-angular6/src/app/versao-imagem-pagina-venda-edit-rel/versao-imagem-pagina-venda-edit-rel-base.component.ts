@@ -36,6 +36,7 @@ export class VersaoImagemPaginaVendaEditRelBaseComponent implements OnInit {
 	carregaTela() {
 		this.srvDestino.find(this.getFiltro())
 			.subscribe((result:any[]) => {
+				console.log('VersaoImagemPaginaVendaEditRelComponent:', result);
 				this.listaBase = result;
 			})
 	}
