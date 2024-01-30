@@ -24,6 +24,33 @@
 		"descricao2": {
 			"type": "string"
 		},
+		"siteLink1Descricao1": {
+			"type": "string"
+		},
+		"siteLink1Descricao2": {
+			"type": "string"
+		},
+		"siteLink1Texto": {
+			"type": "string"
+		},
+		"siteLink3Texto": {
+			"type": "string"
+		},
+		"siteLink2Descricao1": {
+			"type": "string"
+		},
+		"siteLink2Descricao2": {
+			"type": "string"
+		},
+		"siteLink2Texto": {
+			"type": "string"
+		},
+		"siteLink3Descricao1": {
+			"type": "string"
+		},
+		"siteLink3Descricao2": {
+			"type": "string"
+		},
 		"produtoAfiliadoHotmartId": {
 			"type": "number"
 		}

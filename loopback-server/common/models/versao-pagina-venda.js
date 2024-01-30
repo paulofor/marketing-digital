@@ -13,6 +13,8 @@ module.exports = function (Versaopaginavenda) {
         const filtro =  {
             'where': { 'id': idVersao },
             'include': [
+                {'relation' : 'produtoAfiliadoHotmart' , 'scope' : {'include' : 'pixelProdutoHotmartContas'}},
+                'produtoAfiliadoHotlink',
                 {
                     'relation': 'modeloPaginaVenda', 'scope': {
                         'include': [
@@ -39,7 +41,7 @@ module.exports = function (Versaopaginavenda) {
     }
 
     Versaopaginavenda.ObtemListaCriacaoPaginaPropria = function(callback) {
-        const sql = "select id from VersaoPaginaVenda where cria = 1 and id not in (select versaoPaginaVendaId from PaginaVendaPropria)";
+        const sql = "select id from VersaoPaginaVenda where cria = 1 and id not in (select versaoPaginaVendaId from PaginaVendaPropria where versaoPaginaVendaId is not null)";
         let ds = Versaopaginavenda.dataSource;
         ds.connector.query(sql, (err,result) => {
             console.log('err:' , err);

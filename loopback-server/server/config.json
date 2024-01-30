@@ -2,6 +2,7 @@
   "restApiRoot": "/api",
   "host": "0.0.0.0",
   "port": 23101,
+  "protocol": "https",
   "remoting": {
     "context": false,
     "rest": {
@@ -18,5 +19,9 @@
       "limit": "100kb"
     },
     "cors": false
+  },
+  "tls": {
+    "certFile": "/etc/letsencrypt/live/tyche.ovh/cert.pem",
+    "keyFile": "/etc/letsencrypt/live/tyche.ovh/privkey.pem"
   }
 }

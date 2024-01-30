@@ -40,6 +40,11 @@ public class ContaGoogle extends Model {
 	private List<PublicoAlvoAdsDiario> PublicoAlvoAdsDiarios;
 	private List<SegmentoMercadoAdsPersonalizado> SegmentoMercadoAdsPersonalizados;
 	private List<PixelAdsSegmentoMercado> PixelAdsSegmentoMercados;
+	private List<ContaPublicoAlvoAdsPalavra> ContaPublicoAlvoAdsPalavras;
+	private List<PixelProdutoHotmartConta> PixelProdutoHotmartContas;
+	private List<PixelProdutoHotmartContaCheckout> PixelProdutoHotmartContaCheckouts;
+	private List<ProdutoHotmartConta> ProdutoHotmartContas;
+	private List<VersaoPaginaVenda> VersaoPaginaVendas;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -288,6 +293,66 @@ public class ContaGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PixelAdsSegmentoMercados.add((PixelAdsSegmentoMercado) objeto);
+		}
+	}
+	public List<ContaPublicoAlvoAdsPalavra> getContaPublicoAlvoAdsPalavras() {
+		return  ContaPublicoAlvoAdsPalavras;
+	}
+	public void setContaPublicoAlvoAdsPalavras(List<ContaPublicoAlvoAdsPalavra> valores) {
+		this.ContaPublicoAlvoAdsPalavras = new ArrayList<ContaPublicoAlvoAdsPalavra>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ContaPublicoAlvoAdsPalavra();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ContaPublicoAlvoAdsPalavras.add((ContaPublicoAlvoAdsPalavra) objeto);
+		}
+	}
+	public List<PixelProdutoHotmartConta> getPixelProdutoHotmartContas() {
+		return  PixelProdutoHotmartContas;
+	}
+	public void setPixelProdutoHotmartContas(List<PixelProdutoHotmartConta> valores) {
+		this.PixelProdutoHotmartContas = new ArrayList<PixelProdutoHotmartConta>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PixelProdutoHotmartConta();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PixelProdutoHotmartContas.add((PixelProdutoHotmartConta) objeto);
+		}
+	}
+	public List<PixelProdutoHotmartContaCheckout> getPixelProdutoHotmartContaCheckouts() {
+		return  PixelProdutoHotmartContaCheckouts;
+	}
+	public void setPixelProdutoHotmartContaCheckouts(List<PixelProdutoHotmartContaCheckout> valores) {
+		this.PixelProdutoHotmartContaCheckouts = new ArrayList<PixelProdutoHotmartContaCheckout>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PixelProdutoHotmartContaCheckout();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PixelProdutoHotmartContaCheckouts.add((PixelProdutoHotmartContaCheckout) objeto);
+		}
+	}
+	public List<ProdutoHotmartConta> getProdutoHotmartContas() {
+		return  ProdutoHotmartContas;
+	}
+	public void setProdutoHotmartContas(List<ProdutoHotmartConta> valores) {
+		this.ProdutoHotmartContas = new ArrayList<ProdutoHotmartConta>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoHotmartConta();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoHotmartContas.add((ProdutoHotmartConta) objeto);
+		}
+	}
+	public List<VersaoPaginaVenda> getVersaoPaginaVendas() {
+		return  VersaoPaginaVendas;
+	}
+	public void setVersaoPaginaVendas(List<VersaoPaginaVenda> valores) {
+		this.VersaoPaginaVendas = new ArrayList<VersaoPaginaVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new VersaoPaginaVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.VersaoPaginaVendas.add((VersaoPaginaVenda) objeto);
 		}
 	}
 }

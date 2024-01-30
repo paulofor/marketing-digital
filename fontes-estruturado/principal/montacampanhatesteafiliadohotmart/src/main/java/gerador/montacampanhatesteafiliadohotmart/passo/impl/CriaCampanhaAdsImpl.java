@@ -18,10 +18,12 @@ import com.google.ads.googleads.v13.common.LocationInfo;
 import com.google.ads.googleads.v13.common.ManualCpc;
 import com.google.ads.googleads.v13.common.MaximizeConversions;
 import com.google.ads.googleads.v13.common.ResponsiveSearchAdInfo;
+import com.google.ads.googleads.v13.common.SitelinkAsset;
 import com.google.ads.googleads.v13.enums.AdGroupAdStatusEnum.AdGroupAdStatus;
 import com.google.ads.googleads.v13.enums.AdGroupCriterionStatusEnum.AdGroupCriterionStatus;
 import com.google.ads.googleads.v13.enums.AdGroupStatusEnum.AdGroupStatus;
 import com.google.ads.googleads.v13.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType;
+import com.google.ads.googleads.v13.enums.AssetFieldTypeEnum.AssetFieldType;
 import com.google.ads.googleads.v13.enums.BudgetDeliveryMethodEnum.BudgetDeliveryMethod;
 import com.google.ads.googleads.v13.enums.CampaignStatusEnum.CampaignStatus;
 import com.google.ads.googleads.v13.enums.KeywordMatchTypeEnum.KeywordMatchType;
@@ -30,7 +32,9 @@ import com.google.ads.googleads.v13.resources.Ad;
 import com.google.ads.googleads.v13.resources.AdGroup;
 import com.google.ads.googleads.v13.resources.AdGroupAd;
 import com.google.ads.googleads.v13.resources.AdGroupCriterion;
+import com.google.ads.googleads.v13.resources.Asset;
 import com.google.ads.googleads.v13.resources.Campaign;
+import com.google.ads.googleads.v13.resources.CampaignAsset;
 import com.google.ads.googleads.v13.resources.Campaign.NetworkSettings;
 import com.google.ads.googleads.v13.resources.CampaignBudget;
 import com.google.ads.googleads.v13.resources.CampaignCriterion;
@@ -40,6 +44,10 @@ import com.google.ads.googleads.v13.services.AdGroupCriterionOperation;
 import com.google.ads.googleads.v13.services.AdGroupCriterionServiceClient;
 import com.google.ads.googleads.v13.services.AdGroupOperation;
 import com.google.ads.googleads.v13.services.AdGroupServiceClient;
+import com.google.ads.googleads.v13.services.AssetOperation;
+import com.google.ads.googleads.v13.services.AssetServiceClient;
+import com.google.ads.googleads.v13.services.CampaignAssetOperation;
+import com.google.ads.googleads.v13.services.CampaignAssetServiceClient;
 import com.google.ads.googleads.v13.services.CampaignBudgetOperation;
 import com.google.ads.googleads.v13.services.CampaignBudgetServiceClient;
 import com.google.ads.googleads.v13.services.CampaignCriterionOperation;
@@ -50,6 +58,10 @@ import com.google.ads.googleads.v13.services.MutateAdGroupAdResult;
 import com.google.ads.googleads.v13.services.MutateAdGroupAdsResponse;
 import com.google.ads.googleads.v13.services.MutateAdGroupCriteriaResponse;
 import com.google.ads.googleads.v13.services.MutateAdGroupsResponse;
+import com.google.ads.googleads.v13.services.MutateAssetResult;
+import com.google.ads.googleads.v13.services.MutateAssetsResponse;
+import com.google.ads.googleads.v13.services.MutateCampaignAssetResult;
+import com.google.ads.googleads.v13.services.MutateCampaignAssetsResponse;
 import com.google.ads.googleads.v13.services.MutateCampaignBudgetsResponse;
 import com.google.ads.googleads.v13.services.MutateCampaignResult;
 import com.google.ads.googleads.v13.services.MutateCampaignsResponse;
@@ -59,6 +71,7 @@ import com.google.ads.googleads.v13.utils.ResourceNames;
 import com.google.common.collect.ImmutableList;
 
 import br.com.gersis.loopback.modelo.AnuncioAds;
+import br.com.gersis.loopback.modelo.AnuncioCampanhaAdsTeste;
 import br.com.gersis.loopback.modelo.CampanhaAdsTeste;
 import br.com.gersis.loopback.modelo.IdeiaPalavraChave;
 import br.com.gersis.loopback.modelo.PalavraChaveCampanhaAdsTeste;
@@ -92,10 +105,12 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 			String resourceNameAdGrupo = createAdGroup(googleAdsClient, codigoUsuario, resourceNameCampanha, campanhaTesteCorrente);
 			createKeywords(googleAdsClient, codigoUsuario, resourceNameAdGrupo, campanhaTesteCorrente);
 			createExpandedTextAd(googleAdsClient, codigoUsuario, resourceNameAdGrupo, campanhaTesteCorrente);
+			adicionaSiteLink(googleAdsClient, codigoUsuario,campanhaTesteCorrente, resourceNameCampanha);
 			String campanha[] = resourceNameCampanha.split("/");
 			String codigoCampanha = campanha[campanha.length-1];
 			campanhaTesteCorrente.setCodigoAds(codigoCampanha);
 			campanhaTesteCorrente.setCodigoAdsCampanha(resourceNameCampanha);
+			
 			this.saidaCampanhaTesteCorrente = campanhaTesteCorrente;
 		} catch (FileNotFoundException fnfe) {
 			System.err.printf("Failed to load GoogleAdsClient configuration from file. Exception: %s%n", fnfe);
@@ -106,6 +121,91 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		}
 		return true;
 	}
+
+	
+	
+	
+	private void adicionaSiteLink(GoogleAdsClient googleAdsClient, long codigoUsuario2,
+			CampanhaAdsTeste campanhaTesteCorrente, String resourceNameCampanha) {
+		// TODO Auto-generated method stub
+	    List<String> resourceNames = createSitelinkAssets(googleAdsClient, codigoUsuario2, campanhaTesteCorrente);
+	    // Associates the sitelinks at the campaign level.
+	    linkSitelinksToCampaign(googleAdsClient, resourceNames, codigoUsuario2, resourceNameCampanha);
+
+	}
+
+	/** Creates a {@link SitelinkAsset} which can then be added to campaigns. */
+	private List<String> createSitelinkAssets(GoogleAdsClient googleAdsClient, long customerId, CampanhaAdsTeste campanha) {
+		
+		ProdutoAfiliadoHotmart produto = campanha.getProdutoAfiliadoHotmart();
+		AnuncioCampanhaAdsTeste ad = campanha.getAnuncioCampanhaAdsTestes().get(0);
+	
+	    // Creates some sitelink assets.
+	    SitelinkAsset siteLink1 =
+	        SitelinkAsset.newBuilder()
+	            .setDescription1(ad.getAnuncioAds().getSiteLink1Descricao1())
+	            .setDescription2(ad.getAnuncioAds().getSiteLink1Descricao2())
+	            .setLinkText(ad.getAnuncioAds().getSiteLink1Texto())
+	            .build();
+	    SitelinkAsset siteLink2 =
+		        SitelinkAsset.newBuilder()
+		            .setDescription1(ad.getAnuncioAds().getSiteLink2Descricao1())
+		            .setDescription2(ad.getAnuncioAds().getSiteLink2Descricao2())
+		            .setLinkText(ad.getAnuncioAds().getSiteLink2Texto())
+		            .build();
+	    SitelinkAsset siteLink3 =
+		        SitelinkAsset.newBuilder()
+		            .setDescription1(ad.getAnuncioAds().getSiteLink3Descricao1())
+		            .setDescription2(ad.getAnuncioAds().getSiteLink3Descricao2())
+		            .setLinkText(ad.getAnuncioAds().getSiteLink3Texto())
+		            .build();
+
+	    // Wraps the sitelinks in an Asset and sets the URLs.
+	    List<Asset> assets = new ArrayList();
+	    assets.add(
+	        Asset.newBuilder()
+	            .setSitelinkAsset(siteLink1)
+	            .addFinalUrls(produto.getUrlPropria())
+	            // Optionally sets a different URL for mobile.
+	            //.addFinalMobileUrls("http://example.com/mobile/contact/store-finder")
+	            .build());
+	    assets.add(
+	        Asset.newBuilder()
+	            .setSitelinkAsset(siteLink2)
+	            .addFinalUrls(produto.getUrlPropria())
+	            // Optionally sets a different URL for mobile.
+	            //.addFinalMobileUrls("http://example.com/mobile/store")
+	            .build());
+	    assets.add(
+	        Asset.newBuilder()
+	            .setSitelinkAsset(siteLink3)
+	            .addFinalUrls(produto.getUrlPropria())
+	            // Optionally sets a different URL for mobile.
+	            //.addFinalMobileUrls("http://example.com/mobile/store/more")
+	            .build());
+	    // Creates an operation to add each asset.
+	    List<AssetOperation> operations =
+	        assets.stream()
+	            .map(a -> AssetOperation.newBuilder().setCreate(a).build())
+	            .collect(Collectors.toList());
+	    // Creates the service client.
+	    try (AssetServiceClient client =
+	        googleAdsClient.getLatestVersion().createAssetServiceClient()) {
+	      // Sends the mutate request.
+	      MutateAssetsResponse response = client.mutateAssets(String.valueOf(customerId), operations);
+	      // Prints some information about the result.
+	      List<String> resourceNames =
+	          response.getResultsList().stream()
+	              .map(MutateAssetResult::getResourceName)
+	              .collect(Collectors.toList());
+	      for (String resName : resourceNames) {
+	        System.out.printf("Created sitelink asset with resource name '%s'.%n", resName);
+	      }
+	      return resourceNames;
+	    }
+	  }
+
+
 
 	private void testaCampanha(CampanhaAdsTeste campanhaTesteCorrente) {
 		if (campanhaTesteCorrente.getAnuncioCampanhaAdsTestes().size()==0) {
@@ -159,7 +259,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		String dataFinal = dtFinal.format(formatter);
 
 		// 2 - Campanha
-		String nomeCampanha = "MktDigitalClique-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
+		String nomeCampanha = "MktDigitalClique-" + campanha.getProdutoAfiliadoHotmart().getHotmartId() + "-" + campanha.getNome();
 		Campaign campaign = Campaign.newBuilder()
 				.setName(nomeCampanha)
 				.setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
@@ -241,7 +341,7 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 	    
 
 	    // 2 - Campanha
-	    String nomeCampanha = "MktDigitalConv-" + campanha.getProdutoAfiliadoHotmart().getSigla() + "-" + campanha.getNome();
+	    String nomeCampanha = "MktDigitalConv-" + campanha.getProdutoAfiliadoHotmart().getHotmartId() + "-" + campanha.getNome();
 	    Campaign campaign = Campaign.newBuilder()
 	        .setName(nomeCampanha)
 	        .setAdvertisingChannelType(AdvertisingChannelType.SEARCH)
@@ -529,7 +629,39 @@ public class CriaCampanhaAdsImpl extends CriaCampanhaAds {
 		return AdTextAsset.newBuilder().setText(text).build();
 	}
 
-
+	  /** Links the assets to a campaign. */
+	  private void linkSitelinksToCampaign(
+	      GoogleAdsClient googleAdsClient,
+	      List<String> sitelinkAssetResourceName,
+	      long customerId,
+	      String resourceNameCampanha) {
+	    // Creates CampaignAssets representing the association between sitelinks and campaign.
+	    List<CampaignAssetOperation> campaignAssetOperations =
+	        sitelinkAssetResourceName.stream()
+	            // Creates the CampaignAsset link.
+	            .map(
+	                resName ->
+	                    CampaignAsset.newBuilder()
+	                        .setAsset(resName)
+	                        .setCampaign(resourceNameCampanha)
+	                        .setFieldType(AssetFieldType.SITELINK)
+	                        .build())
+	            // Creates a CampaignAssetOperation to create the CampaignAsset.
+	            .map(a -> CampaignAssetOperation.newBuilder().setCreate(a).build())
+	            .collect(Collectors.toList());
+	    // Creates the service client.
+	    try (CampaignAssetServiceClient client =
+	        googleAdsClient.getLatestVersion().createCampaignAssetServiceClient()) {
+	      // Sends the mutate request.
+	      MutateCampaignAssetsResponse response =
+	          client.mutateCampaignAssets(String.valueOf(customerId), campaignAssetOperations);
+	      // Prints some information about the result.
+	      for (MutateCampaignAssetResult result : response.getResultsList()) {
+	        System.out.printf(
+	            "Linked sitelink to campaign with resource name '%s'.%n", result.getResourceName());
+	      }
+	    }
+	  }
 	
 	private LocalDate obtemDataFinal(LocalDate inicial, CampanhaAdsTeste campanha) {
 		//int diferenca = campanha.getModeloCampanhaAdsTeste().getQtdeDia() - 1;

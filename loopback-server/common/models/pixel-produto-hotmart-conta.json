@@ -1,0 +1,81 @@
+{
+	"name": "PixelProdutoHotmartConta",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"fase": {
+			"type": "number"
+		},
+		"codigo1": {
+			"type": "string"
+		},
+		"codigo2": {
+			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"hotmartId": {
+			"type": "number"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		},
+		"resourceName": {
+			"type": "string"
+		},
+		"resourceNameSegmento": {
+			"type": "string"
+		},
+		"nomeSegmento": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		}
+	},
+	"acls": [],
+	"methods": {
+		"RegistraLista": {
+			"accepts": [
+				{
+					"arg": "listaItem",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraLista",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

@@ -27,6 +27,7 @@ public class IdeiaPalavraChave extends Model {
 	private double cpcPara75;
 	private int quantidadePorVisita;
 	private int maisRecenteProduto;
+	private int manual;
 	// Relacionamentos 1
 	private VisitaProdutoHotmart VisitaProdutoHotmart;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
@@ -66,6 +67,7 @@ public class IdeiaPalavraChave extends Model {
 			obj.put("cpcPara75", cpcPara75);
 			obj.put("quantidadePorVisita", quantidadePorVisita);
 			obj.put("maisRecenteProduto", maisRecenteProduto);
+			obj.put("manual", manual);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -150,6 +152,12 @@ public class IdeiaPalavraChave extends Model {
 	}
 	public int getMaisRecenteProduto() { 
 		return this.maisRecenteProduto;
+	}
+	public void setManual(int valor) { 
+		this.manual = valor;
+	}
+	public int getManual() { 
+		return this.manual;
 	}
 
 	public VisitaProdutoHotmart getVisitaProdutoHotmart() {

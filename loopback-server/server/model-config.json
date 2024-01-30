@@ -314,5 +314,37 @@
   "SolicitacaoCheckoutPaginaVendaPropria": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "ContaPublicoAlvoAdsPalavra": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PublicoAlvoAdsPalavra": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoPublicoAdsPalavra": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PixelProdutoHotmartConta": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PixelProdutoHotmartContaCheckout": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PixelProdutoHotmartContaCompra": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ArtigoParaProduto": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoHotmartConta": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

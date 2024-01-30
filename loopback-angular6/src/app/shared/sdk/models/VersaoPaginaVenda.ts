@@ -3,6 +3,8 @@ import {
   ProdutoAfiliadoHotmart,
   ProdutoProprio,
   ModeloPaginaVenda,
+  ProdutoAfiliadoHotlink,
+  ContaGoogle,
   ConteudoElemento,
   ArquivoPaginaVenda,
   ProdutoAfiliadoClickbank,
@@ -15,13 +17,19 @@ export interface VersaoPaginaVendaInterface {
   "hotmartId"?: number;
   "versao"?: string;
   "cria"?: number;
+  "status"?: string;
+  "dataCriaPagina"?: Date;
   "produtoProprioId"?: number;
   "modeloPaginaVendaId"?: number;
   "produtoAfiliadoClickbankId"?: number;
+  "produtoAfiliadoHotlinkId"?: number;
+  "contaGoogleId"?: number;
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   produtoProprio?: ProdutoProprio;
   modeloPaginaVenda?: ModeloPaginaVenda;
+  produtoAfiliadoHotlink?: ProdutoAfiliadoHotlink;
+  contaGoogle?: ContaGoogle;
   conteudoElementos?: ConteudoElemento[];
   arquivoPaginaVendas?: ArquivoPaginaVenda[];
   produtoAfiliadoClickbank?: ProdutoAfiliadoClickbank;
@@ -33,13 +41,19 @@ export class VersaoPaginaVenda implements VersaoPaginaVendaInterface {
   "hotmartId": number;
   "versao": string;
   "cria": number;
+  "status": string;
+  "dataCriaPagina": Date;
   "produtoProprioId": number;
   "modeloPaginaVendaId": number;
   "produtoAfiliadoClickbankId": number;
+  "produtoAfiliadoHotlinkId": number;
+  "contaGoogleId": number;
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   produtoProprio: ProdutoProprio;
   modeloPaginaVenda: ModeloPaginaVenda;
+  produtoAfiliadoHotlink: ProdutoAfiliadoHotlink;
+  contaGoogle: ContaGoogle;
   conteudoElementos: ConteudoElemento[];
   arquivoPaginaVendas: ArquivoPaginaVenda[];
   produtoAfiliadoClickbank: ProdutoAfiliadoClickbank;
@@ -90,6 +104,14 @@ export class VersaoPaginaVenda implements VersaoPaginaVendaInterface {
           name: 'cria',
           type: 'number'
         },
+        "status": {
+          name: 'status',
+          type: 'string'
+        },
+        "dataCriaPagina": {
+          name: 'dataCriaPagina',
+          type: 'Date'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
           type: 'number'
@@ -100,6 +122,14 @@ export class VersaoPaginaVenda implements VersaoPaginaVendaInterface {
         },
         "produtoAfiliadoClickbankId": {
           name: 'produtoAfiliadoClickbankId',
+          type: 'number'
+        },
+        "produtoAfiliadoHotlinkId": {
+          name: 'produtoAfiliadoHotlinkId',
+          type: 'number'
+        },
+        "contaGoogleId": {
+          name: 'contaGoogleId',
           type: 'number'
         },
         "id": {
@@ -130,6 +160,22 @@ export class VersaoPaginaVenda implements VersaoPaginaVendaInterface {
           model: 'ModeloPaginaVenda',
           relationType: 'belongsTo',
                   keyFrom: 'modeloPaginaVendaId',
+          keyTo: 'id'
+        },
+        produtoAfiliadoHotlink: {
+          name: 'produtoAfiliadoHotlink',
+          type: 'ProdutoAfiliadoHotlink',
+          model: 'ProdutoAfiliadoHotlink',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoAfiliadoHotlinkId',
+          keyTo: 'id'
+        },
+        contaGoogle: {
+          name: 'contaGoogle',
+          type: 'ContaGoogle',
+          model: 'ContaGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'contaGoogleId',
           keyTo: 'id'
         },
         conteudoElementos: {

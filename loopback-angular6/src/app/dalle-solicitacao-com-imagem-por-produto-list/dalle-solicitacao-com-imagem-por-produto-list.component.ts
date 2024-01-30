@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { DalleSolicitacaoImagem, DalleSolicitacaoImagemApi, ImagemPaginaVenda, ImagemPaginaVendaApi, ProdutoAfiliadoHotmart, ProdutoAfiliadoHotmartApi } from '../shared/sdk';
 import { DalleSolicitacaoComImagemPorProdutoListBaseComponent } from './dalle-solicitacao-com-imagem-por-produto-list-base.component';
+import { ExibeTextoModalComponent } from '../exibe-texto-modal/exibe-texto-modal.component';
+import { ExibeTextoSemPreComponent } from '../exibe-texto-sem-pre/exibe-texto-sem-pre.component';
 
 @Component({
 	selector: 'app-dalle-solicitacao-com-imagem-por-produto-list',
@@ -40,5 +42,18 @@ export class DalleSolicitacaoComImagemPorProdutoListComponent extends DalleSolic
 			.subscribe((result) => {
 				this.carregaTela()
 			})
+	}
+
+	detalhar(imagem:ImagemPaginaVenda) {
+		this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(ExibeTextoSemPreComponent, {
+            width: '800px',
+            data: {
+                texto: imagem.promptRevisado
+            }
+        });
+
 	}
 }

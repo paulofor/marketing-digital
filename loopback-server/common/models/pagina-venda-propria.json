@@ -33,7 +33,7 @@
 		"tipoGeracao": {
 			"type": "string"
 		},
-		"produtoAfiliadoHotlinkId": {
+		"geraArquivo": {
 			"type": "number"
 		},
 		"pixelAdsSegmentoMercadoId": {
@@ -50,11 +50,6 @@
 		"versaoPaginaVenda": {
 			"type": "belongsTo",
 			"model": "VersaoPaginaVenda",
-			"foreignKey": ""
-		},
-		"produtoAfiliadoHotlink": {
-			"type": "belongsTo",
-			"model": "ProdutoAfiliadoHotlink",
 			"foreignKey": ""
 		},
 		"pixelAdsSegmentoMercado": {
@@ -130,6 +125,25 @@
 			"http": [
          		{
           			"path": "/obtemListaPublicacao",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaParaGerarArquivo": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGerarArquivo",
    					"verb": "get"
  				}
  			]

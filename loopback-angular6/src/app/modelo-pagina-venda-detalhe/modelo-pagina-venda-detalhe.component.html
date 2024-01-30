@@ -16,6 +16,7 @@
 		<div class="dgc-card-detalhe" *ngFor="let rel of principal.posicaoElementoPaginaVendas">
 			<span>{{rel.posicao}} - </span>
 			<span>{{rel.elementoModeloPaginaVenda.rotulo}}</span>
+			<span>  (var: {{rel.elementoModeloPaginaVenda.nomeVariavel}})</span>
 			<div class="dgc-direita">
 				<button class="btn-primary btn-sm btn" (click)="alteraPosicao(rel)">Alterar</button>
 			</div>

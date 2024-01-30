@@ -21,6 +21,7 @@ public class SolicitacaoCheckoutPaginaVendaPropria extends Model {
 	private String utmTerm;
 	private String utmContent;
 	private String dataHora;
+	private String visitante;
 	// Relacionamentos 1
 	private PaginaVendaPropria PaginaVendaPropria;
 	// Relacionamentos N
@@ -50,6 +51,7 @@ public class SolicitacaoCheckoutPaginaVendaPropria extends Model {
 			obj.put("utmTerm", utmTerm);
 			obj.put("utmContent", utmContent);
 			obj.put("dataHora", dataHora);
+			obj.put("visitante", visitante);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -98,6 +100,12 @@ public class SolicitacaoCheckoutPaginaVendaPropria extends Model {
 	}
 	public String getDataHora() { 
 		return this.dataHora;
+	}
+	public void setVisitante(String valor) { 
+		this.visitante = valor;
+	}
+	public String getVisitante() { 
+		return this.visitante;
 	}
 
 	public PaginaVendaPropria getPaginaVendaPropria() {

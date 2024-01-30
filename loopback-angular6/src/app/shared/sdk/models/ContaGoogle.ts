@@ -9,7 +9,12 @@ import {
   CampanhaAdsRedeDisplay,
   PublicoAlvoAdsDiario,
   SegmentoMercadoAdsPersonalizado,
-  PixelAdsSegmentoMercado
+  VersaoPaginaVenda,
+  PixelAdsSegmentoMercado,
+  ContaPublicoAlvoAdsPalavra,
+  PixelProdutoHotmartConta,
+  PixelProdutoHotmartContaCheckout,
+  ProdutoHotmartConta
 } from '../index';
 
 declare var Object: any;
@@ -38,7 +43,12 @@ export interface ContaGoogleInterface {
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   publicoAlvoAdsDiarios?: PublicoAlvoAdsDiario[];
   segmentoMercadoAdsPersonalizados?: SegmentoMercadoAdsPersonalizado[];
+  versaoPaginaVendas?: VersaoPaginaVenda[];
   pixelAdsSegmentoMercados?: PixelAdsSegmentoMercado[];
+  contaPublicoAlvoAdsPalavras?: ContaPublicoAlvoAdsPalavra[];
+  pixelProdutoHotmartContas?: PixelProdutoHotmartConta[];
+  pixelProdutoHotmartContaCheckouts?: PixelProdutoHotmartContaCheckout[];
+  produtoHotmartContas?: ProdutoHotmartConta[];
 }
 
 export class ContaGoogle implements ContaGoogleInterface {
@@ -66,7 +76,12 @@ export class ContaGoogle implements ContaGoogleInterface {
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   publicoAlvoAdsDiarios: PublicoAlvoAdsDiario[];
   segmentoMercadoAdsPersonalizados: SegmentoMercadoAdsPersonalizado[];
+  versaoPaginaVendas: VersaoPaginaVenda[];
   pixelAdsSegmentoMercados: PixelAdsSegmentoMercado[];
+  contaPublicoAlvoAdsPalavras: ContaPublicoAlvoAdsPalavra[];
+  pixelProdutoHotmartContas: PixelProdutoHotmartConta[];
+  pixelProdutoHotmartContaCheckouts: PixelProdutoHotmartContaCheckout[];
+  produtoHotmartContas: ProdutoHotmartConta[];
   constructor(data?: ContaGoogleInterface) {
     Object.assign(this, data);
   }
@@ -238,10 +253,50 @@ export class ContaGoogle implements ContaGoogleInterface {
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'
         },
+        versaoPaginaVendas: {
+          name: 'versaoPaginaVendas',
+          type: 'VersaoPaginaVenda[]',
+          model: 'VersaoPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
         pixelAdsSegmentoMercados: {
           name: 'pixelAdsSegmentoMercados',
           type: 'PixelAdsSegmentoMercado[]',
           model: 'PixelAdsSegmentoMercado',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        contaPublicoAlvoAdsPalavras: {
+          name: 'contaPublicoAlvoAdsPalavras',
+          type: 'ContaPublicoAlvoAdsPalavra[]',
+          model: 'ContaPublicoAlvoAdsPalavra',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        pixelProdutoHotmartContas: {
+          name: 'pixelProdutoHotmartContas',
+          type: 'PixelProdutoHotmartConta[]',
+          model: 'PixelProdutoHotmartConta',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        pixelProdutoHotmartContaCheckouts: {
+          name: 'pixelProdutoHotmartContaCheckouts',
+          type: 'PixelProdutoHotmartContaCheckout[]',
+          model: 'PixelProdutoHotmartContaCheckout',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        produtoHotmartContas: {
+          name: 'produtoHotmartContas',
+          type: 'ProdutoHotmartConta[]',
+          model: 'ProdutoHotmartConta',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'

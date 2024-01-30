@@ -1,0 +1,136 @@
+{
+	"name": "ContaPublicoAlvoAdsPalavra",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"contaGoogleId": {
+			"type": "number"
+			,"id": true
+		},
+		"publicoAlvoAdsPalavraId": {
+			"type": "number"
+			,"id": true
+		},
+		"resourceName": {
+			"type": "string"
+		},
+		"tamanhoRedeDisplay": {
+			"type": "number"
+		},
+		"dataCriacaoAds": {
+			"type": "date"
+		},
+		"pronta": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
+		"publicoAlvoAdsPalavra": {
+			"type": "belongsTo",
+			"model": "PublicoAlvoAdsPalavra",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ListaParaCriar": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaCriar",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"RegistraCriacao": {
+			"accepts": [
+				{
+					"arg": "idConta",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "idPublico",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "resourceName",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraCriacao",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"AtualizaRelacionamento": {
+			"accepts": [
+				{
+					"arg": "idItem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaRelacionamento",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

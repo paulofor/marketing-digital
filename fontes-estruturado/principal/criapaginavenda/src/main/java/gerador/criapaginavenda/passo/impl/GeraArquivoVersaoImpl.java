@@ -20,6 +20,7 @@ public class GeraArquivoVersaoImpl extends GeraArquivoVersao {
 	@Override
 	protected boolean executaCustom(VersaoPaginaVenda versaoCorrenteCompleta) {
 		String conteudoPagina = this.trocaItemVariavel(versaoCorrenteCompleta);
+		conteudoPagina = this.outrasTrocas()
 		try {
 			gravaTemp(conteudoPagina);
 		} catch (Exception e) {
@@ -42,6 +43,8 @@ public class GeraArquivoVersaoImpl extends GeraArquivoVersao {
          writer.close();
 	}
 
+	private void outrasTrocas()
+	
 	 
 	private String trocaItemVariavel(VersaoPaginaVenda versao) {
 		String saida = versao.getModeloPaginaVenda().getCodigoFonte();
@@ -51,11 +54,13 @@ public class GeraArquivoVersaoImpl extends GeraArquivoVersao {
 				String nomeVariavel = elemento.getElementoModeloPaginaVenda().getNomeVariavel();
 				String conteudo = elemento.getElementoModeloPaginaVenda().getConteudoElementos().get(0).getValor();
 				conteudo = conteudo.replace("\n", "<br>");
-				saida = saida.replaceAll("\\{" + nomeVariavel + "\\}", conteudo);
+				saida = saida.replace("---" + nomeVariavel + "---", conteudo);
 			}
 		}
 		return saida;
 	}
+	
+	
 	
 	
 

@@ -36,7 +36,7 @@
 	},
 	"acls": [],
 	"methods": {
-		"obtemParaGeracao": {
+		"ObtemParaGeracao": {
 			"accepts": [
 			],
 			"returns": [

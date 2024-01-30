@@ -243,6 +243,31 @@
 			"type": "hasMany",
 			"model": "VersaoPaginaVenda",
 			"foreignKey": "hotmartId"
+		},
+		"produtoPublicoAdsPalavras": {
+			"type": "hasMany",
+			"model": "ProdutoPublicoAdsPalavra",
+			"foreignKey": "hotmartId"
+		},
+		"publicoAlvoAdsPalavras": {
+			"type": "hasMany",
+			"model": "PublicoAlvoAdsPalavra",
+			"foreignKey": "hotmartId"
+		},
+		"pixelProdutoHotmartContas": {
+			"type": "hasMany",
+			"model": "PixelProdutoHotmartConta",
+			"foreignKey": "hotmartId"
+		},
+		"pixelProdutoHotmartContaCheckouts": {
+			"type": "hasMany",
+			"model": "PixelProdutoHotmartContaCheckout",
+			"foreignKey": "hotmartId"
+		},
+		"produtoHotmartContas": {
+			"type": "hasMany",
+			"model": "ProdutoHotmartConta",
+			"foreignKey": "hotmartId"
 		}
 	},
 	"acls": [],

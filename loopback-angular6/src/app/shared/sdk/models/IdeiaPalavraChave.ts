@@ -21,6 +21,7 @@ export interface IdeiaPalavraChaveInterface {
   "cpcPara75"?: number;
   "quantidadePorVisita"?: number;
   "maisRecenteProduto"?: number;
+  "manual"?: number;
   "id"?: number;
   visitaProdutoHotmart?: VisitaProdutoHotmart;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
@@ -42,6 +43,7 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
   "cpcPara75": number;
   "quantidadePorVisita": number;
   "maisRecenteProduto": number;
+  "manual": number;
   "id": number;
   visitaProdutoHotmart: VisitaProdutoHotmart;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
@@ -130,6 +132,10 @@ export class IdeiaPalavraChave implements IdeiaPalavraChaveInterface {
         },
         "maisRecenteProduto": {
           name: 'maisRecenteProduto',
+          type: 'number'
+        },
+        "manual": {
+          name: 'manual',
           type: 'number'
         },
         "id": {

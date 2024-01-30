@@ -19,15 +19,60 @@
 
 
     <mat-form-field class="example-full-width">
-      <textarea rows="2" matInput #descricao1 [(ngModel)]="item.descricao1" name="descricao1" placeholder="Descrição 1" >
+      <textarea rows="2" matInput #descricao1 [(ngModel)]="item.descricao1" name="descricao1" placeholder="Descrição 1">
       </textarea>
       <mat-hint align="end">{{ (descricao1.value?descricao1.value.length:0) }}/90</mat-hint>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <textarea rows="2" matInput #descricao2 [(ngModel)]="item.descricao2" name="descricao2" placeholder="Descrição 2" >
+      <textarea rows="2" matInput #descricao2 [(ngModel)]="item.descricao2" name="descricao2" placeholder="Descrição 2">
       </textarea>
       <mat-hint align="end">{{ (descricao2.value?descricao2.value.length:0) }}/90</mat-hint>
     </mat-form-field>
+
+    <br>
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="25" [(ngModel)]="item.siteLink1Texto" #siteLink1Texto name="siteLink1Texto" placeholder="SiteLink 1 Texto" />
+      <mat-hint align="end">{{ (siteLink1Texto.value?siteLink1Texto.value.length:0) }}/25</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input maxlength="35" matInput #siteLink1Descricao1 [(ngModel)]="item.siteLink1Descricao1" name="siteLink1Descricao1" placeholder="SiteLink 1 Descrição 1"/>
+      <mat-hint align="end">{{ (siteLink1Descricao1.value?siteLink1Descricao1.value.length:0) }}/35</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input maxlength="35" matInput #siteLink1Descricao2 [(ngModel)]="item.siteLink1Descricao2" name="siteLink1Descricao2" placeholder="SiteLink 1 Descrição 2"/>
+      <mat-hint align="end">{{ (siteLink1Descricao2.value?siteLink1Descricao2.value.length:0) }}/35</mat-hint>
+    </mat-form-field>
+
+
+    <br>
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="25" [(ngModel)]="item.siteLink2Texto" #siteLink2Texto name="siteLink2Texto" placeholder="SiteLink 2 Texto" />
+      <mat-hint align="end">{{ (siteLink2Texto.value?siteLink2Texto.value.length:0) }}/25</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input maxlength="35" matInput #siteLink21Descricao1 [(ngModel)]="item.siteLink2Descricao1" name="siteLink2Descricao1" placeholder="SiteLink 2 Descrição 1"/>
+      <mat-hint align="end">{{ (siteLink21Descricao1.value?siteLink21Descricao1.value.length:0) }}/35</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input maxlength="35" matInput #siteLink2Descricao2 [(ngModel)]="item.siteLink2Descricao2" name="siteLink2Descricao2" placeholder="SiteLink 2 Descrição 2"/>
+      <mat-hint align="end">{{ (siteLink2Descricao2.value?siteLink2Descricao2.value.length:0) }}/35</mat-hint>
+    </mat-form-field>
+
+
+    <br>
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="25" [(ngModel)]="item.siteLink3Texto" #siteLink3Texto name="siteLink3Texto" placeholder="SiteLink 3 Texto" />
+      <mat-hint align="end">{{ (siteLink3Texto.value?siteLink3Texto.value.length:0) }}/25</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input maxlength="35" matInput #siteLink3Descricao1 [(ngModel)]="item.siteLink3Descricao1" name="siteLink3Descricao1" placeholder="SiteLink 3 Descrição 1"/>
+      <mat-hint align="end">{{ (siteLink3Descricao1.value?siteLink3Descricao1.value.length:0) }}/35</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input maxlength="35" matInput #siteLink3Descricao2 [(ngModel)]="item.siteLink3Descricao2" name="siteLink3Descricao2" placeholder="SiteLink 3 Descrição 2"/>
+      <mat-hint align="end">{{ (siteLink3Descricao2.value?siteLink3Descricao2.value.length:0) }}/35</mat-hint>
+    </mat-form-field>
+
 
   </mat-dialog-content>
 

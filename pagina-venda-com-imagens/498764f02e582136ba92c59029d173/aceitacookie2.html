@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Página</title>
+
+    <style>
+        /* CSS */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #cookie-banner button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Conteúdo da página -->
+
+    <div id="cookie-banner">
+        <p>Nós usamos cookies para melhorar a sua experiência. Ao continuar, você concorda com o uso de cookies.</p>
+        <button id="accept-cookies">Aceitar Cookies</button>
+    </div>
+
+    <script>
+        // JavaScript
+        document.addEventListener("DOMContentLoaded", function() {
+            var cookieBanner = document.getElementById("cookie-banner");
+            var acceptCookiesButton = document.getElementById("accept-cookies");
+
+            // Adiciona um ouvinte de eventos para o botão de aceitar cookies
+            acceptCookiesButton.addEventListener("click", function() {
+                // Esconde o banner
+                cookieBanner.style.display = "none";
+
+                // Define um item no armazenamento local indicando que os cookies foram aceitos
+                localStorage.setItem("cookies_accepted", "true");
+            });
+
+            // Verifica se o usuário já aceitou os cookies
+            if (!localStorage.getItem("cookies_accepted")) {
+                // Se ainda não aceitou, exibe o banner
+                cookieBanner.style.display = "flex";
+            }
+        });
+    </script>
+</body>
+</html>

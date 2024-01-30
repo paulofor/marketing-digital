@@ -40,6 +40,8 @@ import meutestev15.app.Constantes;
 /** Generates keyword ideas from a list of seed keywords. */
 public class GenerateKeywordIdeas {
 
+	private static String listaPalavra = "";
+	
   private static class GenerateKeywordIdeasParams extends CodeSampleParams {
 
     @Parameter(names = ArgumentNames.CUSTOMER_ID, required = true)
@@ -112,6 +114,7 @@ public class GenerateKeywordIdeas {
               params.locationIds,
               params.keywords,
               params.pageUrl);
+      System.out.println(listaPalavra);
     } catch (GoogleAdsException gae) {
       // GoogleAdsException is the base class for most exceptions thrown by an API request.
       // Instances of this exception have a message and a GoogleAdsFailure that contains a
@@ -177,7 +180,7 @@ public class GenerateKeywordIdeas {
         requestBuilder.getUrlSeedBuilder().setUrl(pageUrl);
       } else if (pageUrl == null) {
         // Only keywords were specified, so use a KeywordSeed.
-        requestBuilder.getKeywordSeedBuilder().addAllKeywords(keywords);
+        requestBuilder.getKeywordSeedBuilder().addKeywords("curso design unhas");
       } else {
         // Both page URL and keywords were specified, so use a KeywordAndUrlSeed.
         requestBuilder.getKeywordAndUrlSeedBuilder().setUrl(pageUrl).addAllKeywords(keywords);
@@ -192,10 +195,20 @@ public class GenerateKeywordIdeas {
         System.out.printf(
             "Keyword idea text '%s' has %d average monthly searches and '%s' competition.%n",
             result.getText(),
+            
             result.getKeywordIdeaMetrics().getAvgMonthlySearches(),
             result.getKeywordIdeaMetrics().getCompetition());
+        inserePalavra(result.getText());
       }
     }
   }
   // [END generate_keyword_ideas]
+  
+  private static void inserePalavra(String palavra) {
+	  if (!palavra.contains("grátis") && !palavra.contains("gratuito") && 
+			  !palavra.contains("presencial") && !palavra.contains("gratis")) {
+		  listaPalavra += "," + palavra;
+	      
+	    } 
+  }
 }

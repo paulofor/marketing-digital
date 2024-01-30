@@ -30,13 +30,14 @@ public class RepositorioSolicitacaoCheckoutPaginaVendaPropria extends ModelRepos
 
 	// ***  Operações  ***
 
-	public synchronized void insereItem(String codigoPagina ,String utmCampaign ,String utmContent ,final VoidCallback callback ) {
+	public synchronized void insereItem(String codigoPagina ,String utmCampaign ,String utmContent ,String visitante ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("SolicitacaoCheckoutPaginaVendaPropria/insereItem","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "SolicitacaoCheckoutPaginaVendaPropria.insereItem");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("codigoPagina", codigoPagina);
 		params.put("utmCampaign", utmCampaign);
 		params.put("utmContent", utmContent);
+		params.put("visitante", visitante);
 		invokeStaticMethod("insereItem", params,   new EmptyResponseParser(callback));
 	}
 

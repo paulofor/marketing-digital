@@ -17,11 +17,15 @@ public class VersaoPaginaVenda extends Model {
 	private int hotmartId;
 	private String versao;
 	private int cria;
+	private String status;
+	private String dataCriaPagina;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ProdutoProprio ProdutoProprio;
 	private ModeloPaginaVenda ModeloPaginaVenda;
 	private ProdutoAfiliadoClickbank ProdutoAfiliadoClickbank;
+	private ProdutoAfiliadoHotlink ProdutoAfiliadoHotlink;
+	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
 	private List<ConteudoElemento> ConteudoElementos;
 	private List<ArquivoPaginaVenda> ArquivoPaginaVendas;
@@ -49,6 +53,8 @@ public class VersaoPaginaVenda extends Model {
 			obj.put("hotmartId", hotmartId);
 			obj.put("versao", versao);
 			obj.put("cria", cria);
+			obj.put("status", status);
+			obj.put("dataCriaPagina", dataCriaPagina);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -73,6 +79,18 @@ public class VersaoPaginaVenda extends Model {
 	}
 	public int getCria() { 
 		return this.cria;
+	}
+	public void setStatus(String valor) { 
+		this.status = valor;
+	}
+	public String getStatus() { 
+		return this.status;
+	}
+	public void setDataCriaPagina(String valor) { 
+		this.dataCriaPagina = valor;
+	}
+	public String getDataCriaPagina() { 
+		return this.dataCriaPagina;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
@@ -102,6 +120,20 @@ public class VersaoPaginaVenda extends Model {
 	public void setProdutoAfiliadoClickbank(HashMap valor) {
 		this.ProdutoAfiliadoClickbank = new ProdutoAfiliadoClickbank();
 		BeanUtil.setProperties(this.ProdutoAfiliadoClickbank, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotlink getProdutoAfiliadoHotlink() {
+		return ProdutoAfiliadoHotlink;
+	}
+	public void setProdutoAfiliadoHotlink(HashMap valor) {
+		this.ProdutoAfiliadoHotlink = new ProdutoAfiliadoHotlink();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotlink, (Map<String, ? extends Object>) valor, true);
+	}
+	public ContaGoogle getContaGoogle() {
+		return ContaGoogle;
+	}
+	public void setContaGoogle(HashMap valor) {
+		this.ContaGoogle = new ContaGoogle();
+		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ConteudoElemento> getConteudoElementos() {
 		return  ConteudoElementos;

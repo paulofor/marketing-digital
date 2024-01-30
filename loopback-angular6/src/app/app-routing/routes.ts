@@ -33,7 +33,6 @@ import { AnuncioAdsDisplayPorProdutoListComponent } from '../anuncio-ads-display
 import { ListaAltaMargemAltaTemperaturaComponent } from '../lista-alta-margem-alta-temperatura/lista-alta-margem-alta-temperatura.component';
 import { ListaSuperMargemComponent } from '../lista-super-margem/lista-super-margem.component';
 import { ContaGoogleDetalheComponent } from '../conta-google-detalhe/conta-google-detalhe.component';
-import { PaginaVendaPorProdutoListComponent } from '../pagina-venda-por-produto-list/pagina-venda-por-produto-list.component';
 import { SecaoWebPorProdutoListComponent } from '../secao-web-por-produto-list/secao-web-por-produto-list.component';
 import { ExperimentoModeloListComponent } from '../experimento-modelo-list/experimento-modelo-list.component';
 import { ExperimentoModeloDetalheComponent } from '../experimento-modelo-detalhe/experimento-modelo-detalhe.component';
@@ -45,6 +44,9 @@ import { DalleSolicitacaoImagemPorProdutoListComponent } from '../dalle-solicita
 import { DalleSolicitacaoComImagemPorProdutoListComponent } from '../dalle-solicitacao-com-imagem-por-produto-list/dalle-solicitacao-com-imagem-por-produto-list.component';
 import { CampanhaAdsMetricaIntradayPorCampanhaListComponent } from '../campanha-ads-metrica-intraday-por-campanha-list/campanha-ads-metrica-intraday-por-campanha-list.component';
 import { CampanhaAdsMetricaIntradayCtrListComponent } from '../campanha-ads-metrica-intraday-ctr-list/campanha-ads-metrica-intraday-ctr-list.component';
+import { PaginaVendaPropriaPorProdutoListComponent } from '../pagina-venda-propria-por-produto-list/pagina-venda-propria-por-produto-list.component';
+import { PublicoAlvoAdsPalavraListComponent } from '../publico-alvo-ads-palavra-list/publico-alvo-ads-palavra-list.component';
+import { PublicoAlvoAdsPalavraDetalheComponent } from '../publico-alvo-ads-palavra-detalhe/publico-alvo-ads-palavra-detalhe.component';
 
 
 
@@ -91,7 +93,7 @@ export const routes : Routes = [
     { path : 'listaAltaMargemAltaTemperatura' , component: ListaAltaMargemAltaTemperaturaComponent },
     { path : 'listaSuperMargem' , component: ListaSuperMargemComponent },
 
-    { path : 'paginaVendaPorProduto/:hotmartId' , component: PaginaVendaPorProdutoListComponent },
+    { path : 'paginaVendaPropriaPorProduto/:hotmartId' , component: PaginaVendaPropriaPorProdutoListComponent },
     { path : 'secaoWebPorProduto/:hotmartId' , component: SecaoWebPorProdutoListComponent },
 
     { path : 'experimentoModeloList' , component: ExperimentoModeloListComponent },
@@ -109,7 +111,9 @@ export const routes : Routes = [
     { path: 'campanhaAdsMetricaIntradayPorCampanhaList/:id' , component: CampanhaAdsMetricaIntradayPorCampanhaListComponent },
     
     { path: 'campanhaAdsMetricaIntradayCtrList' , component: CampanhaAdsMetricaIntradayCtrListComponent },
+    { path: 'publicoAlvoAdsPalavraList' , component: PublicoAlvoAdsPalavraListComponent },
 
+    { path: 'publicoAlvoAdsPalavraDetalhe/:id' , component: PublicoAlvoAdsPalavraDetalheComponent },
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
-]
+]  

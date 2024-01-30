@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro Interativo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .book {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            touch-action: pan-y;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .page {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            height: 100vh; /* Cada página ocupa 100% da altura da tela */
+            width: 100vw; /* Cada página ocupa 100% da largura da tela */
+        }
+    </style>
+</head>
+<body>
+
+<div class="book">
+    <div class="page">Página 1</div>
+    <div class="page">Página 2</div>
+    <div class="page">Página 3</div>
+    <!-- Adicione mais páginas conforme necessário -->
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentPage = 0;
+        const totalPages = document.querySelectorAll('.page').length;
+        const book = document.querySelector('.book');
+        let startY;
+
+        book.addEventListener('touchstart', function (event) {
+            startY = event.touches[0].clientY;
+        });
+
+        book.addEventListener('touchend', function (event) {
+            const deltaY = event.changedTouches[0].clientY - startY;
+
+            if (deltaY > 50 && currentPage < totalPages - 1) {
+                currentPage++;
+            } else if (deltaY < -50 && currentPage > 0) {
+                currentPage--;
+            }
+
+            const translateY = -currentPage * 100;
+            book.style.transform = `translateY(${translateY}vh)`;
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 module.exports = function(Produtoproprio) {
 
-    Produtoproprio.obtemParaGeracao = function(callback) {
+    Produtoproprio.ObtemParaGeracao = function(callback) {
         const ds = Produtoproprio.dataSource;
         const sql = "select * from ProdutoProprio where id = 1 ";
         ds.connector.query(sql,(err,result) => {

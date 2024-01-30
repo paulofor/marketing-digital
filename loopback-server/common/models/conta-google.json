@@ -105,6 +105,31 @@
 			"type": "hasMany",
 			"model": "PixelAdsSegmentoMercado",
 			"foreignKey": ""
+		},
+		"contaPublicoAlvoAdsPalavras": {
+			"type": "hasMany",
+			"model": "ContaPublicoAlvoAdsPalavra",
+			"foreignKey": ""
+		},
+		"pixelProdutoHotmartContas": {
+			"type": "hasMany",
+			"model": "PixelProdutoHotmartConta",
+			"foreignKey": ""
+		},
+		"pixelProdutoHotmartContaCheckouts": {
+			"type": "hasMany",
+			"model": "PixelProdutoHotmartContaCheckout",
+			"foreignKey": ""
+		},
+		"produtoHotmartContas": {
+			"type": "hasMany",
+			"model": "ProdutoHotmartConta",
+			"foreignKey": ""
+		},
+		"versaoPaginaVendas": {
+			"type": "hasMany",
+			"model": "VersaoPaginaVenda",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

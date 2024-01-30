@@ -17,7 +17,7 @@ public class GeraImagemDalle {
 
 	public static void main(String[] args) {
 		System.out.print("GeraImagemDalle");
-		System.out.println("(23/01/2024 16:35:15)");
+		System.out.println("(30/01/2024 15:39:06)");
 		try {
 			carregaProp();
 			GeraImagemDalleObj obj = new GeraImagemDalleObj();

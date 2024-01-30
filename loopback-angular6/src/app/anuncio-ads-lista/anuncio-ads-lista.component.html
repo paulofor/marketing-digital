@@ -2,7 +2,11 @@
   <div class="dgc-painel-header">
       <span>Anúncios - {{principal.nome}}</span>
       <a href="{{principal.urlFinal}}" target="_blank">link</a>
-      <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+      <div class="dgc-direita">
+        <a href="{{principal.salesPage}}" target="_blank">sales page</a>
+        <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+      </div>
+      
   </div>
   <div class="dgc-painel-principal">
       <div class="dgc-card" *ngFor="let item of principal.anuncioAds">
@@ -21,6 +25,40 @@
         <div class="dgc-card-detalhe">
           Descrição 2 : {{item.descricao2}}
         </div>
+        <br>
+        <div class="dgc-card-header">
+          Site Link1 - Texto: {{item.siteLink1Texto}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Site Link1 - Descrição 1: {{item.siteLink1Descricao1}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Site Link1 - Descricão 2: {{item.siteLink1Descricao2}}
+        </div>
+
+        <br>
+        <div class="dgc-card-header">
+          Site Link2 - Texto: {{item.siteLink2Texto}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Site Link2 - Descrição 1: {{item.siteLink2Descricao1}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Site Link2 - Descricão 2: {{item.siteLink2Descricao2}}
+        </div>
+
+        <br>
+        <div class="dgc-card-header">
+          Site Link3 - Texto: {{item.siteLink3Texto}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Site Link3 - Descrição 1: {{item.siteLink3Descricao1}}
+        </div>
+        <div class="dgc-card-detalhe">
+          Site Link3 - Descricão 2: {{item.siteLink3Descricao2}}
+        </div>
+
+
         <div class="dgc-card-comandos">
           <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
         </div>

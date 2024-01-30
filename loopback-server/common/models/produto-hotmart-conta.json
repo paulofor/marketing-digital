@@ -1,0 +1,93 @@
+{
+	"name": "ProdutoHotmartConta",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"hotmartId": {
+			"type": "number"
+			,"id": true
+		},
+		"contaGoogleId": {
+			"type": "number"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaRelacionamento": {
+			"accepts": [
+				{
+					"arg": "idItem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaRelacionamento",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaPixelFaltandoConta": {
+			"accepts": [
+				{
+					"arg": "idConta",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaPixelFaltandoConta",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

@@ -47,6 +47,9 @@
 		},
 		"maisRecenteProduto": {
 			"type": "number"
+		},
+		"manual": {
+			"type": "number"
 		}
 	},
 	"validations": [],

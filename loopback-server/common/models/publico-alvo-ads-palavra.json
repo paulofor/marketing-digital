@@ -1,0 +1,40 @@
+{
+	"name": "PublicoAlvoAdsPalavra",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"listaPalavra": {
+			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"contaPublicoAlvoAdsPalavras": {
+			"type": "hasMany",
+			"model": "ContaPublicoAlvoAdsPalavra",
+			"foreignKey": ""
+		},
+		"produtoPublicoAdsPalavras": {
+			"type": "hasMany",
+			"model": "ProdutoPublicoAdsPalavra",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

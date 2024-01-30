@@ -30,6 +30,9 @@
 		"dataHora": {
 			"type": "date"
 		},
+		"visitante": {
+			"type": "string"
+		},
 		"paginaVendaPropriaId": {
 			"type": "number"
 		}
@@ -60,6 +63,12 @@
 				},
 				{
 					"arg": "utmContent",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "visitante",
 					"type": "string",
    					"required": false,
     				"description": ""

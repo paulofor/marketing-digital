@@ -167,7 +167,7 @@ public class SeleniumUtil {
 		String uniqueStyles = (String) ((JavascriptExecutor) driver).executeScript("var output = '';"
 					+ "var elementStyles = window.getComputedStyle(arguments[0]);"
 					+ "var parentStyles = window.getComputedStyle(arguments[0].parentNode);" + "var excludedProperties = ["
-					+ "   'block-size', 'height', 'inline-size',"
+					+ "   'block-size', 'inline-size',"
 					+ "   'margin-block-end', 'margin-block-start', 'margin-bottom', 'margin-inline-end',"
 					+ "   'margin-inline-start', 'margin-left', 'margin-right', 'margin-top',"
 					+ "   'perspective-origin', 'transform-origin', 'width'" + "];" + "for (const prop of elementStyles) {"

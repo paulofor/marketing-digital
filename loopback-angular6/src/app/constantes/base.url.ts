@@ -18,4 +18,5 @@ export const DS_DIA_SEMANA = ['Domingo' , 'Segunda' , 'Terça' , 'Quarta' , 'Qui
 export const LIMITE_PONTOS_MONITORIA = 15;
 
 export const CUSTO_TRADE = 11;
+
 export const PERCENTUAL_AVISO = 1.5;

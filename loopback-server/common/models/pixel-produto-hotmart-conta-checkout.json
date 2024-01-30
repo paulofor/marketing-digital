@@ -1,0 +1,44 @@
+{
+	"name": "PixelProdutoHotmartContaCheckout",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"codigo1": {
+			"type": "string"
+		},
+		"codigo2": {
+			"type": "string"
+		},
+		"instalado": {
+			"type": "number"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

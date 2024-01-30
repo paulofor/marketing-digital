@@ -45,6 +45,13 @@ public class RepositorioPaginaVendaPropria extends ModelRepository<PaginaVendaPr
 		invokeStaticMethod("obtemListaPublicacao", params,   new JsonArrayParser<PaginaVendaPropria>(this, callback));
 	}
 
+	public synchronized void listaParaGerarArquivo(final ListCallback<PaginaVendaPropria> callback ) {
+		RestContractItem contrato = new RestContractItem("PaginaVendaPropria/listaParaGerarArquivo","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PaginaVendaPropria.listaParaGerarArquivo");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaGerarArquivo", params,   new JsonArrayParser<PaginaVendaPropria>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<PaginaVendaPropria> listaEntrada) {
 		JSONArray lista = new JSONArray();

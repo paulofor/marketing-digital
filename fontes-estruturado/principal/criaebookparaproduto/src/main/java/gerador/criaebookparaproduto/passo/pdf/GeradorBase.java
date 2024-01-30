@@ -11,7 +11,7 @@ public abstract class GeradorBase {
 
 	protected ProdutoProprio produto;
 	protected List<ProdutoProprioItemNivel1> listaItem;
-	protected String arquivo = "/home/usuario/aplicacoes/MarketingDigital/pagina-venda-pesquisa-desenvolvimento/recursos/arquivo.pdf";
+	protected String arquivo = "/home/usuario/aplicacoes/MarketingDigital/ebooks/livro.pdf";
 	
 	public GeradorBase(ProdutoProprio produto, List<ProdutoProprioItemNivel1> listaItem) {
 		this.produto = produto;
@@ -24,7 +24,7 @@ public abstract class GeradorBase {
 	
 	protected String getExplicacao(ProdutoProprioItemNivel1 item) {
 		JSONObject dado = new JSONObject(item.getJson());
-		return limparTexto(dado.getString("explicacao"));
+		return limparTexto(dado.getString("descricao"));
 	}
 	
 	protected String getHistorico(ProdutoProprioItemNivel1 item) {

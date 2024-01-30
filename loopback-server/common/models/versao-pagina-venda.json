@@ -18,6 +18,12 @@
 		"cria": {
 			"type": "number"
 		},
+		"status": {
+			"type": "string"
+		},
+		"dataCriaPagina": {
+			"type": "date"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		},
@@ -25,6 +31,12 @@
 			"type": "number"
 		},
 		"produtoAfiliadoClickbankId": {
+			"type": "number"
+		},
+		"produtoAfiliadoHotlinkId": {
+			"type": "number"
+		},
+		"contaGoogleId": {
 			"type": "number"
 		}
 	},
@@ -48,6 +60,16 @@
 		"produtoAfiliadoClickbank": {
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoClickbank",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotlink": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotlink",
+			"foreignKey": ""
+		},
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
 			"foreignKey": ""
 		},
 		"conteudoElementos": {

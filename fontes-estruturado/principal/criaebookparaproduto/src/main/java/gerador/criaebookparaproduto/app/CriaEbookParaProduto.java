@@ -17,7 +17,7 @@ public class CriaEbookParaProduto {
 
 	public static void main(String[] args) {
 		System.out.print("CriaEbookParaProduto");
-		System.out.println("(23/01/2024 16:35:14)");
+		System.out.println("(30/01/2024 15:39:04)");
 		try {
 			carregaProp();
 			CriaEbookParaProdutoObj obj = new CriaEbookParaProdutoObj();

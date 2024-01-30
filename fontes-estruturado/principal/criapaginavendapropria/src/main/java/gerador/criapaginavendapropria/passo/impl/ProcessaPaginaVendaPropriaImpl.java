@@ -27,6 +27,7 @@ public class ProcessaPaginaVendaPropriaImpl extends ProcessaPaginaVendaPropria {
 			novo.setVersaoPaginaVendaId(versaoPaginaVendaCorrente.getIdInteger());
 			novo.setImagemPaginaVendaId(arquivo.getImagemPaginaVendaId());
 			novo.setCodigoUrl(generateRandomHex());
+			novo.setTipoGeracao("JAVA");
 			this.saidaListaPaginaVendaPropria.add(novo);
 		}
 		return true;

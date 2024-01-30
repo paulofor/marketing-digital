@@ -49,9 +49,9 @@
 			"model": "ImagemPaginaVenda",
 			"foreignKey": "hotmartId"
 		},
-		"paginaVendaProprias": {
+		"versaoPaginaVendas": {
 			"type": "hasMany",
-			"model": "PaginaVendaPropria",
+			"model": "VersaoPaginaVenda",
 			"foreignKey": ""
 		}
 	},

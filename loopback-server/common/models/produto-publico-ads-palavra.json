@@ -1,0 +1,37 @@
+{
+	"name": "ProdutoPublicoAdsPalavra",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"hotmartId": {
+			"type": "number"
+			,"id": true
+		},
+		"publicoAlvoAdsPalavraId": {
+			"type": "number"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"publicoAlvoAdsPalavra": {
+			"type": "belongsTo",
+			"model": "PublicoAlvoAdsPalavra",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

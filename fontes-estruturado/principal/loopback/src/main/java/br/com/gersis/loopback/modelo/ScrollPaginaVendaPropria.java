@@ -17,6 +17,7 @@ public class ScrollPaginaVendaPropria extends Model {
 	private String codigoPaginaVendaPropria;
 	private String dataHora;
 	private String codigoLoad;
+	private String visitante;
 	// Relacionamentos 1
 	private PaginaVendaPropria PaginaVendaPropria;
 	// Relacionamentos N
@@ -42,6 +43,7 @@ public class ScrollPaginaVendaPropria extends Model {
 			obj.put("codigoPaginaVendaPropria", codigoPaginaVendaPropria);
 			obj.put("dataHora", dataHora);
 			obj.put("codigoLoad", codigoLoad);
+			obj.put("visitante", visitante);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -66,6 +68,12 @@ public class ScrollPaginaVendaPropria extends Model {
 	}
 	public String getCodigoLoad() { 
 		return this.codigoLoad;
+	}
+	public void setVisitante(String valor) { 
+		this.visitante = valor;
+	}
+	public String getVisitante() { 
+		return this.visitante;
 	}
 
 	public PaginaVendaPropria getPaginaVendaPropria() {

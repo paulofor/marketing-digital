@@ -12,6 +12,15 @@ export interface AnuncioAdsInterface {
   "titulo3"?: string;
   "descricao1"?: string;
   "descricao2"?: string;
+  "siteLink1Descricao1"?: string;
+  "siteLink1Descricao2"?: string;
+  "siteLink1Texto"?: string;
+  "siteLink3Texto"?: string;
+  "siteLink2Descricao1"?: string;
+  "siteLink2Descricao2"?: string;
+  "siteLink2Texto"?: string;
+  "siteLink3Descricao1"?: string;
+  "siteLink3Descricao2"?: string;
   "produtoAfiliadoHotmartId"?: number;
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
@@ -25,6 +34,15 @@ export class AnuncioAds implements AnuncioAdsInterface {
   "titulo3": string;
   "descricao1": string;
   "descricao2": string;
+  "siteLink1Descricao1": string;
+  "siteLink1Descricao2": string;
+  "siteLink1Texto": string;
+  "siteLink3Texto": string;
+  "siteLink2Descricao1": string;
+  "siteLink2Descricao2": string;
+  "siteLink2Texto": string;
+  "siteLink3Descricao1": string;
+  "siteLink3Descricao2": string;
   "produtoAfiliadoHotmartId": number;
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
@@ -81,6 +99,42 @@ export class AnuncioAds implements AnuncioAdsInterface {
         },
         "descricao2": {
           name: 'descricao2',
+          type: 'string'
+        },
+        "siteLink1Descricao1": {
+          name: 'siteLink1Descricao1',
+          type: 'string'
+        },
+        "siteLink1Descricao2": {
+          name: 'siteLink1Descricao2',
+          type: 'string'
+        },
+        "siteLink1Texto": {
+          name: 'siteLink1Texto',
+          type: 'string'
+        },
+        "siteLink3Texto": {
+          name: 'siteLink3Texto',
+          type: 'string'
+        },
+        "siteLink2Descricao1": {
+          name: 'siteLink2Descricao1',
+          type: 'string'
+        },
+        "siteLink2Descricao2": {
+          name: 'siteLink2Descricao2',
+          type: 'string'
+        },
+        "siteLink2Texto": {
+          name: 'siteLink2Texto',
+          type: 'string'
+        },
+        "siteLink3Descricao1": {
+          name: 'siteLink3Descricao1',
+          type: 'string'
+        },
+        "siteLink3Descricao2": {
+          name: 'siteLink3Descricao2',
           type: 'string'
         },
         "produtoAfiliadoHotmartId": {

@@ -8,11 +8,11 @@
  			<div class="dgc-card-header">
  				<span class="dgc-link" routerLink="/produtoAfiliadoHotmartDetalhe/{{item.hotmartId}}">{{item.nome}}</span>
  			</div>
-			<div class="dgc-card-detalhe">
+			<div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts.length>0">
 				<span style="margin-right: 4px;">Temperatura: {{item.visitaProdutoHotmarts[0].temperatura}}</span>
 				<span>({{item.visitaProdutoHotmarts[0].dataInsercao | date: 'dd-MM-yyy'}})</span>
 			</div>
-			<div class="dgc-card-detalhe">
+			<div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts.length>0">
 				<span>Afiliação: {{item.visitaProdutoHotmarts[0].afiliacaoValor}} ( {{item.visitaProdutoHotmarts[0].afiliacaoPercentual}}% )</span>
 			</div>
 			<div class="dgc-card-detalhe">

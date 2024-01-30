@@ -22,10 +22,10 @@ public class PaginaVendaPropria extends Model {
 	private String html;
 	private String css;
 	private String tipoGeracao;
+	private int geraArquivo;
 	// Relacionamentos 1
 	private ImagemPaginaVenda ImagemPaginaVenda;
 	private VersaoPaginaVenda VersaoPaginaVenda;
-	private ProdutoAfiliadoHotlink ProdutoAfiliadoHotlink;
 	private PixelAdsSegmentoMercado PixelAdsSegmentoMercado;
 	// Relacionamentos N
 	private List<LoadPaginaVenda> LoadPaginaVendas;
@@ -60,6 +60,7 @@ public class PaginaVendaPropria extends Model {
 			obj.put("html", html);
 			obj.put("css", css);
 			obj.put("tipoGeracao", tipoGeracao);
+			obj.put("geraArquivo", geraArquivo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -115,6 +116,12 @@ public class PaginaVendaPropria extends Model {
 	public String getTipoGeracao() { 
 		return this.tipoGeracao;
 	}
+	public void setGeraArquivo(int valor) { 
+		this.geraArquivo = valor;
+	}
+	public int getGeraArquivo() { 
+		return this.geraArquivo;
+	}
 
 	public ImagemPaginaVenda getImagemPaginaVenda() {
 		return ImagemPaginaVenda;
@@ -129,13 +136,6 @@ public class PaginaVendaPropria extends Model {
 	public void setVersaoPaginaVenda(HashMap valor) {
 		this.VersaoPaginaVenda = new VersaoPaginaVenda();
 		BeanUtil.setProperties(this.VersaoPaginaVenda, (Map<String, ? extends Object>) valor, true);
-	}
-	public ProdutoAfiliadoHotlink getProdutoAfiliadoHotlink() {
-		return ProdutoAfiliadoHotlink;
-	}
-	public void setProdutoAfiliadoHotlink(HashMap valor) {
-		this.ProdutoAfiliadoHotlink = new ProdutoAfiliadoHotlink();
-		BeanUtil.setProperties(this.ProdutoAfiliadoHotlink, (Map<String, ? extends Object>) valor, true);
 	}
 	public PixelAdsSegmentoMercado getPixelAdsSegmentoMercado() {
 		return PixelAdsSegmentoMercado;

@@ -83,7 +83,6 @@ import { ListaAltaMargemAltaTemperaturaComponent } from './lista-alta-margem-alt
 import { ListaSuperMargemComponent } from './lista-super-margem/lista-super-margem.component';
 import { ExibeTextoModalComponent } from './exibe-texto-modal/exibe-texto-modal.component';
 import { ContaGoogleDetalheComponent } from './conta-google-detalhe/conta-google-detalhe.component';
-import { PaginaVendaPorProdutoListComponent } from './pagina-venda-por-produto-list/pagina-venda-por-produto-list.component';
 import { PaginaVendaEditComponent } from './pagina-venda-edit/pagina-venda-edit.component';
 import { SecaoWebEditComponent } from './secao-web-edit/secao-web-edit.component';
 import { SecaoWebPorProdutoListComponent } from './secao-web-por-produto-list/secao-web-por-produto-list.component';
@@ -110,6 +109,16 @@ import { DalleSolicitacaoComImagemPorProdutoListComponent } from './dalle-solici
 import { ArquivoPaginaVendaEditRelComponent } from './arquivo-pagina-venda-edit-rel/arquivo-pagina-venda-edit-rel.component';
 import { CampanhaAdsMetricaIntradayPorCampanhaListComponent } from './campanha-ads-metrica-intraday-por-campanha-list/campanha-ads-metrica-intraday-por-campanha-list.component';
 import { CampanhaAdsMetricaIntradayCtrListComponent } from './campanha-ads-metrica-intraday-ctr-list/campanha-ads-metrica-intraday-ctr-list.component';
+import { ExibeTextoSemPreComponent } from './exibe-texto-sem-pre/exibe-texto-sem-pre.component';
+import { PaginaVendaPropriaPorProdutoListComponent } from './pagina-venda-propria-por-produto-list/pagina-venda-propria-por-produto-list.component';
+import { PaginaVendaPropriaEditComponent } from './pagina-venda-propria-edit/pagina-venda-propria-edit.component';
+import { PaginaVendaPropriaDetalheComponent } from './pagina-venda-propria-detalhe/pagina-venda-propria-detalhe.component';
+import { PublicoAlvoAdsPalavraListComponent } from './publico-alvo-ads-palavra-list/publico-alvo-ads-palavra-list.component';
+import { PublicoAlvoAdsPalavraEditComponent } from './publico-alvo-ads-palavra-edit/publico-alvo-ads-palavra-edit.component';
+import { PublicoAlvoAdsPalavraDetalheComponent } from './publico-alvo-ads-palavra-detalhe/publico-alvo-ads-palavra-detalhe.component';
+import { ContaPublicoAlvoAdsPalavraEditRelComponent } from './conta-publico-alvo-ads-palavra-edit-rel/conta-publico-alvo-ads-palavra-edit-rel.component';
+import { ProdutoHotmartContaEditRelComponent } from './produto-hotmart-conta-edit-rel/produto-hotmart-conta-edit-rel.component';
+import { IdeiaPalavraChaveEditComponent } from './ideia-palavra-chave-edit/ideia-palavra-chave-edit.component';
 
 
 
@@ -170,7 +179,6 @@ registerLocaleData(localePt, 'pt-BR');
     ListaSuperMargemComponent,
     ExibeTextoModalComponent,
     ContaGoogleDetalheComponent,
-    PaginaVendaPorProdutoListComponent,
     PaginaVendaEditComponent,
     SecaoWebEditComponent,
     SecaoWebPorProdutoListComponent,
@@ -196,7 +204,17 @@ registerLocaleData(localePt, 'pt-BR');
     DalleSolicitacaoComImagemPorProdutoListComponent,
     ArquivoPaginaVendaEditRelComponent,
     CampanhaAdsMetricaIntradayPorCampanhaListComponent,
-    CampanhaAdsMetricaIntradayCtrListComponent
+    CampanhaAdsMetricaIntradayCtrListComponent,
+    ExibeTextoSemPreComponent,
+    PaginaVendaPropriaPorProdutoListComponent,
+    PaginaVendaPropriaEditComponent,
+    PaginaVendaPropriaDetalheComponent,
+    PublicoAlvoAdsPalavraListComponent,
+    PublicoAlvoAdsPalavraEditComponent,
+    PublicoAlvoAdsPalavraDetalheComponent,
+    ContaPublicoAlvoAdsPalavraEditRelComponent,
+    ProdutoHotmartContaEditRelComponent,
+    IdeiaPalavraChaveEditComponent
   ],
   imports: [
     BrowserModule,
@@ -270,7 +288,12 @@ registerLocaleData(localePt, 'pt-BR');
     ModeloPaginaVendaFonteEditComponent,
     DalleSolicitacaoImagemEditComponent,
     VersaoImagemPaginaVendaEditRelComponent,
-    ArquivoPaginaVendaEditRelComponent
+    ArquivoPaginaVendaEditRelComponent,
+    ExibeTextoSemPreComponent,
+    PublicoAlvoAdsPalavraEditComponent,
+    ContaPublicoAlvoAdsPalavraEditRelComponent,
+    ProdutoHotmartContaEditRelComponent,
+    IdeiaPalavraChaveEditComponent
   ],
   bootstrap: [AppComponent]
 })

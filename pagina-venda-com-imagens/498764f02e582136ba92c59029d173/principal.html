@@ -13,6 +13,129 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Automaquiagem com Lucas Vieira</title>
 
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11374828177"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-11374828177');
+        gtag('event', 'conversion', { 'send_to': 'AW-11374828177/i0kXCJ_Jn4QZEJG1-K8q' });
+    </script>
+
+
+
+ 
+
+
+    <script>
+
+        function generateRandomValue() {
+            const array = new Uint32Array(2);
+            crypto.getRandomValues(array);
+            return array[0].toString(16) + array[1].toString(16);
+        }
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Verifica se o cookie começa com o nome desejado
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('executando');
+
+        let meuCookie = getCookie('digicomId');
+            if (!meuCookie) {
+                // Se o cookie não existir, crie-o e envie como parâmetro para o PHP
+                meuCookie = generateRandomValue(); // Defina o valor desejado para o cookie
+                const expirationDate = new Date('2038-01-01'); // Define uma data futura (2038, por exemplo)
+                document.cookie = 'digicomId=' + meuCookie + '; expires=${expirationDate.toUTCString()}; path=/'; // Define o cookie
+        }
+
+
+        // Use a função getCookie para verificar se um cookie existe
+        fetch('https://tyche.ovh:23105/api/LoadPaginaVendaPropria/InsereItem?codigoPagina=eca745e8a3325040ba3086f26895e9&utmContent=' + meuCookie)
+            .then(function (response) {
+                console.log('Requisição GET para a outra URL feita com sucesso.', response);
+            })
+            .catch(function (error) {
+                console.error('Erro ao fazer requisição GET para a outra URL:', error);
+            });
+    });
+
+
+    let fetchedPositions = {
+        10: false,
+        40: false
+    };
+
+    function fetchScrollData(position) {
+        //console.log('vai fazer fetch posicao');
+        fetch('https://tyche.ovh:23105/api/ScrollPaginaVendaPropria/InsereItem?codigoPagina=eca745e8a3325040ba3086f26895e9&posicao=' + position)
+            .then(function (response) {
+                console.log('Requisição GET para a outra URL feita com sucesso.', response);
+            })
+            .catch(function (error) {
+                console.error('Erro ao fazer requisição GET para a outra URL:', error);
+            });
+    }
+
+    function checkScrollPercentage() {
+        const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = window.scrollY;
+        const scrollPercentage = (scrolled / totalHeight) * 100;
+        if (!fetchedPositions[10] && scrollPercentage >= 10 && scrollPercentage < 20) {
+            fetchScrollData(10);
+            fetchedPositions[10] = true;
+        } else if (!fetchedPositions[40] && scrollPercentage >= 40 && scrollPercentage < 50) {
+            fetchScrollData(40);
+            fetchedPositions[40] = true;
+        }
+    }
+
+    function throttle(callback, limit) {
+            let ticking = false;
+            return function () {
+                if (!ticking) {
+                    callback.apply(this, arguments);
+                    ticking = true;
+                    setTimeout(function () {
+                        ticking = false;
+                    }, limit);
+                }
+            };
+        }
+
+    const throttledScroll = throttle(checkScrollPercentage, 200);
+    window.addEventListener('scroll', throttledScroll);
+
+    function realizarFetch() {
+        var queryString = window.location.search;
+        queryString = queryString.replace(/^[?]/, '');
+
+        var url = 'https://tyche.ovh:23105/api/SolicitacaoCheckoutPaginaVendaPropria/InsereItem?codigoPagina=eca745e8a3325040ba3086f26895e9';
+        //console.log('checkout' , url);        
+        fetch(url)
+            .then(function (response) {
+                window.location.href = "https://go.hotmart.com/V88563614U?ap=2d26";
+            })
+            .catch(function (error) {
+                window.location.href = "https://go.hotmart.com/V88563614U?ap=2d26";
+            });
+    }
+    </script>
+
+
+
     <style>
         body {
             margin: 0;
@@ -321,8 +444,6 @@
             font-size: 25px !important;
         }
     </style>
-
-
     <section id="section6">
         <div class="component-bg" style="background-color: rgb(242, 242, 242);"></div>
         <div class="container">
@@ -554,7 +675,7 @@
     </section>
 
   
-
+    <!--   -->
 
     <style>
         #section7 {
@@ -719,7 +840,6 @@
             text-align: left;
         }
     </style>
-
     <section id="section7">
         <div class="container" style="background-color: rgb(242, 242, 242);">
             <h2 class="title" style="background-color: rgb(242, 242, 242);"><b>DESCRIÇÃO DAS AULAS:<br>+de 15 horas de
@@ -914,6 +1034,8 @@
         </div>
     </section>
 
+    <!-- -->
+
     <style>
         #section8 {
             -webkit-text-size-adjust: 100%;
@@ -1020,7 +1142,6 @@
         }
     </style>
 
-
     <section id="section8">
         <div class="container" style="background-color: rgb(0, 0, 0);">
             <div class="section-heading">
@@ -1036,7 +1157,7 @@
         </div>
     </section>
 
-
+    <!-- -->
 
     <style>
         #section9 {
@@ -1245,13 +1366,13 @@
         </div>
     </section>
 
-
+    <!-- -->
 
     <div style="height: 50px; background-color:rgb(39, 39, 39); display: block;">
 
     </div>
 
-    <a href="https://go.hotmart.com/V88563614U?ap=2d26" id="cta" class="cta-button">Comece Agora!</a>
+    <a onclick="realizarFetch()" id="cta" class="cta-button">Comece Agora!</a>
 
 </body>
 

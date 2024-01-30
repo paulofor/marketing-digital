@@ -6,6 +6,7 @@ import { VersaoPaginaVendaDetalheBaseComponent } from './versao-pagina-venda-det
 import { ConteudoElementoEditComponent } from '../conteudo-elemento-edit/conteudo-elemento-edit.component';
 import { VersaoImagemPaginaVendaEditRelComponent } from '../versao-imagem-pagina-venda-edit-rel/versao-imagem-pagina-venda-edit-rel.component';
 import { ArquivoPaginaVendaEditRelComponent } from '../arquivo-pagina-venda-edit-rel/arquivo-pagina-venda-edit-rel.component';
+import { VersaoPaginaVendaEditComponent } from '../versao-pagina-venda-edit/versao-pagina-venda-edit.component';
 
 @Component({
 	selector: 'app-versao-pagina-venda-detalhe',
@@ -22,6 +23,20 @@ export class VersaoPaginaVendaDetalheComponent extends VersaoPaginaVendaDetalheB
 		private srvElemento: ElementoModeloPaginaVendaApi) { 
 		super(srv,router,dialog);
 	}
+
+	editaPrincipal() {
+		console.log('principal');
+        this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(VersaoPaginaVendaEditComponent, {
+            width: '800px',
+            data: {
+                item: this.principal,
+				origem: this.principal.produtoAfiliadoHotmart
+            }
+        });
+    }
 
 	edita(edicao?) {
 		console.log('Item Edicao: ' , edicao)
@@ -56,6 +71,7 @@ export class VersaoPaginaVendaDetalheComponent extends VersaoPaginaVendaDetalheB
 		return {
 			'include' : [
 				'produtoAfiliadoHotmart',
+				'produtoAfiliadoHotlink',
 				{'relation' : 'arquivoPaginaVendas' , 'scope' : {
 					'include' : 'imagemPaginaVenda'}}
 			]

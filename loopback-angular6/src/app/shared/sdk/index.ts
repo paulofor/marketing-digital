@@ -119,6 +119,14 @@ import { ScrollPaginaVendaPropriaApi } from './services/custom/ScrollPaginaVenda
 import { AnuncioCampanhaAdsRedeDisplayApi } from './services/custom/AnuncioCampanhaAdsRedeDisplay';
 import { GrupoCampanhaAdsRedeDisplayApi } from './services/custom/GrupoCampanhaAdsRedeDisplay';
 import { SolicitacaoCheckoutPaginaVendaPropriaApi } from './services/custom/SolicitacaoCheckoutPaginaVendaPropria';
+import { ContaPublicoAlvoAdsPalavraApi } from './services/custom/ContaPublicoAlvoAdsPalavra';
+import { PublicoAlvoAdsPalavraApi } from './services/custom/PublicoAlvoAdsPalavra';
+import { ProdutoPublicoAdsPalavraApi } from './services/custom/ProdutoPublicoAdsPalavra';
+import { PixelProdutoHotmartContaApi } from './services/custom/PixelProdutoHotmartConta';
+import { PixelProdutoHotmartContaCheckoutApi } from './services/custom/PixelProdutoHotmartContaCheckout';
+import { PixelProdutoHotmartContaCompraApi } from './services/custom/PixelProdutoHotmartContaCompra';
+import { ArtigoParaProdutoApi } from './services/custom/ArtigoParaProduto';
+import { ProdutoHotmartContaApi } from './services/custom/ProdutoHotmartConta';
 /**
 * @module SDKBrowserModule
 * @description
@@ -220,6 +228,14 @@ export class SDKBrowserModule {
         AnuncioCampanhaAdsRedeDisplayApi,
         GrupoCampanhaAdsRedeDisplayApi,
         SolicitacaoCheckoutPaginaVendaPropriaApi,
+        ContaPublicoAlvoAdsPalavraApi,
+        PublicoAlvoAdsPalavraApi,
+        ProdutoPublicoAdsPalavraApi,
+        PixelProdutoHotmartContaApi,
+        PixelProdutoHotmartContaCheckoutApi,
+        PixelProdutoHotmartContaCompraApi,
+        ArtigoParaProdutoApi,
+        ProdutoHotmartContaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

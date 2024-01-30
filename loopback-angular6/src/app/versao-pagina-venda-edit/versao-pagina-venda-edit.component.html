@@ -17,6 +17,22 @@
 			</mat-select>
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width" *ngIf="listaHotlink">
+			<mat-select placeholder="Checkout" #produtoAfiliadoHotlinkId [(ngModel)]="item.produtoAfiliadoHotlinkId"
+				name="produtoAfiliadoHotlinkId">
+				<mat-option *ngFor="let link of listaHotlink" [value]="link.id">
+					{{ link.descricao}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-half-width">
+			<mat-select #status [(ngModel)]="item.status" name="status" placeholder="Status">
+				<mat-option value="DESENVOLVIMENTO">Desenvolvimento</mat-option>
+				<mat-option value="PRONTA">Pronta para criar página</mat-option>
+			</mat-select>
+		</mat-form-field>
+
 		<mat-form-field class="example-full-width">
 			<input matInput #cria [(ngModel)]="item.cria" name="cria" placeholder="Cria" />
 		</mat-form-field>

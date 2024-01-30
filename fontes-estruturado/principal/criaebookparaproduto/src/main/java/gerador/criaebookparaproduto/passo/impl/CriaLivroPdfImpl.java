@@ -19,7 +19,7 @@ public class CriaLivroPdfImpl extends CriaLivroPdf {
 
 	@Override
 	protected boolean executaCustom(ProdutoProprio produto, List<ProdutoProprioItemNivel1> listaItem) {
-		this.criaPdf(listaItem);
+		//this.criaPdf(listaItem);
 		GeradoriText gerador = new GeradoriText(produto, listaItem);
 		gerador.geraArquivo();
 		return true;
@@ -64,7 +64,7 @@ public class CriaLivroPdfImpl extends CriaLivroPdf {
 
 		try {
 			document.save(
-					"/home/usuario/aplicacoes/MarketingDigital/pagina-venda-pesquisa-desenvolvimento/recursos/arquivo.pdf");
+					"/home/usuario/aplicacoes/MarketingDigital/ebooks/50termos-info.pdf");
 			document.close();
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -32,7 +32,7 @@
 	},
 	"acls": [],
 	"methods": {
-		"atualizaItem": {
+		"AtualizaItem": {
 			"accepts": [
 				{
 					"arg": "item",
@@ -57,7 +57,7 @@
  				}
  			]
 		},
-		"obtemListaVersaoCorrente": {
+		"ObtemListaVersaoCorrente": {
 			"accepts": [
 				{
 					"arg": "idProdutoProprio",

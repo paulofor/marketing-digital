@@ -57,6 +57,7 @@ public class GeradoriText extends GeradorBase{
 	            }
 
 	            document.close();
+	            System.out.println(arquivo);
 	            System.out.println("PDF criado com sucesso!");
 
 	        } catch (DocumentException e) {

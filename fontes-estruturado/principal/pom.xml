@@ -40,6 +40,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>publicapaginavenda</module>
 		<module>criapaginavendapropria</module>
 		<module>publicapaginavendapropria</module>
+		<module>criapublicoadspalavra</module>
+		<module>extraiartigoparaproduto</module>
+		<module>criapixelprodutohotmartconta</module>
+		<module>criaarquivopaginavendapropria</module>
 	</modules>
 
 </project>

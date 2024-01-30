@@ -21,7 +21,12 @@ import {
   PaginaVenda,
   ImagemConjunto,
   VersaoPaginaVenda,
-  DalleSolicitacaoImagem
+  DalleSolicitacaoImagem,
+  PublicoAlvoAdsPalavra,
+  ProdutoPublicoAdsPalavra,
+  PixelProdutoHotmartConta,
+  PixelProdutoHotmartContaCheckout,
+  ProdutoHotmartConta
 } from '../index';
 
 declare var Object: any;
@@ -83,6 +88,11 @@ export interface ProdutoAfiliadoHotmartInterface {
   imagemConjuntos?: ImagemConjunto[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
   dalleSolicitacaoImagems?: DalleSolicitacaoImagem[];
+  publicoAlvoAdsPalavras?: PublicoAlvoAdsPalavra[];
+  produtoPublicoAdsPalavras?: ProdutoPublicoAdsPalavra[];
+  pixelProdutoHotmartContas?: PixelProdutoHotmartConta[];
+  pixelProdutoHotmartContaCheckouts?: PixelProdutoHotmartContaCheckout[];
+  produtoHotmartContas?: ProdutoHotmartConta[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -143,6 +153,11 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   imagemConjuntos: ImagemConjunto[];
   versaoPaginaVendas: VersaoPaginaVenda[];
   dalleSolicitacaoImagems: DalleSolicitacaoImagem[];
+  publicoAlvoAdsPalavras: PublicoAlvoAdsPalavra[];
+  produtoPublicoAdsPalavras: ProdutoPublicoAdsPalavra[];
+  pixelProdutoHotmartContas: PixelProdutoHotmartConta[];
+  pixelProdutoHotmartContaCheckouts: PixelProdutoHotmartContaCheckout[];
+  produtoHotmartContas: ProdutoHotmartConta[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -502,6 +517,46 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'dalleSolicitacaoImagems',
           type: 'DalleSolicitacaoImagem[]',
           model: 'DalleSolicitacaoImagem',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        publicoAlvoAdsPalavras: {
+          name: 'publicoAlvoAdsPalavras',
+          type: 'PublicoAlvoAdsPalavra[]',
+          model: 'PublicoAlvoAdsPalavra',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        produtoPublicoAdsPalavras: {
+          name: 'produtoPublicoAdsPalavras',
+          type: 'ProdutoPublicoAdsPalavra[]',
+          model: 'ProdutoPublicoAdsPalavra',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        pixelProdutoHotmartContas: {
+          name: 'pixelProdutoHotmartContas',
+          type: 'PixelProdutoHotmartConta[]',
+          model: 'PixelProdutoHotmartConta',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        pixelProdutoHotmartContaCheckouts: {
+          name: 'pixelProdutoHotmartContaCheckouts',
+          type: 'PixelProdutoHotmartContaCheckout[]',
+          model: 'PixelProdutoHotmartContaCheckout',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        produtoHotmartContas: {
+          name: 'produtoHotmartContas',
+          type: 'ProdutoHotmartConta[]',
+          model: 'ProdutoHotmartConta',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'

@@ -1,0 +1,50 @@
+{
+	"name": "ArtigoParaProduto",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"url": {
+			"type": "string"
+		},
+		"textoIngles": {
+			"type": "string"
+		},
+		"tituloArtigo": {
+			"type": "string"
+		},
+		"tituloTraduzido": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+		"ListaParaExtrair": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaExtrair",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

@@ -71,6 +71,14 @@ import { ScrollPaginaVendaPropria } from '../../models/ScrollPaginaVendaPropria'
 import { AnuncioCampanhaAdsRedeDisplay } from '../../models/AnuncioCampanhaAdsRedeDisplay';
 import { GrupoCampanhaAdsRedeDisplay } from '../../models/GrupoCampanhaAdsRedeDisplay';
 import { SolicitacaoCheckoutPaginaVendaPropria } from '../../models/SolicitacaoCheckoutPaginaVendaPropria';
+import { ContaPublicoAlvoAdsPalavra } from '../../models/ContaPublicoAlvoAdsPalavra';
+import { PublicoAlvoAdsPalavra } from '../../models/PublicoAlvoAdsPalavra';
+import { ProdutoPublicoAdsPalavra } from '../../models/ProdutoPublicoAdsPalavra';
+import { PixelProdutoHotmartConta } from '../../models/PixelProdutoHotmartConta';
+import { PixelProdutoHotmartContaCheckout } from '../../models/PixelProdutoHotmartContaCheckout';
+import { PixelProdutoHotmartContaCompra } from '../../models/PixelProdutoHotmartContaCompra';
+import { ArtigoParaProduto } from '../../models/ArtigoParaProduto';
+import { ProdutoHotmartConta } from '../../models/ProdutoHotmartConta';
 
 export interface Models { [name: string]: any }
 
@@ -149,6 +157,14 @@ export class SDKModels {
     AnuncioCampanhaAdsRedeDisplay: AnuncioCampanhaAdsRedeDisplay,
     GrupoCampanhaAdsRedeDisplay: GrupoCampanhaAdsRedeDisplay,
     SolicitacaoCheckoutPaginaVendaPropria: SolicitacaoCheckoutPaginaVendaPropria,
+    ContaPublicoAlvoAdsPalavra: ContaPublicoAlvoAdsPalavra,
+    PublicoAlvoAdsPalavra: PublicoAlvoAdsPalavra,
+    ProdutoPublicoAdsPalavra: ProdutoPublicoAdsPalavra,
+    PixelProdutoHotmartConta: PixelProdutoHotmartConta,
+    PixelProdutoHotmartContaCheckout: PixelProdutoHotmartContaCheckout,
+    PixelProdutoHotmartContaCompra: PixelProdutoHotmartContaCompra,
+    ArtigoParaProduto: ArtigoParaProduto,
+    ProdutoHotmartConta: ProdutoHotmartConta,
     
   };
 

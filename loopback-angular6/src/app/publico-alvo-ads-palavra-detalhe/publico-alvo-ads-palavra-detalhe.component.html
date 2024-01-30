@@ -1,0 +1,26 @@
+<div class="dgc-painel" *ngIf="principal">
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
+	</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-detalhe">
+			<span>{{principal.listaPalavra}}</span>
+		</div>
+		<div class="dgc-card-comandos">
+		</div>
+	</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Contas</span>
+		</div>
+		<div class="dgc-card-detalhe" *ngFor="let rel of principal.contaPublicoAlvoAdsPalavras">
+			<span>{{rel.contaGoogle.nome}} - Ads: {{rel.contaGoogle.idAds}}  -  Pronta: {{rel.pronta}}  (#{{rel.contaGoogle.id}})</span>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaConta()">Alterar</button>
+		</div>
+	</div>
+
+</div>

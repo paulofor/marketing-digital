@@ -18,6 +18,9 @@
 		"codigoLoad": {
 			"type": "string"
 		},
+		"visitante": {
+			"type": "string"
+		},
 		"paginaVendaPropriaId": {
 			"type": "number"
 		}
@@ -43,6 +46,12 @@
 				{
 					"arg": "posicao",
 					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "visitante",
+					"type": "string",
    					"required": false,
     				"description": ""
 				}

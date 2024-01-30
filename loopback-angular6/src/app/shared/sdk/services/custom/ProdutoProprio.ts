@@ -735,7 +735,7 @@ export class ProdutoProprioApi extends BaseLoopBackApi {
    * This usually means the response is a `ProdutoProprio` object.)
    * </em>
    */
-  public obtemParaGeracao(customHeaders?: Function): Observable<any> {
+  public ObtemParaGeracao(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProdutoProprios/obtemParaGeracao";

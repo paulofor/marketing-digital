@@ -2,7 +2,6 @@
 import {
   ImagemPaginaVenda,
   VersaoPaginaVenda,
-  ProdutoAfiliadoHotlink,
   PixelAdsSegmentoMercado,
   LoadPaginaVenda,
   PaginaVendaScroll,
@@ -21,12 +20,11 @@ export interface PaginaVendaPropriaInterface {
   "html"?: string;
   "css"?: string;
   "tipoGeracao"?: string;
-  "produtoAfiliadoHotlinkId"?: number;
+  "geraArquivo"?: number;
   "pixelAdsSegmentoMercadoId"?: number;
   "id"?: number;
   imagemPaginaVenda?: ImagemPaginaVenda;
   versaoPaginaVenda?: VersaoPaginaVenda;
-  produtoAfiliadoHotlink?: ProdutoAfiliadoHotlink;
   pixelAdsSegmentoMercado?: PixelAdsSegmentoMercado;
   loadPaginaVendas?: LoadPaginaVenda[];
   paginaVendaScrolls?: PaginaVendaScroll[];
@@ -44,12 +42,11 @@ export class PaginaVendaPropria implements PaginaVendaPropriaInterface {
   "html": string;
   "css": string;
   "tipoGeracao": string;
-  "produtoAfiliadoHotlinkId": number;
+  "geraArquivo": number;
   "pixelAdsSegmentoMercadoId": number;
   "id": number;
   imagemPaginaVenda: ImagemPaginaVenda;
   versaoPaginaVenda: VersaoPaginaVenda;
-  produtoAfiliadoHotlink: ProdutoAfiliadoHotlink;
   pixelAdsSegmentoMercado: PixelAdsSegmentoMercado;
   loadPaginaVendas: LoadPaginaVenda[];
   paginaVendaScrolls: PaginaVendaScroll[];
@@ -121,8 +118,8 @@ export class PaginaVendaPropria implements PaginaVendaPropriaInterface {
           name: 'tipoGeracao',
           type: 'string'
         },
-        "produtoAfiliadoHotlinkId": {
-          name: 'produtoAfiliadoHotlinkId',
+        "geraArquivo": {
+          name: 'geraArquivo',
           type: 'number'
         },
         "pixelAdsSegmentoMercadoId": {
@@ -149,14 +146,6 @@ export class PaginaVendaPropria implements PaginaVendaPropriaInterface {
           model: 'VersaoPaginaVenda',
           relationType: 'belongsTo',
                   keyFrom: 'versaoPaginaVendaId',
-          keyTo: 'id'
-        },
-        produtoAfiliadoHotlink: {
-          name: 'produtoAfiliadoHotlink',
-          type: 'ProdutoAfiliadoHotlink',
-          model: 'ProdutoAfiliadoHotlink',
-          relationType: 'belongsTo',
-                  keyFrom: 'produtoAfiliadoHotlinkId',
           keyTo: 'id'
         },
         pixelAdsSegmentoMercado: {

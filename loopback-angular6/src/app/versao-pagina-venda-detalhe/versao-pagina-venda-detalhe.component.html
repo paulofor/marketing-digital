@@ -6,6 +6,20 @@
 	</div>
 
 	<div class="dgc-card">
+		<div class="dgc-card-header">
+			Status: {{principal.status}}
+		</div>
+		<div class="dgc-card-header">
+			Checkout: 
+			<span *ngIf="principal.produtoAfiliadoHotlink">{{principal.produtoAfiliadoHotlink.descricao}}</span>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaPrincipal()">Alterar</button>
+		</div>
+	</div>
+
+
+	<div class="dgc-card">
 		<div *ngFor="let item of listaElementoConteudo">
 			<div class="dgc-card-header">
 				{{item.rotulo}}
@@ -19,6 +33,9 @@
 		</div>
 	</div>
 	<div class="dgc-card">
+		<div class="dgc-card-header">
+			Imagens
+		</div>
 		<div style="display: flex;">
 			<div *ngFor="let item of principal.arquivoPaginaVendas">
 				<img src="{{item.imagemPaginaVenda.urlFinal}}" style="width: 200px; margin-right: 8px;"/>
@@ -29,6 +46,10 @@
 		</div>
 	</div>
 
-
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			Páginas Venda
+		</div>
+	</div>
 
 </div>

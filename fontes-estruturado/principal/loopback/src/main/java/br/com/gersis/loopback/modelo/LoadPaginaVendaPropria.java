@@ -21,6 +21,7 @@ public class LoadPaginaVendaPropria extends Model {
 	private String utmTerm;
 	private String utmContent;
 	private String codigoLoad;
+	private String visitante;
 	// Relacionamentos 1
 	private PaginaVendaPropria PaginaVendaPropria;
 	// Relacionamentos N
@@ -50,6 +51,7 @@ public class LoadPaginaVendaPropria extends Model {
 			obj.put("utmTerm", utmTerm);
 			obj.put("utmContent", utmContent);
 			obj.put("codigoLoad", codigoLoad);
+			obj.put("visitante", visitante);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -98,6 +100,12 @@ public class LoadPaginaVendaPropria extends Model {
 	}
 	public String getCodigoLoad() { 
 		return this.codigoLoad;
+	}
+	public void setVisitante(String valor) { 
+		this.visitante = valor;
+	}
+	public String getVisitante() { 
+		return this.visitante;
 	}
 
 	public PaginaVendaPropria getPaginaVendaPropria() {

@@ -140,7 +140,7 @@ export class ProdutoProprioItemNivel1Api extends BaseLoopBackApi {
    * This usually means the response is a `ProdutoProprioItemNivel1` object.)
    * </em>
    */
-  public atualizaItem(item: any = {}, customHeaders?: Function): Observable<any> {
+  public AtualizaItem(item: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProdutoProprioItemNivel1s/atualizaItem";
@@ -168,7 +168,7 @@ export class ProdutoProprioItemNivel1Api extends BaseLoopBackApi {
    * This usually means the response is a `ProdutoProprioItemNivel1` object.)
    * </em>
    */
-  public obtemListaVersaoCorrente(idProdutoProprio: any = {}, customHeaders?: Function): Observable<any> {
+  public ObtemListaVersaoCorrente(idProdutoProprio: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProdutoProprioItemNivel1s/obtemListaVersaoCorrente";

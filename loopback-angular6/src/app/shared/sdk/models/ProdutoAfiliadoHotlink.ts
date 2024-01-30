@@ -2,8 +2,8 @@
 import {
   ProdutoAfiliadoHotmart,
   PaginaVenda,
-  ImagemPaginaVenda,
-  PaginaVendaPropria
+  VersaoPaginaVenda,
+  ImagemPaginaVenda
 } from '../index';
 
 declare var Object: any;
@@ -17,8 +17,8 @@ export interface ProdutoAfiliadoHotlinkInterface {
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   paginaVendas?: PaginaVenda[];
+  versaoPaginaVendas?: VersaoPaginaVenda[];
   imagemPaginaVendas?: ImagemPaginaVenda[];
-  paginaVendaProprias?: PaginaVendaPropria[];
 }
 
 export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
@@ -31,8 +31,8 @@ export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   paginaVendas: PaginaVenda[];
+  versaoPaginaVendas: VersaoPaginaVenda[];
   imagemPaginaVendas: ImagemPaginaVenda[];
-  paginaVendaProprias: PaginaVendaPropria[];
   constructor(data?: ProdutoAfiliadoHotlinkInterface) {
     Object.assign(this, data);
   }
@@ -112,6 +112,14 @@ export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
                   keyFrom: 'id',
           keyTo: 'produtoAfiliadoHotlinkId'
         },
+        versaoPaginaVendas: {
+          name: 'versaoPaginaVendas',
+          type: 'VersaoPaginaVenda[]',
+          model: 'VersaoPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoAfiliadoHotlinkId'
+        },
         imagemPaginaVendas: {
           name: 'imagemPaginaVendas',
           type: 'ImagemPaginaVenda[]',
@@ -119,14 +127,6 @@ export class ProdutoAfiliadoHotlink implements ProdutoAfiliadoHotlinkInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'hotmartId'
-        },
-        paginaVendaProprias: {
-          name: 'paginaVendaProprias',
-          type: 'PaginaVendaPropria[]',
-          model: 'PaginaVendaPropria',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'produtoAfiliadoHotlinkId'
         },
       }
     }
