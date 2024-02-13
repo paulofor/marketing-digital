@@ -346,5 +346,13 @@
   "ProdutoHotmartConta": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "AnuncioConceitoAdsRedeDisplay": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetricaCampanhaAdsRedeDisplay": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

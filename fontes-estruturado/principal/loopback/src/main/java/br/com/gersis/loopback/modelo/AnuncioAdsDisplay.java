@@ -27,7 +27,7 @@ public class AnuncioAdsDisplay extends Model {
 	private PaginaVenda PaginaVenda;
 	private ImagemConjunto ImagemConjunto;
 	// Relacionamentos N
-	private List<AnuncioCampanhaAdsRedeDisplay> AnuncioCampanhaAdsRedeDisplays;
+	private List<GrupoCampanhaAdsRedeDisplay> GrupoCampanhaAdsRedeDisplays;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -132,16 +132,16 @@ public class AnuncioAdsDisplay extends Model {
 		this.ImagemConjunto = new ImagemConjunto();
 		BeanUtil.setProperties(this.ImagemConjunto, (Map<String, ? extends Object>) valor, true);
 	}
-	public List<AnuncioCampanhaAdsRedeDisplay> getAnuncioCampanhaAdsRedeDisplays() {
-		return  AnuncioCampanhaAdsRedeDisplays;
+	public List<GrupoCampanhaAdsRedeDisplay> getGrupoCampanhaAdsRedeDisplays() {
+		return  GrupoCampanhaAdsRedeDisplays;
 	}
-	public void setAnuncioCampanhaAdsRedeDisplays(List<AnuncioCampanhaAdsRedeDisplay> valores) {
-		this.AnuncioCampanhaAdsRedeDisplays = new ArrayList<AnuncioCampanhaAdsRedeDisplay>();
+	public void setGrupoCampanhaAdsRedeDisplays(List<GrupoCampanhaAdsRedeDisplay> valores) {
+		this.GrupoCampanhaAdsRedeDisplays = new ArrayList<GrupoCampanhaAdsRedeDisplay>();
 		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new AnuncioCampanhaAdsRedeDisplay();
+			Object objeto = new GrupoCampanhaAdsRedeDisplay();
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.AnuncioCampanhaAdsRedeDisplays.add((AnuncioCampanhaAdsRedeDisplay) objeto);
+			this.GrupoCampanhaAdsRedeDisplays.add((GrupoCampanhaAdsRedeDisplay) objeto);
 		}
 	}
 }

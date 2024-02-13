@@ -20,6 +20,15 @@
 		},
 		"nomeImagem960x1600": {
 			"type": "string"
+		},
+		"urlImagemDeitada": {
+			"type": "string"
+		},
+		"urlImagem2": {
+			"type": "string"
+		},
+		"urlImagemQuadrada": {
+			"type": "string"
 		}
 	},
 	"validations": [],
@@ -32,6 +41,16 @@
 		"anuncioAdsDisplays": {
 			"type": "hasMany",
 			"model": "AnuncioAdsDisplay",
+			"foreignKey": ""
+		},
+		"anuncioConceitoAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioConceitoAdsRedeDisplay",
+			"foreignKey": ""
+		},
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
 			"foreignKey": ""
 		}
 	},

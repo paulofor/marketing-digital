@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="content-language" content="pt-BR">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Nail Academy - Do Zero à Especialista em Designer de Unhas</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11434175597"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'AW-11434175597');
+gtag('event', 'conversion', { 'send_to': 'AW-11434175597/cQcpCMK_kYwZEO3Ynswq' });
+</script>
+
+<script>
+var queryString = window.location.search;
+queryString = queryString.substring(1);
+var queryParams = queryString.split("&");
+var params = {};
+for (var i = 0; i < queryParams.length; i++) {
+    var pair = queryParams[i].split("=");
+    var key = decodeURIComponent(pair[0]);
+    var value = decodeURIComponent(pair[1] || "");
+    params[key] = value;
+}
+var utmCampaignValue = params.utm_campaign;
+
+var meuCookie = null;
+document.addEventListener('DOMContentLoaded', function () {
+		//console.log('executando');
+ 		meuCookie = getCookie('digicomId');
+		if (!meuCookie) {
+             // Se o cookie não existir, crie-o e envie como parâmetro para o PHP
+             meuCookie = generateRandomValue(); // Defina o valor desejado para o cookie
+             const expirationDate = new Date('2038-01-01'); // Define uma data futura (2038, por exemplo)
+             document.cookie = 'digicomId=' + meuCookie + '; expires=${expirationDate.toUTCString()}; path=/; SameSite=Lax'; // Define o cookie
+     	}
+		fetch('https://tyche.ovh:23105/api/LoadPaginaVendaPropria/InsereItem?codigoPagina=0449bbfe657fd247a5e440e91ce609&visitante=' + meuCookie + '&utmCampaign=' + utmCampaignValue)
+			.then(function (response) {
+				//console.log('Requisição GET para a outra URL feita com sucesso.', response);
+			})
+			.catch(function (error) {
+				//console.error('Erro ao fazer requisição GET para a outra URL:', error);
+			});
+});
+
+let fetchedPositions = {
+	20: false,
+	40: false,
+	60: false,
+	80: false 
+};
+
+function fetchScrollData(position) {
+	fetch('https://tyche.ovh:23105/api/ScrollPaginaVendaPropria/InsereItem?codigoPagina=0449bbfe657fd247a5e440e91ce609&posicao=' + position + '&visitante=' + meuCookie + '&utmCampaign=' + utmCampaignValue)
+		.then(function (response) {
+			//console.log('Requisição GET para a outra URL feita com sucesso.', response);
+		})
+		.catch(function (error) {
+			//console.error('Erro ao fazer requisição GET para a outra URL:', error);'
+		});
+}
+
+function checkScrollPercentage() {
+	const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	const scrolled = window.scrollY;
+	const scrollPercentage = (scrolled / totalHeight) * 100;
+	if (!fetchedPositions[20] && scrollPercentage >= 20 && scrollPercentage < 30) {
+		fetchScrollData(20);
+		fetchedPositions[20] = true;
+	} else if (!fetchedPositions[40] && scrollPercentage >= 40 && scrollPercentage < 50) {
+		fetchScrollData(40);
+		fetchedPositions[40] = true;
+	} else if (!fetchedPositions[60] && scrollPercentage >= 60 && scrollPercentage < 70) {
+		fetchScrollData(60);
+		fetchedPositions[60] = true;
+	} else if (!fetchedPositions[80] && scrollPercentage >= 80 && scrollPercentage < 90) {
+		fetchScrollData(80);
+		fetchedPositions[80] = true;
+	}
+}
+
+function throttle(callback, limit) {
+	let ticking = false;
+	return function () {
+		if (!ticking) {
+			callback.apply(this, arguments);
+			ticking = true;
+			setTimeout(function () {
+				ticking = false;
+			}, limit);
+		}
+	};
+}
+
+const throttledScroll = throttle(checkScrollPercentage, 200);
+window.addEventListener('scroll', throttledScroll);
+function realizarFetch() {
+	var queryString = window.location.search;
+	queryString = queryString.replace(/^[?]/, '');
+	var url = 'https://tyche.ovh:23105/api/SolicitacaoCheckoutPaginaVendaPropria/InsereItem?codigoPagina=0449bbfe657fd247a5e440e91ce609&visitante=' + meuCookie + '&utmCampaign=' + utmCampaignValue;
+  fetch(url)
+  	.then(function (response) {
+      	window.location.href = 'https://pay.hotmart.com/K73297666V?checkoutMode=10';
+     	})
+     	.catch(function (error) {
+      	window.location.href = 'https://pay.hotmart.com/K73297666V?checkoutMode=10';
+     	});
+}
+function generateRandomValue() {
+	const array = new Uint32Array(2);
+	crypto.getRandomValues(array);
+	return array[0].toString(16) + array[1].toString(16);
+}
+function getCookie(name) {
+	const cookies = document.cookie.split(';');
+	for (let i = 0; i < cookies.length; i++) {
+		const cookie = cookies[i].trim();
+		// Verifica se o cookie começa com o nome desejado
+		if (cookie.startsWith(name + '=')) {
+			return cookie.substring(name.length + 1);
+		}
+	}
+	return null;
+}
+</script>
+
+
+</head>
+
+<body>
+  
+    123
+
+  
+</body>
+
+</html>

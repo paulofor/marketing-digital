@@ -17,8 +17,8 @@ public class AnuncioCampanhaAdsRedeDisplay extends Model {
 	private int anuncioAdsDisplayId;
 	private int campanhaAdsRedeDisplayId;
 	// Relacionamentos 1
-	private AnuncioAdsDisplay AnuncioAdsDisplay;
 	private CampanhaAdsRedeDisplay CampanhaAdsRedeDisplay;
+	private AnuncioConceitoAdsRedeDisplay AnuncioConceitoAdsRedeDisplay;
 	// Relacionamentos N
 
 	public void setId(Long id) {
@@ -61,18 +61,18 @@ public class AnuncioCampanhaAdsRedeDisplay extends Model {
 		return this.campanhaAdsRedeDisplayId;
 	}
 
-	public AnuncioAdsDisplay getAnuncioAdsDisplay() {
-		return AnuncioAdsDisplay;
-	}
-	public void setAnuncioAdsDisplay(HashMap valor) {
-		this.AnuncioAdsDisplay = new AnuncioAdsDisplay();
-		BeanUtil.setProperties(this.AnuncioAdsDisplay, (Map<String, ? extends Object>) valor, true);
-	}
 	public CampanhaAdsRedeDisplay getCampanhaAdsRedeDisplay() {
 		return CampanhaAdsRedeDisplay;
 	}
 	public void setCampanhaAdsRedeDisplay(HashMap valor) {
 		this.CampanhaAdsRedeDisplay = new CampanhaAdsRedeDisplay();
 		BeanUtil.setProperties(this.CampanhaAdsRedeDisplay, (Map<String, ? extends Object>) valor, true);
+	}
+	public AnuncioConceitoAdsRedeDisplay getAnuncioConceitoAdsRedeDisplay() {
+		return AnuncioConceitoAdsRedeDisplay;
+	}
+	public void setAnuncioConceitoAdsRedeDisplay(HashMap valor) {
+		this.AnuncioConceitoAdsRedeDisplay = new AnuncioConceitoAdsRedeDisplay();
+		BeanUtil.setProperties(this.AnuncioConceitoAdsRedeDisplay, (Map<String, ? extends Object>) valor, true);
 	}
 }

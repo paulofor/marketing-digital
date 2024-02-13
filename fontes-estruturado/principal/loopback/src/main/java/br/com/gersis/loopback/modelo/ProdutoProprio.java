@@ -21,6 +21,7 @@ public class ProdutoProprio extends Model {
 	private List<ProdutoProprioVersao> ProdutoProprioVersaos;
 	private List<VersaoPaginaVenda> VersaoPaginaVendas;
 	private List<ImagemPaginaVenda> ImagemPaginaVendas;
+	private List<AnuncioConceitoAdsRedeDisplay> AnuncioConceitoAdsRedeDisplays;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -96,6 +97,18 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ImagemPaginaVendas.add((ImagemPaginaVenda) objeto);
+		}
+	}
+	public List<AnuncioConceitoAdsRedeDisplay> getAnuncioConceitoAdsRedeDisplays() {
+		return  AnuncioConceitoAdsRedeDisplays;
+	}
+	public void setAnuncioConceitoAdsRedeDisplays(List<AnuncioConceitoAdsRedeDisplay> valores) {
+		this.AnuncioConceitoAdsRedeDisplays = new ArrayList<AnuncioConceitoAdsRedeDisplay>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AnuncioConceitoAdsRedeDisplay();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AnuncioConceitoAdsRedeDisplays.add((AnuncioConceitoAdsRedeDisplay) objeto);
 		}
 	}
 }

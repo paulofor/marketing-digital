@@ -1,0 +1,62 @@
+{
+	"name": "AnuncioConceitoAdsRedeDisplay",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nomeEmpresa": {
+			"type": "string"
+		},
+		"titulo": {
+			"type": "string"
+		},
+		"tituloLongo": {
+			"type": "string"
+		},
+		"descricao": {
+			"type": "string"
+		},
+		"imagemConjuntoId": {
+			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"imagemConjunto": {
+			"type": "belongsTo",
+			"model": "ImagemConjunto",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"anuncioCampanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioCampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		},
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

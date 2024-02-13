@@ -4,6 +4,7 @@ package gerador.criaarquivopaginavendapropria.passo.impl;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -21,7 +22,7 @@ import gerador.criaarquivopaginavendapropria.passo.GeraArquivoPagina;
 
 public class GeraArquivoPaginaImpl extends GeraArquivoPagina {
 	
-	private final String DIRETORIO_TEMP = "/home/usuario/aplicacoes/MarketingDigital/pagina-venda-com-imagens/gerador-java";
+	private final String DIRETORIO_TEMP = "/home/usuario/aplicacoes/MarketingDigital/gerador-pagina-venda";
 	private final int FASE = 1;
 	
 	@Override
@@ -29,7 +30,9 @@ public class GeraArquivoPaginaImpl extends GeraArquivoPagina {
 		String conteudoPagina = this.trocaItemVariavel(versaoPaginaCorrente);
 		conteudoPagina = this.outrasTrocas(conteudoPagina, paginaVendaCorrente, versaoPaginaCorrente);
 		try {
-			gravaTemp(conteudoPagina);
+			URL urlObj = new URL(paginaVendaCorrente.getUrlCompleta());
+			String diretorio = DIRETORIO_TEMP + "/" + urlObj.getHost() +  urlObj.getPath();
+			gravaTemp(diretorio,conteudoPagina);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(-1);
@@ -82,6 +85,17 @@ public class GeraArquivoPaginaImpl extends GeraArquivoPagina {
 		texto += "\n";
 		//texto += "gtag('event', 'conversion', { 'send_to': 'AW-11374828177/i0kXCJ_Jn4QZEJG1-K8q' });\n";
 		texto += "<script>\n";
+		texto += "var queryString = window.location.search;\n";
+		texto += "queryString = queryString.substring(1);\n";
+		texto += "var queryParams = queryString.split(\"&\");\n";
+		texto += "var params = {};\n";
+		texto += "for (var i = 0; i < queryParams.length; i++) {\n";
+		texto += "    var pair = queryParams[i].split(\"=\");\n";
+		texto += "    var key = decodeURIComponent(pair[0]);\n";
+		texto += "    var value = decodeURIComponent(pair[1] || \"\");\n";
+		texto += "    params[key] = value;\n";
+		texto += "}\n";
+		texto += "var utmCampaignValue = params.utm_campaign;\n";	
 		texto += "\n";
 		texto += "var meuCookie = null;\n";
 		texto += "document.addEventListener('DOMContentLoaded', function () {\n";
@@ -91,9 +105,9 @@ public class GeraArquivoPaginaImpl extends GeraArquivoPagina {
 		texto += "             // Se o cookie não existir, crie-o e envie como parâmetro para o PHP\n";
 		texto += "             meuCookie = generateRandomValue(); // Defina o valor desejado para o cookie\n";
 		texto += "             const expirationDate = new Date('2038-01-01'); // Define uma data futura (2038, por exemplo)\n";
-		texto += "             document.cookie = 'digicomId=' + meuCookie + '; expires=${expirationDate.toUTCString()}; path=/'; // Define o cookie\n";
+		texto += "             document.cookie = 'digicomId=' + meuCookie + '; expires=${expirationDate.toUTCString()}; path=/; SameSite=Lax'; // Define o cookie\n";
 		texto += "     	}\n";
-		texto += "		fetch('https://tyche.ovh:23105/api/LoadPaginaVendaPropria/InsereItem?codigoPagina=" + pagina.getCodigoUrl() + "&visitante=' + meuCookie)\n";
+		texto += "		fetch('https://tyche.ovh:23105/api/LoadPaginaVendaPropria/InsereItem?codigoPagina=" + pagina.getCodigoUrl() + "&visitante=' + meuCookie + '&utmCampaign=' + utmCampaignValue)\n";
 		texto += "			.then(function (response) {\n";
 		texto += "				//console.log('Requisição GET para a outra URL feita com sucesso.', response);\n";
 		texto += "			})\n";
@@ -110,7 +124,7 @@ public class GeraArquivoPaginaImpl extends GeraArquivoPagina {
 		texto += "};\n";
 		texto += "\n";
 		texto += "function fetchScrollData(position) {\n";
-		texto += "	fetch('https://tyche.ovh:23105/api/ScrollPaginaVendaPropria/InsereItem?codigoPagina=" + pagina.getCodigoUrl() + "&posicao=' + position + '&visitante=' + meuCookie)\n";
+		texto += "	fetch('https://tyche.ovh:23105/api/ScrollPaginaVendaPropria/InsereItem?codigoPagina=" + pagina.getCodigoUrl() + "&posicao=' + position + '&visitante=' + meuCookie + '&utmCampaign=' + utmCampaignValue)\n";
 		texto += "		.then(function (response) {\n";
 		texto += "			//console.log('Requisição GET para a outra URL feita com sucesso.', response);\n";
 		texto += "		})\n";
@@ -156,13 +170,13 @@ public class GeraArquivoPaginaImpl extends GeraArquivoPagina {
 		texto += "function realizarFetch() {\n";
 		texto += "	var queryString = window.location.search;\n";
 		texto += "	queryString = queryString.replace(/^[?]/, '');\n";
-		texto += "	var url = 'https://tyche.ovh:23105/api/SolicitacaoCheckoutPaginaVendaPropria/InsereItem?codigoPagina=" + pagina.getCodigoUrl() + "&visitante=' + meuCookie;\n";
+		texto += "	var url = 'https://tyche.ovh:23105/api/SolicitacaoCheckoutPaginaVendaPropria/InsereItem?codigoPagina=" + pagina.getCodigoUrl() + "&visitante=' + meuCookie + '&utmCampaign=' + utmCampaignValue;\n";
 		texto += "  fetch(url)\n";
 		texto += "  	.then(function (response) {\n";
-		texto += "      	window.location.href = '" + versao.getProdutoAfiliadoHotlink().getUrl() + "';\n";
+		texto += "      	window.location.href = '" + versao.getProdutoAfiliadoHotlink().getHotlink() + "';\n";
 		texto += "     	})\n";
 		texto += "     	.catch(function (error) {\n";
-		texto += "      	window.location.href = '" + versao.getProdutoAfiliadoHotlink().getUrl() + "';\n";
+		texto += "      	window.location.href = '" + versao.getProdutoAfiliadoHotlink().getHotlink() + "';\n";
 		texto += "     	});\n";
 		texto += "}\n";
 		texto += "function generateRandomValue() {\n";
@@ -299,17 +313,17 @@ public class GeraArquivoPaginaImpl extends GeraArquivoPagina {
 	}
 	
 
-	private void gravaTemp(String conteudoPagina) throws IOException {
-		 File diretorioTemp = new File(DIRETORIO_TEMP);
+	private void gravaTemp(String diretorio , String conteudoPagina) throws IOException {
+		 File diretorioTemp = new File(diretorio);
          if (!diretorioTemp.exists()) {
              diretorioTemp.mkdirs();
          }
-
          // Cria o arquivo no diretório com o conteúdo da variável conteudoPagina
          File arquivoTemp = new File(diretorioTemp, "index.html");
          FileWriter writer = new FileWriter(arquivoTemp);
          writer.write(conteudoPagina);
          writer.close();
+         System.out.println("Gerou arquivo em " + diretorio);
 	}
 
 	 

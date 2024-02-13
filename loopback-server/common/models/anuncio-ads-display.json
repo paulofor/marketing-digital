@@ -57,9 +57,9 @@
 			"model": "ImagemConjunto",
 			"foreignKey": ""
 		},
-		"anuncioCampanhaAdsRedeDisplays": {
+		"grupoCampanhaAdsRedeDisplays": {
 			"type": "hasMany",
-			"model": "AnuncioCampanhaAdsRedeDisplay",
+			"model": "GrupoCampanhaAdsRedeDisplay",
 			"foreignKey": ""
 		}
 	},

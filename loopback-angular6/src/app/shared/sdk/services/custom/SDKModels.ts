@@ -79,6 +79,8 @@ import { PixelProdutoHotmartContaCheckout } from '../../models/PixelProdutoHotma
 import { PixelProdutoHotmartContaCompra } from '../../models/PixelProdutoHotmartContaCompra';
 import { ArtigoParaProduto } from '../../models/ArtigoParaProduto';
 import { ProdutoHotmartConta } from '../../models/ProdutoHotmartConta';
+import { AnuncioConceitoAdsRedeDisplay } from '../../models/AnuncioConceitoAdsRedeDisplay';
+import { MetricaCampanhaAdsRedeDisplay } from '../../models/MetricaCampanhaAdsRedeDisplay';
 
 export interface Models { [name: string]: any }
 
@@ -165,6 +167,8 @@ export class SDKModels {
     PixelProdutoHotmartContaCompra: PixelProdutoHotmartContaCompra,
     ArtigoParaProduto: ArtigoParaProduto,
     ProdutoHotmartConta: ProdutoHotmartConta,
+    AnuncioConceitoAdsRedeDisplay: AnuncioConceitoAdsRedeDisplay,
+    MetricaCampanhaAdsRedeDisplay: MetricaCampanhaAdsRedeDisplay,
     
   };
 

@@ -18,6 +18,7 @@ public class ScrollPaginaVendaPropria extends Model {
 	private String dataHora;
 	private String codigoLoad;
 	private String visitante;
+	private String utmCampaign;
 	// Relacionamentos 1
 	private PaginaVendaPropria PaginaVendaPropria;
 	// Relacionamentos N
@@ -44,6 +45,7 @@ public class ScrollPaginaVendaPropria extends Model {
 			obj.put("dataHora", dataHora);
 			obj.put("codigoLoad", codigoLoad);
 			obj.put("visitante", visitante);
+			obj.put("utmCampaign", utmCampaign);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -74,6 +76,12 @@ public class ScrollPaginaVendaPropria extends Model {
 	}
 	public String getVisitante() { 
 		return this.visitante;
+	}
+	public void setUtmCampaign(String valor) { 
+		this.utmCampaign = valor;
+	}
+	public String getUtmCampaign() { 
+		return this.utmCampaign;
 	}
 
 	public PaginaVendaPropria getPaginaVendaPropria() {

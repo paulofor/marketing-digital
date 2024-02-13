@@ -47,6 +47,13 @@ import { CampanhaAdsMetricaIntradayCtrListComponent } from '../campanha-ads-metr
 import { PaginaVendaPropriaPorProdutoListComponent } from '../pagina-venda-propria-por-produto-list/pagina-venda-propria-por-produto-list.component';
 import { PublicoAlvoAdsPalavraListComponent } from '../publico-alvo-ads-palavra-list/publico-alvo-ads-palavra-list.component';
 import { PublicoAlvoAdsPalavraDetalheComponent } from '../publico-alvo-ads-palavra-detalhe/publico-alvo-ads-palavra-detalhe.component';
+import { ProdutoProprioListComponent } from '../produto-proprio-list/produto-proprio-list.component';
+import { ProdutoProprioDetalheComponent } from '../produto-proprio-detalhe/produto-proprio-detalhe.component';
+import { ProdutoProprioVersaoDetalheComponent } from '../produto-proprio-versao-detalhe/produto-proprio-versao-detalhe.component';
+import { ImagemConjuntoPorProdutoListComponent } from '../imagem-conjunto-por-produto-list/imagem-conjunto-por-produto-list.component';
+import { AnuncioConceitoAdsRedeDisplayPorProdutoListComponent } from '../anuncio-conceito-ads-rede-display-por-produto-list/anuncio-conceito-ads-rede-display-por-produto-list.component';
+import { CampanhaAdsRedeDisplayPorProdutoListComponent } from '../campanha-ads-rede-display-por-produto-list/campanha-ads-rede-display-por-produto-list.component';
+import { ModeloPaginaVendaDetalheComCampanhasComponent } from '../modelo-pagina-venda-detalhe-com-campanhas/modelo-pagina-venda-detalhe-com-campanhas.component';
 
 
 
@@ -114,6 +121,17 @@ export const routes : Routes = [
     { path: 'publicoAlvoAdsPalavraList' , component: PublicoAlvoAdsPalavraListComponent },
 
     { path: 'publicoAlvoAdsPalavraDetalhe/:id' , component: PublicoAlvoAdsPalavraDetalheComponent },
+
+    { path: 'produtoProprioList' , component: ProdutoProprioListComponent },
+    { path: 'produtoProprioDetalhe/:id' , component: ProdutoProprioDetalheComponent },
+    { path: 'produtoProprioVersaoDetalhe/:id' , component: ProdutoProprioVersaoDetalheComponent },
+
+    { path: 'imagemConjuntoPorProdutoList/:id' , component: ImagemConjuntoPorProdutoListComponent },
+    { path: 'anuncioConceitoAdsRedeDisplayPorProdutoList/:id' , component: AnuncioConceitoAdsRedeDisplayPorProdutoListComponent },
+
+    { path: 'campanhaAdsRedeDisplayPorProdutoList/:id' , component: CampanhaAdsRedeDisplayPorProdutoListComponent },
+    { path: 'modeloPaginaVendaDetalheComCampanhas/:id' , component: ModeloPaginaVendaDetalheComCampanhasComponent },
+
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]  

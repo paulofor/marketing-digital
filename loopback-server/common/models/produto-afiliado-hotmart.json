@@ -103,6 +103,9 @@
 		"urlPresell": {
 			"type": "string"
 		},
+		"urlRaizPaginaVendaPropria": {
+			"type": "string"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}
@@ -197,7 +200,7 @@
 		"campanhaAdsRedeDisplays": {
 			"type": "hasMany",
 			"model": "CampanhaAdsRedeDisplay",
-			"foreignKey": ""
+			"foreignKey": "hotmartId"
 		},
 		"paginaVendas": {
 			"type": "hasMany",
@@ -267,6 +270,16 @@
 		"produtoHotmartContas": {
 			"type": "hasMany",
 			"model": "ProdutoHotmartConta",
+			"foreignKey": "hotmartId"
+		},
+		"anuncioConceitoAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioConceitoAdsRedeDisplay",
+			"foreignKey": "hotmartId"
+		},
+		"paginaVendaProprias": {
+			"type": "hasMany",
+			"model": "PaginaVendaPropria",
 			"foreignKey": "hotmartId"
 		}
 	},

@@ -30,13 +30,14 @@ public class RepositorioScrollPaginaVendaPropria extends ModelRepository<ScrollP
 
 	// ***  Operações  ***
 
-	public synchronized void insereItem(String codigoPagina ,int posicao ,String visitante ,final VoidCallback callback ) {
+	public synchronized void insereItem(String codigoPagina ,int posicao ,String visitante ,String utmCampaign ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ScrollPaginaVendaPropria/insereItem","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "ScrollPaginaVendaPropria.insereItem");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("codigoPagina", codigoPagina);
 		params.put("posicao", posicao);
 		params.put("visitante", visitante);
+		params.put("utmCampaign", utmCampaign);
 		invokeStaticMethod("insereItem", params,   new EmptyResponseParser(callback));
 	}
 

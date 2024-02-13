@@ -51,11 +51,6 @@
 			"type": "belongsTo",
 			"model": "PaginaVenda",
 			"foreignKey": ""
-		},
-		"campanhaAdsRedeDisplays": {
-			"type": "hasMany",
-			"model": "CampanhaAdsRedeDisplay",
-			"foreignKey": ""
 		}
 	},
 	"acls": [],

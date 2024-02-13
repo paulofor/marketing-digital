@@ -7,7 +7,9 @@
   <div class="dgc-card">
     <button class="btn-primary btn-sm btn"  [routerLink]="['/solicitacaoImagemPorProduto' , principal.hotmartId]">Dall-E</button>
     <button class="btn-primary btn-sm btn"  [routerLink]="['/secaoWebPorProduto' , principal.hotmartId]">Seção Web</button>
-    <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAdsDisplayPorProdutoList' , principal.hotmartId]">Anúncio Rede Display</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/imagemConjuntoPorProdutoList' , principal.hotmartId]">Imagem Rede Display</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioConceitoAdsRedeDisplayPorProdutoList' , principal.hotmartId]">Anúncio Rede Display</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsRedeDisplayPorProdutoList' , principal.hotmartId]">Campanha Rede Display</button>
     <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , principal.hotmartId]">Anúncio Google</button>
     <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , principal.hotmartId]">Campanha Teste Google</button>
   </div>
@@ -132,18 +134,14 @@
     <div class="dgc-card-header">
       Pixel
     </div>
-    <div class="dgc-card-detalhe">
-      <span>Venda: {{(principal.pixelGoogle?principal.pixelGoogle.nome:'-')}}
-        ( {{(principal.pixelGoogle?principal.pixelGoogle.codigo1:'-')}} )</span>
+    <div *ngFor="let produtoConta of listaConta">
+      <div *ngFor="let pixel of produtoConta.contaGoogle.pixelProdutoHotmartContas">
+        <div class="dgc-card-detalhe" >
+          <span>{{pixel.nome}}</span>
+        </div>
+      </div>
     </div>
-    <div class="dgc-card-detalhe">
-      <span>Checkout: {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.nome:'-')}}
-        ( {{(principal.pixelGoogleCheckout?principal.pixelGoogleCheckout.codigo1:'-')}} )</span>
-    </div>
-    <div class="dgc-card-detalhe">
-      <span>Página Venda: {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.nome:'-')}}
-        ( {{(principal.pixelGooglePaginaVenda?principal.pixelGooglePaginaVenda.codigo1:'-')}} )</span>
-    </div>
+  
   </div>
 
   <div class="dgc-card">

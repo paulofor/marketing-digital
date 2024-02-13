@@ -23,6 +23,11 @@
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
 		},
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		},
 		"contaPublicoAlvoAdsPalavras": {
 			"type": "hasMany",
 			"model": "ContaPublicoAlvoAdsPalavra",

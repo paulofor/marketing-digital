@@ -1,0 +1,51 @@
+{
+	"name": "MetricaCampanhaAdsRedeDisplay",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"qtdeLoad": {
+			"type": "number"
+		},
+		"qtdeScroll20": {
+			"type": "number"
+		},
+		"qtdeScroll40": {
+			"type": "number"
+		},
+		"qtdeScroll60": {
+			"type": "number"
+		},
+		"qtdeScroll80": {
+			"type": "number"
+		},
+		"qtdeCheckout": {
+			"type": "number"
+		},
+		"dataHora": {
+			"type": "date"
+		},
+		"maisRecente": {
+			"type": "number"
+		},
+		"campanhaAdsRedeDisplayId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"campanhaAdsRedeDisplay": {
+			"type": "belongsTo",
+			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

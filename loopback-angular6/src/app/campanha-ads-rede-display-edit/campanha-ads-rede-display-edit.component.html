@@ -1,0 +1,55 @@
+<h2 *ngIf="item" mat-dialog-title>CampanhaAdsRedeDisplay</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+
+		<mat-form-field class="example-full-width">
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaAnuncioRedeAds">
+			<mat-select placeholder="Anúncio" #anuncioConceitoAdsRedeDisplayId [(ngModel)]="item.anuncioConceitoAdsRedeDisplayId" name="anuncioConceitoAdsRedeDisplayId">
+				<mat-option *ngFor="let item of listaAnuncioRedeAds" [value]="item.id">
+					{{ item.nomeEmpresa}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaPaginaVenda">
+			<mat-select placeholder="Página de Venda" #paginaVendaPropriaId [(ngModel)]="item.paginaVendaPropriaId" name="paginaVendaPropriaId">
+				<mat-option *ngFor="let item of listaPaginaVenda" [value]="item.id">
+					{{ item.codigoUrl}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaSegmento">
+			<mat-select placeholder="Segmento" #publicoAlvoAdsPalavraId [(ngModel)]="item.publicoAlvoAdsPalavraId" name="publicoAlvoAdsPalavraId">
+				<mat-option *ngFor="let item of listaSegmento" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaImagemConjunto">
+			<mat-select placeholder="Imagem Conjunto" #imagemConjuntoId [(ngModel)]="item.imagemConjuntoId" name="imagemConjuntoId">
+				<mat-option *ngFor="let item of listaImagemConjunto" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #prontaParaEnvio [(ngModel)]="item.prontaParaEnvio" name="prontaParaEnvio" placeholder="Pronta" />
+		</mat-form-field>
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

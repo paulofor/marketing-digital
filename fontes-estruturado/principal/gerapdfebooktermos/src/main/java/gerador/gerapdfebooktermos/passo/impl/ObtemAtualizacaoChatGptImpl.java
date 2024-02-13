@@ -27,21 +27,22 @@ public class ObtemAtualizacaoChatGptImpl extends ObtemAtualizacaoChatGpt {
 	@Override
 	protected boolean executaCustom(ProdutoProprioItemNivel1 itemCorrente) {
 	    JSONObject item = new JSONObject(itemCorrente.getJson());
-		String termo = item.getString("nome");
+		String termo = itemCorrente.getNome();
 		
-		/*
-		String prompt = "Me de uma explicacao do termo '" + termo + "' em uma linguagem simples e objetiva usando entre 8 e 12 linhas de texto. " +
+		
+		String prompt = "Me de uma explicacao do termo '" + termo + "' em uma linguagem simples e objetiva usando entre 3 e 6 linhas de texto. " +
 				"  Nao repita o termo na resposta";
 		
 		String resposta = this.fazerRequisicao(prompt);
 		item.put("explicacao", resposta);
-		*/
-
 		
-		String prompt = "De uma resposta entre 5 e 8 linhas falando sobre a origem do termo '" + termo + "' na área de tecnologia, coloque datas e curiosidades. ";
+
+		/*
+		String prompt = " De uma resposta entre 3 e 6 linhas falando sobre a origem do termo '" + termo + "' na área de tecnologia, coloque datas e curiosidades. Evite começar 'O termo surgiu' use uma forma mais criativa de iniciar";
 		
 		String resposta = this.fazerRequisicao(prompt);
 		item.put("historico", resposta);
+		*/
 		
 		/*
 		String prompt = "Em qual categoria dentro da tecnologia eu poderia classficar o termo '" + termo + "' ?";
@@ -67,7 +68,7 @@ public class ObtemAtualizacaoChatGptImpl extends ObtemAtualizacaoChatGpt {
 
 			String endpoint = "https://api.openai.com/v1/completions";
 			int maxTokens = 500;
-			float temperature = 0.1f;
+			float temperature = 0.4f;
 
 			URL url = new URL(endpoint);
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();

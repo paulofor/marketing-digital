@@ -3,6 +3,8 @@ import {
   ImagemPaginaVenda,
   VersaoPaginaVenda,
   PixelAdsSegmentoMercado,
+  ProdutoAfiliadoHotmart,
+  CampanhaAdsRedeDisplay,
   LoadPaginaVenda,
   PaginaVendaScroll,
   LoadPaginaVendaPropria,
@@ -21,11 +23,15 @@ export interface PaginaVendaPropriaInterface {
   "css"?: string;
   "tipoGeracao"?: string;
   "geraArquivo"?: number;
+  "nome"?: string;
+  "urlCompleta"?: string;
   "pixelAdsSegmentoMercadoId"?: number;
   "id"?: number;
   imagemPaginaVenda?: ImagemPaginaVenda;
   versaoPaginaVenda?: VersaoPaginaVenda;
   pixelAdsSegmentoMercado?: PixelAdsSegmentoMercado;
+  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   loadPaginaVendas?: LoadPaginaVenda[];
   paginaVendaScrolls?: PaginaVendaScroll[];
   loadPaginaVendaProprias?: LoadPaginaVendaPropria[];
@@ -43,11 +49,15 @@ export class PaginaVendaPropria implements PaginaVendaPropriaInterface {
   "css": string;
   "tipoGeracao": string;
   "geraArquivo": number;
+  "nome": string;
+  "urlCompleta": string;
   "pixelAdsSegmentoMercadoId": number;
   "id": number;
   imagemPaginaVenda: ImagemPaginaVenda;
   versaoPaginaVenda: VersaoPaginaVenda;
   pixelAdsSegmentoMercado: PixelAdsSegmentoMercado;
+  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   loadPaginaVendas: LoadPaginaVenda[];
   paginaVendaScrolls: PaginaVendaScroll[];
   loadPaginaVendaProprias: LoadPaginaVendaPropria[];
@@ -122,6 +132,14 @@ export class PaginaVendaPropria implements PaginaVendaPropriaInterface {
           name: 'geraArquivo',
           type: 'number'
         },
+        "nome": {
+          name: 'nome',
+          type: 'string'
+        },
+        "urlCompleta": {
+          name: 'urlCompleta',
+          type: 'string'
+        },
         "pixelAdsSegmentoMercadoId": {
           name: 'pixelAdsSegmentoMercadoId',
           type: 'number'
@@ -155,6 +173,22 @@ export class PaginaVendaPropria implements PaginaVendaPropriaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'pixelAdsSegmentoMercadoId',
           keyTo: 'id'
+        },
+        produtoAfiliadoHotmart: {
+          name: 'produtoAfiliadoHotmart',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        campanhaAdsRedeDisplays: {
+          name: 'campanhaAdsRedeDisplays',
+          type: 'CampanhaAdsRedeDisplay[]',
+          model: 'CampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'paginaVendaPropriaId'
         },
         loadPaginaVendas: {
           name: 'loadPaginaVendas',

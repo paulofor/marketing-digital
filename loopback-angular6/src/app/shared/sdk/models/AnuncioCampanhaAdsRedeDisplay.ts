@@ -1,22 +1,24 @@
 /* tslint:disable */
 import {
-  AnuncioAdsDisplay,
-  CampanhaAdsRedeDisplay
+  CampanhaAdsRedeDisplay,
+  AnuncioConceitoAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
 export interface AnuncioCampanhaAdsRedeDisplayInterface {
   "anuncioAdsDisplayId"?: number;
   "campanhaAdsRedeDisplayId"?: number;
-  anuncioAdsDisplay?: AnuncioAdsDisplay;
+  "anuncioConceitoAdsRedeDisplayId"?: number;
   campanhaAdsRedeDisplay?: CampanhaAdsRedeDisplay;
+  anuncioConceitoAdsRedeDisplay?: AnuncioConceitoAdsRedeDisplay;
 }
 
 export class AnuncioCampanhaAdsRedeDisplay implements AnuncioCampanhaAdsRedeDisplayInterface {
   "anuncioAdsDisplayId": number;
   "campanhaAdsRedeDisplayId": number;
-  anuncioAdsDisplay: AnuncioAdsDisplay;
+  "anuncioConceitoAdsRedeDisplayId": number;
   campanhaAdsRedeDisplay: CampanhaAdsRedeDisplay;
+  anuncioConceitoAdsRedeDisplay: AnuncioConceitoAdsRedeDisplay;
   constructor(data?: AnuncioCampanhaAdsRedeDisplayInterface) {
     Object.assign(this, data);
   }
@@ -58,22 +60,26 @@ export class AnuncioCampanhaAdsRedeDisplay implements AnuncioCampanhaAdsRedeDisp
           name: 'campanhaAdsRedeDisplayId',
           type: 'number'
         },
+        "anuncioConceitoAdsRedeDisplayId": {
+          name: 'anuncioConceitoAdsRedeDisplayId',
+          type: 'number'
+        },
       },
       relations: {
-        anuncioAdsDisplay: {
-          name: 'anuncioAdsDisplay',
-          type: 'AnuncioAdsDisplay',
-          model: 'AnuncioAdsDisplay',
-          relationType: 'belongsTo',
-                  keyFrom: 'anuncioAdsDisplayId',
-          keyTo: 'id'
-        },
         campanhaAdsRedeDisplay: {
           name: 'campanhaAdsRedeDisplay',
           type: 'CampanhaAdsRedeDisplay',
           model: 'CampanhaAdsRedeDisplay',
           relationType: 'belongsTo',
                   keyFrom: 'campanhaAdsRedeDisplayId',
+          keyTo: 'id'
+        },
+        anuncioConceitoAdsRedeDisplay: {
+          name: 'anuncioConceitoAdsRedeDisplay',
+          type: 'AnuncioConceitoAdsRedeDisplay',
+          model: 'AnuncioConceitoAdsRedeDisplay',
+          relationType: 'belongsTo',
+                  keyFrom: 'anuncioConceitoAdsRedeDisplayId',
           keyTo: 'id'
         },
       }

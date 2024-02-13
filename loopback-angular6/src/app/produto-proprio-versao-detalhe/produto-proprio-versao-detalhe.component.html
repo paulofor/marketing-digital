@@ -1,0 +1,28 @@
+<div class="dgc-painel" *ngIf="principal">
+<div class="dgc-painel-header" *ngIf="principal">
+	<span>{{principal.produtoProprio.nome}} - Versão {{principal.numero}}</span>
+</div>
+
+<div class="dgc-card">
+<div class="dgc-card-detalhe" *ngFor="let item of principal.produtoProprioItemNivel1s; let i= index">
+<span>{{i + 1}}. {{item.nome}}</span>
+</div>
+<div class="dgc-card-comandos">
+</div> 
+ </div>
+	
+<div class="dgc-card">
+<div class="dgc-card-header">
+<span>Quadro 2</span>
+	</div>
+<div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeSaida">
+<span></span>
+</div>
+<div class="dgc-card-comandos">
+			</div> 
+  </div>
+<div class="dgc-card-comandos">
+<button class="btn-primary btn-sm btn" (click)="editaPasso()">Novo</button>
+</div> 
+</div>
+

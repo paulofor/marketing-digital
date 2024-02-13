@@ -1,7 +1,9 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
-  AnuncioAdsDisplay
+  AnuncioAdsDisplay,
+  CampanhaAdsRedeDisplay,
+  AnuncioConceitoAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
@@ -10,10 +12,15 @@ export interface ImagemConjuntoInterface {
   "nomeImagem1200x628"?: string;
   "nomeImagem1200x1200"?: string;
   "nomeImagem960x1600"?: string;
+  "urlImagemDeitada"?: string;
+  "urlImagem2"?: string;
+  "urlImagemQuadrada"?: string;
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   anuncioAdsDisplays?: AnuncioAdsDisplay[];
+  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
+  anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
 }
 
 export class ImagemConjunto implements ImagemConjuntoInterface {
@@ -21,10 +28,15 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
   "nomeImagem1200x628": string;
   "nomeImagem1200x1200": string;
   "nomeImagem960x1600": string;
+  "urlImagemDeitada": string;
+  "urlImagem2": string;
+  "urlImagemQuadrada": string;
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   anuncioAdsDisplays: AnuncioAdsDisplay[];
+  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
+  anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
   constructor(data?: ImagemConjuntoInterface) {
     Object.assign(this, data);
   }
@@ -74,6 +86,18 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
           name: 'nomeImagem960x1600',
           type: 'string'
         },
+        "urlImagemDeitada": {
+          name: 'urlImagemDeitada',
+          type: 'string'
+        },
+        "urlImagem2": {
+          name: 'urlImagem2',
+          type: 'string'
+        },
+        "urlImagemQuadrada": {
+          name: 'urlImagemQuadrada',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -96,6 +120,22 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
           name: 'anuncioAdsDisplays',
           type: 'AnuncioAdsDisplay[]',
           model: 'AnuncioAdsDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'imagemConjuntoId'
+        },
+        campanhaAdsRedeDisplays: {
+          name: 'campanhaAdsRedeDisplays',
+          type: 'CampanhaAdsRedeDisplay[]',
+          model: 'CampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'imagemConjuntoId'
+        },
+        anuncioConceitoAdsRedeDisplays: {
+          name: 'anuncioConceitoAdsRedeDisplays',
+          type: 'AnuncioConceitoAdsRedeDisplay[]',
+          model: 'AnuncioConceitoAdsRedeDisplay',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'imagemConjuntoId'

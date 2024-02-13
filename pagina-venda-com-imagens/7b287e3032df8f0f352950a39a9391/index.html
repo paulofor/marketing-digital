@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="content-language" content="pt-BR">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Automaquiagem com Lucas Vieira</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11374828177"></script><script>	window.dataLayer = window.dataLayer || [];	function gtag() { dataLayer.push(arguments); }		gtag('js', new Date());		gtag('config', 'AW-11374828177');		gtag('event', 'conversion', { 'send_to': 'AW-11374828177/i0kXCJ_Jn4QZEJG1-K8q' });document.addEventListener('DOMContentLoaded', function () {		console.log('executando');		fetch('https://tyche.ovh:23105/api/LoadPaginaVendaPropria/InsereItem?codigoPagina=cd7b8ddf0796e9df1621b2e6b0e64e')			.then(function (response) {				console.log('Requisição GET para a outra URL feita com sucesso.', response);			})			.catch(function (error) {				console.error('Erro ao fazer requisição GET para a outra URL:', error);			});});let fetchedPositions = {	10: false,	40: false};function fetchScrollData(position) {	fetch('https://tyche.ovh:23105/api/ScrollPaginaVendaPropria/InsereItem?codigoPagina=cd7b8ddf0796e9df1621b2e6b0e64e&posicao=' + position)		.then(function (response) {			console.log('Requisição GET para a outra URL feita com sucesso.', response);		})		.catch(function (error) {			console.error('Erro ao fazer requisição GET para a outra URL:', error);'		});}function checkScrollPercentage() {	const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;	const scrolled = window.scrollY;	const scrollPercentage = (scrolled / totalHeight) * 100;	if (!fetchedPositions[10] && scrollPercentage >= 10 && scrollPercentage < 20) {		fetchScrollData(10);		fetchedPositions[10] = true;	} else if (!fetchedPositions[40] && scrollPercentage >= 40 && scrollPercentage < 50) {		fetchScrollData(40);		fetchedPositions[40] = true;	}}function throttle(callback, limit) {	let ticking = false;	return function () {		if (!ticking) {			callback.apply(this, arguments);			ticking = true;			setTimeout(function () {				ticking = false;			}, limit);		}	};}const throttledScroll = throttle(checkScrollPercentage, 200);window.addEventListener('scroll', throttledScroll);function realizarFetch() {	var queryString = window.location.search;	queryString = queryString.replace(/^[?]/, '');	var url = 'https://tyche.ovh:23105/api/SolicitacaoCheckoutPaginaVendaPropria/InsereItem?codigoPagina=cd7b8ddf0796e9df1621b2e6b0e64e';  fetch(url)  	.then(function (response) {      	window.location.href = 'https://pay.hotmart.com/K73297666V?checkoutMode=10';     	})     	.catch(function (error) {      	window.location.href = 'https://pay.hotmart.com/K73297666V?checkoutMode=10';     	});}</script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+
+            color: #ffffff;
+        }
+
+        .parallax-container {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 1px;
+        }
+
+        .parallax-content {
+            position: relative;
+            transform-style: preserve-3d;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(216, 211, 211);
+            font-size: 2em;
+        }
+
+        .parallax-content::after {
+            content: "";
+            background-image: url('https://www.palfmarketing.online/imagens/ce5c1a9418c0c34b8cd5988e1744d7.png-');
+            background-size: 100% auto;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .parallax-text {
+            position: relative;
+            transform: translateZ(0);
+            padding: 20px;
+            background: #001F3F;
+            max-width: 80%;
+            margin: 0 auto;
+            height: 20vh;
+            /* Altura ajustada para 40vh */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.5;
+            top: 20vh;
+            /* Ajuste positivo para mover o quadro para baixo */
+            border-radius: 15px;
+            /* Adição da propriedade border-radius */
+        }
+
+        .cta-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FFA500;
+            color: #fff;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 4;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1>Transforme sua Paixão por Unhas<br> em uma Carreira de Sucesso</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1>Curso Nail Academy abrangente e acessível, capacitando desde iniciantes até profissionais a dominar técnicas avançadas de unhas<br></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1>Apenas: R$ 79,90</h1>
+            </div>
+        </div>
+    </div>
+
+
+    teste 123
+
+ 
+    <div style="height: 50px; background-color:rgb(39, 39, 39); display: block;">
+
+    </div>
+
+    <a onclick="realizarFetch()" id="cta" class="cta-button">Comece Agora!</a>
+
+</body>
+
+</html>

@@ -1,7 +1,6 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
-  CampanhaAdsRedeDisplay,
   PaginaVenda
 } from '../index';
 
@@ -20,7 +19,6 @@ export interface PublicoAlvoAdsInterface {
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
-  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   paginaVenda?: PaginaVenda;
 }
 
@@ -38,7 +36,6 @@ export class PublicoAlvoAds implements PublicoAlvoAdsInterface {
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
-  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   paginaVenda: PaginaVenda;
   constructor(data?: PublicoAlvoAdsInterface) {
     Object.assign(this, data);
@@ -130,14 +127,6 @@ export class PublicoAlvoAds implements PublicoAlvoAdsInterface {
           relationType: 'belongsTo',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
-        },
-        campanhaAdsRedeDisplays: {
-          name: 'campanhaAdsRedeDisplays',
-          type: 'CampanhaAdsRedeDisplay[]',
-          model: 'CampanhaAdsRedeDisplay',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'publicoAlvoAdsId'
         },
         paginaVenda: {
           name: 'paginaVenda',

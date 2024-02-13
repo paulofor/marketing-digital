@@ -28,6 +28,9 @@ public class ProcessaPaginaVendaPropriaImpl extends ProcessaPaginaVendaPropria {
 			novo.setImagemPaginaVendaId(arquivo.getImagemPaginaVendaId());
 			novo.setCodigoUrl(generateRandomHex());
 			novo.setTipoGeracao("JAVA");
+			String url = versaoPaginaVendaCorrente.getProdutoAfiliadoHotmart().getUrlRaizPaginaVendaPropria();
+			url += "/" + novo.getCodigoUrl();
+			novo.setUrlCompleta(url);
 			this.saidaListaPaginaVendaPropria.add(novo);
 		}
 		return true;

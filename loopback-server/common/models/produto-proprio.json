@@ -32,6 +32,11 @@
 			"type": "hasMany",
 			"model": "ImagemPaginaVenda",
 			"foreignKey": ""
+		},
+		"anuncioConceitoAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "AnuncioConceitoAdsRedeDisplay",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

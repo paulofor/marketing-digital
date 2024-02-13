@@ -78,5 +78,7 @@ export * from './PixelProdutoHotmartContaCheckout';
 export * from './PixelProdutoHotmartContaCompra';
 export * from './ArtigoParaProduto';
 export * from './ProdutoHotmartConta';
+export * from './AnuncioConceitoAdsRedeDisplay';
+export * from './MetricaCampanhaAdsRedeDisplay';
 export * from './SDKModels';
 export * from './logger.service';

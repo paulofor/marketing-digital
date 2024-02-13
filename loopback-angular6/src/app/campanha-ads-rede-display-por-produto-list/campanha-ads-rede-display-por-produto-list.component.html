@@ -1,0 +1,77 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header">
+		<span>Campanhas Rede Display</span>
+  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+	</div>
+	<div class="dgc-painel-principal" *ngIf="produtoAfiliado">
+		<div class="dgc-card" *ngFor="let item of produtoAfiliado.campanhaAdsRedeDisplays">
+ 			<div class="dgc-card-header">
+ 				<span>{{item.nome}}</span>
+ 			</div>
+			 <div class="dgc-card-detalhe">
+				<span>Anuncio: {{item.anuncioConceitoAdsRedeDisplay.nomeEmpresa}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Imagem Conjunto Anuncio: {{item.imagemConjunto.nome}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Público-Alvo: {{item.publicoAlvoAdsPalavra.nome}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Página Venda: {{item.paginaVendaPropria.codigoUrl}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Conta: {{item.contaGoogle.nome}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Pronta: {{item.prontaParaEnvio}}</span>
+			</div>
+			<br>
+			<div class="dgc-card-detalhe">
+				<span>Custo Campanha: {{item.custoTotal | currency : 'BRL' }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Cpc: {{item.cpc | currency : 'BRL' }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Cpl: {{item.cpl | currency : 'BRL' }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Cps: {{item.cps | currency : 'BRL' }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Cpcheck: {{item.cpcheck | currency : 'BRL' }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Cliques: {{item.cliqueTotal }} ({{item.ctr * 100 | number : '1.2-2'}}%)</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Load: {{item.loadUnico }} ({{item.percentualLoad * 100 | number : '1.2-2'}}%)</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Scroll20: {{item.scroll20 }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Scroll40: {{item.scroll40 }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Scroll60: {{item.scroll60 }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Scroll80: {{item.scroll80 }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Checkout: {{item.checkout }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Ads: {{item.atualizacaoAds | date : 'dd-MM-yyyy HH:mm:ss' : 'UTC'}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Pessoal: {{item.atualizacaoPessoal | date : 'dd-MM-yyyy HH:mm:ss' : 'UTC'}}</span>
+			</div>
+ 			<div class="dgc-card-comandos">
+ 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+ 			</div>
+ 		</div>
+  	</div>
+</div>

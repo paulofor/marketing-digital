@@ -2,56 +2,114 @@
 import {
   ContaGoogle,
   ProdutoAfiliadoHotmart,
-  PublicoAlvoAds,
-  PaginaVenda,
-  AnuncioCampanhaAdsRedeDisplay
+  ImagemConjunto,
+  PaginaVendaPropria,
+  AnuncioCampanhaAdsRedeDisplay,
+  GrupoCampanhaAdsRedeDisplay,
+  PublicoAlvoAdsPalavra,
+  AnuncioConceitoAdsRedeDisplay,
+  MetricaCampanhaAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
 export interface CampanhaAdsRedeDisplayInterface {
   "nome"?: string;
-  "codigoAds"?: string;
+  "nomeAds"?: string;
   "dataEnvioGoogle"?: Date;
   "custoAtual"?: number;
-  "nomeAds"?: string;
-  "codigoAdsGrupoAnuncio"?: string;
+  "resourceName"?: string;
+  "resourceNameGrupo"?: string;
   "prontaParaEnvio"?: number;
-  "codigoAdsCampanha"?: string;
+  "resourceNameBudget"?: string;
   "tipoCampanha"?: string;
   "contaGoogleId"?: number;
-  "produtoAfiliadoHotmartId"?: number;
-  "paginaVendaId"?: number;
+  "codigoHexa"?: string;
+  "urlPrincipal"?: string;
+  "custoTotal"?: number;
+  "cpc"?: number;
+  "cliqueTotal"?: number;
+  "impressaoTotal"?: number;
+  "ctr"?: number;
+  "loadUnico"?: number;
+  "scroll20"?: number;
+  "scroll40"?: number;
+  "scroll60"?: number;
+  "scroll80"?: number;
+  "checkout"?: number;
+  "percentualScroll"?: number;
+  "percentualCheckout"?: number;
+  "atualizacaoAds"?: Date;
+  "atualizacaoPessoal"?: Date;
+  "cpl"?: number;
+  "cps"?: number;
+  "cpcheck"?: number;
+  "percentualLoad"?: number;
+  "paginaVendaPropriaId"?: number;
   "faixaHorarioCampanhaAdsId"?: number;
-  "publicoAlvoAdsId"?: number;
+  "publicoAlvoAdsPalavraId"?: number;
+  "anuncioConceitoAdsRedeDisplayId"?: number;
+  "imagemConjuntoId"?: number;
   "id"?: number;
+  "hotmartId"?: number;
   contaGoogle?: ContaGoogle;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
-  publicoAlvoAds?: PublicoAlvoAds;
-  paginaVenda?: PaginaVenda;
+  imagemConjunto?: ImagemConjunto;
+  paginaVendaPropria?: PaginaVendaPropria;
   anuncioCampanhaAdsRedeDisplays?: AnuncioCampanhaAdsRedeDisplay[];
+  grupoCampanhaAdsRedeDisplays?: GrupoCampanhaAdsRedeDisplay[];
+  publicoAlvoAdsPalavra?: PublicoAlvoAdsPalavra;
+  anuncioConceitoAdsRedeDisplay?: AnuncioConceitoAdsRedeDisplay;
+  metricaCampanhaAdsRedeDisplays?: MetricaCampanhaAdsRedeDisplay[];
 }
 
 export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
   "nome": string;
-  "codigoAds": string;
+  "nomeAds": string;
   "dataEnvioGoogle": Date;
   "custoAtual": number;
-  "nomeAds": string;
-  "codigoAdsGrupoAnuncio": string;
+  "resourceName": string;
+  "resourceNameGrupo": string;
   "prontaParaEnvio": number;
-  "codigoAdsCampanha": string;
+  "resourceNameBudget": string;
   "tipoCampanha": string;
   "contaGoogleId": number;
-  "produtoAfiliadoHotmartId": number;
-  "paginaVendaId": number;
+  "codigoHexa": string;
+  "urlPrincipal": string;
+  "custoTotal": number;
+  "cpc": number;
+  "cliqueTotal": number;
+  "impressaoTotal": number;
+  "ctr": number;
+  "loadUnico": number;
+  "scroll20": number;
+  "scroll40": number;
+  "scroll60": number;
+  "scroll80": number;
+  "checkout": number;
+  "percentualScroll": number;
+  "percentualCheckout": number;
+  "atualizacaoAds": Date;
+  "atualizacaoPessoal": Date;
+  "cpl": number;
+  "cps": number;
+  "cpcheck": number;
+  "percentualLoad": number;
+  "paginaVendaPropriaId": number;
   "faixaHorarioCampanhaAdsId": number;
-  "publicoAlvoAdsId": number;
+  "publicoAlvoAdsPalavraId": number;
+  "anuncioConceitoAdsRedeDisplayId": number;
+  "imagemConjuntoId": number;
   "id": number;
+  "hotmartId": number;
   contaGoogle: ContaGoogle;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
-  publicoAlvoAds: PublicoAlvoAds;
-  paginaVenda: PaginaVenda;
+  imagemConjunto: ImagemConjunto;
+  paginaVendaPropria: PaginaVendaPropria;
   anuncioCampanhaAdsRedeDisplays: AnuncioCampanhaAdsRedeDisplay[];
+  grupoCampanhaAdsRedeDisplays: GrupoCampanhaAdsRedeDisplay[];
+  publicoAlvoAdsPalavra: PublicoAlvoAdsPalavra;
+  anuncioConceitoAdsRedeDisplay: AnuncioConceitoAdsRedeDisplay;
+  metricaCampanhaAdsRedeDisplays: MetricaCampanhaAdsRedeDisplay[];
   constructor(data?: CampanhaAdsRedeDisplayInterface) {
     Object.assign(this, data);
   }
@@ -89,8 +147,8 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           name: 'nome',
           type: 'string'
         },
-        "codigoAds": {
-          name: 'codigoAds',
+        "nomeAds": {
+          name: 'nomeAds',
           type: 'string'
         },
         "dataEnvioGoogle": {
@@ -101,20 +159,20 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           name: 'custoAtual',
           type: 'number'
         },
-        "nomeAds": {
-          name: 'nomeAds',
+        "resourceName": {
+          name: 'resourceName',
           type: 'string'
         },
-        "codigoAdsGrupoAnuncio": {
-          name: 'codigoAdsGrupoAnuncio',
+        "resourceNameGrupo": {
+          name: 'resourceNameGrupo',
           type: 'string'
         },
         "prontaParaEnvio": {
           name: 'prontaParaEnvio',
           type: 'number'
         },
-        "codigoAdsCampanha": {
-          name: 'codigoAdsCampanha',
+        "resourceNameBudget": {
+          name: 'resourceNameBudget',
           type: 'string'
         },
         "tipoCampanha": {
@@ -125,24 +183,116 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           name: 'contaGoogleId',
           type: 'number'
         },
-        "produtoAfiliadoHotmartId": {
-          name: 'produtoAfiliadoHotmartId',
+        "codigoHexa": {
+          name: 'codigoHexa',
+          type: 'string'
+        },
+        "urlPrincipal": {
+          name: 'urlPrincipal',
+          type: 'string'
+        },
+        "custoTotal": {
+          name: 'custoTotal',
           type: 'number'
         },
-        "paginaVendaId": {
-          name: 'paginaVendaId',
+        "cpc": {
+          name: 'cpc',
+          type: 'number'
+        },
+        "cliqueTotal": {
+          name: 'cliqueTotal',
+          type: 'number'
+        },
+        "impressaoTotal": {
+          name: 'impressaoTotal',
+          type: 'number'
+        },
+        "ctr": {
+          name: 'ctr',
+          type: 'number'
+        },
+        "loadUnico": {
+          name: 'loadUnico',
+          type: 'number'
+        },
+        "scroll20": {
+          name: 'scroll20',
+          type: 'number'
+        },
+        "scroll40": {
+          name: 'scroll40',
+          type: 'number'
+        },
+        "scroll60": {
+          name: 'scroll60',
+          type: 'number'
+        },
+        "scroll80": {
+          name: 'scroll80',
+          type: 'number'
+        },
+        "checkout": {
+          name: 'checkout',
+          type: 'number'
+        },
+        "percentualScroll": {
+          name: 'percentualScroll',
+          type: 'number'
+        },
+        "percentualCheckout": {
+          name: 'percentualCheckout',
+          type: 'number'
+        },
+        "atualizacaoAds": {
+          name: 'atualizacaoAds',
+          type: 'Date'
+        },
+        "atualizacaoPessoal": {
+          name: 'atualizacaoPessoal',
+          type: 'Date'
+        },
+        "cpl": {
+          name: 'cpl',
+          type: 'number'
+        },
+        "cps": {
+          name: 'cps',
+          type: 'number'
+        },
+        "cpcheck": {
+          name: 'cpcheck',
+          type: 'number'
+        },
+        "percentualLoad": {
+          name: 'percentualLoad',
+          type: 'number'
+        },
+        "paginaVendaPropriaId": {
+          name: 'paginaVendaPropriaId',
           type: 'number'
         },
         "faixaHorarioCampanhaAdsId": {
           name: 'faixaHorarioCampanhaAdsId',
           type: 'number'
         },
-        "publicoAlvoAdsId": {
-          name: 'publicoAlvoAdsId',
+        "publicoAlvoAdsPalavraId": {
+          name: 'publicoAlvoAdsPalavraId',
+          type: 'number'
+        },
+        "anuncioConceitoAdsRedeDisplayId": {
+          name: 'anuncioConceitoAdsRedeDisplayId',
+          type: 'number'
+        },
+        "imagemConjuntoId": {
+          name: 'imagemConjuntoId',
           type: 'number'
         },
         "id": {
           name: 'id',
+          type: 'number'
+        },
+        "hotmartId": {
+          name: 'hotmartId',
           type: 'number'
         },
       },
@@ -160,29 +310,61 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           type: 'ProdutoAfiliadoHotmart',
           model: 'ProdutoAfiliadoHotmart',
           relationType: 'belongsTo',
-                  keyFrom: 'produtoAfiliadoHotmartId',
+                  keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
         },
-        publicoAlvoAds: {
-          name: 'publicoAlvoAds',
-          type: 'PublicoAlvoAds',
-          model: 'PublicoAlvoAds',
+        imagemConjunto: {
+          name: 'imagemConjunto',
+          type: 'ImagemConjunto',
+          model: 'ImagemConjunto',
           relationType: 'belongsTo',
-                  keyFrom: 'publicoAlvoAdsId',
+                  keyFrom: 'imagemConjuntoId',
           keyTo: 'id'
         },
-        paginaVenda: {
-          name: 'paginaVenda',
-          type: 'PaginaVenda',
-          model: 'PaginaVenda',
+        paginaVendaPropria: {
+          name: 'paginaVendaPropria',
+          type: 'PaginaVendaPropria',
+          model: 'PaginaVendaPropria',
           relationType: 'belongsTo',
-                  keyFrom: 'paginaVendaId',
+                  keyFrom: 'paginaVendaPropriaId',
           keyTo: 'id'
         },
         anuncioCampanhaAdsRedeDisplays: {
           name: 'anuncioCampanhaAdsRedeDisplays',
           type: 'AnuncioCampanhaAdsRedeDisplay[]',
           model: 'AnuncioCampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsRedeDisplayId'
+        },
+        grupoCampanhaAdsRedeDisplays: {
+          name: 'grupoCampanhaAdsRedeDisplays',
+          type: 'GrupoCampanhaAdsRedeDisplay[]',
+          model: 'GrupoCampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsRedeDisplayId'
+        },
+        publicoAlvoAdsPalavra: {
+          name: 'publicoAlvoAdsPalavra',
+          type: 'PublicoAlvoAdsPalavra',
+          model: 'PublicoAlvoAdsPalavra',
+          relationType: 'belongsTo',
+                  keyFrom: 'publicoAlvoAdsPalavraId',
+          keyTo: 'id'
+        },
+        anuncioConceitoAdsRedeDisplay: {
+          name: 'anuncioConceitoAdsRedeDisplay',
+          type: 'AnuncioConceitoAdsRedeDisplay',
+          model: 'AnuncioConceitoAdsRedeDisplay',
+          relationType: 'belongsTo',
+                  keyFrom: 'anuncioConceitoAdsRedeDisplayId',
+          keyTo: 'id'
+        },
+        metricaCampanhaAdsRedeDisplays: {
+          name: 'metricaCampanhaAdsRedeDisplays',
+          type: 'MetricaCampanhaAdsRedeDisplay[]',
+          model: 'MetricaCampanhaAdsRedeDisplay',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'campanhaAdsRedeDisplayId'

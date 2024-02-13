@@ -1,0 +1,35 @@
+<h2 *ngIf="item" mat-dialog-title>AnuncioConceitoAdsRedeDisplay</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+			<input maxlength="25" matInput #nomeEmpresa [(ngModel)]="item.nomeEmpresa" name="nomeEmpresa" placeholder="Nome Empresa" />
+			<mat-hint align="end">{{ (nomeEmpresa.value?nomeEmpresa.value.length:0) }}/25</mat-hint>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input maxlength="30" matInput #titulo [(ngModel)]="item.titulo" name="titulo" placeholder="Título" />
+			<mat-hint align="end">{{ (titulo.value?titulo.value.length:0) }}/30</mat-hint>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input maxlength="90" matInput #tituloLongo [(ngModel)]="item.tituloLongo" name="tituloLongo" placeholder="Título Longo" />
+			<mat-hint align="end">{{ (tituloLongo.value?tituloLongo.value.length:0) }}/90</mat-hint>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input maxlength="90" matInput #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição" />
+			<mat-hint align="end">{{ (descricao.value?descricao.value.length:0) }}/90</mat-hint>
+		</mat-form-field>
+
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

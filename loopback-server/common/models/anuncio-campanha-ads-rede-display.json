@@ -16,18 +16,21 @@
 		"campanhaAdsRedeDisplayId": {
 			"type": "number"
 			,"id": true
+		},
+		"anuncioConceitoAdsRedeDisplayId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
-		"anuncioAdsDisplay": {
-			"type": "belongsTo",
-			"model": "AnuncioAdsDisplay",
-			"foreignKey": ""
-		},
 		"campanhaAdsRedeDisplay": {
 			"type": "belongsTo",
 			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		},
+		"anuncioConceitoAdsRedeDisplay": {
+			"type": "belongsTo",
+			"model": "AnuncioConceitoAdsRedeDisplay",
 			"foreignKey": ""
 		}
 	},

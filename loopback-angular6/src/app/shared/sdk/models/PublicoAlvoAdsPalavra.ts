@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
+  CampanhaAdsRedeDisplay,
   ContaPublicoAlvoAdsPalavra,
   ProdutoPublicoAdsPalavra
 } from '../index';
@@ -12,6 +13,7 @@ export interface PublicoAlvoAdsPalavraInterface {
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   contaPublicoAlvoAdsPalavras?: ContaPublicoAlvoAdsPalavra[];
   produtoPublicoAdsPalavras?: ProdutoPublicoAdsPalavra[];
 }
@@ -22,6 +24,7 @@ export class PublicoAlvoAdsPalavra implements PublicoAlvoAdsPalavraInterface {
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   contaPublicoAlvoAdsPalavras: ContaPublicoAlvoAdsPalavra[];
   produtoPublicoAdsPalavras: ProdutoPublicoAdsPalavra[];
   constructor(data?: PublicoAlvoAdsPalavraInterface) {
@@ -82,6 +85,14 @@ export class PublicoAlvoAdsPalavra implements PublicoAlvoAdsPalavraInterface {
           relationType: 'belongsTo',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
+        },
+        campanhaAdsRedeDisplays: {
+          name: 'campanhaAdsRedeDisplays',
+          type: 'CampanhaAdsRedeDisplay[]',
+          model: 'CampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'publicoAlvoAdsPalavraId'
         },
         contaPublicoAlvoAdsPalavras: {
           name: 'contaPublicoAlvoAdsPalavras',

@@ -2,7 +2,6 @@
 import {
   ProdutoAfiliadoHotmart,
   ProdutoAfiliadoHotlink,
-  CampanhaAdsRedeDisplay,
   PublicoAlvoAds,
   AnuncioAdsDisplay,
   LoadPaginaVenda,
@@ -19,7 +18,6 @@ export interface PaginaVendaInterface {
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   produtoAfiliadoHotlink?: ProdutoAfiliadoHotlink;
-  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   publicoAlvoAds?: PublicoAlvoAds[];
   anuncioAdsDisplays?: AnuncioAdsDisplay[];
   loadPaginaVendas?: LoadPaginaVenda[];
@@ -35,7 +33,6 @@ export class PaginaVenda implements PaginaVendaInterface {
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   produtoAfiliadoHotlink: ProdutoAfiliadoHotlink;
-  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   publicoAlvoAds: PublicoAlvoAds[];
   anuncioAdsDisplays: AnuncioAdsDisplay[];
   loadPaginaVendas: LoadPaginaVenda[];
@@ -111,14 +108,6 @@ export class PaginaVenda implements PaginaVendaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'produtoAfiliadoHotlinkId',
           keyTo: 'id'
-        },
-        campanhaAdsRedeDisplays: {
-          name: 'campanhaAdsRedeDisplays',
-          type: 'CampanhaAdsRedeDisplay[]',
-          model: 'CampanhaAdsRedeDisplay',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'paginaVendaId'
         },
         publicoAlvoAds: {
           name: 'publicoAlvoAds',

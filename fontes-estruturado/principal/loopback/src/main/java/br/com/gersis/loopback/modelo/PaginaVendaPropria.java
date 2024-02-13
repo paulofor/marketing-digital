@@ -23,11 +23,15 @@ public class PaginaVendaPropria extends Model {
 	private String css;
 	private String tipoGeracao;
 	private int geraArquivo;
+	private String nome;
+	private String urlCompleta;
 	// Relacionamentos 1
 	private ImagemPaginaVenda ImagemPaginaVenda;
 	private VersaoPaginaVenda VersaoPaginaVenda;
 	private PixelAdsSegmentoMercado PixelAdsSegmentoMercado;
+	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
+	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<LoadPaginaVenda> LoadPaginaVendas;
 	private List<PaginaVendaScroll> PaginaVendaScrolls;
 	private List<LoadPaginaVendaPropria> LoadPaginaVendaProprias;
@@ -61,6 +65,8 @@ public class PaginaVendaPropria extends Model {
 			obj.put("css", css);
 			obj.put("tipoGeracao", tipoGeracao);
 			obj.put("geraArquivo", geraArquivo);
+			obj.put("nome", nome);
+			obj.put("urlCompleta", urlCompleta);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -122,6 +128,18 @@ public class PaginaVendaPropria extends Model {
 	public int getGeraArquivo() { 
 		return this.geraArquivo;
 	}
+	public void setNome(String valor) { 
+		this.nome = valor;
+	}
+	public String getNome() { 
+		return this.nome;
+	}
+	public void setUrlCompleta(String valor) { 
+		this.urlCompleta = valor;
+	}
+	public String getUrlCompleta() { 
+		return this.urlCompleta;
+	}
 
 	public ImagemPaginaVenda getImagemPaginaVenda() {
 		return ImagemPaginaVenda;
@@ -143,6 +161,25 @@ public class PaginaVendaPropria extends Model {
 	public void setPixelAdsSegmentoMercado(HashMap valor) {
 		this.PixelAdsSegmentoMercado = new PixelAdsSegmentoMercado();
 		BeanUtil.setProperties(this.PixelAdsSegmentoMercado, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
+		return ProdutoAfiliadoHotmart;
+	}
+	public void setProdutoAfiliadoHotmart(HashMap valor) {
+		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public List<CampanhaAdsRedeDisplay> getCampanhaAdsRedeDisplays() {
+		return  CampanhaAdsRedeDisplays;
+	}
+	public void setCampanhaAdsRedeDisplays(List<CampanhaAdsRedeDisplay> valores) {
+		this.CampanhaAdsRedeDisplays = new ArrayList<CampanhaAdsRedeDisplay>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CampanhaAdsRedeDisplay();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CampanhaAdsRedeDisplays.add((CampanhaAdsRedeDisplay) objeto);
+		}
 	}
 	public List<LoadPaginaVenda> getLoadPaginaVendas() {
 		return  LoadPaginaVendas;

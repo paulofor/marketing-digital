@@ -3,7 +3,7 @@ import {
   ProdutoAfiliadoHotmart,
   PaginaVenda,
   ImagemConjunto,
-  AnuncioCampanhaAdsRedeDisplay
+  GrupoCampanhaAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
@@ -23,7 +23,7 @@ export interface AnuncioAdsDisplayInterface {
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   paginaVenda?: PaginaVenda;
   imagemConjunto?: ImagemConjunto;
-  anuncioCampanhaAdsRedeDisplays?: AnuncioCampanhaAdsRedeDisplay[];
+  grupoCampanhaAdsRedeDisplays?: GrupoCampanhaAdsRedeDisplay[];
 }
 
 export class AnuncioAdsDisplay implements AnuncioAdsDisplayInterface {
@@ -42,7 +42,7 @@ export class AnuncioAdsDisplay implements AnuncioAdsDisplayInterface {
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   paginaVenda: PaginaVenda;
   imagemConjunto: ImagemConjunto;
-  anuncioCampanhaAdsRedeDisplays: AnuncioCampanhaAdsRedeDisplay[];
+  grupoCampanhaAdsRedeDisplays: GrupoCampanhaAdsRedeDisplay[];
   constructor(data?: AnuncioAdsDisplayInterface) {
     Object.assign(this, data);
   }
@@ -150,10 +150,10 @@ export class AnuncioAdsDisplay implements AnuncioAdsDisplayInterface {
                   keyFrom: 'imagemConjuntoId',
           keyTo: 'id'
         },
-        anuncioCampanhaAdsRedeDisplays: {
-          name: 'anuncioCampanhaAdsRedeDisplays',
-          type: 'AnuncioCampanhaAdsRedeDisplay[]',
-          model: 'AnuncioCampanhaAdsRedeDisplay',
+        grupoCampanhaAdsRedeDisplays: {
+          name: 'grupoCampanhaAdsRedeDisplays',
+          type: 'GrupoCampanhaAdsRedeDisplay[]',
+          model: 'GrupoCampanhaAdsRedeDisplay',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'anuncioAdsDisplayId'

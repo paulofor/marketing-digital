@@ -12,6 +12,7 @@ export interface LoadPaginaVendaPropriaInterface {
   "utmTerm"?: string;
   "utmContent"?: string;
   "codigoLoad"?: string;
+  "visitante"?: string;
   "paginaVendaPropriaId"?: number;
   "id"?: number;
   paginaVendaPropria?: PaginaVendaPropria;
@@ -25,6 +26,7 @@ export class LoadPaginaVendaPropria implements LoadPaginaVendaPropriaInterface {
   "utmTerm": string;
   "utmContent": string;
   "codigoLoad": string;
+  "visitante": string;
   "paginaVendaPropriaId": number;
   "id": number;
   paginaVendaPropria: PaginaVendaPropria;
@@ -87,6 +89,10 @@ export class LoadPaginaVendaPropria implements LoadPaginaVendaPropriaInterface {
         },
         "codigoLoad": {
           name: 'codigoLoad',
+          type: 'string'
+        },
+        "visitante": {
+          name: 'visitante',
           type: 'string'
         },
         "paginaVendaPropriaId": {

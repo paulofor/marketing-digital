@@ -49,7 +49,10 @@ module.exports = function (Versaopaginavenda) {
             var idsParaFiltrar = result.map(item => item.id);
             const filtro = {
                'where' : {'id': { inq: idsParaFiltrar } } ,
-               'include' : {'relation' : 'arquivoPaginaVendas' , 'scope' : {'include' : 'imagemPaginaVenda'} }
+               'include' : [
+                    'produtoAfiliadoHotmart',
+                    {'relation' : 'arquivoPaginaVendas' , 'scope' : {'include' : 'imagemPaginaVenda'} }
+                ]
             }
             console.log('filtro' , filtro);
             Versaopaginavenda.find(filtro,callback);

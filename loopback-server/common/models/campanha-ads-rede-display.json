@@ -12,7 +12,7 @@
 		"nome": {
 			"type": "string"
 		},
-		"codigoAds": {
+		"nomeAds": {
 			"type": "string"
 		},
 		"dataEnvioGoogle": {
@@ -21,16 +21,16 @@
 		"custoAtual": {
 			"type": "number"
 		},
-		"nomeAds": {
+		"resourceName": {
 			"type": "string"
 		},
-		"codigoAdsGrupoAnuncio": {
+		"resourceNameGrupo": {
 			"type": "string"
 		},
 		"prontaParaEnvio": {
 			"type": "number"
 		},
-		"codigoAdsCampanha": {
+		"resourceNameBudget": {
 			"type": "string"
 		},
 		"tipoCampanha": {
@@ -39,16 +39,82 @@
 		"contaGoogleId": {
 			"type": "number"
 		},
-		"produtoAfiliadoHotmartId": {
+		"codigoHexa": {
+			"type": "string"
+		},
+		"urlPrincipal": {
+			"type": "string"
+		},
+		"custoTotal": {
 			"type": "number"
 		},
-		"paginaVendaId": {
+		"cpc": {
+			"type": "number"
+		},
+		"cliqueTotal": {
+			"type": "number"
+		},
+		"impressaoTotal": {
+			"type": "number"
+		},
+		"ctr": {
+			"type": "number"
+		},
+		"loadUnico": {
+			"type": "number"
+		},
+		"scroll20": {
+			"type": "number"
+		},
+		"scroll40": {
+			"type": "number"
+		},
+		"scroll60": {
+			"type": "number"
+		},
+		"scroll80": {
+			"type": "number"
+		},
+		"checkout": {
+			"type": "number"
+		},
+		"percentualScroll": {
+			"type": "number"
+		},
+		"percentualCheckout": {
+			"type": "number"
+		},
+		"atualizacaoAds": {
+			"type": "date"
+		},
+		"atualizacaoPessoal": {
+			"type": "date"
+		},
+		"cpl": {
+			"type": "number"
+		},
+		"cps": {
+			"type": "number"
+		},
+		"cpcheck": {
+			"type": "number"
+		},
+		"percentualLoad": {
+			"type": "number"
+		},
+		"paginaVendaPropriaId": {
 			"type": "number"
 		},
 		"faixaHorarioCampanhaAdsId": {
 			"type": "number"
 		},
-		"publicoAlvoAdsId": {
+		"publicoAlvoAdsPalavraId": {
+			"type": "number"
+		},
+		"anuncioConceitoAdsRedeDisplayId": {
+			"type": "number"
+		},
+		"imagemConjuntoId": {
 			"type": "number"
 		}
 	},
@@ -62,11 +128,11 @@
 		"produtoAfiliadoHotmart": {
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
-			"foreignKey": ""
+			"foreignKey": "hotmartId"
 		},
-		"paginaVenda": {
+		"paginaVendaPropria": {
 			"type": "belongsTo",
-			"model": "PaginaVenda",
+			"model": "PaginaVendaPropria",
 			"foreignKey": ""
 		},
 		"faixaHorarioCampanhaAds": {
@@ -74,14 +140,34 @@
 			"model": "FaixaHorarioCampanhaAds",
 			"foreignKey": ""
 		},
-		"publicoAlvoAds": {
+		"publicoAlvoAdsPalavra": {
 			"type": "belongsTo",
-			"model": "PublicoAlvoAds",
+			"model": "PublicoAlvoAdsPalavra",
+			"foreignKey": ""
+		},
+		"anuncioConceitoAdsRedeDisplay": {
+			"type": "belongsTo",
+			"model": "AnuncioConceitoAdsRedeDisplay",
+			"foreignKey": ""
+		},
+		"imagemConjunto": {
+			"type": "belongsTo",
+			"model": "ImagemConjunto",
 			"foreignKey": ""
 		},
 		"anuncioCampanhaAdsRedeDisplays": {
 			"type": "hasMany",
 			"model": "AnuncioCampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		},
+		"grupoCampanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "GrupoCampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		},
+		"metricaCampanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "MetricaCampanhaAdsRedeDisplay",
 			"foreignKey": ""
 		}
 	},
@@ -109,6 +195,87 @@
 		"AtualizaCampanhaCriada": {
 			"accepts": [
 				{
+					"arg": "resourceName",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "resourceNameGrupo",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "nomeAds",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "idCampanha",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaCampanhaCriada",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"AtualizaIndicadorPessoal": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaIndicadorPessoal",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaParaResultadoComConta": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaResultadoComConta",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaIndicadorAds": {
+			"accepts": [
+				{
 					"arg": "campanha",
 					"type": "object",
    					"required": false,
@@ -126,7 +293,7 @@
 			"description": "",
 			"http": [
          		{
-          			"path": "/atualizaCampanhaCriada",
+          			"path": "/atualizaIndicadorAds",
    					"verb": "post"
  				}
  			]

@@ -9,9 +9,25 @@
     	"Counts": true
   	},
 	"properties": {
+		"anuncioAdsDisplayId": {
+			"type": "number"
+		},
+		"campanhaAdsRedeDisplayId": {
+			"type": "number"
+		}
 	},
 	"validations": [],
 	"relations": {
+		"anuncioAdsDisplay": {
+			"type": "belongsTo",
+			"model": "AnuncioAdsDisplay",
+			"foreignKey": ""
+		},
+		"campanhaAdsRedeDisplay": {
+			"type": "belongsTo",
+			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {

@@ -2,7 +2,8 @@
 import {
   ProdutoProprioVersao,
   VersaoPaginaVenda,
-  ImagemPaginaVenda
+  ImagemPaginaVenda,
+  AnuncioConceitoAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
@@ -13,6 +14,7 @@ export interface ProdutoProprioInterface {
   produtoProprioVersaos?: ProdutoProprioVersao[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
   imagemPaginaVendas?: ImagemPaginaVenda[];
+  anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
 }
 
 export class ProdutoProprio implements ProdutoProprioInterface {
@@ -22,6 +24,7 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   produtoProprioVersaos: ProdutoProprioVersao[];
   versaoPaginaVendas: VersaoPaginaVenda[];
   imagemPaginaVendas: ImagemPaginaVenda[];
+  anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
   constructor(data?: ProdutoProprioInterface) {
     Object.assign(this, data);
   }
@@ -89,6 +92,14 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'imagemPaginaVendas',
           type: 'ImagemPaginaVenda[]',
           model: 'ImagemPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        anuncioConceitoAdsRedeDisplays: {
+          name: 'anuncioConceitoAdsRedeDisplays',
+          type: 'AnuncioConceitoAdsRedeDisplay[]',
+          model: 'AnuncioConceitoAdsRedeDisplay',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'

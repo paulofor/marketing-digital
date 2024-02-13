@@ -16,16 +16,25 @@ public abstract class CampanhaAdsRedeDisplay_AtualizaCampanhaCriada extends DaoA
 	private int NUM_PASSO = 3;
 
 
-	protected CampanhaAdsRedeDisplay campanha;
+	protected String resourceName;
+	protected String resourceNameGrupo;
+	protected String nomeAds;
+	protected int idCampanha;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
 		if (executaCustom(ds.getCampanhaCorrente())) {
-			if (campanha==null) {
-				throw new RuntimeException("campanha precisa ser atribuido em CampanhaAdsRedeDisplay_AtualizaCampanhaCriadaImpl ");
+			if (resourceName==null) {
+				throw new RuntimeException("resourceName precisa ser atribuido em CampanhaAdsRedeDisplay_AtualizaCampanhaCriadaImpl ");
 			}
-			repCampanhaAdsRedeDisplay.atualizaCampanhaCriada( campanha, new VoidCallback() { 
+			if (resourceNameGrupo==null) {
+				throw new RuntimeException("resourceNameGrupo precisa ser atribuido em CampanhaAdsRedeDisplay_AtualizaCampanhaCriadaImpl ");
+			}
+			if (nomeAds==null) {
+				throw new RuntimeException("nomeAds precisa ser atribuido em CampanhaAdsRedeDisplay_AtualizaCampanhaCriadaImpl ");
+			}
+			repCampanhaAdsRedeDisplay.atualizaCampanhaCriada( resourceName,resourceNameGrupo,nomeAds,idCampanha, new VoidCallback() { 
 				public void onSuccess() {
 					executaProximo();
 				}

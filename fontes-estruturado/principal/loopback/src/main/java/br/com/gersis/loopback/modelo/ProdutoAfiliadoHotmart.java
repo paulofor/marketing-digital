@@ -45,6 +45,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private int possuiImagemRedeDisplay;
 	private double cpaInicial;
 	private String urlPresell;
+	private String urlRaizPaginaVendaPropria;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -79,6 +80,8 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<PixelProdutoHotmartConta> PixelProdutoHotmartContas;
 	private List<PixelProdutoHotmartContaCheckout> PixelProdutoHotmartContaCheckouts;
 	private List<ProdutoHotmartConta> ProdutoHotmartContas;
+	private List<AnuncioConceitoAdsRedeDisplay> AnuncioConceitoAdsRedeDisplays;
+	private List<PaginaVendaPropria> PaginaVendaProprias;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -129,6 +132,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("possuiImagemRedeDisplay", possuiImagemRedeDisplay);
 			obj.put("cpaInicial", cpaInicial);
 			obj.put("urlPresell", urlPresell);
+			obj.put("urlRaizPaginaVendaPropria", urlRaizPaginaVendaPropria);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -321,6 +325,12 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public String getUrlPresell() { 
 		return this.urlPresell;
+	}
+	public void setUrlRaizPaginaVendaPropria(String valor) { 
+		this.urlRaizPaginaVendaPropria = valor;
+	}
+	public String getUrlRaizPaginaVendaPropria() { 
+		return this.urlRaizPaginaVendaPropria;
 	}
 
 	public PixelGoogle getPixelGoogle() {
@@ -680,6 +690,30 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ProdutoHotmartContas.add((ProdutoHotmartConta) objeto);
+		}
+	}
+	public List<AnuncioConceitoAdsRedeDisplay> getAnuncioConceitoAdsRedeDisplays() {
+		return  AnuncioConceitoAdsRedeDisplays;
+	}
+	public void setAnuncioConceitoAdsRedeDisplays(List<AnuncioConceitoAdsRedeDisplay> valores) {
+		this.AnuncioConceitoAdsRedeDisplays = new ArrayList<AnuncioConceitoAdsRedeDisplay>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AnuncioConceitoAdsRedeDisplay();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AnuncioConceitoAdsRedeDisplays.add((AnuncioConceitoAdsRedeDisplay) objeto);
+		}
+	}
+	public List<PaginaVendaPropria> getPaginaVendaProprias() {
+		return  PaginaVendaProprias;
+	}
+	public void setPaginaVendaProprias(List<PaginaVendaPropria> valores) {
+		this.PaginaVendaProprias = new ArrayList<PaginaVendaPropria>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaPropria();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaProprias.add((PaginaVendaPropria) objeto);
 		}
 	}
 }

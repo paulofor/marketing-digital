@@ -36,6 +36,12 @@
 		"geraArquivo": {
 			"type": "number"
 		},
+		"nome": {
+			"type": "string"
+		},
+		"urlCompleta": {
+			"type": "string"
+		},
 		"pixelAdsSegmentoMercadoId": {
 			"type": "number"
 		}
@@ -55,6 +61,16 @@
 		"pixelAdsSegmentoMercado": {
 			"type": "belongsTo",
 			"model": "PixelAdsSegmentoMercado",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
 			"foreignKey": ""
 		},
 		"loadPaginaVendas": {

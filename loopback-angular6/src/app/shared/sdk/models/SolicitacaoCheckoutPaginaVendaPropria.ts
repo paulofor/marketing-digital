@@ -12,6 +12,7 @@ export interface SolicitacaoCheckoutPaginaVendaPropriaInterface {
   "utmTerm"?: string;
   "utmContent"?: string;
   "dataHora"?: Date;
+  "visitante"?: string;
   "paginaVendaPropriaId"?: number;
   "id"?: number;
   paginaVendaPropria?: PaginaVendaPropria;
@@ -25,6 +26,7 @@ export class SolicitacaoCheckoutPaginaVendaPropria implements SolicitacaoCheckou
   "utmTerm": string;
   "utmContent": string;
   "dataHora": Date;
+  "visitante": string;
   "paginaVendaPropriaId": number;
   "id": number;
   paginaVendaPropria: PaginaVendaPropria;
@@ -88,6 +90,10 @@ export class SolicitacaoCheckoutPaginaVendaPropria implements SolicitacaoCheckou
         "dataHora": {
           name: 'dataHora',
           type: 'Date'
+        },
+        "visitante": {
+          name: 'visitante',
+          type: 'string'
         },
         "paginaVendaPropriaId": {
           name: 'paginaVendaPropriaId',

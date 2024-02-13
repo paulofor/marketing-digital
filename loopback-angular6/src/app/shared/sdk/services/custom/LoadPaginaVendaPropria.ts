@@ -133,6 +133,8 @@ export class LoadPaginaVendaPropriaApi extends BaseLoopBackApi {
    *
    * @param {string} utmContent 
    *
+   * @param {string} visitante 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -142,7 +144,7 @@ export class LoadPaginaVendaPropriaApi extends BaseLoopBackApi {
    * This usually means the response is a `LoadPaginaVendaPropria` object.)
    * </em>
    */
-  public InsereItem(codigoPagina: any = {}, utmCampaign: any = {}, utmContent: any = {}, customHeaders?: Function): Observable<any> {
+  public InsereItem(codigoPagina: any = {}, utmCampaign: any = {}, utmContent: any = {}, visitante: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/LoadPaginaVendaPropria/insereItem";
@@ -152,6 +154,7 @@ export class LoadPaginaVendaPropriaApi extends BaseLoopBackApi {
     if (typeof codigoPagina !== 'undefined' && codigoPagina !== null) _urlParams.codigoPagina = codigoPagina;
     if (typeof utmCampaign !== 'undefined' && utmCampaign !== null) _urlParams.utmCampaign = utmCampaign;
     if (typeof utmContent !== 'undefined' && utmContent !== null) _urlParams.utmContent = utmContent;
+    if (typeof visitante !== 'undefined' && visitante !== null) _urlParams.visitante = visitante;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

@@ -31,11 +31,6 @@
 			"model": "ProdutoAfiliadoHotlink",
 			"foreignKey": ""
 		},
-		"campanhaAdsRedeDisplays": {
-			"type": "hasMany",
-			"model": "CampanhaAdsRedeDisplay",
-			"foreignKey": ""
-		},
 		"publicoAlvoAds": {
 			"type": "hasMany",
 			"model": "PublicoAlvoAds",

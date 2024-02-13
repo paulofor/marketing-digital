@@ -127,6 +127,8 @@ import { PixelProdutoHotmartContaCheckoutApi } from './services/custom/PixelProd
 import { PixelProdutoHotmartContaCompraApi } from './services/custom/PixelProdutoHotmartContaCompra';
 import { ArtigoParaProdutoApi } from './services/custom/ArtigoParaProduto';
 import { ProdutoHotmartContaApi } from './services/custom/ProdutoHotmartConta';
+import { AnuncioConceitoAdsRedeDisplayApi } from './services/custom/AnuncioConceitoAdsRedeDisplay';
+import { MetricaCampanhaAdsRedeDisplayApi } from './services/custom/MetricaCampanhaAdsRedeDisplay';
 /**
 * @module SDKBrowserModule
 * @description
@@ -236,6 +238,8 @@ export class SDKBrowserModule {
         PixelProdutoHotmartContaCompraApi,
         ArtigoParaProdutoApi,
         ProdutoHotmartContaApi,
+        AnuncioConceitoAdsRedeDisplayApi,
+        MetricaCampanhaAdsRedeDisplayApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

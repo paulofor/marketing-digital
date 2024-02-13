@@ -8,6 +8,8 @@ export interface ScrollPaginaVendaPropriaInterface {
   "codigoPaginaVendaPropria"?: string;
   "dataHora"?: Date;
   "codigoLoad"?: string;
+  "visitante"?: string;
+  "utmCampaign"?: string;
   "paginaVendaPropriaId"?: number;
   "id"?: number;
   paginaVendaPropria?: PaginaVendaPropria;
@@ -17,6 +19,8 @@ export class ScrollPaginaVendaPropria implements ScrollPaginaVendaPropriaInterfa
   "codigoPaginaVendaPropria": string;
   "dataHora": Date;
   "codigoLoad": string;
+  "visitante": string;
+  "utmCampaign": string;
   "paginaVendaPropriaId": number;
   "id": number;
   paginaVendaPropria: PaginaVendaPropria;
@@ -63,6 +67,14 @@ export class ScrollPaginaVendaPropria implements ScrollPaginaVendaPropriaInterfa
         },
         "codigoLoad": {
           name: 'codigoLoad',
+          type: 'string'
+        },
+        "visitante": {
+          name: 'visitante',
+          type: 'string'
+        },
+        "utmCampaign": {
+          name: 'utmCampaign',
           type: 'string'
         },
         "paginaVendaPropriaId": {

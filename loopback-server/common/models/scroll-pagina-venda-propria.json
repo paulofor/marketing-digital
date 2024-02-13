@@ -21,6 +21,9 @@
 		"visitante": {
 			"type": "string"
 		},
+		"utmCampaign": {
+			"type": "string"
+		},
 		"paginaVendaPropriaId": {
 			"type": "number"
 		}
@@ -51,6 +54,12 @@
 				},
 				{
 					"arg": "visitante",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "utmCampaign",
 					"type": "string",
    					"required": false,
     				"description": ""

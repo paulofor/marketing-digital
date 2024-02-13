@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="content-language" content="pt-BR">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>---nomeProduto---</title>
+
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+
+            color: #ffffff;
+        }
+
+        .parallax-container {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 1px;
+        }
+
+        .parallax-content {
+            position: relative;
+            transform-style: preserve-3d;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(216, 211, 211);
+            font-size: 2em;
+        }
+
+        .parallax-content::after {
+            content: "";
+            background-image: url('https://www.palfmarketing.online/imagens/b0ac14416c1319eea5ec84044e001f.png');
+            background-size: 100% auto;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .parallax-text {
+            position: relative;
+            transform: translateZ(0);
+            padding: 20px;
+            background: #001F3F;
+            max-width: 80%;
+            margin: 0 auto;
+            height: 30vh;
+            /* Altura ajustada para 40vh */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.5;
+            top: 40vh;
+            /* Ajuste positivo para mover o quadro para baixo */
+            border-radius: 15px;
+            /* Adição da propriedade border-radius */
+        }
+
+        .cta-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FFA500;
+            color: #fff;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 4;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1 style="font-family: 'Montserrat', sans-serif;font-size: 24px;color: #ffffff;">---texto01---</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1 style="font-family: 'Montserrat', sans-serif;font-size: 24px;color: #ffffff;">---texto02---</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1 style="font-family: 'Montserrat', sans-serif;font-size: 24px;color: #ffffff;">---texto03---</h1>
+            </div>
+        </div>
+    </div>
+
+
+ 
+
+ 
+    <div style="height: 50px; background-color:rgb(39, 39, 39); display: block;">
+
+    </div>
+
+    <a onclick="realizarFetch()" id="cta" class="cta-button">Comece Agora!</a>
+
+</body>
+
+</html>

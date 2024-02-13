@@ -119,6 +119,18 @@ import { PublicoAlvoAdsPalavraDetalheComponent } from './publico-alvo-ads-palavr
 import { ContaPublicoAlvoAdsPalavraEditRelComponent } from './conta-publico-alvo-ads-palavra-edit-rel/conta-publico-alvo-ads-palavra-edit-rel.component';
 import { ProdutoHotmartContaEditRelComponent } from './produto-hotmart-conta-edit-rel/produto-hotmart-conta-edit-rel.component';
 import { IdeiaPalavraChaveEditComponent } from './ideia-palavra-chave-edit/ideia-palavra-chave-edit.component';
+import { ProdutoProprioListComponent } from './produto-proprio-list/produto-proprio-list.component';
+import { ProdutoProprioEditComponent } from './produto-proprio-edit/produto-proprio-edit.component';
+import { ProdutoProprioDetalheComponent } from './produto-proprio-detalhe/produto-proprio-detalhe.component';
+import { ProdutoProprioVersaoDetalheComponent } from './produto-proprio-versao-detalhe/produto-proprio-versao-detalhe.component';
+import { AnuncioConceitoAdsRedeDisplayComponent } from './anuncio-conceito-ads-rede-display/anuncio-conceito-ads-rede-display.component';
+import { AnuncioConceitoAdsRedeDisplayPorProdutoListComponent } from './anuncio-conceito-ads-rede-display-por-produto-list/anuncio-conceito-ads-rede-display-por-produto-list.component';
+import { ImagemConjuntoPorProdutoListComponent } from './imagem-conjunto-por-produto-list/imagem-conjunto-por-produto-list.component';
+import { ImagemConjuntoEditComponent } from './imagem-conjunto-edit/imagem-conjunto-edit.component';
+import { AnuncioConceitoAdsRedeDisplayEditComponent } from './anuncio-conceito-ads-rede-display-edit/anuncio-conceito-ads-rede-display-edit.component';
+import { CampanhaAdsRedeDisplayPorProdutoListComponent } from './campanha-ads-rede-display-por-produto-list/campanha-ads-rede-display-por-produto-list.component';
+import { CampanhaAdsRedeDisplayEditComponent } from './campanha-ads-rede-display-edit/campanha-ads-rede-display-edit.component';
+import { ModeloPaginaVendaDetalheComCampanhasComponent } from './modelo-pagina-venda-detalhe-com-campanhas/modelo-pagina-venda-detalhe-com-campanhas.component';
 
 
 
@@ -214,7 +226,19 @@ registerLocaleData(localePt, 'pt-BR');
     PublicoAlvoAdsPalavraDetalheComponent,
     ContaPublicoAlvoAdsPalavraEditRelComponent,
     ProdutoHotmartContaEditRelComponent,
-    IdeiaPalavraChaveEditComponent
+    IdeiaPalavraChaveEditComponent,
+    ProdutoProprioListComponent,
+    ProdutoProprioEditComponent,
+    ProdutoProprioDetalheComponent,
+    ProdutoProprioVersaoDetalheComponent,
+    AnuncioConceitoAdsRedeDisplayComponent,
+    AnuncioConceitoAdsRedeDisplayPorProdutoListComponent,
+    ImagemConjuntoPorProdutoListComponent,
+    ImagemConjuntoEditComponent,
+    AnuncioConceitoAdsRedeDisplayEditComponent,
+    CampanhaAdsRedeDisplayPorProdutoListComponent,
+    CampanhaAdsRedeDisplayEditComponent,
+    ModeloPaginaVendaDetalheComCampanhasComponent
   ],
   imports: [
     BrowserModule,
@@ -293,7 +317,11 @@ registerLocaleData(localePt, 'pt-BR');
     PublicoAlvoAdsPalavraEditComponent,
     ContaPublicoAlvoAdsPalavraEditRelComponent,
     ProdutoHotmartContaEditRelComponent,
-    IdeiaPalavraChaveEditComponent
+    IdeiaPalavraChaveEditComponent,
+    ProdutoProprioEditComponent,
+    ImagemConjuntoEditComponent,
+    AnuncioConceitoAdsRedeDisplayEditComponent,
+    CampanhaAdsRedeDisplayEditComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -15,6 +15,8 @@ public class GrupoCampanhaAdsRedeDisplay extends Model {
 
 
 	// Relacionamentos 1
+	private AnuncioAdsDisplay AnuncioAdsDisplay;
+	private CampanhaAdsRedeDisplay CampanhaAdsRedeDisplay;
 	// Relacionamentos N
 
 	public void setId(Long id) {
@@ -43,4 +45,18 @@ public class GrupoCampanhaAdsRedeDisplay extends Model {
 
 
 
+	public AnuncioAdsDisplay getAnuncioAdsDisplay() {
+		return AnuncioAdsDisplay;
+	}
+	public void setAnuncioAdsDisplay(HashMap valor) {
+		this.AnuncioAdsDisplay = new AnuncioAdsDisplay();
+		BeanUtil.setProperties(this.AnuncioAdsDisplay, (Map<String, ? extends Object>) valor, true);
+	}
+	public CampanhaAdsRedeDisplay getCampanhaAdsRedeDisplay() {
+		return CampanhaAdsRedeDisplay;
+	}
+	public void setCampanhaAdsRedeDisplay(HashMap valor) {
+		this.CampanhaAdsRedeDisplay = new CampanhaAdsRedeDisplay();
+		BeanUtil.setProperties(this.CampanhaAdsRedeDisplay, (Map<String, ? extends Object>) valor, true);
+	}
 }

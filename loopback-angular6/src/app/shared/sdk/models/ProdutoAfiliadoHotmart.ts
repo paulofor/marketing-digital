@@ -22,11 +22,13 @@ import {
   ImagemConjunto,
   VersaoPaginaVenda,
   DalleSolicitacaoImagem,
+  PaginaVendaPropria,
   PublicoAlvoAdsPalavra,
   ProdutoPublicoAdsPalavra,
   PixelProdutoHotmartConta,
   PixelProdutoHotmartContaCheckout,
-  ProdutoHotmartConta
+  ProdutoHotmartConta,
+  AnuncioConceitoAdsRedeDisplay
 } from '../index';
 
 declare var Object: any;
@@ -62,6 +64,7 @@ export interface ProdutoAfiliadoHotmartInterface {
   "possuiImagemRedeDisplay"?: number;
   "cpaInicial"?: number;
   "urlPresell"?: string;
+  "urlRaizPaginaVendaPropria"?: string;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
@@ -88,11 +91,13 @@ export interface ProdutoAfiliadoHotmartInterface {
   imagemConjuntos?: ImagemConjunto[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
   dalleSolicitacaoImagems?: DalleSolicitacaoImagem[];
+  paginaVendaProprias?: PaginaVendaPropria[];
   publicoAlvoAdsPalavras?: PublicoAlvoAdsPalavra[];
   produtoPublicoAdsPalavras?: ProdutoPublicoAdsPalavra[];
   pixelProdutoHotmartContas?: PixelProdutoHotmartConta[];
   pixelProdutoHotmartContaCheckouts?: PixelProdutoHotmartContaCheckout[];
   produtoHotmartContas?: ProdutoHotmartConta[];
+  anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -127,6 +132,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "possuiImagemRedeDisplay": number;
   "cpaInicial": number;
   "urlPresell": string;
+  "urlRaizPaginaVendaPropria": string;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
@@ -153,11 +159,13 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   imagemConjuntos: ImagemConjunto[];
   versaoPaginaVendas: VersaoPaginaVenda[];
   dalleSolicitacaoImagems: DalleSolicitacaoImagem[];
+  paginaVendaProprias: PaginaVendaPropria[];
   publicoAlvoAdsPalavras: PublicoAlvoAdsPalavra[];
   produtoPublicoAdsPalavras: ProdutoPublicoAdsPalavra[];
   pixelProdutoHotmartContas: PixelProdutoHotmartConta[];
   pixelProdutoHotmartContaCheckouts: PixelProdutoHotmartContaCheckout[];
   produtoHotmartContas: ProdutoHotmartConta[];
+  anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -313,6 +321,10 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
         },
         "urlPresell": {
           name: 'urlPresell',
+          type: 'string'
+        },
+        "urlRaizPaginaVendaPropria": {
+          name: 'urlRaizPaginaVendaPropria',
           type: 'string'
         },
         "contaGoogleId": {
@@ -471,7 +483,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           model: 'CampanhaAdsRedeDisplay',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
-          keyTo: 'produtoAfiliadoHotmartId'
+          keyTo: 'hotmartId'
         },
         publicoAlvoAds: {
           name: 'publicoAlvoAds',
@@ -521,6 +533,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
         },
+        paginaVendaProprias: {
+          name: 'paginaVendaProprias',
+          type: 'PaginaVendaPropria[]',
+          model: 'PaginaVendaPropria',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
         publicoAlvoAdsPalavras: {
           name: 'publicoAlvoAdsPalavras',
           type: 'PublicoAlvoAdsPalavra[]',
@@ -557,6 +577,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'produtoHotmartContas',
           type: 'ProdutoHotmartConta[]',
           model: 'ProdutoHotmartConta',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        anuncioConceitoAdsRedeDisplays: {
+          name: 'anuncioConceitoAdsRedeDisplays',
+          type: 'AnuncioConceitoAdsRedeDisplay[]',
+          model: 'AnuncioConceitoAdsRedeDisplay',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'

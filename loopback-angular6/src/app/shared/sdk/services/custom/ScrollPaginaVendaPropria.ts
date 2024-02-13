@@ -131,6 +131,10 @@ export class ScrollPaginaVendaPropriaApi extends BaseLoopBackApi {
    *
    * @param {number} posicao 
    *
+   * @param {string} visitante 
+   *
+   * @param {string} utmCampaign 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -140,7 +144,7 @@ export class ScrollPaginaVendaPropriaApi extends BaseLoopBackApi {
    * This usually means the response is a `ScrollPaginaVendaPropria` object.)
    * </em>
    */
-  public InsereItem(codigoPagina: any = {}, posicao: any = {}, customHeaders?: Function): Observable<any> {
+  public InsereItem(codigoPagina: any = {}, posicao: any = {}, visitante: any = {}, utmCampaign: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ScrollPaginaVendaPropria/insereItem";
@@ -149,6 +153,8 @@ export class ScrollPaginaVendaPropriaApi extends BaseLoopBackApi {
     let _urlParams: any = {};
     if (typeof codigoPagina !== 'undefined' && codigoPagina !== null) _urlParams.codigoPagina = codigoPagina;
     if (typeof posicao !== 'undefined' && posicao !== null) _urlParams.posicao = posicao;
+    if (typeof visitante !== 'undefined' && visitante !== null) _urlParams.visitante = visitante;
+    if (typeof utmCampaign !== 'undefined' && utmCampaign !== null) _urlParams.utmCampaign = utmCampaign;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

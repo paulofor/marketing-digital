@@ -42,13 +42,20 @@ export class ProdutoAfiliadoHotmartDetalheComponent extends ProdutoAfiliadoHotma
 		let filtro = { 'order' : 'mediaPesquisa desc', 'where' : {'and' : [{'hotmartId' : this.principal.hotmartId}, {'maisRecente' : 1}] } }
 		this.srvPalavraChave.find(filtro)
 			.subscribe((result:IdeiaPalavraChave[]) => {
-				console.log('Palavra-Chave:' , result);
+				console.log('listaPalavra:' , result);
 				this.listaPalavra = result;
 			});
-		let filtro2 = {'where' : {'hotmartId' : this.principal.hotmartId}, 'include' : 'contaGoogle'};
+		let filtro2 = {
+			'where' : {'hotmartId' : this.principal.hotmartId}, 
+			'include' : {'relation' : 'contaGoogle' , 'scope' : {
+				'include' : [
+					{'relation' : 'pixelProdutoHotmartContas' , 'scope' : {'where' : {'hotmartId' : this.principal.hotmartId }}}
+				]
+			} }
+		};
 		this.srvProdutoConta.find(filtro2)
 			.subscribe((result:ProdutoHotmartConta[]) => {
-				console.log('ProdutoConta:' , result);
+				console.log('listaConta:' , result);
 				this.listaConta = result;
 			})
 	}

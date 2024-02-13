@@ -1,12 +1,24 @@
 /* tslint:disable */
+import {
+  AnuncioAdsDisplay,
+  CampanhaAdsRedeDisplay
+} from '../index';
 
 declare var Object: any;
 export interface GrupoCampanhaAdsRedeDisplayInterface {
+  "anuncioAdsDisplayId"?: number;
+  "campanhaAdsRedeDisplayId"?: number;
   "id"?: number;
+  anuncioAdsDisplay?: AnuncioAdsDisplay;
+  campanhaAdsRedeDisplay?: CampanhaAdsRedeDisplay;
 }
 
 export class GrupoCampanhaAdsRedeDisplay implements GrupoCampanhaAdsRedeDisplayInterface {
+  "anuncioAdsDisplayId": number;
+  "campanhaAdsRedeDisplayId": number;
   "id": number;
+  anuncioAdsDisplay: AnuncioAdsDisplay;
+  campanhaAdsRedeDisplay: CampanhaAdsRedeDisplay;
   constructor(data?: GrupoCampanhaAdsRedeDisplayInterface) {
     Object.assign(this, data);
   }
@@ -40,12 +52,36 @@ export class GrupoCampanhaAdsRedeDisplay implements GrupoCampanhaAdsRedeDisplayI
       path: 'GrupoCampanhaAdsRedeDisplays',
       idName: 'id',
       properties: {
+        "anuncioAdsDisplayId": {
+          name: 'anuncioAdsDisplayId',
+          type: 'number'
+        },
+        "campanhaAdsRedeDisplayId": {
+          name: 'campanhaAdsRedeDisplayId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        anuncioAdsDisplay: {
+          name: 'anuncioAdsDisplay',
+          type: 'AnuncioAdsDisplay',
+          model: 'AnuncioAdsDisplay',
+          relationType: 'belongsTo',
+                  keyFrom: 'anuncioAdsDisplayId',
+          keyTo: 'id'
+        },
+        campanhaAdsRedeDisplay: {
+          name: 'campanhaAdsRedeDisplay',
+          type: 'CampanhaAdsRedeDisplay',
+          model: 'CampanhaAdsRedeDisplay',
+          relationType: 'belongsTo',
+                  keyFrom: 'campanhaAdsRedeDisplayId',
+          keyTo: 'id'
+        },
       }
     }
   }

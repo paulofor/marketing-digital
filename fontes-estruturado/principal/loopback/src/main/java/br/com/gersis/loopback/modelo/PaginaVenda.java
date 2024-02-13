@@ -20,7 +20,6 @@ public class PaginaVenda extends Model {
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ProdutoAfiliadoHotlink ProdutoAfiliadoHotlink;
 	// Relacionamentos N
-	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<PublicoAlvoAds> PublicoAlvoAds;
 	private List<AnuncioAdsDisplay> AnuncioAdsDisplays;
 	private List<LoadPaginaVenda> LoadPaginaVendas;
@@ -81,18 +80,6 @@ public class PaginaVenda extends Model {
 	public void setProdutoAfiliadoHotlink(HashMap valor) {
 		this.ProdutoAfiliadoHotlink = new ProdutoAfiliadoHotlink();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotlink, (Map<String, ? extends Object>) valor, true);
-	}
-	public List<CampanhaAdsRedeDisplay> getCampanhaAdsRedeDisplays() {
-		return  CampanhaAdsRedeDisplays;
-	}
-	public void setCampanhaAdsRedeDisplays(List<CampanhaAdsRedeDisplay> valores) {
-		this.CampanhaAdsRedeDisplays = new ArrayList<CampanhaAdsRedeDisplay>();
-		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new CampanhaAdsRedeDisplay();
-			System.out.println(" --> ObjetoMap ");
-			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.CampanhaAdsRedeDisplays.add((CampanhaAdsRedeDisplay) objeto);
-		}
 	}
 	public List<PublicoAlvoAds> getPublicoAlvoAds() {
 		return  PublicoAlvoAds;
