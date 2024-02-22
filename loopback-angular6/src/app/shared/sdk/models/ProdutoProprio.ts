@@ -3,7 +3,9 @@ import {
   ProdutoProprioVersao,
   VersaoPaginaVenda,
   ImagemPaginaVenda,
-  AnuncioConceitoAdsRedeDisplay
+  AnuncioConceitoAdsRedeDisplay,
+  VideoVsl,
+  PaginaVendaVsl
 } from '../index';
 
 declare var Object: any;
@@ -15,6 +17,8 @@ export interface ProdutoProprioInterface {
   versaoPaginaVendas?: VersaoPaginaVenda[];
   imagemPaginaVendas?: ImagemPaginaVenda[];
   anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
+  videoVsls?: VideoVsl[];
+  paginaVendaVsls?: PaginaVendaVsl[];
 }
 
 export class ProdutoProprio implements ProdutoProprioInterface {
@@ -25,6 +29,8 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   versaoPaginaVendas: VersaoPaginaVenda[];
   imagemPaginaVendas: ImagemPaginaVenda[];
   anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
+  videoVsls: VideoVsl[];
+  paginaVendaVsls: PaginaVendaVsl[];
   constructor(data?: ProdutoProprioInterface) {
     Object.assign(this, data);
   }
@@ -100,6 +106,22 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'anuncioConceitoAdsRedeDisplays',
           type: 'AnuncioConceitoAdsRedeDisplay[]',
           model: 'AnuncioConceitoAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        videoVsls: {
+          name: 'videoVsls',
+          type: 'VideoVsl[]',
+          model: 'VideoVsl',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        paginaVendaVsls: {
+          name: 'paginaVendaVsls',
+          type: 'PaginaVendaVsl[]',
+          model: 'PaginaVendaVsl',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'

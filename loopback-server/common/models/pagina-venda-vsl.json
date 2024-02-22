@@ -1,0 +1,38 @@
+{
+	"name": "PaginaVendaVsl",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"headline": {
+			"type": "string"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"videoVslId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"videoVsl": {
+			"type": "belongsTo",
+			"model": "VideoVsl",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

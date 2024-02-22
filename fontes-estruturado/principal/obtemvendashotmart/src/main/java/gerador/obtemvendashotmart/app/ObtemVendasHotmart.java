@@ -17,7 +17,7 @@ public class ObtemVendasHotmart {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemVendasHotmart");
-		System.out.println("(03/02/2024 22:08:56)");
+		System.out.println("(21/02/2024 23:47:15)");
 		try {
 			carregaProp();
 			ObtemVendasHotmartObj obj = new ObtemVendasHotmartObj();

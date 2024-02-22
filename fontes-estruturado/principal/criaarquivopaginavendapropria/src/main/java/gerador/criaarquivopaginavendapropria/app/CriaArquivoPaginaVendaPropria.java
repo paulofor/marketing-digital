@@ -17,7 +17,7 @@ public class CriaArquivoPaginaVendaPropria {
 
 	public static void main(String[] args) {
 		System.out.print("CriaArquivoPaginaVendaPropria");
-		System.out.println("(03/02/2024 22:09:11)");
+		System.out.println("(21/02/2024 23:47:30)");
 		try {
 			carregaProp();
 			CriaArquivoPaginaVendaPropriaObj obj = new CriaArquivoPaginaVendaPropriaObj();

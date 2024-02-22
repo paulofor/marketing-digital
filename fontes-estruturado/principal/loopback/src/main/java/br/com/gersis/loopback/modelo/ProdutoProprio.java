@@ -22,6 +22,8 @@ public class ProdutoProprio extends Model {
 	private List<VersaoPaginaVenda> VersaoPaginaVendas;
 	private List<ImagemPaginaVenda> ImagemPaginaVendas;
 	private List<AnuncioConceitoAdsRedeDisplay> AnuncioConceitoAdsRedeDisplays;
+	private List<PaginaVendaVsl> PaginaVendaVsls;
+	private List<VideoVsl> VideoVsls;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -109,6 +111,30 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.AnuncioConceitoAdsRedeDisplays.add((AnuncioConceitoAdsRedeDisplay) objeto);
+		}
+	}
+	public List<PaginaVendaVsl> getPaginaVendaVsls() {
+		return  PaginaVendaVsls;
+	}
+	public void setPaginaVendaVsls(List<PaginaVendaVsl> valores) {
+		this.PaginaVendaVsls = new ArrayList<PaginaVendaVsl>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaVsl();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaVsls.add((PaginaVendaVsl) objeto);
+		}
+	}
+	public List<VideoVsl> getVideoVsls() {
+		return  VideoVsls;
+	}
+	public void setVideoVsls(List<VideoVsl> valores) {
+		this.VideoVsls = new ArrayList<VideoVsl>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new VideoVsl();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.VideoVsls.add((VideoVsl) objeto);
 		}
 	}
 }

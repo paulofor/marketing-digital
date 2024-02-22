@@ -1,0 +1,70 @@
+{
+	"name": "TrechoVsl",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"textoSsml": {
+			"type": "string"
+		},
+		"texto": {
+			"type": "string"
+		},
+		"urlImagem": {
+			"type": "string"
+		},
+		"ordenacao": {
+			"type": "number"
+		},
+		"videoVslId": {
+			"type": "number"
+		},
+		"tempo": {
+			"type": "number"
+		},
+		"arquivoAudio": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"videoVsl": {
+			"type": "belongsTo",
+			"model": "VideoVsl",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaListaAudioGerado": {
+			"accepts": [
+				{
+					"arg": "listaTrecho",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaListaAudioGerado",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

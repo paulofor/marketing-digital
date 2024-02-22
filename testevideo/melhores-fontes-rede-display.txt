@@ -1,0 +1,23 @@
+Roboto: A Roboto é uma fonte moderna e versátil, projetada para ser legível em telas de todos os tamanhos. Ela é amplamente utilizada em designs digitais e oferece uma variedade de pesos que podem ser aplicados para enfatizar diferentes partes do texto.
+
+Open Sans: A Open Sans é outra fonte bastante popular para a web. Ela possui uma aparência limpa e é facilmente legível em tamanhos menores, o que a torna uma escolha sólida para anúncios na Rede de Display, onde o espaço pode ser limitado.
+
+Montserrat: A Montserrat é uma fonte geométrica moderna que oferece uma aparência contemporânea e elegante. Ela é amplamente utilizada em design gráfico e pode adicionar um toque de sofisticação aos seus anúncios.
+
+Lato: A Lato é uma fonte sem serifa que oferece excelente legibilidade em telas digitais. Ela possui uma ampla variedade de pesos e estilos, o que a torna uma escolha versátil para diferentes tipos de anúncios.
+
+Nunito: A Nunito é uma fonte amigável e moderna que funciona bem em uma variedade de contextos. Ela possui uma aparência agradável e é facilmente legível, tornando-a uma escolha popular para anúncios online
+
+
+No google Fonts:
+
+1- Roboto
+2- Open Sans
+3- Noto Sans Japanese ( Japones )
+4- Montserrat
+5- Poppins
+6- Lato
+7- Inter
+8- Roboto Condensed
+9- Oswald
+10- Roboto Mono

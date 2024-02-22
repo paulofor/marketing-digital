@@ -1,0 +1,112 @@
+{
+	"name": "VideoVsl",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"voz": {
+			"type": "string"
+		},
+		"arquivoAudioCompleto": {
+			"type": "string"
+		},
+		"arquivoLegenda": {
+			"type": "string"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"trechoVsls": {
+			"type": "hasMany",
+			"model": "TrechoVsl",
+			"foreignKey": ""
+		},
+		"paginaVendaVsls": {
+			"type": "hasMany",
+			"model": "PaginaVendaVsl",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ListaGeraAudioComTrecho": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaGeraAudioComTrecho",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaCriaAudioLegendaVsl": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaCriaAudioLegendaVsl",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ObtemPorIdComTrechoOrdenado": {
+			"accepts": [
+				{
+					"arg": "idVideo",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemPorIdComTrechoOrdenado",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

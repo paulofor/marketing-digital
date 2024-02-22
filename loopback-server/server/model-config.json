@@ -354,5 +354,17 @@
   "MetricaCampanhaAdsRedeDisplay": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "VideoVsl": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaVendaVsl": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "TrechoVsl": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

@@ -17,7 +17,7 @@ public class ObtemPublicoAlvoAds {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemPublicoAlvoAds");
-		System.out.println("(03/02/2024 22:09:01)");
+		System.out.println("(21/02/2024 23:47:20)");
 		try {
 			carregaProp();
 			ObtemPublicoAlvoAdsObj obj = new ObtemPublicoAlvoAdsObj();

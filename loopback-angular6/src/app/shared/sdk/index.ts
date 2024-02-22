@@ -129,6 +129,9 @@ import { ArtigoParaProdutoApi } from './services/custom/ArtigoParaProduto';
 import { ProdutoHotmartContaApi } from './services/custom/ProdutoHotmartConta';
 import { AnuncioConceitoAdsRedeDisplayApi } from './services/custom/AnuncioConceitoAdsRedeDisplay';
 import { MetricaCampanhaAdsRedeDisplayApi } from './services/custom/MetricaCampanhaAdsRedeDisplay';
+import { VideoVslApi } from './services/custom/VideoVsl';
+import { PaginaVendaVslApi } from './services/custom/PaginaVendaVsl';
+import { TrechoVslApi } from './services/custom/TrechoVsl';
 /**
 * @module SDKBrowserModule
 * @description
@@ -240,6 +243,9 @@ export class SDKBrowserModule {
         ProdutoHotmartContaApi,
         AnuncioConceitoAdsRedeDisplayApi,
         MetricaCampanhaAdsRedeDisplayApi,
+        VideoVslApi,
+        PaginaVendaVslApi,
+        TrechoVslApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

@@ -37,6 +37,16 @@
 			"type": "hasMany",
 			"model": "AnuncioConceitoAdsRedeDisplay",
 			"foreignKey": ""
+		},
+		"paginaVendaVsls": {
+			"type": "hasMany",
+			"model": "PaginaVendaVsl",
+			"foreignKey": ""
+		},
+		"videoVsls": {
+			"type": "hasMany",
+			"model": "VideoVsl",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

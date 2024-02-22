@@ -1,31 +1,18 @@
 <div class="dgc-painel" *ngIf="principal">
-<div class="dgc-painel-header" *ngIf="principal">
-	<span>{{principal.nome}}</span>
-</div>
-
-<div class="dgc-card">
-<div class="dgc-card-header">
-<span>Versões</span>
-</div>
-<div class="dgc-card-detalhe" *ngFor="let versao of principal.produtoProprioVersaos">
-<span class="dgc-link" routerLink="/produtoProprioVersaoDetalhe/{{versao.id}}">{{versao.numero}}</span>
-</div>
-<div class="dgc-card-comandos">
-</div> 
- </div>
-	
-<div class="dgc-card">
-<div class="dgc-card-header">
-<span>Quadro 2</span>
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
 	</div>
-<div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeSaida">
-<span></span>
-</div>
-<div class="dgc-card-comandos">
-			</div> 
-  </div>
-<div class="dgc-card-comandos">
-<button class="btn-primary btn-sm btn" (click)="editaPasso()">Novo</button>
-</div> 
-</div>
 
+	<div class="dgc-card">
+		<div>
+			<button (click)="selectTab(1, principal.id)">Vídeos</button>
+		  </div>
+		  <div *ngIf="tabService.selectedTab">
+			<div [ngSwitch]="tabService.selectedTab">
+				<app-video-vsl-por-produto-list *ngSwitchCase="1" [produto]="principal"></app-video-vsl-por-produto-list>
+			</div>
+		  </div>
+	</div>
+
+
+</div>

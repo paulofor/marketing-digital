@@ -81,6 +81,9 @@ import { ArtigoParaProduto } from '../../models/ArtigoParaProduto';
 import { ProdutoHotmartConta } from '../../models/ProdutoHotmartConta';
 import { AnuncioConceitoAdsRedeDisplay } from '../../models/AnuncioConceitoAdsRedeDisplay';
 import { MetricaCampanhaAdsRedeDisplay } from '../../models/MetricaCampanhaAdsRedeDisplay';
+import { VideoVsl } from '../../models/VideoVsl';
+import { PaginaVendaVsl } from '../../models/PaginaVendaVsl';
+import { TrechoVsl } from '../../models/TrechoVsl';
 
 export interface Models { [name: string]: any }
 
@@ -169,6 +172,9 @@ export class SDKModels {
     ProdutoHotmartConta: ProdutoHotmartConta,
     AnuncioConceitoAdsRedeDisplay: AnuncioConceitoAdsRedeDisplay,
     MetricaCampanhaAdsRedeDisplay: MetricaCampanhaAdsRedeDisplay,
+    VideoVsl: VideoVsl,
+    PaginaVendaVsl: PaginaVendaVsl,
+    TrechoVsl: TrechoVsl,
     
   };
 

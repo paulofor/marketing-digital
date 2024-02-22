@@ -945,6 +945,8 @@ export class CampanhaAdsRedeDisplayApi extends BaseLoopBackApi {
    *
    *  - `nomeAds` – `{string}` - 
    *
+   *  - `idCampanha` – `{number}` - 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -954,7 +956,7 @@ export class CampanhaAdsRedeDisplayApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
    * </em>
    */
-  public AtualizaCampanhaCriada(resourceName: any = {}, resourceNameGrupo: any = {}, nomeAds: any = {}, customHeaders?: Function): Observable<any> {
+  public AtualizaCampanhaCriada(resourceName: any = {}, resourceNameGrupo: any = {}, nomeAds: any = {}, idCampanha: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/CampanhaAdsRedeDisplays/atualizaCampanhaCriada";
@@ -964,6 +966,7 @@ export class CampanhaAdsRedeDisplayApi extends BaseLoopBackApi {
     if (typeof resourceName !== 'undefined' && resourceName !== null) _urlParams.resourceName = resourceName;
     if (typeof resourceNameGrupo !== 'undefined' && resourceNameGrupo !== null) _urlParams.resourceNameGrupo = resourceNameGrupo;
     if (typeof nomeAds !== 'undefined' && nomeAds !== null) _urlParams.nomeAds = nomeAds;
+    if (typeof idCampanha !== 'undefined' && idCampanha !== null) _urlParams.idCampanha = idCampanha;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
