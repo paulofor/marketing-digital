@@ -60,6 +60,11 @@ public class ImportaImagemImpl extends ImportaImagem {
 		
 		return true;
 	}
+	
+	public void enviaArquivo() {
+		
+	}
+	
 
 	public void downloadImageAndSendViaSSH(String imageUrl, String destinationPath, String sshHost, int sshPort,
 			String sshUser, String sshPassword, String arquivoFinal) throws Exception {

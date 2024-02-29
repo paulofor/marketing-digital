@@ -14,12 +14,14 @@ import { SocketConnection } from '../../sockets/socket.connections';
 import { ContaGoogle } from '../../models/ContaGoogle';
 import { ProdutoAfiliadoHotmart } from '../../models/ProdutoAfiliadoHotmart';
 import { ImagemConjunto } from '../../models/ImagemConjunto';
+import { ProdutoProprio } from '../../models/ProdutoProprio';
 import { PaginaVendaPropria } from '../../models/PaginaVendaPropria';
 import { AnuncioCampanhaAdsRedeDisplay } from '../../models/AnuncioCampanhaAdsRedeDisplay';
 import { GrupoCampanhaAdsRedeDisplay } from '../../models/GrupoCampanhaAdsRedeDisplay';
 import { PublicoAlvoAdsPalavra } from '../../models/PublicoAlvoAdsPalavra';
 import { AnuncioConceitoAdsRedeDisplay } from '../../models/AnuncioConceitoAdsRedeDisplay';
 import { MetricaCampanhaAdsRedeDisplay } from '../../models/MetricaCampanhaAdsRedeDisplay';
+import { PaginaVendaVsl } from '../../models/PaginaVendaVsl';
 
 
 /**
@@ -118,6 +120,36 @@ export class CampanhaAdsRedeDisplayApi extends BaseLoopBackApi {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/CampanhaAdsRedeDisplays/:id/imagemConjunto";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Busca relação produtoProprio de belongsTo.
+   *
+   * @param {any} id CampanhaAdsRedeDisplay id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+   * </em>
+   */
+  public getProdutoProprio(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAdsRedeDisplays/:id/produtoProprio";
     let _routeParams: any = {
       id: id
     };
@@ -493,6 +525,36 @@ export class CampanhaAdsRedeDisplayApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Busca relação paginaVendaVsl de belongsTo.
+   *
+   * @param {any} id CampanhaAdsRedeDisplay id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+   * </em>
+   */
+  public getPaginaVendaVsl(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAdsRedeDisplays/:id/paginaVendaVsl";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

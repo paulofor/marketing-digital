@@ -21,6 +21,21 @@
 		"arquivoLegenda": {
 			"type": "string"
 		},
+		"urlVideo": {
+			"type": "string"
+		},
+		"urlChatGpt1": {
+			"type": "string"
+		},
+		"urlChatGpt2": {
+			"type": "string"
+		},
+		"urlChatGpt3": {
+			"type": "string"
+		},
+		"arquivoVideo": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}
@@ -105,6 +120,31 @@
          		{
           			"path": "/obtemPorIdComTrechoOrdenado",
    					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaAudioLegenda": {
+			"accepts": [
+				{
+					"arg": "videoAudioLegenda",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaAudioLegenda",
+   					"verb": "post"
  				}
  			]
 		}

@@ -18,6 +18,11 @@ public class VideoVsl extends Model {
 	private String voz;
 	private String arquivoAudioCompleto;
 	private String arquivoLegenda;
+	private String urlVideo;
+	private String urlChatGpt1;
+	private String urlChatGpt2;
+	private String urlChatGpt3;
+	private String arquivoVideo;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
@@ -46,6 +51,11 @@ public class VideoVsl extends Model {
 			obj.put("voz", voz);
 			obj.put("arquivoAudioCompleto", arquivoAudioCompleto);
 			obj.put("arquivoLegenda", arquivoLegenda);
+			obj.put("urlVideo", urlVideo);
+			obj.put("urlChatGpt1", urlChatGpt1);
+			obj.put("urlChatGpt2", urlChatGpt2);
+			obj.put("urlChatGpt3", urlChatGpt3);
+			obj.put("arquivoVideo", arquivoVideo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -76,6 +86,36 @@ public class VideoVsl extends Model {
 	}
 	public String getArquivoLegenda() { 
 		return this.arquivoLegenda;
+	}
+	public void setUrlVideo(String valor) { 
+		this.urlVideo = valor;
+	}
+	public String getUrlVideo() { 
+		return this.urlVideo;
+	}
+	public void setUrlChatGpt1(String valor) { 
+		this.urlChatGpt1 = valor;
+	}
+	public String getUrlChatGpt1() { 
+		return this.urlChatGpt1;
+	}
+	public void setUrlChatGpt2(String valor) { 
+		this.urlChatGpt2 = valor;
+	}
+	public String getUrlChatGpt2() { 
+		return this.urlChatGpt2;
+	}
+	public void setUrlChatGpt3(String valor) { 
+		this.urlChatGpt3 = valor;
+	}
+	public String getUrlChatGpt3() { 
+		return this.urlChatGpt3;
+	}
+	public void setArquivoVideo(String valor) { 
+		this.arquivoVideo = valor;
+	}
+	public String getArquivoVideo() { 
+		return this.arquivoVideo;
 	}
 
 	public ProdutoProprio getProdutoProprio() {

@@ -13,7 +13,7 @@ public class GeraLegendaImpl extends GeraLegenda {
 
 	@Override
 	protected boolean executaCustom(VideoVsl videoCorrente) {
-		try (FileWriter writer = new FileWriter(PATH + "/legendas.crt")) {
+		try (FileWriter writer = new FileWriter(PATH + "/legendas_" + formataNumero(videoCorrente.getIdInteger()) + ".crt")) {
 			int index = 1;
 			long startTime = 0; // Tempo inicial para a primeira legenda
 
@@ -48,5 +48,24 @@ public class GeraLegendaImpl extends GeraLegenda {
 
 		return String.format("%02d:%02d:%02d,%03d", horas, minutos, segundos, milis);
 	}
+	private String formataNumero(int numero) {
+        // Converte o número para uma string
+        String numeroString = Integer.toString(numero);
+        
+        // Verifica o comprimento da string
+        int comprimento = numeroString.length();
+        
+        // Adiciona zeros à esquerda se necessário
+        if (comprimento < 3) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 3 - comprimento; i++) {
+                sb.append('0');
+            }
+            sb.append(numeroString);
+            return sb.toString();
+        } else {
+            return numeroString.substring(0, 3);
+        }
+    }
 
 }

@@ -30,6 +30,21 @@ public class RepositorioPaginaVendaVsl extends ModelRepository<PaginaVendaVsl> {
 
 	// ***  Operações  ***
 
+	public synchronized void listaParaCriacao(final ListCallback<PaginaVendaVsl> callback ) {
+		RestContractItem contrato = new RestContractItem("PaginaVendaVsls/listaParaCriacao","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PaginaVendaVsl.listaParaCriacao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaCriacao", params,   new JsonArrayParser<PaginaVendaVsl>(this, callback));
+	}
+
+	public synchronized void atualizaCriada(PaginaVendaVsl pagina ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("PaginaVendaVsls/atualizaCriada","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "PaginaVendaVsl.atualizaCriada");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("pagina", pagina.getJSON());
+		invokeStaticMethod("atualizaCriada", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<PaginaVendaVsl> listaEntrada) {
 		JSONArray lista = new JSONArray();

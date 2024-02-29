@@ -5,11 +5,21 @@
 
 	<div class="dgc-card">
 		<div>
+			<button (click)="selectTab(6, principal.id)">Segmentos</button>
 			<button (click)="selectTab(1, principal.id)">Vídeos</button>
+			<button (click)="selectTab(2, principal.id)">Criativo Google</button>
+			<button (click)="selectTab(4, principal.id)">Anúncio Rede Display</button>
+			<button (click)="selectTab(3, principal.id)">Página Venda</button>
+			<button (click)="selectTab(5, principal.id)">Campanha Rede Display</button>
 		  </div>
 		  <div *ngIf="tabService.selectedTab">
 			<div [ngSwitch]="tabService.selectedTab">
 				<app-video-vsl-por-produto-list *ngSwitchCase="1" [produto]="principal"></app-video-vsl-por-produto-list>
+				<app-imagem-conjunto-produto-proprio-list *ngSwitchCase="2" [produto]="principal"></app-imagem-conjunto-produto-proprio-list>
+				<app-pagina-venda-vsl-por-produto-list *ngSwitchCase="3" [produto]="principal"></app-pagina-venda-vsl-por-produto-list>
+				<app-anuncio-conceito-ads-rede-display-produto-proprio-list *ngSwitchCase="4" [produto]="principal"></app-anuncio-conceito-ads-rede-display-produto-proprio-list>
+				<app-campanha-ads-rede-display-produto-proprio-list *ngSwitchCase="5" [produto]="principal"></app-campanha-ads-rede-display-produto-proprio-list>
+				<app-publico-alvo-ads-palavra-produto-proprio-list *ngSwitchCase="6" [produto]="principal"></app-publico-alvo-ads-palavra-produto-proprio-list>
 			</div>
 		  </div>
 	</div>

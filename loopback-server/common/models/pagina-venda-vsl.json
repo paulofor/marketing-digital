@@ -12,10 +12,31 @@
 		"headline": {
 			"type": "string"
 		},
+		"subtitulo": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		},
+		"prontoCriacao": {
+			"type": "number"
+		},
+		"url": {
+			"type": "string"
+		},
+		"codigoHexa": {
+			"type": "string"
+		},
+		"html": {
+			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		},
 		"videoVslId": {
+			"type": "number"
+		},
+		"modeloPaginaVendaVslId": {
 			"type": "number"
 		}
 	},
@@ -30,9 +51,63 @@
 			"type": "belongsTo",
 			"model": "VideoVsl",
 			"foreignKey": ""
+		},
+		"modeloPaginaVendaVsl": {
+			"type": "belongsTo",
+			"model": "ModeloPaginaVendaVsl",
+			"foreignKey": ""
+		},
+		"campanhaAdsRedeDisplays": {
+			"type": "hasMany",
+			"model": "CampanhaAdsRedeDisplay",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],
 	"methods": {
+		"ListaParaCriacao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaCriacao",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaCriada": {
+			"accepts": [
+				{
+					"arg": "pagina",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaCriada",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

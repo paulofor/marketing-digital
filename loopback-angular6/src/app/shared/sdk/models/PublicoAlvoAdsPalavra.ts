@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
+  ProdutoProprio,
   CampanhaAdsRedeDisplay,
   ContaPublicoAlvoAdsPalavra,
   ProdutoPublicoAdsPalavra
@@ -10,9 +11,11 @@ declare var Object: any;
 export interface PublicoAlvoAdsPalavraInterface {
   "listaPalavra"?: string;
   "nome"?: string;
+  "produtoProprioId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  produtoProprio?: ProdutoProprio;
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   contaPublicoAlvoAdsPalavras?: ContaPublicoAlvoAdsPalavra[];
   produtoPublicoAdsPalavras?: ProdutoPublicoAdsPalavra[];
@@ -21,9 +24,11 @@ export interface PublicoAlvoAdsPalavraInterface {
 export class PublicoAlvoAdsPalavra implements PublicoAlvoAdsPalavraInterface {
   "listaPalavra": string;
   "nome": string;
+  "produtoProprioId": number;
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  produtoProprio: ProdutoProprio;
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   contaPublicoAlvoAdsPalavras: ContaPublicoAlvoAdsPalavra[];
   produtoPublicoAdsPalavras: ProdutoPublicoAdsPalavra[];
@@ -68,6 +73,10 @@ export class PublicoAlvoAdsPalavra implements PublicoAlvoAdsPalavraInterface {
           name: 'nome',
           type: 'string'
         },
+        "produtoProprioId": {
+          name: 'produtoProprioId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -85,6 +94,14 @@ export class PublicoAlvoAdsPalavra implements PublicoAlvoAdsPalavraInterface {
           relationType: 'belongsTo',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
+        },
+        produtoProprio: {
+          name: 'produtoProprio',
+          type: 'ProdutoProprio',
+          model: 'ProdutoProprio',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoProprioId',
+          keyTo: 'id'
         },
         campanhaAdsRedeDisplays: {
           name: 'campanhaAdsRedeDisplays',

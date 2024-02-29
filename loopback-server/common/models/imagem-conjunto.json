@@ -29,6 +29,9 @@
 		},
 		"urlImagemQuadrada": {
 			"type": "string"
+		},
+		"produtoProprioId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -37,6 +40,11 @@
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
 		},
 		"anuncioAdsDisplays": {
 			"type": "hasMany",

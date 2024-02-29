@@ -1,0 +1,49 @@
+<h2 *ngIf="item" mat-dialog-title>Página Venda Vsl</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #headline [(ngModel)]="item.headline" name="headline" placeholder="Headline" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #subtitulo [(ngModel)]="item.subtitulo" name="subtitulo" placeholder="Subtitulo" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #prontoCriacao [(ngModel)]="item.prontoCriacao" name="prontoCriacao" placeholder="Pronto Criação" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaVideoVsl">
+			<mat-select placeholder="Vídeo" #videoVslId
+				[(ngModel)]="item.videoVslId" name="videoVslId">
+				<mat-option *ngFor="let elemento of listaVideoVsl" [value]="elemento.id">
+					{{elemento.nome}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaModeloPaginaVenda">
+			<mat-select placeholder="Modelo Página" #modeloPaginaVendaVslId
+				[(ngModel)]="item.modeloPaginaVendaVslId" name="modeloPaginaVendaVslId">
+				<mat-option *ngFor="let elemento of listaModeloPaginaVenda" [value]="elemento.id">
+					{{elemento.nome}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

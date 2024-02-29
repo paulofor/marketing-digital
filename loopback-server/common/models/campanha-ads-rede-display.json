@@ -116,6 +116,12 @@
 		},
 		"imagemConjuntoId": {
 			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"paginaVendaVslId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -153,6 +159,16 @@
 		"imagemConjunto": {
 			"type": "belongsTo",
 			"model": "ImagemConjunto",
+			"foreignKey": ""
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"paginaVendaVsl": {
+			"type": "belongsTo",
+			"model": "PaginaVendaVsl",
 			"foreignKey": ""
 		},
 		"anuncioCampanhaAdsRedeDisplays": {

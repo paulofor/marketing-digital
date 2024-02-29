@@ -1,8 +1,11 @@
 /* tslint:disable */
 import {
+  CampanhaAdsRedeDisplay,
+  ImagemConjunto,
   ProdutoProprioVersao,
   VersaoPaginaVenda,
   ImagemPaginaVenda,
+  PublicoAlvoAdsPalavra,
   AnuncioConceitoAdsRedeDisplay,
   VideoVsl,
   PaginaVendaVsl
@@ -12,10 +15,14 @@ declare var Object: any;
 export interface ProdutoProprioInterface {
   "nome"?: string;
   "status"?: string;
+  "urlKiwify"?: string;
   "id"?: number;
+  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
+  imagemConjuntos?: ImagemConjunto[];
   produtoProprioVersaos?: ProdutoProprioVersao[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
   imagemPaginaVendas?: ImagemPaginaVenda[];
+  publicoAlvoAdsPalavras?: PublicoAlvoAdsPalavra[];
   anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
   videoVsls?: VideoVsl[];
   paginaVendaVsls?: PaginaVendaVsl[];
@@ -24,10 +31,14 @@ export interface ProdutoProprioInterface {
 export class ProdutoProprio implements ProdutoProprioInterface {
   "nome": string;
   "status": string;
+  "urlKiwify": string;
   "id": number;
+  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
+  imagemConjuntos: ImagemConjunto[];
   produtoProprioVersaos: ProdutoProprioVersao[];
   versaoPaginaVendas: VersaoPaginaVenda[];
   imagemPaginaVendas: ImagemPaginaVenda[];
+  publicoAlvoAdsPalavras: PublicoAlvoAdsPalavra[];
   anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
   videoVsls: VideoVsl[];
   paginaVendaVsls: PaginaVendaVsl[];
@@ -72,12 +83,32 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'status',
           type: 'string'
         },
+        "urlKiwify": {
+          name: 'urlKiwify',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        campanhaAdsRedeDisplays: {
+          name: 'campanhaAdsRedeDisplays',
+          type: 'CampanhaAdsRedeDisplay[]',
+          model: 'CampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        imagemConjuntos: {
+          name: 'imagemConjuntos',
+          type: 'ImagemConjunto[]',
+          model: 'ImagemConjunto',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
         produtoProprioVersaos: {
           name: 'produtoProprioVersaos',
           type: 'ProdutoProprioVersao[]',
@@ -98,6 +129,14 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'imagemPaginaVendas',
           type: 'ImagemPaginaVenda[]',
           model: 'ImagemPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        publicoAlvoAdsPalavras: {
+          name: 'publicoAlvoAdsPalavras',
+          type: 'PublicoAlvoAdsPalavra[]',
+          model: 'PublicoAlvoAdsPalavra',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'

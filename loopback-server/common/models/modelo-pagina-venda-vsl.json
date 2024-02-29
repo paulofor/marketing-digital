@@ -1,0 +1,33 @@
+{
+	"name": "ModeloPaginaVendaVsl",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"dataCriacao": {
+			"type": "date"
+		},
+		"codigoFonte": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"paginaVendaVsls": {
+			"type": "hasMany",
+			"model": "PaginaVendaVsl",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

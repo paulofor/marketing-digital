@@ -3,6 +3,7 @@ import {
   ProdutoAfiliadoHotmart,
   AnuncioAdsDisplay,
   CampanhaAdsRedeDisplay,
+  ProdutoProprio,
   AnuncioConceitoAdsRedeDisplay
 } from '../index';
 
@@ -15,11 +16,13 @@ export interface ImagemConjuntoInterface {
   "urlImagemDeitada"?: string;
   "urlImagem2"?: string;
   "urlImagemQuadrada"?: string;
+  "produtoProprioId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   anuncioAdsDisplays?: AnuncioAdsDisplay[];
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
+  produtoProprio?: ProdutoProprio;
   anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
 }
 
@@ -31,11 +34,13 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
   "urlImagemDeitada": string;
   "urlImagem2": string;
   "urlImagemQuadrada": string;
+  "produtoProprioId": number;
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   anuncioAdsDisplays: AnuncioAdsDisplay[];
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
+  produtoProprio: ProdutoProprio;
   anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
   constructor(data?: ImagemConjuntoInterface) {
     Object.assign(this, data);
@@ -98,6 +103,10 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
           name: 'urlImagemQuadrada',
           type: 'string'
         },
+        "produtoProprioId": {
+          name: 'produtoProprioId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -131,6 +140,14 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'imagemConjuntoId'
+        },
+        produtoProprio: {
+          name: 'produtoProprio',
+          type: 'ProdutoProprio',
+          model: 'ProdutoProprio',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoProprioId',
+          keyTo: 'id'
         },
         anuncioConceitoAdsRedeDisplays: {
           name: 'anuncioConceitoAdsRedeDisplays',

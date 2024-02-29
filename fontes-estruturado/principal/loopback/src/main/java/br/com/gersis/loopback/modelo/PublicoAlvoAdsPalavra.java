@@ -16,8 +16,10 @@ public class PublicoAlvoAdsPalavra extends Model {
 
 	private String listaPalavra;
 	private String nome;
+	private int produtoProprioId;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
+	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<ContaPublicoAlvoAdsPalavra> ContaPublicoAlvoAdsPalavras;
@@ -43,6 +45,7 @@ public class PublicoAlvoAdsPalavra extends Model {
 			obj.put("id",getId());
 			obj.put("listaPalavra", listaPalavra);
 			obj.put("nome", nome);
+			obj.put("produtoProprioId", produtoProprioId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -62,6 +65,12 @@ public class PublicoAlvoAdsPalavra extends Model {
 	public String getNome() { 
 		return this.nome;
 	}
+	public void setProdutoProprioId(int valor) { 
+		this.produtoProprioId = valor;
+	}
+	public int getProdutoProprioId() { 
+		return this.produtoProprioId;
+	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
 		return ProdutoAfiliadoHotmart;
@@ -69,6 +78,13 @@ public class PublicoAlvoAdsPalavra extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoProprio getProdutoProprio() {
+		return ProdutoProprio;
+	}
+	public void setProdutoProprio(HashMap valor) {
+		this.ProdutoProprio = new ProdutoProprio();
+		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<CampanhaAdsRedeDisplay> getCampanhaAdsRedeDisplays() {
 		return  CampanhaAdsRedeDisplays;

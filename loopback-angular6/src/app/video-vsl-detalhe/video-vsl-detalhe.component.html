@@ -4,12 +4,19 @@
 	</div>
 
 	<div class="dgc-card">
+		<div class="dgc-card-detalhe">
+			<span>ChatGpt1 : {{principal.urlChatGpt1}}</span>
+		</div>
+	</div>
+
+	<div class="dgc-card">
 		<div class="dgc-card-header">
 			<span>Trechos de Copy</span>
 		</div>
 		<div class="dgc-card-detalhe" *ngFor="let trecho of principal.trechoVsls">
 			<p>{{trecho.ordenacao}}</p>
-			<span>{{trecho.textoSsml}}</span>
+			<p>{{trecho.texto}}</p>
+			<p style="color: #666;">{{trecho.textoSsml}}</p>
 			<div class="dgc-card-comandos">
 				<button class="btn-primary btn-sm btn" (click)="editaTrecho(trecho)">Edita</button>
 			</div>

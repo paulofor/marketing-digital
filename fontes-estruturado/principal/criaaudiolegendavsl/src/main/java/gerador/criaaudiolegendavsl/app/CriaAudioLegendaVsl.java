@@ -17,7 +17,7 @@ public class CriaAudioLegendaVsl {
 
 	public static void main(String[] args) {
 		System.out.print("CriaAudioLegendaVsl");
-		System.out.println("(21/02/2024 23:47:32)");
+		System.out.println("(29/02/2024 00:07:33)");
 		try {
 			carregaProp();
 			CriaAudioLegendaVslObj obj = new CriaAudioLegendaVslObj();
@@ -47,7 +47,7 @@ public class CriaAudioLegendaVsl {
 		//Properties prop = new Properties();
 		//prop.load(input);
 		//UrlLoopback = prop.getProperty("loopback.url");
-		UrlLoopback = "http://localhost:23101/api";
+		UrlLoopback = "http://vps-40d69db1.vps.ovh.ca:23101/api";
 		DaoBaseComum.setUrl(UrlLoopback);
 	}
 

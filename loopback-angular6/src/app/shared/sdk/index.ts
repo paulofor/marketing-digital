@@ -132,6 +132,7 @@ import { MetricaCampanhaAdsRedeDisplayApi } from './services/custom/MetricaCampa
 import { VideoVslApi } from './services/custom/VideoVsl';
 import { PaginaVendaVslApi } from './services/custom/PaginaVendaVsl';
 import { TrechoVslApi } from './services/custom/TrechoVsl';
+import { ModeloPaginaVendaVslApi } from './services/custom/ModeloPaginaVendaVsl';
 /**
 * @module SDKBrowserModule
 * @description
@@ -246,6 +247,7 @@ export class SDKBrowserModule {
         VideoVslApi,
         PaginaVendaVslApi,
         TrechoVslApi,
+        ModeloPaginaVendaVslApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

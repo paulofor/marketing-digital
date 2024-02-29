@@ -101,6 +101,7 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioPaginaVendaVsl repPaginaVendaVsl = adapter.createRepository(RepositorioPaginaVendaVsl.class);
 	protected RepositorioVideoVsl repVideoVsl = adapter.createRepository(RepositorioVideoVsl.class);
 	protected RepositorioTrechoVsl repTrechoVsl = adapter.createRepository(RepositorioTrechoVsl.class);
+	protected RepositorioModeloPaginaVendaVsl repModeloPaginaVendaVsl = adapter.createRepository(RepositorioModeloPaginaVendaVsl.class);
 
 
 	@Override

@@ -53,6 +53,8 @@ public class CampanhaAdsRedeDisplay extends Model {
 	private PublicoAlvoAdsPalavra PublicoAlvoAdsPalavra;
 	private AnuncioConceitoAdsRedeDisplay AnuncioConceitoAdsRedeDisplay;
 	private ImagemConjunto ImagemConjunto;
+	private ProdutoProprio ProdutoProprio;
+	private PaginaVendaVsl PaginaVendaVsl;
 	// Relacionamentos N
 	private List<AnuncioCampanhaAdsRedeDisplay> AnuncioCampanhaAdsRedeDisplays;
 	private List<GrupoCampanhaAdsRedeDisplay> GrupoCampanhaAdsRedeDisplays;
@@ -349,6 +351,20 @@ public class CampanhaAdsRedeDisplay extends Model {
 	public void setImagemConjunto(HashMap valor) {
 		this.ImagemConjunto = new ImagemConjunto();
 		BeanUtil.setProperties(this.ImagemConjunto, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoProprio getProdutoProprio() {
+		return ProdutoProprio;
+	}
+	public void setProdutoProprio(HashMap valor) {
+		this.ProdutoProprio = new ProdutoProprio();
+		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	}
+	public PaginaVendaVsl getPaginaVendaVsl() {
+		return PaginaVendaVsl;
+	}
+	public void setPaginaVendaVsl(HashMap valor) {
+		this.PaginaVendaVsl = new PaginaVendaVsl();
+		BeanUtil.setProperties(this.PaginaVendaVsl, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<AnuncioCampanhaAdsRedeDisplay> getAnuncioCampanhaAdsRedeDisplays() {
 		return  AnuncioCampanhaAdsRedeDisplays;

@@ -1,0 +1,31 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header">
+		<span>Campanha RedeDisplay</span>
+  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+	</div>
+	<div class="dgc-painel-principal" *ngIf="listaBase">
+		<div class="dgc-card" *ngFor="let item of listaBase">
+ 			<div class="dgc-card-header">
+ 				<span>{{item.nome}}</span>
+ 			</div>
+			<div class="dgc-card-detalhe">
+				<span>Segmento: <span *ngIf="item.publicoAlvoAdsPalavra">{{item.publicoAlvoAdsPalavra.nome}}</span></span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Criativo: <span *ngIf="item.imagemConjunto">{{item.imagemConjunto.nome}}</span></span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Anúncio: <span *ngIf="item.anuncioConceitoAdsRedeDisplay">{{item.anuncioConceitoAdsRedeDisplay.nomeEmpresa}}</span></span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Página Venda: <span *ngIf="item.paginaVendaVsl">{{item.paginaVendaVsl.nome}}</span></span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Pronta: {{item.prontaParaEnvio}}</span>
+			</div>
+ 			<div class="dgc-card-comandos">
+ 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+ 			</div>
+ 		</div>
+  	</div>
+</div>

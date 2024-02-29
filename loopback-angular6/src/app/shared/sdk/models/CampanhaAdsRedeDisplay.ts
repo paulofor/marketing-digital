@@ -3,12 +3,14 @@ import {
   ContaGoogle,
   ProdutoAfiliadoHotmart,
   ImagemConjunto,
+  ProdutoProprio,
   PaginaVendaPropria,
   AnuncioCampanhaAdsRedeDisplay,
   GrupoCampanhaAdsRedeDisplay,
   PublicoAlvoAdsPalavra,
   AnuncioConceitoAdsRedeDisplay,
-  MetricaCampanhaAdsRedeDisplay
+  MetricaCampanhaAdsRedeDisplay,
+  PaginaVendaVsl
 } from '../index';
 
 declare var Object: any;
@@ -49,17 +51,21 @@ export interface CampanhaAdsRedeDisplayInterface {
   "publicoAlvoAdsPalavraId"?: number;
   "anuncioConceitoAdsRedeDisplayId"?: number;
   "imagemConjuntoId"?: number;
+  "produtoProprioId"?: number;
+  "paginaVendaVslId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   contaGoogle?: ContaGoogle;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   imagemConjunto?: ImagemConjunto;
+  produtoProprio?: ProdutoProprio;
   paginaVendaPropria?: PaginaVendaPropria;
   anuncioCampanhaAdsRedeDisplays?: AnuncioCampanhaAdsRedeDisplay[];
   grupoCampanhaAdsRedeDisplays?: GrupoCampanhaAdsRedeDisplay[];
   publicoAlvoAdsPalavra?: PublicoAlvoAdsPalavra;
   anuncioConceitoAdsRedeDisplay?: AnuncioConceitoAdsRedeDisplay;
   metricaCampanhaAdsRedeDisplays?: MetricaCampanhaAdsRedeDisplay[];
+  paginaVendaVsl?: PaginaVendaVsl;
 }
 
 export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
@@ -99,17 +105,21 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
   "publicoAlvoAdsPalavraId": number;
   "anuncioConceitoAdsRedeDisplayId": number;
   "imagemConjuntoId": number;
+  "produtoProprioId": number;
+  "paginaVendaVslId": number;
   "id": number;
   "hotmartId": number;
   contaGoogle: ContaGoogle;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   imagemConjunto: ImagemConjunto;
+  produtoProprio: ProdutoProprio;
   paginaVendaPropria: PaginaVendaPropria;
   anuncioCampanhaAdsRedeDisplays: AnuncioCampanhaAdsRedeDisplay[];
   grupoCampanhaAdsRedeDisplays: GrupoCampanhaAdsRedeDisplay[];
   publicoAlvoAdsPalavra: PublicoAlvoAdsPalavra;
   anuncioConceitoAdsRedeDisplay: AnuncioConceitoAdsRedeDisplay;
   metricaCampanhaAdsRedeDisplays: MetricaCampanhaAdsRedeDisplay[];
+  paginaVendaVsl: PaginaVendaVsl;
   constructor(data?: CampanhaAdsRedeDisplayInterface) {
     Object.assign(this, data);
   }
@@ -287,6 +297,14 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           name: 'imagemConjuntoId',
           type: 'number'
         },
+        "produtoProprioId": {
+          name: 'produtoProprioId',
+          type: 'number'
+        },
+        "paginaVendaVslId": {
+          name: 'paginaVendaVslId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -319,6 +337,14 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           model: 'ImagemConjunto',
           relationType: 'belongsTo',
                   keyFrom: 'imagemConjuntoId',
+          keyTo: 'id'
+        },
+        produtoProprio: {
+          name: 'produtoProprio',
+          type: 'ProdutoProprio',
+          model: 'ProdutoProprio',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoProprioId',
           keyTo: 'id'
         },
         paginaVendaPropria: {
@@ -368,6 +394,14 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'campanhaAdsRedeDisplayId'
+        },
+        paginaVendaVsl: {
+          name: 'paginaVendaVsl',
+          type: 'PaginaVendaVsl',
+          model: 'PaginaVendaVsl',
+          relationType: 'belongsTo',
+                  keyFrom: 'paginaVendaVslId',
+          keyTo: 'id'
         },
       }
     }

@@ -56,6 +56,7 @@ import { CampanhaAdsRedeDisplayPorProdutoListComponent } from '../campanha-ads-r
 import { ModeloPaginaVendaDetalheComCampanhasComponent } from '../modelo-pagina-venda-detalhe-com-campanhas/modelo-pagina-venda-detalhe-com-campanhas.component';
 import { VideoVslPorProdutoListComponent } from '../video-vsl-por-produto-list/video-vsl-por-produto-list.component';
 import { VideoVslDetalheComponent } from '../video-vsl-detalhe/video-vsl-detalhe.component';
+import { ModeloPaginaVendaVslListComponent } from '../modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component';
 
 
 
@@ -136,6 +137,7 @@ export const routes : Routes = [
 
     { path: 'videoVslPorProdutoList/:id' , component: VideoVslPorProdutoListComponent },
     { path: 'videoVslDetalhe/:id' , component: VideoVslDetalheComponent },
+    { path: 'modeloPaginaVendaVslList' , component: ModeloPaginaVendaVslListComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

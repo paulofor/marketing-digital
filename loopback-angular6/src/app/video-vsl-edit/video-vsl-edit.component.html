@@ -5,7 +5,30 @@
 	<mat-dialog-content>
 
 		<mat-form-field class="example-full-width">
-		<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<mat-select #voz [(ngModel)]="item.voz" name="voz" placeholder="Voz">
+			  <mat-option value="pt-BR-Wavenet-C">Feminina </mat-option>
+			  <mat-option value="pt-BR-Wavenet-B">Masculina</mat-option>
+			</mat-select>
+		  </mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #urlVideo [(ngModel)]="item.urlVideo" name="urlVideo" placeholder="URL Vídeo" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #urlChatGpt1 [(ngModel)]="item.urlChatGpt1" name="urlChatGpt1" placeholder="URL ChatGpt1" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #urlChatGpt2 [(ngModel)]="item.urlChatGpt2" name="urlChatGpt2" placeholder="URL ChatGpt2" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #urlChatGpt3 [(ngModel)]="item.urlChatGpt3" name="urlChatGpt3" placeholder="URL ChatGpt3" />
 		</mat-form-field>
 
 	</mat-dialog-content>

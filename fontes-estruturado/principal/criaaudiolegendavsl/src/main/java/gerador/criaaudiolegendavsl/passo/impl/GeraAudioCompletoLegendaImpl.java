@@ -27,7 +27,7 @@ public class GeraAudioCompletoLegendaImpl extends GeraAudioCompletoLegenda {
 		System.out.println("Total: " + soma);
 
 		// Caminho para o arquivo de saída concatenado
-		String outputFilePath = "/home/usuario/aplicacoes/MarketingDigital/audio/completo/arquivo_concatenado.wav";
+		String outputFilePath = "/home/usuario/aplicacoes/MarketingDigital/audio/completo/arquivo_concatenado_" + formataNumero(videoCorrente.getIdInteger()) + ".wav";
 
 		try {
 			// Cria um processo para executar o comando FFmpeg
@@ -56,7 +56,26 @@ public class GeraAudioCompletoLegendaImpl extends GeraAudioCompletoLegenda {
 		return true;
 	}
 
-	
+	private String formataNumero(int numero) {
+        // Converte o número para uma string
+        String numeroString = Integer.toString(numero);
+        
+        // Verifica o comprimento da string
+        int comprimento = numeroString.length();
+        
+        // Adiciona zeros à esquerda se necessário
+        if (comprimento < 3) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 3 - comprimento; i++) {
+                sb.append('0');
+            }
+            sb.append(numeroString);
+            return sb.toString();
+        } else {
+            return numeroString.substring(0, 3);
+        }
+    }
+
 	private int obterDuracaoAudioEmMilissegundos(String nomeDoArquivo) {
         String comando = "soxi -D " + nomeDoArquivo;
         try {

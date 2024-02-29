@@ -366,5 +366,9 @@
   "TrechoVsl": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "ModeloPaginaVendaVsl": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

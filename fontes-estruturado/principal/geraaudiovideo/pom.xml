@@ -11,6 +11,26 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<artifactId>geraaudiovideo</artifactId>
 	<version>1.0.0</version>
 	<!-- Outras configurações -->
+<repositories>
+		<repository>
+			<id>google-cloud-maven-repository</id>
+			<url>https://maven.google.com</url>
+		</repository>
+	</repositories>
+	<dependencyManagement>
+		<dependencies>
+
+
+			<dependency>
+				<groupId>com.google.cloud</groupId>
+				<artifactId>libraries-bom</artifactId>
+				<version>26.31.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 <dependency>
 			<groupId>com.google.cloud</groupId>

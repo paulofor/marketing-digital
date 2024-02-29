@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { ImagemConjunto, ImagemConjuntoApi } from '../shared/sdk';
+import { ImagemConjunto, ImagemConjuntoApi, ProdutoAfiliadoHotmart } from '../shared/sdk';
 import { ImagemConjuntoEditBaseComponent } from './imagem-conjunto-edit-base.component';
 import { BASE_URL } from '../constantes/base.url';
 import { FileHolder } from 'angular2-image-upload';
@@ -54,7 +54,11 @@ export class ImagemConjuntoEditComponent extends ImagemConjuntoEditBaseComponent
 
 	  criaItem() {
 		let saida = new ImagemConjunto();
-		saida.hotmartId = this.origem.hotmartId;
+		if (this.origem instanceof ProdutoAfiliadoHotmart) {
+			saida.hotmartId = this.origem.hotmartId;
+		} else {
+			saida.produtoProprioId = this.origem.id;
+		}
 		return saida;
 	}
 }

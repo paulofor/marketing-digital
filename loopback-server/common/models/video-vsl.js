@@ -9,7 +9,7 @@ module.exports = function(Videovsl) {
     }
 
     Videovsl.ListaCriaAudioLegendaVsl = function(callback) {
-        let filtro = {'include' : {'relation' : 'trechoVsls' , 'scope' : {'order' : 'ordenacao'} }}
+        let filtro = {'where' : {'criaAudioLegenda' : 1 }, 'include' : {'relation' : 'trechoVsls' , 'scope' : {'order' : 'ordenacao'} }}
         Videovsl.find(filtro,callback);
     }
 

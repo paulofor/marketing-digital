@@ -9,6 +9,11 @@
 		</mat-form-field>
 		
 		<mat-form-field class="example-full-width">
+			<textarea rows="4" matInput #texto [(ngModel)]="item.texto" name="texto" placeholder="Texto" autocomplete="off">
+			</textarea>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
 			<textarea rows="4" matInput #textoSsml [(ngModel)]="item.textoSsml" name="textoSsml" placeholder="Texto Ssml" autocomplete="off">
 			</textarea>
 		</mat-form-field>

@@ -21,8 +21,10 @@ public class ImagemConjunto extends Model {
 	private String urlImagemDeitada;
 	private String urlImagem2;
 	private String urlImagemQuadrada;
+	private int produtoProprioId;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
+	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
 	private List<AnuncioAdsDisplay> AnuncioAdsDisplays;
 	private List<AnuncioConceitoAdsRedeDisplay> AnuncioConceitoAdsRedeDisplays;
@@ -53,6 +55,7 @@ public class ImagemConjunto extends Model {
 			obj.put("urlImagemDeitada", urlImagemDeitada);
 			obj.put("urlImagem2", urlImagem2);
 			obj.put("urlImagemQuadrada", urlImagemQuadrada);
+			obj.put("produtoProprioId", produtoProprioId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -102,6 +105,12 @@ public class ImagemConjunto extends Model {
 	public String getUrlImagemQuadrada() { 
 		return this.urlImagemQuadrada;
 	}
+	public void setProdutoProprioId(int valor) { 
+		this.produtoProprioId = valor;
+	}
+	public int getProdutoProprioId() { 
+		return this.produtoProprioId;
+	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
 		return ProdutoAfiliadoHotmart;
@@ -109,6 +118,13 @@ public class ImagemConjunto extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoProprio getProdutoProprio() {
+		return ProdutoProprio;
+	}
+	public void setProdutoProprio(HashMap valor) {
+		this.ProdutoProprio = new ProdutoProprio();
+		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<AnuncioAdsDisplay> getAnuncioAdsDisplays() {
 		return  AnuncioAdsDisplays;

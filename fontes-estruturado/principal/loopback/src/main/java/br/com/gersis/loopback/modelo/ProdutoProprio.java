@@ -16,6 +16,7 @@ public class ProdutoProprio extends Model {
 
 	private String nome;
 	private String status;
+	private String urlKiwify;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<ProdutoProprioVersao> ProdutoProprioVersaos;
@@ -24,6 +25,9 @@ public class ProdutoProprio extends Model {
 	private List<AnuncioConceitoAdsRedeDisplay> AnuncioConceitoAdsRedeDisplays;
 	private List<PaginaVendaVsl> PaginaVendaVsls;
 	private List<VideoVsl> VideoVsls;
+	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
+	private List<ImagemConjunto> ImagemConjuntos;
+	private List<PublicoAlvoAdsPalavra> PublicoAlvoAdsPalavras;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -45,6 +49,7 @@ public class ProdutoProprio extends Model {
 			obj.put("id",getId());
 			obj.put("nome", nome);
 			obj.put("status", status);
+			obj.put("urlKiwify", urlKiwify);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -63,6 +68,12 @@ public class ProdutoProprio extends Model {
 	}
 	public String getStatus() { 
 		return this.status;
+	}
+	public void setUrlKiwify(String valor) { 
+		this.urlKiwify = valor;
+	}
+	public String getUrlKiwify() { 
+		return this.urlKiwify;
 	}
 
 	public List<ProdutoProprioVersao> getProdutoProprioVersaos() {
@@ -135,6 +146,42 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.VideoVsls.add((VideoVsl) objeto);
+		}
+	}
+	public List<CampanhaAdsRedeDisplay> getCampanhaAdsRedeDisplays() {
+		return  CampanhaAdsRedeDisplays;
+	}
+	public void setCampanhaAdsRedeDisplays(List<CampanhaAdsRedeDisplay> valores) {
+		this.CampanhaAdsRedeDisplays = new ArrayList<CampanhaAdsRedeDisplay>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CampanhaAdsRedeDisplay();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CampanhaAdsRedeDisplays.add((CampanhaAdsRedeDisplay) objeto);
+		}
+	}
+	public List<ImagemConjunto> getImagemConjuntos() {
+		return  ImagemConjuntos;
+	}
+	public void setImagemConjuntos(List<ImagemConjunto> valores) {
+		this.ImagemConjuntos = new ArrayList<ImagemConjunto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ImagemConjunto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ImagemConjuntos.add((ImagemConjunto) objeto);
+		}
+	}
+	public List<PublicoAlvoAdsPalavra> getPublicoAlvoAdsPalavras() {
+		return  PublicoAlvoAdsPalavras;
+	}
+	public void setPublicoAlvoAdsPalavras(List<PublicoAlvoAdsPalavra> valores) {
+		this.PublicoAlvoAdsPalavras = new ArrayList<PublicoAlvoAdsPalavra>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PublicoAlvoAdsPalavra();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PublicoAlvoAdsPalavras.add((PublicoAlvoAdsPalavra) objeto);
 		}
 	}
 }

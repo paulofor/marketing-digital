@@ -11,6 +11,7 @@ export interface TrechoVslInterface {
   "ordenacao"?: number;
   "videoVslId"?: number;
   "tempo"?: number;
+  "arquivoAudio"?: string;
   "id"?: number;
   videoVsl?: VideoVsl;
 }
@@ -22,6 +23,7 @@ export class TrechoVsl implements TrechoVslInterface {
   "ordenacao": number;
   "videoVslId": number;
   "tempo": number;
+  "arquivoAudio": string;
   "id": number;
   videoVsl: VideoVsl;
   constructor(data?: TrechoVslInterface) {
@@ -80,6 +82,10 @@ export class TrechoVsl implements TrechoVslInterface {
         "tempo": {
           name: 'tempo',
           type: 'number'
+        },
+        "arquivoAudio": {
+          name: 'arquivoAudio',
+          type: 'string'
         },
         "id": {
           name: 'id',

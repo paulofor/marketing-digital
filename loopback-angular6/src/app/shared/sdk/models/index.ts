@@ -83,5 +83,6 @@ export * from './MetricaCampanhaAdsRedeDisplay';
 export * from './VideoVsl';
 export * from './PaginaVendaVsl';
 export * from './TrechoVsl';
+export * from './ModeloPaginaVendaVsl';
 export * from './BaseModels';
 export * from './FireLoopRef';

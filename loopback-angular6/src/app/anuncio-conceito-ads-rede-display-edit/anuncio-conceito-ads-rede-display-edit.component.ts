@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { AnuncioConceitoAdsRedeDisplayApi } from '../shared/sdk';
+import { AnuncioConceitoAdsRedeDisplayApi, ProdutoAfiliadoHotmart } from '../shared/sdk';
 import { AnuncioConceitoAdsRedeDisplayEditBaseComponent } from './anuncio-conceito-ads-rede-display-edit-base.component';
 import { AnuncioConceitoAdsRedeDisplay } from '../shared/sdk/models/AnuncioConceitoAdsRedeDisplay';
 
@@ -19,7 +19,11 @@ export class AnuncioConceitoAdsRedeDisplayEditComponent extends AnuncioConceitoA
 
 	criaItem() {
 		let saida = new AnuncioConceitoAdsRedeDisplay();
-		saida.hotmartId = this.origem.hotmartId;
+		if (this.origem instanceof ProdutoAfiliadoHotmart) {
+			saida.hotmartId = this.origem.hotmartId;
+		} else {
+			saida.produtoProprioId = this.origem.id;
+		}
 		return saida;
 	}
 

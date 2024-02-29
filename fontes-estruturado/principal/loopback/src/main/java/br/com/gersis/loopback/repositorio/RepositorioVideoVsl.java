@@ -52,6 +52,14 @@ public class RepositorioVideoVsl extends ModelRepository<VideoVsl> {
 		invokeStaticMethod("obtemPorIdComTrechoOrdenado", params,   new JsonObjectParser<VideoVsl>(this, callback));
 	}
 
+	public synchronized void atualizaAudioLegenda(VideoVsl videoAudioLegenda ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("VideoVsls/atualizaAudioLegenda","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "VideoVsl.atualizaAudioLegenda");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("videoAudioLegenda", videoAudioLegenda.getJSON());
+		invokeStaticMethod("atualizaAudioLegenda", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<VideoVsl> listaEntrada) {
 		JSONArray lista = new JSONArray();

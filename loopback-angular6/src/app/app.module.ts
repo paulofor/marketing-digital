@@ -136,6 +136,15 @@ import { VideoVslEditComponent } from './video-vsl-edit/video-vsl-edit.component
 import { TrechoVslEditComponent } from './trecho-vsl-edit/trecho-vsl-edit.component';
 import { TrechoVslListComponent } from './trecho-vsl-list/trecho-vsl-list.component';
 import { VideoVslDetalheComponent } from './video-vsl-detalhe/video-vsl-detalhe.component';
+import { ImagemConjuntoProdutoProprioListComponent } from './imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component';
+import { ModeloPaginaVendaVslListComponent } from './modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component';
+import { ModeloPaginaVendaVslEditComponent } from './modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component';
+import { PaginaVendaVslPorProdutoListComponent } from './pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component';
+import { PaginaVendaVslEditComponent } from './pagina-venda-vsl-edit/pagina-venda-vsl-edit.component';
+import { AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent } from './anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component';
+import { CampanhaAdsRedeDisplayProdutoProprioListComponent } from './campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component';
+import { CampanhaAdsRedeDisplayProdutoProprioEditComponent } from './campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component';
+import { PublicoAlvoAdsPalavraProdutoProprioListComponent } from './publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component';
 
 
 
@@ -248,7 +257,16 @@ registerLocaleData(localePt, 'pt-BR');
     TrechoVslEditComponent,
     TrechoVslListComponent,
     VideoVslEditComponent,
-    VideoVslDetalheComponent
+    VideoVslDetalheComponent,
+    ImagemConjuntoProdutoProprioListComponent,
+    ModeloPaginaVendaVslListComponent,
+    ModeloPaginaVendaVslEditComponent,
+    PaginaVendaVslPorProdutoListComponent,
+    PaginaVendaVslEditComponent,
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent,
+    CampanhaAdsRedeDisplayProdutoProprioListComponent,
+    CampanhaAdsRedeDisplayProdutoProprioEditComponent,
+    PublicoAlvoAdsPalavraProdutoProprioListComponent
   ],
   imports: [
     BrowserModule,
@@ -333,7 +351,10 @@ registerLocaleData(localePt, 'pt-BR');
     AnuncioConceitoAdsRedeDisplayEditComponent,
     CampanhaAdsRedeDisplayEditComponent,
     VideoVslEditComponent,
-    TrechoVslEditComponent
+    TrechoVslEditComponent,
+    ModeloPaginaVendaVslEditComponent,
+    PaginaVendaVslEditComponent,
+    CampanhaAdsRedeDisplayProdutoProprioEditComponent
   ],
   bootstrap: [AppComponent]
 })

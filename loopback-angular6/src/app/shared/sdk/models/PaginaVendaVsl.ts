@@ -1,26 +1,46 @@
 /* tslint:disable */
 import {
   ProdutoProprio,
-  VideoVsl
+  VideoVsl,
+  CampanhaAdsRedeDisplay,
+  ModeloPaginaVendaVsl
 } from '../index';
 
 declare var Object: any;
 export interface PaginaVendaVslInterface {
   "headline"?: string;
+  "subtitulo"?: string;
   "produtoProprioId"?: number;
+  "prontoCriacao"?: number;
+  "url"?: string;
+  "codigoHexa"?: string;
+  "html"?: string;
+  "nome"?: string;
   "videoVslId"?: number;
+  "modeloPaginaVendaVslId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
   videoVsl?: VideoVsl;
+  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
+  modeloPaginaVendaVsl?: ModeloPaginaVendaVsl;
 }
 
 export class PaginaVendaVsl implements PaginaVendaVslInterface {
   "headline": string;
+  "subtitulo": string;
   "produtoProprioId": number;
+  "prontoCriacao": number;
+  "url": string;
+  "codigoHexa": string;
+  "html": string;
+  "nome": string;
   "videoVslId": number;
+  "modeloPaginaVendaVslId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
   videoVsl: VideoVsl;
+  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
+  modeloPaginaVendaVsl: ModeloPaginaVendaVsl;
   constructor(data?: PaginaVendaVslInterface) {
     Object.assign(this, data);
   }
@@ -58,12 +78,40 @@ export class PaginaVendaVsl implements PaginaVendaVslInterface {
           name: 'headline',
           type: 'string'
         },
+        "subtitulo": {
+          name: 'subtitulo',
+          type: 'string'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
           type: 'number'
         },
+        "prontoCriacao": {
+          name: 'prontoCriacao',
+          type: 'number'
+        },
+        "url": {
+          name: 'url',
+          type: 'string'
+        },
+        "codigoHexa": {
+          name: 'codigoHexa',
+          type: 'string'
+        },
+        "html": {
+          name: 'html',
+          type: 'string'
+        },
+        "nome": {
+          name: 'nome',
+          type: 'string'
+        },
         "videoVslId": {
           name: 'videoVslId',
+          type: 'number'
+        },
+        "modeloPaginaVendaVslId": {
+          name: 'modeloPaginaVendaVslId',
           type: 'number'
         },
         "id": {
@@ -86,6 +134,22 @@ export class PaginaVendaVsl implements PaginaVendaVslInterface {
           model: 'VideoVsl',
           relationType: 'belongsTo',
                   keyFrom: 'videoVslId',
+          keyTo: 'id'
+        },
+        campanhaAdsRedeDisplays: {
+          name: 'campanhaAdsRedeDisplays',
+          type: 'CampanhaAdsRedeDisplay[]',
+          model: 'CampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'paginaVendaVslId'
+        },
+        modeloPaginaVendaVsl: {
+          name: 'modeloPaginaVendaVsl',
+          type: 'ModeloPaginaVendaVsl',
+          model: 'ModeloPaginaVendaVsl',
+          relationType: 'belongsTo',
+                  keyFrom: 'modeloPaginaVendaVslId',
           keyTo: 'id'
         },
       }

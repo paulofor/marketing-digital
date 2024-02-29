@@ -84,6 +84,7 @@ import { MetricaCampanhaAdsRedeDisplay } from '../../models/MetricaCampanhaAdsRe
 import { VideoVsl } from '../../models/VideoVsl';
 import { PaginaVendaVsl } from '../../models/PaginaVendaVsl';
 import { TrechoVsl } from '../../models/TrechoVsl';
+import { ModeloPaginaVendaVsl } from '../../models/ModeloPaginaVendaVsl';
 
 export interface Models { [name: string]: any }
 
@@ -175,6 +176,7 @@ export class SDKModels {
     VideoVsl: VideoVsl,
     PaginaVendaVsl: PaginaVendaVsl,
     TrechoVsl: TrechoVsl,
+    ModeloPaginaVendaVsl: ModeloPaginaVendaVsl,
     
   };
 

@@ -9,6 +9,13 @@ declare var Object: any;
 export interface VideoVslInterface {
   "nome"?: string;
   "voz"?: string;
+  "arquivoAudioCompleto"?: string;
+  "arquivoLegenda"?: string;
+  "urlVideo"?: string;
+  "urlChatGpt1"?: string;
+  "urlChatGpt2"?: string;
+  "urlChatGpt3"?: string;
+  "arquivoVideo"?: string;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
@@ -19,6 +26,13 @@ export interface VideoVslInterface {
 export class VideoVsl implements VideoVslInterface {
   "nome": string;
   "voz": string;
+  "arquivoAudioCompleto": string;
+  "arquivoLegenda": string;
+  "urlVideo": string;
+  "urlChatGpt1": string;
+  "urlChatGpt2": string;
+  "urlChatGpt3": string;
+  "arquivoVideo": string;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
@@ -63,6 +77,34 @@ export class VideoVsl implements VideoVslInterface {
         },
         "voz": {
           name: 'voz',
+          type: 'string'
+        },
+        "arquivoAudioCompleto": {
+          name: 'arquivoAudioCompleto',
+          type: 'string'
+        },
+        "arquivoLegenda": {
+          name: 'arquivoLegenda',
+          type: 'string'
+        },
+        "urlVideo": {
+          name: 'urlVideo',
+          type: 'string'
+        },
+        "urlChatGpt1": {
+          name: 'urlChatGpt1',
+          type: 'string'
+        },
+        "urlChatGpt2": {
+          name: 'urlChatGpt2',
+          type: 'string'
+        },
+        "urlChatGpt3": {
+          name: 'urlChatGpt3',
+          type: 'string'
+        },
+        "arquivoVideo": {
+          name: 'arquivoVideo',
           type: 'string'
         },
         "produtoProprioId": {
