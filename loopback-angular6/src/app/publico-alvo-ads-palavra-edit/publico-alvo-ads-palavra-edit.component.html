@@ -5,15 +5,28 @@
 	<mat-dialog-content>
 
 		<mat-form-field class="example-full-width">
-		<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-		<textarea rows="4" matInput #listaPalavra [(ngModel)]="item.listaPalavra" name="listaPalavra" placeholder="Lista de PalavraChave separada por vírgula">
+			<textarea rows="4" matInput #listaPalavra [(ngModel)]="item.listaPalavra" name="listaPalavra"
+				placeholder="Lista de PalavraChave separada por vírgula">
 		</textarea>
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width" *ngIf="listaConta">
+			<mat-select placeholder="Conta Google Corrente" #contaGoogleId [(ngModel)]="item.contaGoogleId"
+				name="contaGoogleId">
+				<mat-option *ngFor="let conta of listaConta"
+					[ngStyle]="{'color': conta.suspensa === 1 ? 'red' : 'inherit'}" [value]="conta.id">
+					{{ conta.gmail}} ({{conta.nome}})
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<input matInput #pronta [(ngModel)]="item.pronta" name="pronta" placeholder="Pronta" />
+		</mat-form-field>
 	</mat-dialog-content>
 
 	<mat-dialog-actions>

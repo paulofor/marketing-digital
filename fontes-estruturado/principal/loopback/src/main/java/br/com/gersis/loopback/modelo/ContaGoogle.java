@@ -45,6 +45,8 @@ public class ContaGoogle extends Model {
 	private List<PixelProdutoHotmartContaCheckout> PixelProdutoHotmartContaCheckouts;
 	private List<ProdutoHotmartConta> ProdutoHotmartContas;
 	private List<VersaoPaginaVenda> VersaoPaginaVendas;
+	private List<ProdutoProprio> ProdutoProprios;
+	private List<PublicoAlvoAdsPalavra> PublicoAlvoAdsPalavras;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -353,6 +355,30 @@ public class ContaGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.VersaoPaginaVendas.add((VersaoPaginaVenda) objeto);
+		}
+	}
+	public List<ProdutoProprio> getProdutoProprios() {
+		return  ProdutoProprios;
+	}
+	public void setProdutoProprios(List<ProdutoProprio> valores) {
+		this.ProdutoProprios = new ArrayList<ProdutoProprio>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoProprio();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoProprios.add((ProdutoProprio) objeto);
+		}
+	}
+	public List<PublicoAlvoAdsPalavra> getPublicoAlvoAdsPalavras() {
+		return  PublicoAlvoAdsPalavras;
+	}
+	public void setPublicoAlvoAdsPalavras(List<PublicoAlvoAdsPalavra> valores) {
+		this.PublicoAlvoAdsPalavras = new ArrayList<PublicoAlvoAdsPalavra>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PublicoAlvoAdsPalavra();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PublicoAlvoAdsPalavras.add((PublicoAlvoAdsPalavra) objeto);
 		}
 	}
 }

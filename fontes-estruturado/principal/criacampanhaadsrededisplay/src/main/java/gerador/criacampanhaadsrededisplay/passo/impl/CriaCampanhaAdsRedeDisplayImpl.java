@@ -71,7 +71,7 @@ import gerador.criacampanhaadsrededisplay.passo.CriaCampanhaAdsRedeDisplay;
 
 public class CriaCampanhaAdsRedeDisplayImpl extends CriaCampanhaAdsRedeDisplay {
 
-	private final String VERSAO = "v30"; 
+	private final String VERSAO = "v_03"; 
 	private final long VALOR_ORCAMENTO = 20 * 1000000;
 	private final long VALOR_CPC = 1 * 10000;
 	
@@ -82,6 +82,7 @@ public class CriaCampanhaAdsRedeDisplayImpl extends CriaCampanhaAdsRedeDisplay {
 		GoogleAdsClient googleAdsClient = null;
 		try {
 			//campanhaCorrente.setCodigoHexa(getHexa());
+			System.out.println("Conta: " + campanhaCorrente.getContaGoogle().getNome());
 			googleAdsClient = GoogleAdsClient.newBuilder().fromPropertiesFile().build();
 			String budgetCampanha = criaOrcamento(googleAdsClient, campanhaCorrente);
 			String campaignResourceName = createCampaign(googleAdsClient, campanhaCorrente, budgetCampanha);
@@ -91,7 +92,7 @@ public class CriaCampanhaAdsRedeDisplayImpl extends CriaCampanhaAdsRedeDisplay {
 			this.setCampaignTargetingCriteria(googleAdsClient, campanhaCorrente, campaignResourceName);
 			this.setMobile(googleAdsClient, campanhaCorrente, campaignResourceName);
 			//this.adicionaCriterioMobile(googleAdsClient, campanhaCorrente, campaignResourceName);
-			this.attachCustomAudience(googleAdsClient, campanhaCorrente, grupoCampanha, resouceNameSegmento);
+			//this.attachCustomAudience(googleAdsClient, campanhaCorrente, grupoCampanha, resouceNameSegmento);
 			campanhaCorrente.setResourceName(campaignResourceName);
 			campanhaCorrente.setResourceNameBudget(budgetCampanha);
 			campanhaCorrente.setResourceNameGrupo(grupoCampanha);
@@ -285,7 +286,7 @@ public class CriaCampanhaAdsRedeDisplayImpl extends CriaCampanhaAdsRedeDisplay {
 		            .build();
 
 		    // Creates the ad.
-		    String urlPrincipal = campanha.getPaginaVendaPropria().getUrlCompleta() + "?utm_campaign=" + campanha.getCodigoHexa();
+		    String urlPrincipal = campanha.getPaginaVendaVsl().getUrl() + "?utm_campaign=" + campanha.getCodigoHexa();
 		    campanha.setUrlPrincipal(urlPrincipal);
 		    Ad ad =
 		        Ad.newBuilder()

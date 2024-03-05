@@ -17,10 +17,21 @@
 		},
 		"urlKiwify": {
 			"type": "string"
+		},
+		"urlIconePaginaVenda": {
+			"type": "string"
+		},
+		"contaGoogleId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
 		"produtoProprioVersaos": {
 			"type": "hasMany",
 			"model": "ProdutoProprioVersao",

@@ -11,8 +11,13 @@ import { TrechoVslListBaseComponent } from './trecho-vsl-list-base.component';
 })
 export class TrechoVslListComponent extends TrechoVslListBaseComponent {
 
+
 	constructor(protected srv: TrechoVslApi, protected router: ActivatedRoute, protected dialog: MatDialog) { 
 		super(srv,router,dialog);
 	}
 
+	
+	
+
+	
 }

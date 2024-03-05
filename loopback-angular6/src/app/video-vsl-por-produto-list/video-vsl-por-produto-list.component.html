@@ -3,6 +3,11 @@
 		<span>VideoVsl</span>
   		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
+	<div class="dgc-card" style="width: 100%;">
+		<div class="dgc-card-detalhe">
+			<span>Processo: CriaAudioLegendaVsl (Cria Audio/Legenda = 1)</span>
+		</div>
+	</div>
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card" *ngFor="let item of listaBase">
  			<div class="dgc-card-header">
@@ -10,6 +15,21 @@
  			</div>
 			<div class="dgc-card-detalhe">
 				<span>{{item.urlVideo}}</span>
+ 			</div>
+			 <div class="dgc-card-detalhe">
+				<span>Código YouTube: {{item.codigoYouTube}}</span>
+ 			</div>
+			<div class="dgc-card-detalhe">
+				<span>Voz: {{item.voz}}</span>
+ 			</div>
+			 <div class="dgc-card-detalhe">
+				<span>Cria Áudio/Legenda: {{item.criaAudioLegenda}}</span>
+ 			</div>
+			<div class="dgc-card-detalhe">
+				<span>Aúdio: {{item.arquivoAudioCompleto}}</span>
+ 			</div>
+			 <div class="dgc-card-detalhe">
+				<span>Legenda: {{item.arquivoLegenda}}</span>
  			</div>
  			<div class="dgc-card-comandos">
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>

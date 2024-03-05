@@ -17,9 +17,13 @@ public class PublicoAlvoAdsPalavra extends Model {
 	private String listaPalavra;
 	private String nome;
 	private int produtoProprioId;
+	private int pronta;
+	private String resourceName;
+	private String dataCriacaoAds;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ProdutoProprio ProdutoProprio;
+	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<ContaPublicoAlvoAdsPalavra> ContaPublicoAlvoAdsPalavras;
@@ -46,6 +50,9 @@ public class PublicoAlvoAdsPalavra extends Model {
 			obj.put("listaPalavra", listaPalavra);
 			obj.put("nome", nome);
 			obj.put("produtoProprioId", produtoProprioId);
+			obj.put("pronta", pronta);
+			obj.put("resourceName", resourceName);
+			obj.put("dataCriacaoAds", dataCriacaoAds);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -71,6 +78,24 @@ public class PublicoAlvoAdsPalavra extends Model {
 	public int getProdutoProprioId() { 
 		return this.produtoProprioId;
 	}
+	public void setPronta(int valor) { 
+		this.pronta = valor;
+	}
+	public int getPronta() { 
+		return this.pronta;
+	}
+	public void setResourceName(String valor) { 
+		this.resourceName = valor;
+	}
+	public String getResourceName() { 
+		return this.resourceName;
+	}
+	public void setDataCriacaoAds(String valor) { 
+		this.dataCriacaoAds = valor;
+	}
+	public String getDataCriacaoAds() { 
+		return this.dataCriacaoAds;
+	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
 		return ProdutoAfiliadoHotmart;
@@ -85,6 +110,13 @@ public class PublicoAlvoAdsPalavra extends Model {
 	public void setProdutoProprio(HashMap valor) {
 		this.ProdutoProprio = new ProdutoProprio();
 		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	}
+	public ContaGoogle getContaGoogle() {
+		return ContaGoogle;
+	}
+	public void setContaGoogle(HashMap valor) {
+		this.ContaGoogle = new ContaGoogle();
+		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<CampanhaAdsRedeDisplay> getCampanhaAdsRedeDisplays() {
 		return  CampanhaAdsRedeDisplays;

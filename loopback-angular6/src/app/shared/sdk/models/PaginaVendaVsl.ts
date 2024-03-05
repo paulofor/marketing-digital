@@ -16,6 +16,7 @@ export interface PaginaVendaVslInterface {
   "codigoHexa"?: string;
   "html"?: string;
   "nome"?: string;
+  "dataPublicacao"?: Date;
   "videoVslId"?: number;
   "modeloPaginaVendaVslId"?: number;
   "id"?: number;
@@ -34,6 +35,7 @@ export class PaginaVendaVsl implements PaginaVendaVslInterface {
   "codigoHexa": string;
   "html": string;
   "nome": string;
+  "dataPublicacao": Date;
   "videoVslId": number;
   "modeloPaginaVendaVslId": number;
   "id": number;
@@ -105,6 +107,10 @@ export class PaginaVendaVsl implements PaginaVendaVslInterface {
         "nome": {
           name: 'nome',
           type: 'string'
+        },
+        "dataPublicacao": {
+          name: 'dataPublicacao',
+          type: 'Date'
         },
         "videoVslId": {
           name: 'videoVslId',

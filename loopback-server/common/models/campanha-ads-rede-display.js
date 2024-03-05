@@ -57,6 +57,7 @@ module.exports = function(Campanhaadsrededisplay) {
             'where' : {'prontaParaEnvio': 1 },
             'include' : [
                 {'relation' : 'contaGoogle'},
+                {'relation' : 'paginaVendaVsl'},
                 {'relation' : 'imagemConjunto'},
                 {'relation' : 'anuncioConceitoAdsRedeDisplay'},
                 {'relation' : 'paginaVendaPropria'},

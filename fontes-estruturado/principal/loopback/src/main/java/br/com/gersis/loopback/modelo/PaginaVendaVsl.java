@@ -22,6 +22,7 @@ public class PaginaVendaVsl extends Model {
 	private String codigoHexa;
 	private String html;
 	private String nome;
+	private String dataPublicacao;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	private VideoVsl VideoVsl;
@@ -55,6 +56,7 @@ public class PaginaVendaVsl extends Model {
 			obj.put("codigoHexa", codigoHexa);
 			obj.put("html", html);
 			obj.put("nome", nome);
+			obj.put("dataPublicacao", dataPublicacao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -109,6 +111,12 @@ public class PaginaVendaVsl extends Model {
 	}
 	public String getNome() { 
 		return this.nome;
+	}
+	public void setDataPublicacao(String valor) { 
+		this.dataPublicacao = valor;
+	}
+	public String getDataPublicacao() { 
+		return this.dataPublicacao;
 	}
 
 	public ProdutoProprio getProdutoProprio() {

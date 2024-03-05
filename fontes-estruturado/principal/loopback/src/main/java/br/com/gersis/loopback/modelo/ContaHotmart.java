@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public class ContaHotmart extends Model {
 
 
-	private VARRCHAR(100) email;
+	private String email;
 	private String senha;
 	private String tokenAcesso;
 	private int principal;
@@ -50,10 +50,10 @@ public class ContaHotmart extends Model {
 	}
 
 
-	public void setEmail(VARRCHAR(100) valor) { 
+	public void setEmail(String valor) { 
 		this.email = valor;
 	}
-	public VARRCHAR(100) getEmail() { 
+	public String getEmail() { 
 		return this.email;
 	}
 	public void setSenha(String valor) { 

@@ -22,4 +22,7 @@ export class TrechoVslEditComponent extends TrechoVslEditBaseComponent {
 		return saida;
  	}
 
+	preSubmit(): void {
+		this.item.tempo = 0;
+	}
 }

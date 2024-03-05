@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { AnuncioCampanhaAdsRedeDisplay, AnuncioConceitoAdsRedeDisplayApi, CampanhaAdsRedeDisplay, CampanhaAdsRedeDisplayApi, ImagemConjunto, ImagemConjuntoApi, PaginaVenda, PaginaVendaPropriaApi, PaginaVendaVsl, PaginaVendaVslApi, PublicoAlvoAdsPalavra, PublicoAlvoAdsPalavraApi } from '../shared/sdk';
+import { AnuncioCampanhaAdsRedeDisplay, AnuncioConceitoAdsRedeDisplayApi, CampanhaAdsRedeDisplay, CampanhaAdsRedeDisplayApi, ContaGoogle, ContaGoogleApi, ImagemConjunto, ImagemConjuntoApi, PaginaVenda, PaginaVendaPropriaApi, PaginaVendaVsl, PaginaVendaVslApi, PublicoAlvoAdsPalavra, PublicoAlvoAdsPalavraApi } from '../shared/sdk';
 import { CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent } from './campanha-ads-rede-display-produto-proprio-edit-base.component';
 
 @Component({
@@ -14,11 +14,14 @@ export class CampanhaAdsRedeDisplayProdutoProprioEditComponent extends CampanhaA
 	listaPaginaVenda:PaginaVendaVsl[];
 	listaAnuncioRedeAds:AnuncioCampanhaAdsRedeDisplay[];
 	listaSegmento:PublicoAlvoAdsPalavra[];
+	listaConta:ContaGoogle[];
 
 	constructor(protected dialogRef: MatDialogRef<any>
 	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: CampanhaAdsRedeDisplayApi,
-		private srvImagemConjunto:ImagemConjuntoApi, private srvPaginaVenda:PaginaVendaVslApi, private srvListaAnuncio:AnuncioConceitoAdsRedeDisplayApi,
-		private	srvPublicoAlvo:PublicoAlvoAdsPalavraApi
+		private srvImagemConjunto:ImagemConjuntoApi, private srvPaginaVenda:PaginaVendaVslApi, 
+			private srvListaAnuncio:AnuncioConceitoAdsRedeDisplayApi,
+			private	srvPublicoAlvo:PublicoAlvoAdsPalavraApi,
+			private srvConta:ContaGoogleApi
 		  ) {
 	   super(dialogRef,data,servico);
 	}
@@ -55,7 +58,10 @@ export class CampanhaAdsRedeDisplayProdutoProprioEditComponent extends CampanhaA
 				console.log('listaSegmento:' , result);
 				this.listaSegmento = result;
 			})
-		
+		this.srvConta.ListaAtivaCampanha()
+			.subscribe((result:ContaGoogle[]) => {
+				this.listaConta = result;
+			})
 	}
 
 	criaItem() {
@@ -80,6 +86,13 @@ export class CampanhaAdsRedeDisplayProdutoProprioEditComponent extends CampanhaA
 		codigoHexadecimal = codigoHexadecimal.substring(0, comprimento);
 	  
 		return codigoHexadecimal;
-	  }
+	}
 
+	preSubmit(): void {
+		delete this.item['contaGoogle'];
+		delete this.item['paginaVendaVsl'];
+		delete this.item['anuncioConceitoAdsRedeDisplay'];
+		delete this.item['publicoAlvoAdsPalavra'];
+		delete this.item['imagemConjunto'];
+	}
 }

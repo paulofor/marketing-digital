@@ -23,8 +23,11 @@ public class VideoVsl extends Model {
 	private String urlChatGpt2;
 	private String urlChatGpt3;
 	private String arquivoVideo;
+	private String codigoYouTube;
+	private int criaAudioLegenda;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
+	private ScriptGeraVideo ScriptGeraVideo;
 	// Relacionamentos N
 	private List<TrechoVsl> TrechoVsls;
 	private List<PaginaVendaVsl> PaginaVendaVsls;
@@ -56,6 +59,8 @@ public class VideoVsl extends Model {
 			obj.put("urlChatGpt2", urlChatGpt2);
 			obj.put("urlChatGpt3", urlChatGpt3);
 			obj.put("arquivoVideo", arquivoVideo);
+			obj.put("codigoYouTube", codigoYouTube);
+			obj.put("criaAudioLegenda", criaAudioLegenda);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -117,6 +122,18 @@ public class VideoVsl extends Model {
 	public String getArquivoVideo() { 
 		return this.arquivoVideo;
 	}
+	public void setCodigoYouTube(String valor) { 
+		this.codigoYouTube = valor;
+	}
+	public String getCodigoYouTube() { 
+		return this.codigoYouTube;
+	}
+	public void setCriaAudioLegenda(int valor) { 
+		this.criaAudioLegenda = valor;
+	}
+	public int getCriaAudioLegenda() { 
+		return this.criaAudioLegenda;
+	}
 
 	public ProdutoProprio getProdutoProprio() {
 		return ProdutoProprio;
@@ -124,6 +141,13 @@ public class VideoVsl extends Model {
 	public void setProdutoProprio(HashMap valor) {
 		this.ProdutoProprio = new ProdutoProprio();
 		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	}
+	public ScriptGeraVideo getScriptGeraVideo() {
+		return ScriptGeraVideo;
+	}
+	public void setScriptGeraVideo(HashMap valor) {
+		this.ScriptGeraVideo = new ScriptGeraVideo();
+		BeanUtil.setProperties(this.ScriptGeraVideo, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<TrechoVsl> getTrechoVsls() {
 		return  TrechoVsls;

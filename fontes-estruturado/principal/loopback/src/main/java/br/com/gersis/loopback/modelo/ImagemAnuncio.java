@@ -15,7 +15,7 @@ public class ImagemAnuncio extends Model {
 
 
 	private String nome;
-	private MEDIUMBLOB binarioImagem;
+	private String binarioImagem;
 	// Relacionamentos 1
 	// Relacionamentos N
 
@@ -45,10 +45,10 @@ public class ImagemAnuncio extends Model {
 	public String getNome() { 
 		return this.nome;
 	}
-	public void setBinarioImagem(MEDIUMBLOB valor) { 
+	public void setBinarioImagem(String valor) { 
 		this.binarioImagem = valor;
 	}
-	public MEDIUMBLOB getBinarioImagem() { 
+	public String getBinarioImagem() { 
 		return this.binarioImagem;
 	}
 

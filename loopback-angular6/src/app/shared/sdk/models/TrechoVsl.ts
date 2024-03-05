@@ -12,6 +12,7 @@ export interface TrechoVslInterface {
   "videoVslId"?: number;
   "tempo"?: number;
   "arquivoAudio"?: string;
+  "codigoHexa"?: string;
   "id"?: number;
   videoVsl?: VideoVsl;
 }
@@ -24,6 +25,7 @@ export class TrechoVsl implements TrechoVslInterface {
   "videoVslId": number;
   "tempo": number;
   "arquivoAudio": string;
+  "codigoHexa": string;
   "id": number;
   videoVsl: VideoVsl;
   constructor(data?: TrechoVslInterface) {
@@ -85,6 +87,10 @@ export class TrechoVsl implements TrechoVslInterface {
         },
         "arquivoAudio": {
           name: 'arquivoAudio',
+          type: 'string'
+        },
+        "codigoHexa": {
+          name: 'codigoHexa',
           type: 'string'
         },
         "id": {

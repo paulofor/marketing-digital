@@ -17,7 +17,7 @@ public class ObtemHotlink {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemHotlink");
-		System.out.println("(29/02/2024 00:07:20)");
+		System.out.println("(04/03/2024 11:53:20)");
 		try {
 			carregaProp();
 			ObtemHotlinkObj obj = new ObtemHotlinkObj();

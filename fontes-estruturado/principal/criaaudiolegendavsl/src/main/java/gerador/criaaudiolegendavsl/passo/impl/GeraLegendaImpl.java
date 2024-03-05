@@ -13,18 +13,22 @@ public class GeraLegendaImpl extends GeraLegenda {
 
 	@Override
 	protected boolean executaCustom(VideoVsl videoCorrente) {
-		try (FileWriter writer = new FileWriter(PATH + "/legendas_" + formataNumero(videoCorrente.getIdInteger()) + ".crt")) {
+		String arquivoLegenda = PATH + "/legendas_" + formataNumero(videoCorrente.getIdInteger()) + ".srt";
+		videoCorrente.setArquivoLegenda(arquivoLegenda);
+		try {
+			FileWriter writer = new FileWriter(arquivoLegenda);
 			int index = 1;
-			long startTime = 0; // Tempo inicial para a primeira legenda
+			long startTime = 0; 
 
 			for (TrechoVsl trecho : videoCorrente.getTrechoVsls()) {
 
 				long endTime = startTime + trecho.getTempo(); // Calcula o tempo final da legenda
-
+					
 				// Converter milissegundos para o formato SRT (HH:MM:SS,MS)
 				String startTimeFormatted = convertToSrtFormat(startTime);
 				String endTimeFormatted = convertToSrtFormat(endTime);
 
+				if (startTime==0) startTimeFormatted = convertToSrtFormat(1000);
 				// Escrever no arquivo SRT
 				writer.write(index + "\n");
 				writer.write(startTimeFormatted + " --> " + endTimeFormatted + "\n");
@@ -33,11 +37,12 @@ public class GeraLegendaImpl extends GeraLegenda {
 				startTime = endTime; // Atualiza o startTime para a próxima legenda
 				index++;
 			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			writer.close();
+			return true;
+		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		}
-		return true;
 	}
 
 	public static String convertToSrtFormat(long milisegundos) {

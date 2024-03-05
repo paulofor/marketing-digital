@@ -38,6 +38,14 @@ public class RepositorioTrechoVsl extends ModelRepository<TrechoVsl> {
 		invokeStaticMethod("atualizaListaAudioGerado", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void organizaOrdenacao(int idVideo ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("TrechoVsls/organizaOrdenacao","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "TrechoVsl.organizaOrdenacao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idVideo", idVideo);
+		invokeStaticMethod("organizaOrdenacao", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<TrechoVsl> listaEntrada) {
 		JSONArray lista = new JSONArray();

@@ -12,7 +12,7 @@ module.exports = function(Paginavendavsl) {
 
     Paginavendavsl.AtualizaCriada = function(pagina,callback) {
         const sql = "update PaginaVendaVsl set url = '" + pagina.url + "' , codigoHexa = '" + pagina.codigoHexa +"', " +
-            " html = '" + pagina.html + "' , prontoCriacao = 2 where id = " + pagina.id;
+            " html = '" + pagina.html + "' , prontoCriacao = 2 , dataPublicacao = now() where id = " + pagina.id;
         console.log('SQL:' , sql);
         const ds = Paginavendavsl.dataSource;
         ds.connector.query(sql,callback);

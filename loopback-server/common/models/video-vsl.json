@@ -36,7 +36,16 @@
 		"arquivoVideo": {
 			"type": "string"
 		},
+		"codigoYouTube": {
+			"type": "string"
+		},
+		"criaAudioLegenda": {
+			"type": "number"
+		},
 		"produtoProprioId": {
+			"type": "number"
+		},
+		"scriptGeraVideoId": {
 			"type": "number"
 		}
 	},
@@ -45,6 +54,11 @@
 		"produtoProprio": {
 			"type": "belongsTo",
 			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"scriptGeraVideo": {
+			"type": "belongsTo",
+			"model": "ScriptGeraVideo",
 			"foreignKey": ""
 		},
 		"trechoVsls": {

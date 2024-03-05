@@ -145,6 +145,7 @@ import { AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent } from './anun
 import { CampanhaAdsRedeDisplayProdutoProprioListComponent } from './campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component';
 import { CampanhaAdsRedeDisplayProdutoProprioEditComponent } from './campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component';
 import { PublicoAlvoAdsPalavraProdutoProprioListComponent } from './publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component';
+import { ScriptGeraVideoListComponent } from './script-gera-video-list/script-gera-video-list.component';
 
 
 
@@ -266,7 +267,8 @@ registerLocaleData(localePt, 'pt-BR');
     AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent,
     CampanhaAdsRedeDisplayProdutoProprioListComponent,
     CampanhaAdsRedeDisplayProdutoProprioEditComponent,
-    PublicoAlvoAdsPalavraProdutoProprioListComponent
+    PublicoAlvoAdsPalavraProdutoProprioListComponent,
+    ScriptGeraVideoListComponent
   ],
   imports: [
     BrowserModule,

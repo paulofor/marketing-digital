@@ -18,6 +18,10 @@
 		<mat-form-field class="example-full-width">
 			<input matInput #urlVideo [(ngModel)]="item.urlVideo" name="urlVideo" placeholder="URL Vídeo" />
 		</mat-form-field>
+		
+		<mat-form-field class="example-full-width">
+			<input matInput #codigoYouTube [(ngModel)]="item.codigoYouTube" name="codigoYouTube" placeholder="Código YouTube" />
+		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
 			<input matInput #urlChatGpt1 [(ngModel)]="item.urlChatGpt1" name="urlChatGpt1" placeholder="URL ChatGpt1" />
@@ -29,6 +33,10 @@
 
 		<mat-form-field class="example-full-width">
 			<input matInput #urlChatGpt3 [(ngModel)]="item.urlChatGpt3" name="urlChatGpt3" placeholder="URL ChatGpt3" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #criaAudioLegenda [(ngModel)]="item.criaAudioLegenda" name="criaAudioLegenda" placeholder="Cria Áudio/Legenda" />
 		</mat-form-field>
 
 	</mat-dialog-content>

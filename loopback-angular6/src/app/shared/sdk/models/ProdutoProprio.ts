@@ -1,5 +1,6 @@
 /* tslint:disable */
 import {
+  ContaGoogle,
   CampanhaAdsRedeDisplay,
   ImagemConjunto,
   ProdutoProprioVersao,
@@ -16,7 +17,10 @@ export interface ProdutoProprioInterface {
   "nome"?: string;
   "status"?: string;
   "urlKiwify"?: string;
+  "urlIconePaginaVenda"?: string;
+  "contaGoogleId"?: number;
   "id"?: number;
+  contaGoogle?: ContaGoogle;
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   imagemConjuntos?: ImagemConjunto[];
   produtoProprioVersaos?: ProdutoProprioVersao[];
@@ -32,7 +36,10 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   "nome": string;
   "status": string;
   "urlKiwify": string;
+  "urlIconePaginaVenda": string;
+  "contaGoogleId": number;
   "id": number;
+  contaGoogle: ContaGoogle;
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   imagemConjuntos: ImagemConjunto[];
   produtoProprioVersaos: ProdutoProprioVersao[];
@@ -87,12 +94,28 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'urlKiwify',
           type: 'string'
         },
+        "urlIconePaginaVenda": {
+          name: 'urlIconePaginaVenda',
+          type: 'string'
+        },
+        "contaGoogleId": {
+          name: 'contaGoogleId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        contaGoogle: {
+          name: 'contaGoogle',
+          type: 'ContaGoogle',
+          model: 'ContaGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'contaGoogleId',
+          keyTo: 'id'
+        },
         campanhaAdsRedeDisplays: {
           name: 'campanhaAdsRedeDisplays',
           type: 'CampanhaAdsRedeDisplay[]',

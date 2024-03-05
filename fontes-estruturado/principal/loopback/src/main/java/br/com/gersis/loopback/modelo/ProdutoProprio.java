@@ -17,7 +17,9 @@ public class ProdutoProprio extends Model {
 	private String nome;
 	private String status;
 	private String urlKiwify;
+	private String urlIconePaginaVenda;
 	// Relacionamentos 1
+	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
 	private List<ProdutoProprioVersao> ProdutoProprioVersaos;
 	private List<VersaoPaginaVenda> VersaoPaginaVendas;
@@ -50,6 +52,7 @@ public class ProdutoProprio extends Model {
 			obj.put("nome", nome);
 			obj.put("status", status);
 			obj.put("urlKiwify", urlKiwify);
+			obj.put("urlIconePaginaVenda", urlIconePaginaVenda);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -75,7 +78,20 @@ public class ProdutoProprio extends Model {
 	public String getUrlKiwify() { 
 		return this.urlKiwify;
 	}
+	public void setUrlIconePaginaVenda(String valor) { 
+		this.urlIconePaginaVenda = valor;
+	}
+	public String getUrlIconePaginaVenda() { 
+		return this.urlIconePaginaVenda;
+	}
 
+	public ContaGoogle getContaGoogle() {
+		return ContaGoogle;
+	}
+	public void setContaGoogle(HashMap valor) {
+		this.ContaGoogle = new ContaGoogle();
+		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
+	}
 	public List<ProdutoProprioVersao> getProdutoProprioVersaos() {
 		return  ProdutoProprioVersaos;
 	}

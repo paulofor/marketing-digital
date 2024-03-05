@@ -41,6 +41,14 @@
 			</mat-select>
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width" *ngIf="listaConta">
+			<mat-select placeholder="Conta" #contaGoogleId [(ngModel)]="item.contaGoogleId" name="contaGoogleId">
+				<mat-option *ngFor="let item of listaConta" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
 		<mat-form-field class="example-full-width">
 			<input matInput #prontaParaEnvio [(ngModel)]="item.prontaParaEnvio" name="prontaParaEnvio" placeholder="Pronta" />
 		</mat-form-field>

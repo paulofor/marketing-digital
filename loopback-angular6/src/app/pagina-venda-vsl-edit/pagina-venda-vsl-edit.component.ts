@@ -39,4 +39,8 @@ export class PaginaVendaVslEditComponent extends PaginaVendaVslEditBaseComponent
 			})
 
 	}
+
+	preSubmit(): void {
+		delete this.item['videoVsl'];
+	}
 }

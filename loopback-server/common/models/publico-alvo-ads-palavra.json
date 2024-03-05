@@ -17,6 +17,18 @@
 		},
 		"produtoProprioId": {
 			"type": "number"
+		},
+		"pronta": {
+			"type": "number"
+		},
+		"resourceName": {
+			"type": "string"
+		},
+		"dataCriacaoAds": {
+			"type": "date"
+		},
+		"contaGoogleId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -29,6 +41,11 @@
 		"produtoProprio": {
 			"type": "belongsTo",
 			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
 			"foreignKey": ""
 		},
 		"campanhaAdsRedeDisplays": {
@@ -49,5 +66,55 @@
 	},
 	"acls": [],
 	"methods": {
+		"ListaParaCriar": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaCriar",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"RegistraCriacao": {
+			"accepts": [
+				{
+					"arg": "idPublico",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "resourceName",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraCriacao",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

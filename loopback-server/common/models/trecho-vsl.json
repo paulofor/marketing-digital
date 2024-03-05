@@ -29,6 +29,9 @@
 		},
 		"arquivoAudio": {
 			"type": "string"
+		},
+		"codigoHexa": {
+			"type": "string"
 		}
 	},
 	"validations": [],
@@ -62,6 +65,31 @@
 			"http": [
          		{
           			"path": "/atualizaListaAudioGerado",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"OrganizaOrdenacao": {
+			"accepts": [
+				{
+					"arg": "idVideo",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/organizaOrdenacao",
    					"verb": "post"
  				}
  			]

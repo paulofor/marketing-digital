@@ -17,7 +17,7 @@ public class CriaPixelProdutoHotmartConta {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPixelProdutoHotmartConta");
-		System.out.println("(29/02/2024 00:07:32)");
+		System.out.println("(04/03/2024 11:53:34)");
 		try {
 			carregaProp();
 			CriaPixelProdutoHotmartContaObj obj = new CriaPixelProdutoHotmartContaObj();

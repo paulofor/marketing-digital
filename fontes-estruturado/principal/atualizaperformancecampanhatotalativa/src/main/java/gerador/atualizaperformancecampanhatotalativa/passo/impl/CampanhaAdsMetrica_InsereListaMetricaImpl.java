@@ -13,7 +13,11 @@ public class CampanhaAdsMetrica_InsereListaMetricaImpl extends CampanhaAdsMetric
 	@Override
 	protected boolean executaCustom(List<CampanhaAdsMetrica> listaMetricaCampanha) {
 		this.listaMetrica = listaMetricaCampanha;
-		return true;
+		if (this.listaMetrica.size()>0) {
+			return true;
+		} else {
+			return false;
+		}
 	} 
 
 

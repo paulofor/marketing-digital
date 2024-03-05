@@ -9,9 +9,11 @@ import {
   CampanhaAdsRedeDisplay,
   PublicoAlvoAdsDiario,
   SegmentoMercadoAdsPersonalizado,
+  ProdutoProprio,
   VersaoPaginaVenda,
   PixelAdsSegmentoMercado,
   ContaPublicoAlvoAdsPalavra,
+  PublicoAlvoAdsPalavra,
   PixelProdutoHotmartConta,
   PixelProdutoHotmartContaCheckout,
   ProdutoHotmartConta
@@ -43,9 +45,11 @@ export interface ContaGoogleInterface {
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   publicoAlvoAdsDiarios?: PublicoAlvoAdsDiario[];
   segmentoMercadoAdsPersonalizados?: SegmentoMercadoAdsPersonalizado[];
+  produtoProprios?: ProdutoProprio[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
   pixelAdsSegmentoMercados?: PixelAdsSegmentoMercado[];
   contaPublicoAlvoAdsPalavras?: ContaPublicoAlvoAdsPalavra[];
+  publicoAlvoAdsPalavras?: PublicoAlvoAdsPalavra[];
   pixelProdutoHotmartContas?: PixelProdutoHotmartConta[];
   pixelProdutoHotmartContaCheckouts?: PixelProdutoHotmartContaCheckout[];
   produtoHotmartContas?: ProdutoHotmartConta[];
@@ -76,9 +80,11 @@ export class ContaGoogle implements ContaGoogleInterface {
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   publicoAlvoAdsDiarios: PublicoAlvoAdsDiario[];
   segmentoMercadoAdsPersonalizados: SegmentoMercadoAdsPersonalizado[];
+  produtoProprios: ProdutoProprio[];
   versaoPaginaVendas: VersaoPaginaVenda[];
   pixelAdsSegmentoMercados: PixelAdsSegmentoMercado[];
   contaPublicoAlvoAdsPalavras: ContaPublicoAlvoAdsPalavra[];
+  publicoAlvoAdsPalavras: PublicoAlvoAdsPalavra[];
   pixelProdutoHotmartContas: PixelProdutoHotmartConta[];
   pixelProdutoHotmartContaCheckouts: PixelProdutoHotmartContaCheckout[];
   produtoHotmartContas: ProdutoHotmartConta[];
@@ -253,6 +259,14 @@ export class ContaGoogle implements ContaGoogleInterface {
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'
         },
+        produtoProprios: {
+          name: 'produtoProprios',
+          type: 'ProdutoProprio[]',
+          model: 'ProdutoProprio',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
         versaoPaginaVendas: {
           name: 'versaoPaginaVendas',
           type: 'VersaoPaginaVenda[]',
@@ -273,6 +287,14 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'contaPublicoAlvoAdsPalavras',
           type: 'ContaPublicoAlvoAdsPalavra[]',
           model: 'ContaPublicoAlvoAdsPalavra',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        publicoAlvoAdsPalavras: {
+          name: 'publicoAlvoAdsPalavras',
+          type: 'PublicoAlvoAdsPalavra[]',
+          model: 'PublicoAlvoAdsPalavra',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'

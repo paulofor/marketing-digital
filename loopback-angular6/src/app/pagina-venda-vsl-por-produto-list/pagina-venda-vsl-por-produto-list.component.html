@@ -3,6 +3,11 @@
 		<span>Pagina de Venda Vsl</span>
   		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
+	<div class="dgc-card">
+		<div class="dgc-card-detalhe">
+			<span>Gerador de páginas: CriaPaginaVendaVsl</span>
+		</div>
+	</div>
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card" *ngFor="let item of listaBase">
 			<div class="dgc-card-header">
@@ -21,7 +26,10 @@
 				<span>Pronto Criação: {{item.prontoCriacao}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
-				<span>Url: {{item.url}}</span>
+				<span>{{item.url}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Publicação: {{item.dataPublicacao | date : 'dd/MM/yyyy HH:mm:ss' : 'UTC' }}</span>
 			</div>
  			<div class="dgc-card-comandos">
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>

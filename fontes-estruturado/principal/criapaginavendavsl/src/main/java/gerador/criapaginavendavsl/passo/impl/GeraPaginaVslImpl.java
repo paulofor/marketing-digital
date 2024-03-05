@@ -34,12 +34,12 @@ public class GeraPaginaVslImpl extends GeraPaginaVsl {
 	SecureRandom random = new SecureRandom();
 	private String DIRETORIO_TEMP = "pagina-venda-vsl-temp";
 	
-	private String PATH_REMOTO = "/var/www/palfmarketing.online/www";
+	private String PATH_REMOTO = "/var/www/marketingpalf.shop/www";
 	private String SSH_HOST = "191.252.92.222";
 	private String SSH_USER = "root";
 	private int SSH_PORT = 22;
 	private String TEMP_FILE = "imagens";
-	private String PREFIXO_URL = "https://www.palfmarketing.online/";
+	private String PREFIXO_URL = "https://www.marketingpalf.shop";
 	private String passSSH = "";
 	private String localFilePath = "";
 	
@@ -58,16 +58,19 @@ public class GeraPaginaVslImpl extends GeraPaginaVsl {
 			String html = paginaCorrente.getModeloPaginaVendaVsl().getCodigoFonte();
 			// Troca Headline
 			html = html.replace("---headline---", paginaCorrente.getHeadline());
-			html = html.replace("---video---", paginaCorrente.getVideoVsl().getUrlVideo());
+			html = html.replace("---codigoYouTube---", paginaCorrente.getVideoVsl().getCodigoYouTube());
+			html = html.replace("---dominio---", PREFIXO_URL);
 			html = html.replace("---produto---",paginaCorrente.getProdutoProprio().getNome());
+			html = html.replace("---cpa---", paginaCorrente.getProdutoProprio().getUrlKiwify());
+			html = html.replace("---icone---", paginaCorrente.getProdutoProprio().getUrlIconePaginaVenda());
 			paginaCorrente.setHtml(html);
 			if (paginaCorrente.getCodigoHexa() == null) {
 				paginaCorrente.setCodigoHexa(this.generateRandomHex());
 			}
-			paginaCorrente.setProntoCriacao(2);
+			//paginaCorrente.setProntoCriacao(2);
 			localFilePath = this.gravaTemp(html);
 			this.enviaArquivo(paginaCorrente);
-			paginaCorrente.setUrl(PREFIXO_URL + paginaCorrente.getCodigoHexa()); 
+			paginaCorrente.setUrl(PREFIXO_URL + "/" + paginaCorrente.getCodigoHexa()); 
 			this.saidaPaginaCorrente = paginaCorrente;
 			return true;
 		} catch (Exception e) {

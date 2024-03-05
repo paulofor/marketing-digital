@@ -22,4 +22,17 @@ export class VideoVslPorProdutoListComponent extends VideoVslPorProdutoListBaseC
 		console.log('produto:' , this.produto);
 		return {'where' : {'produtoProprioId' : this.produto.id}}
 	}
+
+	edita(edicao?) {
+		this.dialog.afterAllClosed.subscribe(result => {
+			this.carregaTela();
+		});
+		this.dialog.open(this.getComponente(), {
+			width: '800px',
+			data: {
+				item: edicao,
+				origem: this.produto
+			}
+		});
+	}
 }

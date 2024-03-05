@@ -1,16 +1,14 @@
 package gerador.geraaudiovideo.passo.impl;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.security.SecureRandom;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import javax.sound.sampled.AudioFileFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
@@ -70,19 +68,33 @@ public class GeraAudioListaTrechoImpl extends GeraAudioListaTrecho {
 			ByteString audioContents = response.getAudioContent();
 
 			// Escreve o conteúdo do áudio no arquivo de saída
-			String nomeArquivo = "/home/usuario/aplicacoes/MarketingDigital/audio/" + this.getHexa() + ".wav";
+			if (trecho.getCodigoHexa() == null) {
+				trecho.setCodigoHexa(getHexa());
+			}
+			String nomeArquivo = "/home/usuario/aplicacoes/MarketingDigital/audio/" + trecho.getCodigoHexa() + ".wav";
 
 			try (OutputStream out = new FileOutputStream(nomeArquivo)) {
 				out.write(audioContents.toByteArray());
 				out.close();
-				System.out.println("Conteúdo de áudio gravado no arquivo");
 				trecho.setArquivoAudio(nomeArquivo);
-
 				int tempoMs = obterDuracaoAudioEmMilissegundos(nomeArquivo) + 1;
 				trecho.setTempo(tempoMs);
+				trecho.setTexto(this.removeSsmlTags(trecho.getTextoSsml()));
+				System.out.println("Conteúdo de áudio gravado no arquivo " + trecho.getCodigoHexa() + " ms: " + trecho.getTempo());
 			}
 		}
 	}
+	
+	public static String removeSsmlTags(String input) {
+        // Expressão regular para encontrar as tags SSML
+        Pattern pattern = Pattern.compile("<[^>]*>");
+        Matcher matcher = pattern.matcher(input);
+        
+        // Substituir todas as tags SSML com uma string vazia
+        String result = matcher.replaceAll("");
+        
+        return result;
+    }
 
 	private String getHexa() {
 		// Crie um array de bytes e gera números aleatórios

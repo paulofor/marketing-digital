@@ -133,6 +133,7 @@ import { VideoVslApi } from './services/custom/VideoVsl';
 import { PaginaVendaVslApi } from './services/custom/PaginaVendaVsl';
 import { TrechoVslApi } from './services/custom/TrechoVsl';
 import { ModeloPaginaVendaVslApi } from './services/custom/ModeloPaginaVendaVsl';
+import { ScriptGeraVideoApi } from './services/custom/ScriptGeraVideo';
 /**
 * @module SDKBrowserModule
 * @description
@@ -248,6 +249,7 @@ export class SDKBrowserModule {
         PaginaVendaVslApi,
         TrechoVslApi,
         ModeloPaginaVendaVslApi,
+        ScriptGeraVideoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

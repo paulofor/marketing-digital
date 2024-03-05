@@ -17,7 +17,7 @@ public class CriaAudioLegendaVsl {
 
 	public static void main(String[] args) {
 		System.out.print("CriaAudioLegendaVsl");
-		System.out.println("(29/02/2024 00:07:33)");
+		System.out.println("(04/03/2024 11:53:37)");
 		try {
 			carregaProp();
 			CriaAudioLegendaVslObj obj = new CriaAudioLegendaVslObj();
@@ -56,5 +56,6 @@ public class CriaAudioLegendaVsl {
 		DaoBaseComum.setProximo("CriaAudioLegendaVslObj", new VideoVsl_ListaCriaAudioLegendaVslImpl());
 		DaoBaseComum.setProximo("VideoVsl_ListaCriaAudioLegendaVsl", new GeraLegendaImpl());
 		DaoBaseComum.setProximo("GeraLegenda", new GeraAudioCompletoLegendaImpl());
+		DaoBaseComum.setProximo("GeraAudioCompletoLegenda", new VideoVsl_AtualizaAudioLegendaImpl());
 	}
 }

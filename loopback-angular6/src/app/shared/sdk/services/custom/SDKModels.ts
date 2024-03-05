@@ -85,6 +85,7 @@ import { VideoVsl } from '../../models/VideoVsl';
 import { PaginaVendaVsl } from '../../models/PaginaVendaVsl';
 import { TrechoVsl } from '../../models/TrechoVsl';
 import { ModeloPaginaVendaVsl } from '../../models/ModeloPaginaVendaVsl';
+import { ScriptGeraVideo } from '../../models/ScriptGeraVideo';
 
 export interface Models { [name: string]: any }
 
@@ -177,6 +178,7 @@ export class SDKModels {
     PaginaVendaVsl: PaginaVendaVsl,
     TrechoVsl: TrechoVsl,
     ModeloPaginaVendaVsl: ModeloPaginaVendaVsl,
+    ScriptGeraVideo: ScriptGeraVideo,
     
   };
 

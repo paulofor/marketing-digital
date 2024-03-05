@@ -30,6 +30,22 @@ public class RepositorioPublicoAlvoAdsPalavra extends ModelRepository<PublicoAlv
 
 	// ***  Operações  ***
 
+	public synchronized void listaParaCriar(final ListCallback<PublicoAlvoAdsPalavra> callback ) {
+		RestContractItem contrato = new RestContractItem("PublicoAlvoAdsPalavras/listaParaCriar","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PublicoAlvoAdsPalavra.listaParaCriar");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaCriar", params,   new JsonArrayParser<PublicoAlvoAdsPalavra>(this, callback));
+	}
+
+	public synchronized void registraCriacao(int idPublico ,String resourceName ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("PublicoAlvoAdsPalavras/registraCriacao","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "PublicoAlvoAdsPalavra.registraCriacao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idPublico", idPublico);
+		params.put("resourceName", resourceName);
+		invokeStaticMethod("registraCriacao", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<PublicoAlvoAdsPalavra> listaEntrada) {
 		JSONArray lista = new JSONArray();

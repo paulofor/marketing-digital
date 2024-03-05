@@ -2,6 +2,7 @@
 import {
   ProdutoAfiliadoHotmart,
   ProdutoProprio,
+  ContaGoogle,
   CampanhaAdsRedeDisplay,
   ContaPublicoAlvoAdsPalavra,
   ProdutoPublicoAdsPalavra
@@ -12,10 +13,15 @@ export interface PublicoAlvoAdsPalavraInterface {
   "listaPalavra"?: string;
   "nome"?: string;
   "produtoProprioId"?: number;
+  "pronta"?: number;
+  "resourceName"?: string;
+  "dataCriacaoAds"?: Date;
+  "contaGoogleId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   produtoProprio?: ProdutoProprio;
+  contaGoogle?: ContaGoogle;
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   contaPublicoAlvoAdsPalavras?: ContaPublicoAlvoAdsPalavra[];
   produtoPublicoAdsPalavras?: ProdutoPublicoAdsPalavra[];
@@ -25,10 +31,15 @@ export class PublicoAlvoAdsPalavra implements PublicoAlvoAdsPalavraInterface {
   "listaPalavra": string;
   "nome": string;
   "produtoProprioId": number;
+  "pronta": number;
+  "resourceName": string;
+  "dataCriacaoAds": Date;
+  "contaGoogleId": number;
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   produtoProprio: ProdutoProprio;
+  contaGoogle: ContaGoogle;
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   contaPublicoAlvoAdsPalavras: ContaPublicoAlvoAdsPalavra[];
   produtoPublicoAdsPalavras: ProdutoPublicoAdsPalavra[];
@@ -77,6 +88,22 @@ export class PublicoAlvoAdsPalavra implements PublicoAlvoAdsPalavraInterface {
           name: 'produtoProprioId',
           type: 'number'
         },
+        "pronta": {
+          name: 'pronta',
+          type: 'number'
+        },
+        "resourceName": {
+          name: 'resourceName',
+          type: 'string'
+        },
+        "dataCriacaoAds": {
+          name: 'dataCriacaoAds',
+          type: 'Date'
+        },
+        "contaGoogleId": {
+          name: 'contaGoogleId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -101,6 +128,14 @@ export class PublicoAlvoAdsPalavra implements PublicoAlvoAdsPalavraInterface {
           model: 'ProdutoProprio',
           relationType: 'belongsTo',
                   keyFrom: 'produtoProprioId',
+          keyTo: 'id'
+        },
+        contaGoogle: {
+          name: 'contaGoogle',
+          type: 'ContaGoogle',
+          model: 'ContaGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'contaGoogleId',
           keyTo: 'id'
         },
         campanhaAdsRedeDisplays: {

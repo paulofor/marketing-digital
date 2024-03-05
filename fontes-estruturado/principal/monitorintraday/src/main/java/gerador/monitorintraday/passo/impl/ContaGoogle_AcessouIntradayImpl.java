@@ -14,7 +14,7 @@ public class ContaGoogle_AcessouIntradayImpl extends ContaGoogle_AcessouIntraday
 	@Override
 	protected boolean executaCustom(ContaGoogle contaCorrente, int semErro) {
 		if (semErro==1) {
-			this.idConta = contaCorrente.setIdInteger();
+			this.idConta = contaCorrente.getIdInteger();
 			return true;
 		} else {
 			return false;

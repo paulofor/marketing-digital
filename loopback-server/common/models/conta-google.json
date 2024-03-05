@@ -130,6 +130,16 @@
 			"type": "hasMany",
 			"model": "VersaoPaginaVenda",
 			"foreignKey": ""
+		},
+		"produtoProprios": {
+			"type": "hasMany",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"publicoAlvoAdsPalavras": {
+			"type": "hasMany",
+			"model": "PublicoAlvoAdsPalavra",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

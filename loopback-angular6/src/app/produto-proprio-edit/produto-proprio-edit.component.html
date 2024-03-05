@@ -5,11 +5,30 @@
 	<mat-dialog-content>
 
 		<mat-form-field class="example-full-width">
-		<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-		<textarea rows="4" matInput #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição">
+			<input matInput #urlKiwify [(ngModel)]="item.urlKiwify" name="urlKiwify" placeholder="Url Kiwify" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaConta">
+			<mat-select placeholder="Conta Google Corrente" #contaGoogleId [(ngModel)]="item.contaGoogleId"
+				name="contaGoogleId">
+				<mat-option *ngFor="let conta of listaConta"
+					[ngStyle]="{'color': conta.suspensa === 1 ? 'red' : 'inherit'}" [value]="conta.id">
+					{{ conta.gmail}} ({{conta.nome}})
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #urlIconePaginaVenda [(ngModel)]="item.urlIconePaginaVenda" name="urlIconePaginaVenda" placeholder="Url Ícone" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<textarea rows="4" matInput #descricao [(ngModel)]="item.descricao" name="descricao"
+				placeholder="Descrição">
 		</textarea>
 		</mat-form-field>
 

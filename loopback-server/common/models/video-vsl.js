@@ -18,4 +18,11 @@ module.exports = function(Videovsl) {
         Videovsl.findById(idVideo,filtro,callback);
     }
 
+    Videovsl.AtualizaAudioLegenda = function(videoAudioLegenda, callback) {
+        const sql = "update VideoVsl set arquivoAudioCompleto = '" + videoAudioLegenda.arquivoAudioCompleto + "' , " +
+            " criaAudioLegenda = 2, " +
+            " arquivoLegenda = '" + videoAudioLegenda.arquivoLegenda + "' where id = " + videoAudioLegenda.id;
+        const ds = Videovsl.dataSource;
+        ds.connector.query(sql,callback);
+    }
 };

@@ -7,16 +7,32 @@
 		<div class="dgc-card-detalhe">
 			<span>ChatGpt1 : {{principal.urlChatGpt1}}</span>
 		</div>
+		<div class="dgc-card-detalhe">
+			&lt;emphasis level="strong"&gt;This is an important announcement&lt;/emphasis&gt;
+			&lt;break time="200ms"/&gt;
+			The French word for cat is &lt;lang xml:lang="fr-FR"&gt;chat&lt;/lang&gt;
+			&lt;say-as interpret-as="verbatim"&gt;abcdefg&lt;/say-as&gt;
+		</div>
+		<div class="dgc-card-detalhe">
+			Criação dos trechos de áudio: GeraAudioVideo / gera_audio.sh ( trechos com tempo = 0)
+		</div>
 	</div>
 
 	<div class="dgc-card">
 		<div class="dgc-card-header">
 			<span>Trechos de Copy</span>
+			<div class="dgc-direita">
+				<button class="btn-primary btn-sm btn" (click)="organiza()">Organiza Ordem</button>
+			</div>
+		</div>
+		<div class="dgc-card-header">
+			<span>Tempo: {{tempoTotal}} (ms: {{tempoMs}})</span>
 		</div>
 		<div class="dgc-card-detalhe" *ngFor="let trecho of principal.trechoVsls">
 			<p>{{trecho.ordenacao}}</p>
 			<p>{{trecho.texto}}</p>
 			<p style="color: #666;">{{trecho.textoSsml}}</p>
+			<p>Tempo: {{trecho.tempo}}</p>
 			<div class="dgc-card-comandos">
 				<button class="btn-primary btn-sm btn" (click)="editaTrecho(trecho)">Edita</button>
 			</div>

@@ -21,7 +21,10 @@ export class PublicoAlvoAdsPalavraProdutoProprioListComponent extends PublicoAlv
 
 
 	getFiltro() {
-		let filtro =  {'where' : {'produtoProprioId' : this.produto.id}};
+		let filtro =  {
+			'where' : {'produtoProprioId' : this.produto.id},
+			'include' : 'contaGoogle'
+		};
 		console.log('filtro-produto:' , filtro);
 		return filtro;
 	}

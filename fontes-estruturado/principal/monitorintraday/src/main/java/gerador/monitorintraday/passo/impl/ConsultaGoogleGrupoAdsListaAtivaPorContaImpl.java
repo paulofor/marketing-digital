@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Locale;
 
 import com.google.ads.googleads.lib.GoogleAdsClient;
-import com.google.ads.googleads.v13.services.GoogleAdsRow;
-import com.google.ads.googleads.v13.services.GoogleAdsServiceClient;
-import com.google.ads.googleads.v13.services.SearchGoogleAdsRequest;
-import com.google.ads.googleads.v13.services.GoogleAdsServiceClient.SearchPagedResponse;
+import com.google.ads.googleads.v15.services.GoogleAdsRow;
+import com.google.ads.googleads.v15.services.GoogleAdsServiceClient;
+import com.google.ads.googleads.v15.services.SearchGoogleAdsRequest;
+import com.google.ads.googleads.v15.services.GoogleAdsServiceClient.SearchPagedResponse;
 
 import br.com.gersis.loopback.modelo.CampanhaAdsMetricaIntraday;
 import br.com.gersis.loopback.modelo.ContaGoogle;

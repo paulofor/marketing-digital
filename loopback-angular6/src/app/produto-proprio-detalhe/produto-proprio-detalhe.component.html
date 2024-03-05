@@ -2,7 +2,11 @@
 	<div class="dgc-painel-header" *ngIf="principal">
 		<span>{{principal.nome}}</span>
 	</div>
-
+	<div class="dgc-card">
+		<div class="dgc-card-detalhe">
+			<span>Conta: <span *ngIf="principal.contaGoogle">{{principal.contaGoogle.nome}}</span></span>
+		</div>
+	</div>
 	<div class="dgc-card">
 		<div>
 			<button (click)="selectTab(6, principal.id)">Segmentos</button>

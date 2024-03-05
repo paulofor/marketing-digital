@@ -21,6 +21,7 @@ public class TrechoVsl extends Model {
 	private int videoVslId;
 	private int tempo;
 	private String arquivoAudio;
+	private String codigoHexa;
 	// Relacionamentos 1
 	private VideoVsl VideoVsl;
 	// Relacionamentos N
@@ -50,6 +51,7 @@ public class TrechoVsl extends Model {
 			obj.put("videoVslId", videoVslId);
 			obj.put("tempo", tempo);
 			obj.put("arquivoAudio", arquivoAudio);
+			obj.put("codigoHexa", codigoHexa);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -98,6 +100,12 @@ public class TrechoVsl extends Model {
 	}
 	public String getArquivoAudio() { 
 		return this.arquivoAudio;
+	}
+	public void setCodigoHexa(String valor) { 
+		this.codigoHexa = valor;
+	}
+	public String getCodigoHexa() { 
+		return this.codigoHexa;
 	}
 
 	public VideoVsl getVideoVsl() {

@@ -19,7 +19,7 @@ export class ProdutoProprioDetalheComponent extends ProdutoProprioDetalheBaseCom
 
 	getFiltro() {
 		return {
-			'include' : 'produtoProprioVersaos'
+			'include' : ['produtoProprioVersaos','contaGoogle']
 		}
 	}
 	selectTab(tabNumber: number, objectId: number) {

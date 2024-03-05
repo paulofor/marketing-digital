@@ -28,7 +28,7 @@ public class GeraAudioCompletoLegendaImpl extends GeraAudioCompletoLegenda {
 
 		// Caminho para o arquivo de saída concatenado
 		String outputFilePath = "/home/usuario/aplicacoes/MarketingDigital/audio/completo/arquivo_concatenado_" + formataNumero(videoCorrente.getIdInteger()) + ".wav";
-
+		videoCorrente.setArquivoAudioCompleto(outputFilePath);
 		try {
 			// Cria um processo para executar o comando FFmpeg
 			// Constrói o comando FFmpeg manualmente

@@ -1,0 +1,36 @@
+{
+	"name": "ScriptGeraVideo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"arquivo": {
+			"type": "string"
+		},
+		"descricao": {
+			"type": "string"
+		},
+		"fonte": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"videoVsls": {
+			"type": "hasMany",
+			"model": "VideoVsl",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Termos Tech</title>
+    <link rel="icon" href="imagem/termos.ico">
+    <style>
+        body {
+            font-family: Montserrat, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+            text-align: start;
+        }
+
+        ul li:before {
+            content: "\2022"; /* Adiciona o bullet */
+            color: #4CAF50; /* Cor do bullet */
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            margin-top: 20px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        #logo {
+            background-color: #292929;
+        }
+
+        /* Estilo para preço riscado */
+        .preco-riscado {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
+        }
+
+        #headline h1 {
+            color: #2d58b6;
+            font-size: 32px;
+        }
+
+        /* Estilo para duas colunas na lista de termos */
+        .termos {
+            column-count: 2;
+            column-gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="logo">
+        <img src="imagem/logo.png" alt="50 Termos Tech">
+    </section>
+    <!-- Seção de headline -->
+    <section id="headline">
+        <h3>Agora você já pode dizer:</h3>
+        <h1>Sou um Mestre da Tecnologia</h1>
+        <p>A explicação dos termos de tecnologia mais utilizados no dia a dia na palma da sua mão</p>
+    </section>
+
+    <!-- Imagem do produto -->
+    <section id="imagem-produto">
+        <img src="imagem/produto.png" alt="50 Termos Tech">
+    </section>
+
+    <!-- Preço -->
+
+    <section id="chamada-acao">
+        <h2>Adquira Agora e Atualize Seus Conhecimentos!</h2>
+        <p>De: <span class="preco-riscado">R$ 89,90</span> por R$ 49,90</p>
+        <a href="https://pay.kiwify.com.br/NPHsCnp" class="cta-button">Comprar Agora</a>
+    </section>
+
+    <!-- Pessoa usando o produto -->
+    <section class="pessoa-usando-produto">
+        <img src="imagem/usuaria.png" alt="Pessoa usando o produto">
+    </section>
+
+    <!-- Lista de termos -->
+    <section id="lista-termos">
+        <h2>Alguns Termos Explicados:</h2>
+        <ul class="termos">
+            <li>5G</li>
+            <li>Bitcoin</li>
+            <li>Criptografia</li>
+            <li>Firewall</li>
+            <li>Malware</li>
+            <li>Open Source</li>
+            <li>e muito mais</li>
+            <li>Algoritmo</li>
+            <li>Chatbot</li>
+            <li>Fintech</li>
+            <li>Impressão 3D</li>
+            <li>Nuvem</li>
+            <li>Scrum</li>
+        </ul>
+    </section>
+
+    <!-- Pessoa usando o produto -->
+    <section class="pessoa-usando-produto">
+        <img src="imagem/usuario.png" alt="Pessoa usando o produto">
+    </section>
+
+    <!-- Detalhes do produto -->
+    <section id="detalhes-produto">
+        <h2>O que você vai aprender sobre cada termo</h2>
+        <h3>Explicação</h3>
+        <p>Uma descrição simples clara e objetiva sobre o termo</p>
+        <h3>Histórico</h3>
+        <p>Tudo sempre tem uma história descubra como a palavra surgiu e conta para seus amigos</p>
+        <h3>Curiosidades</h3>
+        <p>Sabia que 'bug' surgiu quando insetos geravam problemas nos computadores mais antigos ?  Você vai ter acesso a essas curiosidades e muitas outras</p>
+    </section>
+
+
+    <!-- Chamada para ação -->
+    <section id="chamada-acao">
+        <h2>Adquira Agora e Atualize Seus Conhecimentos!</h2>
+        <p>De: <span class="preco-riscado">R$ 89,90</span> por R$ 49,90</p>
+        <a href="https://pay.kiwify.com.br/NPHsCnp" class="cta-button">Comprar Agora</a>
+    </section>
+
+    <!-- Garantia -->
+    <section id="garantia">
+        <h2>Garantia:</h2>
+        <p>Se em 7 dias você não estiver satisfeito com o produto nós daremos seu dinheiro de volta!</p>
+    </section>
+
+    <!-- Prova Social -->
+    <section id="prova-social">
+        <h2>O que Nossos Clientes Dizem:</h2>
+        <p>Depoimentos e avaliações de clientes satisfeitos.</p>
+    </section>
+</body>
+
+</html>

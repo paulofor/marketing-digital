@@ -20,9 +20,11 @@ import { CampanhaAdsMetricaIntraday } from '../../models/CampanhaAdsMetricaIntra
 import { CampanhaAdsRedeDisplay } from '../../models/CampanhaAdsRedeDisplay';
 import { PublicoAlvoAdsDiario } from '../../models/PublicoAlvoAdsDiario';
 import { SegmentoMercadoAdsPersonalizado } from '../../models/SegmentoMercadoAdsPersonalizado';
+import { ProdutoProprio } from '../../models/ProdutoProprio';
 import { VersaoPaginaVenda } from '../../models/VersaoPaginaVenda';
 import { PixelAdsSegmentoMercado } from '../../models/PixelAdsSegmentoMercado';
 import { ContaPublicoAlvoAdsPalavra } from '../../models/ContaPublicoAlvoAdsPalavra';
+import { PublicoAlvoAdsPalavra } from '../../models/PublicoAlvoAdsPalavra';
 import { PixelProdutoHotmartConta } from '../../models/PixelProdutoHotmartConta';
 import { PixelProdutoHotmartContaCheckout } from '../../models/PixelProdutoHotmartContaCheckout';
 import { ProdutoHotmartConta } from '../../models/ProdutoHotmartConta';
@@ -975,6 +977,99 @@ export class ContaGoogleApi extends BaseLoopBackApi {
   }
 
   /**
+   * Localize um item relacionado por ID para produtoProprios.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {any} fk Chave estrangeira para produtoProprios
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public findByIdProdutoProprios(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/produtoProprios/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para produtoProprios.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {any} fk Chave estrangeira para produtoProprios
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdProdutoProprios(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/produtoProprios/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para produtoProprios.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {any} fk Chave estrangeira para produtoProprios
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public updateByIdProdutoProprios(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/produtoProprios/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Localize um item relacionado por ID para versaoPaginaVendas.
    *
    * @param {any} id ContaGoogle id
@@ -1241,6 +1336,99 @@ export class ContaGoogleApi extends BaseLoopBackApi {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ContaGoogles/:id/contaPublicoAlvoAdsPalavras/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Localize um item relacionado por ID para publicoAlvoAdsPalavras.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public findByIdPublicoAlvoAdsPalavras(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/publicoAlvoAdsPalavras/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para publicoAlvoAdsPalavras.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdPublicoAlvoAdsPalavras(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/publicoAlvoAdsPalavras/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para publicoAlvoAdsPalavras.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public updateByIdPublicoAlvoAdsPalavras(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/publicoAlvoAdsPalavras/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -2693,6 +2881,122 @@ export class ContaGoogleApi extends BaseLoopBackApi {
   }
 
   /**
+   * produtoProprios consultas de ContaGoogle.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public getProdutoProprios(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/produtoProprios";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no produtoProprios deste modelo.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public createProdutoProprios(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/produtoProprios";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os produtoProprios deste modelo.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteProdutoProprios(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/produtoProprios";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * produtoProprios contagens de ContaGoogle.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countProdutoProprios(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/produtoProprios/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * versaoPaginaVendas consultas de ContaGoogle.
    *
    * @param {any} id ContaGoogle id
@@ -3030,6 +3334,122 @@ export class ContaGoogleApi extends BaseLoopBackApi {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ContaGoogles/:id/contaPublicoAlvoAdsPalavras/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * publicoAlvoAdsPalavras consultas de ContaGoogle.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public getPublicoAlvoAdsPalavras(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/publicoAlvoAdsPalavras";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no publicoAlvoAdsPalavras deste modelo.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public createPublicoAlvoAdsPalavras(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/publicoAlvoAdsPalavras";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os publicoAlvoAdsPalavras deste modelo.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deletePublicoAlvoAdsPalavras(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/publicoAlvoAdsPalavras";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * publicoAlvoAdsPalavras contagens de ContaGoogle.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countPublicoAlvoAdsPalavras(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/publicoAlvoAdsPalavras/count";
     let _routeParams: any = {
       id: id
     };
@@ -3936,6 +4356,39 @@ export class ContaGoogleApi extends BaseLoopBackApi {
   }
 
   /**
+   * Cria uma nova instância no produtoProprios deste modelo.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public createManyProdutoProprios(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/produtoProprios";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Cria uma nova instância no versaoPaginaVendas deste modelo.
    *
    * @param {any} id ContaGoogle id
@@ -4023,6 +4476,39 @@ export class ContaGoogleApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ContaGoogles/:id/contaPublicoAlvoAdsPalavras";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no publicoAlvoAdsPalavras deste modelo.
+   *
+   * @param {any} id ContaGoogle id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContaGoogle` object.)
+   * </em>
+   */
+  public createManyPublicoAlvoAdsPalavras(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContaGoogles/:id/publicoAlvoAdsPalavras";
     let _routeParams: any = {
       id: id
     };

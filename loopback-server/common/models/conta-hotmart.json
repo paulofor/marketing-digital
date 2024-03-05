@@ -10,7 +10,7 @@
   	},
 	"properties": {
 		"email": {
-			"type": "VARRCHAR(100)"
+			"type": "string"
 		},
 		"senha": {
 			"type": "string"

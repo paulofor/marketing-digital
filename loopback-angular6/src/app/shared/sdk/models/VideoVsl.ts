@@ -2,7 +2,8 @@
 import {
   ProdutoProprio,
   PaginaVendaVsl,
-  TrechoVsl
+  TrechoVsl,
+  ScriptGeraVideo
 } from '../index';
 
 declare var Object: any;
@@ -16,11 +17,15 @@ export interface VideoVslInterface {
   "urlChatGpt2"?: string;
   "urlChatGpt3"?: string;
   "arquivoVideo"?: string;
+  "codigoYouTube"?: string;
+  "criaAudioLegenda"?: number;
   "produtoProprioId"?: number;
+  "scriptGeraVideoId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
   paginaVendaVsls?: PaginaVendaVsl[];
   trechoVsls?: TrechoVsl[];
+  scriptGeraVideo?: ScriptGeraVideo;
 }
 
 export class VideoVsl implements VideoVslInterface {
@@ -33,11 +38,15 @@ export class VideoVsl implements VideoVslInterface {
   "urlChatGpt2": string;
   "urlChatGpt3": string;
   "arquivoVideo": string;
+  "codigoYouTube": string;
+  "criaAudioLegenda": number;
   "produtoProprioId": number;
+  "scriptGeraVideoId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
   paginaVendaVsls: PaginaVendaVsl[];
   trechoVsls: TrechoVsl[];
+  scriptGeraVideo: ScriptGeraVideo;
   constructor(data?: VideoVslInterface) {
     Object.assign(this, data);
   }
@@ -107,8 +116,20 @@ export class VideoVsl implements VideoVslInterface {
           name: 'arquivoVideo',
           type: 'string'
         },
+        "codigoYouTube": {
+          name: 'codigoYouTube',
+          type: 'string'
+        },
+        "criaAudioLegenda": {
+          name: 'criaAudioLegenda',
+          type: 'number'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
+          type: 'number'
+        },
+        "scriptGeraVideoId": {
+          name: 'scriptGeraVideoId',
           type: 'number'
         },
         "id": {
@@ -140,6 +161,14 @@ export class VideoVsl implements VideoVslInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'videoVslId'
+        },
+        scriptGeraVideo: {
+          name: 'scriptGeraVideo',
+          type: 'ScriptGeraVideo',
+          model: 'ScriptGeraVideo',
+          relationType: 'belongsTo',
+                  keyFrom: 'scriptGeraVideoId',
+          keyTo: 'id'
         },
       }
     }

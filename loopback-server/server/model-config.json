@@ -370,5 +370,9 @@
   "ModeloPaginaVendaVsl": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "ScriptGeraVideo": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

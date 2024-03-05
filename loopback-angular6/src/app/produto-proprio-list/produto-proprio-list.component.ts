@@ -15,4 +15,9 @@ export class ProdutoProprioListComponent extends ProdutoProprioListBaseComponent
 		super(srv,router,dialog);
 	}
 
+	getFiltro(): {} {
+		let filtro = {'include' : 'contaGoogle'};
+		return filtro;
+	}
+
 }

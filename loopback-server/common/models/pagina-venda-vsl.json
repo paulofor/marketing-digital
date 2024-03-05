@@ -33,6 +33,9 @@
 		"nome": {
 			"type": "string"
 		},
+		"dataPublicacao": {
+			"type": "date"
+		},
 		"videoVslId": {
 			"type": "number"
 		},

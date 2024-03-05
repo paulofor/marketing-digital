@@ -31,7 +31,7 @@ public abstract class GeraAudioCompletoLegenda extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new VideoVsl_AtualizaAudioLegendaImpl();
 	}
 
 

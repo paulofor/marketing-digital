@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { ProdutoProprioApi } from '../shared/sdk';
+import { ContaGoogle, ContaGoogleApi, ProdutoProprioApi } from '../shared/sdk';
 import { ProdutoProprioEditBaseComponent } from './produto-proprio-edit-base.component';
 
 @Component({
@@ -10,10 +10,23 @@ import { ProdutoProprioEditBaseComponent } from './produto-proprio-edit-base.com
 })
 export class ProdutoProprioEditComponent extends ProdutoProprioEditBaseComponent {
 
-	 constructor(protected dialogRef: MatDialogRef<any>
-	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: ProdutoProprioApi
+	listaConta:ContaGoogle[];
+
+	constructor(protected dialogRef: MatDialogRef<any>
+	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: ProdutoProprioApi, private srvConta:ContaGoogleApi
 		  ) {
 	   super(dialogRef,data,servico);
+	}
+
+	preSubmit() {
+		delete this.item['contaGoogle'];
+    }
+
+	montaCombos(): void {
+		this.srvConta.ListaAtivaCampanha()
+			.subscribe((result:ContaGoogle[]) => {
+				this.listaConta = result;
+			})
 	}
 
 }

@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { VideoVslApi } from '../shared/sdk';
+import { VideoVsl, VideoVslApi } from '../shared/sdk';
 import { VideoVslEditBaseComponent } from './video-vsl-edit-base.component';
 
 @Component({
@@ -16,4 +16,10 @@ export class VideoVslEditComponent extends VideoVslEditBaseComponent {
 	   super(dialogRef,data,servico);
 	}
 
+
+	criaItem(): VideoVsl{
+		let video = new VideoVsl();
+		video.produtoProprioId = this.origem.id;
+		return video;
+	}
 }

@@ -696,7 +696,12 @@ var AnuncioConceitoAdsRedeDisplayEditComponent = /** @class */ (function (_super
     }
     AnuncioConceitoAdsRedeDisplayEditComponent.prototype.criaItem = function () {
         var saida = new _shared_sdk_models_AnuncioConceitoAdsRedeDisplay__WEBPACK_IMPORTED_MODULE_4__["AnuncioConceitoAdsRedeDisplay"]();
-        saida.hotmartId = this.origem.hotmartId;
+        if (this.origem instanceof _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ProdutoAfiliadoHotmart"]) {
+            saida.hotmartId = this.origem.hotmartId;
+        }
+        else {
+            saida.produtoProprioId = this.origem.id;
+        }
         return saida;
     };
     AnuncioConceitoAdsRedeDisplayEditComponent = __decorate([
@@ -901,6 +906,197 @@ var AnuncioConceitoAdsRedeDisplayPorProdutoListComponent = /** @class */ (functi
 
 /***/ }),
 
+/***/ "./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list-base.component.ts":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list-base.component.ts ***!
+  \*************************************************************************************************************************************************/
+/*! exports provided: AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent", function() { return AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent; });
+/* harmony import */ var _anuncio_conceito_ads_rede_display_edit_anuncio_conceito_ads_rede_display_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../anuncio-conceito-ads-rede-display-edit/anuncio-conceito-ads-rede-display-edit.component */ "./src/app/anuncio-conceito-ads-rede-display-edit/anuncio-conceito-ads-rede-display-edit.component.ts");
+
+var AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent = /** @class */ (function () {
+    function AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.preCarregaTela = function () { };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.posCarregaLista = function () { };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao
+            }
+        });
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.getComponente = function () {
+        return _anuncio_conceito_ads_rede_display_edit_anuncio_conceito_ads_rede_display_edit_component__WEBPACK_IMPORTED_MODULE_0__["AnuncioConceitoAdsRedeDisplayEditComponent"];
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.getDialogo1 = function () {
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.getDialogo2 = function () {
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.css":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.css ***!
+  \*********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.html":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.html ***!
+  \**********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Anuncio Conceito Ads RedeDisplay</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-detalhe\">\n \t\t\t\t<span>Nome Empresa: {{item.nomeEmpresa}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Título: {{item.titulo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Título Longo: {{item.tituloLongo}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Descrição: {{item.descricao}}</span>\n\t\t\t</div>\n\n\t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.ts":
+/*!********************************************************************************************************************************************!*\
+  !*** ./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.ts ***!
+  \********************************************************************************************************************************************/
+/*! exports provided: AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent", function() { return AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _anuncio_conceito_ads_rede_display_produto_proprio_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./anuncio-conceito-ads-rede-display-produto-proprio-list-base.component */ "./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent = /** @class */ (function (_super) {
+    __extends(AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent, _super);
+    function AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent.prototype.getFiltro = function () {
+        var filtro = { 'where': { 'produtoProprioId': this.produto.id } };
+        console.log('filtro-produto:', filtro);
+        return filtro;
+    };
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao,
+                origem: this.produto
+            }
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ProdutoProprio"])
+    ], AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent.prototype, "produto", void 0);
+    AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-anuncio-conceito-ads-rede-display-produto-proprio-list',
+            template: __webpack_require__(/*! ./anuncio-conceito-ads-rede-display-produto-proprio-list.component.html */ "./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.html"),
+            styles: [__webpack_require__(/*! ./anuncio-conceito-ads-rede-display-produto-proprio-list.component.css */ "./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["AnuncioConceitoAdsRedeDisplayApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent);
+    return AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent;
+}(_anuncio_conceito_ads_rede_display_produto_proprio_list_base_component__WEBPACK_IMPORTED_MODULE_4__["AnuncioConceitoAdsRedeDisplayProdutoProprioListBaseComponent"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/anuncio-conceito-ads-rede-display/anuncio-conceito-ads-rede-display.component.css":
 /*!***************************************************************************************************!*\
   !*** ./src/app/anuncio-conceito-ads-rede-display/anuncio-conceito-ads-rede-display.component.css ***!
@@ -1076,6 +1272,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modelo_pagina_venda_detalhe_com_campanhas_modelo_pagina_venda_detalhe_com_campanhas_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ../modelo-pagina-venda-detalhe-com-campanhas/modelo-pagina-venda-detalhe-com-campanhas.component */ "./src/app/modelo-pagina-venda-detalhe-com-campanhas/modelo-pagina-venda-detalhe-com-campanhas.component.ts");
 /* harmony import */ var _video_vsl_por_produto_list_video_vsl_por_produto_list_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ../video-vsl-por-produto-list/video-vsl-por-produto-list.component */ "./src/app/video-vsl-por-produto-list/video-vsl-por-produto-list.component.ts");
 /* harmony import */ var _video_vsl_detalhe_video_vsl_detalhe_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ../video-vsl-detalhe/video-vsl-detalhe.component */ "./src/app/video-vsl-detalhe/video-vsl-detalhe.component.ts");
+/* harmony import */ var _modelo_pagina_venda_vsl_list_modelo_pagina_venda_vsl_list_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ../modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component */ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.ts");
+/* harmony import */ var _script_gera_video_list_script_gera_video_list_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ../script-gera-video-list/script-gera-video-list.component */ "./src/app/script-gera-video-list/script-gera-video-list.component.ts");
+
+
 
 
 
@@ -1191,6 +1391,8 @@ var routes = [
     { path: 'modeloPaginaVendaDetalheComCampanhas/:id', component: _modelo_pagina_venda_detalhe_com_campanhas_modelo_pagina_venda_detalhe_com_campanhas_component__WEBPACK_IMPORTED_MODULE_54__["ModeloPaginaVendaDetalheComCampanhasComponent"] },
     { path: 'videoVslPorProdutoList/:id', component: _video_vsl_por_produto_list_video_vsl_por_produto_list_component__WEBPACK_IMPORTED_MODULE_55__["VideoVslPorProdutoListComponent"] },
     { path: 'videoVslDetalhe/:id', component: _video_vsl_detalhe_video_vsl_detalhe_component__WEBPACK_IMPORTED_MODULE_56__["VideoVslDetalheComponent"] },
+    { path: 'modeloPaginaVendaVslList', component: _modelo_pagina_venda_vsl_list_modelo_pagina_venda_vsl_list_component__WEBPACK_IMPORTED_MODULE_57__["ModeloPaginaVendaVslListComponent"] },
+    { path: 'scriptGeraVideoList', component: _script_gera_video_list_script_gera_video_list_component__WEBPACK_IMPORTED_MODULE_58__["ScriptGeraVideoListComponent"] },
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_0__["HomeComponent"] }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ];
@@ -1396,6 +1598,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _trecho_vsl_edit_trecho_vsl_edit_component__WEBPACK_IMPORTED_MODULE_125__ = __webpack_require__(/*! ./trecho-vsl-edit/trecho-vsl-edit.component */ "./src/app/trecho-vsl-edit/trecho-vsl-edit.component.ts");
 /* harmony import */ var _trecho_vsl_list_trecho_vsl_list_component__WEBPACK_IMPORTED_MODULE_126__ = __webpack_require__(/*! ./trecho-vsl-list/trecho-vsl-list.component */ "./src/app/trecho-vsl-list/trecho-vsl-list.component.ts");
 /* harmony import */ var _video_vsl_detalhe_video_vsl_detalhe_component__WEBPACK_IMPORTED_MODULE_127__ = __webpack_require__(/*! ./video-vsl-detalhe/video-vsl-detalhe.component */ "./src/app/video-vsl-detalhe/video-vsl-detalhe.component.ts");
+/* harmony import */ var _imagem_conjunto_produto_proprio_list_imagem_conjunto_produto_proprio_list_component__WEBPACK_IMPORTED_MODULE_128__ = __webpack_require__(/*! ./imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component */ "./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.ts");
+/* harmony import */ var _modelo_pagina_venda_vsl_list_modelo_pagina_venda_vsl_list_component__WEBPACK_IMPORTED_MODULE_129__ = __webpack_require__(/*! ./modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component */ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.ts");
+/* harmony import */ var _modelo_pagina_venda_vsl_edit_modelo_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_130__ = __webpack_require__(/*! ./modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component */ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.ts");
+/* harmony import */ var _pagina_venda_vsl_por_produto_list_pagina_venda_vsl_por_produto_list_component__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(/*! ./pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component */ "./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.ts");
+/* harmony import */ var _pagina_venda_vsl_edit_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_132__ = __webpack_require__(/*! ./pagina-venda-vsl-edit/pagina-venda-vsl-edit.component */ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.ts");
+/* harmony import */ var _anuncio_conceito_ads_rede_display_produto_proprio_list_anuncio_conceito_ads_rede_display_produto_proprio_list_component__WEBPACK_IMPORTED_MODULE_133__ = __webpack_require__(/*! ./anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component */ "./src/app/anuncio-conceito-ads-rede-display-produto-proprio-list/anuncio-conceito-ads-rede-display-produto-proprio-list.component.ts");
+/* harmony import */ var _campanha_ads_rede_display_produto_proprio_list_campanha_ads_rede_display_produto_proprio_list_component__WEBPACK_IMPORTED_MODULE_134__ = __webpack_require__(/*! ./campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component */ "./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.ts");
+/* harmony import */ var _campanha_ads_rede_display_produto_proprio_edit_campanha_ads_rede_display_produto_proprio_edit_component__WEBPACK_IMPORTED_MODULE_135__ = __webpack_require__(/*! ./campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component */ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.ts");
+/* harmony import */ var _publico_alvo_ads_palavra_produto_proprio_list_publico_alvo_ads_palavra_produto_proprio_list_component__WEBPACK_IMPORTED_MODULE_136__ = __webpack_require__(/*! ./publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component */ "./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.ts");
+/* harmony import */ var _script_gera_video_list_script_gera_video_list_component__WEBPACK_IMPORTED_MODULE_137__ = __webpack_require__(/*! ./script-gera-video-list/script-gera-video-list.component */ "./src/app/script-gera-video-list/script-gera-video-list.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1430,6 +1642,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 //import { NgxImgModule } from 'ngx-img';
 
 //import { UploadModule } from './upload/upload.module';
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1644,7 +1866,17 @@ var AppModule = /** @class */ (function () {
                 _trecho_vsl_edit_trecho_vsl_edit_component__WEBPACK_IMPORTED_MODULE_125__["TrechoVslEditComponent"],
                 _trecho_vsl_list_trecho_vsl_list_component__WEBPACK_IMPORTED_MODULE_126__["TrechoVslListComponent"],
                 _video_vsl_edit_video_vsl_edit_component__WEBPACK_IMPORTED_MODULE_124__["VideoVslEditComponent"],
-                _video_vsl_detalhe_video_vsl_detalhe_component__WEBPACK_IMPORTED_MODULE_127__["VideoVslDetalheComponent"]
+                _video_vsl_detalhe_video_vsl_detalhe_component__WEBPACK_IMPORTED_MODULE_127__["VideoVslDetalheComponent"],
+                _imagem_conjunto_produto_proprio_list_imagem_conjunto_produto_proprio_list_component__WEBPACK_IMPORTED_MODULE_128__["ImagemConjuntoProdutoProprioListComponent"],
+                _modelo_pagina_venda_vsl_list_modelo_pagina_venda_vsl_list_component__WEBPACK_IMPORTED_MODULE_129__["ModeloPaginaVendaVslListComponent"],
+                _modelo_pagina_venda_vsl_edit_modelo_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_130__["ModeloPaginaVendaVslEditComponent"],
+                _pagina_venda_vsl_por_produto_list_pagina_venda_vsl_por_produto_list_component__WEBPACK_IMPORTED_MODULE_131__["PaginaVendaVslPorProdutoListComponent"],
+                _pagina_venda_vsl_edit_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_132__["PaginaVendaVslEditComponent"],
+                _anuncio_conceito_ads_rede_display_produto_proprio_list_anuncio_conceito_ads_rede_display_produto_proprio_list_component__WEBPACK_IMPORTED_MODULE_133__["AnuncioConceitoAdsRedeDisplayProdutoProprioListComponent"],
+                _campanha_ads_rede_display_produto_proprio_list_campanha_ads_rede_display_produto_proprio_list_component__WEBPACK_IMPORTED_MODULE_134__["CampanhaAdsRedeDisplayProdutoProprioListComponent"],
+                _campanha_ads_rede_display_produto_proprio_edit_campanha_ads_rede_display_produto_proprio_edit_component__WEBPACK_IMPORTED_MODULE_135__["CampanhaAdsRedeDisplayProdutoProprioEditComponent"],
+                _publico_alvo_ads_palavra_produto_proprio_list_publico_alvo_ads_palavra_produto_proprio_list_component__WEBPACK_IMPORTED_MODULE_136__["PublicoAlvoAdsPalavraProdutoProprioListComponent"],
+                _script_gera_video_list_script_gera_video_list_component__WEBPACK_IMPORTED_MODULE_137__["ScriptGeraVideoListComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1728,7 +1960,10 @@ var AppModule = /** @class */ (function () {
                 _anuncio_conceito_ads_rede_display_edit_anuncio_conceito_ads_rede_display_edit_component__WEBPACK_IMPORTED_MODULE_119__["AnuncioConceitoAdsRedeDisplayEditComponent"],
                 _campanha_ads_rede_display_edit_campanha_ads_rede_display_edit_component__WEBPACK_IMPORTED_MODULE_121__["CampanhaAdsRedeDisplayEditComponent"],
                 _video_vsl_edit_video_vsl_edit_component__WEBPACK_IMPORTED_MODULE_124__["VideoVslEditComponent"],
-                _trecho_vsl_edit_trecho_vsl_edit_component__WEBPACK_IMPORTED_MODULE_125__["TrechoVslEditComponent"]
+                _trecho_vsl_edit_trecho_vsl_edit_component__WEBPACK_IMPORTED_MODULE_125__["TrechoVslEditComponent"],
+                _modelo_pagina_venda_vsl_edit_modelo_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_130__["ModeloPaginaVendaVslEditComponent"],
+                _pagina_venda_vsl_edit_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_132__["PaginaVendaVslEditComponent"],
+                _campanha_ads_rede_display_produto_proprio_edit_campanha_ads_rede_display_produto_proprio_edit_component__WEBPACK_IMPORTED_MODULE_135__["CampanhaAdsRedeDisplayProdutoProprioEditComponent"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
@@ -3686,6 +3921,436 @@ var CampanhaAdsRedeDisplayPorProdutoListComponent = /** @class */ (function (_su
     ], CampanhaAdsRedeDisplayPorProdutoListComponent);
     return CampanhaAdsRedeDisplayPorProdutoListComponent;
 }(_campanha_ads_rede_display_por_produto_list_base_component__WEBPACK_IMPORTED_MODULE_4__["CampanhaAdsRedeDisplayPorProdutoListBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit-base.component.ts":
+/*!*********************************************************************************************************************************!*\
+  !*** ./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit-base.component.ts ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent", function() { return CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+var CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent = /** @class */ (function () {
+    function CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent(dialogRef, data, servico) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.servico = servico;
+    }
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent.prototype.ngOnInit = function () {
+        console.log("Data(BaseEdit):", this.data);
+        if (this.data.origem) {
+            this.origem = this.data.origem;
+        }
+        if (!this.data.item) {
+            console.log("fluxo nova");
+            this.item = this.criaItem();
+        }
+        else {
+            console.log('fluxo altera');
+            this.item = this.data.item;
+            console.log('Item(BaseEdit):', this.item);
+        }
+        this.montaCombos();
+        this.posItem();
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.preSubmit();
+        console.log('Submit(BaseEdit):', this.item);
+        this.servico.upsert(this.item, function (err, obj) {
+            if (err) {
+                console.log("ErroUpsert:" + JSON.stringify(err));
+            }
+            else {
+            }
+            _this.posSubmit();
+        }).subscribe(function (e) {
+            console.log(JSON.stringify(e));
+            _this.closeDialog();
+        });
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent.prototype.preSubmit = function () {
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent.prototype.closeDialog = function () {
+        this.dialogRef.close('Pizza!');
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent.prototype.criaItem = function () {
+        return new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["CampanhaAdsRedeDisplay"]();
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent.prototype.montaCombos = function () {
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent.prototype.posItem = function () {
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent.prototype.posSubmit = function () {
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent = __decorate([
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["CampanhaAdsRedeDisplayApi"]])
+    ], CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent);
+    return CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.css":
+/*!*****************************************************************************************************************************!*\
+  !*** ./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.css ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.html":
+/*!******************************************************************************************************************************!*\
+  !*** ./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.html ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>CampanhaAdsRedeDisplay</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\" *ngIf=\"listaAnuncioRedeAds\">\n\t\t\t<mat-select placeholder=\"Anúncio\" #anuncioConceitoAdsRedeDisplayId [(ngModel)]=\"item.anuncioConceitoAdsRedeDisplayId\" name=\"anuncioConceitoAdsRedeDisplayId\">\n\t\t\t\t<mat-option *ngFor=\"let item of listaAnuncioRedeAds\" [value]=\"item.id\">\n\t\t\t\t\t{{ item.nomeEmpresa}} \n\t\t\t\t</mat-option>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\" *ngIf=\"listaPaginaVenda\">\n\t\t\t<mat-select placeholder=\"Página de Venda Vsl\" #paginaVendaVslId [(ngModel)]=\"item.paginaVendaVslId\" name=\"paginaVendaVslId\">\n\t\t\t\t<mat-option *ngFor=\"let item of listaPaginaVenda\" [value]=\"item.id\">\n\t\t\t\t\t{{ item.nome}} \n\t\t\t\t</mat-option>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\" *ngIf=\"listaSegmento\">\n\t\t\t<mat-select placeholder=\"Segmento\" #publicoAlvoAdsPalavraId [(ngModel)]=\"item.publicoAlvoAdsPalavraId\" name=\"publicoAlvoAdsPalavraId\">\n\t\t\t\t<mat-option *ngFor=\"let item of listaSegmento\" [value]=\"item.id\">\n\t\t\t\t\t{{ item.nome}} \n\t\t\t\t</mat-option>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\" *ngIf=\"listaImagemConjunto\">\n\t\t\t<mat-select placeholder=\"Imagem Conjunto\" #imagemConjuntoId [(ngModel)]=\"item.imagemConjuntoId\" name=\"imagemConjuntoId\">\n\t\t\t\t<mat-option *ngFor=\"let item of listaImagemConjunto\" [value]=\"item.id\">\n\t\t\t\t\t{{ item.nome}} \n\t\t\t\t</mat-option>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #prontaParaEnvio [(ngModel)]=\"item.prontaParaEnvio\" name=\"prontaParaEnvio\" placeholder=\"Pronta\" />\n\t\t</mat-form-field>\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>\n"
+
+/***/ }),
+
+/***/ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.ts":
+/*!****************************************************************************************************************************!*\
+  !*** ./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.ts ***!
+  \****************************************************************************************************************************/
+/*! exports provided: CampanhaAdsRedeDisplayProdutoProprioEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayProdutoProprioEditComponent", function() { return CampanhaAdsRedeDisplayProdutoProprioEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _campanha_ads_rede_display_produto_proprio_edit_base_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./campanha-ads-rede-display-produto-proprio-edit-base.component */ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var CampanhaAdsRedeDisplayProdutoProprioEditComponent = /** @class */ (function (_super) {
+    __extends(CampanhaAdsRedeDisplayProdutoProprioEditComponent, _super);
+    function CampanhaAdsRedeDisplayProdutoProprioEditComponent(dialogRef, data, servico, srvImagemConjunto, srvPaginaVenda, srvListaAnuncio, srvPublicoAlvo) {
+        var _this = _super.call(this, dialogRef, data, servico) || this;
+        _this.dialogRef = dialogRef;
+        _this.data = data;
+        _this.servico = servico;
+        _this.srvImagemConjunto = srvImagemConjunto;
+        _this.srvPaginaVenda = srvPaginaVenda;
+        _this.srvListaAnuncio = srvListaAnuncio;
+        _this.srvPublicoAlvo = srvPublicoAlvo;
+        return _this;
+    }
+    CampanhaAdsRedeDisplayProdutoProprioEditComponent.prototype.montaCombos = function () {
+        var _this = this;
+        var filtro1 = { 'where': { 'produtoProprioId': this.origem.id } };
+        this.srvImagemConjunto.find(filtro1)
+            .subscribe(function (result) {
+            console.log('listaImagemConjunto:', result);
+            _this.listaImagemConjunto = result;
+        });
+        var filtro2 = {
+            'where': { 'produtoProprioId': this.origem.id }
+        };
+        this.srvPaginaVenda.find(filtro2)
+            .subscribe(function (result) {
+            console.log('listaPaginaVenda:', result);
+            _this.listaPaginaVenda = result;
+        });
+        var filtro3 = { 'where': { 'produtoProprioId': this.origem.id } };
+        this.srvListaAnuncio.find(filtro3)
+            .subscribe(function (result) {
+            console.log('listaAnuncioRedeAds:', result);
+            _this.listaAnuncioRedeAds = result;
+        });
+        //let filtro4 = {
+        //	'where' : {'produtoProprioId' : this.origem.id }
+        //};
+        this.srvPublicoAlvo.find()
+            .subscribe(function (result) {
+            console.log('listaSegmento:', result);
+            _this.listaSegmento = result;
+        });
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditComponent.prototype.criaItem = function () {
+        var saida = new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["CampanhaAdsRedeDisplay"]();
+        saida.produtoProprioId = this.origem.id;
+        saida.contaGoogleId = this.origem.contaGoogleId;
+        saida.codigoHexa = this.gerarCodigoHexadecimal();
+        return saida;
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditComponent.prototype.gerarCodigoHexadecimal = function () {
+        var comprimento = 30;
+        var codigoHexadecimal = '';
+        while (codigoHexadecimal.length < comprimento) {
+            var pedacoHexadecimal = Math.random().toString(16).substring(2);
+            codigoHexadecimal += pedacoHexadecimal;
+        }
+        // Certifica-se de que o código tenha o comprimento desejado
+        codigoHexadecimal = codigoHexadecimal.substring(0, comprimento);
+        return codigoHexadecimal;
+    };
+    CampanhaAdsRedeDisplayProdutoProprioEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-campanha-ads-rede-display-produto-proprio-edit',
+            template: __webpack_require__(/*! ./campanha-ads-rede-display-produto-proprio-edit.component.html */ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.html"),
+            styles: [__webpack_require__(/*! ./campanha-ads-rede-display-produto-proprio-edit.component.css */ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["CampanhaAdsRedeDisplayApi"],
+            _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ImagemConjuntoApi"], _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["PaginaVendaVslApi"], _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["AnuncioConceitoAdsRedeDisplayApi"],
+            _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["PublicoAlvoAdsPalavraApi"]])
+    ], CampanhaAdsRedeDisplayProdutoProprioEditComponent);
+    return CampanhaAdsRedeDisplayProdutoProprioEditComponent;
+}(_campanha_ads_rede_display_produto_proprio_edit_base_component__WEBPACK_IMPORTED_MODULE_3__["CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list-base.component.ts":
+/*!*********************************************************************************************************************************!*\
+  !*** ./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list-base.component.ts ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: CampanhaAdsRedeDisplayProdutoProprioListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayProdutoProprioListBaseComponent", function() { return CampanhaAdsRedeDisplayProdutoProprioListBaseComponent; });
+/* harmony import */ var _campanha_ads_rede_display_edit_campanha_ads_rede_display_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../campanha-ads-rede-display-edit/campanha-ads-rede-display-edit.component */ "./src/app/campanha-ads-rede-display-edit/campanha-ads-rede-display-edit.component.ts");
+
+var CampanhaAdsRedeDisplayProdutoProprioListBaseComponent = /** @class */ (function () {
+    function CampanhaAdsRedeDisplayProdutoProprioListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.preCarregaTela = function () { };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.posCarregaLista = function () { };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao
+            }
+        });
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.getComponente = function () {
+        return _campanha_ads_rede_display_edit_campanha_ads_rede_display_edit_component__WEBPACK_IMPORTED_MODULE_0__["CampanhaAdsRedeDisplayEditComponent"];
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.getDialogo1 = function () {
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.getDialogo2 = function () {
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return CampanhaAdsRedeDisplayProdutoProprioListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.css":
+/*!*****************************************************************************************************************************!*\
+  !*** ./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.css ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.html":
+/*!******************************************************************************************************************************!*\
+  !*** ./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.html ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Campanha RedeDisplay</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Segmento: <span *ngIf=\"item.publicoAlvoAdsPalavra\">{{item.publicoAlvoAdsPalavra.nome}}</span></span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Criativo: <span *ngIf=\"item.imagemConjunto\">{{item.imagemConjunto.nome}}</span></span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Anúncio: <span *ngIf=\"item.anuncioConceitoAdsRedeDisplay\">{{item.anuncioConceitoAdsRedeDisplay.nomeEmpresa}}</span></span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Página Venda: <span *ngIf=\"item.paginaVendaVsl\">{{item.paginaVendaVsl.nome}}</span></span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Pronta: {{item.prontaParaEnvio}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.ts":
+/*!****************************************************************************************************************************!*\
+  !*** ./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.ts ***!
+  \****************************************************************************************************************************/
+/*! exports provided: CampanhaAdsRedeDisplayProdutoProprioListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayProdutoProprioListComponent", function() { return CampanhaAdsRedeDisplayProdutoProprioListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _campanha_ads_rede_display_produto_proprio_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./campanha-ads-rede-display-produto-proprio-list-base.component */ "./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list-base.component.ts");
+/* harmony import */ var _campanha_ads_rede_display_produto_proprio_edit_campanha_ads_rede_display_produto_proprio_edit_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component */ "./src/app/campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var CampanhaAdsRedeDisplayProdutoProprioListComponent = /** @class */ (function (_super) {
+    __extends(CampanhaAdsRedeDisplayProdutoProprioListComponent, _super);
+    function CampanhaAdsRedeDisplayProdutoProprioListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    CampanhaAdsRedeDisplayProdutoProprioListComponent.prototype.getFiltro = function () {
+        var filtro = {
+            'where': { 'produtoProprioId': this.produto.id },
+            'include': ['publicoAlvoAdsPalavra', 'imagemConjunto', 'anuncioConceitoAdsRedeDisplay', 'paginaVendaVsl']
+        };
+        console.log('filtro-produto:', filtro);
+        return filtro;
+    };
+    CampanhaAdsRedeDisplayProdutoProprioListComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(_campanha_ads_rede_display_produto_proprio_edit_campanha_ads_rede_display_produto_proprio_edit_component__WEBPACK_IMPORTED_MODULE_5__["CampanhaAdsRedeDisplayProdutoProprioEditComponent"], {
+            width: '800px',
+            data: {
+                item: edicao,
+                origem: this.produto
+            }
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ProdutoProprio"])
+    ], CampanhaAdsRedeDisplayProdutoProprioListComponent.prototype, "produto", void 0);
+    CampanhaAdsRedeDisplayProdutoProprioListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-campanha-ads-rede-display-produto-proprio-list',
+            template: __webpack_require__(/*! ./campanha-ads-rede-display-produto-proprio-list.component.html */ "./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.html"),
+            styles: [__webpack_require__(/*! ./campanha-ads-rede-display-produto-proprio-list.component.css */ "./src/app/campanha-ads-rede-display-produto-proprio-list/campanha-ads-rede-display-produto-proprio-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["CampanhaAdsRedeDisplayApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], CampanhaAdsRedeDisplayProdutoProprioListComponent);
+    return CampanhaAdsRedeDisplayProdutoProprioListComponent;
+}(_campanha_ads_rede_display_produto_proprio_list_base_component__WEBPACK_IMPORTED_MODULE_4__["CampanhaAdsRedeDisplayProdutoProprioListBaseComponent"]));
 
 
 
@@ -8487,7 +9152,12 @@ var ImagemConjuntoEditComponent = /** @class */ (function (_super) {
     };
     ImagemConjuntoEditComponent.prototype.criaItem = function () {
         var saida = new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ImagemConjunto"]();
-        saida.hotmartId = this.origem.hotmartId;
+        if (this.origem instanceof _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ProdutoAfiliadoHotmart"]) {
+            saida.hotmartId = this.origem.hotmartId;
+        }
+        else {
+            saida.produtoProprioId = this.origem.id;
+        }
         return saida;
     };
     ImagemConjuntoEditComponent = __decorate([
@@ -8699,6 +9369,197 @@ var ImagemConjuntoPorProdutoListComponent = /** @class */ (function (_super) {
     ], ImagemConjuntoPorProdutoListComponent);
     return ImagemConjuntoPorProdutoListComponent;
 }(_imagem_conjunto_por_produto_list_base_component__WEBPACK_IMPORTED_MODULE_4__["ImagemConjuntoPorProdutoListBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list-base.component.ts":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list-base.component.ts ***!
+  \*************************************************************************************************************/
+/*! exports provided: ImagemConjuntoProdutoProprioListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoProdutoProprioListBaseComponent", function() { return ImagemConjuntoProdutoProprioListBaseComponent; });
+/* harmony import */ var _imagem_conjunto_edit_imagem_conjunto_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../imagem-conjunto-edit/imagem-conjunto-edit.component */ "./src/app/imagem-conjunto-edit/imagem-conjunto-edit.component.ts");
+
+var ImagemConjuntoProdutoProprioListBaseComponent = /** @class */ (function () {
+    function ImagemConjuntoProdutoProprioListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.preCarregaTela = function () { };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.posCarregaLista = function () { };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao
+            }
+        });
+    };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.getComponente = function () {
+        return _imagem_conjunto_edit_imagem_conjunto_edit_component__WEBPACK_IMPORTED_MODULE_0__["ImagemConjuntoEditComponent"];
+    };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.getDialogo1 = function () {
+    };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.getDialogo2 = function () {
+    };
+    ImagemConjuntoProdutoProprioListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return ImagemConjuntoProdutoProprioListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.css":
+/*!*********************************************************************************************************!*\
+  !*** ./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.css ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".imagem-container {\n    width: auto;\n    max-height: 120px;\n    margin: 12px;\n  }"
+
+/***/ }),
+
+/***/ "./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.html ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>ImagemConjunto</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t<span>Quadrada</span>\n\t\t\t<img class=\"imagem-container\" src=\"{{item.urlImagemQuadrada}}\" alt=\"urlImagemQuadrada\">\n\n\t\t\t<span>Deitada</span>\n\t\t\t<img class=\"imagem-container\" src=\"{{item.urlImagemDeitada}}\" alt=\"urlImagemDeitada\">\n\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.ts":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.ts ***!
+  \********************************************************************************************************/
+/*! exports provided: ImagemConjuntoProdutoProprioListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoProdutoProprioListComponent", function() { return ImagemConjuntoProdutoProprioListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _imagem_conjunto_produto_proprio_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./imagem-conjunto-produto-proprio-list-base.component */ "./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ImagemConjuntoProdutoProprioListComponent = /** @class */ (function (_super) {
+    __extends(ImagemConjuntoProdutoProprioListComponent, _super);
+    function ImagemConjuntoProdutoProprioListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    ImagemConjuntoProdutoProprioListComponent.prototype.getFiltro = function () {
+        var filtro = { 'where': { 'produtoProprioId': this.produto.id } };
+        console.log('filtro-produto:', filtro);
+        return filtro;
+    };
+    ImagemConjuntoProdutoProprioListComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao,
+                origem: this.produto
+            }
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ProdutoProprio"])
+    ], ImagemConjuntoProdutoProprioListComponent.prototype, "produto", void 0);
+    ImagemConjuntoProdutoProprioListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-imagem-conjunto-produto-proprio-list',
+            template: __webpack_require__(/*! ./imagem-conjunto-produto-proprio-list.component.html */ "./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.html"),
+            styles: [__webpack_require__(/*! ./imagem-conjunto-produto-proprio-list.component.css */ "./src/app/imagem-conjunto-produto-proprio-list/imagem-conjunto-produto-proprio-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ImagemConjuntoApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], ImagemConjuntoProdutoProprioListComponent);
+    return ImagemConjuntoProdutoProprioListComponent;
+}(_imagem_conjunto_produto_proprio_list_base_component__WEBPACK_IMPORTED_MODULE_4__["ImagemConjuntoProdutoProprioListBaseComponent"]));
 
 
 
@@ -10587,6 +11448,354 @@ var ModeloPaginaVendaListComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit-base.component.ts":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit-base.component.ts ***!
+  \*********************************************************************************************/
+/*! exports provided: ModeloPaginaVendaVslEditBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVslEditBaseComponent", function() { return ModeloPaginaVendaVslEditBaseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+var ModeloPaginaVendaVslEditBaseComponent = /** @class */ (function () {
+    function ModeloPaginaVendaVslEditBaseComponent(dialogRef, data, servico) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.servico = servico;
+    }
+    ModeloPaginaVendaVslEditBaseComponent.prototype.ngOnInit = function () {
+        console.log("Data(BaseEdit):", this.data);
+        if (this.data.origem) {
+            this.origem = this.data.origem;
+        }
+        if (!this.data.item) {
+            console.log("fluxo nova");
+            this.item = this.criaItem();
+        }
+        else {
+            console.log('fluxo altera');
+            this.item = this.data.item;
+            console.log('Item(BaseEdit):', this.item);
+        }
+        this.montaCombos();
+        this.posItem();
+    };
+    ModeloPaginaVendaVslEditBaseComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.preSubmit();
+        console.log('Submit(BaseEdit):', this.item);
+        this.servico.upsert(this.item, function (err, obj) {
+            if (err) {
+                console.log("ErroUpsert:" + JSON.stringify(err));
+            }
+            else {
+            }
+            _this.posSubmit();
+        }).subscribe(function (e) {
+            console.log(JSON.stringify(e));
+            _this.closeDialog();
+        });
+    };
+    ModeloPaginaVendaVslEditBaseComponent.prototype.preSubmit = function () {
+    };
+    ModeloPaginaVendaVslEditBaseComponent.prototype.closeDialog = function () {
+        this.dialogRef.close('Pizza!');
+    };
+    ModeloPaginaVendaVslEditBaseComponent.prototype.criaItem = function () {
+        return new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ModeloPaginaVendaVsl"]();
+    };
+    ModeloPaginaVendaVslEditBaseComponent.prototype.montaCombos = function () {
+    };
+    ModeloPaginaVendaVslEditBaseComponent.prototype.posItem = function () {
+    };
+    ModeloPaginaVendaVslEditBaseComponent.prototype.posSubmit = function () {
+    };
+    ModeloPaginaVendaVslEditBaseComponent = __decorate([
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ModeloPaginaVendaVslApi"]])
+    ], ModeloPaginaVendaVslEditBaseComponent);
+    return ModeloPaginaVendaVslEditBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.css ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.html":
+/*!******************************************************************************************!*\
+  !*** ./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>ModeloPaginaVendaVsl</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" autocomplete=\"off\"/>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<textarea rows=\"8\" matInput #codigoFonte [(ngModel)]=\"item.codigoFonte\" name=\"codigoFonte\" placeholder=\"Fonte\">\n\t\t</textarea>\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>\n"
+
+/***/ }),
+
+/***/ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: ModeloPaginaVendaVslEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVslEditComponent", function() { return ModeloPaginaVendaVslEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _modelo_pagina_venda_vsl_edit_base_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modelo-pagina-venda-vsl-edit-base.component */ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var ModeloPaginaVendaVslEditComponent = /** @class */ (function (_super) {
+    __extends(ModeloPaginaVendaVslEditComponent, _super);
+    function ModeloPaginaVendaVslEditComponent(dialogRef, data, servico) {
+        var _this = _super.call(this, dialogRef, data, servico) || this;
+        _this.dialogRef = dialogRef;
+        _this.data = data;
+        _this.servico = servico;
+        return _this;
+    }
+    ModeloPaginaVendaVslEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-modelo-pagina-venda-vsl-edit',
+            template: __webpack_require__(/*! ./modelo-pagina-venda-vsl-edit.component.html */ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.html"),
+            styles: [__webpack_require__(/*! ./modelo-pagina-venda-vsl-edit.component.css */ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ModeloPaginaVendaVslApi"]])
+    ], ModeloPaginaVendaVslEditComponent);
+    return ModeloPaginaVendaVslEditComponent;
+}(_modelo_pagina_venda_vsl_edit_base_component__WEBPACK_IMPORTED_MODULE_3__["ModeloPaginaVendaVslEditBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list-base.component.ts":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list-base.component.ts ***!
+  \*********************************************************************************************/
+/*! exports provided: ModeloPaginaVendaVslListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVslListBaseComponent", function() { return ModeloPaginaVendaVslListBaseComponent; });
+/* harmony import */ var _modelo_pagina_venda_vsl_edit_modelo_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component */ "./src/app/modelo-pagina-venda-vsl-edit/modelo-pagina-venda-vsl-edit.component.ts");
+
+var ModeloPaginaVendaVslListBaseComponent = /** @class */ (function () {
+    function ModeloPaginaVendaVslListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    ModeloPaginaVendaVslListBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    ModeloPaginaVendaVslListBaseComponent.prototype.preCarregaTela = function () { };
+    ModeloPaginaVendaVslListBaseComponent.prototype.posCarregaLista = function () { };
+    ModeloPaginaVendaVslListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    ModeloPaginaVendaVslListBaseComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao
+            }
+        });
+    };
+    ModeloPaginaVendaVslListBaseComponent.prototype.getComponente = function () {
+        return _modelo_pagina_venda_vsl_edit_modelo_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_0__["ModeloPaginaVendaVslEditComponent"];
+    };
+    ModeloPaginaVendaVslListBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ModeloPaginaVendaVslListBaseComponent.prototype.getDialogo1 = function () {
+    };
+    ModeloPaginaVendaVslListBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ModeloPaginaVendaVslListBaseComponent.prototype.getDialogo2 = function () {
+    };
+    ModeloPaginaVendaVslListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return ModeloPaginaVendaVslListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.css ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.html":
+/*!******************************************************************************************!*\
+  !*** ./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>ModeloPaginaVendaVsl</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: ModeloPaginaVendaVslListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVslListComponent", function() { return ModeloPaginaVendaVslListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _modelo_pagina_venda_vsl_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modelo-pagina-venda-vsl-list-base.component */ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ModeloPaginaVendaVslListComponent = /** @class */ (function (_super) {
+    __extends(ModeloPaginaVendaVslListComponent, _super);
+    function ModeloPaginaVendaVslListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    ModeloPaginaVendaVslListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-modelo-pagina-venda-vsl-list',
+            template: __webpack_require__(/*! ./modelo-pagina-venda-vsl-list.component.html */ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.html"),
+            styles: [__webpack_require__(/*! ./modelo-pagina-venda-vsl-list.component.css */ "./src/app/modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ModeloPaginaVendaVslApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], ModeloPaginaVendaVslListComponent);
+    return ModeloPaginaVendaVslListComponent;
+}(_modelo_pagina_venda_vsl_list_base_component__WEBPACK_IMPORTED_MODULE_4__["ModeloPaginaVendaVslListBaseComponent"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/pagina-venda-edit/pagina-venda-edit-base.component.ts":
 /*!***********************************************************************!*\
   !*** ./src/app/pagina-venda-edit/pagina-venda-edit-base.component.ts ***!
@@ -11255,6 +12464,403 @@ var PaginaVendaPropriaPorProdutoListComponent = /** @class */ (function (_super)
     ], PaginaVendaPropriaPorProdutoListComponent);
     return PaginaVendaPropriaPorProdutoListComponent;
 }(_pagina_venda_propria_por_produto_list_base_component__WEBPACK_IMPORTED_MODULE_4__["PaginaVendaPropriaPorProdutoListBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit-base.component.ts":
+/*!*******************************************************************************!*\
+  !*** ./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit-base.component.ts ***!
+  \*******************************************************************************/
+/*! exports provided: PaginaVendaVslEditBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaVslEditBaseComponent", function() { return PaginaVendaVslEditBaseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+var PaginaVendaVslEditBaseComponent = /** @class */ (function () {
+    function PaginaVendaVslEditBaseComponent(dialogRef, data, servico) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.servico = servico;
+    }
+    PaginaVendaVslEditBaseComponent.prototype.ngOnInit = function () {
+        console.log("Data(BaseEdit):", this.data);
+        if (this.data.origem) {
+            this.origem = this.data.origem;
+        }
+        if (!this.data.item) {
+            console.log("fluxo nova");
+            this.item = this.criaItem();
+        }
+        else {
+            console.log('fluxo altera');
+            this.item = this.data.item;
+            console.log('Item(BaseEdit):', this.item);
+        }
+        this.montaCombos();
+        this.posItem();
+    };
+    PaginaVendaVslEditBaseComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.preSubmit();
+        console.log('Submit(BaseEdit):', this.item);
+        this.servico.upsert(this.item, function (err, obj) {
+            if (err) {
+                console.log("ErroUpsert:" + JSON.stringify(err));
+            }
+            else {
+            }
+            _this.posSubmit();
+        }).subscribe(function (e) {
+            console.log(JSON.stringify(e));
+            _this.closeDialog();
+        });
+    };
+    PaginaVendaVslEditBaseComponent.prototype.preSubmit = function () {
+    };
+    PaginaVendaVslEditBaseComponent.prototype.closeDialog = function () {
+        this.dialogRef.close('Pizza!');
+    };
+    PaginaVendaVslEditBaseComponent.prototype.criaItem = function () {
+        return new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["PaginaVendaVsl"]();
+    };
+    PaginaVendaVslEditBaseComponent.prototype.montaCombos = function () {
+    };
+    PaginaVendaVslEditBaseComponent.prototype.posItem = function () {
+    };
+    PaginaVendaVslEditBaseComponent.prototype.posSubmit = function () {
+    };
+    PaginaVendaVslEditBaseComponent = __decorate([
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["PaginaVendaVslApi"]])
+    ], PaginaVendaVslEditBaseComponent);
+    return PaginaVendaVslEditBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.css":
+/*!***************************************************************************!*\
+  !*** ./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.css ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Página Venda Vsl</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #headline [(ngModel)]=\"item.headline\" name=\"headline\" placeholder=\"Headline\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #subtitulo [(ngModel)]=\"item.subtitulo\" name=\"subtitulo\" placeholder=\"Subtitulo\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #prontoCriacao [(ngModel)]=\"item.prontoCriacao\" name=\"prontoCriacao\" placeholder=\"Pronto Criação\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\" *ngIf=\"listaVideoVsl\">\n\t\t\t<mat-select placeholder=\"Vídeo\" #videoVslId\n\t\t\t\t[(ngModel)]=\"item.videoVslId\" name=\"videoVslId\">\n\t\t\t\t<mat-option *ngFor=\"let elemento of listaVideoVsl\" [value]=\"elemento.id\">\n\t\t\t\t\t{{elemento.nome}}\n\t\t\t\t</mat-option>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\" *ngIf=\"listaModeloPaginaVenda\">\n\t\t\t<mat-select placeholder=\"Modelo Página\" #modeloPaginaVendaVslId\n\t\t\t\t[(ngModel)]=\"item.modeloPaginaVendaVslId\" name=\"modeloPaginaVendaVslId\">\n\t\t\t\t<mat-option *ngFor=\"let elemento of listaModeloPaginaVenda\" [value]=\"elemento.id\">\n\t\t\t\t\t{{elemento.nome}}\n\t\t\t\t</mat-option>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>"
+
+/***/ }),
+
+/***/ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: PaginaVendaVslEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaVslEditComponent", function() { return PaginaVendaVslEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _pagina_venda_vsl_edit_base_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pagina-venda-vsl-edit-base.component */ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var PaginaVendaVslEditComponent = /** @class */ (function (_super) {
+    __extends(PaginaVendaVslEditComponent, _super);
+    function PaginaVendaVslEditComponent(dialogRef, data, servico, srvVideo, srvModelo) {
+        var _this = _super.call(this, dialogRef, data, servico) || this;
+        _this.dialogRef = dialogRef;
+        _this.data = data;
+        _this.servico = servico;
+        _this.srvVideo = srvVideo;
+        _this.srvModelo = srvModelo;
+        return _this;
+    }
+    PaginaVendaVslEditComponent.prototype.criaItem = function () {
+        var saida = new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["PaginaVendaVsl"]();
+        saida.produtoProprioId = this.origem.id;
+        return saida;
+    };
+    PaginaVendaVslEditComponent.prototype.montaCombos = function () {
+        var _this = this;
+        this.srvModelo.find()
+            .subscribe(function (result) {
+            console.log('modelos:', result);
+            _this.listaModeloPaginaVenda = result;
+        });
+        var filtro = { 'where': { 'produtoProprioId': this.origem.id } };
+        this.srvVideo.find(filtro)
+            .subscribe(function (result) {
+            _this.listaVideoVsl = result;
+        });
+    };
+    PaginaVendaVslEditComponent.prototype.preSubmit = function () {
+        delete this.item['videoVsl'];
+    };
+    PaginaVendaVslEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-pagina-venda-vsl-edit',
+            template: __webpack_require__(/*! ./pagina-venda-vsl-edit.component.html */ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.html"),
+            styles: [__webpack_require__(/*! ./pagina-venda-vsl-edit.component.css */ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["PaginaVendaVslApi"],
+            _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["VideoVslApi"], _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ModeloPaginaVendaVslApi"]])
+    ], PaginaVendaVslEditComponent);
+    return PaginaVendaVslEditComponent;
+}(_pagina_venda_vsl_edit_base_component__WEBPACK_IMPORTED_MODULE_3__["PaginaVendaVslEditBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list-base.component.ts":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list-base.component.ts ***!
+  \*******************************************************************************************************/
+/*! exports provided: PaginaVendaVslPorProdutoListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaVslPorProdutoListBaseComponent", function() { return PaginaVendaVslPorProdutoListBaseComponent; });
+/* harmony import */ var _pagina_venda_vsl_edit_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pagina-venda-vsl-edit/pagina-venda-vsl-edit.component */ "./src/app/pagina-venda-vsl-edit/pagina-venda-vsl-edit.component.ts");
+
+var PaginaVendaVslPorProdutoListBaseComponent = /** @class */ (function () {
+    function PaginaVendaVslPorProdutoListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.preCarregaTela = function () { };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.posCarregaLista = function () { };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao
+            }
+        });
+    };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.getComponente = function () {
+        return _pagina_venda_vsl_edit_pagina_venda_vsl_edit_component__WEBPACK_IMPORTED_MODULE_0__["PaginaVendaVslEditComponent"];
+    };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.getDialogo1 = function () {
+    };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.getDialogo2 = function () {
+    };
+    PaginaVendaVslPorProdutoListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return PaginaVendaVslPorProdutoListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.css":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.css ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.html ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Pagina de Venda Vsl</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-card\">\n\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t<span>Gerador de páginas: CriaPaginaVendaVsl</span>\n\t\t</div>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n\t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span>{{item.nome}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-detalhe\">\n \t\t\t\t<span>{{item.headline}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Modelo Página: {{item.modeloPaginaVendaVsl.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Vídeo: {{item.videoVsl.nome}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Pronto Criação: {{item.prontoCriacao}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.url}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Publicação: {{item.dataPublicacao | date : 'dd/MM/yyyy HH:mm:ss' : 'UTC' }}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.ts":
+/*!**************************************************************************************************!*\
+  !*** ./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.ts ***!
+  \**************************************************************************************************/
+/*! exports provided: PaginaVendaVslPorProdutoListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaVslPorProdutoListComponent", function() { return PaginaVendaVslPorProdutoListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _pagina_venda_vsl_por_produto_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pagina-venda-vsl-por-produto-list-base.component */ "./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var PaginaVendaVslPorProdutoListComponent = /** @class */ (function (_super) {
+    __extends(PaginaVendaVslPorProdutoListComponent, _super);
+    function PaginaVendaVslPorProdutoListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    PaginaVendaVslPorProdutoListComponent.prototype.getFiltro = function () {
+        var filtro = {
+            'where': { 'produtoProprioId': this.produto.id },
+            'include': ['modeloPaginaVendaVsl', 'videoVsl']
+        };
+        console.log('filtro-pagina:', filtro);
+        return filtro;
+    };
+    PaginaVendaVslPorProdutoListComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao,
+                origem: this.produto
+            }
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ProdutoProprio"])
+    ], PaginaVendaVslPorProdutoListComponent.prototype, "produto", void 0);
+    PaginaVendaVslPorProdutoListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-pagina-venda-vsl-por-produto-list',
+            template: __webpack_require__(/*! ./pagina-venda-vsl-por-produto-list.component.html */ "./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.html"),
+            styles: [__webpack_require__(/*! ./pagina-venda-vsl-por-produto-list.component.css */ "./src/app/pagina-venda-vsl-por-produto-list/pagina-venda-vsl-por-produto-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["PaginaVendaVslApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], PaginaVendaVslPorProdutoListComponent);
+    return PaginaVendaVslPorProdutoListComponent;
+}(_pagina_venda_vsl_por_produto_list_base_component__WEBPACK_IMPORTED_MODULE_4__["PaginaVendaVslPorProdutoListBaseComponent"]));
 
 
 
@@ -13634,7 +15240,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"principal\">\n\t\t<span>{{principal.nome}}</span>\n\t</div>\n\n\t<div class=\"dgc-card\">\n\t\t<div>\n\t\t\t<button (click)=\"selectTab(1, principal.id)\">Vídeos</button>\n\t\t  </div>\n\t\t  <div *ngIf=\"tabService.selectedTab\">\n\t\t\t<div [ngSwitch]=\"tabService.selectedTab\">\n\t\t\t\t<app-video-vsl-por-produto-list *ngSwitchCase=\"1\" [produto]=\"principal\"></app-video-vsl-por-produto-list>\n\t\t\t</div>\n\t\t  </div>\n\t</div>\n\n\n</div>"
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"principal\">\n\t\t<span>{{principal.nome}}</span>\n\t</div>\n\t<div class=\"dgc-card\">\n\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t<span>Conta: <span *ngIf=\"principal.contaGoogle\">{{principal.contaGoogle.nome}}</span></span>\n\t\t</div>\n\t</div>\n\t<div class=\"dgc-card\">\n\t\t<div>\n\t\t\t<button (click)=\"selectTab(6, principal.id)\">Segmentos</button>\n\t\t\t<button (click)=\"selectTab(1, principal.id)\">Vídeos</button>\n\t\t\t<button (click)=\"selectTab(2, principal.id)\">Criativo Google</button>\n\t\t\t<button (click)=\"selectTab(4, principal.id)\">Anúncio Rede Display</button>\n\t\t\t<button (click)=\"selectTab(3, principal.id)\">Página Venda</button>\n\t\t\t<button (click)=\"selectTab(5, principal.id)\">Campanha Rede Display</button>\n\t\t  </div>\n\t\t  <div *ngIf=\"tabService.selectedTab\">\n\t\t\t<div [ngSwitch]=\"tabService.selectedTab\">\n\t\t\t\t<app-video-vsl-por-produto-list *ngSwitchCase=\"1\" [produto]=\"principal\"></app-video-vsl-por-produto-list>\n\t\t\t\t<app-imagem-conjunto-produto-proprio-list *ngSwitchCase=\"2\" [produto]=\"principal\"></app-imagem-conjunto-produto-proprio-list>\n\t\t\t\t<app-pagina-venda-vsl-por-produto-list *ngSwitchCase=\"3\" [produto]=\"principal\"></app-pagina-venda-vsl-por-produto-list>\n\t\t\t\t<app-anuncio-conceito-ads-rede-display-produto-proprio-list *ngSwitchCase=\"4\" [produto]=\"principal\"></app-anuncio-conceito-ads-rede-display-produto-proprio-list>\n\t\t\t\t<app-campanha-ads-rede-display-produto-proprio-list *ngSwitchCase=\"5\" [produto]=\"principal\"></app-campanha-ads-rede-display-produto-proprio-list>\n\t\t\t\t<app-publico-alvo-ads-palavra-produto-proprio-list *ngSwitchCase=\"6\" [produto]=\"principal\"></app-publico-alvo-ads-palavra-produto-proprio-list>\n\t\t\t</div>\n\t\t  </div>\n\t</div>\n\n\n</div>"
 
 /***/ }),
 
@@ -13691,7 +15297,7 @@ var ProdutoProprioDetalheComponent = /** @class */ (function (_super) {
     }
     ProdutoProprioDetalheComponent.prototype.getFiltro = function () {
         return {
-            'include': 'produtoProprioVersaos'
+            'include': ['produtoProprioVersaos', 'contaGoogle']
         };
     };
     ProdutoProprioDetalheComponent.prototype.selectTab = function (tabNumber, objectId) {
@@ -13823,7 +15429,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>ProdutoProprio</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<textarea rows=\"4\" matInput #descricao [(ngModel)]=\"item.descricao\" name=\"descricao\" placeholder=\"Descrição\">\n\t\t</textarea>\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>ProdutoProprio</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #urlKiwify [(ngModel)]=\"item.urlKiwify\" name=\"urlKiwify\" placeholder=\"Url Kiwify\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n\t\t\t<mat-select placeholder=\"Conta Google Corrente\" #contaGoogleId [(ngModel)]=\"item.contaGoogleId\"\n\t\t\t\tname=\"contaGoogleId\">\n\t\t\t\t<mat-option *ngFor=\"let conta of listaConta\"\n\t\t\t\t\t[ngStyle]=\"{'color': conta.suspensa === 1 ? 'red' : 'inherit'}\" [value]=\"conta.id\">\n\t\t\t\t\t{{ conta.gmail}} ({{conta.nome}})\n\t\t\t\t</mat-option>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #urlIconePaginaVenda [(ngModel)]=\"item.urlIconePaginaVenda\" name=\"urlIconePaginaVenda\" placeholder=\"Url Ícone\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<textarea rows=\"4\" matInput #descricao [(ngModel)]=\"item.descricao\" name=\"descricao\"\n\t\t\t\tplaceholder=\"Descrição\">\n\t\t</textarea>\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>"
 
 /***/ }),
 
@@ -13869,13 +15475,24 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 var ProdutoProprioEditComponent = /** @class */ (function (_super) {
     __extends(ProdutoProprioEditComponent, _super);
-    function ProdutoProprioEditComponent(dialogRef, data, servico) {
+    function ProdutoProprioEditComponent(dialogRef, data, servico, srvConta) {
         var _this = _super.call(this, dialogRef, data, servico) || this;
         _this.dialogRef = dialogRef;
         _this.data = data;
         _this.servico = servico;
+        _this.srvConta = srvConta;
         return _this;
     }
+    ProdutoProprioEditComponent.prototype.preSubmit = function () {
+        delete this.item['contaGoogle'];
+    };
+    ProdutoProprioEditComponent.prototype.montaCombos = function () {
+        var _this = this;
+        this.srvConta.ListaAtivaCampanha()
+            .subscribe(function (result) {
+            _this.listaConta = result;
+        });
+    };
     ProdutoProprioEditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-produto-proprio-edit',
@@ -13883,7 +15500,7 @@ var ProdutoProprioEditComponent = /** @class */ (function (_super) {
             styles: [__webpack_require__(/*! ./produto-proprio-edit.component.css */ "./src/app/produto-proprio-edit/produto-proprio-edit.component.css")]
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ProdutoProprioApi"]])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ProdutoProprioApi"], _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ContaGoogleApi"]])
     ], ProdutoProprioEditComponent);
     return ProdutoProprioEditComponent;
 }(_produto_proprio_edit_base_component__WEBPACK_IMPORTED_MODULE_3__["ProdutoProprioEditBaseComponent"]));
@@ -13994,7 +15611,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>ProdutoProprio</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span class=\"dgc-link\" routerLink=\"/produtoProprioDetalhe/{{item.id}}\">{{item.nome}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Produto Proprio</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span class=\"dgc-link\" routerLink=\"/produtoProprioDetalhe/{{item.id}}\">{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Kiwify: {{item.urlKiwify}}</span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Conta: <span *ngIf=\"item.contaGoogle\">{{item.contaGoogle.nome}}</span></span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -14046,6 +15663,10 @@ var ProdutoProprioListComponent = /** @class */ (function (_super) {
         _this.dialog = dialog;
         return _this;
     }
+    ProdutoProprioListComponent.prototype.getFiltro = function () {
+        var filtro = { 'include': 'contaGoogle' };
+        return filtro;
+    };
     ProdutoProprioListComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-produto-proprio-list',
@@ -14793,7 +16414,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Publico Alvo Palavra-Chave</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<textarea rows=\"4\" matInput #listaPalavra [(ngModel)]=\"item.listaPalavra\" name=\"listaPalavra\" placeholder=\"Lista de PalavraChave separada por vírgula\">\n\t\t</textarea>\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>Publico Alvo Palavra-Chave</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<textarea rows=\"4\" matInput #listaPalavra [(ngModel)]=\"item.listaPalavra\" name=\"listaPalavra\"\n\t\t\t\tplaceholder=\"Lista de PalavraChave separada por vírgula\">\n\t\t</textarea>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\" *ngIf=\"listaConta\">\n\t\t\t<mat-select placeholder=\"Conta Google Corrente\" #contaGoogleId [(ngModel)]=\"item.contaGoogleId\"\n\t\t\t\tname=\"contaGoogleId\">\n\t\t\t\t<mat-option *ngFor=\"let conta of listaConta\"\n\t\t\t\t\t[ngStyle]=\"{'color': conta.suspensa === 1 ? 'red' : 'inherit'}\" [value]=\"conta.id\">\n\t\t\t\t\t{{ conta.gmail}} ({{conta.nome}})\n\t\t\t\t</mat-option>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #pronta [(ngModel)]=\"item.pronta\" name=\"pronta\" placeholder=\"Pronta\" />\n\t\t</mat-form-field>\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>"
 
 /***/ }),
 
@@ -14839,13 +16460,21 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 var PublicoAlvoAdsPalavraEditComponent = /** @class */ (function (_super) {
     __extends(PublicoAlvoAdsPalavraEditComponent, _super);
-    function PublicoAlvoAdsPalavraEditComponent(dialogRef, data, servico) {
+    function PublicoAlvoAdsPalavraEditComponent(dialogRef, data, servico, srvConta) {
         var _this = _super.call(this, dialogRef, data, servico) || this;
         _this.dialogRef = dialogRef;
         _this.data = data;
         _this.servico = servico;
+        _this.srvConta = srvConta;
         return _this;
     }
+    PublicoAlvoAdsPalavraEditComponent.prototype.montaCombos = function () {
+        var _this = this;
+        this.srvConta.ListaAtivaCampanha()
+            .subscribe(function (result) {
+            _this.listaConta = result;
+        });
+    };
     PublicoAlvoAdsPalavraEditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-publico-alvo-ads-palavra-edit',
@@ -14853,7 +16482,7 @@ var PublicoAlvoAdsPalavraEditComponent = /** @class */ (function (_super) {
             styles: [__webpack_require__(/*! ./publico-alvo-ads-palavra-edit.component.css */ "./src/app/publico-alvo-ads-palavra-edit/publico-alvo-ads-palavra-edit.component.css")]
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["PublicoAlvoAdsPalavraApi"]])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["PublicoAlvoAdsPalavraApi"], _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ContaGoogleApi"]])
     ], PublicoAlvoAdsPalavraEditComponent);
     return PublicoAlvoAdsPalavraEditComponent;
 }(_publico_alvo_ads_palavra_edit_base_component__WEBPACK_IMPORTED_MODULE_3__["PublicoAlvoAdsPalavraEditBaseComponent"]));
@@ -15026,6 +16655,550 @@ var PublicoAlvoAdsPalavraListComponent = /** @class */ (function (_super) {
     ], PublicoAlvoAdsPalavraListComponent);
     return PublicoAlvoAdsPalavraListComponent;
 }(_publico_alvo_ads_palavra_list_base_component__WEBPACK_IMPORTED_MODULE_4__["PublicoAlvoAdsPalavraListBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list-base.component.ts":
+/*!*******************************************************************************************************************************!*\
+  !*** ./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list-base.component.ts ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: PublicoAlvoAdsPalavraProdutoProprioListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsPalavraProdutoProprioListBaseComponent", function() { return PublicoAlvoAdsPalavraProdutoProprioListBaseComponent; });
+/* harmony import */ var _publico_alvo_ads_palavra_edit_publico_alvo_ads_palavra_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../publico-alvo-ads-palavra-edit/publico-alvo-ads-palavra-edit.component */ "./src/app/publico-alvo-ads-palavra-edit/publico-alvo-ads-palavra-edit.component.ts");
+
+var PublicoAlvoAdsPalavraProdutoProprioListBaseComponent = /** @class */ (function () {
+    function PublicoAlvoAdsPalavraProdutoProprioListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.preCarregaTela = function () { };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.posCarregaLista = function () { };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao
+            }
+        });
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.getComponente = function () {
+        return _publico_alvo_ads_palavra_edit_publico_alvo_ads_palavra_edit_component__WEBPACK_IMPORTED_MODULE_0__["PublicoAlvoAdsPalavraEditComponent"];
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.getDialogo1 = function () {
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.getDialogo2 = function () {
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return PublicoAlvoAdsPalavraProdutoProprioListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.css":
+/*!***************************************************************************************************************************!*\
+  !*** ./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.css ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.html":
+/*!****************************************************************************************************************************!*\
+  !*** ./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.html ***!
+  \****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Publico Alvo Google por Palavra</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-card\">\n\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t<span>Gerador de páginas: CriaPublicoAdsPalavraDireto</span>\n\t\t</div>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Conta: <span *ngIf=\"item.contaGoogle\">{{item.contaGoogle.nome}}</span></span>\n\t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Pronta: {{item.pronta}}</span>\n\t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.ts":
+/*!**************************************************************************************************************************!*\
+  !*** ./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.ts ***!
+  \**************************************************************************************************************************/
+/*! exports provided: PublicoAlvoAdsPalavraProdutoProprioListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsPalavraProdutoProprioListComponent", function() { return PublicoAlvoAdsPalavraProdutoProprioListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _publico_alvo_ads_palavra_produto_proprio_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./publico-alvo-ads-palavra-produto-proprio-list-base.component */ "./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list-base.component.ts");
+/* harmony import */ var _shared_sdk_models_ProdutoProprio__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/sdk/models/ProdutoProprio */ "./src/app/shared/sdk/models/ProdutoProprio.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var PublicoAlvoAdsPalavraProdutoProprioListComponent = /** @class */ (function (_super) {
+    __extends(PublicoAlvoAdsPalavraProdutoProprioListComponent, _super);
+    function PublicoAlvoAdsPalavraProdutoProprioListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    PublicoAlvoAdsPalavraProdutoProprioListComponent.prototype.getFiltro = function () {
+        var filtro = {
+            'where': { 'produtoProprioId': this.produto.id },
+            'include': 'contaGoogle'
+        };
+        console.log('filtro-produto:', filtro);
+        return filtro;
+    };
+    PublicoAlvoAdsPalavraProdutoProprioListComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao,
+                origem: this.produto
+            }
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _shared_sdk_models_ProdutoProprio__WEBPACK_IMPORTED_MODULE_5__["ProdutoProprio"])
+    ], PublicoAlvoAdsPalavraProdutoProprioListComponent.prototype, "produto", void 0);
+    PublicoAlvoAdsPalavraProdutoProprioListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-publico-alvo-ads-palavra-produto-proprio-list',
+            template: __webpack_require__(/*! ./publico-alvo-ads-palavra-produto-proprio-list.component.html */ "./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.html"),
+            styles: [__webpack_require__(/*! ./publico-alvo-ads-palavra-produto-proprio-list.component.css */ "./src/app/publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["PublicoAlvoAdsPalavraApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], PublicoAlvoAdsPalavraProdutoProprioListComponent);
+    return PublicoAlvoAdsPalavraProdutoProprioListComponent;
+}(_publico_alvo_ads_palavra_produto_proprio_list_base_component__WEBPACK_IMPORTED_MODULE_4__["PublicoAlvoAdsPalavraProdutoProprioListBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/script-gera-video-edit/script-gera-video-edit-base.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/script-gera-video-edit/script-gera-video-edit-base.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: ScriptGeraVideoEditBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideoEditBaseComponent", function() { return ScriptGeraVideoEditBaseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+var ScriptGeraVideoEditBaseComponent = /** @class */ (function () {
+    function ScriptGeraVideoEditBaseComponent(dialogRef, data, servico) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.servico = servico;
+    }
+    ScriptGeraVideoEditBaseComponent.prototype.ngOnInit = function () {
+        console.log("Data(BaseEdit):", this.data);
+        if (this.data.origem) {
+            this.origem = this.data.origem;
+        }
+        if (!this.data.item) {
+            console.log("fluxo nova");
+            this.item = this.criaItem();
+        }
+        else {
+            console.log('fluxo altera');
+            this.item = this.data.item;
+            console.log('Item(BaseEdit):', this.item);
+        }
+        this.montaCombos();
+        this.posItem();
+    };
+    ScriptGeraVideoEditBaseComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.preSubmit();
+        console.log('Submit(BaseEdit):', this.item);
+        this.servico.upsert(this.item, function (err, obj) {
+            if (err) {
+                console.log("ErroUpsert:" + JSON.stringify(err));
+            }
+            else {
+            }
+            _this.posSubmit();
+        }).subscribe(function (e) {
+            console.log(JSON.stringify(e));
+            _this.closeDialog();
+        });
+    };
+    ScriptGeraVideoEditBaseComponent.prototype.preSubmit = function () {
+    };
+    ScriptGeraVideoEditBaseComponent.prototype.closeDialog = function () {
+        this.dialogRef.close('Pizza!');
+    };
+    ScriptGeraVideoEditBaseComponent.prototype.criaItem = function () {
+        return new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ScriptGeraVideo"]();
+    };
+    ScriptGeraVideoEditBaseComponent.prototype.montaCombos = function () {
+    };
+    ScriptGeraVideoEditBaseComponent.prototype.posItem = function () {
+    };
+    ScriptGeraVideoEditBaseComponent.prototype.posSubmit = function () {
+    };
+    ScriptGeraVideoEditBaseComponent = __decorate([
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ScriptGeraVideoApi"]])
+    ], ScriptGeraVideoEditBaseComponent);
+    return ScriptGeraVideoEditBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/script-gera-video-edit/script-gera-video-edit.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/script-gera-video-edit/script-gera-video-edit.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/script-gera-video-edit/script-gera-video-edit.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/script-gera-video-edit/script-gera-video-edit.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>ScriptGeraVideo</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<textarea rows=\"4\" matInput #descricao [(ngModel)]=\"item.descricao\" name=\"descricao\" placeholder=\"Descrição\">\n\t\t</textarea>\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>\n"
+
+/***/ }),
+
+/***/ "./src/app/script-gera-video-edit/script-gera-video-edit.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/script-gera-video-edit/script-gera-video-edit.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: ScriptGeraVideoEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideoEditComponent", function() { return ScriptGeraVideoEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _script_gera_video_edit_base_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./script-gera-video-edit-base.component */ "./src/app/script-gera-video-edit/script-gera-video-edit-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var ScriptGeraVideoEditComponent = /** @class */ (function (_super) {
+    __extends(ScriptGeraVideoEditComponent, _super);
+    function ScriptGeraVideoEditComponent(dialogRef, data, servico) {
+        var _this = _super.call(this, dialogRef, data, servico) || this;
+        _this.dialogRef = dialogRef;
+        _this.data = data;
+        _this.servico = servico;
+        return _this;
+    }
+    ScriptGeraVideoEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-script-gera-video-edit',
+            template: __webpack_require__(/*! ./script-gera-video-edit.component.html */ "./src/app/script-gera-video-edit/script-gera-video-edit.component.html"),
+            styles: [__webpack_require__(/*! ./script-gera-video-edit.component.css */ "./src/app/script-gera-video-edit/script-gera-video-edit.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["ScriptGeraVideoApi"]])
+    ], ScriptGeraVideoEditComponent);
+    return ScriptGeraVideoEditComponent;
+}(_script_gera_video_edit_base_component__WEBPACK_IMPORTED_MODULE_3__["ScriptGeraVideoEditBaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/script-gera-video-list/script-gera-video-list-base.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/script-gera-video-list/script-gera-video-list-base.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: ScriptGeraVideoListBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideoListBaseComponent", function() { return ScriptGeraVideoListBaseComponent; });
+/* harmony import */ var _script_gera_video_edit_script_gera_video_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../script-gera-video-edit/script-gera-video-edit.component */ "./src/app/script-gera-video-edit/script-gera-video-edit.component.ts");
+
+var ScriptGeraVideoListBaseComponent = /** @class */ (function () {
+    function ScriptGeraVideoListBaseComponent(srv, router, dialog) {
+        this.srv = srv;
+        this.router = router;
+        this.dialog = dialog;
+    }
+    ScriptGeraVideoListBaseComponent.prototype.ngOnInit = function () {
+        this.preCarregaTela();
+        this.carregaTela();
+    };
+    ScriptGeraVideoListBaseComponent.prototype.preCarregaTela = function () { };
+    ScriptGeraVideoListBaseComponent.prototype.posCarregaLista = function () { };
+    ScriptGeraVideoListBaseComponent.prototype.carregaTela = function () {
+        var _this = this;
+        this.srv.find(this.getFiltro())
+            .subscribe(function (result) {
+            console.log('result: ', result);
+            _this.listaBase = result;
+            _this.posCarregaLista();
+        });
+    };
+    ScriptGeraVideoListBaseComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao
+            }
+        });
+    };
+    ScriptGeraVideoListBaseComponent.prototype.getComponente = function () {
+        return _script_gera_video_edit_script_gera_video_edit_component__WEBPACK_IMPORTED_MODULE_0__["ScriptGeraVideoEditComponent"];
+    };
+    ScriptGeraVideoListBaseComponent.prototype.dialogo1 = function (dados) {
+        var _this = this;
+        console.log('dialogo1.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ScriptGeraVideoListBaseComponent.prototype.getDialogo1 = function () {
+    };
+    ScriptGeraVideoListBaseComponent.prototype.dialogo2 = function (dados) {
+        var _this = this;
+        console.log('dialogo2.dados:', dados);
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    };
+    ScriptGeraVideoListBaseComponent.prototype.getDialogo2 = function () {
+    };
+    ScriptGeraVideoListBaseComponent.prototype.getFiltro = function () {
+        return {};
+    };
+    return ScriptGeraVideoListBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/script-gera-video-list/script-gera-video-list.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/script-gera-video-list/script-gera-video-list.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/script-gera-video-list/script-gera-video-list.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/script-gera-video-list/script-gera-video-list.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>ScriptGeraVideo</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/script-gera-video-list/script-gera-video-list.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/script-gera-video-list/script-gera-video-list.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: ScriptGeraVideoListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideoListComponent", function() { return ScriptGeraVideoListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_sdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/sdk */ "./src/app/shared/sdk/index.ts");
+/* harmony import */ var _script_gera_video_list_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./script-gera-video-list-base.component */ "./src/app/script-gera-video-list/script-gera-video-list-base.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ScriptGeraVideoListComponent = /** @class */ (function (_super) {
+    __extends(ScriptGeraVideoListComponent, _super);
+    function ScriptGeraVideoListComponent(srv, router, dialog) {
+        var _this = _super.call(this, srv, router, dialog) || this;
+        _this.srv = srv;
+        _this.router = router;
+        _this.dialog = dialog;
+        return _this;
+    }
+    ScriptGeraVideoListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-script-gera-video-list',
+            template: __webpack_require__(/*! ./script-gera-video-list.component.html */ "./src/app/script-gera-video-list/script-gera-video-list.component.html"),
+            styles: [__webpack_require__(/*! ./script-gera-video-list.component.css */ "./src/app/script-gera-video-list/script-gera-video-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["ScriptGeraVideoApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], ScriptGeraVideoListComponent);
+    return ScriptGeraVideoListComponent;
+}(_script_gera_video_list_base_component__WEBPACK_IMPORTED_MODULE_4__["ScriptGeraVideoListBaseComponent"]));
 
 
 
@@ -15390,7 +17563,7 @@ var SecaoWebPorProdutoListComponent = /** @class */ (function (_super) {
 /*!*************************************!*\
   !*** ./src/app/shared/sdk/index.ts ***!
   \*************************************/
-/*! exports provided: SDKBrowserModule, LoopBackConfig, CookieBrowser, StorageBrowser, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, ProdutoAfiliadoHotmartPendente, SegmentoMercadoAdsPersonalizado, PaginaVendaSecao, SecaoWeb, ProdutoProprio, ProdutoProprioVersao, ProdutoProprioItemNivel1, PaginaVendaScroll, EvolucaoExperimento, CampanhaAdsExperimento, ExperimentoModelo, ModeloPaginaVenda, PosicaoElementoPaginaVenda, ElementoModeloPaginaVenda, VersaoPaginaVenda, ConteudoElemento, DalleSolicitacaoImagem, ArquivoPaginaVenda, ImagemPaginaVenda, ProdutoAfiliadoClickbank, VersaoImagemPaginaVenda, PixelAdsSegmentoMercado, PaginaVendaPropria, LoadPaginaVendaPropria, ScrollPaginaVendaPropria, AnuncioCampanhaAdsRedeDisplay, GrupoCampanhaAdsRedeDisplay, SolicitacaoCheckoutPaginaVendaPropria, ContaPublicoAlvoAdsPalavra, PublicoAlvoAdsPalavra, ProdutoPublicoAdsPalavra, PixelProdutoHotmartConta, PixelProdutoHotmartContaCheckout, PixelProdutoHotmartContaCompra, ArtigoParaProduto, ProdutoHotmartConta, AnuncioConceitoAdsRedeDisplay, MetricaCampanhaAdsRedeDisplay, VideoVsl, PaginaVendaVsl, TrechoVsl, AccessToken, SDKToken, FireLoopRef, ErrorHandler, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SegmentoMercadoAdsPersonalizadoApi, PaginaVendaSecaoApi, SecaoWebApi, ProdutoProprioApi, ProdutoProprioVersaoApi, ProdutoProprioItemNivel1Api, PaginaVendaScrollApi, EvolucaoExperimentoApi, CampanhaAdsExperimentoApi, ExperimentoModeloApi, ModeloPaginaVendaApi, PosicaoElementoPaginaVendaApi, ElementoModeloPaginaVendaApi, VersaoPaginaVendaApi, ConteudoElementoApi, DalleSolicitacaoImagemApi, ArquivoPaginaVendaApi, ImagemPaginaVendaApi, ProdutoAfiliadoClickbankApi, VersaoImagemPaginaVendaApi, PixelAdsSegmentoMercadoApi, PaginaVendaPropriaApi, LoadPaginaVendaPropriaApi, ScrollPaginaVendaPropriaApi, AnuncioCampanhaAdsRedeDisplayApi, GrupoCampanhaAdsRedeDisplayApi, SolicitacaoCheckoutPaginaVendaPropriaApi, ContaPublicoAlvoAdsPalavraApi, PublicoAlvoAdsPalavraApi, ProdutoPublicoAdsPalavraApi, PixelProdutoHotmartContaApi, PixelProdutoHotmartContaCheckoutApi, PixelProdutoHotmartContaCompraApi, ArtigoParaProdutoApi, ProdutoHotmartContaApi, AnuncioConceitoAdsRedeDisplayApi, MetricaCampanhaAdsRedeDisplayApi, VideoVslApi, PaginaVendaVslApi, TrechoVslApi, SDKModels, BaseStorage, InternalStorage, SDKStorage, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, LoggerService */
+/*! exports provided: SDKBrowserModule, LoopBackConfig, CookieBrowser, StorageBrowser, User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, ProdutoAfiliadoHotmartPendente, SegmentoMercadoAdsPersonalizado, PaginaVendaSecao, SecaoWeb, ProdutoProprio, ProdutoProprioVersao, ProdutoProprioItemNivel1, PaginaVendaScroll, EvolucaoExperimento, CampanhaAdsExperimento, ExperimentoModelo, ModeloPaginaVenda, PosicaoElementoPaginaVenda, ElementoModeloPaginaVenda, VersaoPaginaVenda, ConteudoElemento, DalleSolicitacaoImagem, ArquivoPaginaVenda, ImagemPaginaVenda, ProdutoAfiliadoClickbank, VersaoImagemPaginaVenda, PixelAdsSegmentoMercado, PaginaVendaPropria, LoadPaginaVendaPropria, ScrollPaginaVendaPropria, AnuncioCampanhaAdsRedeDisplay, GrupoCampanhaAdsRedeDisplay, SolicitacaoCheckoutPaginaVendaPropria, ContaPublicoAlvoAdsPalavra, PublicoAlvoAdsPalavra, ProdutoPublicoAdsPalavra, PixelProdutoHotmartConta, PixelProdutoHotmartContaCheckout, PixelProdutoHotmartContaCompra, ArtigoParaProduto, ProdutoHotmartConta, AnuncioConceitoAdsRedeDisplay, MetricaCampanhaAdsRedeDisplay, VideoVsl, PaginaVendaVsl, TrechoVsl, ModeloPaginaVendaVsl, ScriptGeraVideo, AccessToken, SDKToken, FireLoopRef, ErrorHandler, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SegmentoMercadoAdsPersonalizadoApi, PaginaVendaSecaoApi, SecaoWebApi, ProdutoProprioApi, ProdutoProprioVersaoApi, ProdutoProprioItemNivel1Api, PaginaVendaScrollApi, EvolucaoExperimentoApi, CampanhaAdsExperimentoApi, ExperimentoModeloApi, ModeloPaginaVendaApi, PosicaoElementoPaginaVendaApi, ElementoModeloPaginaVendaApi, VersaoPaginaVendaApi, ConteudoElementoApi, DalleSolicitacaoImagemApi, ArquivoPaginaVendaApi, ImagemPaginaVendaApi, ProdutoAfiliadoClickbankApi, VersaoImagemPaginaVendaApi, PixelAdsSegmentoMercadoApi, PaginaVendaPropriaApi, LoadPaginaVendaPropriaApi, ScrollPaginaVendaPropriaApi, AnuncioCampanhaAdsRedeDisplayApi, GrupoCampanhaAdsRedeDisplayApi, SolicitacaoCheckoutPaginaVendaPropriaApi, ContaPublicoAlvoAdsPalavraApi, PublicoAlvoAdsPalavraApi, ProdutoPublicoAdsPalavraApi, PixelProdutoHotmartContaApi, PixelProdutoHotmartContaCheckoutApi, PixelProdutoHotmartContaCompraApi, ArtigoParaProdutoApi, ProdutoHotmartContaApi, AnuncioConceitoAdsRedeDisplayApi, MetricaCampanhaAdsRedeDisplayApi, VideoVslApi, PaginaVendaVslApi, TrechoVslApi, ModeloPaginaVendaVslApi, ScriptGeraVideoApi, SDKModels, BaseStorage, InternalStorage, SDKStorage, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15492,364 +17665,374 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_custom_VideoVsl__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! ./services/custom/VideoVsl */ "./src/app/shared/sdk/services/custom/VideoVsl.ts");
 /* harmony import */ var _services_custom_PaginaVendaVsl__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! ./services/custom/PaginaVendaVsl */ "./src/app/shared/sdk/services/custom/PaginaVendaVsl.ts");
 /* harmony import */ var _services_custom_TrechoVsl__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(/*! ./services/custom/TrechoVsl */ "./src/app/shared/sdk/services/custom/TrechoVsl.ts");
-/* harmony import */ var _models_index__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! ./models/index */ "./src/app/shared/sdk/models/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["User"]; });
+/* harmony import */ var _services_custom_ModeloPaginaVendaVsl__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! ./services/custom/ModeloPaginaVendaVsl */ "./src/app/shared/sdk/services/custom/ModeloPaginaVendaVsl.ts");
+/* harmony import */ var _services_custom_ScriptGeraVideo__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! ./services/custom/ScriptGeraVideo */ "./src/app/shared/sdk/services/custom/ScriptGeraVideo.ts");
+/* harmony import */ var _models_index__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! ./models/index */ "./src/app/shared/sdk/models/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["User"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PlataformaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PlataformaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoPlataforma"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoPlataforma"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["VisitaProdutoPlataforma"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataforma", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["VisitaProdutoPlataforma"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["VisitaProdutoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["VisitaProdutoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcesso", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["TokenAcesso"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcesso", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["TokenAcesso"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChave", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["IdeiaPalavraChave"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChave", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["IdeiaPalavraChave"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["CampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["CampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AnuncioCampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AnuncioCampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PalavraCampanhaAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PalavraCampanhaAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoAfiliadoHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoAfiliadoHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AgendaVisitaHotmart"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmart", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AgendaVisitaHotmart"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["CampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["CampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AnuncioAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AnuncioAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ModeloCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ModeloCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PixelGoogle"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PixelGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PalavraChaveCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PalavraChaveCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AnuncioCampanhaAdsTeste"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTeste", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AnuncioCampanhaAdsTeste"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["FacebookConta"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["FacebookConta"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoAfiliadoMetrica"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoAfiliadoMetrica"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ContaGoogle"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogle", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ContaGoogle"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["CampanhaAdsMetrica"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetrica", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["CampanhaAdsMetrica"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["LoadPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["LoadPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["SolicitacaoCheckout"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["SolicitacaoCheckout"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProduto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PlanoProduto"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProduto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PlanoProduto"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMes", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ContaGoogleMetricaMes"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMes", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ContaGoogleMetricaMes"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["LinkCheckout"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["LinkCheckout"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntraday", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["CampanhaAdsMetricaIntraday"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntraday", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["CampanhaAdsMetricaIntraday"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PrecoProdutoAfiliado"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PrecoProdutoAfiliado"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AnuncioAdsDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AnuncioAdsDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Visitante", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["Visitante"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Visitante", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["Visitante"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["VideoExecucao"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["VideoExecucao"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlink", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoAfiliadoHotlink"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlink", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoAfiliadoHotlink"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["TagIdSecaoPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["TagIdSecaoPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["CampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["CampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["OtimizacaoCampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["OtimizacaoCampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ListaRemarketingAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ListaRemarketingAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PublicoAlvoAds"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAds", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PublicoAlvoAds"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiario", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PublicoAlvoAdsDiario"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiario", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PublicoAlvoAdsDiario"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AnuncioCampanhaAdsDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AnuncioCampanhaAdsDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjunto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ImagemConjunto"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjunto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ImagemConjunto"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendente", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoAfiliadoHotmartPendente"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendente", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoAfiliadoHotmartPendente"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SegmentoMercadoAdsPersonalizado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["SegmentoMercadoAdsPersonalizado"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SegmentoMercadoAdsPersonalizado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["SegmentoMercadoAdsPersonalizado"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaSecao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PaginaVendaSecao"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaSecao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PaginaVendaSecao"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SecaoWeb", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["SecaoWeb"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SecaoWeb", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["SecaoWeb"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprio", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoProprio"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprio", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoProprio"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioVersao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoProprioVersao"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioVersao", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoProprioVersao"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioItemNivel1", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoProprioItemNivel1"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioItemNivel1", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoProprioItemNivel1"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaScroll", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PaginaVendaScroll"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaScroll", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PaginaVendaScroll"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EvolucaoExperimento", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["EvolucaoExperimento"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EvolucaoExperimento", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["EvolucaoExperimento"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsExperimento", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["CampanhaAdsExperimento"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsExperimento", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["CampanhaAdsExperimento"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ExperimentoModelo", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ExperimentoModelo"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ExperimentoModelo", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ExperimentoModelo"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ModeloPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ModeloPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PosicaoElementoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PosicaoElementoPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PosicaoElementoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PosicaoElementoPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ElementoModeloPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ElementoModeloPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ElementoModeloPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ElementoModeloPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VersaoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["VersaoPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VersaoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["VersaoPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ConteudoElemento", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ConteudoElemento"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ConteudoElemento", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ConteudoElemento"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DalleSolicitacaoImagem", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["DalleSolicitacaoImagem"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DalleSolicitacaoImagem", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["DalleSolicitacaoImagem"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ArquivoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ArquivoPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ArquivoPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ArquivoPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ImagemPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ImagemPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoClickbank", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoAfiliadoClickbank"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoClickbank", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoAfiliadoClickbank"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VersaoImagemPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["VersaoImagemPaginaVenda"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VersaoImagemPaginaVenda", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["VersaoImagemPaginaVenda"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelAdsSegmentoMercado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PixelAdsSegmentoMercado"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelAdsSegmentoMercado", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PixelAdsSegmentoMercado"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaPropria", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PaginaVendaPropria"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaPropria", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PaginaVendaPropria"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaPropria", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["LoadPaginaVendaPropria"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaPropria", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["LoadPaginaVendaPropria"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollPaginaVendaPropria", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ScrollPaginaVendaPropria"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollPaginaVendaPropria", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ScrollPaginaVendaPropria"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AnuncioCampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AnuncioCampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GrupoCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["GrupoCampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GrupoCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["GrupoCampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutPaginaVendaPropria", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["SolicitacaoCheckoutPaginaVendaPropria"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutPaginaVendaPropria", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["SolicitacaoCheckoutPaginaVendaPropria"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaPublicoAlvoAdsPalavra", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ContaPublicoAlvoAdsPalavra"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaPublicoAlvoAdsPalavra", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ContaPublicoAlvoAdsPalavra"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsPalavra", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PublicoAlvoAdsPalavra"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsPalavra", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PublicoAlvoAdsPalavra"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPublicoAdsPalavra", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoPublicoAdsPalavra"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPublicoAdsPalavra", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoPublicoAdsPalavra"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PixelProdutoHotmartConta"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PixelProdutoHotmartConta"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PixelProdutoHotmartContaCheckout"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaCheckout", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PixelProdutoHotmartContaCheckout"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaCompra", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PixelProdutoHotmartContaCompra"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaCompra", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PixelProdutoHotmartContaCompra"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ArtigoParaProduto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ArtigoParaProduto"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ArtigoParaProduto", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ArtigoParaProduto"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["ProdutoHotmartConta"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartConta", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ProdutoHotmartConta"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioConceitoAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AnuncioConceitoAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioConceitoAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AnuncioConceitoAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MetricaCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["MetricaCampanhaAdsRedeDisplay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MetricaCampanhaAdsRedeDisplay", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["MetricaCampanhaAdsRedeDisplay"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoVsl", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["VideoVsl"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoVsl", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["VideoVsl"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaVsl", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["PaginaVendaVsl"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaVsl", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["PaginaVendaVsl"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrechoVsl", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["TrechoVsl"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrechoVsl", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["TrechoVsl"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["AccessToken"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVsl", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ModeloPaginaVendaVsl"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["SDKToken"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideo", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["ScriptGeraVideo"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _models_index__WEBPACK_IMPORTED_MODULE_96__["FireLoopRef"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["AccessToken"]; });
 
-/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ErrorHandler"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["SDKToken"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ModeloCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _models_index__WEBPACK_IMPORTED_MODULE_98__["FireLoopRef"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PixelGoogleApi"]; });
+/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_99__ = __webpack_require__(/*! ./services/index */ "./src/app/shared/sdk/services/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorHandler", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ErrorHandler"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PalavraChaveCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PalavraChaveCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["AnuncioCampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["AnuncioCampanhaAdsTesteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["FacebookContaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FacebookContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["FacebookContaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoAfiliadoMetricaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoAfiliadoMetricaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ContaGoogleApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ContaGoogleApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["CampanhaAdsMetricaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["CampanhaAdsMetricaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["LoadPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["LoadPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["SolicitacaoCheckoutApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["SolicitacaoCheckoutApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProdutoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PlanoProdutoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlanoProdutoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PlanoProdutoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMesApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ContaGoogleMetricaMesApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaGoogleMetricaMesApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ContaGoogleMetricaMesApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["LinkCheckoutApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinkCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["LinkCheckoutApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntradayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["CampanhaAdsMetricaIntradayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsMetricaIntradayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["CampanhaAdsMetricaIntradayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PrecoProdutoAfiliadoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PrecoProdutoAfiliadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PrecoProdutoAfiliadoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["AnuncioAdsDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["AnuncioAdsDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["VisitanteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitanteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["VisitanteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["VideoExecucaoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoExecucaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["VideoExecucaoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoAfiliadoHotlinkApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotlinkApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoAfiliadoHotlinkApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["TagIdSecaoPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagIdSecaoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["TagIdSecaoPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["CampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["CampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OtimizacaoCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["OtimizacaoCampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ListaRemarketingAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListaRemarketingAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ListaRemarketingAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PublicoAlvoAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PublicoAlvoAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiarioApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PublicoAlvoAdsDiarioApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsDiarioApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PublicoAlvoAdsDiarioApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["AnuncioCampanhaAdsDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["AnuncioCampanhaAdsDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ImagemConjuntoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemConjuntoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ImagemConjuntoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendenteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoAfiliadoHotmartPendenteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartPendenteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoAfiliadoHotmartPendenteApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SegmentoMercadoAdsPersonalizadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["SegmentoMercadoAdsPersonalizadoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SegmentoMercadoAdsPersonalizadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["SegmentoMercadoAdsPersonalizadoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaSecaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PaginaVendaSecaoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaSecaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PaginaVendaSecaoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SecaoWebApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["SecaoWebApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SecaoWebApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["SecaoWebApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoProprioApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoProprioApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioVersaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoProprioVersaoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioVersaoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoProprioVersaoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioItemNivel1Api", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoProprioItemNivel1Api"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoProprioItemNivel1Api", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoProprioItemNivel1Api"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaScrollApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PaginaVendaScrollApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaScrollApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PaginaVendaScrollApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EvolucaoExperimentoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["EvolucaoExperimentoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EvolucaoExperimentoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["EvolucaoExperimentoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsExperimentoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["CampanhaAdsExperimentoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsExperimentoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["CampanhaAdsExperimentoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ExperimentoModeloApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ExperimentoModeloApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ExperimentoModeloApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ExperimentoModeloApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ModeloPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ModeloPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PosicaoElementoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PosicaoElementoPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PosicaoElementoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PosicaoElementoPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ElementoModeloPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ElementoModeloPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ElementoModeloPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ElementoModeloPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VersaoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["VersaoPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VersaoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["VersaoPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ConteudoElementoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ConteudoElementoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ConteudoElementoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ConteudoElementoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DalleSolicitacaoImagemApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["DalleSolicitacaoImagemApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DalleSolicitacaoImagemApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["DalleSolicitacaoImagemApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ArquivoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ArquivoPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ArquivoPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ArquivoPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ImagemPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ImagemPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ImagemPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoClickbankApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoAfiliadoClickbankApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoClickbankApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoAfiliadoClickbankApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VersaoImagemPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["VersaoImagemPaginaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VersaoImagemPaginaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["VersaoImagemPaginaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelAdsSegmentoMercadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PixelAdsSegmentoMercadoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelAdsSegmentoMercadoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PixelAdsSegmentoMercadoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaPropriaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PaginaVendaPropriaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaPropriaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PaginaVendaPropriaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaPropriaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["LoadPaginaVendaPropriaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoadPaginaVendaPropriaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["LoadPaginaVendaPropriaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollPaginaVendaPropriaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ScrollPaginaVendaPropriaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollPaginaVendaPropriaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ScrollPaginaVendaPropriaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["AnuncioCampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["AnuncioCampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GrupoCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["GrupoCampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GrupoCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["GrupoCampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutPaginaVendaPropriaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["SolicitacaoCheckoutPaginaVendaPropriaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SolicitacaoCheckoutPaginaVendaPropriaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["SolicitacaoCheckoutPaginaVendaPropriaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaPublicoAlvoAdsPalavraApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ContaPublicoAlvoAdsPalavraApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContaPublicoAlvoAdsPalavraApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ContaPublicoAlvoAdsPalavraApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsPalavraApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PublicoAlvoAdsPalavraApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PublicoAlvoAdsPalavraApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PublicoAlvoAdsPalavraApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPublicoAdsPalavraApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoPublicoAdsPalavraApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPublicoAdsPalavraApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoPublicoAdsPalavraApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PixelProdutoHotmartContaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PixelProdutoHotmartContaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PixelProdutoHotmartContaCheckoutApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaCheckoutApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PixelProdutoHotmartContaCheckoutApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaCompraApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PixelProdutoHotmartContaCompraApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelProdutoHotmartContaCompraApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PixelProdutoHotmartContaCompraApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ArtigoParaProdutoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ArtigoParaProdutoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ArtigoParaProdutoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ArtigoParaProdutoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoHotmartContaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartContaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoHotmartContaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioConceitoAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["AnuncioConceitoAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioConceitoAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["AnuncioConceitoAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MetricaCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["MetricaCampanhaAdsRedeDisplayApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MetricaCampanhaAdsRedeDisplayApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["MetricaCampanhaAdsRedeDisplayApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoVslApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["VideoVslApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VideoVslApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["VideoVslApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaVslApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PaginaVendaVslApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginaVendaVslApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PaginaVendaVslApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrechoVslApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["TrechoVslApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrechoVslApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["TrechoVslApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["SDKModels"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVslApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ModeloPaginaVendaVslApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["LoopBackAuth"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ScriptGeraVideoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["BaseLoopBackApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["SDKModels"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["RealTime"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackAuth", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["LoopBackAuth"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["UserApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseLoopBackApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["BaseLoopBackApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PlataformaVendaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["RealTime"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoPlataformaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["UserApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["VisitaProdutoPlataformaApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlataformaVendaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PlataformaVendaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoPlataformaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["VisitaProdutoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoPlataformaApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["VisitaProdutoPlataformaApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcessoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["TokenAcessoApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChaveApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["IdeiaPalavraChaveApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VisitaProdutoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["VisitaProdutoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["CampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TokenAcessoApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["TokenAcessoApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["AnuncioCampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IdeiaPalavraChaveApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["IdeiaPalavraChaveApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["PalavraCampanhaAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["CampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["ProdutoAfiliadoHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["AnuncioCampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["AgendaVisitaHotmartApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraCampanhaAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PalavraCampanhaAdsApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["CampanhaAdsTesteApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProdutoAfiliadoHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ProdutoAfiliadoHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["AnuncioAdsApi"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AgendaVisitaHotmartApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["AgendaVisitaHotmartApi"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_97__["LoggerService"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["CampanhaAdsTesteApi"]; });
 
-/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! ./lb.config */ "./src/app/shared/sdk/lb.config.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return _lb_config__WEBPACK_IMPORTED_MODULE_98__["LoopBackConfig"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["AnuncioAdsApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["ModeloCampanhaAdsTesteApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["PixelGoogleApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_index__WEBPACK_IMPORTED_MODULE_99__["LoggerService"]; });
+
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(/*! ./lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoopBackConfig", function() { return _lb_config__WEBPACK_IMPORTED_MODULE_100__["LoopBackConfig"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseStorage", function() { return _storage_storage_swaps__WEBPACK_IMPORTED_MODULE_4__["BaseStorage"]; });
 
@@ -15903,6 +18086,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 * export class AppModule { }
 *
 **/
+
+
 
 
 
@@ -16108,6 +18293,8 @@ var SDKBrowserModule = /** @class */ (function () {
                 _services_custom_VideoVsl__WEBPACK_IMPORTED_MODULE_93__["VideoVslApi"],
                 _services_custom_PaginaVendaVsl__WEBPACK_IMPORTED_MODULE_94__["PaginaVendaVslApi"],
                 _services_custom_TrechoVsl__WEBPACK_IMPORTED_MODULE_95__["TrechoVslApi"],
+                _services_custom_ModeloPaginaVendaVsl__WEBPACK_IMPORTED_MODULE_96__["ModeloPaginaVendaVslApi"],
+                _services_custom_ScriptGeraVideo__WEBPACK_IMPORTED_MODULE_97__["ScriptGeraVideoApi"],
                 internalStorageProvider,
                 { provide: _storage_storage_swaps__WEBPACK_IMPORTED_MODULE_4__["SDKStorage"], useClass: _storage_storage_browser__WEBPACK_IMPORTED_MODULE_9__["StorageBrowser"] }
             ]
@@ -17966,6 +20153,14 @@ var CampanhaAdsRedeDisplay = /** @class */ (function () {
                     name: 'imagemConjuntoId',
                     type: 'number'
                 },
+                "produtoProprioId": {
+                    name: 'produtoProprioId',
+                    type: 'number'
+                },
+                "paginaVendaVslId": {
+                    name: 'paginaVendaVslId',
+                    type: 'number'
+                },
                 "id": {
                     name: 'id',
                     type: 'number'
@@ -17998,6 +20193,14 @@ var CampanhaAdsRedeDisplay = /** @class */ (function () {
                     model: 'ImagemConjunto',
                     relationType: 'belongsTo',
                     keyFrom: 'imagemConjuntoId',
+                    keyTo: 'id'
+                },
+                produtoProprio: {
+                    name: 'produtoProprio',
+                    type: 'ProdutoProprio',
+                    model: 'ProdutoProprio',
+                    relationType: 'belongsTo',
+                    keyFrom: 'produtoProprioId',
                     keyTo: 'id'
                 },
                 paginaVendaPropria: {
@@ -18047,6 +20250,14 @@ var CampanhaAdsRedeDisplay = /** @class */ (function () {
                     relationType: 'hasMany',
                     keyFrom: 'id',
                     keyTo: 'campanhaAdsRedeDisplayId'
+                },
+                paginaVendaVsl: {
+                    name: 'paginaVendaVsl',
+                    type: 'PaginaVendaVsl',
+                    model: 'PaginaVendaVsl',
+                    relationType: 'belongsTo',
+                    keyFrom: 'paginaVendaVslId',
+                    keyTo: 'id'
                 },
             }
         };
@@ -18460,6 +20671,14 @@ var ContaGoogle = /** @class */ (function () {
                     keyFrom: 'id',
                     keyTo: 'contaGoogleId'
                 },
+                produtoProprios: {
+                    name: 'produtoProprios',
+                    type: 'ProdutoProprio[]',
+                    model: 'ProdutoProprio',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'contaGoogleId'
+                },
                 versaoPaginaVendas: {
                     name: 'versaoPaginaVendas',
                     type: 'VersaoPaginaVenda[]',
@@ -18480,6 +20699,14 @@ var ContaGoogle = /** @class */ (function () {
                     name: 'contaPublicoAlvoAdsPalavras',
                     type: 'ContaPublicoAlvoAdsPalavra[]',
                     model: 'ContaPublicoAlvoAdsPalavra',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'contaGoogleId'
+                },
+                publicoAlvoAdsPalavras: {
+                    name: 'publicoAlvoAdsPalavras',
+                    type: 'PublicoAlvoAdsPalavra[]',
+                    model: 'PublicoAlvoAdsPalavra',
                     relationType: 'hasMany',
                     keyFrom: 'id',
                     keyTo: 'contaGoogleId'
@@ -19932,6 +22159,10 @@ var ImagemConjunto = /** @class */ (function () {
                     name: 'urlImagemQuadrada',
                     type: 'string'
                 },
+                "produtoProprioId": {
+                    name: 'produtoProprioId',
+                    type: 'number'
+                },
                 "id": {
                     name: 'id',
                     type: 'number'
@@ -19965,6 +22196,14 @@ var ImagemConjunto = /** @class */ (function () {
                     relationType: 'hasMany',
                     keyFrom: 'id',
                     keyTo: 'imagemConjuntoId'
+                },
+                produtoProprio: {
+                    name: 'produtoProprio',
+                    type: 'ProdutoProprio',
+                    model: 'ProdutoProprio',
+                    relationType: 'belongsTo',
+                    keyFrom: 'produtoProprioId',
+                    keyTo: 'id'
                 },
                 anuncioConceitoAdsRedeDisplays: {
                     name: 'anuncioConceitoAdsRedeDisplays',
@@ -20780,6 +23019,86 @@ var ModeloPaginaVenda = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/shared/sdk/models/ModeloPaginaVendaVsl.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/shared/sdk/models/ModeloPaginaVendaVsl.ts ***!
+  \***********************************************************/
+/*! exports provided: ModeloPaginaVendaVsl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVsl", function() { return ModeloPaginaVendaVsl; });
+var ModeloPaginaVendaVsl = /** @class */ (function () {
+    function ModeloPaginaVendaVsl(data) {
+        Object.assign(this, data);
+    }
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `ModeloPaginaVendaVsl`.
+     */
+    ModeloPaginaVendaVsl.getModelName = function () {
+        return "ModeloPaginaVendaVsl";
+    };
+    /**
+    * @method factory
+    * @author Jonathan Casarrubias
+    * @license MIT
+    * This method creates an instance of ModeloPaginaVendaVsl for dynamic purposes.
+    **/
+    ModeloPaginaVendaVsl.factory = function (data) {
+        return new ModeloPaginaVendaVsl(data);
+    };
+    /**
+    * @method getModelDefinition
+    * @author Julien Ledun
+    * @license MIT
+    * This method returns an object that represents some of the model
+    * definitions.
+    **/
+    ModeloPaginaVendaVsl.getModelDefinition = function () {
+        return {
+            name: 'ModeloPaginaVendaVsl',
+            plural: 'ModeloPaginaVendaVsls',
+            path: 'ModeloPaginaVendaVsls',
+            idName: 'id',
+            properties: {
+                "nome": {
+                    name: 'nome',
+                    type: 'string'
+                },
+                "dataCriacao": {
+                    name: 'dataCriacao',
+                    type: 'Date'
+                },
+                "codigoFonte": {
+                    name: 'codigoFonte',
+                    type: 'string'
+                },
+                "id": {
+                    name: 'id',
+                    type: 'number'
+                },
+            },
+            relations: {
+                paginaVendaVsls: {
+                    name: 'paginaVendaVsls',
+                    type: 'PaginaVendaVsl[]',
+                    model: 'PaginaVendaVsl',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'modeloPaginaVendaVslId'
+                },
+            }
+        };
+    };
+    return ModeloPaginaVendaVsl;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/sdk/models/OtimizacaoCampanhaAdsRedeDisplay.ts":
 /*!***********************************************************************!*\
   !*** ./src/app/shared/sdk/models/OtimizacaoCampanhaAdsRedeDisplay.ts ***!
@@ -21376,12 +23695,44 @@ var PaginaVendaVsl = /** @class */ (function () {
                     name: 'headline',
                     type: 'string'
                 },
+                "subtitulo": {
+                    name: 'subtitulo',
+                    type: 'string'
+                },
                 "produtoProprioId": {
                     name: 'produtoProprioId',
                     type: 'number'
                 },
+                "prontoCriacao": {
+                    name: 'prontoCriacao',
+                    type: 'number'
+                },
+                "url": {
+                    name: 'url',
+                    type: 'string'
+                },
+                "codigoHexa": {
+                    name: 'codigoHexa',
+                    type: 'string'
+                },
+                "html": {
+                    name: 'html',
+                    type: 'string'
+                },
+                "nome": {
+                    name: 'nome',
+                    type: 'string'
+                },
+                "dataPublicacao": {
+                    name: 'dataPublicacao',
+                    type: 'Date'
+                },
                 "videoVslId": {
                     name: 'videoVslId',
+                    type: 'number'
+                },
+                "modeloPaginaVendaVslId": {
+                    name: 'modeloPaginaVendaVslId',
                     type: 'number'
                 },
                 "id": {
@@ -21404,6 +23755,22 @@ var PaginaVendaVsl = /** @class */ (function () {
                     model: 'VideoVsl',
                     relationType: 'belongsTo',
                     keyFrom: 'videoVslId',
+                    keyTo: 'id'
+                },
+                campanhaAdsRedeDisplays: {
+                    name: 'campanhaAdsRedeDisplays',
+                    type: 'CampanhaAdsRedeDisplay[]',
+                    model: 'CampanhaAdsRedeDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'paginaVendaVslId'
+                },
+                modeloPaginaVendaVsl: {
+                    name: 'modeloPaginaVendaVsl',
+                    type: 'ModeloPaginaVendaVsl',
+                    model: 'ModeloPaginaVendaVsl',
+                    relationType: 'belongsTo',
+                    keyFrom: 'modeloPaginaVendaVslId',
                     keyTo: 'id'
                 },
             }
@@ -23468,12 +25835,48 @@ var ProdutoProprio = /** @class */ (function () {
                     name: 'status',
                     type: 'string'
                 },
+                "urlKiwify": {
+                    name: 'urlKiwify',
+                    type: 'string'
+                },
+                "urlIconePaginaVenda": {
+                    name: 'urlIconePaginaVenda',
+                    type: 'string'
+                },
+                "contaGoogleId": {
+                    name: 'contaGoogleId',
+                    type: 'number'
+                },
                 "id": {
                     name: 'id',
                     type: 'number'
                 },
             },
             relations: {
+                contaGoogle: {
+                    name: 'contaGoogle',
+                    type: 'ContaGoogle',
+                    model: 'ContaGoogle',
+                    relationType: 'belongsTo',
+                    keyFrom: 'contaGoogleId',
+                    keyTo: 'id'
+                },
+                campanhaAdsRedeDisplays: {
+                    name: 'campanhaAdsRedeDisplays',
+                    type: 'CampanhaAdsRedeDisplay[]',
+                    model: 'CampanhaAdsRedeDisplay',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'produtoProprioId'
+                },
+                imagemConjuntos: {
+                    name: 'imagemConjuntos',
+                    type: 'ImagemConjunto[]',
+                    model: 'ImagemConjunto',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'produtoProprioId'
+                },
                 produtoProprioVersaos: {
                     name: 'produtoProprioVersaos',
                     type: 'ProdutoProprioVersao[]',
@@ -23494,6 +25897,14 @@ var ProdutoProprio = /** @class */ (function () {
                     name: 'imagemPaginaVendas',
                     type: 'ImagemPaginaVenda[]',
                     model: 'ImagemPaginaVenda',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'produtoProprioId'
+                },
+                publicoAlvoAdsPalavras: {
+                    name: 'publicoAlvoAdsPalavras',
+                    type: 'PublicoAlvoAdsPalavra[]',
+                    model: 'PublicoAlvoAdsPalavra',
                     relationType: 'hasMany',
                     keyFrom: 'id',
                     keyTo: 'produtoProprioId'
@@ -24080,6 +26491,26 @@ var PublicoAlvoAdsPalavra = /** @class */ (function () {
                     name: 'nome',
                     type: 'string'
                 },
+                "produtoProprioId": {
+                    name: 'produtoProprioId',
+                    type: 'number'
+                },
+                "pronta": {
+                    name: 'pronta',
+                    type: 'number'
+                },
+                "resourceName": {
+                    name: 'resourceName',
+                    type: 'string'
+                },
+                "dataCriacaoAds": {
+                    name: 'dataCriacaoAds',
+                    type: 'Date'
+                },
+                "contaGoogleId": {
+                    name: 'contaGoogleId',
+                    type: 'number'
+                },
                 "id": {
                     name: 'id',
                     type: 'number'
@@ -24097,6 +26528,22 @@ var PublicoAlvoAdsPalavra = /** @class */ (function () {
                     relationType: 'belongsTo',
                     keyFrom: 'hotmartId',
                     keyTo: 'hotmartId'
+                },
+                produtoProprio: {
+                    name: 'produtoProprio',
+                    type: 'ProdutoProprio',
+                    model: 'ProdutoProprio',
+                    relationType: 'belongsTo',
+                    keyFrom: 'produtoProprioId',
+                    keyTo: 'id'
+                },
+                contaGoogle: {
+                    name: 'contaGoogle',
+                    type: 'ContaGoogle',
+                    model: 'ContaGoogle',
+                    relationType: 'belongsTo',
+                    keyFrom: 'contaGoogleId',
+                    keyTo: 'id'
                 },
                 campanhaAdsRedeDisplays: {
                     name: 'campanhaAdsRedeDisplays',
@@ -24126,6 +26573,90 @@ var PublicoAlvoAdsPalavra = /** @class */ (function () {
         };
     };
     return PublicoAlvoAdsPalavra;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/models/ScriptGeraVideo.ts":
+/*!******************************************************!*\
+  !*** ./src/app/shared/sdk/models/ScriptGeraVideo.ts ***!
+  \******************************************************/
+/*! exports provided: ScriptGeraVideo */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideo", function() { return ScriptGeraVideo; });
+var ScriptGeraVideo = /** @class */ (function () {
+    function ScriptGeraVideo(data) {
+        Object.assign(this, data);
+    }
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `ScriptGeraVideo`.
+     */
+    ScriptGeraVideo.getModelName = function () {
+        return "ScriptGeraVideo";
+    };
+    /**
+    * @method factory
+    * @author Jonathan Casarrubias
+    * @license MIT
+    * This method creates an instance of ScriptGeraVideo for dynamic purposes.
+    **/
+    ScriptGeraVideo.factory = function (data) {
+        return new ScriptGeraVideo(data);
+    };
+    /**
+    * @method getModelDefinition
+    * @author Julien Ledun
+    * @license MIT
+    * This method returns an object that represents some of the model
+    * definitions.
+    **/
+    ScriptGeraVideo.getModelDefinition = function () {
+        return {
+            name: 'ScriptGeraVideo',
+            plural: 'ScriptGeraVideos',
+            path: 'ScriptGeraVideos',
+            idName: 'id',
+            properties: {
+                "nome": {
+                    name: 'nome',
+                    type: 'string'
+                },
+                "arquivo": {
+                    name: 'arquivo',
+                    type: 'string'
+                },
+                "descricao": {
+                    name: 'descricao',
+                    type: 'string'
+                },
+                "fonte": {
+                    name: 'fonte',
+                    type: 'string'
+                },
+                "id": {
+                    name: 'id',
+                    type: 'number'
+                },
+            },
+            relations: {
+                videoVsls: {
+                    name: 'videoVsls',
+                    type: 'VideoVsl[]',
+                    model: 'VideoVsl',
+                    relationType: 'hasMany',
+                    keyFrom: 'id',
+                    keyTo: 'scriptGeraVideoId'
+                },
+            }
+        };
+    };
+    return ScriptGeraVideo;
 }());
 
 
@@ -24796,6 +27327,14 @@ var TrechoVsl = /** @class */ (function () {
                     name: 'tempo',
                     type: 'number'
                 },
+                "arquivoAudio": {
+                    name: 'arquivoAudio',
+                    type: 'string'
+                },
+                "codigoHexa": {
+                    name: 'codigoHexa',
+                    type: 'string'
+                },
                 "id": {
                     name: 'id',
                     type: 'number'
@@ -25281,8 +27820,48 @@ var VideoVsl = /** @class */ (function () {
                     name: 'voz',
                     type: 'string'
                 },
+                "arquivoAudioCompleto": {
+                    name: 'arquivoAudioCompleto',
+                    type: 'string'
+                },
+                "arquivoLegenda": {
+                    name: 'arquivoLegenda',
+                    type: 'string'
+                },
+                "urlVideo": {
+                    name: 'urlVideo',
+                    type: 'string'
+                },
+                "urlChatGpt1": {
+                    name: 'urlChatGpt1',
+                    type: 'string'
+                },
+                "urlChatGpt2": {
+                    name: 'urlChatGpt2',
+                    type: 'string'
+                },
+                "urlChatGpt3": {
+                    name: 'urlChatGpt3',
+                    type: 'string'
+                },
+                "arquivoVideo": {
+                    name: 'arquivoVideo',
+                    type: 'string'
+                },
+                "codigoYouTube": {
+                    name: 'codigoYouTube',
+                    type: 'string'
+                },
+                "criaAudioLegenda": {
+                    name: 'criaAudioLegenda',
+                    type: 'number'
+                },
                 "produtoProprioId": {
                     name: 'produtoProprioId',
+                    type: 'number'
+                },
+                "scriptGeraVideoId": {
+                    name: 'scriptGeraVideoId',
                     type: 'number'
                 },
                 "id": {
@@ -25314,6 +27893,14 @@ var VideoVsl = /** @class */ (function () {
                     relationType: 'hasMany',
                     keyFrom: 'id',
                     keyTo: 'videoVslId'
+                },
+                scriptGeraVideo: {
+                    name: 'scriptGeraVideo',
+                    type: 'ScriptGeraVideo',
+                    model: 'ScriptGeraVideo',
+                    relationType: 'belongsTo',
+                    keyFrom: 'scriptGeraVideoId',
+                    keyTo: 'id'
                 },
             }
         };
@@ -25613,7 +28200,7 @@ var Visitante = /** @class */ (function () {
 /*!********************************************!*\
   !*** ./src/app/shared/sdk/models/index.ts ***!
   \********************************************/
-/*! exports provided: User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, ProdutoAfiliadoHotmartPendente, SegmentoMercadoAdsPersonalizado, PaginaVendaSecao, SecaoWeb, ProdutoProprio, ProdutoProprioVersao, ProdutoProprioItemNivel1, PaginaVendaScroll, EvolucaoExperimento, CampanhaAdsExperimento, ExperimentoModelo, ModeloPaginaVenda, PosicaoElementoPaginaVenda, ElementoModeloPaginaVenda, VersaoPaginaVenda, ConteudoElemento, DalleSolicitacaoImagem, ArquivoPaginaVenda, ImagemPaginaVenda, ProdutoAfiliadoClickbank, VersaoImagemPaginaVenda, PixelAdsSegmentoMercado, PaginaVendaPropria, LoadPaginaVendaPropria, ScrollPaginaVendaPropria, AnuncioCampanhaAdsRedeDisplay, GrupoCampanhaAdsRedeDisplay, SolicitacaoCheckoutPaginaVendaPropria, ContaPublicoAlvoAdsPalavra, PublicoAlvoAdsPalavra, ProdutoPublicoAdsPalavra, PixelProdutoHotmartConta, PixelProdutoHotmartContaCheckout, PixelProdutoHotmartContaCompra, ArtigoParaProduto, ProdutoHotmartConta, AnuncioConceitoAdsRedeDisplay, MetricaCampanhaAdsRedeDisplay, VideoVsl, PaginaVendaVsl, TrechoVsl, AccessToken, SDKToken, FireLoopRef */
+/*! exports provided: User, PlataformaVenda, ProdutoPlataforma, VisitaProdutoPlataforma, ProdutoHotmart, VisitaProdutoHotmart, TokenAcesso, IdeiaPalavraChave, CampanhaAds, AnuncioCampanhaAds, PalavraCampanhaAds, ProdutoAfiliadoHotmart, AgendaVisitaHotmart, CampanhaAdsTeste, AnuncioAds, ModeloCampanhaAdsTeste, PixelGoogle, PalavraChaveCampanhaAdsTeste, AnuncioCampanhaAdsTeste, FacebookConta, ProdutoAfiliadoMetrica, ContaGoogle, CampanhaAdsMetrica, LoadPaginaVenda, SolicitacaoCheckout, PlanoProduto, ContaGoogleMetricaMes, LinkCheckout, CampanhaAdsMetricaIntraday, PrecoProdutoAfiliado, AnuncioAdsDisplay, Visitante, VideoExecucao, ProdutoAfiliadoHotlink, TagIdSecaoPaginaVenda, CampanhaAdsRedeDisplay, OtimizacaoCampanhaAdsRedeDisplay, ListaRemarketingAds, PublicoAlvoAds, PublicoAlvoAdsDiario, PaginaVenda, AnuncioCampanhaAdsDisplay, ImagemConjunto, ProdutoAfiliadoHotmartPendente, SegmentoMercadoAdsPersonalizado, PaginaVendaSecao, SecaoWeb, ProdutoProprio, ProdutoProprioVersao, ProdutoProprioItemNivel1, PaginaVendaScroll, EvolucaoExperimento, CampanhaAdsExperimento, ExperimentoModelo, ModeloPaginaVenda, PosicaoElementoPaginaVenda, ElementoModeloPaginaVenda, VersaoPaginaVenda, ConteudoElemento, DalleSolicitacaoImagem, ArquivoPaginaVenda, ImagemPaginaVenda, ProdutoAfiliadoClickbank, VersaoImagemPaginaVenda, PixelAdsSegmentoMercado, PaginaVendaPropria, LoadPaginaVendaPropria, ScrollPaginaVendaPropria, AnuncioCampanhaAdsRedeDisplay, GrupoCampanhaAdsRedeDisplay, SolicitacaoCheckoutPaginaVendaPropria, ContaPublicoAlvoAdsPalavra, PublicoAlvoAdsPalavra, ProdutoPublicoAdsPalavra, PixelProdutoHotmartConta, PixelProdutoHotmartContaCheckout, PixelProdutoHotmartContaCompra, ArtigoParaProduto, ProdutoHotmartConta, AnuncioConceitoAdsRedeDisplay, MetricaCampanhaAdsRedeDisplay, VideoVsl, PaginaVendaVsl, TrechoVsl, ModeloPaginaVendaVsl, ScriptGeraVideo, AccessToken, SDKToken, FireLoopRef */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25870,15 +28457,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TrechoVsl__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(/*! ./TrechoVsl */ "./src/app/shared/sdk/models/TrechoVsl.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrechoVsl", function() { return _TrechoVsl__WEBPACK_IMPORTED_MODULE_83__["TrechoVsl"]; });
 
-/* harmony import */ var _BaseModels__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! ./BaseModels */ "./src/app/shared/sdk/models/BaseModels.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_84__["AccessToken"]; });
+/* harmony import */ var _ModeloPaginaVendaVsl__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! ./ModeloPaginaVendaVsl */ "./src/app/shared/sdk/models/ModeloPaginaVendaVsl.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVsl", function() { return _ModeloPaginaVendaVsl__WEBPACK_IMPORTED_MODULE_84__["ModeloPaginaVendaVsl"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_84__["SDKToken"]; });
+/* harmony import */ var _ScriptGeraVideo__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! ./ScriptGeraVideo */ "./src/app/shared/sdk/models/ScriptGeraVideo.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideo", function() { return _ScriptGeraVideo__WEBPACK_IMPORTED_MODULE_85__["ScriptGeraVideo"]; });
 
-/* harmony import */ var _FireLoopRef__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! ./FireLoopRef */ "./src/app/shared/sdk/models/FireLoopRef.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _FireLoopRef__WEBPACK_IMPORTED_MODULE_85__["FireLoopRef"]; });
+/* harmony import */ var _BaseModels__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(/*! ./BaseModels */ "./src/app/shared/sdk/models/BaseModels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AccessToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_86__["AccessToken"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKToken", function() { return _BaseModels__WEBPACK_IMPORTED_MODULE_86__["SDKToken"]; });
+
+/* harmony import */ var _FireLoopRef__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(/*! ./FireLoopRef */ "./src/app/shared/sdk/models/FireLoopRef.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FireLoopRef", function() { return _FireLoopRef__WEBPACK_IMPORTED_MODULE_87__["FireLoopRef"]; });
 
 /* tslint:disable */
+
+
 
 
 
@@ -32009,6 +34604,37 @@ var CampanhaAdsRedeDisplayApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Busca relação produtoProprio de belongsTo.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.getProdutoProprio = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/produtoProprio";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Busca relação paginaVendaPropria de belongsTo.
      *
      * @param {any} id CampanhaAdsRedeDisplay id
@@ -32371,6 +34997,37 @@ var CampanhaAdsRedeDisplayApi = /** @class */ (function (_super) {
             data: data
         };
         var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação paginaVendaVsl de belongsTo.
+     *
+     * @param {any} id CampanhaAdsRedeDisplay id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `CampanhaAdsRedeDisplay` object.)
+     * </em>
+     */
+    CampanhaAdsRedeDisplayApi.prototype.getPaginaVendaVsl = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/CampanhaAdsRedeDisplays/:id/paginaVendaVsl";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -35386,6 +38043,97 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Localize um item relacionado por ID para produtoProprios.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para produtoProprios
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.findByIdProdutoProprios = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/produtoProprios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para produtoProprios.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para produtoProprios
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ContaGoogleApi.prototype.destroyByIdProdutoProprios = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/produtoProprios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para produtoProprios.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para produtoProprios
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.updateByIdProdutoProprios = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/produtoProprios/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Localize um item relacionado por ID para versaoPaginaVendas.
      *
      * @param {any} id ContaGoogle id
@@ -35647,6 +38395,97 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         var _method = "PUT";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ContaGoogles/:id/contaPublicoAlvoAdsPalavras/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para publicoAlvoAdsPalavras.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.findByIdPublicoAlvoAdsPalavras = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsPalavras/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para publicoAlvoAdsPalavras.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ContaGoogleApi.prototype.destroyByIdPublicoAlvoAdsPalavras = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsPalavras/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para publicoAlvoAdsPalavras.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.updateByIdPublicoAlvoAdsPalavras = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsPalavras/:fk";
         var _routeParams = {
             id: id,
             fk: fk
@@ -37102,6 +39941,123 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * produtoProprios consultas de ContaGoogle.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.getProdutoProprios = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/produtoProprios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no produtoProprios deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.createProdutoProprios = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/produtoProprios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os produtoProprios deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ContaGoogleApi.prototype.deleteProdutoProprios = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/produtoProprios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * produtoProprios contagens de ContaGoogle.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ContaGoogleApi.prototype.countProdutoProprios = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/produtoProprios/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * versaoPaginaVendas consultas de ContaGoogle.
      *
      * @param {any} id ContaGoogle id
@@ -37442,6 +40398,123 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ContaGoogles/:id/contaPublicoAlvoAdsPalavras/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAdsPalavras consultas de ContaGoogle.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.getPublicoAlvoAdsPalavras = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsPalavras";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsPalavras deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.createPublicoAlvoAdsPalavras = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsPalavras";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os publicoAlvoAdsPalavras deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ContaGoogleApi.prototype.deletePublicoAlvoAdsPalavras = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsPalavras";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAdsPalavras contagens de ContaGoogle.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ContaGoogleApi.prototype.countPublicoAlvoAdsPalavras = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsPalavras/count";
         var _routeParams = {
             id: id
         };
@@ -38347,6 +41420,39 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Cria uma nova instância no produtoProprios deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.createManyProdutoProprios = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/produtoProprios";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Cria uma nova instância no versaoPaginaVendas deste modelo.
      *
      * @param {any} id ContaGoogle id
@@ -38435,6 +41541,39 @@ var ContaGoogleApi = /** @class */ (function (_super) {
         var _method = "POST";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ContaGoogles/:id/contaPublicoAlvoAdsPalavras";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsPalavras deste modelo.
+     *
+     * @param {any} id ContaGoogle id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ContaGoogle` object.)
+     * </em>
+     */
+    ContaGoogleApi.prototype.createManyPublicoAlvoAdsPalavras = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ContaGoogles/:id/publicoAlvoAdsPalavras";
         var _routeParams = {
             id: id
         };
@@ -43254,6 +46393,37 @@ var ImagemConjuntoApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Busca relação produtoProprio de belongsTo.
+     *
+     * @param {any} id ImagemConjunto id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ImagemConjunto` object.)
+     * </em>
+     */
+    ImagemConjuntoApi.prototype.getProdutoProprio = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ImagemConjuntos/:id/produtoProprio";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Localize um item relacionado por ID para anuncioConceitoAdsRedeDisplays.
      *
      * @param {any} id ImagemConjunto id
@@ -47020,6 +50190,399 @@ var ModeloPaginaVendaApi = /** @class */ (function (_super) {
             _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
     ], ModeloPaginaVendaApi);
     return ModeloPaginaVendaApi;
+}(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/services/custom/ModeloPaginaVendaVsl.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/ModeloPaginaVendaVsl.ts ***!
+  \********************************************************************/
+/*! exports provided: ModeloPaginaVendaVslApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVslApi", function() { return ModeloPaginaVendaVslApi; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony import */ var _core_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/base.service */ "./src/app/shared/sdk/services/core/base.service.ts");
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/shared/sdk/services/core/auth.service.ts");
+/* harmony import */ var _core_error_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/error.service */ "./src/app/shared/sdk/services/core/error.service.ts");
+/* harmony import */ var _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sockets/socket.connections */ "./src/app/shared/sdk/sockets/socket.connections.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/* tslint:disable */
+
+
+
+
+
+
+
+
+/**
+ * Api services for the `ModeloPaginaVendaVsl` model.
+ */
+var ModeloPaginaVendaVslApi = /** @class */ (function (_super) {
+    __extends(ModeloPaginaVendaVslApi, _super);
+    function ModeloPaginaVendaVslApi(http, connection, models, auth, errorHandler) {
+        var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
+        _this.http = http;
+        _this.connection = connection;
+        _this.models = models;
+        _this.auth = auth;
+        _this.errorHandler = errorHandler;
+        return _this;
+    }
+    /**
+     * Localize um item relacionado por ID para paginaVendaVsls.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @param {any} fk Chave estrangeira para paginaVendaVsls
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ModeloPaginaVendaVsl` object.)
+     * </em>
+     */
+    ModeloPaginaVendaVslApi.prototype.findByIdPaginaVendaVsls = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id/paginaVendaVsls/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para paginaVendaVsls.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @param {any} fk Chave estrangeira para paginaVendaVsls
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ModeloPaginaVendaVslApi.prototype.destroyByIdPaginaVendaVsls = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id/paginaVendaVsls/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para paginaVendaVsls.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @param {any} fk Chave estrangeira para paginaVendaVsls
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ModeloPaginaVendaVsl` object.)
+     * </em>
+     */
+    ModeloPaginaVendaVslApi.prototype.updateByIdPaginaVendaVsls = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id/paginaVendaVsls/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * paginaVendaVsls consultas de ModeloPaginaVendaVsl.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ModeloPaginaVendaVsl` object.)
+     * </em>
+     */
+    ModeloPaginaVendaVslApi.prototype.getPaginaVendaVsls = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id/paginaVendaVsls";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no paginaVendaVsls deste modelo.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ModeloPaginaVendaVsl` object.)
+     * </em>
+     */
+    ModeloPaginaVendaVslApi.prototype.createPaginaVendaVsls = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id/paginaVendaVsls";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os paginaVendaVsls deste modelo.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ModeloPaginaVendaVslApi.prototype.deletePaginaVendaVsls = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id/paginaVendaVsls";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * paginaVendaVsls contagens de ModeloPaginaVendaVsl.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ModeloPaginaVendaVslApi.prototype.countPaginaVendaVsls = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id/paginaVendaVsls/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - Model instance data
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ModeloPaginaVendaVsl` object.)
+     * </em>
+     */
+    ModeloPaginaVendaVslApi.prototype.patchOrCreate = function (data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls";
+        var _routeParams = {};
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - An object of model property name/value pairs
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ModeloPaginaVendaVsl` object.)
+     * </em>
+     */
+    ModeloPaginaVendaVslApi.prototype.patchAttributes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no paginaVendaVsls deste modelo.
+     *
+     * @param {any} id ModeloPaginaVendaVsl id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ModeloPaginaVendaVsl` object.)
+     * </em>
+     */
+    ModeloPaginaVendaVslApi.prototype.createManyPaginaVendaVsls = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ModeloPaginaVendaVsls/:id/paginaVendaVsls";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `ModeloPaginaVendaVsl`.
+     */
+    ModeloPaginaVendaVslApi.prototype.getModelName = function () {
+        return "ModeloPaginaVendaVsl";
+    };
+    ModeloPaginaVendaVslApi = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"])),
+        __param(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"])),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"],
+            _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
+            _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
+    ], ModeloPaginaVendaVslApi);
+    return ModeloPaginaVendaVslApi;
 }(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
 
 
@@ -50955,6 +54518,245 @@ var PaginaVendaVslApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Localize um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVendaVsl` object.)
+     * </em>
+     */
+    PaginaVendaVslApi.prototype.findByIdCampanhaAdsRedeDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaVslApi.prototype.destroyByIdCampanhaAdsRedeDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVendaVsl` object.)
+     * </em>
+     */
+    PaginaVendaVslApi.prototype.updateByIdCampanhaAdsRedeDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação modeloPaginaVendaVsl de belongsTo.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVendaVsl` object.)
+     * </em>
+     */
+    PaginaVendaVslApi.prototype.getModeloPaginaVendaVsl = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/modeloPaginaVendaVsl";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsRedeDisplays consultas de PaginaVendaVsl.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVendaVsl` object.)
+     * </em>
+     */
+    PaginaVendaVslApi.prototype.getCampanhaAdsRedeDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVendaVsl` object.)
+     * </em>
+     */
+    PaginaVendaVslApi.prototype.createCampanhaAdsRedeDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    PaginaVendaVslApi.prototype.deleteCampanhaAdsRedeDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsRedeDisplays contagens de PaginaVendaVsl.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    PaginaVendaVslApi.prototype.countCampanhaAdsRedeDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/campanhaAdsRedeDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Patch an existing model instance or insert a new one into the data source.
      *
      * @param {object} data Request data.
@@ -51006,6 +54808,94 @@ var PaginaVendaVslApi = /** @class */ (function (_super) {
         var _method = "PATCH";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/PaginaVendaVsls/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVendaVsl` object.)
+     * </em>
+     */
+    PaginaVendaVslApi.prototype.ListaParaCriacao = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/listaParaCriacao";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `pagina` – `{object}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVendaVsl` object.)
+     * </em>
+     */
+    PaginaVendaVslApi.prototype.AtualizaCriada = function (pagina, customHeaders) {
+        if (pagina === void 0) { pagina = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/atualizaCriada";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof pagina !== 'undefined' && pagina !== null)
+            _urlParams.pagina = pagina;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id PaginaVendaVsl id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PaginaVendaVsl` object.)
+     * </em>
+     */
+    PaginaVendaVslApi.prototype.createManyCampanhaAdsRedeDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PaginaVendaVsls/:id/campanhaAdsRedeDisplays";
         var _routeParams = {
             id: id
         };
@@ -64277,6 +68167,219 @@ var ProdutoProprioApi = /** @class */ (function (_super) {
         return _this;
     }
     /**
+     * Busca relação contaGoogle de belongsTo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.getContaGoogle = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/contaGoogle";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.findByIdCampanhaAdsRedeDisplays = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoProprioApi.prototype.destroyByIdCampanhaAdsRedeDisplays = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para campanhaAdsRedeDisplays.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para campanhaAdsRedeDisplays
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.updateByIdCampanhaAdsRedeDisplays = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/campanhaAdsRedeDisplays/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para imagemConjuntos.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para imagemConjuntos
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.findByIdImagemConjuntos = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/imagemConjuntos/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para imagemConjuntos.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para imagemConjuntos
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoProprioApi.prototype.destroyByIdImagemConjuntos = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/imagemConjuntos/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para imagemConjuntos.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para imagemConjuntos
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.updateByIdImagemConjuntos = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/imagemConjuntos/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Localize um item relacionado por ID para produtoProprioVersaos.
      *
      * @param {any} id ProdutoProprio id
@@ -64538,6 +68641,97 @@ var ProdutoProprioApi = /** @class */ (function (_super) {
         var _method = "PUT";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ProdutoProprios/:id/imagemPaginaVendas/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Localize um item relacionado por ID para publicoAlvoAdsPalavras.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.findByIdPublicoAlvoAdsPalavras = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/publicoAlvoAdsPalavras/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para publicoAlvoAdsPalavras.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoProprioApi.prototype.destroyByIdPublicoAlvoAdsPalavras = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/publicoAlvoAdsPalavras/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para publicoAlvoAdsPalavras.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {any} fk Chave estrangeira para publicoAlvoAdsPalavras
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.updateByIdPublicoAlvoAdsPalavras = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/publicoAlvoAdsPalavras/:fk";
         var _routeParams = {
             id: id,
             fk: fk
@@ -64819,6 +69013,240 @@ var ProdutoProprioApi = /** @class */ (function (_super) {
             data: data
         };
         var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsRedeDisplays consultas de ProdutoProprio.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.getCampanhaAdsRedeDisplays = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.createCampanhaAdsRedeDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoProprioApi.prototype.deleteCampanhaAdsRedeDisplays = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * campanhaAdsRedeDisplays contagens de ProdutoProprio.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoProprioApi.prototype.countCampanhaAdsRedeDisplays = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/campanhaAdsRedeDisplays/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * imagemConjuntos consultas de ProdutoProprio.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.getImagemConjuntos = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/imagemConjuntos";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no imagemConjuntos deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.createImagemConjuntos = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/imagemConjuntos";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os imagemConjuntos deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoProprioApi.prototype.deleteImagemConjuntos = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/imagemConjuntos";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * imagemConjuntos contagens de ProdutoProprio.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoProprioApi.prototype.countImagemConjuntos = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/imagemConjuntos/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -65163,6 +69591,123 @@ var ProdutoProprioApi = /** @class */ (function (_super) {
         var _method = "GET";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ProdutoProprios/:id/imagemPaginaVendas/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAdsPalavras consultas de ProdutoProprio.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.getPublicoAlvoAdsPalavras = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/publicoAlvoAdsPalavras";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsPalavras deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.createPublicoAlvoAdsPalavras = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/publicoAlvoAdsPalavras";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os publicoAlvoAdsPalavras deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ProdutoProprioApi.prototype.deletePublicoAlvoAdsPalavras = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/publicoAlvoAdsPalavras";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * publicoAlvoAdsPalavras contagens de ProdutoProprio.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ProdutoProprioApi.prototype.countPublicoAlvoAdsPalavras = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/publicoAlvoAdsPalavras/count";
         var _routeParams = {
             id: id
         };
@@ -65611,6 +70156,72 @@ var ProdutoProprioApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.createManyCampanhaAdsRedeDisplays = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/campanhaAdsRedeDisplays";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no imagemConjuntos deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.createManyImagemConjuntos = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/imagemConjuntos";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Cria uma nova instância no produtoProprioVersaos deste modelo.
      *
      * @param {any} id ProdutoProprio id
@@ -65699,6 +70310,39 @@ var ProdutoProprioApi = /** @class */ (function (_super) {
         var _method = "POST";
         var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
             "/ProdutoProprios/:id/imagemPaginaVendas";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no publicoAlvoAdsPalavras deste modelo.
+     *
+     * @param {any} id ProdutoProprio id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ProdutoProprio` object.)
+     * </em>
+     */
+    ProdutoProprioApi.prototype.createManyPublicoAlvoAdsPalavras = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ProdutoProprios/:id/publicoAlvoAdsPalavras";
         var _routeParams = {
             id: id
         };
@@ -67301,6 +71945,68 @@ var PublicoAlvoAdsPalavraApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Busca relação produtoProprio de belongsTo.
+     *
+     * @param {any} id PublicoAlvoAdsPalavra id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsPalavra` object.)
+     * </em>
+     */
+    PublicoAlvoAdsPalavraApi.prototype.getProdutoProprio = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsPalavras/:id/produtoProprio";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Busca relação contaGoogle de belongsTo.
+     *
+     * @param {any} id PublicoAlvoAdsPalavra id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsPalavra` object.)
+     * </em>
+     */
+    PublicoAlvoAdsPalavraApi.prototype.getContaGoogle = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsPalavras/:id/contaGoogle";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Localize um item relacionado por ID para campanhaAdsRedeDisplays.
      *
      * @param {any} id PublicoAlvoAdsPalavra id
@@ -67987,6 +72693,66 @@ var PublicoAlvoAdsPalavraApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsPalavra` object.)
+     * </em>
+     */
+    PublicoAlvoAdsPalavraApi.prototype.ListaParaCriar = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsPalavras/listaParaCriar";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `idPublico` – `{number}` -
+     *
+     *  - `resourceName` – `{string}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `PublicoAlvoAdsPalavra` object.)
+     * </em>
+     */
+    PublicoAlvoAdsPalavraApi.prototype.RegistraCriacao = function (idPublico, resourceName, customHeaders) {
+        if (idPublico === void 0) { idPublico = {}; }
+        if (resourceName === void 0) { resourceName = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/PublicoAlvoAdsPalavras/registraCriacao";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof idPublico !== 'undefined' && idPublico !== null)
+            _urlParams.idPublico = idPublico;
+        if (typeof resourceName !== 'undefined' && resourceName !== null)
+            _urlParams.resourceName = resourceName;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * Cria uma nova instância no campanhaAdsRedeDisplays deste modelo.
      *
      * @param {any} id PublicoAlvoAdsPalavra id
@@ -68207,6 +72973,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_VideoVsl__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(/*! ../../models/VideoVsl */ "./src/app/shared/sdk/models/VideoVsl.ts");
 /* harmony import */ var _models_PaginaVendaVsl__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(/*! ../../models/PaginaVendaVsl */ "./src/app/shared/sdk/models/PaginaVendaVsl.ts");
 /* harmony import */ var _models_TrechoVsl__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! ../../models/TrechoVsl */ "./src/app/shared/sdk/models/TrechoVsl.ts");
+/* harmony import */ var _models_ModeloPaginaVendaVsl__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! ../../models/ModeloPaginaVendaVsl */ "./src/app/shared/sdk/models/ModeloPaginaVendaVsl.ts");
+/* harmony import */ var _models_ScriptGeraVideo__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(/*! ../../models/ScriptGeraVideo */ "./src/app/shared/sdk/models/ScriptGeraVideo.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -68214,6 +72982,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 /* tslint:disable */
+
+
 
 
 
@@ -68386,6 +73156,8 @@ var SDKModels = /** @class */ (function () {
             VideoVsl: _models_VideoVsl__WEBPACK_IMPORTED_MODULE_82__["VideoVsl"],
             PaginaVendaVsl: _models_PaginaVendaVsl__WEBPACK_IMPORTED_MODULE_83__["PaginaVendaVsl"],
             TrechoVsl: _models_TrechoVsl__WEBPACK_IMPORTED_MODULE_84__["TrechoVsl"],
+            ModeloPaginaVendaVsl: _models_ModeloPaginaVendaVsl__WEBPACK_IMPORTED_MODULE_85__["ModeloPaginaVendaVsl"],
+            ScriptGeraVideo: _models_ScriptGeraVideo__WEBPACK_IMPORTED_MODULE_86__["ScriptGeraVideo"],
         };
     }
     SDKModels.prototype.get = function (modelName) {
@@ -68402,6 +73174,399 @@ var SDKModels = /** @class */ (function () {
     ], SDKModels);
     return SDKModels;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/sdk/services/custom/ScriptGeraVideo.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/shared/sdk/services/custom/ScriptGeraVideo.ts ***!
+  \***************************************************************/
+/*! exports provided: ScriptGeraVideoApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideoApi", function() { return ScriptGeraVideoApi; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony import */ var _core_base_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/base.service */ "./src/app/shared/sdk/services/core/base.service.ts");
+/* harmony import */ var _lb_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lb.config */ "./src/app/shared/sdk/lb.config.ts");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/shared/sdk/services/core/auth.service.ts");
+/* harmony import */ var _core_error_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../core/error.service */ "./src/app/shared/sdk/services/core/error.service.ts");
+/* harmony import */ var _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sockets/socket.connections */ "./src/app/shared/sdk/sockets/socket.connections.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/* tslint:disable */
+
+
+
+
+
+
+
+
+/**
+ * Api services for the `ScriptGeraVideo` model.
+ */
+var ScriptGeraVideoApi = /** @class */ (function (_super) {
+    __extends(ScriptGeraVideoApi, _super);
+    function ScriptGeraVideoApi(http, connection, models, auth, errorHandler) {
+        var _this = _super.call(this, http, connection, models, auth, errorHandler) || this;
+        _this.http = http;
+        _this.connection = connection;
+        _this.models = models;
+        _this.auth = auth;
+        _this.errorHandler = errorHandler;
+        return _this;
+    }
+    /**
+     * Localize um item relacionado por ID para videoVsls.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @param {any} fk Chave estrangeira para videoVsls
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ScriptGeraVideo` object.)
+     * </em>
+     */
+    ScriptGeraVideoApi.prototype.findByIdVideoVsls = function (id, fk, customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id/videoVsls/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Excluir um item relacionado por ID para videoVsls.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @param {any} fk Chave estrangeira para videoVsls
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ScriptGeraVideoApi.prototype.destroyByIdVideoVsls = function (id, fk, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id/videoVsls/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Atualizar um item relacionado por ID para videoVsls.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @param {any} fk Chave estrangeira para videoVsls
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ScriptGeraVideo` object.)
+     * </em>
+     */
+    ScriptGeraVideoApi.prototype.updateByIdVideoVsls = function (id, fk, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PUT";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id/videoVsls/:fk";
+        var _routeParams = {
+            id: id,
+            fk: fk
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * videoVsls consultas de ScriptGeraVideo.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @param {object} filter
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ScriptGeraVideo` object.)
+     * </em>
+     */
+    ScriptGeraVideoApi.prototype.getVideoVsls = function (id, filter, customHeaders) {
+        if (filter === void 0) { filter = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id/videoVsls";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof filter !== 'undefined' && filter !== null)
+            _urlParams.filter = filter;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no videoVsls deste modelo.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ScriptGeraVideo` object.)
+     * </em>
+     */
+    ScriptGeraVideoApi.prototype.createVideoVsls = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id/videoVsls";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Exclui todos os videoVsls deste modelo.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * This method returns no data.
+     */
+    ScriptGeraVideoApi.prototype.deleteVideoVsls = function (id, customHeaders) {
+        var _method = "DELETE";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id/videoVsls";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * videoVsls contagens de ScriptGeraVideo.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @param {object} where Criteria to match model instances
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * Data properties:
+     *
+     *  - `count` – `{number}` -
+     */
+    ScriptGeraVideoApi.prototype.countVideoVsls = function (id, where, customHeaders) {
+        if (where === void 0) { where = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id/videoVsls/count";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof where !== 'undefined' && where !== null)
+            _urlParams.where = where;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - Model instance data
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ScriptGeraVideo` object.)
+     * </em>
+     */
+    ScriptGeraVideoApi.prototype.patchOrCreate = function (data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos";
+        var _routeParams = {};
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @param {object} data Request data.
+     *
+     *  - `data` – `{object}` - An object of model property name/value pairs
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ScriptGeraVideo` object.)
+     * </em>
+     */
+    ScriptGeraVideoApi.prototype.patchAttributes = function (id, data, customHeaders) {
+        if (data === void 0) { data = {}; }
+        var _method = "PATCH";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * Cria uma nova instância no videoVsls deste modelo.
+     *
+     * @param {any} id ScriptGeraVideo id
+     *
+     * @param {object} data Request data.
+     *
+     * This method expects a subset of model properties as request parameters.
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `ScriptGeraVideo` object.)
+     * </em>
+     */
+    ScriptGeraVideoApi.prototype.createManyVideoVsls = function (id, data, customHeaders) {
+        if (data === void 0) { data = []; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/ScriptGeraVideos/:id/videoVsls";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {
+            data: data
+        };
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * The name of the model represented by this $resource,
+     * i.e. `ScriptGeraVideo`.
+     */
+    ScriptGeraVideoApi.prototype.getModelName = function () {
+        return "ScriptGeraVideo";
+    };
+    ScriptGeraVideoApi = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"])),
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"])),
+        __param(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"])),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _sockets_socket_connections__WEBPACK_IMPORTED_MODULE_7__["SocketConnection"],
+            _SDKModels__WEBPACK_IMPORTED_MODULE_2__["SDKModels"],
+            _core_auth_service__WEBPACK_IMPORTED_MODULE_5__["LoopBackAuth"],
+            _core_error_service__WEBPACK_IMPORTED_MODULE_6__["ErrorHandler"]])
+    ], ScriptGeraVideoApi);
+    return ScriptGeraVideoApi;
+}(_core_base_service__WEBPACK_IMPORTED_MODULE_3__["BaseLoopBackApi"]));
 
 
 
@@ -70238,6 +75403,68 @@ var TrechoVslApi = /** @class */ (function (_super) {
             data: data
         };
         var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `listaTrecho` – `{any}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `TrechoVsl` object.)
+     * </em>
+     */
+    TrechoVslApi.prototype.AtualizaListaAudioGerado = function (listaTrecho, customHeaders) {
+        if (listaTrecho === void 0) { listaTrecho = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/TrechoVsls/atualizaListaAudioGerado";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof listaTrecho !== 'undefined' && listaTrecho !== null)
+            _urlParams.listaTrecho = listaTrecho;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `idVideo` – `{number}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `TrechoVsl` object.)
+     * </em>
+     */
+    TrechoVslApi.prototype.OrganizaOrdenacao = function (idVideo, customHeaders) {
+        if (idVideo === void 0) { idVideo = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/TrechoVsls/organizaOrdenacao";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof idVideo !== 'undefined' && idVideo !== null)
+            _urlParams.idVideo = idVideo;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -73031,6 +78258,37 @@ var VideoVslApi = /** @class */ (function (_super) {
         return result;
     };
     /**
+     * Busca relação scriptGeraVideo de belongsTo.
+     *
+     * @param {any} id VideoVsl id
+     *
+     * @param {boolean} refresh
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `VideoVsl` object.)
+     * </em>
+     */
+    VideoVslApi.prototype.getScriptGeraVideo = function (id, refresh, customHeaders) {
+        if (refresh === void 0) { refresh = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/VideoVsls/:id/scriptGeraVideo";
+        var _routeParams = {
+            id: id
+        };
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof refresh !== 'undefined' && refresh !== null)
+            _urlParams.refresh = refresh;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
      * paginaVendaVsls consultas de VideoVsl.
      *
      * @param {any} id VideoVsl id
@@ -73323,6 +78581,114 @@ var VideoVslApi = /** @class */ (function (_super) {
             data: data
         };
         var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `VideoVsl` object.)
+     * </em>
+     */
+    VideoVslApi.prototype.ListaGeraAudioComTrecho = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/VideoVsls/listaGeraAudioComTrecho";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @returns {object[]} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `VideoVsl` object.)
+     * </em>
+     */
+    VideoVslApi.prototype.ListaCriaAudioLegendaVsl = function (customHeaders) {
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/VideoVsls/listaCriaAudioLegendaVsl";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {number} idVideo
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `VideoVsl` object.)
+     * </em>
+     */
+    VideoVslApi.prototype.ObtemPorIdComTrechoOrdenado = function (idVideo, customHeaders) {
+        if (idVideo === void 0) { idVideo = {}; }
+        var _method = "GET";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/VideoVsls/obtemPorIdComTrechoOrdenado";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof idVideo !== 'undefined' && idVideo !== null)
+            _urlParams.idVideo = idVideo;
+        var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+        return result;
+    };
+    /**
+     * <em>
+           * (The remote method definition does not provide any description.)
+           * </em>
+     *
+     * @param {object} data Request data.
+     *
+     *  - `videoAudioLegenda` – `{object}` -
+     *
+     * @returns {object} An empty reference that will be
+     *   populated with the actual data once the response is returned
+     *   from the server.
+     *
+     * <em>
+     * (The remote method definition does not provide any description.
+     * This usually means the response is a `VideoVsl` object.)
+     * </em>
+     */
+    VideoVslApi.prototype.AtualizaAudioLegenda = function (videoAudioLegenda, customHeaders) {
+        if (videoAudioLegenda === void 0) { videoAudioLegenda = {}; }
+        var _method = "POST";
+        var _url = _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getPath() + "/" + _lb_config__WEBPACK_IMPORTED_MODULE_4__["LoopBackConfig"].getApiVersion() +
+            "/VideoVsls/atualizaAudioLegenda";
+        var _routeParams = {};
+        var _postBody = {};
+        var _urlParams = {};
+        if (typeof videoAudioLegenda !== 'undefined' && videoAudioLegenda !== null)
+            _urlParams.videoAudioLegenda = videoAudioLegenda;
         var result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
         return result;
     };
@@ -74654,7 +80020,7 @@ var VisitanteApi = /** @class */ (function (_super) {
 /*!*****************************************************!*\
   !*** ./src/app/shared/sdk/services/custom/index.ts ***!
   \*****************************************************/
-/*! exports provided: ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SegmentoMercadoAdsPersonalizadoApi, PaginaVendaSecaoApi, SecaoWebApi, ProdutoProprioApi, ProdutoProprioVersaoApi, ProdutoProprioItemNivel1Api, PaginaVendaScrollApi, EvolucaoExperimentoApi, CampanhaAdsExperimentoApi, ExperimentoModeloApi, ModeloPaginaVendaApi, PosicaoElementoPaginaVendaApi, ElementoModeloPaginaVendaApi, VersaoPaginaVendaApi, ConteudoElementoApi, DalleSolicitacaoImagemApi, ArquivoPaginaVendaApi, ImagemPaginaVendaApi, ProdutoAfiliadoClickbankApi, VersaoImagemPaginaVendaApi, PixelAdsSegmentoMercadoApi, PaginaVendaPropriaApi, LoadPaginaVendaPropriaApi, ScrollPaginaVendaPropriaApi, AnuncioCampanhaAdsRedeDisplayApi, GrupoCampanhaAdsRedeDisplayApi, SolicitacaoCheckoutPaginaVendaPropriaApi, ContaPublicoAlvoAdsPalavraApi, PublicoAlvoAdsPalavraApi, ProdutoPublicoAdsPalavraApi, PixelProdutoHotmartContaApi, PixelProdutoHotmartContaCheckoutApi, PixelProdutoHotmartContaCompraApi, ArtigoParaProdutoApi, ProdutoHotmartContaApi, AnuncioConceitoAdsRedeDisplayApi, MetricaCampanhaAdsRedeDisplayApi, VideoVslApi, PaginaVendaVslApi, TrechoVslApi, SDKModels, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, LoggerService */
+/*! exports provided: PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SegmentoMercadoAdsPersonalizadoApi, PaginaVendaSecaoApi, SecaoWebApi, ProdutoProprioApi, ProdutoProprioVersaoApi, ProdutoProprioItemNivel1Api, PaginaVendaScrollApi, EvolucaoExperimentoApi, CampanhaAdsExperimentoApi, ExperimentoModeloApi, ModeloPaginaVendaApi, PosicaoElementoPaginaVendaApi, ElementoModeloPaginaVendaApi, VersaoPaginaVendaApi, ConteudoElementoApi, DalleSolicitacaoImagemApi, ArquivoPaginaVendaApi, ImagemPaginaVendaApi, ProdutoAfiliadoClickbankApi, VersaoImagemPaginaVendaApi, PixelAdsSegmentoMercadoApi, PaginaVendaPropriaApi, LoadPaginaVendaPropriaApi, ScrollPaginaVendaPropriaApi, AnuncioCampanhaAdsRedeDisplayApi, GrupoCampanhaAdsRedeDisplayApi, SolicitacaoCheckoutPaginaVendaPropriaApi, ContaPublicoAlvoAdsPalavraApi, PublicoAlvoAdsPalavraApi, ProdutoPublicoAdsPalavraApi, PixelProdutoHotmartContaApi, PixelProdutoHotmartContaCheckoutApi, PixelProdutoHotmartContaCompraApi, ArtigoParaProdutoApi, ProdutoHotmartContaApi, AnuncioConceitoAdsRedeDisplayApi, MetricaCampanhaAdsRedeDisplayApi, VideoVslApi, PaginaVendaVslApi, TrechoVslApi, ModeloPaginaVendaVslApi, ScriptGeraVideoApi, SDKModels, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74911,13 +80277,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TrechoVsl__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(/*! ./TrechoVsl */ "./src/app/shared/sdk/services/custom/TrechoVsl.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrechoVslApi", function() { return _TrechoVsl__WEBPACK_IMPORTED_MODULE_83__["TrechoVslApi"]; });
 
-/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _SDKModels__WEBPACK_IMPORTED_MODULE_84__["SDKModels"]; });
+/* harmony import */ var _ModeloPaginaVendaVsl__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! ./ModeloPaginaVendaVsl */ "./src/app/shared/sdk/services/custom/ModeloPaginaVendaVsl.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVslApi", function() { return _ModeloPaginaVendaVsl__WEBPACK_IMPORTED_MODULE_84__["ModeloPaginaVendaVslApi"]; });
 
-/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! ./logger.service */ "./src/app/shared/sdk/services/custom/logger.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _logger_service__WEBPACK_IMPORTED_MODULE_85__["LoggerService"]; });
+/* harmony import */ var _ScriptGeraVideo__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! ./ScriptGeraVideo */ "./src/app/shared/sdk/services/custom/ScriptGeraVideo.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideoApi", function() { return _ScriptGeraVideo__WEBPACK_IMPORTED_MODULE_85__["ScriptGeraVideoApi"]; });
+
+/* harmony import */ var _SDKModels__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(/*! ./SDKModels */ "./src/app/shared/sdk/services/custom/SDKModels.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _SDKModels__WEBPACK_IMPORTED_MODULE_86__["SDKModels"]; });
+
+/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(/*! ./logger.service */ "./src/app/shared/sdk/services/custom/logger.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _logger_service__WEBPACK_IMPORTED_MODULE_87__["LoggerService"]; });
 
 /* tslint:disable */
+
+
 
 
 
@@ -75105,7 +80479,7 @@ var LoggerService = /** @class */ (function () {
 /*!**********************************************!*\
   !*** ./src/app/shared/sdk/services/index.ts ***!
   \**********************************************/
-/*! exports provided: ErrorHandler, ModeloCampanhaAdsTesteApi, PixelGoogleApi, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SegmentoMercadoAdsPersonalizadoApi, PaginaVendaSecaoApi, SecaoWebApi, ProdutoProprioApi, ProdutoProprioVersaoApi, ProdutoProprioItemNivel1Api, PaginaVendaScrollApi, EvolucaoExperimentoApi, CampanhaAdsExperimentoApi, ExperimentoModeloApi, ModeloPaginaVendaApi, PosicaoElementoPaginaVendaApi, ElementoModeloPaginaVendaApi, VersaoPaginaVendaApi, ConteudoElementoApi, DalleSolicitacaoImagemApi, ArquivoPaginaVendaApi, ImagemPaginaVendaApi, ProdutoAfiliadoClickbankApi, VersaoImagemPaginaVendaApi, PixelAdsSegmentoMercadoApi, PaginaVendaPropriaApi, LoadPaginaVendaPropriaApi, ScrollPaginaVendaPropriaApi, AnuncioCampanhaAdsRedeDisplayApi, GrupoCampanhaAdsRedeDisplayApi, SolicitacaoCheckoutPaginaVendaPropriaApi, ContaPublicoAlvoAdsPalavraApi, PublicoAlvoAdsPalavraApi, ProdutoPublicoAdsPalavraApi, PixelProdutoHotmartContaApi, PixelProdutoHotmartContaCheckoutApi, PixelProdutoHotmartContaCompraApi, ArtigoParaProdutoApi, ProdutoHotmartContaApi, AnuncioConceitoAdsRedeDisplayApi, MetricaCampanhaAdsRedeDisplayApi, VideoVslApi, PaginaVendaVslApi, TrechoVslApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, LoggerService */
+/*! exports provided: ErrorHandler, PalavraChaveCampanhaAdsTesteApi, AnuncioCampanhaAdsTesteApi, FacebookContaApi, ProdutoAfiliadoMetricaApi, ContaGoogleApi, CampanhaAdsMetricaApi, LoadPaginaVendaApi, SolicitacaoCheckoutApi, PlanoProdutoApi, ContaGoogleMetricaMesApi, LinkCheckoutApi, CampanhaAdsMetricaIntradayApi, PrecoProdutoAfiliadoApi, AnuncioAdsDisplayApi, VisitanteApi, VideoExecucaoApi, ProdutoAfiliadoHotlinkApi, TagIdSecaoPaginaVendaApi, CampanhaAdsRedeDisplayApi, OtimizacaoCampanhaAdsRedeDisplayApi, ListaRemarketingAdsApi, PublicoAlvoAdsApi, PublicoAlvoAdsDiarioApi, PaginaVendaApi, AnuncioCampanhaAdsDisplayApi, ImagemConjuntoApi, ProdutoAfiliadoHotmartPendenteApi, SegmentoMercadoAdsPersonalizadoApi, PaginaVendaSecaoApi, SecaoWebApi, ProdutoProprioApi, ProdutoProprioVersaoApi, ProdutoProprioItemNivel1Api, PaginaVendaScrollApi, EvolucaoExperimentoApi, CampanhaAdsExperimentoApi, ExperimentoModeloApi, ModeloPaginaVendaApi, PosicaoElementoPaginaVendaApi, ElementoModeloPaginaVendaApi, VersaoPaginaVendaApi, ConteudoElementoApi, DalleSolicitacaoImagemApi, ArquivoPaginaVendaApi, ImagemPaginaVendaApi, ProdutoAfiliadoClickbankApi, VersaoImagemPaginaVendaApi, PixelAdsSegmentoMercadoApi, PaginaVendaPropriaApi, LoadPaginaVendaPropriaApi, ScrollPaginaVendaPropriaApi, AnuncioCampanhaAdsRedeDisplayApi, GrupoCampanhaAdsRedeDisplayApi, SolicitacaoCheckoutPaginaVendaPropriaApi, ContaPublicoAlvoAdsPalavraApi, PublicoAlvoAdsPalavraApi, ProdutoPublicoAdsPalavraApi, PixelProdutoHotmartContaApi, PixelProdutoHotmartContaCheckoutApi, PixelProdutoHotmartContaCompraApi, ArtigoParaProdutoApi, ProdutoHotmartContaApi, AnuncioConceitoAdsRedeDisplayApi, MetricaCampanhaAdsRedeDisplayApi, VideoVslApi, PaginaVendaVslApi, TrechoVslApi, ModeloPaginaVendaVslApi, ScriptGeraVideoApi, SDKModels, LoopBackAuth, BaseLoopBackApi, RealTime, UserApi, PlataformaVendaApi, ProdutoPlataformaApi, VisitaProdutoPlataformaApi, ProdutoHotmartApi, VisitaProdutoHotmartApi, TokenAcessoApi, IdeiaPalavraChaveApi, CampanhaAdsApi, AnuncioCampanhaAdsApi, PalavraCampanhaAdsApi, ProdutoAfiliadoHotmartApi, AgendaVisitaHotmartApi, CampanhaAdsTesteApi, AnuncioAdsApi, ModeloCampanhaAdsTesteApi, PixelGoogleApi, LoggerService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75120,10 +80494,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RealTime", function() { return _core_index__WEBPACK_IMPORTED_MODULE_0__["RealTime"]; });
 
 /* harmony import */ var _custom_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom/index */ "./src/app/shared/sdk/services/custom/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ModeloCampanhaAdsTesteApi"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PixelGoogleApi"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PalavraChaveCampanhaAdsTesteApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PalavraChaveCampanhaAdsTesteApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioCampanhaAdsTesteApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["AnuncioCampanhaAdsTesteApi"]; });
@@ -75258,6 +80628,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrechoVslApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["TrechoVslApi"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloPaginaVendaVslApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ModeloPaginaVendaVslApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScriptGeraVideoApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ScriptGeraVideoApi"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SDKModels", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["SDKModels"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["UserApi"]; });
@@ -75289,6 +80663,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CampanhaAdsTesteApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["CampanhaAdsTesteApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnuncioAdsApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["AnuncioAdsApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ModeloCampanhaAdsTesteApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["ModeloCampanhaAdsTesteApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PixelGoogleApi", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["PixelGoogleApi"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _custom_index__WEBPACK_IMPORTED_MODULE_1__["LoggerService"]; });
 
@@ -75875,7 +81253,7 @@ var SDKStorage = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsMetricaIntradayListSimples\">\n        <i class=\"fa fa-search\"></i>\n        <p>Intraday</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/acessos\">\n        <i class=\"fa fa-search\"></i>\n        <p>Acessos</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/checkout\">\n        <i class=\"fa fa-search\"></i>\n        <p>Checkout</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/metricaCampanha\">\n        <i class=\"fa fa-search\"></i>\n        <p>Métricas de Campanhas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresCpc\">\n        <i class=\"fa fa-search\"></i>\n        <p>(usar essse) Melhores Cpc</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTop\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/estiloFanart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Estilo Fanart</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/crescimentoTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Crescimento Temperatura</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/listaAltaMargemAltaTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Margem e Temperatura (40/60)</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/listaSuperMargem\">\n        <i class=\"fa fa-search\"></i>\n        <p>Super Margem</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtosTopVendas\">\n        <i class=\"fa fa-search\"></i>\n        <p>Top 50 Vendas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTopPesquisa\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top Pesquisa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/afiliadoMedio\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Medio</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoTrabalho\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/workProduto/0\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work Passo a Passo</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/resumoVisitaHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Resumo Visita Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsTesteAtivaMetrica\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanha Ativa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pendenteEstrutura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pendente Estrutura</p>\n      </a>\n    </li>\n  </ul>\n\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/experimentoModeloList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Experimento Modelo</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsMetricaIntradayCtrList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanhas Melhores Ctr Intraday</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloPaginaVenda\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelos de Página de Venda</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/elmentoModeloPaginaVenda\">\n        <i class=\"fa fa-search\"></i>\n        <p>Elementos para Modelos de Página de Venda</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/publicoAlvoAdsPalavraList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Publico Alvo Ads Palavra</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoProprioList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Próprio</p>\n      </a>\n    </li>\n  </ul>\n\n</div>"
+module.exports = "<div class=\"sidebar-wrapper\">\n  <div class=\"logo\">\n    <a routerLink=\"/home\" class=\"simple-text\">\n      <div class=\"logo-img\">\n        <img src=\"assets/img/angular2-logo-white.png\" />\n      </div>\n      <span routerLink=\"/home\">Marketing Digital</span>\n    </a>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsMetricaIntradayListSimples\">\n        <i class=\"fa fa-search\"></i>\n        <p>Intraday</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/acessos\">\n        <i class=\"fa fa-search\"></i>\n        <p>Acessos</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/checkout\">\n        <i class=\"fa fa-search\"></i>\n        <p>Checkout</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/metricaCampanha\">\n        <i class=\"fa fa-search\"></i>\n        <p>Métricas de Campanhas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/plataforma\">\n        <i class=\"fa fa-search\"></i>\n        <p>Plataformas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/tokenAcesso\">\n        <i class=\"fa fa-search\"></i>\n        <p>Tokens de Acesso</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/ideiaPalavraChave\">\n        <i class=\"fa fa-search\"></i>\n        <p>Idéia PalavraChave</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresCpc\">\n        <i class=\"fa fa-search\"></i>\n        <p>(usar essse) Melhores Cpc</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTop\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/estiloFanart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Estilo Fanart</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/crescimentoTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Lista Crescimento Temperatura</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/listaAltaMargemAltaTemperatura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Margem e Temperatura (40/60)</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/listaSuperMargem\">\n        <i class=\"fa fa-search\"></i>\n        <p>Super Margem</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtosTopVendas\">\n        <i class=\"fa fa-search\"></i>\n        <p>Top 50 Vendas</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/melhoresTopPesquisa\">\n        <i class=\"fa fa-search\"></i>\n        <p>Melhores Top Pesquisa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/afiliadoMedio\">\n        <i class=\"fa fa-search\"></i>\n        <p>Afiliados Medio</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoAfiliadoTrabalho\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/workProduto/0\">\n        <i class=\"fa fa-search\"></i>\n        <p>Work Passo a Passo</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/resumoVisitaHotmart\">\n        <i class=\"fa fa-search\"></i>\n        <p>Resumo Visita Hotmart</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/contaGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Conta Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pixelGoogle\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pixel Google</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloCampanhaAdsTeste\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Campanha Ads</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsTesteAtivaMetrica\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanha Ativa</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/pendenteEstrutura\">\n        <i class=\"fa fa-search\"></i>\n        <p>Pendente Estrutura</p>\n      </a>\n    </li>\n  </ul>\n\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/experimentoModeloList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Experimento Modelo</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/campanhaAdsMetricaIntradayCtrList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Campanhas Melhores Ctr Intraday</p>\n      </a>\n    </li>\n  </ul>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloPaginaVenda\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelos de Página de Venda</p>\n      </a>\n    </li>\n  </ul>\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/elmentoModeloPaginaVenda\">\n        <i class=\"fa fa-search\"></i>\n        <p>Elementos para Modelos de Página de Venda</p>\n      </a>\n    </li>\n  </ul>\n\n  <div>\n    <span>Busca do Milhão</span>\n  </div>\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/publicoAlvoAdsPalavraList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Publico Alvo Ads Palavra</p>\n      </a>\n    </li>\n  </ul>\n\n\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/produtoProprioList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Produto Próprio</p>\n      </a>\n    </li>\n  </ul>\n\n\n  <ul class=\"nav responsive-nav\">\n    <li width=\"100%\">\n      <a routerLink=\"/modeloPaginaVendaVslList\">\n        <i class=\"fa fa-search\"></i>\n        <p>Modelo Página VSL</p>\n      </a>\n    </li>\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -76439,7 +81817,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>TrechoVsl</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #ordenacao [(ngModel)]=\"item.ordenacao\" name=\"ordenacao\" placeholder=\"Ordenação\" autocomplete=\"off\"/>\n\t\t</mat-form-field>\n\t\t\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<textarea rows=\"4\" matInput #textoSsml [(ngModel)]=\"item.textoSsml\" name=\"textoSsml\" placeholder=\"Texto Ssml\" autocomplete=\"off\">\n\t\t\t</textarea>\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>TrechoVsl</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #ordenacao [(ngModel)]=\"item.ordenacao\" name=\"ordenacao\" placeholder=\"Ordenação\" autocomplete=\"off\"/>\n\t\t</mat-form-field>\n\t\t\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<textarea rows=\"4\" matInput #texto [(ngModel)]=\"item.texto\" name=\"texto\" placeholder=\"Texto\" autocomplete=\"off\">\n\t\t\t</textarea>\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<textarea rows=\"4\" matInput #textoSsml [(ngModel)]=\"item.textoSsml\" name=\"textoSsml\" placeholder=\"Texto Ssml\" autocomplete=\"off\">\n\t\t\t</textarea>\n\t\t</mat-form-field>\n\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>"
 
 /***/ }),
 
@@ -76496,6 +81874,9 @@ var TrechoVslEditComponent = /** @class */ (function (_super) {
         var saida = new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["TrechoVsl"]();
         saida.videoVslId = this.origem.id;
         return saida;
+    };
+    TrechoVslEditComponent.prototype.preSubmit = function () {
+        this.item.tempo = 0;
     };
     TrechoVslEditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -76615,7 +81996,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>TrechoVsl</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>Trechos Vsl</span>\n\t\t<span class=\"dgc-direita\" *ngIf=\"tempoTotal\">{{tempoTotal}}</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n \t\t\t\t<span>{{item.nome}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -77347,7 +82728,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"principal\">\n\t\t<span>{{principal.nome}}</span>\n\t</div>\n\n\t<div class=\"dgc-card\">\n\t\t<div class=\"dgc-card-header\">\n\t\t\t<span>Trechos de Copy</span>\n\t\t</div>\n\t\t<div class=\"dgc-card-detalhe\" *ngFor=\"let trecho of principal.trechoVsls\">\n\t\t\t<p>{{trecho.ordenacao}}</p>\n\t\t\t<span>{{trecho.textoSsml}}</span>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"editaTrecho(trecho)\">Edita</button>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"dgc-card-comandos\">\n\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"editaTrecho()\">Novo</button>\n\t\t</div>\n\t</div>\n\n</div>"
+module.exports = "<div class=\"dgc-painel\" *ngIf=\"principal\">\n\t<div class=\"dgc-painel-header\" *ngIf=\"principal\">\n\t\t<span>{{principal.nome}}</span>\n\t</div>\n\n\t<div class=\"dgc-card\">\n\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t<span>ChatGpt1 : {{principal.urlChatGpt1}}</span>\n\t\t</div>\n\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t&lt;emphasis level=\"strong\"&gt;This is an important announcement&lt;/emphasis&gt;\n\t\t\t&lt;break time=\"200ms\"/&gt;\n\t\t\tThe French word for cat is &lt;lang xml:lang=\"fr-FR\"&gt;chat&lt;/lang&gt;\n\t\t\t&lt;say-as interpret-as=\"verbatim\"&gt;abcdefg&lt;/say-as&gt;\n\t\t</div>\n\t\t<div class=\"dgc-card-detalhe\">\n\t\t\tCriação dos trechos de áudio: GeraAudioVideo / gera_audio.sh ( trechos com tempo = 0)\n\t\t</div>\n\t</div>\n\n\t<div class=\"dgc-card\">\n\t\t<div class=\"dgc-card-header\">\n\t\t\t<span>Trechos de Copy</span>\n\t\t\t<div class=\"dgc-direita\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"organiza()\">Organiza Ordem</button>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"dgc-card-header\">\n\t\t\t<span>Tempo: {{tempoTotal}} (ms: {{tempoMs}})</span>\n\t\t</div>\n\t\t<div class=\"dgc-card-detalhe\" *ngFor=\"let trecho of principal.trechoVsls\">\n\t\t\t<p>{{trecho.ordenacao}}</p>\n\t\t\t<p>{{trecho.texto}}</p>\n\t\t\t<p style=\"color: #666;\">{{trecho.textoSsml}}</p>\n\t\t\t<p>Tempo: {{trecho.tempo}}</p>\n\t\t\t<div class=\"dgc-card-comandos\">\n\t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"editaTrecho(trecho)\">Edita</button>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"dgc-card-comandos\">\n\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"editaTrecho()\">Novo</button>\n\t\t</div>\n\t</div>\n\n</div>"
 
 /***/ }),
 
@@ -77394,13 +82775,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var VideoVslDetalheComponent = /** @class */ (function (_super) {
     __extends(VideoVslDetalheComponent, _super);
-    function VideoVslDetalheComponent(srv, router, dialog) {
+    function VideoVslDetalheComponent(srv, router, dialog, srvTrecho) {
         var _this = _super.call(this, srv, router, dialog) || this;
         _this.srv = srv;
         _this.router = router;
         _this.dialog = dialog;
+        _this.srvTrecho = srvTrecho;
         return _this;
     }
+    VideoVslDetalheComponent.prototype.organiza = function () {
+        var _this = this;
+        this.srvTrecho.OrganizaOrdenacao(this.principal.id)
+            .subscribe(function (result) {
+            _this.carregaTela();
+        });
+    };
     VideoVslDetalheComponent.prototype.getFiltro = function () {
         return {
             'include': [
@@ -77422,13 +82811,33 @@ var VideoVslDetalheComponent = /** @class */ (function (_super) {
             }
         });
     };
+    VideoVslDetalheComponent.prototype.posCarregaTela = function () {
+        this.tempoMs = 0;
+        this.qtdeItem = 0;
+        for (var i = 0; i < this.principal.trechoVsls.length; i++) {
+            this.tempoMs += this.principal.trechoVsls[i].tempo;
+            this.qtdeItem++;
+        }
+        this.tempoTotal = this.milissegundosParaMinutoSegundo(this.tempoMs);
+    };
+    VideoVslDetalheComponent.prototype.milissegundosParaMinutoSegundo = function (total_tempo) {
+        // Convertendo milissegundos para segundos
+        var segundosTotal = Math.floor(total_tempo / 1000);
+        // Calculando os minutos e segundos
+        var minutos = Math.floor(segundosTotal / 60);
+        var segundos = segundosTotal % 60;
+        // Formatando o resultado
+        var minutosFormatados = minutos < 10 ? "0" + minutos : "" + minutos;
+        var segundosFormatados = segundos < 10 ? "0" + segundos : "" + segundos;
+        return minutosFormatados + ":" + segundosFormatados;
+    };
     VideoVslDetalheComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-video-vsl-detalhe',
             template: __webpack_require__(/*! ./video-vsl-detalhe.component.html */ "./src/app/video-vsl-detalhe/video-vsl-detalhe.component.html"),
             styles: [__webpack_require__(/*! ./video-vsl-detalhe.component.css */ "./src/app/video-vsl-detalhe/video-vsl-detalhe.component.css")]
         }),
-        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["VideoVslApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+        __metadata("design:paramtypes", [_shared_sdk__WEBPACK_IMPORTED_MODULE_3__["VideoVslApi"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _shared_sdk__WEBPACK_IMPORTED_MODULE_3__["TrechoVslApi"]])
     ], VideoVslDetalheComponent);
     return VideoVslDetalheComponent;
 }(_video_vsl_detalhe_base_component__WEBPACK_IMPORTED_MODULE_4__["VideoVslDetalheBaseComponent"]));
@@ -77547,7 +82956,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>VideoVsl</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>\n"
+module.exports = "<h2 *ngIf=\"item\" mat-dialog-title>VideoVsl</h2>\n\n<form *ngIf=\"item\" class=\"example-full-width\" (ngSubmit)=\"onSubmit()\">\n\n\t<mat-dialog-content>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #nome [(ngModel)]=\"item.nome\" name=\"nome\" placeholder=\"Nome\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<mat-select #voz [(ngModel)]=\"item.voz\" name=\"voz\" placeholder=\"Voz\">\n\t\t\t  <mat-option value=\"pt-BR-Wavenet-C\">Feminina </mat-option>\n\t\t\t  <mat-option value=\"pt-BR-Wavenet-B\">Masculina</mat-option>\n\t\t\t</mat-select>\n\t\t  </mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #urlVideo [(ngModel)]=\"item.urlVideo\" name=\"urlVideo\" placeholder=\"URL Vídeo\" />\n\t\t</mat-form-field>\n\t\t\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #codigoYouTube [(ngModel)]=\"item.codigoYouTube\" name=\"codigoYouTube\" placeholder=\"Código YouTube\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #urlChatGpt1 [(ngModel)]=\"item.urlChatGpt1\" name=\"urlChatGpt1\" placeholder=\"URL ChatGpt1\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #urlChatGpt2 [(ngModel)]=\"item.urlChatGpt2\" name=\"urlChatGpt2\" placeholder=\"URL ChatGpt2\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #urlChatGpt3 [(ngModel)]=\"item.urlChatGpt3\" name=\"urlChatGpt3\" placeholder=\"URL ChatGpt3\" />\n\t\t</mat-form-field>\n\n\t\t<mat-form-field class=\"example-full-width\">\n\t\t\t<input matInput #criaAudioLegenda [(ngModel)]=\"item.criaAudioLegenda\" name=\"criaAudioLegenda\" placeholder=\"Cria Áudio/Legenda\" />\n\t\t</mat-form-field>\n\n\t</mat-dialog-content>\n\n\t<mat-dialog-actions>\n\t\t<button mat-raised-button>Salvar</button>\n\t\t<button mat-raised-button mat-dialog-close>Fechar</button>\n\t</mat-dialog-actions>\n\n</form>"
 
 /***/ }),
 
@@ -77600,6 +83009,11 @@ var VideoVslEditComponent = /** @class */ (function (_super) {
         _this.servico = servico;
         return _this;
     }
+    VideoVslEditComponent.prototype.criaItem = function () {
+        var video = new _shared_sdk__WEBPACK_IMPORTED_MODULE_2__["VideoVsl"]();
+        video.produtoProprioId = this.origem.id;
+        return video;
+    };
     VideoVslEditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-video-vsl-edit',
@@ -77707,7 +83121,7 @@ var VideoVslPorProdutoListBaseComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".dgc-card {\n    width: 31%;\n}"
 
 /***/ }),
 
@@ -77718,7 +83132,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>VideoVsl</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span class=\"dgc-link\" routerLink=\"/videoVslDetalhe/{{item.id}}\">{{item.nome}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
+module.exports = "<div class=\"dgc-painel\">\n\t<div class=\"dgc-painel-header\">\n\t\t<span>VideoVsl</span>\n  \t\t<button class=\"btn btn-primary btn-sm dgc-botao-comando dgc-direita\" (click)=\"edita()\">novo</button>\n\t</div>\n\t<div class=\"dgc-card\" style=\"width: 100%;\">\n\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t<span>Processo: CriaAudioLegendaVsl (Cria Audio/Legenda = 1)</span>\n\t\t</div>\n\t</div>\n\t<div class=\"dgc-painel-principal\" *ngIf=\"listaBase\">\n\t\t<div class=\"dgc-card\" *ngFor=\"let item of listaBase\">\n \t\t\t<div class=\"dgc-card-header\">\n\t\t\t\t<span class=\"dgc-link\" routerLink=\"/videoVslDetalhe/{{item.id}}\">{{item.nome}}</span>\n \t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>{{item.urlVideo}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Código YouTube: {{item.codigoYouTube}}</span>\n \t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Voz: {{item.voz}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Cria Áudio/Legenda: {{item.criaAudioLegenda}}</span>\n \t\t\t</div>\n\t\t\t<div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Aúdio: {{item.arquivoAudioCompleto}}</span>\n \t\t\t</div>\n\t\t\t <div class=\"dgc-card-detalhe\">\n\t\t\t\t<span>Legenda: {{item.arquivoLegenda}}</span>\n \t\t\t</div>\n \t\t\t<div class=\"dgc-card-comandos\">\n \t\t\t\t<button class=\"btn-primary btn-sm btn\" (click)=\"edita(item)\">Editar</button>\n \t\t\t</div>\n \t\t</div>\n  \t</div>\n</div>\n"
 
 /***/ }),
 
@@ -77773,6 +83187,19 @@ var VideoVslPorProdutoListComponent = /** @class */ (function (_super) {
     VideoVslPorProdutoListComponent.prototype.getFiltro = function () {
         console.log('produto:', this.produto);
         return { 'where': { 'produtoProprioId': this.produto.id } };
+    };
+    VideoVslPorProdutoListComponent.prototype.edita = function (edicao) {
+        var _this = this;
+        this.dialog.afterAllClosed.subscribe(function (result) {
+            _this.carregaTela();
+        });
+        this.dialog.open(this.getComponente(), {
+            width: '800px',
+            data: {
+                item: edicao,
+                origem: this.produto
+            }
+        });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
