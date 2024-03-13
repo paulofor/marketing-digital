@@ -86,6 +86,16 @@ import { PaginaVendaVsl } from '../../models/PaginaVendaVsl';
 import { TrechoVsl } from '../../models/TrechoVsl';
 import { ModeloPaginaVendaVsl } from '../../models/ModeloPaginaVendaVsl';
 import { ScriptGeraVideo } from '../../models/ScriptGeraVideo';
+import { WhatsappGrupo } from '../../models/WhatsappGrupo';
+import { WhatsappMensagem } from '../../models/WhatsappMensagem';
+import { AgendaCampanha } from '../../models/AgendaCampanha';
+import { ModuloProdutoKiwify } from '../../models/ModuloProdutoKiwify';
+import { ConteudoProdutoKiwify } from '../../models/ConteudoProdutoKiwify';
+import { TentativaOferta } from '../../models/TentativaOferta';
+import { PaginaVendaAberta } from '../../models/PaginaVendaAberta';
+import { PaginaVendaModelada } from '../../models/PaginaVendaModelada';
+import { SecaoPaginaVendaModelada } from '../../models/SecaoPaginaVendaModelada';
+import { TipoSecaoPaginaVenda } from '../../models/TipoSecaoPaginaVenda';
 
 export interface Models { [name: string]: any }
 
@@ -179,6 +189,16 @@ export class SDKModels {
     TrechoVsl: TrechoVsl,
     ModeloPaginaVendaVsl: ModeloPaginaVendaVsl,
     ScriptGeraVideo: ScriptGeraVideo,
+    WhatsappGrupo: WhatsappGrupo,
+    WhatsappMensagem: WhatsappMensagem,
+    AgendaCampanha: AgendaCampanha,
+    ModuloProdutoKiwify: ModuloProdutoKiwify,
+    ConteudoProdutoKiwify: ConteudoProdutoKiwify,
+    TentativaOferta: TentativaOferta,
+    PaginaVendaAberta: PaginaVendaAberta,
+    PaginaVendaModelada: PaginaVendaModelada,
+    SecaoPaginaVendaModelada: SecaoPaginaVendaModelada,
+    TipoSecaoPaginaVenda: TipoSecaoPaginaVenda,
     
   };
 

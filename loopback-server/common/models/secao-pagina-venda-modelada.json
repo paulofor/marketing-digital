@@ -1,0 +1,35 @@
+{
+	"name": "SecaoPaginaVendaModelada",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"paginaVendaModeladaId": {
+			"type": "number"
+		},
+		"tipoSecaoPaginaVendaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"paginaVendaModelada": {
+			"type": "belongsTo",
+			"model": "PaginaVendaModelada",
+			"foreignKey": ""
+		},
+		"tipoSecaoPaginaVenda": {
+			"type": "belongsTo",
+			"model": "TipoSecaoPaginaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

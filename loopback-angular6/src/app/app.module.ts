@@ -146,6 +146,10 @@ import { CampanhaAdsRedeDisplayProdutoProprioListComponent } from './campanha-ad
 import { CampanhaAdsRedeDisplayProdutoProprioEditComponent } from './campanha-ads-rede-display-produto-proprio-edit/campanha-ads-rede-display-produto-proprio-edit.component';
 import { PublicoAlvoAdsPalavraProdutoProprioListComponent } from './publico-alvo-ads-palavra-produto-proprio-list/publico-alvo-ads-palavra-produto-proprio-list.component';
 import { ScriptGeraVideoListComponent } from './script-gera-video-list/script-gera-video-list.component';
+import { PixelGoogleProdutoProprioListComponent } from './pixel-google-produto-proprio-list/pixel-google-produto-proprio-list.component';
+import { PaginaVendaModeladaDetalheComponent } from './pagina-venda-modelada-detalhe/pagina-venda-modelada-detalhe.component';
+import { PaginaVendaModeladaEditComponent } from './pagina-venda-modelada-edit/pagina-venda-modelada-edit.component';
+import { PaginaVendaModeladaListComponent } from './pagina-venda-modelada-list/pagina-venda-modelada-list.component';
 
 
 
@@ -268,7 +272,11 @@ registerLocaleData(localePt, 'pt-BR');
     CampanhaAdsRedeDisplayProdutoProprioListComponent,
     CampanhaAdsRedeDisplayProdutoProprioEditComponent,
     PublicoAlvoAdsPalavraProdutoProprioListComponent,
-    ScriptGeraVideoListComponent
+    ScriptGeraVideoListComponent,
+    PixelGoogleProdutoProprioListComponent,
+    PaginaVendaModeladaListComponent,
+    PaginaVendaModeladaEditComponent,
+    PaginaVendaModeladaDetalheComponent
   ],
   imports: [
     BrowserModule,
@@ -356,7 +364,8 @@ registerLocaleData(localePt, 'pt-BR');
     TrechoVslEditComponent,
     ModeloPaginaVendaVslEditComponent,
     PaginaVendaVslEditComponent,
-    CampanhaAdsRedeDisplayProdutoProprioEditComponent
+    CampanhaAdsRedeDisplayProdutoProprioEditComponent,
+    PaginaVendaModeladaEditComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -25,8 +25,11 @@ public class PixelGoogle extends Model {
 	private String idAds;
 	private String snippet;
 	private int contaGoogleId;
+	private int produtoProprioId;
+	private String tipo;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
+	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
 	private List<ProdutoAfiliadoHotmart> ProdutoAfiliadoHotmarts;
 	private List<ProdutoAfiliadoHotmart> produtoAfiliadoPaginaVenda;
@@ -62,6 +65,8 @@ public class PixelGoogle extends Model {
 			obj.put("idAds", idAds);
 			obj.put("snippet", snippet);
 			obj.put("contaGoogleId", contaGoogleId);
+			obj.put("produtoProprioId", produtoProprioId);
+			obj.put("tipo", tipo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -135,6 +140,18 @@ public class PixelGoogle extends Model {
 	public int getContaGoogleId() { 
 		return this.contaGoogleId;
 	}
+	public void setProdutoProprioId(int valor) { 
+		this.produtoProprioId = valor;
+	}
+	public int getProdutoProprioId() { 
+		return this.produtoProprioId;
+	}
+	public void setTipo(String valor) { 
+		this.tipo = valor;
+	}
+	public String getTipo() { 
+		return this.tipo;
+	}
 
 	public ContaGoogle getContaGoogle() {
 		return ContaGoogle;
@@ -142,6 +159,13 @@ public class PixelGoogle extends Model {
 	public void setContaGoogle(HashMap valor) {
 		this.ContaGoogle = new ContaGoogle();
 		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoProprio getProdutoProprio() {
+		return ProdutoProprio;
+	}
+	public void setProdutoProprio(HashMap valor) {
+		this.ProdutoProprio = new ProdutoProprio();
+		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ProdutoAfiliadoHotmart> getProdutoAfiliadoHotmarts() {
 		return  ProdutoAfiliadoHotmarts;

@@ -1,0 +1,24 @@
+{
+	"name": "TipoSecaoPaginaVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+	},
+	"validations": [],
+	"relations": {
+		"secaoPaginaVendaModeladas": {
+			"type": "hasMany",
+			"model": "SecaoPaginaVendaModelada",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

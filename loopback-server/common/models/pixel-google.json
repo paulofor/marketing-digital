@@ -41,6 +41,12 @@
 		},
 		"contaGoogleId": {
 			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"tipo": {
+			"type": "string"
 		}
 	},
 	"validations": [],
@@ -48,6 +54,11 @@
 		"contaGoogle": {
 			"type": "belongsTo",
 			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
 			"foreignKey": ""
 		},
 		"produtoAfiliadoHotmarts": {

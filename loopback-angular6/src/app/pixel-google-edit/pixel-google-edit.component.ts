@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { PixelGoogle, PixelGoogleApi } from '../shared/sdk';
+import { ContaGoogle, ContaGoogleApi, PixelGoogle, PixelGoogleApi } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { BaseEditComponent } from '../base-component/base-edit-component';
 
@@ -10,14 +10,19 @@ import { BaseEditComponent } from '../base-component/base-edit-component';
 })
 export class PixelGoogleEditComponent extends BaseEditComponent {
 
+  listaConta:ContaGoogle[];
+
   constructor(protected dialogRef: MatDialogRef<any>
-    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: PixelGoogleApi,
+    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: PixelGoogleApi, private srvConta: ContaGoogleApi
   ) {
     super(dialogRef,data,servico);
   }
 
   criaItem() {
     let novo = new PixelGoogle();
+    if (this.origem) {
+      novo.produtoProprioId = this.origem.id;
+    }
     return novo;
   }
 
@@ -27,5 +32,14 @@ export class PixelGoogleEditComponent extends BaseEditComponent {
     }
   }
  
+  preSubmit(): void {
+		delete this.item['contaGoogle'];
+	}
 
+  montaCombos(): void {
+      this.srvConta.ListaAtivaCampanha() 
+        .subscribe((result:ContaGoogle[]) => {
+          this.listaConta = result;
+        })
+  }
 }

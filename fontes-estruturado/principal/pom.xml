@@ -49,6 +49,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>criaaudiolegendavsl</module>
 		<module>criapaginavendavsl</module>
 		<module>criapublicoadspalavradireto</module>
+		<module>criapixelprodutoproprio</module>
+		<module>obtemimagempaginavendamodelada</module>
 	</modules>
 
 </project>

@@ -30,6 +30,11 @@ public class ProdutoProprio extends Model {
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<ImagemConjunto> ImagemConjuntos;
 	private List<PublicoAlvoAdsPalavra> PublicoAlvoAdsPalavras;
+	private List<PixelGoogle> PixelGoogles;
+	private List<WhatsappGrupo> WhatsappGrupos;
+	private List<AgendaCampanha> AgendaCampanhas;
+	private List<ModuloProdutoKiwify> ModuloProdutoKiwifys;
+	private List<TentativaOferta> TentativaOfertas;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -198,6 +203,66 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PublicoAlvoAdsPalavras.add((PublicoAlvoAdsPalavra) objeto);
+		}
+	}
+	public List<PixelGoogle> getPixelGoogles() {
+		return  PixelGoogles;
+	}
+	public void setPixelGoogles(List<PixelGoogle> valores) {
+		this.PixelGoogles = new ArrayList<PixelGoogle>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PixelGoogle();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PixelGoogles.add((PixelGoogle) objeto);
+		}
+	}
+	public List<WhatsappGrupo> getWhatsappGrupos() {
+		return  WhatsappGrupos;
+	}
+	public void setWhatsappGrupos(List<WhatsappGrupo> valores) {
+		this.WhatsappGrupos = new ArrayList<WhatsappGrupo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new WhatsappGrupo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.WhatsappGrupos.add((WhatsappGrupo) objeto);
+		}
+	}
+	public List<AgendaCampanha> getAgendaCampanhas() {
+		return  AgendaCampanhas;
+	}
+	public void setAgendaCampanhas(List<AgendaCampanha> valores) {
+		this.AgendaCampanhas = new ArrayList<AgendaCampanha>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AgendaCampanha();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AgendaCampanhas.add((AgendaCampanha) objeto);
+		}
+	}
+	public List<ModuloProdutoKiwify> getModuloProdutoKiwifys() {
+		return  ModuloProdutoKiwifys;
+	}
+	public void setModuloProdutoKiwifys(List<ModuloProdutoKiwify> valores) {
+		this.ModuloProdutoKiwifys = new ArrayList<ModuloProdutoKiwify>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ModuloProdutoKiwify();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ModuloProdutoKiwifys.add((ModuloProdutoKiwify) objeto);
+		}
+	}
+	public List<TentativaOferta> getTentativaOfertas() {
+		return  TentativaOfertas;
+	}
+	public void setTentativaOfertas(List<TentativaOferta> valores) {
+		this.TentativaOfertas = new ArrayList<TentativaOferta>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new TentativaOferta();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.TentativaOfertas.add((TentativaOferta) objeto);
 		}
 	}
 }

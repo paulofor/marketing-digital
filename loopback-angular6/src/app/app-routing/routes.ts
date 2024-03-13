@@ -58,6 +58,8 @@ import { VideoVslPorProdutoListComponent } from '../video-vsl-por-produto-list/v
 import { VideoVslDetalheComponent } from '../video-vsl-detalhe/video-vsl-detalhe.component';
 import { ModeloPaginaVendaVslListComponent } from '../modelo-pagina-venda-vsl-list/modelo-pagina-venda-vsl-list.component';
 import { ScriptGeraVideoListComponent } from '../script-gera-video-list/script-gera-video-list.component';
+import { PaginaVendaModeladaListComponent } from '../pagina-venda-modelada-list/pagina-venda-modelada-list.component';
+import { PaginaVendaModeladaDetalheComponent } from '../pagina-venda-modelada-detalhe/pagina-venda-modelada-detalhe.component';
 
 
 
@@ -140,6 +142,9 @@ export const routes : Routes = [
     { path: 'videoVslDetalhe/:id' , component: VideoVslDetalheComponent },
     { path: 'modeloPaginaVendaVslList' , component: ModeloPaginaVendaVslListComponent },
     { path: 'scriptGeraVideoList' , component: ScriptGeraVideoListComponent },
+
+    { path: 'modeloPaginaVendaList' , component: PaginaVendaModeladaListComponent },
+    { path: 'modeloPaginaVendaDetalhe/:id' , component: PaginaVendaModeladaDetalheComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

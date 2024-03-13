@@ -76,6 +76,31 @@
 			"type": "hasMany",
 			"model": "PublicoAlvoAdsPalavra",
 			"foreignKey": ""
+		},
+		"pixelGoogles": {
+			"type": "hasMany",
+			"model": "PixelGoogle",
+			"foreignKey": ""
+		},
+		"whatsappGrupos": {
+			"type": "hasMany",
+			"model": "WhatsappGrupo",
+			"foreignKey": ""
+		},
+		"agendaCampanhas": {
+			"type": "hasMany",
+			"model": "AgendaCampanha",
+			"foreignKey": ""
+		},
+		"moduloProdutoKiwifys": {
+			"type": "hasMany",
+			"model": "ModuloProdutoKiwify",
+			"foreignKey": ""
+		},
+		"tentativaOfertas": {
+			"type": "hasMany",
+			"model": "TentativaOferta",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

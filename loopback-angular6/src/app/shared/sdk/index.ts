@@ -134,6 +134,16 @@ import { PaginaVendaVslApi } from './services/custom/PaginaVendaVsl';
 import { TrechoVslApi } from './services/custom/TrechoVsl';
 import { ModeloPaginaVendaVslApi } from './services/custom/ModeloPaginaVendaVsl';
 import { ScriptGeraVideoApi } from './services/custom/ScriptGeraVideo';
+import { WhatsappGrupoApi } from './services/custom/WhatsappGrupo';
+import { WhatsappMensagemApi } from './services/custom/WhatsappMensagem';
+import { AgendaCampanhaApi } from './services/custom/AgendaCampanha';
+import { ModuloProdutoKiwifyApi } from './services/custom/ModuloProdutoKiwify';
+import { ConteudoProdutoKiwifyApi } from './services/custom/ConteudoProdutoKiwify';
+import { TentativaOfertaApi } from './services/custom/TentativaOferta';
+import { PaginaVendaAbertaApi } from './services/custom/PaginaVendaAberta';
+import { PaginaVendaModeladaApi } from './services/custom/PaginaVendaModelada';
+import { SecaoPaginaVendaModeladaApi } from './services/custom/SecaoPaginaVendaModelada';
+import { TipoSecaoPaginaVendaApi } from './services/custom/TipoSecaoPaginaVenda';
 /**
 * @module SDKBrowserModule
 * @description
@@ -250,6 +260,16 @@ export class SDKBrowserModule {
         TrechoVslApi,
         ModeloPaginaVendaVslApi,
         ScriptGeraVideoApi,
+        WhatsappGrupoApi,
+        WhatsappMensagemApi,
+        AgendaCampanhaApi,
+        ModuloProdutoKiwifyApi,
+        ConteudoProdutoKiwifyApi,
+        TentativaOfertaApi,
+        PaginaVendaAbertaApi,
+        PaginaVendaModeladaApi,
+        SecaoPaginaVendaModeladaApi,
+        TipoSecaoPaginaVendaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

@@ -13,8 +13,12 @@
 			<button (click)="selectTab(1, principal.id)">Vídeos</button>
 			<button (click)="selectTab(2, principal.id)">Criativo Google</button>
 			<button (click)="selectTab(4, principal.id)">Anúncio Rede Display</button>
-			<button (click)="selectTab(3, principal.id)">Página Venda</button>
+			<button (click)="selectTab(3, principal.id)">Página Venda VSL</button>
+			<button (click)="selectTab(10, principal.id)">Página Venda Aberta</button>
 			<button (click)="selectTab(5, principal.id)">Campanha Rede Display</button>
+			<button (click)="selectTab(7, principal.id)">Pixel Google</button>
+			<button (click)="selectTab(8, principal.id)">Modulo Kiwify</button>
+			<button (click)="selectTab(9, principal.id)">Grupo Whatsapp</button>
 		  </div>
 		  <div *ngIf="tabService.selectedTab">
 			<div [ngSwitch]="tabService.selectedTab">
@@ -24,6 +28,7 @@
 				<app-anuncio-conceito-ads-rede-display-produto-proprio-list *ngSwitchCase="4" [produto]="principal"></app-anuncio-conceito-ads-rede-display-produto-proprio-list>
 				<app-campanha-ads-rede-display-produto-proprio-list *ngSwitchCase="5" [produto]="principal"></app-campanha-ads-rede-display-produto-proprio-list>
 				<app-publico-alvo-ads-palavra-produto-proprio-list *ngSwitchCase="6" [produto]="principal"></app-publico-alvo-ads-palavra-produto-proprio-list>
+				<app-pixel-google-produto-proprio-list *ngSwitchCase="7" [produto]="principal"></app-pixel-google-produto-proprio-list>
 			</div>
 		  </div>
 	</div>

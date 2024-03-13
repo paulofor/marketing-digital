@@ -4,11 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>50 Termos Tech</title>
-    <link rel="icon" href="imagem/termos.ico">
+    <title>50 Termos de Tecnologia</title>
+    <link rel="icon" href="https://www.palfmarketing.online/imagens/50termos.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11408209114"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11408209114');
+        gtag('event', 'conversion', {'send_to': 'AW-11408209114/U5WFCNjYqpkZENrp7b8q'});
+    </script>
+
     <style>
         body {
-            font-family: Montserrat, sans-serif;
+            font-family: 'Roboto Condensed', sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -18,11 +28,16 @@
             margin-bottom: 20px;
             background-color: #ffffff;
             text-align: center;
+            font-size: 20px;
         }
 
         h1,
         h2 {
             color: #333;
+        }
+
+        h1 {
+            font-size: 32px
         }
 
         img {
@@ -74,7 +89,7 @@
             text-decoration: none;
             font-size: 20px;
             margin-top: 20px;
-            font-family: Montserrat, sans-serif;
+            font-family: 'Roboto Condensed', sans-serif;
         }
 
         #logo {
@@ -98,6 +113,27 @@
             column-count: 2;
             column-gap: 20px;
         }
+
+        #depoimento {
+            display: block;
+            flex-basis: 0;
+            flex-grow: 1;
+            flex-shrink: 1;
+            background-color: #eee;
+        }
+        #depoimento img {
+            display: inline;
+        }
+        .pessoa-usando-produto {
+            background-color: #eee;
+        }
+        .cliente {
+            text-align: left;
+            color: #2d58b6;
+        }
+        #garantia {
+            background-color: #eee;
+        }
     </style>
 </head>
 
@@ -109,7 +145,6 @@
     <section id="headline">
         <h3>Agora você já pode dizer:</h3>
         <h1>Sou um Mestre da Tecnologia</h1>
-        <p>A explicação dos termos de tecnologia mais utilizados no dia a dia na palma da sua mão</p>
     </section>
 
     <!-- Imagem do produto -->
@@ -117,37 +152,47 @@
         <img src="imagem/produto.png" alt="50 Termos Tech">
     </section>
 
-    <!-- Preço -->
-
-    <section id="chamada-acao">
-        <h2>Adquira Agora e Atualize Seus Conhecimentos!</h2>
-        <p>De: <span class="preco-riscado">R$ 89,90</span> por R$ 49,90</p>
-        <a href="https://pay.kiwify.com.br/NPHsCnp" class="cta-button">Comprar Agora</a>
-    </section>
+   <!-- Lista de termos -->
+   <section id="lista-termos">
+    <h2>As 50 palavras de tecnologia mais usadas no dia a dia explicadas para você:</h2>
+    <ul class="termos">
+        <li>5G</li>
+        <li>Algoritmo</li>
+        <li>Cache</li>
+        <li>Criptografia</li>
+        <li>DevOps</li>
+        <li>Firewall</li>
+        <li>Hackers</li>
+        <li>Impressão 3D</li>
+        <li>Internet das Coisas</li>
+        <li>Nuvem</li>
+        <li>Scrum</li>
+        <li>Agile</li>
+        <li>Blockchain</li>
+        <li>Chabot</li>
+        <li>Deep Learning</li>
+        <li>Fintech</li>
+        <li>Gameficação</li>
+        <li>HTML</li>
+        <li>Indústria 4.0</li>
+        <li>Nanotecnologia</li>
+        <li>Open Source</li>
+        <li>Spam</li>
+        <li>VPN</li>
+    </ul>
+    <p>e muito mais</p>
+</section>
 
     <!-- Pessoa usando o produto -->
     <section class="pessoa-usando-produto">
         <img src="imagem/usuaria.png" alt="Pessoa usando o produto">
     </section>
 
-    <!-- Lista de termos -->
-    <section id="lista-termos">
-        <h2>Alguns Termos Explicados:</h2>
-        <ul class="termos">
-            <li>5G</li>
-            <li>Bitcoin</li>
-            <li>Criptografia</li>
-            <li>Firewall</li>
-            <li>Malware</li>
-            <li>Open Source</li>
-            <li>e muito mais</li>
-            <li>Algoritmo</li>
-            <li>Chatbot</li>
-            <li>Fintech</li>
-            <li>Impressão 3D</li>
-            <li>Nuvem</li>
-            <li>Scrum</li>
-        </ul>
+
+    <section id="chamada-acao">
+        <h2>Adquira Agora e Atualize Seus Conhecimentos!</h2>
+        <p>Apenas: 12 x R$ 5,01</p>
+        <a href="https://pay.kiwify.com.br/NPHsCnp" class="cta-button">Comprar Agora</a>
     </section>
 
     <!-- Pessoa usando o produto -->
@@ -157,20 +202,45 @@
 
     <!-- Detalhes do produto -->
     <section id="detalhes-produto">
-        <h2>O que você vai aprender sobre cada termo</h2>
+        <h2>Para cada uma das palavras você vai ter...</h2>
         <h3>Explicação</h3>
-        <p>Uma descrição simples clara e objetiva sobre o termo</p>
+        <p>Descrição simples, clara e objetiva sobre o termo</p>
         <h3>Histórico</h3>
-        <p>Tudo sempre tem uma história descubra como a palavra surgiu e conta para seus amigos</p>
+        <p>Tudo sempre tem uma história descubra como a palavra surgiu conte para seus amigos</p>
         <h3>Curiosidades</h3>
-        <p>Sabia que 'bug' surgiu quando insetos geravam problemas nos computadores mais antigos ?  Você vai ter acesso a essas curiosidades e muitas outras</p>
+        <p>Sabia que 'bug' surgiu quando insetos geravam problemas nos computadores mais antigos ?  Você vai conhecer muitas curiosidades como essa</p>
     </section>
 
+
+    <section id="duvida-produto">
+        <h2>Vai ocupar muito espaço no meu telefone ?</h2>
+        <h3>Informações na nuvem</h3>
+        <p>Todas as informações ficam na nuvem, você não precisa fazer nenhuma instalação.</p>
+    </section>
+
+
+    <section id="depoimento">
+        <h2>O que dizem nossos clientes:</h2>
+        <p class="cliente">Cristina... </p>
+        <p>
+            <img src="imagem/quote.jpg" width="39" style="padding-right:10px;">
+            Nunca fui muito entendida em tecnologia, mas sempre tive curiosidade. '50 Termos Tecnologia' foi uma ótima descoberta para mim! Os termos são explicados de forma fácil de entender e as curiosidades tornam tudo mais interessante. Agora me sinto mais atualizada e até me aventuro a participar de conversas sobre tecnologia. Este produto é perfeito para pessoas como eu que querem aprender sem complicações.
+        </p>
+        <p class="cliente">Márcia... </p>
+        <p>
+            <img src="imagem/quote.jpg" width="39" style="padding-right:10px;">
+            Estou absolutamente impressionada com o produto ! Como alguém que sempre teve interesse em tecnologia, mas sem nenhum conhecimento técnico, este produto foi um verdadeiro achado para mim. As explicações são claras e fáceis de entender, e as curiosidades adicionam um toque extra de fascínio. Agora me sinto muito mais confiante ao discutir assuntos relacionados à tecnologia com colegas e amigos. Recomendo fortemente este produto para qualquer pessoa que queira aprofundar seu conhecimento sobre termos de tecnologia de uma maneira acessível e envolvente.        </p>
+        <p class="cliente">Rodrigo...</p>
+        <p>
+            <img src="imagem/quote.jpg" width="39" style="padding-right:10px;">
+            Eu sempre me senti um pouco inseguro ao participar de conversas sobre tecnologia, principalmente porque não entendia muitos dos termos técnicos que eram mencionados. Desde que comecei a usar '50 Termos Tecnologia', minha confiança aumentou significativamente. As explicações são tão claras e fáceis de entender que agora me sinto à vontade para participar ativamente dessas discussões. Este produto realmente me deu a segurança necessária para me sentir parte do mundo digital. Eu recomendo fortemente para qualquer um que se sinta como eu me sentia antes!
+        </p>
+    </section>
 
     <!-- Chamada para ação -->
     <section id="chamada-acao">
         <h2>Adquira Agora e Atualize Seus Conhecimentos!</h2>
-        <p>De: <span class="preco-riscado">R$ 89,90</span> por R$ 49,90</p>
+        <p>Apenas: 12 x R$ 5,01</p>
         <a href="https://pay.kiwify.com.br/NPHsCnp" class="cta-button">Comprar Agora</a>
     </section>
 
@@ -180,11 +250,7 @@
         <p>Se em 7 dias você não estiver satisfeito com o produto nós daremos seu dinheiro de volta!</p>
     </section>
 
-    <!-- Prova Social -->
-    <section id="prova-social">
-        <h2>O que Nossos Clientes Dizem:</h2>
-        <p>Depoimentos e avaliações de clientes satisfeitos.</p>
-    </section>
+
 </body>
 
 </html>

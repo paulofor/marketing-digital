@@ -2,7 +2,8 @@
 import {
   ProdutoAfiliadoHotmart,
   ContaGoogle,
-  PublicoAlvoAdsDiario
+  PublicoAlvoAdsDiario,
+  ProdutoProprio
 } from '../index';
 
 declare var Object: any;
@@ -18,12 +19,15 @@ export interface PixelGoogleInterface {
   "idAds"?: string;
   "snippet"?: string;
   "contaGoogleId"?: number;
+  "produtoProprioId"?: number;
+  "tipo"?: string;
   "id"?: number;
   produtoAfiliadoHotmarts?: ProdutoAfiliadoHotmart[];
   produtoAfiliadoPaginaVenda?: ProdutoAfiliadoHotmart[];
   pixelGoogleCheckout?: ProdutoAfiliadoHotmart[];
   contaGoogle?: ContaGoogle;
   publicoAlvoAdsDiarios?: PublicoAlvoAdsDiario[];
+  produtoProprio?: ProdutoProprio;
 }
 
 export class PixelGoogle implements PixelGoogleInterface {
@@ -38,12 +42,15 @@ export class PixelGoogle implements PixelGoogleInterface {
   "idAds": string;
   "snippet": string;
   "contaGoogleId": number;
+  "produtoProprioId": number;
+  "tipo": string;
   "id": number;
   produtoAfiliadoHotmarts: ProdutoAfiliadoHotmart[];
   produtoAfiliadoPaginaVenda: ProdutoAfiliadoHotmart[];
   pixelGoogleCheckout: ProdutoAfiliadoHotmart[];
   contaGoogle: ContaGoogle;
   publicoAlvoAdsDiarios: PublicoAlvoAdsDiario[];
+  produtoProprio: ProdutoProprio;
   constructor(data?: PixelGoogleInterface) {
     Object.assign(this, data);
   }
@@ -121,6 +128,14 @@ export class PixelGoogle implements PixelGoogleInterface {
           name: 'contaGoogleId',
           type: 'number'
         },
+        "produtoProprioId": {
+          name: 'produtoProprioId',
+          type: 'number'
+        },
+        "tipo": {
+          name: 'tipo',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -166,6 +181,14 @@ export class PixelGoogle implements PixelGoogleInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'pixelGoogleId'
+        },
+        produtoProprio: {
+          name: 'produtoProprio',
+          type: 'ProdutoProprio',
+          model: 'ProdutoProprio',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoProprioId',
+          keyTo: 'id'
         },
       }
     }

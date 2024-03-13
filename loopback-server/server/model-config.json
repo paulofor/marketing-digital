@@ -374,5 +374,45 @@
   "ScriptGeraVideo": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "WhatsappGrupo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "WhatsappMensagem": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AgendaCampanha": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ModuloProdutoKiwify": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ConteudoProdutoKiwify": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "TentativaOferta": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaVendaAberta": {
+    "dataSource": "db",
+    "public": true
+  },
+  "PaginaVendaModelada": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "SecaoPaginaVendaModelada": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "TipoSecaoPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

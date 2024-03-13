@@ -3,13 +3,18 @@ import {
   ContaGoogle,
   CampanhaAdsRedeDisplay,
   ImagemConjunto,
+  PixelGoogle,
   ProdutoProprioVersao,
   VersaoPaginaVenda,
   ImagemPaginaVenda,
   PublicoAlvoAdsPalavra,
   AnuncioConceitoAdsRedeDisplay,
   VideoVsl,
-  PaginaVendaVsl
+  PaginaVendaVsl,
+  WhatsappGrupo,
+  AgendaCampanha,
+  ModuloProdutoKiwify,
+  TentativaOferta
 } from '../index';
 
 declare var Object: any;
@@ -23,6 +28,7 @@ export interface ProdutoProprioInterface {
   contaGoogle?: ContaGoogle;
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   imagemConjuntos?: ImagemConjunto[];
+  pixelGoogles?: PixelGoogle[];
   produtoProprioVersaos?: ProdutoProprioVersao[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
   imagemPaginaVendas?: ImagemPaginaVenda[];
@@ -30,6 +36,10 @@ export interface ProdutoProprioInterface {
   anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
   videoVsls?: VideoVsl[];
   paginaVendaVsls?: PaginaVendaVsl[];
+  whatsappGrupos?: WhatsappGrupo[];
+  agendaCampanhas?: AgendaCampanha[];
+  moduloProdutoKiwifys?: ModuloProdutoKiwify[];
+  tentativaOfertas?: TentativaOferta[];
 }
 
 export class ProdutoProprio implements ProdutoProprioInterface {
@@ -42,6 +52,7 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   contaGoogle: ContaGoogle;
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   imagemConjuntos: ImagemConjunto[];
+  pixelGoogles: PixelGoogle[];
   produtoProprioVersaos: ProdutoProprioVersao[];
   versaoPaginaVendas: VersaoPaginaVenda[];
   imagemPaginaVendas: ImagemPaginaVenda[];
@@ -49,6 +60,10 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
   videoVsls: VideoVsl[];
   paginaVendaVsls: PaginaVendaVsl[];
+  whatsappGrupos: WhatsappGrupo[];
+  agendaCampanhas: AgendaCampanha[];
+  moduloProdutoKiwifys: ModuloProdutoKiwify[];
+  tentativaOfertas: TentativaOferta[];
   constructor(data?: ProdutoProprioInterface) {
     Object.assign(this, data);
   }
@@ -132,6 +147,14 @@ export class ProdutoProprio implements ProdutoProprioInterface {
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'
         },
+        pixelGoogles: {
+          name: 'pixelGoogles',
+          type: 'PixelGoogle[]',
+          model: 'PixelGoogle',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
         produtoProprioVersaos: {
           name: 'produtoProprioVersaos',
           type: 'ProdutoProprioVersao[]',
@@ -184,6 +207,38 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'paginaVendaVsls',
           type: 'PaginaVendaVsl[]',
           model: 'PaginaVendaVsl',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        whatsappGrupos: {
+          name: 'whatsappGrupos',
+          type: 'WhatsappGrupo[]',
+          model: 'WhatsappGrupo',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        agendaCampanhas: {
+          name: 'agendaCampanhas',
+          type: 'AgendaCampanha[]',
+          model: 'AgendaCampanha',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        moduloProdutoKiwifys: {
+          name: 'moduloProdutoKiwifys',
+          type: 'ModuloProdutoKiwify[]',
+          model: 'ModuloProdutoKiwify',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        tentativaOfertas: {
+          name: 'tentativaOfertas',
+          type: 'TentativaOferta[]',
+          model: 'TentativaOferta',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'

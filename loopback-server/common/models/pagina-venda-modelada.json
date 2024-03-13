@@ -1,0 +1,80 @@
+{
+	"name": "PaginaVendaModelada",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nomeProduto": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		},
+		"fonte": {
+			"type": "string"
+		},
+		"imagemCompleta": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"secaoPaginaVendaModeladas": {
+			"type": "hasMany",
+			"model": "SecaoPaginaVendaModelada",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ListaParaBuscarImagem": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaBuscarImagem",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaImagem": {
+			"accepts": [
+				{
+					"arg": "pagina",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaImagem",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

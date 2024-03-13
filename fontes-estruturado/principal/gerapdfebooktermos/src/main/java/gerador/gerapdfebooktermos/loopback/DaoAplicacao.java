@@ -103,6 +103,16 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioTrechoVsl repTrechoVsl = adapter.createRepository(RepositorioTrechoVsl.class);
 	protected RepositorioModeloPaginaVendaVsl repModeloPaginaVendaVsl = adapter.createRepository(RepositorioModeloPaginaVendaVsl.class);
 	protected RepositorioScriptGeraVideo repScriptGeraVideo = adapter.createRepository(RepositorioScriptGeraVideo.class);
+	protected RepositorioWhatsappGrupo repWhatsappGrupo = adapter.createRepository(RepositorioWhatsappGrupo.class);
+	protected RepositorioWhatsappMensagem repWhatsappMensagem = adapter.createRepository(RepositorioWhatsappMensagem.class);
+	protected RepositorioAgendaCampanha repAgendaCampanha = adapter.createRepository(RepositorioAgendaCampanha.class);
+	protected RepositorioModuloProdutoKiwify repModuloProdutoKiwify = adapter.createRepository(RepositorioModuloProdutoKiwify.class);
+	protected RepositorioConteudoProdutoKiwify repConteudoProdutoKiwify = adapter.createRepository(RepositorioConteudoProdutoKiwify.class);
+	protected RepositorioTentativaOferta repTentativaOferta = adapter.createRepository(RepositorioTentativaOferta.class);
+	protected RepositorioPaginaVendaAberta repPaginaVendaAberta = adapter.createRepository(RepositorioPaginaVendaAberta.class);
+	protected RepositorioPaginaVendaModelada repPaginaVendaModelada = adapter.createRepository(RepositorioPaginaVendaModelada.class);
+	protected RepositorioSecaoPaginaVendaModelada repSecaoPaginaVendaModelada = adapter.createRepository(RepositorioSecaoPaginaVendaModelada.class);
+	protected RepositorioTipoSecaoPaginaVenda repTipoSecaoPaginaVenda = adapter.createRepository(RepositorioTipoSecaoPaginaVenda.class);
 
 
 	@Override
