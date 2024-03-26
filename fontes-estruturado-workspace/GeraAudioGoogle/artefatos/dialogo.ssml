@@ -1,0 +1,39 @@
+<speak>
+
+    <prosody rate="medium">Você já se encontrou perdido em </prosody><prosody rate="slow">um mar de jargões tecnológicos?</prosody>
+    <break time="0.5s"/>
+    <prosody rate="slow">Passando horas </prosody><prosody rate="medium">tentando descobrir como dominar aquele novo dispositivo ou aplicativo que acabou de adquirir?</prosody>
+    <break time="0.5s"/>
+    <prosody rate="fast" pitch="high" volume="loud">A tecnologia pode ser incrível,</prosody><prosody rate="medium" pitch="default" volume="medium">mas vamos encarar a realidade:</prosody>
+    <break time="0.5s"/>
+    <prosody rate="medium" pitch="medium" volume="medium">Ela pode ser intimidante e confusa.</prosody>
+  
+    <prosody rate="medium">É por isso que estamos aqui para apresentar a solução definitiva:</prosody>
+    <break time="0.5s"/>
+    <prosody rate="slow">o Manual Completo de Tecnologia para Iniciantes.</prosody>
+    <break time="0.5s"/>
+    <prosody rate="medium">Imagine ter acesso a um guia abrangente que desmistifica todos os aspectos da tecnologia moderna.</prosody>
+
+    <prosody rate="medium">Com ilustrações claras e instruções simples,</prosody>
+    <break time="0.5s"/>
+    <prosody rate="slow">você aprenderá a dominar smartphones, tablets, computadores e muito mais.</prosody>
+    <break time="0.5s"/>
+    <prosody rate="medium">Não importa o seu nível de experiência,</prosody>
+    <break time="0.5s"/>
+    <prosody rate="slow">este manual foi projetado para capacitá-lo a aproveitar ao máximo a tecnologia.</prosody>
+    <prosody rate="medium">E não apenas acreditamos em nossas palavras.</prosody>
+    <break time="0.5s"/>
+    <prosody rate="slow">Veja o que nossos clientes têm a dizer...</prosody>
+    <prosody rate="medium">Este manual mudou completamente a forma como eu interajo com a tecnologia.</prosody>
+    <break time="0.5s"/>
+    <prosody rate="slow">Agora me sinto confiante e capacitado para explorar novas possibilidades.</prosody>
+    <prosody rate="medium">Com mais de 100 páginas de conhecimento valioso,</prosody>
+    <break time="0.5s"/>
+    <prosody rate="slow">este é o recurso essencial que você precisa para se tornar um especialista em tecnologia.</prosody>
+    <prosody rate="medium">O tempo está passando.</prosody>
+    <break time="0.5s"/>
+    <prosody rate="slow">Não deixe que a tecnologia o deixe para trás.</prosody>
+    <break time="0.5s"/>
+    <prosody rate="medium">Adquira seu Manual Completo de Tecnologia para Iniciantes hoje mesmo e embarque em uma jornada de descoberta digital!</prosody>
+    <prosody rate="medium">Clique no botão abaixo para começar sua jornada agora!</prosody>
+</speak>

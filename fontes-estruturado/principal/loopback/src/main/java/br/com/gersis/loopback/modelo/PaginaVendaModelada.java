@@ -18,6 +18,7 @@ public class PaginaVendaModelada extends Model {
 	private String url;
 	private String fonte;
 	private String imagemCompleta;
+	private String urlImagemCompleta;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<SecaoPaginaVendaModelada> SecaoPaginaVendaModeladas;
@@ -44,6 +45,7 @@ public class PaginaVendaModelada extends Model {
 			obj.put("url", url);
 			obj.put("fonte", fonte);
 			obj.put("imagemCompleta", imagemCompleta);
+			obj.put("urlImagemCompleta", urlImagemCompleta);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -74,6 +76,12 @@ public class PaginaVendaModelada extends Model {
 	}
 	public String getImagemCompleta() { 
 		return this.imagemCompleta;
+	}
+	public void setUrlImagemCompleta(String valor) { 
+		this.urlImagemCompleta = valor;
+	}
+	public String getUrlImagemCompleta() { 
+		return this.urlImagemCompleta;
 	}
 
 	public List<SecaoPaginaVendaModelada> getSecaoPaginaVendaModeladas() {

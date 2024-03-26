@@ -4,7 +4,8 @@ import {
   ProdutoAfiliadoHotlink,
   ProdutoProprio,
   ArquivoPaginaVenda,
-  PaginaVendaPropria
+  PaginaVendaPropria,
+  AnuncioFacebook
 } from '../index';
 
 declare var Object: any;
@@ -17,12 +18,16 @@ export interface ImagemPaginaVendaInterface {
   "urlFinal"?: string;
   "produtoProprioId"?: number;
   "hotmartId"?: number;
+  "urlJpeg"?: string;
+  "geraJpg"?: number;
+  "codigoHexa"?: string;
   "id"?: number;
   dalleSolicitacaoImagem?: DalleSolicitacaoImagem;
   produtoAfiliadoHotlink?: ProdutoAfiliadoHotlink;
   produtoProprio?: ProdutoProprio;
   arquivoPaginaVendas?: ArquivoPaginaVenda[];
   paginaVendaProprias?: PaginaVendaPropria[];
+  anuncioFacebooks?: AnuncioFacebook[];
 }
 
 export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
@@ -34,12 +39,16 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
   "urlFinal": string;
   "produtoProprioId": number;
   "hotmartId": number;
+  "urlJpeg": string;
+  "geraJpg": number;
+  "codigoHexa": string;
   "id": number;
   dalleSolicitacaoImagem: DalleSolicitacaoImagem;
   produtoAfiliadoHotlink: ProdutoAfiliadoHotlink;
   produtoProprio: ProdutoProprio;
   arquivoPaginaVendas: ArquivoPaginaVenda[];
   paginaVendaProprias: PaginaVendaPropria[];
+  anuncioFacebooks: AnuncioFacebook[];
   constructor(data?: ImagemPaginaVendaInterface) {
     Object.assign(this, data);
   }
@@ -105,6 +114,18 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
           name: 'hotmartId',
           type: 'number'
         },
+        "urlJpeg": {
+          name: 'urlJpeg',
+          type: 'string'
+        },
+        "geraJpg": {
+          name: 'geraJpg',
+          type: 'number'
+        },
+        "codigoHexa": {
+          name: 'codigoHexa',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -147,6 +168,14 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
           name: 'paginaVendaProprias',
           type: 'PaginaVendaPropria[]',
           model: 'PaginaVendaPropria',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'imagemPaginaVendaId'
+        },
+        anuncioFacebooks: {
+          name: 'anuncioFacebooks',
+          type: 'AnuncioFacebook[]',
+          model: 'AnuncioFacebook',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'imagemPaginaVendaId'

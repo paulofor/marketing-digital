@@ -32,6 +32,15 @@
 		},
 		"hotmartId": {
 			"type": "number"
+		},
+		"urlJpeg": {
+			"type": "string"
+		},
+		"geraJpg": {
+			"type": "number"
+		},
+		"codigoHexa": {
+			"type": "string"
 		}
 	},
 	"validations": [],
@@ -59,6 +68,11 @@
 		"paginaVendaProprias": {
 			"type": "hasMany",
 			"model": "PaginaVendaPropria",
+			"foreignKey": ""
+		},
+		"anuncioFacebooks": {
+			"type": "hasMany",
+			"model": "AnuncioFacebook",
 			"foreignKey": ""
 		}
 	},
@@ -110,6 +124,50 @@
 			"http": [
          		{
           			"path": "/alteraDisponivel",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaJpg": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaJpg",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"RegistraJpg": {
+			"accepts": [
+				{
+					"arg": "imagem",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraJpg",
    					"verb": "post"
  				}
  			]

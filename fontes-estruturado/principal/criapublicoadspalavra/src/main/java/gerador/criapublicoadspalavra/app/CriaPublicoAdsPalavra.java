@@ -17,7 +17,7 @@ public class CriaPublicoAdsPalavra {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPublicoAdsPalavra");
-		System.out.println("(12/03/2024 16:32:18)");
+		System.out.println("(26/03/2024 19:04:38)");
 		try {
 			carregaProp();
 			CriaPublicoAdsPalavraObj obj = new CriaPublicoAdsPalavraObj();

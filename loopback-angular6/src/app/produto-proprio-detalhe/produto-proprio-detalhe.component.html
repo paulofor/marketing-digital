@@ -15,10 +15,15 @@
 			<button (click)="selectTab(4, principal.id)">Anúncio Rede Display</button>
 			<button (click)="selectTab(3, principal.id)">Página Venda VSL</button>
 			<button (click)="selectTab(10, principal.id)">Página Venda Aberta</button>
+			<button (click)="selectTab(15, principal.id)">Checkouts</button>
 			<button (click)="selectTab(5, principal.id)">Campanha Rede Display</button>
 			<button (click)="selectTab(7, principal.id)">Pixel Google</button>
-			<button (click)="selectTab(8, principal.id)">Modulo Kiwify</button>
+			<button (click)="selectTab(8, principal.id)">Entregável</button>
 			<button (click)="selectTab(9, principal.id)">Grupo Whatsapp</button>
+			<button (click)="selectTab(11, principal.id)">Dall-E</button>
+			<button (click)="selectTab(12, principal.id)">Dall-E Imagens</button>
+			<button (click)="selectTab(13, principal.id)">Facebook Anúncios</button>
+			<button (click)="selectTab(14, principal.id)">Prompt de Entregável</button>
 		  </div>
 		  <div *ngIf="tabService.selectedTab">
 			<div [ngSwitch]="tabService.selectedTab">
@@ -29,6 +34,13 @@
 				<app-campanha-ads-rede-display-produto-proprio-list *ngSwitchCase="5" [produto]="principal"></app-campanha-ads-rede-display-produto-proprio-list>
 				<app-publico-alvo-ads-palavra-produto-proprio-list *ngSwitchCase="6" [produto]="principal"></app-publico-alvo-ads-palavra-produto-proprio-list>
 				<app-pixel-google-produto-proprio-list *ngSwitchCase="7" [produto]="principal"></app-pixel-google-produto-proprio-list>
+				<app-entregavel-produto-list *ngSwitchCase="8" [produto]="principal"></app-entregavel-produto-list>
+				<app-pagina-venda-aberta-list *ngSwitchCase="10" [produto]="principal"></app-pagina-venda-aberta-list>
+				<app-dalle-solicitacao-imagem-produto-proprio-list *ngSwitchCase="11" [produto]="principal"></app-dalle-solicitacao-imagem-produto-proprio-list>
+				<app-dalle-solicitacao-com-imagem-por-proprio-list *ngSwitchCase="12" [produto]="principal"></app-dalle-solicitacao-com-imagem-por-proprio-list>
+				<app-anuncio-facebook-list *ngSwitchCase="13" [produto]="principal"></app-anuncio-facebook-list>
+				<app-prompt-item-list *ngSwitchCase="14" [produto]="principal"></app-prompt-item-list>
+				<app-checkout-produto-proprio-list *ngSwitchCase="15" [produto]="principal"></app-checkout-produto-proprio-list>
 			</div>
 		  </div>
 	</div>

@@ -23,8 +23,10 @@ public class DalleSolicitacaoImagem extends Model {
 	private String arquivo;
 	private int quantidadeImagem;
 	private String dataProcessamento;
+	private int produtoProprioId;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
+	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
 	private List<ImagemPaginaVenda> ImagemPaginaVendas;
 	private List<VersaoImagemPaginaVenda> VersaoImagemPaginaVendas;
@@ -56,6 +58,7 @@ public class DalleSolicitacaoImagem extends Model {
 			obj.put("arquivo", arquivo);
 			obj.put("quantidadeImagem", quantidadeImagem);
 			obj.put("dataProcessamento", dataProcessamento);
+			obj.put("produtoProprioId", produtoProprioId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -117,6 +120,12 @@ public class DalleSolicitacaoImagem extends Model {
 	public String getDataProcessamento() { 
 		return this.dataProcessamento;
 	}
+	public void setProdutoProprioId(int valor) { 
+		this.produtoProprioId = valor;
+	}
+	public int getProdutoProprioId() { 
+		return this.produtoProprioId;
+	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
 		return ProdutoAfiliadoHotmart;
@@ -124,6 +133,13 @@ public class DalleSolicitacaoImagem extends Model {
 	public void setProdutoAfiliadoHotmart(HashMap valor) {
 		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
 		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoProprio getProdutoProprio() {
+		return ProdutoProprio;
+	}
+	public void setProdutoProprio(HashMap valor) {
+		this.ProdutoProprio = new ProdutoProprio();
+		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ImagemPaginaVenda> getImagemPaginaVendas() {
 		return  ImagemPaginaVendas;

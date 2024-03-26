@@ -17,7 +17,7 @@ public class TesteSelenium {
 
 	public static void main(String[] args) {
 		System.out.print("TesteSelenium");
-		System.out.println("(12/03/2024 16:32:11)");
+		System.out.println("(26/03/2024 19:04:31)");
 		try {
 			carregaProp();
 			TesteSeleniumObj obj = new TesteSeleniumObj();

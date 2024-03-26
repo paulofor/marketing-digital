@@ -1,0 +1,35 @@
+{
+	"name": "EntregavelPrompt",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"entregavelProdutoId": {
+			"type": "number"
+		},
+		"promptItemId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"entregavelProduto": {
+			"type": "belongsTo",
+			"model": "EntregavelProduto",
+			"foreignKey": ""
+		},
+		"promptItem": {
+			"type": "belongsTo",
+			"model": "PromptItem",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

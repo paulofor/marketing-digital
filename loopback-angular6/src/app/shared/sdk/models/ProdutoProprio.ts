@@ -6,6 +6,7 @@ import {
   PixelGoogle,
   ProdutoProprioVersao,
   VersaoPaginaVenda,
+  DalleSolicitacaoImagem,
   ImagemPaginaVenda,
   PublicoAlvoAdsPalavra,
   AnuncioConceitoAdsRedeDisplay,
@@ -13,8 +14,12 @@ import {
   PaginaVendaVsl,
   WhatsappGrupo,
   AgendaCampanha,
-  ModuloProdutoKiwify,
-  TentativaOferta
+  TentativaOferta,
+  PaginaVendaAberta,
+  EntregavelProduto,
+  PromptItem,
+  IdeiaUnica,
+  CheckoutProdutoProprio
 } from '../index';
 
 declare var Object: any;
@@ -31,6 +36,7 @@ export interface ProdutoProprioInterface {
   pixelGoogles?: PixelGoogle[];
   produtoProprioVersaos?: ProdutoProprioVersao[];
   versaoPaginaVendas?: VersaoPaginaVenda[];
+  dalleSolicitacaoImagems?: DalleSolicitacaoImagem[];
   imagemPaginaVendas?: ImagemPaginaVenda[];
   publicoAlvoAdsPalavras?: PublicoAlvoAdsPalavra[];
   anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
@@ -38,8 +44,12 @@ export interface ProdutoProprioInterface {
   paginaVendaVsls?: PaginaVendaVsl[];
   whatsappGrupos?: WhatsappGrupo[];
   agendaCampanhas?: AgendaCampanha[];
-  moduloProdutoKiwifys?: ModuloProdutoKiwify[];
   tentativaOfertas?: TentativaOferta[];
+  paginaVendaAbertas?: PaginaVendaAberta[];
+  entregavelProdutos?: EntregavelProduto[];
+  promptItems?: PromptItem[];
+  ideiaUnicas?: IdeiaUnica[];
+  checkoutProdutoProprios?: CheckoutProdutoProprio[];
 }
 
 export class ProdutoProprio implements ProdutoProprioInterface {
@@ -55,6 +65,7 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   pixelGoogles: PixelGoogle[];
   produtoProprioVersaos: ProdutoProprioVersao[];
   versaoPaginaVendas: VersaoPaginaVenda[];
+  dalleSolicitacaoImagems: DalleSolicitacaoImagem[];
   imagemPaginaVendas: ImagemPaginaVenda[];
   publicoAlvoAdsPalavras: PublicoAlvoAdsPalavra[];
   anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
@@ -62,8 +73,12 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   paginaVendaVsls: PaginaVendaVsl[];
   whatsappGrupos: WhatsappGrupo[];
   agendaCampanhas: AgendaCampanha[];
-  moduloProdutoKiwifys: ModuloProdutoKiwify[];
   tentativaOfertas: TentativaOferta[];
+  paginaVendaAbertas: PaginaVendaAberta[];
+  entregavelProdutos: EntregavelProduto[];
+  promptItems: PromptItem[];
+  ideiaUnicas: IdeiaUnica[];
+  checkoutProdutoProprios: CheckoutProdutoProprio[];
   constructor(data?: ProdutoProprioInterface) {
     Object.assign(this, data);
   }
@@ -171,6 +186,14 @@ export class ProdutoProprio implements ProdutoProprioInterface {
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'
         },
+        dalleSolicitacaoImagems: {
+          name: 'dalleSolicitacaoImagems',
+          type: 'DalleSolicitacaoImagem[]',
+          model: 'DalleSolicitacaoImagem',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
         imagemPaginaVendas: {
           name: 'imagemPaginaVendas',
           type: 'ImagemPaginaVenda[]',
@@ -227,18 +250,50 @@ export class ProdutoProprio implements ProdutoProprioInterface {
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'
         },
-        moduloProdutoKiwifys: {
-          name: 'moduloProdutoKiwifys',
-          type: 'ModuloProdutoKiwify[]',
-          model: 'ModuloProdutoKiwify',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'produtoProprioId'
-        },
         tentativaOfertas: {
           name: 'tentativaOfertas',
           type: 'TentativaOferta[]',
           model: 'TentativaOferta',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        paginaVendaAbertas: {
+          name: 'paginaVendaAbertas',
+          type: 'PaginaVendaAberta[]',
+          model: 'PaginaVendaAberta',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        entregavelProdutos: {
+          name: 'entregavelProdutos',
+          type: 'EntregavelProduto[]',
+          model: 'EntregavelProduto',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        promptItems: {
+          name: 'promptItems',
+          type: 'PromptItem[]',
+          model: 'PromptItem',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        ideiaUnicas: {
+          name: 'ideiaUnicas',
+          type: 'IdeiaUnica[]',
+          model: 'IdeiaUnica',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        checkoutProdutoProprios: {
+          name: 'checkoutProdutoProprios',
+          type: 'CheckoutProdutoProprio[]',
+          model: 'CheckoutProdutoProprio',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'

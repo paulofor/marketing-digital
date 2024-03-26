@@ -9,6 +9,7 @@ export interface PaginaVendaModeladaInterface {
   "url"?: string;
   "fonte"?: string;
   "imagemCompleta"?: string;
+  "urlImagemCompleta"?: string;
   "id"?: number;
   secaoPaginaVendaModeladas?: SecaoPaginaVendaModelada[];
 }
@@ -18,6 +19,7 @@ export class PaginaVendaModelada implements PaginaVendaModeladaInterface {
   "url": string;
   "fonte": string;
   "imagemCompleta": string;
+  "urlImagemCompleta": string;
   "id": number;
   secaoPaginaVendaModeladas: SecaoPaginaVendaModelada[];
   constructor(data?: PaginaVendaModeladaInterface) {
@@ -67,6 +69,10 @@ export class PaginaVendaModelada implements PaginaVendaModeladaInterface {
         },
         "imagemCompleta": {
           name: 'imagemCompleta',
+          type: 'string'
+        },
+        "urlImagemCompleta": {
+          name: 'urlImagemCompleta',
           type: 'string'
         },
         "id": {

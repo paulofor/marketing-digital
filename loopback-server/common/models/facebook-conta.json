@@ -15,6 +15,11 @@
 	},
 	"validations": [],
 	"relations": {
+		"paginaFacebooks": {
+			"type": "hasMany",
+			"model": "PaginaFacebook",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {

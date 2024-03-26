@@ -9,28 +9,79 @@
     	"Counts": true
   	},
 	"properties": {
-		"texto": {
-			"type": "string"
-		},
-		"titulo": {
+		"nome": {
 			"type": "string"
 		},
 		"ordenacao": {
 			"type": "number"
 		},
-		"moduloProdutoKiwifyId": {
+		"entregavelProdutoId": {
 			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
-		"moduloProdutoKiwify": {
+		"entregavelProduto": {
 			"type": "belongsTo",
-			"model": "ModuloProdutoKiwify",
+			"model": "EntregavelProduto",
+			"foreignKey": ""
+		},
+		"itemConteudoProdutos": {
+			"type": "hasMany",
+			"model": "ItemConteudoProduto",
+			"foreignKey": ""
+		},
+		"imagemConteudos": {
+			"type": "hasMany",
+			"model": "ImagemConteudo",
 			"foreignKey": ""
 		}
 	},
 	"acls": [],
 	"methods": {
+		"OrdenacaoAlfabetica": {
+			"accepts": [
+				{
+					"arg": "IdEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/ordenacaoAlfabetica",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaGeracaoImagem": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGeracaoImagem",
+   					"verb": "get"
+ 				}
+ 			]
+		}
 	}
 }

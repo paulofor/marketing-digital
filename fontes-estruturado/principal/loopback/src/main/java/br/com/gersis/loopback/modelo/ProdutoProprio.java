@@ -33,8 +33,13 @@ public class ProdutoProprio extends Model {
 	private List<PixelGoogle> PixelGoogles;
 	private List<WhatsappGrupo> WhatsappGrupos;
 	private List<AgendaCampanha> AgendaCampanhas;
-	private List<ModuloProdutoKiwify> ModuloProdutoKiwifys;
 	private List<TentativaOferta> TentativaOfertas;
+	private List<DalleSolicitacaoImagem> DalleSolicitacaoImagems;
+	private List<EntregavelProduto> EntregavelProdutos;
+	private List<PromptItem> PromptItems;
+	private List<IdeiaUnica> IdeiaUnicas;
+	private List<CheckoutProdutoProprio> CheckoutProdutoProprios;
+	private List<PaginaVendaAberta> PaginaVendaAbertas;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -241,18 +246,6 @@ public class ProdutoProprio extends Model {
 			this.AgendaCampanhas.add((AgendaCampanha) objeto);
 		}
 	}
-	public List<ModuloProdutoKiwify> getModuloProdutoKiwifys() {
-		return  ModuloProdutoKiwifys;
-	}
-	public void setModuloProdutoKiwifys(List<ModuloProdutoKiwify> valores) {
-		this.ModuloProdutoKiwifys = new ArrayList<ModuloProdutoKiwify>();
-		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new ModuloProdutoKiwify();
-			System.out.println(" --> ObjetoMap ");
-			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.ModuloProdutoKiwifys.add((ModuloProdutoKiwify) objeto);
-		}
-	}
 	public List<TentativaOferta> getTentativaOfertas() {
 		return  TentativaOfertas;
 	}
@@ -263,6 +256,78 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.TentativaOfertas.add((TentativaOferta) objeto);
+		}
+	}
+	public List<DalleSolicitacaoImagem> getDalleSolicitacaoImagems() {
+		return  DalleSolicitacaoImagems;
+	}
+	public void setDalleSolicitacaoImagems(List<DalleSolicitacaoImagem> valores) {
+		this.DalleSolicitacaoImagems = new ArrayList<DalleSolicitacaoImagem>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new DalleSolicitacaoImagem();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.DalleSolicitacaoImagems.add((DalleSolicitacaoImagem) objeto);
+		}
+	}
+	public List<EntregavelProduto> getEntregavelProdutos() {
+		return  EntregavelProdutos;
+	}
+	public void setEntregavelProdutos(List<EntregavelProduto> valores) {
+		this.EntregavelProdutos = new ArrayList<EntregavelProduto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new EntregavelProduto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.EntregavelProdutos.add((EntregavelProduto) objeto);
+		}
+	}
+	public List<PromptItem> getPromptItems() {
+		return  PromptItems;
+	}
+	public void setPromptItems(List<PromptItem> valores) {
+		this.PromptItems = new ArrayList<PromptItem>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PromptItem();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PromptItems.add((PromptItem) objeto);
+		}
+	}
+	public List<IdeiaUnica> getIdeiaUnicas() {
+		return  IdeiaUnicas;
+	}
+	public void setIdeiaUnicas(List<IdeiaUnica> valores) {
+		this.IdeiaUnicas = new ArrayList<IdeiaUnica>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new IdeiaUnica();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.IdeiaUnicas.add((IdeiaUnica) objeto);
+		}
+	}
+	public List<CheckoutProdutoProprio> getCheckoutProdutoProprios() {
+		return  CheckoutProdutoProprios;
+	}
+	public void setCheckoutProdutoProprios(List<CheckoutProdutoProprio> valores) {
+		this.CheckoutProdutoProprios = new ArrayList<CheckoutProdutoProprio>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CheckoutProdutoProprio();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CheckoutProdutoProprios.add((CheckoutProdutoProprio) objeto);
+		}
+	}
+	public List<PaginaVendaAberta> getPaginaVendaAbertas() {
+		return  PaginaVendaAbertas;
+	}
+	public void setPaginaVendaAbertas(List<PaginaVendaAberta> valores) {
+		this.PaginaVendaAbertas = new ArrayList<PaginaVendaAberta>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaAberta();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaAbertas.add((PaginaVendaAberta) objeto);
 		}
 	}
 }

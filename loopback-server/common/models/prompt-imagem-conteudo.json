@@ -1,0 +1,38 @@
+{
+	"name": "PromptImagemConteudo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"prompt": {
+			"type": "string"
+		},
+		"geraImagem": {
+			"type": "number"
+		},
+		"entregavelProdutoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"entregavelProduto": {
+			"type": "belongsTo",
+			"model": "EntregavelProduto",
+			"foreignKey": ""
+		},
+		"imagemConteudos": {
+			"type": "hasMany",
+			"model": "ImagemConteudo",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

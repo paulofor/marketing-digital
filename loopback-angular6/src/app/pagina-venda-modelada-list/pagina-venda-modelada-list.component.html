@@ -6,7 +6,7 @@
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card" *ngFor="let item of listaBase">
  			<div class="dgc-card-header">
- 				<span>{{item.nomeProduto}}</span>
+				<span class="dgc-link" routerLink="/paginaVendaModeladaDetalhe/{{item.id}}">{{item.nomeProduto}}</span>
  			</div>
 			 <div class="dgc-card-detalhe">
 				<span>{{item.fonte}}</span>

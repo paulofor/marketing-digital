@@ -1,0 +1,17 @@
+img {
+    width: 180;
+}
+
+.imagem-container {
+    display: flex;
+    /* Exibe os itens em linha (horizontal) */
+}
+
+.imagem-container img {
+    margin-right: 10px;
+    /* Adiciona margem à direita para espaçamento entre as imagens */
+}
+
+.botoes-container {
+    margin-top: 4px;
+}

@@ -14,8 +14,19 @@ import org.json.JSONObject;
 public class PaginaVendaAberta extends Model {
 
 
+	private String nome;
+	private String codigoHexa;
+	private String urlFinal;
+	private int atualiza;
+	private String urlImagemCompleta;
+	private int geraImagemCompleta;
 	// Relacionamentos 1
+	private CheckoutProdutoProprio CheckoutProdutoProprio;
+	private ProdutoProprio ProdutoProprio;
+	private EstruturaPaginaVendaAberta EstruturaPaginaVendaAberta;
 	// Relacionamentos N
+	private List<AnuncioFacebook> AnuncioFacebooks;
+	private List<PaginaImplementacao> PaginaImplementacaos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -35,6 +46,12 @@ public class PaginaVendaAberta extends Model {
 		JSONObject obj = new JSONObject();
 		try {
 			obj.put("id",getId());
+			obj.put("nome", nome);
+			obj.put("codigoHexa", codigoHexa);
+			obj.put("urlFinal", urlFinal);
+			obj.put("atualiza", atualiza);
+			obj.put("urlImagemCompleta", urlImagemCompleta);
+			obj.put("geraImagemCompleta", geraImagemCompleta);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -42,5 +59,86 @@ public class PaginaVendaAberta extends Model {
 	}
 
 
+	public void setNome(String valor) { 
+		this.nome = valor;
+	}
+	public String getNome() { 
+		return this.nome;
+	}
+	public void setCodigoHexa(String valor) { 
+		this.codigoHexa = valor;
+	}
+	public String getCodigoHexa() { 
+		return this.codigoHexa;
+	}
+	public void setUrlFinal(String valor) { 
+		this.urlFinal = valor;
+	}
+	public String getUrlFinal() { 
+		return this.urlFinal;
+	}
+	public void setAtualiza(int valor) { 
+		this.atualiza = valor;
+	}
+	public int getAtualiza() { 
+		return this.atualiza;
+	}
+	public void setUrlImagemCompleta(String valor) { 
+		this.urlImagemCompleta = valor;
+	}
+	public String getUrlImagemCompleta() { 
+		return this.urlImagemCompleta;
+	}
+	public void setGeraImagemCompleta(int valor) { 
+		this.geraImagemCompleta = valor;
+	}
+	public int getGeraImagemCompleta() { 
+		return this.geraImagemCompleta;
+	}
 
+	public CheckoutProdutoProprio getCheckoutProdutoProprio() {
+		return CheckoutProdutoProprio;
+	}
+	public void setCheckoutProdutoProprio(HashMap valor) {
+		this.CheckoutProdutoProprio = new CheckoutProdutoProprio();
+		BeanUtil.setProperties(this.CheckoutProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoProprio getProdutoProprio() {
+		return ProdutoProprio;
+	}
+	public void setProdutoProprio(HashMap valor) {
+		this.ProdutoProprio = new ProdutoProprio();
+		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	}
+	public EstruturaPaginaVendaAberta getEstruturaPaginaVendaAberta() {
+		return EstruturaPaginaVendaAberta;
+	}
+	public void setEstruturaPaginaVendaAberta(HashMap valor) {
+		this.EstruturaPaginaVendaAberta = new EstruturaPaginaVendaAberta();
+		BeanUtil.setProperties(this.EstruturaPaginaVendaAberta, (Map<String, ? extends Object>) valor, true);
+	}
+	public List<AnuncioFacebook> getAnuncioFacebooks() {
+		return  AnuncioFacebooks;
+	}
+	public void setAnuncioFacebooks(List<AnuncioFacebook> valores) {
+		this.AnuncioFacebooks = new ArrayList<AnuncioFacebook>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AnuncioFacebook();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AnuncioFacebooks.add((AnuncioFacebook) objeto);
+		}
+	}
+	public List<PaginaImplementacao> getPaginaImplementacaos() {
+		return  PaginaImplementacaos;
+	}
+	public void setPaginaImplementacaos(List<PaginaImplementacao> valores) {
+		this.PaginaImplementacaos = new ArrayList<PaginaImplementacao>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaImplementacao();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaImplementacaos.add((PaginaImplementacao) objeto);
+		}
+	}
 }

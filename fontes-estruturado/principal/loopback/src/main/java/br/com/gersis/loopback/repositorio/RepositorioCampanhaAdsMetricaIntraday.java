@@ -31,7 +31,7 @@ public class RepositorioCampanhaAdsMetricaIntraday extends ModelRepository<Campa
 	// ***  Operações  ***
 
 	public synchronized void atualizaIntraday(List<CampanhaAdsMetricaIntraday> metricaIntraday ,final VoidCallback callback ) {
-		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/atualizaIntraday","POST");
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradaiesatualizaIntraday","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetricaIntraday.atualizaIntraday");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("metricaIntraday",obtemLista(metricaIntraday));
@@ -39,28 +39,28 @@ public class RepositorioCampanhaAdsMetricaIntraday extends ModelRepository<Campa
 	}
 
 	public synchronized void desligarTodos(final VoidCallback callback ) {
-		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/desligarTodos","POST");
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradaiesdesligarTodos","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetricaIntraday.desligarTodos");
 		Map<String, Object> params = new HashMap<String, Object>();
 		invokeStaticMethod("desligarTodos", params,   new EmptyResponseParser(callback));
 	}
 
 	public synchronized void totaisDia(final ObjectCallback<CampanhaAdsMetricaIntraday> callback ) {
-		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/totaisDia","GET");
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradaiestotaisDia","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetricaIntraday.totaisDia");
 		Map<String, Object> params = new HashMap<String, Object>();
 		invokeStaticMethod("totaisDia", params,   new JsonObjectParser<CampanhaAdsMetricaIntraday>(this, callback));
 	}
 
 	public synchronized void limpaDia(final VoidCallback callback ) {
-		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/limpaDia","POST");
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradaieslimpaDia","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetricaIntraday.limpaDia");
 		Map<String, Object> params = new HashMap<String, Object>();
 		invokeStaticMethod("limpaDia", params,   new EmptyResponseParser(callback));
 	}
 
 	public synchronized void listaHistorico(String codigoAds ,int limite ,final ListCallback<CampanhaAdsMetricaIntraday> callback ) {
-		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/listaHistorico","GET");
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradaieslistaHistorico","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetricaIntraday.listaHistorico");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("codigoAds", codigoAds);
@@ -69,7 +69,7 @@ public class RepositorioCampanhaAdsMetricaIntraday extends ModelRepository<Campa
 	}
 
 	public synchronized void melhoresCtrHistorico(final ListCallback<CampanhaAdsMetricaIntraday> callback ) {
-		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/melhoresCtrHistorico","GET");
+		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradaiesmelhoresCtrHistorico","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "CampanhaAdsMetricaIntraday.melhoresCtrHistorico");
 		Map<String, Object> params = new HashMap<String, Object>();
 		invokeStaticMethod("melhoresCtrHistorico", params,   new JsonArrayParser<CampanhaAdsMetricaIntraday>(this, callback));

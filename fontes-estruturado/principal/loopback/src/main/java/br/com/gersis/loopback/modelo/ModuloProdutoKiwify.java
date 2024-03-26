@@ -16,7 +16,7 @@ public class ModuloProdutoKiwify extends Model {
 
 	private String nome;
 	// Relacionamentos 1
-	private ProdutoProprio ProdutoProprio;
+	private EntregavelProduto EntregavelProduto;
 	// Relacionamentos N
 	private List<ConteudoProdutoKiwify> ConteudoProdutoKiwifys;
 
@@ -53,12 +53,12 @@ public class ModuloProdutoKiwify extends Model {
 		return this.nome;
 	}
 
-	public ProdutoProprio getProdutoProprio() {
-		return ProdutoProprio;
+	public EntregavelProduto getEntregavelProduto() {
+		return EntregavelProduto;
 	}
-	public void setProdutoProprio(HashMap valor) {
-		this.ProdutoProprio = new ProdutoProprio();
-		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	public void setEntregavelProduto(HashMap valor) {
+		this.EntregavelProduto = new EntregavelProduto();
+		BeanUtil.setProperties(this.EntregavelProduto, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ConteudoProdutoKiwify> getConteudoProdutoKiwifys() {
 		return  ConteudoProdutoKiwifys;

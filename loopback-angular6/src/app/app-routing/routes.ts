@@ -60,6 +60,14 @@ import { ModeloPaginaVendaVslListComponent } from '../modelo-pagina-venda-vsl-li
 import { ScriptGeraVideoListComponent } from '../script-gera-video-list/script-gera-video-list.component';
 import { PaginaVendaModeladaListComponent } from '../pagina-venda-modelada-list/pagina-venda-modelada-list.component';
 import { PaginaVendaModeladaDetalheComponent } from '../pagina-venda-modelada-detalhe/pagina-venda-modelada-detalhe.component';
+import { DalleSolicitacaoComImagemPorProdutoListBaseComponent } from '../dalle-solicitacao-com-imagem-por-produto-list/dalle-solicitacao-com-imagem-por-produto-list-base.component';
+import { DalleSolicitacaoComImagemPorProprioListBaseComponent } from '../dalle-solicitacao-com-imagem-por-proprio-list/dalle-solicitacao-com-imagem-por-proprio-list-base.component';
+import { EntregavelProdutoDetalheComponent } from '../entregavel-produto-detalhe/entregavel-produto-detalhe.component';
+import { ConteudoProdutoKiwifyDetalheComponent } from '../conteudo-produto-kiwify-detalhe/conteudo-produto-kiwify-detalhe.component';
+import { EstruturaPaginaVendaAbertaListComponent } from '../estrutura-pagina-venda-aberta-list/estrutura-pagina-venda-aberta-list.component';
+import { EstruturaPaginaVendaAbertaDetalheComponent } from '../estrutura-pagina-venda-aberta-detalhe/estrutura-pagina-venda-aberta-detalhe.component';
+import { PaginaVendaAbertaDetalheComponent } from '../pagina-venda-aberta-detalhe/pagina-venda-aberta-detalhe.component';
+import { ItemEstruturaPaginaVendaDetalheComponent } from '../item-estrutura-pagina-venda-detalhe/item-estrutura-pagina-venda-detalhe.component';
 
 
 
@@ -145,6 +153,19 @@ export const routes : Routes = [
 
     { path: 'modeloPaginaVendaList' , component: PaginaVendaModeladaListComponent },
     { path: 'modeloPaginaVendaDetalhe/:id' , component: PaginaVendaModeladaDetalheComponent },
+    { path: 'dalleSolicitacaoPorProdutoProprioList' , component: DalleSolicitacaoComImagemPorProprioListBaseComponent },
+
+    { path: 'entregavelProdutoDetalhe/:id' , component: EntregavelProdutoDetalheComponent },
+    { path: 'paginaVendaModeladaDetalhe/:id' , component: PaginaVendaModeladaDetalheComponent },
+
+    { path: 'conteudoProdutoKiwifyDetalhe/:id' , component: ConteudoProdutoKiwifyDetalheComponent },
+    { path: 'conteudoProdutoOrdenado/:idPrincipal/:ordenacao' , component: ConteudoProdutoKiwifyDetalheComponent},
+
+    { path: 'estruturaPaginaVendaAbertaList' , component: EstruturaPaginaVendaAbertaListComponent },
+    { path: 'estruturaPaginaVendaAbertaDetalhe/:id' , component: EstruturaPaginaVendaAbertaDetalheComponent },
+
+    { path: 'paginaVendaAbertaDetalhe/:id' , component: PaginaVendaAbertaDetalheComponent },
+    { path: 'itemEstruturaPaginaVendaDetalhe/:id' , component: ItemEstruturaPaginaVendaDetalheComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

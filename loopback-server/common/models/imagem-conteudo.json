@@ -1,0 +1,125 @@
+{
+	"name": "ImagemConteudo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"imagemJpg": {
+			"type": "string"
+		},
+		"dataCriacao": {
+			"type": "date"
+		},
+		"principal": {
+			"type": "number"
+		},
+		"urlOriginal": {
+			"type": "string"
+		},
+		"promptRevisado": {
+			"type": "string"
+		},
+		"promptImagemConteudoId": {
+			"type": "number"
+		},
+		"conteudoProdutoKiwifyId": {
+			"type": "number"
+		},
+		"arquivoLocal": {
+			"type": "string"
+		},
+		"urlFinal": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"promptImagemConteudo": {
+			"type": "belongsTo",
+			"model": "PromptImagemConteudo",
+			"foreignKey": ""
+		},
+		"conteudoProdutoKiwify": {
+			"type": "belongsTo",
+			"model": "ConteudoProdutoKiwify",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"RegistraImagem": {
+			"accepts": [
+				{
+					"arg": "imagem",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/registraImagem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"LigaPrincipal": {
+			"accepts": [
+				{
+					"arg": "idImagem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/ligaPrincipal",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaPrincipalGeraJpg": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaPrincipalGeraJpg",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

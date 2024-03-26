@@ -17,7 +17,7 @@ public class ObtemIdeiaPalavraChaveAds {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemIdeiaPalavraChaveAds");
-		System.out.println("(12/03/2024 16:32:05)");
+		System.out.println("(26/03/2024 19:04:24)");
 		try {
 			carregaProp();
 			ObtemIdeiaPalavraChaveAdsObj obj = new ObtemIdeiaPalavraChaveAdsObj();

@@ -25,7 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatAutocompleteModule, MatCheckbox, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatAutocompleteModule, MatCheckbox, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatRadioModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 //import { MatMomentDateModule } from "@angular/material-moment-adapter";
 //import { NgxImgModule } from 'ngx-img';
@@ -150,6 +150,31 @@ import { PixelGoogleProdutoProprioListComponent } from './pixel-google-produto-p
 import { PaginaVendaModeladaDetalheComponent } from './pagina-venda-modelada-detalhe/pagina-venda-modelada-detalhe.component';
 import { PaginaVendaModeladaEditComponent } from './pagina-venda-modelada-edit/pagina-venda-modelada-edit.component';
 import { PaginaVendaModeladaListComponent } from './pagina-venda-modelada-list/pagina-venda-modelada-list.component';
+import { DalleSolicitacaoComImagemPorProprioListComponent } from './dalle-solicitacao-com-imagem-por-proprio-list/dalle-solicitacao-com-imagem-por-proprio-list.component';
+import { DalleSolicitacaoImagemProdutoProprioListComponent } from './dalle-solicitacao-imagem-produto-proprio-list/dalle-solicitacao-imagem-produto-proprio-list.component';
+import { EntregavelProdutoDetalheComponent } from './entregavel-produto-detalhe/entregavel-produto-detalhe.component';
+import { EntregavelProdutoEditComponent } from './entregavel-produto-edit/entregavel-produto-edit.component';
+import { EntregavelProdutoListComponent } from './entregavel-produto-list/entregavel-produto-list.component';
+import { AnuncioFacebookEditComponent } from './anuncio-facebook-edit/anuncio-facebook-edit.component';
+import { AnuncioFacebookListComponent } from './anuncio-facebook-list/anuncio-facebook-list.component';
+import { ConteudoProdutoKiwifyEditComponent } from './conteudo-produto-kiwify-edit/conteudo-produto-kiwify-edit.component';
+import { PromptImagemConteudoEditComponent } from './prompt-imagem-conteudo-edit/prompt-imagem-conteudo-edit.component';
+import { PromptItemEditComponent } from './prompt-item-edit/prompt-item-edit.component';
+import { PromptItemListComponent } from './prompt-item-list/prompt-item-list.component';
+import { ConteudoProdutoKiwifyDetalheComponent } from './conteudo-produto-kiwify-detalhe/conteudo-produto-kiwify-detalhe.component';
+import { ItemConteudoProdutoEditComponent } from './item-conteudo-produto-edit/item-conteudo-produto-edit.component';
+import { EstruturaPaginaVendaAbertaListComponent } from './estrutura-pagina-venda-aberta-list/estrutura-pagina-venda-aberta-list.component';
+import { EstruturaPaginaVendaAbertaEditComponent } from './estrutura-pagina-venda-aberta-edit/estrutura-pagina-venda-aberta-edit.component';
+import { EstruturaPaginaVendaAbertaDetalheComponent } from './estrutura-pagina-venda-aberta-detalhe/estrutura-pagina-venda-aberta-detalhe.component';
+import { ItemEstruturaPaginaVendaEditComponent } from './item-estrutura-pagina-venda-edit/item-estrutura-pagina-venda-edit.component';
+import { CheckoutProdutoProprioEditComponent } from './checkout-produto-proprio-edit/checkout-produto-proprio-edit.component';
+import { CheckoutProdutoProprioListComponent } from './checkout-produto-proprio-list/checkout-produto-proprio-list.component';
+import { PaginaVendaAbertaEditComponent } from './pagina-venda-aberta-edit/pagina-venda-aberta-edit.component';
+import { PaginaVendaAbertaListComponent } from './pagina-venda-aberta-list/pagina-venda-aberta-list.component';
+import { PaginaImplementacaoEditRelComponent } from './pagina-implementacao-edit-rel/pagina-implementacao-edit-rel.component';
+import { PaginaVendaAbertaDetalheComponent } from './pagina-venda-aberta-detalhe/pagina-venda-aberta-detalhe.component';
+import { ItemEstruturaPaginaVendaDetalheComponent } from './item-estrutura-pagina-venda-detalhe/item-estrutura-pagina-venda-detalhe.component';
+import { ImplementacaoItemEstruturaEditComponent } from './implementacao-item-estrutura-edit/implementacao-item-estrutura-edit.component';
 
 
 
@@ -276,7 +301,34 @@ registerLocaleData(localePt, 'pt-BR');
     PixelGoogleProdutoProprioListComponent,
     PaginaVendaModeladaListComponent,
     PaginaVendaModeladaEditComponent,
-    PaginaVendaModeladaDetalheComponent
+    PaginaVendaModeladaDetalheComponent,
+    DalleSolicitacaoComImagemPorProprioListComponent,
+    DalleSolicitacaoImagemProdutoProprioListComponent,
+    EntregavelProdutoListComponent,
+    EntregavelProdutoEditComponent,
+    EntregavelProdutoDetalheComponent,
+    AnuncioFacebookListComponent,
+    AnuncioFacebookEditComponent,
+    ConteudoProdutoKiwifyEditComponent,
+    PromptImagemConteudoEditComponent,
+    PromptItemListComponent,
+    PromptItemEditComponent,
+    ConteudoProdutoKiwifyDetalheComponent,
+    ItemConteudoProdutoEditComponent,
+    EstruturaPaginaVendaAbertaListComponent,
+    EstruturaPaginaVendaAbertaEditComponent,
+    EstruturaPaginaVendaAbertaDetalheComponent,
+    ItemEstruturaPaginaVendaEditComponent,
+    PaginaVendaPropriaPorProdutoListComponent,
+    PaginaVendaPropriaEditComponent,
+    CheckoutProdutoProprioEditComponent,
+    CheckoutProdutoProprioListComponent,
+    PaginaVendaAbertaListComponent,
+    PaginaVendaAbertaEditComponent,
+    PaginaImplementacaoEditRelComponent,
+    PaginaVendaAbertaDetalheComponent,
+    ItemEstruturaPaginaVendaDetalheComponent,
+    ImplementacaoItemEstruturaEditComponent
   ],
   imports: [
     BrowserModule,
@@ -288,6 +340,7 @@ registerLocaleData(localePt, 'pt-BR');
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatRadioModule,
     //NgxImgModule.forRoot(),
     FileDropModule,
     //UploadModule,
@@ -365,7 +418,21 @@ registerLocaleData(localePt, 'pt-BR');
     ModeloPaginaVendaVslEditComponent,
     PaginaVendaVslEditComponent,
     CampanhaAdsRedeDisplayProdutoProprioEditComponent,
-    PaginaVendaModeladaEditComponent
+    PaginaVendaModeladaEditComponent,
+    EntregavelProdutoEditComponent,
+    AnuncioFacebookEditComponent,
+    ConteudoProdutoKiwifyEditComponent,
+    PromptImagemConteudoEditComponent,
+    PromptItemEditComponent,
+    ItemConteudoProdutoEditComponent,
+    EstruturaPaginaVendaAbertaEditComponent,
+    ItemEstruturaPaginaVendaEditComponent,
+    PaginaVendaPropriaEditComponent,
+    CheckoutProdutoProprioEditComponent,
+    PaginaVendaAbertaEditComponent,
+    PaginaImplementacaoEditRelComponent,
+    ImplementacaoItemEstruturaEditComponent
+
   ],
   bootstrap: [AppComponent]
 })

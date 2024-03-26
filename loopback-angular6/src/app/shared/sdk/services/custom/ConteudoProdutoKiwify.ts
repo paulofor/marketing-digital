@@ -11,7 +11,9 @@ import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ConteudoProdutoKiwify } from '../../models/ConteudoProdutoKiwify';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { ModuloProdutoKiwify } from '../../models/ModuloProdutoKiwify';
+import { EntregavelProduto } from '../../models/EntregavelProduto';
+import { ImagemConteudo } from '../../models/ImagemConteudo';
+import { ItemConteudoProduto } from '../../models/ItemConteudoProduto';
 
 
 /**
@@ -31,7 +33,7 @@ export class ConteudoProdutoKiwifyApi extends BaseLoopBackApi {
   }
 
   /**
-   * Busca relação moduloProdutoKiwify de belongsTo.
+   * Busca relação entregavelProduto de belongsTo.
    *
    * @param {any} id ConteudoProdutoKiwify id
    *
@@ -46,16 +48,434 @@ export class ConteudoProdutoKiwifyApi extends BaseLoopBackApi {
    * This usually means the response is a `ConteudoProdutoKiwify` object.)
    * </em>
    */
-  public getModuloProdutoKiwify(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getEntregavelProduto(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ConteudoProdutoKiwifies/:id/moduloProdutoKiwify";
+    "/ConteudoProdutoKiwifies/:id/entregavelProduto";
     let _routeParams: any = {
       id: id
     };
     let _postBody: any = {};
     let _urlParams: any = {};
     if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Localize um item relacionado por ID para imagemConteudos.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {any} fk Chave estrangeira para imagemConteudos
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public findByIdImagemConteudos(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/imagemConteudos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para imagemConteudos.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {any} fk Chave estrangeira para imagemConteudos
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdImagemConteudos(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/imagemConteudos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para imagemConteudos.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {any} fk Chave estrangeira para imagemConteudos
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public updateByIdImagemConteudos(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/imagemConteudos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Localize um item relacionado por ID para itemConteudoProdutos.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {any} fk Chave estrangeira para itemConteudoProdutos
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public findByIdItemConteudoProdutos(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/itemConteudoProdutos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para itemConteudoProdutos.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {any} fk Chave estrangeira para itemConteudoProdutos
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdItemConteudoProdutos(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/itemConteudoProdutos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para itemConteudoProdutos.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {any} fk Chave estrangeira para itemConteudoProdutos
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public updateByIdItemConteudoProdutos(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/itemConteudoProdutos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * imagemConteudos consultas de ConteudoProdutoKiwify.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public getImagemConteudos(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/imagemConteudos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no imagemConteudos deste modelo.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public createImagemConteudos(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/imagemConteudos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os imagemConteudos deste modelo.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteImagemConteudos(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/imagemConteudos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * imagemConteudos contagens de ConteudoProdutoKiwify.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countImagemConteudos(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/imagemConteudos/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * itemConteudoProdutos consultas de ConteudoProdutoKiwify.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public getItemConteudoProdutos(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/itemConteudoProdutos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no itemConteudoProdutos deste modelo.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public createItemConteudoProdutos(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/itemConteudoProdutos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os itemConteudoProdutos deste modelo.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteItemConteudoProdutos(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/itemConteudoProdutos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * itemConteudoProdutos contagens de ConteudoProdutoKiwify.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countItemConteudoProdutos(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/itemConteudoProdutos/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -111,6 +531,127 @@ export class ConteudoProdutoKiwifyApi extends BaseLoopBackApi {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ConteudoProdutoKiwifies/:id";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `IdEntregavel` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public OrdenacaoAlfabetica(IdEntregavel: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/ordenacaoAlfabetica";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof IdEntregavel !== 'undefined' && IdEntregavel !== null) _urlParams.IdEntregavel = IdEntregavel;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public ListaParaGeracaoImagem(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/listaParaGeracaoImagem";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no imagemConteudos deste modelo.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public createManyImagemConteudos(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/imagemConteudos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no itemConteudoProdutos deste modelo.
+   *
+   * @param {any} id ConteudoProdutoKiwify id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public createManyItemConteudoProdutos(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/:id/itemConteudoProdutos";
     let _routeParams: any = {
       id: id
     };

@@ -11,8 +11,14 @@ import { PaginaVendaModeladaDetalheBaseComponent } from './pagina-venda-modelada
 })
 export class PaginaVendaModeladaDetalheComponent extends PaginaVendaModeladaDetalheBaseComponent {
 
+	alturaImagem: number;
+
 	constructor(protected srv: PaginaVendaModeladaApi, protected router: ActivatedRoute, protected dialog: MatDialog) { 
 		super(srv,router,dialog);
+	}
+
+	onImageLoad(event: any) {
+		this.alturaImagem = event.target.height;
 	}
 
 }

@@ -1,14 +1,19 @@
 /* tslint:disable */
+import {
+  PaginaFacebook
+} from '../index';
 
 declare var Object: any;
 export interface FacebookContaInterface {
   "email"?: string;
   "id"?: number;
+  paginaFacebooks?: PaginaFacebook[];
 }
 
 export class FacebookConta implements FacebookContaInterface {
   "email": string;
   "id": number;
+  paginaFacebooks: PaginaFacebook[];
   constructor(data?: FacebookContaInterface) {
     Object.assign(this, data);
   }
@@ -52,6 +57,14 @@ export class FacebookConta implements FacebookContaInterface {
         },
       },
       relations: {
+        paginaFacebooks: {
+          name: 'paginaFacebooks',
+          type: 'PaginaFacebook[]',
+          model: 'PaginaFacebook',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'facebookContaId'
+        },
       }
     }
   }

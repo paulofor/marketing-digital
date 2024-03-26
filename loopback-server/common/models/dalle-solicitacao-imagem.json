@@ -35,6 +35,9 @@
 		},
 		"dataProcessamento": {
 			"type": "date"
+		},
+		"produtoProprioId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -43,6 +46,11 @@
 			"type": "belongsTo",
 			"model": "ProdutoAfiliadoHotmart",
 			"foreignKey": "hotmartId"
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
 		},
 		"imagemPaginaVendas": {
 			"type": "hasMany",

@@ -89,13 +89,29 @@ import { ScriptGeraVideo } from '../../models/ScriptGeraVideo';
 import { WhatsappGrupo } from '../../models/WhatsappGrupo';
 import { WhatsappMensagem } from '../../models/WhatsappMensagem';
 import { AgendaCampanha } from '../../models/AgendaCampanha';
-import { ModuloProdutoKiwify } from '../../models/ModuloProdutoKiwify';
 import { ConteudoProdutoKiwify } from '../../models/ConteudoProdutoKiwify';
 import { TentativaOferta } from '../../models/TentativaOferta';
 import { PaginaVendaAberta } from '../../models/PaginaVendaAberta';
 import { PaginaVendaModelada } from '../../models/PaginaVendaModelada';
 import { SecaoPaginaVendaModelada } from '../../models/SecaoPaginaVendaModelada';
 import { TipoSecaoPaginaVenda } from '../../models/TipoSecaoPaginaVenda';
+import { EntregavelProduto } from '../../models/EntregavelProduto';
+import { RecursoIA } from '../../models/RecursoIA';
+import { AnuncioFacebook } from '../../models/AnuncioFacebook';
+import { ContaInstagram } from '../../models/ContaInstagram';
+import { ContaFacebook } from '../../models/ContaFacebook';
+import { PaginaFacebook } from '../../models/PaginaFacebook';
+import { PromptItem } from '../../models/PromptItem';
+import { EntregavelPrompt } from '../../models/EntregavelPrompt';
+import { PromptImagemConteudo } from '../../models/PromptImagemConteudo';
+import { ImagemConteudo } from '../../models/ImagemConteudo';
+import { ItemConteudoProduto } from '../../models/ItemConteudoProduto';
+import { IdeiaUnica } from '../../models/IdeiaUnica';
+import { EstruturaPaginaVendaAberta } from '../../models/EstruturaPaginaVendaAberta';
+import { PaginaImplementacao } from '../../models/PaginaImplementacao';
+import { ItemEstruturaPaginaVenda } from '../../models/ItemEstruturaPaginaVenda';
+import { ImplementacaoItemEstrutura } from '../../models/ImplementacaoItemEstrutura';
+import { CheckoutProdutoProprio } from '../../models/CheckoutProdutoProprio';
 
 export interface Models { [name: string]: any }
 
@@ -192,13 +208,29 @@ export class SDKModels {
     WhatsappGrupo: WhatsappGrupo,
     WhatsappMensagem: WhatsappMensagem,
     AgendaCampanha: AgendaCampanha,
-    ModuloProdutoKiwify: ModuloProdutoKiwify,
     ConteudoProdutoKiwify: ConteudoProdutoKiwify,
     TentativaOferta: TentativaOferta,
     PaginaVendaAberta: PaginaVendaAberta,
     PaginaVendaModelada: PaginaVendaModelada,
     SecaoPaginaVendaModelada: SecaoPaginaVendaModelada,
     TipoSecaoPaginaVenda: TipoSecaoPaginaVenda,
+    EntregavelProduto: EntregavelProduto,
+    RecursoIA: RecursoIA,
+    AnuncioFacebook: AnuncioFacebook,
+    ContaInstagram: ContaInstagram,
+    ContaFacebook: ContaFacebook,
+    PaginaFacebook: PaginaFacebook,
+    PromptItem: PromptItem,
+    EntregavelPrompt: EntregavelPrompt,
+    PromptImagemConteudo: PromptImagemConteudo,
+    ImagemConteudo: ImagemConteudo,
+    ItemConteudoProduto: ItemConteudoProduto,
+    IdeiaUnica: IdeiaUnica,
+    EstruturaPaginaVendaAberta: EstruturaPaginaVendaAberta,
+    PaginaImplementacao: PaginaImplementacao,
+    ItemEstruturaPaginaVenda: ItemEstruturaPaginaVenda,
+    ImplementacaoItemEstrutura: ImplementacaoItemEstrutura,
+    CheckoutProdutoProprio: CheckoutProdutoProprio,
     
   };
 

@@ -25,7 +25,7 @@ public class ImportaImagemImpl extends ImportaImagem {
 	private String SSH_USER = "root";
 	private int SSH_PORT = 22;
 	private String TEMP_FILE = "imagens";
-	private String PREFIXO_URL = "https://www.palfmarketing.online/imagens";
+	private String PREFIXO_URL = "http://www.palfmarketing.online/imagens";
 
 	SecureRandom random = new SecureRandom();
 
@@ -43,7 +43,8 @@ public class ImportaImagemImpl extends ImportaImagem {
 			
 			for (ImagemPaginaVenda imagem : listaImagem) {
 				String imagemUrl = imagem.getUrlOriginal();
-				String nomeArquivo = this.generateRandomHex() + ".png";
+				imagem.setCodigoHexa(this.generateRandomHex());
+				String nomeArquivo = imagem.getCodigoHexa() + ".png";
 				imagem.setArquivoLocal(nomeArquivo);
 				String destino = PATH_IMAGENS + "/" + imagem.getArquivoLocal();
 				String arquivoLocal = TEMP_FILE + "/" + nomeArquivo;

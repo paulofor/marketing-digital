@@ -1,0 +1,44 @@
+{
+	"name": "CheckoutProdutoProprio",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"url": {
+			"type": "string"
+		},
+		"preco": {
+			"type": "number"
+		},
+		"ativo": {
+			"type": "number"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"paginaVendaAbertas": {
+			"type": "hasMany",
+			"model": "PaginaVendaAberta",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

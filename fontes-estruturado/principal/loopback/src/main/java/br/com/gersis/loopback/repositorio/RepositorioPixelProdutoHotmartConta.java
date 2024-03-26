@@ -31,7 +31,7 @@ public class RepositorioPixelProdutoHotmartConta extends ModelRepository<PixelPr
 	// ***  Operações  ***
 
 	public synchronized void registraLista(List<PixelProdutoHotmartConta> listaItem ,final VoidCallback callback ) {
-		RestContractItem contrato = new RestContractItem("PixelProdutoHotmartContas/registraLista","POST");
+		RestContractItem contrato = new RestContractItem("PixelProdutoHotmartConta/registraLista","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "PixelProdutoHotmartConta.registraLista");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("listaItem",obtemLista(listaItem));

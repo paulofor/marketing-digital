@@ -17,7 +17,7 @@ public class TesteChatGpt {
 
 	public static void main(String[] args) {
 		System.out.print("TesteChatGpt");
-		System.out.println("(12/03/2024 16:32:10)");
+		System.out.println("(26/03/2024 19:04:30)");
 		try {
 			carregaProp();
 			TesteChatGptObj obj = new TesteChatGptObj();

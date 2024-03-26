@@ -16,6 +16,7 @@ import { ProdutoAfiliadoHotlink } from '../../models/ProdutoAfiliadoHotlink';
 import { ProdutoProprio } from '../../models/ProdutoProprio';
 import { ArquivoPaginaVenda } from '../../models/ArquivoPaginaVenda';
 import { PaginaVendaPropria } from '../../models/PaginaVendaPropria';
+import { AnuncioFacebook } from '../../models/AnuncioFacebook';
 
 
 /**
@@ -311,6 +312,99 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
+   * Localize um item relacionado por ID para anuncioFacebooks.
+   *
+   * @param {any} id ImagemPaginaVenda id
+   *
+   * @param {any} fk Chave estrangeira para anuncioFacebooks
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemPaginaVenda` object.)
+   * </em>
+   */
+  public findByIdAnuncioFacebooks(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/:id/anuncioFacebooks/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para anuncioFacebooks.
+   *
+   * @param {any} id ImagemPaginaVenda id
+   *
+   * @param {any} fk Chave estrangeira para anuncioFacebooks
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdAnuncioFacebooks(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/:id/anuncioFacebooks/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para anuncioFacebooks.
+   *
+   * @param {any} id ImagemPaginaVenda id
+   *
+   * @param {any} fk Chave estrangeira para anuncioFacebooks
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemPaginaVenda` object.)
+   * </em>
+   */
+  public updateByIdAnuncioFacebooks(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/:id/anuncioFacebooks/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * arquivoPaginaVendas consultas de ImagemPaginaVenda.
    *
    * @param {any} id ImagemPaginaVenda id
@@ -543,6 +637,122 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
+   * anuncioFacebooks consultas de ImagemPaginaVenda.
+   *
+   * @param {any} id ImagemPaginaVenda id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemPaginaVenda` object.)
+   * </em>
+   */
+  public getAnuncioFacebooks(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/:id/anuncioFacebooks";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no anuncioFacebooks deste modelo.
+   *
+   * @param {any} id ImagemPaginaVenda id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemPaginaVenda` object.)
+   * </em>
+   */
+  public createAnuncioFacebooks(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/:id/anuncioFacebooks";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os anuncioFacebooks deste modelo.
+   *
+   * @param {any} id ImagemPaginaVenda id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteAnuncioFacebooks(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/:id/anuncioFacebooks";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * anuncioFacebooks contagens de ImagemPaginaVenda.
+   *
+   * @param {any} id ImagemPaginaVenda id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countAnuncioFacebooks(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/:id/anuncioFacebooks/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Patch an existing model instance or insert a new one into the data source.
    *
    * @param {object} data Request data.
@@ -665,6 +875,61 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemPaginaVenda` object.)
+   * </em>
+   */
+  public ListaParaJpg(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/listaParaJpg";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `imagem` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemPaginaVenda` object.)
+   * </em>
+   */
+  public RegistraJpg(imagem: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/registraJpg";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof imagem !== 'undefined' && imagem !== null) _urlParams.imagem = imagem;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Cria uma nova instância no arquivoPaginaVendas deste modelo.
    *
    * @param {any} id ImagemPaginaVenda id
@@ -719,6 +984,39 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ImagemPaginaVendas/:id/paginaVendaProprias";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no anuncioFacebooks deste modelo.
+   *
+   * @param {any} id ImagemPaginaVenda id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemPaginaVenda` object.)
+   * </em>
+   */
+  public createManyAnuncioFacebooks(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemPaginaVendas/:id/anuncioFacebooks";
     let _routeParams: any = {
       id: id
     };

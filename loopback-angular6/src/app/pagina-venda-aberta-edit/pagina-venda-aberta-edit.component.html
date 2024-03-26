@@ -1,0 +1,43 @@
+<h2 *ngIf="item" mat-dialog-title>PaginaVendaAberta</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+		<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+
+		<mat-form-field class="example-full-width" *ngIf="listaCheckout">
+			<mat-select placeholder="Checkout" #checkoutProdutoProprioId [(ngModel)]="item.checkoutProdutoProprioId" name="checkoutProdutoProprioId">
+				<mat-option *ngFor="let item of listaCheckout" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaEstrutura">
+			<mat-select placeholder="Estrutura de Página" #estruturaPaginaVendaAbertaId [(ngModel)]="item.estruturaPaginaVendaAbertaId" name="estruturaPaginaVendaAbertaId">
+				<mat-option *ngFor="let item of listaEstrutura" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #atualiza [(ngModel)]="item.atualiza" name="atualiza" placeholder="Atualiza" />
+		</mat-form-field>
+	
+		<mat-form-field class="example-full-width">
+			<input matInput #geraImagemCompleta [(ngModel)]="item.geraImagemCompleta" name="geraImagemCompleta" placeholder="Gera Imagem" />
+		</mat-form-field>
+		
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

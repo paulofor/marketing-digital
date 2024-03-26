@@ -387,10 +387,6 @@
     "dataSource": "mysqlds",
     "public": true
   },
-  "ModuloProdutoKiwify": {
-    "dataSource": "mysqlds",
-    "public": true
-  },
   "ConteudoProdutoKiwify": {
     "dataSource": "mysqlds",
     "public": true
@@ -400,7 +396,7 @@
     "public": true
   },
   "PaginaVendaAberta": {
-    "dataSource": "db",
+    "dataSource": "mysqlds",
     "public": true
   },
   "PaginaVendaModelada": {
@@ -412,6 +408,74 @@
     "public": true
   },
   "TipoSecaoPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "EntregavelProduto": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "RecursoIA": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "AnuncioFacebook": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ContaInstagram": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ContaFacebook": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaFacebook": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PromptItem": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "EntregavelPrompt": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PromptImagemConteudo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ImagemConteudo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ItemConteudoProduto": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "IdeiaUnica": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "EstruturaPaginaVendaAberta": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaImplementacao": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ItemEstruturaPaginaVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ImplementacaoItemEstrutura": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "CheckoutProdutoProprio": {
     "dataSource": "mysqlds",
     "public": true
   }

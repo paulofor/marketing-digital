@@ -31,7 +31,7 @@ public class RepositorioProdutoHotmartConta extends ModelRepository<ProdutoHotma
 	// ***  Operações  ***
 
 	public synchronized void atualizaRelacionamento(int idItem ,List<ProdutoHotmartConta> lista ,final VoidCallback callback ) {
-		RestContractItem contrato = new RestContractItem("ProdutoHotmartContas/atualizaRelacionamento","GET");
+		RestContractItem contrato = new RestContractItem("ProdutoHotmartConta/atualizaRelacionamento","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "ProdutoHotmartConta.atualizaRelacionamento");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("idItem", idItem);
@@ -40,7 +40,7 @@ public class RepositorioProdutoHotmartConta extends ModelRepository<ProdutoHotma
 	}
 
 	public synchronized void listaPixelFaltandoConta(int idConta ,final ListCallback<ProdutoHotmartConta> callback ) {
-		RestContractItem contrato = new RestContractItem("ProdutoHotmartContas/listaPixelFaltandoConta","GET");
+		RestContractItem contrato = new RestContractItem("ProdutoHotmartConta/listaPixelFaltandoConta","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "ProdutoHotmartConta.listaPixelFaltandoConta");
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("idConta", idConta);

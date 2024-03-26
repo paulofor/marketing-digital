@@ -92,14 +92,39 @@
 			"model": "AgendaCampanha",
 			"foreignKey": ""
 		},
-		"moduloProdutoKiwifys": {
-			"type": "hasMany",
-			"model": "ModuloProdutoKiwify",
-			"foreignKey": ""
-		},
 		"tentativaOfertas": {
 			"type": "hasMany",
 			"model": "TentativaOferta",
+			"foreignKey": ""
+		},
+		"dalleSolicitacaoImagems": {
+			"type": "hasMany",
+			"model": "DalleSolicitacaoImagem",
+			"foreignKey": ""
+		},
+		"entregavelProdutos": {
+			"type": "hasMany",
+			"model": "EntregavelProduto",
+			"foreignKey": ""
+		},
+		"promptItems": {
+			"type": "hasMany",
+			"model": "PromptItem",
+			"foreignKey": ""
+		},
+		"ideiaUnicas": {
+			"type": "hasMany",
+			"model": "IdeiaUnica",
+			"foreignKey": ""
+		},
+		"checkoutProdutoProprios": {
+			"type": "hasMany",
+			"model": "CheckoutProdutoProprio",
+			"foreignKey": ""
+		},
+		"paginaVendaAbertas": {
+			"type": "hasMany",
+			"model": "PaginaVendaAberta",
 			"foreignKey": ""
 		}
 	},

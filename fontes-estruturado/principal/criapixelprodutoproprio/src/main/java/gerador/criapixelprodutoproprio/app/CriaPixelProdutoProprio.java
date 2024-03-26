@@ -17,7 +17,7 @@ public class CriaPixelProdutoProprio {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPixelProdutoProprio");
-		System.out.println("(12/03/2024 16:32:22)");
+		System.out.println("(26/03/2024 19:04:44)");
 		try {
 			carregaProp();
 			CriaPixelProdutoProprioObj obj = new CriaPixelProdutoProprioObj();

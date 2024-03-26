@@ -9,11 +9,151 @@
     	"Counts": true
   	},
 	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"codigoHexa": {
+			"type": "string"
+		},
+		"urlFinal": {
+			"type": "string"
+		},
+		"atualiza": {
+			"type": "number"
+		},
+		"urlImagemCompleta": {
+			"type": "string"
+		},
+		"geraImagemCompleta": {
+			"type": "number"
+		},
+		"checkoutProdutoProprioId": {
+			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"estruturaPaginaVendaAbertaId": {
+			"type": "number"
+		}
 	},
 	"validations": [],
 	"relations": {
+		"checkoutProdutoProprio": {
+			"type": "belongsTo",
+			"model": "CheckoutProdutoProprio",
+			"foreignKey": ""
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"estruturaPaginaVendaAberta": {
+			"type": "belongsTo",
+			"model": "EstruturaPaginaVendaAberta",
+			"foreignKey": ""
+		},
+		"anuncioFacebooks": {
+			"type": "hasMany",
+			"model": "AnuncioFacebook",
+			"foreignKey": ""
+		},
+		"paginaImplementacaos": {
+			"type": "hasMany",
+			"model": "PaginaImplementacao",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {
+		"ListaParaGeracao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGeracao",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaPorGeracao": {
+			"accepts": [
+				{
+					"arg": "pagina",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaPorGeracao",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaImagemCompleta": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaImagemCompleta",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaPaginaCompleta": {
+			"accepts": [
+				{
+					"arg": "pagina",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaPaginaCompleta",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

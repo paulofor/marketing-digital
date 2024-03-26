@@ -1,0 +1,22 @@
+{
+	"name": "ContaInstagram",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+	}
+}

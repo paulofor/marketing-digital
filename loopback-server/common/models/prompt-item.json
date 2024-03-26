@@ -1,0 +1,46 @@
+{
+	"name": "PromptItem",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"titulo": {
+			"type": "string"
+		},
+		"prompt": {
+			"type": "string"
+		},
+		"codigoReplace": {
+			"type": "string"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"entregavelPrompts": {
+			"type": "hasMany",
+			"model": "EntregavelPrompt",
+			"foreignKey": ""
+		},
+		"itemConteudoProdutos": {
+			"type": "hasMany",
+			"model": "ItemConteudoProduto",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

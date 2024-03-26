@@ -1,0 +1,108 @@
+{
+	"name": "PaginaImplementacao",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"paginaVendaAbertaId": {
+			"type": "number"
+			,"id": true
+		},
+		"implementacaoItemEstruturaId": {
+			"type": "number"
+			,"id": true
+		},
+		"ordenacao": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"paginaVendaAberta": {
+			"type": "belongsTo",
+			"model": "PaginaVendaAberta",
+			"foreignKey": ""
+		},
+		"implementacaoItemEstrutura": {
+			"type": "belongsTo",
+			"model": "ImplementacaoItemEstrutura",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaRelacionamento": {
+			"accepts": [
+				{
+					"arg": "idItem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaRelacionamento",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaComIds": {
+			"accepts": [
+				{
+					"arg": "idPaginaVenda",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "idItemEstrutura",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "idImplementacao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaComIds",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

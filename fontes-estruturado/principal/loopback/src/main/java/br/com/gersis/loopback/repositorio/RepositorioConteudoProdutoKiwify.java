@@ -30,6 +30,21 @@ public class RepositorioConteudoProdutoKiwify extends ModelRepository<ConteudoPr
 
 	// ***  Operações  ***
 
+	public synchronized void ordenacaoAlfabetica(int IdEntregavel ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ConteudoProdutoKiwifiesordenacaoAlfabetica","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ConteudoProdutoKiwify.ordenacaoAlfabetica");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("IdEntregavel", IdEntregavel);
+		invokeStaticMethod("ordenacaoAlfabetica", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaParaGeracaoImagem(final ListCallback<ConteudoProdutoKiwify> callback ) {
+		RestContractItem contrato = new RestContractItem("ConteudoProdutoKiwifieslistaParaGeracaoImagem","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ConteudoProdutoKiwify.listaParaGeracaoImagem");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaGeracaoImagem", params,   new JsonArrayParser<ConteudoProdutoKiwify>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<ConteudoProdutoKiwify> listaEntrada) {
 		JSONArray lista = new JSONArray();

@@ -1,0 +1,69 @@
+{
+	"name": "ImplementacaoItemEstrutura",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"codigoHtml": {
+			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"itemEstruturaPaginaVendaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"itemEstruturaPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ItemEstruturaPaginaVenda",
+			"foreignKey": ""
+		},
+		"paginaImplementacaos": {
+			"type": "hasMany",
+			"model": "PaginaImplementacao",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"PossiveisParaPaginaItem": {
+			"accepts": [
+				{
+					"arg": "idPaginaAberta",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "idItem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/possiveisParaPaginaItem",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

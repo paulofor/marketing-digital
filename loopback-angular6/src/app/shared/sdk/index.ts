@@ -137,13 +137,29 @@ import { ScriptGeraVideoApi } from './services/custom/ScriptGeraVideo';
 import { WhatsappGrupoApi } from './services/custom/WhatsappGrupo';
 import { WhatsappMensagemApi } from './services/custom/WhatsappMensagem';
 import { AgendaCampanhaApi } from './services/custom/AgendaCampanha';
-import { ModuloProdutoKiwifyApi } from './services/custom/ModuloProdutoKiwify';
 import { ConteudoProdutoKiwifyApi } from './services/custom/ConteudoProdutoKiwify';
 import { TentativaOfertaApi } from './services/custom/TentativaOferta';
 import { PaginaVendaAbertaApi } from './services/custom/PaginaVendaAberta';
 import { PaginaVendaModeladaApi } from './services/custom/PaginaVendaModelada';
 import { SecaoPaginaVendaModeladaApi } from './services/custom/SecaoPaginaVendaModelada';
 import { TipoSecaoPaginaVendaApi } from './services/custom/TipoSecaoPaginaVenda';
+import { EntregavelProdutoApi } from './services/custom/EntregavelProduto';
+import { RecursoIAApi } from './services/custom/RecursoIA';
+import { AnuncioFacebookApi } from './services/custom/AnuncioFacebook';
+import { ContaInstagramApi } from './services/custom/ContaInstagram';
+import { ContaFacebookApi } from './services/custom/ContaFacebook';
+import { PaginaFacebookApi } from './services/custom/PaginaFacebook';
+import { PromptItemApi } from './services/custom/PromptItem';
+import { EntregavelPromptApi } from './services/custom/EntregavelPrompt';
+import { PromptImagemConteudoApi } from './services/custom/PromptImagemConteudo';
+import { ImagemConteudoApi } from './services/custom/ImagemConteudo';
+import { ItemConteudoProdutoApi } from './services/custom/ItemConteudoProduto';
+import { IdeiaUnicaApi } from './services/custom/IdeiaUnica';
+import { EstruturaPaginaVendaAbertaApi } from './services/custom/EstruturaPaginaVendaAberta';
+import { PaginaImplementacaoApi } from './services/custom/PaginaImplementacao';
+import { ItemEstruturaPaginaVendaApi } from './services/custom/ItemEstruturaPaginaVenda';
+import { ImplementacaoItemEstruturaApi } from './services/custom/ImplementacaoItemEstrutura';
+import { CheckoutProdutoProprioApi } from './services/custom/CheckoutProdutoProprio';
 /**
 * @module SDKBrowserModule
 * @description
@@ -263,13 +279,29 @@ export class SDKBrowserModule {
         WhatsappGrupoApi,
         WhatsappMensagemApi,
         AgendaCampanhaApi,
-        ModuloProdutoKiwifyApi,
         ConteudoProdutoKiwifyApi,
         TentativaOfertaApi,
         PaginaVendaAbertaApi,
         PaginaVendaModeladaApi,
         SecaoPaginaVendaModeladaApi,
         TipoSecaoPaginaVendaApi,
+        EntregavelProdutoApi,
+        RecursoIAApi,
+        AnuncioFacebookApi,
+        ContaInstagramApi,
+        ContaFacebookApi,
+        PaginaFacebookApi,
+        PromptItemApi,
+        EntregavelPromptApi,
+        PromptImagemConteudoApi,
+        ImagemConteudoApi,
+        ItemConteudoProdutoApi,
+        IdeiaUnicaApi,
+        EstruturaPaginaVendaAbertaApi,
+        PaginaImplementacaoApi,
+        ItemEstruturaPaginaVendaApi,
+        ImplementacaoItemEstruturaApi,
+        CheckoutProdutoProprioApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

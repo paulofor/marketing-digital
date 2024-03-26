@@ -69,6 +69,7 @@ public class GeraImagemImpl extends GeraImagem {
 				imagem.setPromptRevisado(texto);
 				imagem.setDalleSolicitacaoImagemId(solicitacaoCorrente.getIdInteger());
 				imagem.setHotmartId(solicitacaoCorrente.getHotmartId());
+				imagem.setProdutoProprioId(solicitacaoCorrente.getProdutoProprioId());
 				this.saidaListaImagem.add(imagem);
 				Thread.sleep(5000);
 			} catch (Exception e) {

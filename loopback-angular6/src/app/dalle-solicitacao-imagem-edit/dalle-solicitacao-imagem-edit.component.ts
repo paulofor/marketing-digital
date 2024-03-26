@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { DalleSolicitacaoImagem, DalleSolicitacaoImagemApi } from '../shared/sdk';
+import { DalleSolicitacaoImagem, DalleSolicitacaoImagemApi, ProdutoAfiliadoHotlink } from '../shared/sdk';
 import { DalleSolicitacaoImagemEditBaseComponent } from './dalle-solicitacao-imagem-edit-base.component';
 
 @Component({
@@ -18,7 +18,11 @@ export class DalleSolicitacaoImagemEditComponent extends DalleSolicitacaoImagemE
 
 	criaItem(): DalleSolicitacaoImagem {
 		let saida = new DalleSolicitacaoImagem();
-		saida.hotmartId = this.origem;
+		if (this.origem instanceof ProdutoAfiliadoHotlink) {
+			saida.hotmartId = this.origem.hotmartId;
+		} else {
+			saida.produtoProprioId = this.origem.id;
+		}
 		saida.dimensao = '1024x1792';
 		console.log('Critou item ' , saida);
 		return saida;

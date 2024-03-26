@@ -22,6 +22,9 @@ public class ImagemPaginaVenda extends Model {
 	private String urlFinal;
 	private int produtoProprioId;
 	private int hotmartId;
+	private String urlJpeg;
+	private int geraJpg;
+	private String codigoHexa;
 	// Relacionamentos 1
 	private DalleSolicitacaoImagem DalleSolicitacaoImagem;
 	private ProdutoAfiliadoHotlink ProdutoAfiliadoHotlink;
@@ -29,6 +32,7 @@ public class ImagemPaginaVenda extends Model {
 	// Relacionamentos N
 	private List<ArquivoPaginaVenda> ArquivoPaginaVendas;
 	private List<PaginaVendaPropria> PaginaVendaProprias;
+	private List<AnuncioFacebook> AnuncioFacebooks;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -56,6 +60,9 @@ public class ImagemPaginaVenda extends Model {
 			obj.put("urlFinal", urlFinal);
 			obj.put("produtoProprioId", produtoProprioId);
 			obj.put("hotmartId", hotmartId);
+			obj.put("urlJpeg", urlJpeg);
+			obj.put("geraJpg", geraJpg);
+			obj.put("codigoHexa", codigoHexa);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -111,6 +118,24 @@ public class ImagemPaginaVenda extends Model {
 	public int getHotmartId() { 
 		return this.hotmartId;
 	}
+	public void setUrlJpeg(String valor) { 
+		this.urlJpeg = valor;
+	}
+	public String getUrlJpeg() { 
+		return this.urlJpeg;
+	}
+	public void setGeraJpg(int valor) { 
+		this.geraJpg = valor;
+	}
+	public int getGeraJpg() { 
+		return this.geraJpg;
+	}
+	public void setCodigoHexa(String valor) { 
+		this.codigoHexa = valor;
+	}
+	public String getCodigoHexa() { 
+		return this.codigoHexa;
+	}
 
 	public DalleSolicitacaoImagem getDalleSolicitacaoImagem() {
 		return DalleSolicitacaoImagem;
@@ -155,6 +180,18 @@ public class ImagemPaginaVenda extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PaginaVendaProprias.add((PaginaVendaPropria) objeto);
+		}
+	}
+	public List<AnuncioFacebook> getAnuncioFacebooks() {
+		return  AnuncioFacebooks;
+	}
+	public void setAnuncioFacebooks(List<AnuncioFacebook> valores) {
+		this.AnuncioFacebooks = new ArrayList<AnuncioFacebook>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new AnuncioFacebook();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.AnuncioFacebooks.add((AnuncioFacebook) objeto);
 		}
 	}
 }

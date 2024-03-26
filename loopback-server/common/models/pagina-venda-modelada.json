@@ -20,6 +20,9 @@
 		},
 		"imagemCompleta": {
 			"type": "string"
+		},
+		"urlImagemCompleta": {
+			"type": "string"
 		}
 	},
 	"validations": [],

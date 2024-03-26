@@ -10,6 +10,7 @@
     "password": "MktDigi01$",
     "name": "mysqlds",
     "user": "mktdigitalnode",
-    "connector": "mysql"
+    "connector": "mysql",
+    "connectTimeout": 20000 
   }
 }

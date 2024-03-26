@@ -17,6 +17,7 @@ public class FacebookConta extends Model {
 	private String email;
 	// Relacionamentos 1
 	// Relacionamentos N
+	private List<PaginaFacebook> PaginaFacebooks;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -51,4 +52,16 @@ public class FacebookConta extends Model {
 		return this.email;
 	}
 
+	public List<PaginaFacebook> getPaginaFacebooks() {
+		return  PaginaFacebooks;
+	}
+	public void setPaginaFacebooks(List<PaginaFacebook> valores) {
+		this.PaginaFacebooks = new ArrayList<PaginaFacebook>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaFacebook();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaFacebooks.add((PaginaFacebook) objeto);
+		}
+	}
 }

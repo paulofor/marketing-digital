@@ -1,0 +1,33 @@
+<div class="dgc-painel" *ngIf="principal">
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
+	</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Itens</span>
+		</div>
+		<div class="dgc-card-detalhe" *ngFor="let item of principal.itemEstruturaPaginaVendas">
+			<span class="dgc-link" routerLink="/itemEstruturaPaginaVendaDetalhe/{{item.id}}">{{item.ordenacao}} - {{item.nome}}</span>
+			<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaItem(item)">
+				<i class="fas fa-edit text-primary"></i>
+			</button>
+		</div>
+		<div class="dgc-card-comandos">
+		</div>
+	</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-detalhe">
+			<pre>{{principal.codigoHtml}}</pre>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaEstrutura()">Editar</button>
+		</div>
+	</div>
+
+
+	<div class="dgc-card-comandos">
+		<button class="btn-primary btn-sm btn" (click)="editaItem()">Novo</button>
+	</div>
+</div>

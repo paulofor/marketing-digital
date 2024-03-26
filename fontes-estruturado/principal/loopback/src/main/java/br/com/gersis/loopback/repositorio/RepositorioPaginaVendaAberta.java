@@ -30,6 +30,36 @@ public class RepositorioPaginaVendaAberta extends ModelRepository<PaginaVendaAbe
 
 	// ***  Operações  ***
 
+	public synchronized void listaParaGeracao(final ListCallback<PaginaVendaAberta> callback ) {
+		RestContractItem contrato = new RestContractItem("PaginaVendaAberta/listaParaGeracao","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PaginaVendaAberta.listaParaGeracao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaGeracao", params,   new JsonArrayParser<PaginaVendaAberta>(this, callback));
+	}
+
+	public synchronized void atualizaPorGeracao(PaginaVendaAberta pagina ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("PaginaVendaAberta/atualizaPorGeracao","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "PaginaVendaAberta.atualizaPorGeracao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("pagina", pagina.getJSON());
+		invokeStaticMethod("atualizaPorGeracao", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaParaImagemCompleta(final ListCallback<PaginaVendaAberta> callback ) {
+		RestContractItem contrato = new RestContractItem("PaginaVendaAberta/listaParaImagemCompleta","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PaginaVendaAberta.listaParaImagemCompleta");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaImagemCompleta", params,   new JsonArrayParser<PaginaVendaAberta>(this, callback));
+	}
+
+	public synchronized void atualizaPaginaCompleta(PaginaVendaAberta pagina ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("PaginaVendaAberta/atualizaPaginaCompleta","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "PaginaVendaAberta.atualizaPaginaCompleta");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("pagina", pagina.getJSON());
+		invokeStaticMethod("atualizaPaginaCompleta", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<PaginaVendaAberta> listaEntrada) {
 		JSONArray lista = new JSONArray();

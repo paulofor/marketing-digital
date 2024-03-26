@@ -1,0 +1,63 @@
+{
+	"name": "ItemConteudoProduto",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"titulo": {
+			"type": "string"
+		},
+		"texto": {
+			"type": "string"
+		},
+		"ordenacao": {
+			"type": "number"
+		},
+		"conteudoProdutoKiwifyId": {
+			"type": "number"
+		},
+		"promptItemId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"conteudoProdutoKiwify": {
+			"type": "belongsTo",
+			"model": "ConteudoProdutoKiwify",
+			"foreignKey": ""
+		},
+		"promptItem": {
+			"type": "belongsTo",
+			"model": "PromptItem",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"OrdenacaoAlfabetica": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/ordenacaoAlfabetica",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

@@ -17,7 +17,7 @@ public class ObtemImagemPaginaVendaModelada {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemImagemPaginaVendaModelada");
-		System.out.println("(12/03/2024 16:32:24)");
+		System.out.println("(26/03/2024 19:04:44)");
 		try {
 			carregaProp();
 			ObtemImagemPaginaVendaModeladaObj obj = new ObtemImagemPaginaVendaModeladaObj();
@@ -53,5 +53,8 @@ public class ObtemImagemPaginaVendaModelada {
 
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
+		DaoBaseComum.setProximo("ObtemImagemPaginaVendaModeladaObj", new PaginaVendaModelada_ListaParaBuscarImagemImpl());
+		DaoBaseComum.setProximo("PaginaVendaModelada_ListaParaBuscarImagem", new ObtemImagemSeleniumImpl());
+		DaoBaseComum.setProximo("ObtemImagemSelenium", new PaginaVendaModelada_AtualizaImagemImpl());
 	}
 }

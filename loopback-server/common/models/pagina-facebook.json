@@ -1,0 +1,30 @@
+{
+	"name": "PaginaFacebook",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"facebookContaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"facebookConta": {
+			"type": "belongsTo",
+			"model": "FacebookConta",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

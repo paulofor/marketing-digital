@@ -1,0 +1,31 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header" *ngIf="produto">
+		<span>{{produto.nome}} - DALL-E</span>
+		<div class="dgc-direita">
+			<button [routerLink]="['/dalleComImagemPorProduto' , produto.hotmartId]" class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" style="margin-right: 8px;">imagens</button>
+			<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+		</div>
+	</div>
+	<div class="dgc-painel-principal" *ngIf="listaBase">
+		<div class="dgc-card" *ngFor="let item of listaBase">
+ 			<div class="dgc-card-detalhe">
+ 				<span>{{item.prompt}}</span>
+ 			</div>
+			 <div class="dgc-card-detalhe">
+				<span>Qtde: {{item.quantidadeImagem}}</span>
+			</div>
+			<div *ngIf="item.dataProcessamento" class="dgc-card-detalhe">
+				<span>Processamento: {{item.dataProcessamento | date : 'dd-MM-yyyy HH:mm:ss' : 'UTC' }}</span>
+			</div>
+			<div *ngIf="!item.dataProcessamento" class="dgc-card-detalhe">
+				<span>Pronto: {{item.enviar}}</span>
+			</div>
+
+ 			<div *ngIf="!item.dataProcessamento" class="dgc-card-comandos">
+				<button class="btn-primary btn-sm btn" (click)="pronto(item)">Pronto</button>
+ 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+ 			</div>
+ 		</div>
+  	</div>
+</div>
+

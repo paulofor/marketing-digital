@@ -1,0 +1,50 @@
+<div class="dgc-painel" *ngIf="principal">
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
+		<span class="dgc-direita">{{principal.produtoProprio.nome}}</span>
+	</div>
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Prompt Imagem</span>
+		</div>
+		<div class="dgc-card-detalhe" *ngFor="let rel of principal.promptImagemConteudos">
+			<span>{{rel.prompt}}</span>
+			<span> ({{rel.geraImagem}})</span>
+			<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaPrompt(rel)">
+				<i class="fas fa-edit text-primary"></i>
+			</button>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaPrompt()">Criar</button>
+		</div>
+	</div>
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Capítulos</span>
+		</div>
+
+		<div class="dgc-card" *ngFor="let rel of principal.conteudoProdutoKiwifys" >
+			<div class="dgc-card-header">
+				<span></span>
+				<span class="dgc-link" routerLink="/conteudoProdutoOrdenado/{{rel.entregavelProdutoId}}/{{rel.ordenacao}}">{{rel.ordenacao}} - {{rel.nome}}</span>
+				<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaModulo(rel)">
+					<i class="fas fa-edit text-primary"></i>
+				</button>
+			</div>
+			<div class="dgc-card-header">
+				<div *ngFor="let imagem of rel.imagemConteudos">
+					<img width="180" src="{{imagem.urlFinal}}" [ngStyle]="{'border': imagem.principal === 1 ? '4px solid red' : 'none'}"/>
+					<div class="botoes-container">
+						<button (click)="marcarPrincipal(imagem)">Principal</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="ordenacao()">Ordem Alfabética</button>
+			<button class="btn-primary btn-sm btn" (click)="editaModulo()">Novo</button>
+		</div>
+	</div>
+
+</div>

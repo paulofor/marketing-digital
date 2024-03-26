@@ -17,7 +17,7 @@ public class PlanejadorPalavraGoogleAds {
 
 	public static void main(String[] args) {
 		System.out.print("PlanejadorPalavraGoogleAds");
-		System.out.println("(12/03/2024 16:32:15)");
+		System.out.println("(26/03/2024 19:04:34)");
 		try {
 			carregaProp();
 			PlanejadorPalavraGoogleAdsObj obj = new PlanejadorPalavraGoogleAdsObj();

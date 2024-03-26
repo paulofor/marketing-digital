@@ -7,4 +7,11 @@ module.exports = function(Paginavendamodelada) {
         const ds = Paginavendamodelada.dataSource;
         ds.connector.query(sql,callback);
     }
+
+    Paginavendamodelada.AtualizaImagem = function(pagina,callback) {
+        const sql = "update PaginaVendaModelada set imagemCompleta = '" + pagina['imagemCompleta'] +"', urlImagemCompleta = '" +  pagina['urlImagemCompleta'] + "' " +
+            " where id = " + pagina['id'];
+        const ds = Paginavendamodelada.dataSource;
+        ds.connector.query(sql,callback);
+    }
 };

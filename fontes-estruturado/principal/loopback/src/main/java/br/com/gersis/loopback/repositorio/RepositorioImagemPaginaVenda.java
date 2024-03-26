@@ -46,6 +46,21 @@ public class RepositorioImagemPaginaVenda extends ModelRepository<ImagemPaginaVe
 		invokeStaticMethod("alteraDisponivel", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void listaParaJpg(final ListCallback<ImagemPaginaVenda> callback ) {
+		RestContractItem contrato = new RestContractItem("ImagemPaginaVendas/listaParaJpg","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ImagemPaginaVenda.listaParaJpg");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaJpg", params,   new JsonArrayParser<ImagemPaginaVenda>(this, callback));
+	}
+
+	public synchronized void registraJpg(ImagemPaginaVenda imagem ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ImagemPaginaVendas/registraJpg","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ImagemPaginaVenda.registraJpg");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("imagem", imagem.getJSON());
+		invokeStaticMethod("registraJpg", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<ImagemPaginaVenda> listaEntrada) {
 		JSONArray lista = new JSONArray();

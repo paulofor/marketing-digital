@@ -1,0 +1,35 @@
+<div class="dgc-painel" *ngIf="principal">
+<div class="dgc-painel-header" *ngIf="principal">
+	<span>{{principal.nome}}</span>
+</div>
+
+<div *ngIf="principal.estruturaPaginaVendaAberta">
+	<div class="dgc-card" *ngFor="let item of principal.estruturaPaginaVendaAberta.itemEstruturaPaginaVendas">
+		<div class="dgc-card-header">
+			<span>{{item.nome}}</span>
+		</div>
+		<div *ngFor="let implementacao of item.implementacaoItemEstruturas" >
+			<div class="dgc-card-detalhe" *ngIf="implementacao.paginaImplementacaos.length>0">
+				<span>{{implementacao.nome}}</span>
+			</div>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaRelacionamento(item)">Alterar</button>
+		</div>
+	</div>
+</div>
+
+<div class="dgc-card" *ngIf="principal.urlImagemCompleta">
+	<div class="dgc-card-header">
+		<span>Tela Completa : {{alturaImagem}}</span>
+	</div>
+	<img src="{{principal.urlImagemCompleta}}" width="250" (load)="onImageLoad($event)"/>
+</div>
+
+
+  
+<div class="dgc-card-comandos">
+<button class="btn-primary btn-sm btn" (click)="editaPasso()">Novo</button>
+</div> 
+</div>
+

@@ -14,12 +14,13 @@ import org.json.JSONObject;
 public class ConteudoProdutoKiwify extends Model {
 
 
-	private String texto;
-	private String titulo;
+	private String nome;
 	private int ordenacao;
 	// Relacionamentos 1
-	private ModuloProdutoKiwify ModuloProdutoKiwify;
+	private EntregavelProduto EntregavelProduto;
 	// Relacionamentos N
+	private List<ItemConteudoProduto> ItemConteudoProdutos;
+	private List<ImagemConteudo> ImagemConteudos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -39,8 +40,7 @@ public class ConteudoProdutoKiwify extends Model {
 		JSONObject obj = new JSONObject();
 		try {
 			obj.put("id",getId());
-			obj.put("texto", texto);
-			obj.put("titulo", titulo);
+			obj.put("nome", nome);
 			obj.put("ordenacao", ordenacao);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,17 +49,11 @@ public class ConteudoProdutoKiwify extends Model {
 	}
 
 
-	public void setTexto(String valor) { 
-		this.texto = valor;
+	public void setNome(String valor) { 
+		this.nome = valor;
 	}
-	public String getTexto() { 
-		return this.texto;
-	}
-	public void setTitulo(String valor) { 
-		this.titulo = valor;
-	}
-	public String getTitulo() { 
-		return this.titulo;
+	public String getNome() { 
+		return this.nome;
 	}
 	public void setOrdenacao(int valor) { 
 		this.ordenacao = valor;
@@ -68,11 +62,35 @@ public class ConteudoProdutoKiwify extends Model {
 		return this.ordenacao;
 	}
 
-	public ModuloProdutoKiwify getModuloProdutoKiwify() {
-		return ModuloProdutoKiwify;
+	public EntregavelProduto getEntregavelProduto() {
+		return EntregavelProduto;
 	}
-	public void setModuloProdutoKiwify(HashMap valor) {
-		this.ModuloProdutoKiwify = new ModuloProdutoKiwify();
-		BeanUtil.setProperties(this.ModuloProdutoKiwify, (Map<String, ? extends Object>) valor, true);
+	public void setEntregavelProduto(HashMap valor) {
+		this.EntregavelProduto = new EntregavelProduto();
+		BeanUtil.setProperties(this.EntregavelProduto, (Map<String, ? extends Object>) valor, true);
+	}
+	public List<ItemConteudoProduto> getItemConteudoProdutos() {
+		return  ItemConteudoProdutos;
+	}
+	public void setItemConteudoProdutos(List<ItemConteudoProduto> valores) {
+		this.ItemConteudoProdutos = new ArrayList<ItemConteudoProduto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ItemConteudoProduto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ItemConteudoProdutos.add((ItemConteudoProduto) objeto);
+		}
+	}
+	public List<ImagemConteudo> getImagemConteudos() {
+		return  ImagemConteudos;
+	}
+	public void setImagemConteudos(List<ImagemConteudo> valores) {
+		this.ImagemConteudos = new ArrayList<ImagemConteudo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ImagemConteudo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ImagemConteudos.add((ImagemConteudo) objeto);
+		}
 	}
 }

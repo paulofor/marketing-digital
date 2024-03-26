@@ -1,0 +1,18 @@
+<h2 *ngIf="item" mat-dialog-title>Implementações</h2>
+
+<form *ngIf="listaBase" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-radio-group [(ngModel)]="itemSelecionado" [ngModelOptions]="{ standalone: true }">
+      <mat-radio-button *ngFor="let item of listaBase" [value]="item">{{item.nome}}</mat-radio-button>
+    </mat-radio-group>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

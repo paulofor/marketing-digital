@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   ProdutoAfiliadoHotmart,
+  ProdutoProprio,
   ImagemPaginaVenda,
   VersaoImagemPaginaVenda
 } from '../index';
@@ -16,8 +17,10 @@ export interface DalleSolicitacaoImagemInterface {
   "arquivo"?: string;
   "quantidadeImagem"?: number;
   "dataProcessamento"?: Date;
+  "produtoProprioId"?: number;
   "id"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
+  produtoProprio?: ProdutoProprio;
   imagemPaginaVendas?: ImagemPaginaVenda[];
   versaoImagemPaginaVendas?: VersaoImagemPaginaVenda[];
 }
@@ -32,8 +35,10 @@ export class DalleSolicitacaoImagem implements DalleSolicitacaoImagemInterface {
   "arquivo": string;
   "quantidadeImagem": number;
   "dataProcessamento": Date;
+  "produtoProprioId": number;
   "id": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
+  produtoProprio: ProdutoProprio;
   imagemPaginaVendas: ImagemPaginaVenda[];
   versaoImagemPaginaVendas: VersaoImagemPaginaVenda[];
   constructor(data?: DalleSolicitacaoImagemInterface) {
@@ -105,6 +110,10 @@ export class DalleSolicitacaoImagem implements DalleSolicitacaoImagemInterface {
           name: 'dataProcessamento',
           type: 'Date'
         },
+        "produtoProprioId": {
+          name: 'produtoProprioId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -118,6 +127,14 @@ export class DalleSolicitacaoImagem implements DalleSolicitacaoImagemInterface {
           relationType: 'belongsTo',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'
+        },
+        produtoProprio: {
+          name: 'produtoProprio',
+          type: 'ProdutoProprio',
+          model: 'ProdutoProprio',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoProprioId',
+          keyTo: 'id'
         },
         imagemPaginaVendas: {
           name: 'imagemPaginaVendas',

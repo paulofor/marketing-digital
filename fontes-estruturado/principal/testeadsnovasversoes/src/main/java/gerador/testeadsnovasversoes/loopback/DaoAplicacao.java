@@ -106,13 +106,31 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioWhatsappGrupo repWhatsappGrupo = adapter.createRepository(RepositorioWhatsappGrupo.class);
 	protected RepositorioWhatsappMensagem repWhatsappMensagem = adapter.createRepository(RepositorioWhatsappMensagem.class);
 	protected RepositorioAgendaCampanha repAgendaCampanha = adapter.createRepository(RepositorioAgendaCampanha.class);
-	protected RepositorioModuloProdutoKiwify repModuloProdutoKiwify = adapter.createRepository(RepositorioModuloProdutoKiwify.class);
+	protected RepositorioItemConteudoProduto repItemConteudoProduto = adapter.createRepository(RepositorioItemConteudoProduto.class);
 	protected RepositorioConteudoProdutoKiwify repConteudoProdutoKiwify = adapter.createRepository(RepositorioConteudoProdutoKiwify.class);
 	protected RepositorioTentativaOferta repTentativaOferta = adapter.createRepository(RepositorioTentativaOferta.class);
 	protected RepositorioPaginaVendaAberta repPaginaVendaAberta = adapter.createRepository(RepositorioPaginaVendaAberta.class);
 	protected RepositorioPaginaVendaModelada repPaginaVendaModelada = adapter.createRepository(RepositorioPaginaVendaModelada.class);
 	protected RepositorioSecaoPaginaVendaModelada repSecaoPaginaVendaModelada = adapter.createRepository(RepositorioSecaoPaginaVendaModelada.class);
 	protected RepositorioTipoSecaoPaginaVenda repTipoSecaoPaginaVenda = adapter.createRepository(RepositorioTipoSecaoPaginaVenda.class);
+	protected RepositorioVisitaAnuncioFacebook repVisitaAnuncioFacebook = adapter.createRepository(RepositorioVisitaAnuncioFacebook.class);
+	protected RepositorioEntregavelProduto repEntregavelProduto = adapter.createRepository(RepositorioEntregavelProduto.class);
+	protected RepositorioRecursoIA repRecursoIA = adapter.createRepository(RepositorioRecursoIA.class);
+	protected RepositorioAnuncioFacebook repAnuncioFacebook = adapter.createRepository(RepositorioAnuncioFacebook.class);
+	protected RepositorioContaFacebook repContaFacebook = adapter.createRepository(RepositorioContaFacebook.class);
+	protected RepositorioContaInstagram repContaInstagram = adapter.createRepository(RepositorioContaInstagram.class);
+	protected RepositorioPaginaFacebook repPaginaFacebook = adapter.createRepository(RepositorioPaginaFacebook.class);
+	protected RepositorioPromptItem repPromptItem = adapter.createRepository(RepositorioPromptItem.class);
+	protected RepositorioEntregavelPrompt repEntregavelPrompt = adapter.createRepository(RepositorioEntregavelPrompt.class);
+	protected RepositorioImagemConteudo repImagemConteudo = adapter.createRepository(RepositorioImagemConteudo.class);
+	protected RepositorioPromptImagemConteudo repPromptImagemConteudo = adapter.createRepository(RepositorioPromptImagemConteudo.class);
+	protected RepositorioIdeiaUnica repIdeiaUnica = adapter.createRepository(RepositorioIdeiaUnica.class);
+	protected RepositorioFasePaginaVenda repFasePaginaVenda = adapter.createRepository(RepositorioFasePaginaVenda.class);
+	protected RepositorioEstruturaPaginaVendaAberta repEstruturaPaginaVendaAberta = adapter.createRepository(RepositorioEstruturaPaginaVendaAberta.class);
+	protected RepositorioItemEstruturaPaginaVenda repItemEstruturaPaginaVenda = adapter.createRepository(RepositorioItemEstruturaPaginaVenda.class);
+	protected RepositorioCheckoutProdutoProprio repCheckoutProdutoProprio = adapter.createRepository(RepositorioCheckoutProdutoProprio.class);
+	protected RepositorioPaginaImplementacao repPaginaImplementacao = adapter.createRepository(RepositorioPaginaImplementacao.class);
+	protected RepositorioImplementacaoItemEstrutura repImplementacaoItemEstrutura = adapter.createRepository(RepositorioImplementacaoItemEstrutura.class);
 
 
 	@Override

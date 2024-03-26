@@ -1,0 +1,22 @@
+<div class="dgc-painel" *ngIf="principal">
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
+		<div class="dgc-direita">
+			<span class="dgc-link" routerLink="/conteudoProdutoOrdenado/{{principal.entregavelProdutoId}}/{{principal.ordenacao+1}}">Próximo</span>
+		</div>
+	</div>
+
+
+	<div class="dgc-card" *ngFor="let item of principal.itemConteudoProdutos">
+		<div class="dgc-card-header">
+			<span>{{item.promptItem.titulo}}</span>
+		</div>
+		<div class="dgc-card-detalhe">
+			<span [innerHTML]="ajustaTexto(item.texto)"></span>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="edita(item)">Edita</button>
+		</div>
+	</div>
+
+</div>

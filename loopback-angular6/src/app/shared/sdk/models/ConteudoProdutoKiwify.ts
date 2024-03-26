@@ -1,25 +1,29 @@
 /* tslint:disable */
 import {
-  ModuloProdutoKiwify
+  EntregavelProduto,
+  ImagemConteudo,
+  ItemConteudoProduto
 } from '../index';
 
 declare var Object: any;
 export interface ConteudoProdutoKiwifyInterface {
-  "texto"?: string;
-  "titulo"?: string;
+  "nome"?: string;
   "ordenacao"?: number;
-  "moduloProdutoKiwifyId"?: number;
+  "entregavelProdutoId"?: number;
   "id"?: number;
-  moduloProdutoKiwify?: ModuloProdutoKiwify;
+  entregavelProduto?: EntregavelProduto;
+  imagemConteudos?: ImagemConteudo[];
+  itemConteudoProdutos?: ItemConteudoProduto[];
 }
 
 export class ConteudoProdutoKiwify implements ConteudoProdutoKiwifyInterface {
-  "texto": string;
-  "titulo": string;
+  "nome": string;
   "ordenacao": number;
-  "moduloProdutoKiwifyId": number;
+  "entregavelProdutoId": number;
   "id": number;
-  moduloProdutoKiwify: ModuloProdutoKiwify;
+  entregavelProduto: EntregavelProduto;
+  imagemConteudos: ImagemConteudo[];
+  itemConteudoProdutos: ItemConteudoProduto[];
   constructor(data?: ConteudoProdutoKiwifyInterface) {
     Object.assign(this, data);
   }
@@ -53,20 +57,16 @@ export class ConteudoProdutoKiwify implements ConteudoProdutoKiwifyInterface {
       path: 'ConteudoProdutoKiwifies',
       idName: 'id',
       properties: {
-        "texto": {
-          name: 'texto',
-          type: 'string'
-        },
-        "titulo": {
-          name: 'titulo',
+        "nome": {
+          name: 'nome',
           type: 'string'
         },
         "ordenacao": {
           name: 'ordenacao',
           type: 'number'
         },
-        "moduloProdutoKiwifyId": {
-          name: 'moduloProdutoKiwifyId',
+        "entregavelProdutoId": {
+          name: 'entregavelProdutoId',
           type: 'number'
         },
         "id": {
@@ -75,13 +75,29 @@ export class ConteudoProdutoKiwify implements ConteudoProdutoKiwifyInterface {
         },
       },
       relations: {
-        moduloProdutoKiwify: {
-          name: 'moduloProdutoKiwify',
-          type: 'ModuloProdutoKiwify',
-          model: 'ModuloProdutoKiwify',
+        entregavelProduto: {
+          name: 'entregavelProduto',
+          type: 'EntregavelProduto',
+          model: 'EntregavelProduto',
           relationType: 'belongsTo',
-                  keyFrom: 'moduloProdutoKiwifyId',
+                  keyFrom: 'entregavelProdutoId',
           keyTo: 'id'
+        },
+        imagemConteudos: {
+          name: 'imagemConteudos',
+          type: 'ImagemConteudo[]',
+          model: 'ImagemConteudo',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'conteudoProdutoKiwifyId'
+        },
+        itemConteudoProdutos: {
+          name: 'itemConteudoProdutos',
+          type: 'ItemConteudoProduto[]',
+          model: 'ItemConteudoProduto',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'conteudoProdutoKiwifyId'
         },
       }
     }
