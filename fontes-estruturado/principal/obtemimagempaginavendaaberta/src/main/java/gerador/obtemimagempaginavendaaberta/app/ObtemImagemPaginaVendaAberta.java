@@ -47,7 +47,7 @@ public class ObtemImagemPaginaVendaAberta {
 		//Properties prop = new Properties();
 		//prop.load(input);
 		//UrlLoopback = prop.getProperty("loopback.url");
-		UrlLoopback = "http://localhost:23101/api";
+		UrlLoopback = "http://vps-40d69db1.vps.ovh.ca:23101/api";
 		DaoBaseComum.setUrl(UrlLoopback);
 	}
 
