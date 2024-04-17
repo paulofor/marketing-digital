@@ -2,31 +2,41 @@
 import {
   ProdutoProprio,
   ConteudoProdutoKiwify,
-  EntregavelPrompt,
-  PromptImagemConteudo
+  PromptItem,
+  PromptImagemConteudo,
+  ConteudoEntregavel,
+  WhatsappGrupoPadraoMensagem
 } from '../index';
 
 declare var Object: any;
 export interface EntregavelProdutoInterface {
   "nome"?: string;
   "tipo"?: string;
+  "promptLista"?: string;
+  "geraLista"?: number;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
   conteudoProdutoKiwifys?: ConteudoProdutoKiwify[];
-  entregavelPrompts?: EntregavelPrompt[];
+  promptItems?: PromptItem[];
   promptImagemConteudos?: PromptImagemConteudo[];
+  conteudoEntregavels?: ConteudoEntregavel[];
+  whatsappGrupoPadraoMensagems?: WhatsappGrupoPadraoMensagem[];
 }
 
 export class EntregavelProduto implements EntregavelProdutoInterface {
   "nome": string;
   "tipo": string;
+  "promptLista": string;
+  "geraLista": number;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
   conteudoProdutoKiwifys: ConteudoProdutoKiwify[];
-  entregavelPrompts: EntregavelPrompt[];
+  promptItems: PromptItem[];
   promptImagemConteudos: PromptImagemConteudo[];
+  conteudoEntregavels: ConteudoEntregavel[];
+  whatsappGrupoPadraoMensagems: WhatsappGrupoPadraoMensagem[];
   constructor(data?: EntregavelProdutoInterface) {
     Object.assign(this, data);
   }
@@ -68,6 +78,14 @@ export class EntregavelProduto implements EntregavelProdutoInterface {
           name: 'tipo',
           type: 'string'
         },
+        "promptLista": {
+          name: 'promptLista',
+          type: 'string'
+        },
+        "geraLista": {
+          name: 'geraLista',
+          type: 'number'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
           type: 'number'
@@ -94,10 +112,10 @@ export class EntregavelProduto implements EntregavelProdutoInterface {
                   keyFrom: 'id',
           keyTo: 'entregavelProdutoId'
         },
-        entregavelPrompts: {
-          name: 'entregavelPrompts',
-          type: 'EntregavelPrompt[]',
-          model: 'EntregavelPrompt',
+        promptItems: {
+          name: 'promptItems',
+          type: 'PromptItem[]',
+          model: 'PromptItem',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'entregavelProdutoId'
@@ -106,6 +124,22 @@ export class EntregavelProduto implements EntregavelProdutoInterface {
           name: 'promptImagemConteudos',
           type: 'PromptImagemConteudo[]',
           model: 'PromptImagemConteudo',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'entregavelProdutoId'
+        },
+        conteudoEntregavels: {
+          name: 'conteudoEntregavels',
+          type: 'ConteudoEntregavel[]',
+          model: 'ConteudoEntregavel',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'entregavelProdutoId'
+        },
+        whatsappGrupoPadraoMensagems: {
+          name: 'whatsappGrupoPadraoMensagems',
+          type: 'WhatsappGrupoPadraoMensagem[]',
+          model: 'WhatsappGrupoPadraoMensagem',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'entregavelProdutoId'

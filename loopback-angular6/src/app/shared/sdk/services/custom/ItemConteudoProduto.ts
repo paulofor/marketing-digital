@@ -160,7 +160,7 @@ export class ItemConteudoProdutoApi extends BaseLoopBackApi {
    *
    * @param {object} data Request data.
    *
-   * This method does not accept any data. Supply an empty object.
+   *  - `idEntregavel` – `{number}` - 
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -171,13 +171,44 @@ export class ItemConteudoProdutoApi extends BaseLoopBackApi {
    * This usually means the response is a `ItemConteudoProduto` object.)
    * </em>
    */
-  public OrdenacaoAlfabetica(customHeaders?: Function): Observable<any> {
+  public OrdenacaoAlfabetica(idEntregavel: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ItemConteudoProdutos/ordenacaoAlfabetica";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
+    if (typeof idEntregavel !== 'undefined' && idEntregavel !== null) _urlParams.idEntregavel = idEntregavel;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `listaConteudo` – `{any}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ItemConteudoProduto` object.)
+   * </em>
+   */
+  public CriaConteudoItem(listaConteudo: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ItemConteudoProdutos/criaConteudoItem";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof listaConteudo !== 'undefined' && listaConteudo !== null) _urlParams.listaConteudo = listaConteudo;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

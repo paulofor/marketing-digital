@@ -11,18 +11,10 @@
 	"properties": {
 		"nome": {
 			"type": "string"
-		},
-		"facebookContaId": {
-			"type": "number"
 		}
 	},
 	"validations": [],
 	"relations": {
-		"facebookConta": {
-			"type": "belongsTo",
-			"model": "FacebookConta",
-			"foreignKey": ""
-		}
 	},
 	"acls": [],
 	"methods": {

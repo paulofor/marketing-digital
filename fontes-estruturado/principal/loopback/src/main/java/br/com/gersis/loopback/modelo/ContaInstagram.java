@@ -15,8 +15,11 @@ public class ContaInstagram extends Model {
 
 
 	private String nome;
+	private String email;
+	private String instagram;
 	// Relacionamentos 1
 	// Relacionamentos N
+	private List<MetaAdsAnuncio> MetaAdsAnuncios;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -37,6 +40,8 @@ public class ContaInstagram extends Model {
 		try {
 			obj.put("id",getId());
 			obj.put("nome", nome);
+			obj.put("email", email);
+			obj.put("instagram", instagram);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,5 +55,29 @@ public class ContaInstagram extends Model {
 	public String getNome() { 
 		return this.nome;
 	}
+	public void setEmail(String valor) { 
+		this.email = valor;
+	}
+	public String getEmail() { 
+		return this.email;
+	}
+	public void setInstagram(String valor) { 
+		this.instagram = valor;
+	}
+	public String getInstagram() { 
+		return this.instagram;
+	}
 
+	public List<MetaAdsAnuncio> getMetaAdsAnuncios() {
+		return  MetaAdsAnuncios;
+	}
+	public void setMetaAdsAnuncios(List<MetaAdsAnuncio> valores) {
+		this.MetaAdsAnuncios = new ArrayList<MetaAdsAnuncio>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaAdsAnuncio();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaAdsAnuncios.add((MetaAdsAnuncio) objeto);
+		}
+	}
 }

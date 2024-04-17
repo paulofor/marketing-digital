@@ -12,7 +12,22 @@
 		"nome": {
 			"type": "string"
 		},
+		"descricao": {
+			"type": "string"
+		},
+		"link": {
+			"type": "string"
+		},
+		"imagem": {
+			"type": "string"
+		},
+		"dataCriacao": {
+			"type": "string"
+		},
 		"produtoProprioId": {
+			"type": "number"
+		},
+		"contaWhatsappId": {
 			"type": "number"
 		}
 	},
@@ -21,6 +36,11 @@
 		"produtoProprio": {
 			"type": "belongsTo",
 			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"contaWhatsapp": {
+			"type": "belongsTo",
+			"model": "ContaWhatsapp",
 			"foreignKey": ""
 		},
 		"whatsappMensagems": {

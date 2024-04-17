@@ -15,8 +15,13 @@ public class WhatsappGrupo extends Model {
 
 
 	private String nome;
+	private String descricao;
+	private String link;
+	private String imagem;
+	private String dataCriacao;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
+	private ContaWhatsapp ContaWhatsapp;
 	// Relacionamentos N
 	private List<WhatsappMensagem> WhatsappMensagems;
 
@@ -39,6 +44,10 @@ public class WhatsappGrupo extends Model {
 		try {
 			obj.put("id",getId());
 			obj.put("nome", nome);
+			obj.put("descricao", descricao);
+			obj.put("link", link);
+			obj.put("imagem", imagem);
+			obj.put("dataCriacao", dataCriacao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -52,6 +61,30 @@ public class WhatsappGrupo extends Model {
 	public String getNome() { 
 		return this.nome;
 	}
+	public void setDescricao(String valor) { 
+		this.descricao = valor;
+	}
+	public String getDescricao() { 
+		return this.descricao;
+	}
+	public void setLink(String valor) { 
+		this.link = valor;
+	}
+	public String getLink() { 
+		return this.link;
+	}
+	public void setImagem(String valor) { 
+		this.imagem = valor;
+	}
+	public String getImagem() { 
+		return this.imagem;
+	}
+	public void setDataCriacao(String valor) { 
+		this.dataCriacao = valor;
+	}
+	public String getDataCriacao() { 
+		return this.dataCriacao;
+	}
 
 	public ProdutoProprio getProdutoProprio() {
 		return ProdutoProprio;
@@ -59,6 +92,13 @@ public class WhatsappGrupo extends Model {
 	public void setProdutoProprio(HashMap valor) {
 		this.ProdutoProprio = new ProdutoProprio();
 		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	}
+	public ContaWhatsapp getContaWhatsapp() {
+		return ContaWhatsapp;
+	}
+	public void setContaWhatsapp(HashMap valor) {
+		this.ContaWhatsapp = new ContaWhatsapp();
+		BeanUtil.setProperties(this.ContaWhatsapp, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<WhatsappMensagem> getWhatsappMensagems() {
 		return  WhatsappMensagems;

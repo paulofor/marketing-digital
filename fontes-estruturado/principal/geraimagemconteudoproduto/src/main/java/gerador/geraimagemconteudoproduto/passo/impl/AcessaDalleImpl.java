@@ -25,8 +25,15 @@ public class AcessaDalleImpl extends AcessaDalle {
 
 	@Override
 	protected boolean executaCustom(ConteudoProdutoKiwify conteudoCorrente) {
-		PromptImagemConteudo promptObj = conteudoCorrente.getEntregavelProduto().getPromptImagemConteudos().get(0);
-		String prompt = this.obtemPrompt(promptObj,conteudoCorrente);
+		String prompt = "";
+		int idPrompt = 0;
+		if (conteudoCorrente.getEntregavelProduto().getPromptImagemConteudos().size()==0) {
+			prompt = conteudoCorrente.getPromptIndividual1();
+		} else {
+			PromptImagemConteudo promptObj = conteudoCorrente.getEntregavelProduto().getPromptImagemConteudos().get(0);
+			prompt = this.obtemPrompt(promptObj,conteudoCorrente);
+			idPrompt = promptObj.getIdInteger();
+		}
 		try {
 			JSONObject resultado = fazerRequisicao(prompt);
 			JSONArray data = resultado.getJSONArray("data");
@@ -36,7 +43,7 @@ public class AcessaDalleImpl extends AcessaDalle {
 			ImagemConteudo imagem = new ImagemConteudo();
 			imagem.setUrlOriginal(url);
 			imagem.setPromptRevisado(texto);
-			imagem.setPromptImagemConteudoId(promptObj.getIdInteger());
+			imagem.setPromptImagemConteudoId(idPrompt);
 			imagem.setConteudoProdutoKiwifyId(conteudoCorrente.getIdInteger());
 			this.saidaImagemNova = imagem;
 			Thread.sleep(5000);

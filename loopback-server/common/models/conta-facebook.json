@@ -9,11 +9,47 @@
     	"Counts": true
   	},
 	"properties": {
+		"email": {
+			"type": "string"
+		},
+		"tokenAtual": {
+			"type": "string"
+		},
+		"principal": {
+			"type": "number"
+		},
+		"nome": {
+			"type": "string"
+		}
 	},
 	"validations": [],
 	"relations": {
+		"metaAdsCampanhaMetricas": {
+			"type": "hasMany",
+			"model": "MetaAdsCampanhaMetrica",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {
+		"ObtemContaAnuncio": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemContaAnuncio",
+   					"verb": "get"
+ 				}
+ 			]
+		}
 	}
 }

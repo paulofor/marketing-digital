@@ -17,6 +17,8 @@ public class ItemConteudoProduto extends Model {
 	private String titulo;
 	private String texto;
 	private int ordenacao;
+	private int promptItemId;
+	private int conteudoProdutoKiwifyId;
 	// Relacionamentos 1
 	private ConteudoProdutoKiwify ConteudoProdutoKiwify;
 	private PromptItem PromptItem;
@@ -43,6 +45,8 @@ public class ItemConteudoProduto extends Model {
 			obj.put("titulo", titulo);
 			obj.put("texto", texto);
 			obj.put("ordenacao", ordenacao);
+			obj.put("promptItemId", promptItemId);
+			obj.put("conteudoProdutoKiwifyId", conteudoProdutoKiwifyId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -67,6 +71,18 @@ public class ItemConteudoProduto extends Model {
 	}
 	public int getOrdenacao() { 
 		return this.ordenacao;
+	}
+	public void setPromptItemId(int valor) { 
+		this.promptItemId = valor;
+	}
+	public int getPromptItemId() { 
+		return this.promptItemId;
+	}
+	public void setConteudoProdutoKiwifyId(int valor) { 
+		this.conteudoProdutoKiwifyId = valor;
+	}
+	public int getConteudoProdutoKiwifyId() { 
+		return this.conteudoProdutoKiwifyId;
 	}
 
 	public ConteudoProdutoKiwify getConteudoProdutoKiwify() {

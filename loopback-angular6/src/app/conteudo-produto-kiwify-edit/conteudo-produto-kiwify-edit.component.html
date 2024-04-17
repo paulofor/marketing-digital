@@ -5,14 +5,34 @@
 	<mat-dialog-content>
 
 		<mat-form-field class="example-full-width">
-			<input matInput #nome [(ngModel)]="item.ordenacao" name="ordenacao" placeholder="Ordenação" autocomplete="off" />
+			<input matInput #ordenacao [(ngModel)]="item.ordenacao" name="ordenacao" placeholder="Ordenação" autocomplete="off" />
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
 			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" autocomplete="off" />
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<input matInput #geraImagem [(ngModel)]="item.geraImagem" name="geraImagem" placeholder="Gera Imagem" />
+		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<input matInput #geraTexto [(ngModel)]="item.geraTexto" name="geraTexto" placeholder="Gera Texto" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #promptIndividual1 [(ngModel)]="item.promptIndividual1" name="promptIndividual1" placeholder="Prompt 1" />
+		</mat-form-field>
+		<mat-form-field class="example-full-width">
+			<input matInput #promptIndividual2 [(ngModel)]="item.promptIndividual2" name="promptIndividual2" placeholder="Prompt 2" />
+		</mat-form-field>
+		<mat-form-field class="example-full-width">
+			<input matInput #promptIndividual3 [(ngModel)]="item.promptIndividual3" name="promptIndividual3" placeholder="Prompt 3" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #numeroBonus [(ngModel)]="item.numeroBonus" name="numeroBonus" placeholder="Número Bonus" />
+		</mat-form-field>
 
 	</mat-dialog-content>
 

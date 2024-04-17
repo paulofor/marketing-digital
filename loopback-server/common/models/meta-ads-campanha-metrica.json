@@ -1,0 +1,78 @@
+{
+	"name": "MetaAdsCampanhaMetrica",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"dataHora": {
+			"type": "date"
+			,"id": true
+		},
+		"nome": {
+			"type": "string"
+		},
+		"spend": {
+			"type": "number"
+		},
+		"dateStart": {
+			"type": "date"
+		},
+		"dateStop": {
+			"type": "date"
+		},
+		"status": {
+			"type": "string"
+		},
+		"idMeta": {
+			"type": "string"
+			,"id": true
+		},
+		"maisRecente": {
+			"type": "number"
+		},
+		"contaFacebookId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaFacebook": {
+			"type": "belongsTo",
+			"model": "ContaFacebook",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"InsereObservacao": {
+			"accepts": [
+				{
+					"arg": "listaObservacao",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereObservacao",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

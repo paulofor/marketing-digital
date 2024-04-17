@@ -1,83 +1,82 @@
 {
-	"name": "AnuncioFacebook",
-	"base": "PersistedModel",
-	"idInjection": true,
-	"options": {
-		"validateUpsert": true
-	},
-  	"mixins": {
-    	"Counts": true
-  	},
-	"properties": {
-		"impressao": {
-			"type": "number"
-		},
-		"cpm": {
-			"type": "number"
-		},
-		"alcance": {
-			"type": "number"
-		},
-		"frequencia": {
-			"type": "number"
-		},
-		"ctr": {
-			"type": "number"
-		},
-		"clique": {
-			"type": "number"
-		},
-		"cpc": {
-			"type": "number"
-		},
-		"roas": {
-			"type": "number"
-		},
-		"conversao": {
-			"type": "number"
-		},
-		"cpa": {
-			"type": "number"
-		},
-		"textoPrincipal1": {
-			"type": "string"
-		},
-		"titulo1": {
-			"type": "string"
-		},
-		"imagemAnuncio": {
-			"type": "string"
-		},
-		"idFacebook": {
-			"type": "string"
-		},
-		"imagemInstagramReels": {
-			"type": "string"
-		},
-		"imagemInstagramStories": {
-			"type": "string"
-		},
-		"paginaVendaAbertaId": {
-			"type": "number"
-		},
-		"imagemPaginaVendaId": {
-			"type": "number"
-		}
-	},
-	"validations": [],
-	"relations": {
-		"paginaVendaAberta": {
-			"type": "belongsTo",
-			"model": "PaginaVendaAberta",
-			"foreignKey": ""
-		},
-		"imagemPaginaVenda": {
-			"type": "belongsTo",
-			"model": "ImagemPaginaVenda",
-			"foreignKey": ""
-		}
-	},
-	"acls": [],
-	"methods": {
-	}
+  "name": "AnuncioFacebook",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Counts": true
+  },
+  "properties": {
+    "impressao": {
+      "type": "number"
+    },
+    "cpm": {
+      "type": "number"
+    },
+    "alcance": {
+      "type": "number"
+    },
+    "frequencia": {
+      "type": "number"
+    },
+    "ctr": {
+      "type": "number"
+    },
+    "clique": {
+      "type": "number"
+    },
+    "cpc": {
+      "type": "number"
+    },
+    "roas": {
+      "type": "number"
+    },
+    "conversao": {
+      "type": "number"
+    },
+    "cpa": {
+      "type": "number"
+    },
+    "textoPrincipal1": {
+      "type": "string"
+    },
+    "titulo1": {
+      "type": "string"
+    },
+    "imagemAnuncio": {
+      "type": "string"
+    },
+    "idFacebook": {
+      "type": "string"
+    },
+    "imagemInstagramReels": {
+      "type": "string"
+    },
+    "imagemInstagramStories": {
+      "type": "string"
+    },
+    "paginaVendaAbertaId": {
+      "type": "number"
+    },
+    "imagemPaginaVendaId": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "paginaVendaAberta": {
+      "type": "belongsTo",
+      "model": "PaginaVendaAberta",
+      "foreignKey": ""
+    },
+    "imagemPaginaVenda": {
+      "type": "belongsTo",
+      "model": "ImagemPaginaVenda",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
 }

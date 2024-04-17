@@ -32,7 +32,7 @@ public class ImagemPaginaVenda extends Model {
 	// Relacionamentos N
 	private List<ArquivoPaginaVenda> ArquivoPaginaVendas;
 	private List<PaginaVendaPropria> PaginaVendaProprias;
-	private List<AnuncioFacebook> AnuncioFacebooks;
+	private List<CriativoAnuncio> CriativoAnuncios;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -182,16 +182,16 @@ public class ImagemPaginaVenda extends Model {
 			this.PaginaVendaProprias.add((PaginaVendaPropria) objeto);
 		}
 	}
-	public List<AnuncioFacebook> getAnuncioFacebooks() {
-		return  AnuncioFacebooks;
+	public List<CriativoAnuncio> getCriativoAnuncios() {
+		return  CriativoAnuncios;
 	}
-	public void setAnuncioFacebooks(List<AnuncioFacebook> valores) {
-		this.AnuncioFacebooks = new ArrayList<AnuncioFacebook>();
+	public void setCriativoAnuncios(List<CriativoAnuncio> valores) {
+		this.CriativoAnuncios = new ArrayList<CriativoAnuncio>();
 		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new AnuncioFacebook();
+			Object objeto = new CriativoAnuncio();
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.AnuncioFacebooks.add((AnuncioFacebook) objeto);
+			this.CriativoAnuncios.add((CriativoAnuncio) objeto);
 		}
 	}
 }

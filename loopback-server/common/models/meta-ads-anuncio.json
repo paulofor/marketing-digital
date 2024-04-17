@@ -1,0 +1,128 @@
+{
+	"name": "MetaAdsAnuncio",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"impressao": {
+			"type": "number"
+		},
+		"cpm": {
+			"type": "number"
+		},
+		"alcance": {
+			"type": "number"
+		},
+		"frequencia": {
+			"type": "number"
+		},
+		"ctr": {
+			"type": "number"
+		},
+		"clique": {
+			"type": "number"
+		},
+		"cpc": {
+			"type": "number"
+		},
+		"roas": {
+			"type": "number"
+		},
+		"conversao": {
+			"type": "number"
+		},
+		"cpa": {
+			"type": "number"
+		},
+		"textoPrincipal1": {
+			"type": "string"
+		},
+		"titulo1": {
+			"type": "string"
+		},
+		"imagemAnuncio": {
+			"type": "string"
+		},
+		"idMeta": {
+			"type": "string"
+		},
+		"imagemInstagramReels": {
+			"type": "string"
+		},
+		"imagemInstagramStories": {
+			"type": "string"
+		},
+		"dataHora": {
+			"type": "date"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"titulo1": {
+			"type": "string"
+		},
+		"titulo2": {
+			"type": "string"
+		},
+		"titulo3": {
+			"type": "string"
+		},
+		"titulo4": {
+			"type": "string"
+		},
+		"titulo5": {
+			"type": "string"
+		},
+		"paginaVendaAbertaId": {
+			"type": "number"
+		},
+		"criativoAnuncioId": {
+			"type": "number"
+		},
+		"metaAdsConjuntoAnuncioId": {
+			"type": "number"
+		},
+		"contaInstagramId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"paginaVendaAberta": {
+			"type": "belongsTo",
+			"model": "PaginaVendaAberta",
+			"foreignKey": ""
+		},
+		"criativoAnuncio": {
+			"type": "belongsTo",
+			"model": "CriativoAnuncio",
+			"foreignKey": ""
+		},
+		"metaAdsConjuntoAnuncio": {
+			"type": "belongsTo",
+			"model": "MetaAdsConjuntoAnuncio",
+			"foreignKey": ""
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"contaInstagram": {
+			"type": "belongsTo",
+			"model": "ContaInstagram",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

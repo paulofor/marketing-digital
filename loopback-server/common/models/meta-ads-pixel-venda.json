@@ -1,0 +1,36 @@
+{
+	"name": "MetaAdsPixelVenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"instalado": {
+			"type": "number"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"identificador": {
+			"type": "string"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

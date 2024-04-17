@@ -1,0 +1,62 @@
+<h2 *ngIf="item" mat-dialog-title>CriativoAnuncio</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #textoCopyLinha1 [(ngModel)]="item.textoCopyLinha1" name="textoCopyLinha1" placeholder="Texto Copy - Linha1" autocomplete="off"/>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #textoCopyLinha2 [(ngModel)]="item.textoCopyLinha2" name="textoCopyLinha2" placeholder="Texto Copy - Linha2" autocomplete="off"/>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaFonte">
+			<mat-select placeholder="Fonte" #fonteLocalId [(ngModel)]="item.fonteLocalId" name="fonteLocalId">
+				<mat-option *ngFor="let item of listaFonte" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #fontSize [(ngModel)]="item.fontSize" name="fontSize" placeholder="Font Size" autocomplete="off"/>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #fontColor [(ngModel)]="item.fontColor" name="fontColor" placeholder="Font Color" autocomplete="off"/>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaImagem">
+			<mat-select placeholder="Imagem Produto" #imagemPaginaVendaId [(ngModel)]="item.imagemPaginaVendaId" name="imagemPaginaVendaId">
+				<mat-option *ngFor="let item of listaImagem" [value]="item.id">
+					{{ item.urlFinal}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #geraImagem [(ngModel)]="item.geraImagem" name="geraImagem" placeholder="geraImagem" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #gravity [(ngModel)]="item.gravity" name="gravity" placeholder="gravity" autocomplete="off"/>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #annotate [(ngModel)]="item.annotate" name="annotate" placeholder="annotate" autocomplete="off"/>
+		</mat-form-field>
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

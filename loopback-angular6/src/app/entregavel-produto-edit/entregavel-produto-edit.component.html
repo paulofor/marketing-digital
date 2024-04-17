@@ -5,14 +5,18 @@
 	<mat-dialog-content>
 
 		<mat-form-field class="example-full-width">
-		<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-		<textarea rows="4" matInput #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição">
-		</textarea>
+			<textarea rows="5" matInput #promptLista [(ngModel)]="item.promptLista" name="promptLista"
+				placeholder="Prompt Lista">
+			</textarea>
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<input matInput #geraLista [(ngModel)]="item.geraLista" name="geraLista" placeholder="Gera Lista" />
+		</mat-form-field>
 
 	</mat-dialog-content>
 

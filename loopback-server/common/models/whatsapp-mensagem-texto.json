@@ -1,0 +1,76 @@
+{
+	"name": "WhatsappMensagemTexto",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"texto": {
+			"type": "string"
+		},
+		"indice": {
+			"type": "number"
+			,"id": true
+		},
+		"whatsappModeloMensagemId": {
+			"type": "number"
+			,"id": true
+		},
+		"whatsappGrupoPadraoMensagemId": {
+			"type": "number"
+		},
+		"whatsappGrupoDiaAgendaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"whatsappGrupoPadraoMensagem": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupoPadraoMensagem",
+			"foreignKey": ""
+		},
+		"whatsappGrupoDiaAgenda": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupoDiaAgenda",
+			"foreignKey": ""
+		},
+		"whatsappModeloMensagem": {
+			"type": "belongsTo",
+			"model": "WhatsappModeloMensagem",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"SalvaListaProdutoGrupoPadrao": {
+			"accepts": [
+				{
+					"arg": "listaMensagem",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/salvaListaProdutoGrupoPadrao",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

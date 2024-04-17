@@ -5,7 +5,7 @@ import {
   ProdutoProprio,
   ArquivoPaginaVenda,
   PaginaVendaPropria,
-  AnuncioFacebook
+  CriativoAnuncio
 } from '../index';
 
 declare var Object: any;
@@ -27,7 +27,7 @@ export interface ImagemPaginaVendaInterface {
   produtoProprio?: ProdutoProprio;
   arquivoPaginaVendas?: ArquivoPaginaVenda[];
   paginaVendaProprias?: PaginaVendaPropria[];
-  anuncioFacebooks?: AnuncioFacebook[];
+  criativoAnuncios?: CriativoAnuncio[];
 }
 
 export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
@@ -48,7 +48,7 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
   produtoProprio: ProdutoProprio;
   arquivoPaginaVendas: ArquivoPaginaVenda[];
   paginaVendaProprias: PaginaVendaPropria[];
-  anuncioFacebooks: AnuncioFacebook[];
+  criativoAnuncios: CriativoAnuncio[];
   constructor(data?: ImagemPaginaVendaInterface) {
     Object.assign(this, data);
   }
@@ -172,10 +172,10 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
                   keyFrom: 'id',
           keyTo: 'imagemPaginaVendaId'
         },
-        anuncioFacebooks: {
-          name: 'anuncioFacebooks',
-          type: 'AnuncioFacebook[]',
-          model: 'AnuncioFacebook',
+        criativoAnuncios: {
+          name: 'criativoAnuncios',
+          type: 'CriativoAnuncio[]',
+          model: 'CriativoAnuncio',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'imagemPaginaVendaId'

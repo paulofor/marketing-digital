@@ -16,7 +16,7 @@ import { ProdutoAfiliadoHotlink } from '../../models/ProdutoAfiliadoHotlink';
 import { ProdutoProprio } from '../../models/ProdutoProprio';
 import { ArquivoPaginaVenda } from '../../models/ArquivoPaginaVenda';
 import { PaginaVendaPropria } from '../../models/PaginaVendaPropria';
-import { AnuncioFacebook } from '../../models/AnuncioFacebook';
+import { CriativoAnuncio } from '../../models/CriativoAnuncio';
 
 
 /**
@@ -312,11 +312,11 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Localize um item relacionado por ID para anuncioFacebooks.
+   * Localize um item relacionado por ID para criativoAnuncios.
    *
    * @param {any} id ImagemPaginaVenda id
    *
-   * @param {any} fk Chave estrangeira para anuncioFacebooks
+   * @param {any} fk Chave estrangeira para criativoAnuncios
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -327,10 +327,10 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
    * This usually means the response is a `ImagemPaginaVenda` object.)
    * </em>
    */
-  public findByIdAnuncioFacebooks(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public findByIdCriativoAnuncios(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ImagemPaginaVendas/:id/anuncioFacebooks/:fk";
+    "/ImagemPaginaVendas/:id/criativoAnuncios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -342,11 +342,11 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Excluir um item relacionado por ID para anuncioFacebooks.
+   * Excluir um item relacionado por ID para criativoAnuncios.
    *
    * @param {any} id ImagemPaginaVenda id
    *
-   * @param {any} fk Chave estrangeira para anuncioFacebooks
+   * @param {any} fk Chave estrangeira para criativoAnuncios
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -354,10 +354,10 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdAnuncioFacebooks(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdCriativoAnuncios(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ImagemPaginaVendas/:id/anuncioFacebooks/:fk";
+    "/ImagemPaginaVendas/:id/criativoAnuncios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -369,11 +369,11 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Atualizar um item relacionado por ID para anuncioFacebooks.
+   * Atualizar um item relacionado por ID para criativoAnuncios.
    *
    * @param {any} id ImagemPaginaVenda id
    *
-   * @param {any} fk Chave estrangeira para anuncioFacebooks
+   * @param {any} fk Chave estrangeira para criativoAnuncios
    *
    * @param {object} data Request data.
    *
@@ -388,10 +388,10 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
    * This usually means the response is a `ImagemPaginaVenda` object.)
    * </em>
    */
-  public updateByIdAnuncioFacebooks(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public updateByIdCriativoAnuncios(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ImagemPaginaVendas/:id/anuncioFacebooks/:fk";
+    "/ImagemPaginaVendas/:id/criativoAnuncios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -637,7 +637,7 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
-   * anuncioFacebooks consultas de ImagemPaginaVenda.
+   * criativoAnuncios consultas de ImagemPaginaVenda.
    *
    * @param {any} id ImagemPaginaVenda id
    *
@@ -652,10 +652,10 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
    * This usually means the response is a `ImagemPaginaVenda` object.)
    * </em>
    */
-  public getAnuncioFacebooks(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getCriativoAnuncios(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ImagemPaginaVendas/:id/anuncioFacebooks";
+    "/ImagemPaginaVendas/:id/criativoAnuncios";
     let _routeParams: any = {
       id: id
     };
@@ -667,7 +667,7 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no anuncioFacebooks deste modelo.
+   * Cria uma nova instância no criativoAnuncios deste modelo.
    *
    * @param {any} id ImagemPaginaVenda id
    *
@@ -684,10 +684,10 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
    * This usually means the response is a `ImagemPaginaVenda` object.)
    * </em>
    */
-  public createAnuncioFacebooks(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createCriativoAnuncios(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ImagemPaginaVendas/:id/anuncioFacebooks";
+    "/ImagemPaginaVendas/:id/criativoAnuncios";
     let _routeParams: any = {
       id: id
     };
@@ -700,7 +700,7 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Exclui todos os anuncioFacebooks deste modelo.
+   * Exclui todos os criativoAnuncios deste modelo.
    *
    * @param {any} id ImagemPaginaVenda id
    *
@@ -710,10 +710,10 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteAnuncioFacebooks(id: any, customHeaders?: Function): Observable<any> {
+  public deleteCriativoAnuncios(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ImagemPaginaVendas/:id/anuncioFacebooks";
+    "/ImagemPaginaVendas/:id/criativoAnuncios";
     let _routeParams: any = {
       id: id
     };
@@ -724,7 +724,7 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
-   * anuncioFacebooks contagens de ImagemPaginaVenda.
+   * criativoAnuncios contagens de ImagemPaginaVenda.
    *
    * @param {any} id ImagemPaginaVenda id
    *
@@ -738,10 +738,10 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countAnuncioFacebooks(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countCriativoAnuncios(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ImagemPaginaVendas/:id/anuncioFacebooks/count";
+    "/ImagemPaginaVendas/:id/criativoAnuncios/count";
     let _routeParams: any = {
       id: id
     };
@@ -996,7 +996,7 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no anuncioFacebooks deste modelo.
+   * Cria uma nova instância no criativoAnuncios deste modelo.
    *
    * @param {any} id ImagemPaginaVenda id
    *
@@ -1013,10 +1013,10 @@ export class ImagemPaginaVendaApi extends BaseLoopBackApi {
    * This usually means the response is a `ImagemPaginaVenda` object.)
    * </em>
    */
-  public createManyAnuncioFacebooks(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyCriativoAnuncios(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ImagemPaginaVendas/:id/anuncioFacebooks";
+    "/ImagemPaginaVendas/:id/criativoAnuncios";
     let _routeParams: any = {
       id: id
     };

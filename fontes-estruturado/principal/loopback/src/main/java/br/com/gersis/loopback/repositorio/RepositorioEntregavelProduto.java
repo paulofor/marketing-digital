@@ -30,6 +30,21 @@ public class RepositorioEntregavelProduto extends ModelRepository<EntregavelProd
 
 	// ***  Operações  ***
 
+	public synchronized void gerouLista(int idEntregavel ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("EntregavelProdutos/gerouLista","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "EntregavelProduto.gerouLista");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idEntregavel", idEntregavel);
+		invokeStaticMethod("gerouLista", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaParaGerarLista(final ListCallback<EntregavelProduto> callback ) {
+		RestContractItem contrato = new RestContractItem("EntregavelProdutos/listaParaGerarLista","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "EntregavelProduto.listaParaGerarLista");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaGerarLista", params,   new JsonArrayParser<EntregavelProduto>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<EntregavelProduto> listaEntrada) {
 		JSONArray lista = new JSONArray();

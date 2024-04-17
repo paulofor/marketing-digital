@@ -18,7 +18,16 @@
 		"codigoReplace": {
 			"type": "string"
 		},
+		"geraConteudo": {
+			"type": "number"
+		},
+		"ordenacao": {
+			"type": "number"
+		},
 		"produtoProprioId": {
+			"type": "number"
+		},
+		"entregavelProdutoId": {
 			"type": "number"
 		}
 	},
@@ -29,9 +38,9 @@
 			"model": "ProdutoProprio",
 			"foreignKey": ""
 		},
-		"entregavelPrompts": {
-			"type": "hasMany",
-			"model": "EntregavelPrompt",
+		"entregavelProduto": {
+			"type": "belongsTo",
+			"model": "EntregavelProduto",
 			"foreignKey": ""
 		},
 		"itemConteudoProdutos": {
@@ -42,5 +51,49 @@
 	},
 	"acls": [],
 	"methods": {
+		"ListaParaCriacaoComConteudos": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaCriacaoComConteudos",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaOrdenacaoConteudo": {
+			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaOrdenacaoConteudo",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

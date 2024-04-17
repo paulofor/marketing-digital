@@ -16,7 +16,6 @@ public class PaginaFacebook extends Model {
 
 	private String nome;
 	// Relacionamentos 1
-	private FacebookConta FacebookConta;
 	// Relacionamentos N
 
 	public void setId(Long id) {
@@ -52,11 +51,4 @@ public class PaginaFacebook extends Model {
 		return this.nome;
 	}
 
-	public FacebookConta getFacebookConta() {
-		return FacebookConta;
-	}
-	public void setFacebookConta(HashMap valor) {
-		this.FacebookConta = new FacebookConta();
-		BeanUtil.setProperties(this.FacebookConta, (Map<String, ? extends Object>) valor, true);
-	}
 }

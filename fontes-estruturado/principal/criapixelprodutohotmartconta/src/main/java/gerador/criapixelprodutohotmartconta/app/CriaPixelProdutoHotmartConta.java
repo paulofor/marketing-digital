@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.util.Properties;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import gerador.criapixelprodutohotmartconta.passo.*;
 import gerador.criapixelprodutohotmartconta.passo.impl.*;
@@ -17,12 +19,15 @@ public class CriaPixelProdutoHotmartConta {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPixelProdutoHotmartConta");
-		System.out.println("(26/03/2024 19:04:39)");
+		System.out.println("(17/04/2024 01:22:48)");
 		try {
 			carregaProp();
 			CriaPixelProdutoHotmartContaObj obj = new CriaPixelProdutoHotmartContaObj();
 			obj.executa();
-			System.out.println("finalizou");
+			LocalDateTime dataHoraAtual = LocalDateTime.now();
+			DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+			String dataHoraFormatada = dataHoraAtual.format(formatador);
+			System.out.println("finalizou " + dataHoraFormatada);
 			System.exit(0);
 		} catch (Exception e) {
 			gravarErro(e);

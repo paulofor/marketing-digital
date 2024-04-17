@@ -5,6 +5,23 @@
 	</div>
 	<div class="dgc-card">
 		<div class="dgc-card-header">
+			<span>Prompt Conteudos</span>
+		</div>
+		<div class="dgc-card-detalhe" *ngFor="let rel of principal.promptItems">
+			<span>{{rel.ordenacao}} - {{rel.titulo}}</span>
+			<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaPromptItem(rel)">
+				<i class="fas fa-edit text-primary"></i>
+			</button>
+			<span style="font-style: italic;">{{rel.codigoReplace}}</span>
+			<span> ( gera conteudo: {{rel.geraConteudo}} ) </span>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="ajustaOrdenacao()">Ajustar Ordenação</button>
+			<button class="btn-primary btn-sm btn" (click)="editaPromptItem()">Criar</button>
+		</div>
+	</div>
+	<div class="dgc-card">
+		<div class="dgc-card-header">
 			<span>Prompt Imagem</span>
 		</div>
 		<div class="dgc-card-detalhe" *ngFor="let rel of principal.promptImagemConteudos">
@@ -13,6 +30,7 @@
 			<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaPrompt(rel)">
 				<i class="fas fa-edit text-primary"></i>
 			</button>
+
 		</div>
 		<div class="dgc-card-comandos">
 			<button class="btn-primary btn-sm btn" (click)="editaPrompt()">Criar</button>
@@ -20,16 +38,22 @@
 	</div>
 	<div class="dgc-card">
 		<div class="dgc-card-header">
-			<span>Capítulos</span>
+			<span>Capítulos (pendentes: {{faltaImagem}}) </span>
+			<span> - total: {{principal.conteudoProdutoKiwifys.length}}</span>
 		</div>
 
 		<div class="dgc-card" *ngFor="let rel of principal.conteudoProdutoKiwifys" >
 			<div class="dgc-card-header">
-				<span></span>
 				<span class="dgc-link" routerLink="/conteudoProdutoOrdenado/{{rel.entregavelProdutoId}}/{{rel.ordenacao}}">{{rel.ordenacao}} - {{rel.nome}}</span>
+				<span> ( geraImagem: {{rel.geraImagem}} ) </span>
+				<span> ( geraTexto: {{rel.geraTexto}} ) </span>
 				<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaModulo(rel)">
 					<i class="fas fa-edit text-primary"></i>
 				</button>
+				<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="excluiModulo(rel)">
+					<i class="fas fa-trash-alt text-danger"></i>
+				</button>
+
 			</div>
 			<div class="dgc-card-header">
 				<div *ngFor="let imagem of rel.imagemConteudos">
@@ -38,13 +62,33 @@
 						<button (click)="marcarPrincipal(imagem)">Principal</button>
 					</div>
 				</div>
+			</div> 
+			<div class="dgc-card-detalhe" *ngIf="rel.promptIndividual1">
+				<span>Prompt1 : {{rel.promptIndividual1}}</span>
+			</div>
+			<div class="dgc-card-detalhe" *ngIf="rel.promptIndividual2">
+				<span>Prompt2 : {{rel.promptIndividual2}}</span>
+			</div>
+			<div class="dgc-card-detalhe" *ngIf="rel.promptIndividual3">
+				<span>Prompt3 : {{rel.promptIndividual3}}</span>
 			</div>
 		</div>
 
 		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="geraTexto(0)">Desliga Todos Texto</button>
+			<button class="btn-primary btn-sm btn" (click)="geraTexto(1)">Liga Todos Texto</button>
+			<button class="btn-primary btn-sm btn" (click)="somenteGeraImagem()">Somente Gera Imagem</button>
+			<button class="btn-primary btn-sm btn" (click)="ajustaGeraImagem()">Ajusta Gera Imagem</button>
 			<button class="btn-primary btn-sm btn" (click)="ordenacao()">Ordem Alfabética</button>
 			<button class="btn-primary btn-sm btn" (click)="editaModulo()">Novo</button>
 		</div>
 	</div>
-
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Capítulos para copiar</span>
+		</div>
+		<div class="dgc-card-detalhe" *ngFor="let rel of principal.conteudoProdutoKiwifys">
+			<span>{{rel.ordenacao}} - {{rel.nome}}</span>
+		</div>
+	</div>
 </div>

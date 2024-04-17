@@ -1,0 +1,32 @@
+<h2 *ngIf="item" mat-dialog-title>FacebookConta</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<textarea rows="4" matInput #tokenAtual [(ngModel)]="item.tokenAtual" name="tokenAtual"
+				placeholder="Token Atual">
+		</textarea>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #email [(ngModel)]="item.email" name="email" placeholder="Email" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #principal [(ngModel)]="item.principal" name="principal" placeholder="Principal" />
+		</mat-form-field>
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

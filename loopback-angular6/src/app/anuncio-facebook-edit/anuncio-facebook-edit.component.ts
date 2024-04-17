@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { AnuncioFacebookApi } from '../shared/sdk';
+import { MetaAdsAnuncioApi } from '../shared/sdk';
 import { AnuncioFacebookEditBaseComponent } from './anuncio-facebook-edit-base.component';
 
 @Component({
@@ -11,7 +11,7 @@ import { AnuncioFacebookEditBaseComponent } from './anuncio-facebook-edit-base.c
 export class AnuncioFacebookEditComponent extends AnuncioFacebookEditBaseComponent {
 
 	 constructor(protected dialogRef: MatDialogRef<any>
-	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: AnuncioFacebookApi
+	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: MetaAdsAnuncioApi
 		  ) {
 	   super(dialogRef,data,servico);
 	}

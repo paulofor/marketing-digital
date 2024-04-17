@@ -1,0 +1,125 @@
+{
+	"name": "CriativoAnuncio",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"textoCopyLinha1": {
+			"type": "string"
+		},
+		"urlImagemEditada": {
+			"type": "string"
+		},
+		"fontFamily": {
+			"type": "string"
+		},
+		"fontSize": {
+			"type": "string"
+		},
+		"fontColor": {
+			"type": "string"
+		},
+		"textoCopyLinha2": {
+			"type": "string"
+		},
+		"fontWeight": {
+			"type": "string"
+		},
+		"annotate": {
+			"type": "string"
+		},
+		"gravity": {
+			"type": "string"
+		},
+		"geraImagem": {
+			"type": "number"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"imagemPaginaVendaId": {
+			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"fonteLocalId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"imagemPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ImagemPaginaVenda",
+			"foreignKey": ""
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"fonteLocal": {
+			"type": "belongsTo",
+			"model": "FonteLocal",
+			"foreignKey": ""
+		},
+		"metaAdsAnuncios": {
+			"type": "hasMany",
+			"model": "MetaAdsAnuncio",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ListaParaGerarImagem": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGerarImagem",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaImagemEditada": {
+			"accepts": [
+				{
+					"arg": "criativo",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaImagemEditada",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

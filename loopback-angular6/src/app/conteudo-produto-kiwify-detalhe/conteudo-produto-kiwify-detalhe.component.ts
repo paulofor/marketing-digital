@@ -26,7 +26,8 @@ export class ConteudoProdutoKiwifyDetalheComponent extends ConteudoProdutoKiwify
 		let filtro = {
 			'where' : {'and' : [{'ordenacao' : ordenacao},{'entregavelProdutoId' : idPrincipal}]},
 			'include' : {'relation' : 'itemConteudoProdutos' , 'scope' : {
-				'include' : 'promptItem'
+				'include' : 'promptItem', 'order' : 'ordenacao'
+				
 			}}
 		}
 		this.srv.findOne(filtro)
@@ -60,5 +61,10 @@ export class ConteudoProdutoKiwifyDetalheComponent extends ConteudoProdutoKiwify
 		const textoFormatado = texto.replace(/\n/g, '<br/>');
 		// Retorna o texto formatado como HTML seguro
 		return this.sanitizer.bypassSecurityTrustHtml(textoFormatado);
+	}
+
+	ajustaComPre(texto:string) {
+		const textoFormatado = texto.replace(/\n/g,'<br/>');
+		return textoFormatado
 	}
 }

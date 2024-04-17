@@ -155,8 +155,6 @@ import { DalleSolicitacaoImagemProdutoProprioListComponent } from './dalle-solic
 import { EntregavelProdutoDetalheComponent } from './entregavel-produto-detalhe/entregavel-produto-detalhe.component';
 import { EntregavelProdutoEditComponent } from './entregavel-produto-edit/entregavel-produto-edit.component';
 import { EntregavelProdutoListComponent } from './entregavel-produto-list/entregavel-produto-list.component';
-import { AnuncioFacebookEditComponent } from './anuncio-facebook-edit/anuncio-facebook-edit.component';
-import { AnuncioFacebookListComponent } from './anuncio-facebook-list/anuncio-facebook-list.component';
 import { ConteudoProdutoKiwifyEditComponent } from './conteudo-produto-kiwify-edit/conteudo-produto-kiwify-edit.component';
 import { PromptImagemConteudoEditComponent } from './prompt-imagem-conteudo-edit/prompt-imagem-conteudo-edit.component';
 import { PromptItemEditComponent } from './prompt-item-edit/prompt-item-edit.component';
@@ -175,6 +173,32 @@ import { PaginaImplementacaoEditRelComponent } from './pagina-implementacao-edit
 import { PaginaVendaAbertaDetalheComponent } from './pagina-venda-aberta-detalhe/pagina-venda-aberta-detalhe.component';
 import { ItemEstruturaPaginaVendaDetalheComponent } from './item-estrutura-pagina-venda-detalhe/item-estrutura-pagina-venda-detalhe.component';
 import { ImplementacaoItemEstruturaEditComponent } from './implementacao-item-estrutura-edit/implementacao-item-estrutura-edit.component';
+import { CriativoAnuncioDetalheComponent } from './criativo-anuncio-detalhe/criativo-anuncio-detalhe.component';
+import { CriativoAnuncioEditComponent } from './criativo-anuncio-edit/criativo-anuncio-edit.component';
+import { CriativoAnuncioListComponent } from './criativo-anuncio-list/criativo-anuncio-list.component';
+import { MetaAdsCampanhaDetalheComponent } from './meta-ads-campanha-detalhe/meta-ads-campanha-detalhe.component';
+import { MetaAdsCampanhaListComponent } from './meta-ads-campanha-list/meta-ads-campanha-list.component';
+import { MetaAdsCampanhaEditComponent } from './meta-ads-campanha-edit/meta-ads-campanha-edit.component';
+import { MetaAdsAnuncioEditComponent } from './meta-ads-anuncio-edit/meta-ads-anuncio-edit.component';
+import { MetaAdsConjuntoAnuncioEditComponent } from './meta-ads-conjunto-anuncio-edit/meta-ads-conjunto-anuncio-edit.component';
+import { MetaAdsPixelVendaListComponent } from './meta-ads-pixel-venda-list/meta-ads-pixel-venda-list.component';
+import { MetaAdsPixelVendaEditComponent } from './meta-ads-pixel-venda-edit/meta-ads-pixel-venda-edit.component';
+import { ContaInstagramEditComponent } from './conta-instagram-edit/conta-instagram-edit.component';
+import { ContaInstagramListComponent } from './conta-instagram-list/conta-instagram-list.component';
+import { ConfirmaExclusaoComponent } from './confirma-exclusao/confirma-exclusao.component';
+import { ConteudoProdutoKiwifyPorProdutoListComponent } from './conteudo-produto-kiwify-por-produto-list/conteudo-produto-kiwify-por-produto-list.component';
+import { ContaFacebookEditComponent } from './conta-facebook-edit/conta-facebook-edit.component';
+import { ContaFacebookListComponent } from './conta-facebook-list/conta-facebook-list.component';
+import { ContaWhatsappEditComponent } from './conta-whatsapp-edit/conta-whatsapp-edit.component';
+import { ContaWhatsappListComponent } from './conta-whatsapp-list/conta-whatsapp-list.component';
+import { WhatsappGrupoDetalheComponent } from './whatsapp-grupo-detalhe/whatsapp-grupo-detalhe.component';
+import { WhatsappGrupoEditComponent } from './whatsapp-grupo-edit/whatsapp-grupo-edit.component';
+import { WhatsappGrupoPorProdutoListComponent } from './whatsapp-grupo-por-produto-list/whatsapp-grupo-por-produto-list.component';
+import { WhatsappModeloMensagemEditComponent } from './whatsapp-modelo-mensagem-edit/whatsapp-modelo-mensagem-edit.component';
+import { WhatsappGrupoDiaAgendaEditComponent } from './whatsapp-grupo-dia-agenda-edit/whatsapp-grupo-dia-agenda-edit.component';
+import { WhatsappGrupoPadraoMensagemListComponent } from './whatsapp-grupo-padrao-mensagem-list/whatsapp-grupo-padrao-mensagem-list.component';
+import { WhatsappGrupoPadraoMensagemEditComponent } from './whatsapp-grupo-padrao-mensagem-edit/whatsapp-grupo-padrao-mensagem-edit.component';
+import { WhatsappGrupoPadraoMensagemDetalheComponent } from './whatsapp-grupo-padrao-mensagem-detalhe/whatsapp-grupo-padrao-mensagem-detalhe.component';
 
 
 
@@ -307,8 +331,6 @@ registerLocaleData(localePt, 'pt-BR');
     EntregavelProdutoListComponent,
     EntregavelProdutoEditComponent,
     EntregavelProdutoDetalheComponent,
-    AnuncioFacebookListComponent,
-    AnuncioFacebookEditComponent,
     ConteudoProdutoKiwifyEditComponent,
     PromptImagemConteudoEditComponent,
     PromptItemListComponent,
@@ -328,7 +350,34 @@ registerLocaleData(localePt, 'pt-BR');
     PaginaImplementacaoEditRelComponent,
     PaginaVendaAbertaDetalheComponent,
     ItemEstruturaPaginaVendaDetalheComponent,
-    ImplementacaoItemEstruturaEditComponent
+    ImplementacaoItemEstruturaEditComponent,
+    CriativoAnuncioDetalheComponent,
+    CriativoAnuncioEditComponent,
+    CriativoAnuncioListComponent,
+    MetaAdsCampanhaDetalheComponent,
+    MetaAdsCampanhaListComponent,
+    MetaAdsCampanhaEditComponent,
+    MetaAdsAnuncioEditComponent,
+    MetaAdsConjuntoAnuncioEditComponent,
+    MetaAdsPixelVendaListComponent,
+    MetaAdsPixelVendaEditComponent,
+    ContaInstagramListComponent,
+    ContaInstagramEditComponent,
+    ConfirmaExclusaoComponent,
+    ConteudoProdutoKiwifyPorProdutoListComponent,
+    ContaFacebookListComponent,
+    ContaFacebookEditComponent,
+    ContaWhatsappEditComponent,
+    ContaWhatsappListComponent,
+    WhatsappGrupoPorProdutoListComponent,
+    WhatsappGrupoDetalheComponent,
+    WhatsappGrupoEditComponent,
+    WhatsappModeloMensagemEditComponent,
+    WhatsappGrupoDiaAgendaEditComponent,
+    WhatsappGrupoPadraoMensagemListComponent,
+    WhatsappGrupoPadraoMensagemEditComponent,
+    WhatsappGrupoPadraoMensagemDetalheComponent
+
   ],
   imports: [
     BrowserModule,
@@ -420,7 +469,6 @@ registerLocaleData(localePt, 'pt-BR');
     CampanhaAdsRedeDisplayProdutoProprioEditComponent,
     PaginaVendaModeladaEditComponent,
     EntregavelProdutoEditComponent,
-    AnuncioFacebookEditComponent,
     ConteudoProdutoKiwifyEditComponent,
     PromptImagemConteudoEditComponent,
     PromptItemEditComponent,
@@ -431,8 +479,20 @@ registerLocaleData(localePt, 'pt-BR');
     CheckoutProdutoProprioEditComponent,
     PaginaVendaAbertaEditComponent,
     PaginaImplementacaoEditRelComponent,
-    ImplementacaoItemEstruturaEditComponent
-
+    ImplementacaoItemEstruturaEditComponent,
+    CriativoAnuncioEditComponent,
+    MetaAdsCampanhaEditComponent,
+    MetaAdsConjuntoAnuncioEditComponent,
+    MetaAdsAnuncioEditComponent,
+    MetaAdsPixelVendaEditComponent,
+    ContaInstagramEditComponent,
+    ConfirmaExclusaoComponent,
+    ContaFacebookEditComponent,
+    ContaWhatsappEditComponent,
+    WhatsappGrupoEditComponent,
+    WhatsappModeloMensagemEditComponent,
+    WhatsappGrupoDiaAgendaEditComponent,
+    WhatsappGrupoPadraoMensagemEditComponent
   ],
   bootstrap: [AppComponent]
 })

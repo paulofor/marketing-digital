@@ -1,10 +1,10 @@
 /* tslint:disable */
 import {
   ProdutoProprio,
-  AnuncioFacebook,
   EstruturaPaginaVendaAberta,
   PaginaImplementacao,
-  CheckoutProdutoProprio
+  CheckoutProdutoProprio,
+  MetaAdsAnuncio
 } from '../index';
 
 declare var Object: any;
@@ -13,15 +13,17 @@ export interface PaginaVendaAbertaInterface {
   "codigoHexa"?: string;
   "urlFinal"?: string;
   "atualiza"?: number;
+  "urlImagemCompleta"?: string;
+  "geraImagemCompleta"?: number;
   "checkoutProdutoProprioId"?: number;
   "produtoProprioId"?: number;
   "estruturaPaginaVendaAbertaId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
-  anuncioFacebooks?: AnuncioFacebook[];
   estruturaPaginaVendaAberta?: EstruturaPaginaVendaAberta;
   paginaImplementacaos?: PaginaImplementacao[];
   checkoutProdutoProprio?: CheckoutProdutoProprio;
+  metaAdsAnuncios?: MetaAdsAnuncio[];
 }
 
 export class PaginaVendaAberta implements PaginaVendaAbertaInterface {
@@ -29,15 +31,17 @@ export class PaginaVendaAberta implements PaginaVendaAbertaInterface {
   "codigoHexa": string;
   "urlFinal": string;
   "atualiza": number;
+  "urlImagemCompleta": string;
+  "geraImagemCompleta": number;
   "checkoutProdutoProprioId": number;
   "produtoProprioId": number;
   "estruturaPaginaVendaAbertaId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
-  anuncioFacebooks: AnuncioFacebook[];
   estruturaPaginaVendaAberta: EstruturaPaginaVendaAberta;
   paginaImplementacaos: PaginaImplementacao[];
   checkoutProdutoProprio: CheckoutProdutoProprio;
+  metaAdsAnuncios: MetaAdsAnuncio[];
   constructor(data?: PaginaVendaAbertaInterface) {
     Object.assign(this, data);
   }
@@ -87,6 +91,14 @@ export class PaginaVendaAberta implements PaginaVendaAbertaInterface {
           name: 'atualiza',
           type: 'number'
         },
+        "urlImagemCompleta": {
+          name: 'urlImagemCompleta',
+          type: 'string'
+        },
+        "geraImagemCompleta": {
+          name: 'geraImagemCompleta',
+          type: 'number'
+        },
         "checkoutProdutoProprioId": {
           name: 'checkoutProdutoProprioId',
           type: 'number'
@@ -113,14 +125,6 @@ export class PaginaVendaAberta implements PaginaVendaAbertaInterface {
                   keyFrom: 'produtoProprioId',
           keyTo: 'id'
         },
-        anuncioFacebooks: {
-          name: 'anuncioFacebooks',
-          type: 'AnuncioFacebook[]',
-          model: 'AnuncioFacebook',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'paginaVendaAbertaId'
-        },
         estruturaPaginaVendaAberta: {
           name: 'estruturaPaginaVendaAberta',
           type: 'EstruturaPaginaVendaAberta',
@@ -144,6 +148,14 @@ export class PaginaVendaAberta implements PaginaVendaAbertaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'checkoutProdutoProprioId',
           keyTo: 'id'
+        },
+        metaAdsAnuncios: {
+          name: 'metaAdsAnuncios',
+          type: 'MetaAdsAnuncio[]',
+          model: 'MetaAdsAnuncio',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'paginaVendaAbertaId'
         },
       }
     }

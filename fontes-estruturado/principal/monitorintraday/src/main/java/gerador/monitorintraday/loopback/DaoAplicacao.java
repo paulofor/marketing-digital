@@ -29,7 +29,6 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioPalavraChaveCampanhaAdsTeste repPalavraChaveCampanhaAdsTeste = adapter.createRepository(RepositorioPalavraChaveCampanhaAdsTeste.class);
 	protected RepositorioAgendaVisitaHotmart repAgendaVisitaHotmart = adapter.createRepository(RepositorioAgendaVisitaHotmart.class);
 	protected RepositorioProdutoHotmart repProdutoHotmart = adapter.createRepository(RepositorioProdutoHotmart.class);
-	protected RepositorioFacebookConta repFacebookConta = adapter.createRepository(RepositorioFacebookConta.class);
 	protected RepositorioProdutoAfiliadoMetrica repProdutoAfiliadoMetrica = adapter.createRepository(RepositorioProdutoAfiliadoMetrica.class);
 	protected RepositorioContaGoogle repContaGoogle = adapter.createRepository(RepositorioContaGoogle.class);
 	protected RepositorioCampanhaAdsMetrica repCampanhaAdsMetrica = adapter.createRepository(RepositorioCampanhaAdsMetrica.class);
@@ -116,12 +115,11 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioVisitaAnuncioFacebook repVisitaAnuncioFacebook = adapter.createRepository(RepositorioVisitaAnuncioFacebook.class);
 	protected RepositorioEntregavelProduto repEntregavelProduto = adapter.createRepository(RepositorioEntregavelProduto.class);
 	protected RepositorioRecursoIA repRecursoIA = adapter.createRepository(RepositorioRecursoIA.class);
-	protected RepositorioAnuncioFacebook repAnuncioFacebook = adapter.createRepository(RepositorioAnuncioFacebook.class);
+	protected RepositorioMetaAdsAnuncio repMetaAdsAnuncio = adapter.createRepository(RepositorioMetaAdsAnuncio.class);
 	protected RepositorioContaFacebook repContaFacebook = adapter.createRepository(RepositorioContaFacebook.class);
 	protected RepositorioContaInstagram repContaInstagram = adapter.createRepository(RepositorioContaInstagram.class);
 	protected RepositorioPaginaFacebook repPaginaFacebook = adapter.createRepository(RepositorioPaginaFacebook.class);
 	protected RepositorioPromptItem repPromptItem = adapter.createRepository(RepositorioPromptItem.class);
-	protected RepositorioEntregavelPrompt repEntregavelPrompt = adapter.createRepository(RepositorioEntregavelPrompt.class);
 	protected RepositorioImagemConteudo repImagemConteudo = adapter.createRepository(RepositorioImagemConteudo.class);
 	protected RepositorioPromptImagemConteudo repPromptImagemConteudo = adapter.createRepository(RepositorioPromptImagemConteudo.class);
 	protected RepositorioIdeiaUnica repIdeiaUnica = adapter.createRepository(RepositorioIdeiaUnica.class);
@@ -131,6 +129,20 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioCheckoutProdutoProprio repCheckoutProdutoProprio = adapter.createRepository(RepositorioCheckoutProdutoProprio.class);
 	protected RepositorioPaginaImplementacao repPaginaImplementacao = adapter.createRepository(RepositorioPaginaImplementacao.class);
 	protected RepositorioImplementacaoItemEstrutura repImplementacaoItemEstrutura = adapter.createRepository(RepositorioImplementacaoItemEstrutura.class);
+	protected RepositorioMetaAdsAnuncioMetrica repMetaAdsAnuncioMetrica = adapter.createRepository(RepositorioMetaAdsAnuncioMetrica.class);
+	protected RepositorioCriativoAnuncio repCriativoAnuncio = adapter.createRepository(RepositorioCriativoAnuncio.class);
+	protected RepositorioMetaAdsConjuntoAnuncio repMetaAdsConjuntoAnuncio = adapter.createRepository(RepositorioMetaAdsConjuntoAnuncio.class);
+	protected RepositorioMetaAdsCampanha repMetaAdsCampanha = adapter.createRepository(RepositorioMetaAdsCampanha.class);
+	protected RepositorioFonteLocal repFonteLocal = adapter.createRepository(RepositorioFonteLocal.class);
+	protected RepositorioMetaAdsPixelVenda repMetaAdsPixelVenda = adapter.createRepository(RepositorioMetaAdsPixelVenda.class);
+	protected RepositorioConteudoEntregavel repConteudoEntregavel = adapter.createRepository(RepositorioConteudoEntregavel.class);
+	protected RepositorioMetaAdsConjuntoAnuncioMetrica repMetaAdsConjuntoAnuncioMetrica = adapter.createRepository(RepositorioMetaAdsConjuntoAnuncioMetrica.class);
+	protected RepositorioMetaAdsCampanhaMetrica repMetaAdsCampanhaMetrica = adapter.createRepository(RepositorioMetaAdsCampanhaMetrica.class);
+	protected RepositorioContaWhatsapp repContaWhatsapp = adapter.createRepository(RepositorioContaWhatsapp.class);
+	protected RepositorioWhatsappGrupoPadraoMensagem repWhatsappGrupoPadraoMensagem = adapter.createRepository(RepositorioWhatsappGrupoPadraoMensagem.class);
+	protected RepositorioWhatsappGrupoDiaAgenda repWhatsappGrupoDiaAgenda = adapter.createRepository(RepositorioWhatsappGrupoDiaAgenda.class);
+	protected RepositorioWhatsappModeloMensagem repWhatsappModeloMensagem = adapter.createRepository(RepositorioWhatsappModeloMensagem.class);
+	protected RepositorioWhatsappMensagemTexto repWhatsappMensagemTexto = adapter.createRepository(RepositorioWhatsappMensagemTexto.class);
 
 
 	@Override

@@ -1,0 +1,38 @@
+{
+	"name": "WhatsappModeloMensagem",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"texto": {
+			"type": "string"
+		},
+		"ordenacao": {
+			"type": "number"
+		},
+		"whatsappGrupoDiaAgendaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"whatsappGrupoDiaAgenda": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupoDiaAgenda",
+			"foreignKey": ""
+		},
+		"whatsappMensagemTextos": {
+			"type": "hasMany",
+			"model": "WhatsappMensagemTexto",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

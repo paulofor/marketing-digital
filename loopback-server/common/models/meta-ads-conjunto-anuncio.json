@@ -1,0 +1,38 @@
+{
+	"name": "MetaAdsConjuntoAnuncio",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"idMeta": {
+			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"metaAdsCampanhaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"metaAdsCampanha": {
+			"type": "belongsTo",
+			"model": "MetaAdsCampanha",
+			"foreignKey": ""
+		},
+		"metaAdsAnuncios": {
+			"type": "hasMany",
+			"model": "MetaAdsAnuncio",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

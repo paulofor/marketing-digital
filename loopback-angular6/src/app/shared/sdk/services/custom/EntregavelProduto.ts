@@ -13,8 +13,10 @@ import { EntregavelProduto } from '../../models/EntregavelProduto';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { ProdutoProprio } from '../../models/ProdutoProprio';
 import { ConteudoProdutoKiwify } from '../../models/ConteudoProdutoKiwify';
-import { EntregavelPrompt } from '../../models/EntregavelPrompt';
+import { PromptItem } from '../../models/PromptItem';
 import { PromptImagemConteudo } from '../../models/PromptImagemConteudo';
+import { ConteudoEntregavel } from '../../models/ConteudoEntregavel';
+import { WhatsappGrupoPadraoMensagem } from '../../models/WhatsappGrupoPadraoMensagem';
 
 
 /**
@@ -157,11 +159,11 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Localize um item relacionado por ID para entregavelPrompts.
+   * Localize um item relacionado por ID para promptItems.
    *
    * @param {any} id EntregavelProduto id
    *
-   * @param {any} fk Chave estrangeira para entregavelPrompts
+   * @param {any} fk Chave estrangeira para promptItems
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -172,10 +174,10 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
    * This usually means the response is a `EntregavelProduto` object.)
    * </em>
    */
-  public findByIdEntregavelPrompts(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public findByIdPromptItems(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/EntregavelProdutos/:id/entregavelPrompts/:fk";
+    "/EntregavelProdutos/:id/promptItems/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -187,11 +189,11 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Excluir um item relacionado por ID para entregavelPrompts.
+   * Excluir um item relacionado por ID para promptItems.
    *
    * @param {any} id EntregavelProduto id
    *
-   * @param {any} fk Chave estrangeira para entregavelPrompts
+   * @param {any} fk Chave estrangeira para promptItems
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -199,10 +201,10 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdEntregavelPrompts(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdPromptItems(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/EntregavelProdutos/:id/entregavelPrompts/:fk";
+    "/EntregavelProdutos/:id/promptItems/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -214,11 +216,11 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Atualizar um item relacionado por ID para entregavelPrompts.
+   * Atualizar um item relacionado por ID para promptItems.
    *
    * @param {any} id EntregavelProduto id
    *
-   * @param {any} fk Chave estrangeira para entregavelPrompts
+   * @param {any} fk Chave estrangeira para promptItems
    *
    * @param {object} data Request data.
    *
@@ -233,10 +235,10 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
    * This usually means the response is a `EntregavelProduto` object.)
    * </em>
    */
-  public updateByIdEntregavelPrompts(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public updateByIdPromptItems(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/EntregavelProdutos/:id/entregavelPrompts/:fk";
+    "/EntregavelProdutos/:id/promptItems/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -330,6 +332,192 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/EntregavelProdutos/:id/promptImagemConteudos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Localize um item relacionado por ID para conteudoEntregavels.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {any} fk Chave estrangeira para conteudoEntregavels
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public findByIdConteudoEntregavels(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/conteudoEntregavels/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para conteudoEntregavels.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {any} fk Chave estrangeira para conteudoEntregavels
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdConteudoEntregavels(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/conteudoEntregavels/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para conteudoEntregavels.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {any} fk Chave estrangeira para conteudoEntregavels
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public updateByIdConteudoEntregavels(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/conteudoEntregavels/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Localize um item relacionado por ID para whatsappGrupoPadraoMensagems.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {any} fk Chave estrangeira para whatsappGrupoPadraoMensagems
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public findByIdWhatsappGrupoPadraoMensagems(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/whatsappGrupoPadraoMensagems/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para whatsappGrupoPadraoMensagems.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {any} fk Chave estrangeira para whatsappGrupoPadraoMensagems
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdWhatsappGrupoPadraoMensagems(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/whatsappGrupoPadraoMensagems/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para whatsappGrupoPadraoMensagems.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {any} fk Chave estrangeira para whatsappGrupoPadraoMensagems
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public updateByIdWhatsappGrupoPadraoMensagems(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/whatsappGrupoPadraoMensagems/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -459,7 +647,7 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
-   * entregavelPrompts consultas de EntregavelProduto.
+   * promptItems consultas de EntregavelProduto.
    *
    * @param {any} id EntregavelProduto id
    *
@@ -474,10 +662,10 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
    * This usually means the response is a `EntregavelProduto` object.)
    * </em>
    */
-  public getEntregavelPrompts(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getPromptItems(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/EntregavelProdutos/:id/entregavelPrompts";
+    "/EntregavelProdutos/:id/promptItems";
     let _routeParams: any = {
       id: id
     };
@@ -489,7 +677,7 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no entregavelPrompts deste modelo.
+   * Cria uma nova instância no promptItems deste modelo.
    *
    * @param {any} id EntregavelProduto id
    *
@@ -506,10 +694,10 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
    * This usually means the response is a `EntregavelProduto` object.)
    * </em>
    */
-  public createEntregavelPrompts(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createPromptItems(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/EntregavelProdutos/:id/entregavelPrompts";
+    "/EntregavelProdutos/:id/promptItems";
     let _routeParams: any = {
       id: id
     };
@@ -522,7 +710,7 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Exclui todos os entregavelPrompts deste modelo.
+   * Exclui todos os promptItems deste modelo.
    *
    * @param {any} id EntregavelProduto id
    *
@@ -532,10 +720,10 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteEntregavelPrompts(id: any, customHeaders?: Function): Observable<any> {
+  public deletePromptItems(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/EntregavelProdutos/:id/entregavelPrompts";
+    "/EntregavelProdutos/:id/promptItems";
     let _routeParams: any = {
       id: id
     };
@@ -546,7 +734,7 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
-   * entregavelPrompts contagens de EntregavelProduto.
+   * promptItems contagens de EntregavelProduto.
    *
    * @param {any} id EntregavelProduto id
    *
@@ -560,10 +748,10 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countEntregavelPrompts(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countPromptItems(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/EntregavelProdutos/:id/entregavelPrompts/count";
+    "/EntregavelProdutos/:id/promptItems/count";
     let _routeParams: any = {
       id: id
     };
@@ -691,6 +879,238 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
+   * conteudoEntregavels consultas de EntregavelProduto.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public getConteudoEntregavels(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/conteudoEntregavels";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no conteudoEntregavels deste modelo.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public createConteudoEntregavels(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/conteudoEntregavels";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os conteudoEntregavels deste modelo.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteConteudoEntregavels(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/conteudoEntregavels";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * conteudoEntregavels contagens de EntregavelProduto.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countConteudoEntregavels(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/conteudoEntregavels/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * whatsappGrupoPadraoMensagems consultas de EntregavelProduto.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public getWhatsappGrupoPadraoMensagems(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/whatsappGrupoPadraoMensagems";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no whatsappGrupoPadraoMensagems deste modelo.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public createWhatsappGrupoPadraoMensagems(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/whatsappGrupoPadraoMensagems";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os whatsappGrupoPadraoMensagems deste modelo.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteWhatsappGrupoPadraoMensagems(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/whatsappGrupoPadraoMensagems";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * whatsappGrupoPadraoMensagems contagens de EntregavelProduto.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countWhatsappGrupoPadraoMensagems(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/whatsappGrupoPadraoMensagems/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Patch an existing model instance or insert a new one into the data source.
    *
    * @param {object} data Request data.
@@ -753,6 +1173,61 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idEntregavel` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public GerouLista(idEntregavel: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/gerouLista";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idEntregavel !== 'undefined' && idEntregavel !== null) _urlParams.idEntregavel = idEntregavel;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public ListaParaGerarLista(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/listaParaGerarLista";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Cria uma nova instância no conteudoProdutoKiwifys deste modelo.
    *
    * @param {any} id EntregavelProduto id
@@ -786,7 +1261,7 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no entregavelPrompts deste modelo.
+   * Cria uma nova instância no promptItems deste modelo.
    *
    * @param {any} id EntregavelProduto id
    *
@@ -803,10 +1278,10 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
    * This usually means the response is a `EntregavelProduto` object.)
    * </em>
    */
-  public createManyEntregavelPrompts(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyPromptItems(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/EntregavelProdutos/:id/entregavelPrompts";
+    "/EntregavelProdutos/:id/promptItems";
     let _routeParams: any = {
       id: id
     };
@@ -840,6 +1315,72 @@ export class EntregavelProdutoApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/EntregavelProdutos/:id/promptImagemConteudos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no conteudoEntregavels deste modelo.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public createManyConteudoEntregavels(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/conteudoEntregavels";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no whatsappGrupoPadraoMensagems deste modelo.
+   *
+   * @param {any} id EntregavelProduto id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `EntregavelProduto` object.)
+   * </em>
+   */
+  public createManyWhatsappGrupoPadraoMensagems(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/EntregavelProdutos/:id/whatsappGrupoPadraoMensagems";
     let _routeParams: any = {
       id: id
     };

@@ -1,0 +1,61 @@
+{
+	"name": "MetaAdsConjuntoAnuncioMetrica",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"idMeta": {
+			"type": "string"
+			,"id": true
+		},
+		"idMetaCampanha": {
+			"type": "string"
+		},
+		"status": {
+			"type": "string"
+		},
+		"dataHora": {
+			"type": "date"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+		"InsereObservacaoLista": {
+			"accepts": [
+				{
+					"arg": "listaObservacao",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereObservacaoLista",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

@@ -1,0 +1,38 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header">
+		<span>Criativos de Anúncio</span>
+  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+	</div>
+	<div class="dgc-painel-principal" *ngIf="listaBase">
+		<div class="dgc-card" *ngFor="let item of listaBase">
+			<div class="dgc-card-header">
+				<span>{{item.nome}}</span>
+			</div>
+ 			<div class="dgc-card-detalhe">
+ 				<span>Linha1: {{item.textoCopyLinha1}}</span>
+ 			</div>
+			<div class="dgc-card-detalhe">
+				<span>Linha2: {{item.textoCopyLinha2}}</span>
+			</div>
+			<div class="dgc-card-detalhe" *ngIf="item.imagemPaginaVenda">
+				<span>Imagem Origem: {{item.imagemPaginaVenda.codigoHexa}}</span>
+			</div>
+ 			<div class="dgc-card-detalhe">
+				<span>Fonte: </span><span *ngIf="item.fonteLocal">{{item.fonteLocal.nome}}</span>
+				<span> size: {{item.fontSize}}</span>
+				<span> color: {{item.fontColor}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Gera Imagem: {{item.geraImagem}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>gravity: {{item.gravity}}  </span>
+				<span>annotate: {{item.annotate}} </span>
+			</div>
+			<img *ngIf="item.urlImagemEditada" width="300" align="center" src="{{item.urlImagemEditada}}">
+ 			<div class="dgc-card-comandos">
+ 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+ 			</div>
+ 		</div>
+  	</div>
+</div>

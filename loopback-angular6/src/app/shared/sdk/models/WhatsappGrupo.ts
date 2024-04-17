@@ -1,24 +1,37 @@
 /* tslint:disable */
 import {
   ProdutoProprio,
-  WhatsappMensagem
+  WhatsappMensagem,
+  ContaWhatsapp
 } from '../index';
 
 declare var Object: any;
 export interface WhatsappGrupoInterface {
   "nome"?: string;
+  "descricao"?: string;
+  "link"?: string;
+  "imagem"?: string;
+  "dataCriacao"?: string;
   "produtoProprioId"?: number;
+  "contaWhatsappId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
   whatsappMensagems?: WhatsappMensagem[];
+  contaWhatsapp?: ContaWhatsapp;
 }
 
 export class WhatsappGrupo implements WhatsappGrupoInterface {
   "nome": string;
+  "descricao": string;
+  "link": string;
+  "imagem": string;
+  "dataCriacao": string;
   "produtoProprioId": number;
+  "contaWhatsappId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
   whatsappMensagems: WhatsappMensagem[];
+  contaWhatsapp: ContaWhatsapp;
   constructor(data?: WhatsappGrupoInterface) {
     Object.assign(this, data);
   }
@@ -56,8 +69,28 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
           name: 'nome',
           type: 'string'
         },
+        "descricao": {
+          name: 'descricao',
+          type: 'string'
+        },
+        "link": {
+          name: 'link',
+          type: 'string'
+        },
+        "imagem": {
+          name: 'imagem',
+          type: 'string'
+        },
+        "dataCriacao": {
+          name: 'dataCriacao',
+          type: 'string'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
+          type: 'number'
+        },
+        "contaWhatsappId": {
+          name: 'contaWhatsappId',
           type: 'number'
         },
         "id": {
@@ -81,6 +114,14 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'whatsappGrupoId'
+        },
+        contaWhatsapp: {
+          name: 'contaWhatsapp',
+          type: 'ContaWhatsapp',
+          model: 'ContaWhatsapp',
+          relationType: 'belongsTo',
+                  keyFrom: 'contaWhatsappId',
+          keyTo: 'id'
         },
       }
     }

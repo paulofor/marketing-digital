@@ -23,7 +23,8 @@
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-			<input matInput #urlIconePaginaVenda [(ngModel)]="item.urlIconePaginaVenda" name="urlIconePaginaVenda" placeholder="Url Ícone" />
+			<input matInput #urlIconePaginaVenda [(ngModel)]="item.urlIconePaginaVenda" name="urlIconePaginaVenda"
+				placeholder="Url Ícone" />
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
@@ -32,6 +33,11 @@
 		</textarea>
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<textarea rows="4" matInput #promptEspecialista [(ngModel)]="item.promptEspecialista" name="promptEspecialista"
+				placeholder="Prompt Especialista">
+		</textarea>
+		</mat-form-field>
 
 	</mat-dialog-content>
 

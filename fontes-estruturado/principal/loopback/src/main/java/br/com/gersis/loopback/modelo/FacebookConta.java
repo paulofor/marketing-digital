@@ -15,6 +15,9 @@ public class FacebookConta extends Model {
 
 
 	private String email;
+	private String tokenAtual;
+	private int principal;
+	private String nome;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<PaginaFacebook> PaginaFacebooks;
@@ -38,6 +41,9 @@ public class FacebookConta extends Model {
 		try {
 			obj.put("id",getId());
 			obj.put("email", email);
+			obj.put("tokenAtual", tokenAtual);
+			obj.put("principal", principal);
+			obj.put("nome", nome);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,6 +56,24 @@ public class FacebookConta extends Model {
 	}
 	public String getEmail() { 
 		return this.email;
+	}
+	public void setTokenAtual(String valor) { 
+		this.tokenAtual = valor;
+	}
+	public String getTokenAtual() { 
+		return this.tokenAtual;
+	}
+	public void setPrincipal(int valor) { 
+		this.principal = valor;
+	}
+	public int getPrincipal() { 
+		return this.principal;
+	}
+	public void setNome(String valor) { 
+		this.nome = valor;
+	}
+	public String getNome() { 
+		return this.nome;
 	}
 
 	public List<PaginaFacebook> getPaginaFacebooks() {

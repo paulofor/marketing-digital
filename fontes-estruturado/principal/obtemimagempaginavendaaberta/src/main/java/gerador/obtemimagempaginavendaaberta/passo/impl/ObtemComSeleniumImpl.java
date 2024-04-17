@@ -19,10 +19,12 @@ public class ObtemComSeleniumImpl extends ObtemComSelenium {
 			selenium.setArquivoImagem("/home/usuario/aplicacoes/MarketingDigital/imagem/" + paginaCorrente.getCodigoHexa() + ".png");
 			selenium.executaLeitura();
 			this.saidaPaginaCorrente = paginaCorrente;
+			long timestamp = System.currentTimeMillis();
 			String fonte = selenium.getArquivoImagem();
-			String destino = PATH_IMAGENS + "/pagina-venda-" + paginaCorrente.getIdInteger() + ".png";
+			String nomeImagem = timestamp + paginaCorrente.getIdInteger() + ".png";
+			String destino = PATH_IMAGENS + "/" + nomeImagem;
 			enviaParaServidor(fonte, destino);
-			String urlImagem = PREFIXO_URL + "/pagina-venda-" + paginaCorrente.getIdInteger() + ".png";
+			String urlImagem = PREFIXO_URL + "/" + nomeImagem;
 			this.saidaPaginaCorrente.setUrlImagemCompleta(urlImagem);
 			return true;
 		} catch (Exception e) {

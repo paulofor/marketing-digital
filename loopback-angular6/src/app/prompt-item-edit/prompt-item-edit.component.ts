@@ -18,7 +18,8 @@ export class PromptItemEditComponent extends PromptItemEditBaseComponent {
 
 	criaItem(): PromptItem {
 		let saida:PromptItem = new PromptItem();
-		saida.produtoProprioId = this.origem.id;
+		saida.produtoProprioId = this.origem.produtoProprioId;
+		saida.entregavelProdutoId = this.origem.id;
 		return saida;
 	}
 

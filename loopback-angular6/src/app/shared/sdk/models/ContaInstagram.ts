@@ -1,14 +1,23 @@
 /* tslint:disable */
+import {
+  MetaAdsAnuncio
+} from '../index';
 
 declare var Object: any;
 export interface ContaInstagramInterface {
   "nome"?: string;
+  "email"?: string;
+  "instagram"?: string;
   "id"?: number;
+  metaAdsAnuncios?: MetaAdsAnuncio[];
 }
 
 export class ContaInstagram implements ContaInstagramInterface {
   "nome": string;
+  "email": string;
+  "instagram": string;
   "id": number;
+  metaAdsAnuncios: MetaAdsAnuncio[];
   constructor(data?: ContaInstagramInterface) {
     Object.assign(this, data);
   }
@@ -46,12 +55,28 @@ export class ContaInstagram implements ContaInstagramInterface {
           name: 'nome',
           type: 'string'
         },
+        "email": {
+          name: 'email',
+          type: 'string'
+        },
+        "instagram": {
+          name: 'instagram',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        metaAdsAnuncios: {
+          name: 'metaAdsAnuncios',
+          type: 'MetaAdsAnuncio[]',
+          model: 'MetaAdsAnuncio',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaInstagramId'
+        },
       }
     }
   }

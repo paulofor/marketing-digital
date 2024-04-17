@@ -67,7 +67,6 @@ import { ModeloCampanhaAdsTesteApi } from './services/custom/ModeloCampanhaAdsTe
 import { PixelGoogleApi } from './services/custom/PixelGoogle';
 import { PalavraChaveCampanhaAdsTesteApi } from './services/custom/PalavraChaveCampanhaAdsTeste';
 import { AnuncioCampanhaAdsTesteApi } from './services/custom/AnuncioCampanhaAdsTeste';
-import { FacebookContaApi } from './services/custom/FacebookConta';
 import { ProdutoAfiliadoMetricaApi } from './services/custom/ProdutoAfiliadoMetrica';
 import { ContaGoogleApi } from './services/custom/ContaGoogle';
 import { CampanhaAdsMetricaApi } from './services/custom/CampanhaAdsMetrica';
@@ -150,7 +149,6 @@ import { ContaInstagramApi } from './services/custom/ContaInstagram';
 import { ContaFacebookApi } from './services/custom/ContaFacebook';
 import { PaginaFacebookApi } from './services/custom/PaginaFacebook';
 import { PromptItemApi } from './services/custom/PromptItem';
-import { EntregavelPromptApi } from './services/custom/EntregavelPrompt';
 import { PromptImagemConteudoApi } from './services/custom/PromptImagemConteudo';
 import { ImagemConteudoApi } from './services/custom/ImagemConteudo';
 import { ItemConteudoProdutoApi } from './services/custom/ItemConteudoProduto';
@@ -160,6 +158,21 @@ import { PaginaImplementacaoApi } from './services/custom/PaginaImplementacao';
 import { ItemEstruturaPaginaVendaApi } from './services/custom/ItemEstruturaPaginaVenda';
 import { ImplementacaoItemEstruturaApi } from './services/custom/ImplementacaoItemEstrutura';
 import { CheckoutProdutoProprioApi } from './services/custom/CheckoutProdutoProprio';
+import { MetaAdsCampanhaApi } from './services/custom/MetaAdsCampanha';
+import { MetaAdsConjuntoAnuncioApi } from './services/custom/MetaAdsConjuntoAnuncio';
+import { MetaAdsAnuncioApi } from './services/custom/MetaAdsAnuncio';
+import { CriativoAnuncioApi } from './services/custom/CriativoAnuncio';
+import { FonteLocalApi } from './services/custom/FonteLocal';
+import { MetaAdsPixelVendaApi } from './services/custom/MetaAdsPixelVenda';
+import { ConteudoEntregavelApi } from './services/custom/ConteudoEntregavel';
+import { ContaWhatsappApi } from './services/custom/ContaWhatsapp';
+import { WhatsappGrupoPadraoMensagemApi } from './services/custom/WhatsappGrupoPadraoMensagem';
+import { WhatsappGrupoDiaAgendaApi } from './services/custom/WhatsappGrupoDiaAgenda';
+import { WhatsappModeloMensagemApi } from './services/custom/WhatsappModeloMensagem';
+import { WhatsappMensagemTextoApi } from './services/custom/WhatsappMensagemTexto';
+import { MetaAdsCampanhaMetricaApi } from './services/custom/MetaAdsCampanhaMetrica';
+import { MetaAdsConjuntoAnuncioMetricaApi } from './services/custom/MetaAdsConjuntoAnuncioMetrica';
+import { MetaAdsAnuncioMetricaApi } from './services/custom/MetaAdsAnuncioMetrica';
 /**
 * @module SDKBrowserModule
 * @description
@@ -209,7 +222,6 @@ export class SDKBrowserModule {
         PixelGoogleApi,
         PalavraChaveCampanhaAdsTesteApi,
         AnuncioCampanhaAdsTesteApi,
-        FacebookContaApi,
         ProdutoAfiliadoMetricaApi,
         ContaGoogleApi,
         CampanhaAdsMetricaApi,
@@ -292,7 +304,6 @@ export class SDKBrowserModule {
         ContaFacebookApi,
         PaginaFacebookApi,
         PromptItemApi,
-        EntregavelPromptApi,
         PromptImagemConteudoApi,
         ImagemConteudoApi,
         ItemConteudoProdutoApi,
@@ -302,6 +313,21 @@ export class SDKBrowserModule {
         ItemEstruturaPaginaVendaApi,
         ImplementacaoItemEstruturaApi,
         CheckoutProdutoProprioApi,
+        MetaAdsCampanhaApi,
+        MetaAdsConjuntoAnuncioApi,
+        MetaAdsAnuncioApi,
+        CriativoAnuncioApi,
+        FonteLocalApi,
+        MetaAdsPixelVendaApi,
+        ConteudoEntregavelApi,
+        ContaWhatsappApi,
+        WhatsappGrupoPadraoMensagemApi,
+        WhatsappGrupoDiaAgendaApi,
+        WhatsappModeloMensagemApi,
+        WhatsappMensagemTextoApi,
+        MetaAdsCampanhaMetricaApi,
+        MetaAdsConjuntoAnuncioMetricaApi,
+        MetaAdsAnuncioMetricaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

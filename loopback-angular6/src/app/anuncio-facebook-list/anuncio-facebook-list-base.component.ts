@@ -1,14 +1,14 @@
 import { OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { ActivatedRoute } from "@angular/router";
-import { AnuncioFacebook , AnuncioFacebookApi } from "../shared/sdk";
-import { AnuncioFacebookEditComponent } from "../anuncio-facebook-edit/anuncio-facebook-edit.component";
+import { MetaAdsAnuncio , MetaAdsAnuncioApi } from "../shared/sdk";
+import { MetaAdsAnuncioEditComponent } from "../meta-ads-anuncio-edit/meta-ads-anuncio-edit.component";
 
 export class AnuncioFacebookListBaseComponent implements OnInit {
-	principal: AnuncioFacebook;
-	listaBase:AnuncioFacebook[]
+	principal: MetaAdsAnuncio;
+	listaBase:MetaAdsAnuncio[]
 	idPrincipal: number;
-	constructor(protected srv: AnuncioFacebookApi, protected router: ActivatedRoute, protected dialog: MatDialog) { }
+	constructor(protected srv: MetaAdsAnuncioApi, protected router: ActivatedRoute, protected dialog: MatDialog) { }
 
 	ngOnInit() {
     	this.preCarregaTela();
@@ -20,7 +20,7 @@ export class AnuncioFacebookListBaseComponent implements OnInit {
 
     carregaTela() {
         this.srv.find(this.getFiltro())
-	     .subscribe((result:AnuncioFacebook[]) => {
+	     .subscribe((result:MetaAdsAnuncio[]) => {
             console.log('result: ' , result);
             this.listaBase = result;
             this.posCarregaLista();
@@ -39,7 +39,7 @@ export class AnuncioFacebookListBaseComponent implements OnInit {
 		});
 	}
 	getComponente() : any {
-		return AnuncioFacebookEditComponent
+		return MetaAdsAnuncioEditComponent
 	}
 
 

@@ -1,0 +1,30 @@
+{
+	"name": "ContaWhatsapp",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"numero": {
+			"type": "string"
+		},
+		"nome": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"whatsappGrupos": {
+			"type": "hasMany",
+			"model": "WhatsappGrupo",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

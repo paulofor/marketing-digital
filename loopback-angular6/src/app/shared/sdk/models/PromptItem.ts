@@ -1,7 +1,7 @@
 /* tslint:disable */
 import {
   ProdutoProprio,
-  EntregavelPrompt,
+  EntregavelProduto,
   ItemConteudoProduto
 } from '../index';
 
@@ -10,10 +10,13 @@ export interface PromptItemInterface {
   "titulo"?: string;
   "prompt"?: string;
   "codigoReplace"?: string;
+  "geraConteudo"?: number;
+  "ordenacao"?: number;
   "produtoProprioId"?: number;
+  "entregavelProdutoId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
-  entregavelPrompts?: EntregavelPrompt[];
+  entregavelProduto?: EntregavelProduto;
   itemConteudoProdutos?: ItemConteudoProduto[];
 }
 
@@ -21,10 +24,13 @@ export class PromptItem implements PromptItemInterface {
   "titulo": string;
   "prompt": string;
   "codigoReplace": string;
+  "geraConteudo": number;
+  "ordenacao": number;
   "produtoProprioId": number;
+  "entregavelProdutoId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
-  entregavelPrompts: EntregavelPrompt[];
+  entregavelProduto: EntregavelProduto;
   itemConteudoProdutos: ItemConteudoProduto[];
   constructor(data?: PromptItemInterface) {
     Object.assign(this, data);
@@ -71,8 +77,20 @@ export class PromptItem implements PromptItemInterface {
           name: 'codigoReplace',
           type: 'string'
         },
+        "geraConteudo": {
+          name: 'geraConteudo',
+          type: 'number'
+        },
+        "ordenacao": {
+          name: 'ordenacao',
+          type: 'number'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
+          type: 'number'
+        },
+        "entregavelProdutoId": {
+          name: 'entregavelProdutoId',
           type: 'number'
         },
         "id": {
@@ -89,13 +107,13 @@ export class PromptItem implements PromptItemInterface {
                   keyFrom: 'produtoProprioId',
           keyTo: 'id'
         },
-        entregavelPrompts: {
-          name: 'entregavelPrompts',
-          type: 'EntregavelPrompt[]',
-          model: 'EntregavelPrompt',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'promptItemId'
+        entregavelProduto: {
+          name: 'entregavelProduto',
+          type: 'EntregavelProduto',
+          model: 'EntregavelProduto',
+          relationType: 'belongsTo',
+                  keyFrom: 'entregavelProdutoId',
+          keyTo: 'id'
         },
         itemConteudoProdutos: {
           name: 'itemConteudoProdutos',

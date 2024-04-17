@@ -1,0 +1,36 @@
+<div class="dgc-painel" *ngIf="principal">
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
+	</div>
+
+	<div class="dgc-card" *ngFor="let conjunto of principal.metaAdsConjuntoAnuncios">
+		<div class="dgc-card-header">
+			<span>{{conjunto.nome}}</span>
+			<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaConjunto(conjunto)">
+				<i class="fas fa-edit text-primary"></i>
+			</button>
+		</div>
+		<div class="dgc-card" *ngFor="let anuncio of conjunto.metaAdsAnuncios">
+			<div class="dgc-card-header">
+				<span>{{anuncio.nome}}</span>
+				<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaAnuncio(conjunto,anuncio)">
+					<i class="fas fa-edit text-primary"></i>
+				</button>
+			</div>
+			<div class="dgc-card-detalhe" *ngIf="anuncio.paginaVendaAberta">
+				<span>Página Venda: {{anuncio.paginaVendaAberta.nome}}</span>
+			</div>
+			<div class="dgc-card-detalhe" *ngIf="anuncio.criativoAnuncio">
+				<img src="{{anuncio.criativoAnuncio.urlImagemEditada}}" width="300">
+			</div>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaAnuncio(conjunto)">Novo Anuncio</button>
+		</div>
+	</div>
+
+
+	<div class="dgc-card-comandos">
+		<button class="btn-primary btn-sm btn" (click)="editaConjunto()">Novo Conjunto</button>
+	</div>
+</div>

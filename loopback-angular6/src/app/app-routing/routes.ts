@@ -68,6 +68,12 @@ import { EstruturaPaginaVendaAbertaListComponent } from '../estrutura-pagina-ven
 import { EstruturaPaginaVendaAbertaDetalheComponent } from '../estrutura-pagina-venda-aberta-detalhe/estrutura-pagina-venda-aberta-detalhe.component';
 import { PaginaVendaAbertaDetalheComponent } from '../pagina-venda-aberta-detalhe/pagina-venda-aberta-detalhe.component';
 import { ItemEstruturaPaginaVendaDetalheComponent } from '../item-estrutura-pagina-venda-detalhe/item-estrutura-pagina-venda-detalhe.component';
+import { MetaAdsCampanhaDetalheComponent } from '../meta-ads-campanha-detalhe/meta-ads-campanha-detalhe.component';
+import { ContaInstagramListComponent } from '../conta-instagram-list/conta-instagram-list.component';
+import { ContaFacebookListComponent } from '../conta-facebook-list/conta-facebook-list.component';
+import { ContaWhatsappListComponent } from '../conta-whatsapp-list/conta-whatsapp-list.component';
+import { WhatsappGrupoDetalheComponent } from '../whatsapp-grupo-detalhe/whatsapp-grupo-detalhe.component';
+import { WhatsappGrupoPadraoMensagemDetalheComponent } from '../whatsapp-grupo-padrao-mensagem-detalhe/whatsapp-grupo-padrao-mensagem-detalhe.component';
 
 
 
@@ -166,6 +172,14 @@ export const routes : Routes = [
 
     { path: 'paginaVendaAbertaDetalhe/:id' , component: PaginaVendaAbertaDetalheComponent },
     { path: 'itemEstruturaPaginaVendaDetalhe/:id' , component: ItemEstruturaPaginaVendaDetalheComponent },
+    { path: 'metaAdsCampanhaDetalhe/:id' , component: MetaAdsCampanhaDetalheComponent },
+
+    { path: 'contaInstagramList' , component: ContaInstagramListComponent },
+    { path: 'contaFacebookList' , component: ContaFacebookListComponent },
+    { path: 'contaWhatsappList' , component: ContaWhatsappListComponent },
+
+    { path: 'whatsappGrupoDetalhe/:id' , component: WhatsappGrupoDetalheComponent },
+    { path: 'whatsappGrupoPadraoMensagemDetalhe/:id' , component: WhatsappGrupoPadraoMensagemDetalheComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

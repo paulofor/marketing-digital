@@ -16,10 +16,12 @@ public class EntregavelPrompt extends Model {
 
 	private int entregavelProdutoId;
 	private int promptItemId;
+	private String promptLista;
+	private int geraLista;
 	// Relacionamentos 1
 	private EntregavelProduto EntregavelProduto;
-	private PromptItem PromptItem;
 	// Relacionamentos N
+	private List<PromptItem> PromptItems;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -41,6 +43,8 @@ public class EntregavelPrompt extends Model {
 			obj.put("id",getId());
 			obj.put("entregavelProdutoId", entregavelProdutoId);
 			obj.put("promptItemId", promptItemId);
+			obj.put("promptLista", promptLista);
+			obj.put("geraLista", geraLista);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -60,6 +64,18 @@ public class EntregavelPrompt extends Model {
 	public int getPromptItemId() { 
 		return this.promptItemId;
 	}
+	public void setPromptLista(String valor) { 
+		this.promptLista = valor;
+	}
+	public String getPromptLista() { 
+		return this.promptLista;
+	}
+	public void setGeraLista(int valor) { 
+		this.geraLista = valor;
+	}
+	public int getGeraLista() { 
+		return this.geraLista;
+	}
 
 	public EntregavelProduto getEntregavelProduto() {
 		return EntregavelProduto;
@@ -68,11 +84,16 @@ public class EntregavelPrompt extends Model {
 		this.EntregavelProduto = new EntregavelProduto();
 		BeanUtil.setProperties(this.EntregavelProduto, (Map<String, ? extends Object>) valor, true);
 	}
-	public PromptItem getPromptItem() {
-		return PromptItem;
+	public List<PromptItem> getPromptItems() {
+		return  PromptItems;
 	}
-	public void setPromptItem(HashMap valor) {
-		this.PromptItem = new PromptItem();
-		BeanUtil.setProperties(this.PromptItem, (Map<String, ? extends Object>) valor, true);
+	public void setPromptItems(List<PromptItem> valores) {
+		this.PromptItems = new ArrayList<PromptItem>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PromptItem();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PromptItems.add((PromptItem) objeto);
+		}
 	}
 }

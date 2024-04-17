@@ -27,7 +27,7 @@ module.exports = function(Paginavendaaberta) {
                     'include' : 'itemEstruturaPaginaVenda'
                 }}
                 }},
-                'estruturaPaginaVendaAberta', 'produtoProprio'
+                'estruturaPaginaVendaAberta', 'produtoProprio', 'checkoutProdutoProprio'
             ],
         }
         ds.connector.query(sql, (err,result) => {

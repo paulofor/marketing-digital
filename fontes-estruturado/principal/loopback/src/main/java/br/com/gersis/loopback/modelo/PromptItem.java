@@ -17,10 +17,12 @@ public class PromptItem extends Model {
 	private String titulo;
 	private String prompt;
 	private String codigoReplace;
+	private int geraConteudo;
+	private int ordenacao;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
+	private EntregavelProduto EntregavelProduto;
 	// Relacionamentos N
-	private List<EntregavelPrompt> EntregavelPrompts;
 	private List<ItemConteudoProduto> ItemConteudoProdutos;
 
 	public void setId(Long id) {
@@ -44,6 +46,8 @@ public class PromptItem extends Model {
 			obj.put("titulo", titulo);
 			obj.put("prompt", prompt);
 			obj.put("codigoReplace", codigoReplace);
+			obj.put("geraConteudo", geraConteudo);
+			obj.put("ordenacao", ordenacao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -69,6 +73,18 @@ public class PromptItem extends Model {
 	public String getCodigoReplace() { 
 		return this.codigoReplace;
 	}
+	public void setGeraConteudo(int valor) { 
+		this.geraConteudo = valor;
+	}
+	public int getGeraConteudo() { 
+		return this.geraConteudo;
+	}
+	public void setOrdenacao(int valor) { 
+		this.ordenacao = valor;
+	}
+	public int getOrdenacao() { 
+		return this.ordenacao;
+	}
 
 	public ProdutoProprio getProdutoProprio() {
 		return ProdutoProprio;
@@ -77,17 +93,12 @@ public class PromptItem extends Model {
 		this.ProdutoProprio = new ProdutoProprio();
 		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
 	}
-	public List<EntregavelPrompt> getEntregavelPrompts() {
-		return  EntregavelPrompts;
+	public EntregavelProduto getEntregavelProduto() {
+		return EntregavelProduto;
 	}
-	public void setEntregavelPrompts(List<EntregavelPrompt> valores) {
-		this.EntregavelPrompts = new ArrayList<EntregavelPrompt>();
-		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new EntregavelPrompt();
-			System.out.println(" --> ObjetoMap ");
-			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.EntregavelPrompts.add((EntregavelPrompt) objeto);
-		}
+	public void setEntregavelProduto(HashMap valor) {
+		this.EntregavelProduto = new EntregavelProduto();
+		BeanUtil.setProperties(this.EntregavelProduto, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ItemConteudoProduto> getItemConteudoProdutos() {
 		return  ItemConteudoProdutos;

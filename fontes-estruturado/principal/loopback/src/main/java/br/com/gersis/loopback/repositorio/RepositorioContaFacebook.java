@@ -30,6 +30,13 @@ public class RepositorioContaFacebook extends ModelRepository<ContaFacebook> {
 
 	// ***  Operações  ***
 
+	public synchronized void obtemContaAnuncio(final ObjectCallback<ContaFacebook> callback ) {
+		RestContractItem contrato = new RestContractItem("ContaFacebooks/obtemContaAnuncio","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ContaFacebook.obtemContaAnuncio");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemContaAnuncio", params,   new JsonObjectParser<ContaFacebook>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<ContaFacebook> listaEntrada) {
 		JSONArray lista = new JSONArray();

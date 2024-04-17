@@ -1,12 +1,25 @@
 /* tslint:disable */
+import {
+  MetaAdsCampanhaMetrica
+} from '../index';
 
 declare var Object: any;
 export interface ContaFacebookInterface {
+  "email"?: string;
+  "tokenAtual"?: string;
+  "principal"?: number;
+  "nome"?: string;
   "id"?: number;
+  metaAdsCampanhaMetricas?: MetaAdsCampanhaMetrica[];
 }
 
 export class ContaFacebook implements ContaFacebookInterface {
+  "email": string;
+  "tokenAtual": string;
+  "principal": number;
+  "nome": string;
   "id": number;
+  metaAdsCampanhaMetricas: MetaAdsCampanhaMetrica[];
   constructor(data?: ContaFacebookInterface) {
     Object.assign(this, data);
   }
@@ -40,12 +53,36 @@ export class ContaFacebook implements ContaFacebookInterface {
       path: 'ContaFacebooks',
       idName: 'id',
       properties: {
+        "email": {
+          name: 'email',
+          type: 'string'
+        },
+        "tokenAtual": {
+          name: 'tokenAtual',
+          type: 'string'
+        },
+        "principal": {
+          name: 'principal',
+          type: 'number'
+        },
+        "nome": {
+          name: 'nome',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        metaAdsCampanhaMetricas: {
+          name: 'metaAdsCampanhaMetricas',
+          type: 'MetaAdsCampanhaMetrica[]',
+          model: 'MetaAdsCampanhaMetrica',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaFacebookId'
+        },
       }
     }
   }

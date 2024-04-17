@@ -15,6 +15,12 @@
 		"tipo": {
 			"type": "string"
 		},
+		"promptLista": {
+			"type": "string"
+		},
+		"geraLista": {
+			"type": "number"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}
@@ -31,18 +37,72 @@
 			"model": "ConteudoProdutoKiwify",
 			"foreignKey": ""
 		},
-		"entregavelPrompts": {
-			"type": "hasMany",
-			"model": "EntregavelPrompt",
-			"foreignKey": ""
-		},
 		"promptImagemConteudos": {
 			"type": "hasMany",
 			"model": "PromptImagemConteudo",
+			"foreignKey": ""
+		},
+		"promptItems": {
+			"type": "hasMany",
+			"model": "PromptItem",
+			"foreignKey": ""
+		},
+		"conteudoEntregavels": {
+			"type": "hasMany",
+			"model": "ConteudoEntregavel",
+			"foreignKey": ""
+		},
+		"whatsappGrupoPadraoMensagems": {
+			"type": "hasMany",
+			"model": "WhatsappGrupoPadraoMensagem",
 			"foreignKey": ""
 		}
 	},
 	"acls": [],
 	"methods": {
+		"GerouLista": {
+			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/gerouLista",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaGerarLista": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGerarLista",
+   					"verb": "get"
+ 				}
+ 			]
+		}
 	}
 }

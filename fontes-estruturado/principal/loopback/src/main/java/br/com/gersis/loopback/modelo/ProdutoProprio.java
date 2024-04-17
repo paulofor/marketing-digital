@@ -18,6 +18,7 @@ public class ProdutoProprio extends Model {
 	private String status;
 	private String urlKiwify;
 	private String urlIconePaginaVenda;
+	private String promptEspecialista;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
 	// Relacionamentos N
@@ -40,6 +41,12 @@ public class ProdutoProprio extends Model {
 	private List<IdeiaUnica> IdeiaUnicas;
 	private List<CheckoutProdutoProprio> CheckoutProdutoProprios;
 	private List<PaginaVendaAberta> PaginaVendaAbertas;
+	private List<CriativoAnuncio> CriativoAnuncios;
+	private List<MetaAdsCampanha> MetaAdsCampanhas;
+	private List<MetaAdsAnuncio> MetaAdsAnuncios;
+	private List<MetaAdsPixelVenda> MetaAdsPixelVendas;
+	private List<ConteudoProdutoKiwify> ConteudoProdutoKiwifys;
+	private List<WhatsappGrupoPadraoMensagem> WhatsappGrupoPadraoMensagems;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -63,6 +70,7 @@ public class ProdutoProprio extends Model {
 			obj.put("status", status);
 			obj.put("urlKiwify", urlKiwify);
 			obj.put("urlIconePaginaVenda", urlIconePaginaVenda);
+			obj.put("promptEspecialista", promptEspecialista);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -93,6 +101,12 @@ public class ProdutoProprio extends Model {
 	}
 	public String getUrlIconePaginaVenda() { 
 		return this.urlIconePaginaVenda;
+	}
+	public void setPromptEspecialista(String valor) { 
+		this.promptEspecialista = valor;
+	}
+	public String getPromptEspecialista() { 
+		return this.promptEspecialista;
 	}
 
 	public ContaGoogle getContaGoogle() {
@@ -328,6 +342,78 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PaginaVendaAbertas.add((PaginaVendaAberta) objeto);
+		}
+	}
+	public List<CriativoAnuncio> getCriativoAnuncios() {
+		return  CriativoAnuncios;
+	}
+	public void setCriativoAnuncios(List<CriativoAnuncio> valores) {
+		this.CriativoAnuncios = new ArrayList<CriativoAnuncio>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CriativoAnuncio();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CriativoAnuncios.add((CriativoAnuncio) objeto);
+		}
+	}
+	public List<MetaAdsCampanha> getMetaAdsCampanhas() {
+		return  MetaAdsCampanhas;
+	}
+	public void setMetaAdsCampanhas(List<MetaAdsCampanha> valores) {
+		this.MetaAdsCampanhas = new ArrayList<MetaAdsCampanha>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaAdsCampanha();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaAdsCampanhas.add((MetaAdsCampanha) objeto);
+		}
+	}
+	public List<MetaAdsAnuncio> getMetaAdsAnuncios() {
+		return  MetaAdsAnuncios;
+	}
+	public void setMetaAdsAnuncios(List<MetaAdsAnuncio> valores) {
+		this.MetaAdsAnuncios = new ArrayList<MetaAdsAnuncio>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaAdsAnuncio();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaAdsAnuncios.add((MetaAdsAnuncio) objeto);
+		}
+	}
+	public List<MetaAdsPixelVenda> getMetaAdsPixelVendas() {
+		return  MetaAdsPixelVendas;
+	}
+	public void setMetaAdsPixelVendas(List<MetaAdsPixelVenda> valores) {
+		this.MetaAdsPixelVendas = new ArrayList<MetaAdsPixelVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaAdsPixelVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaAdsPixelVendas.add((MetaAdsPixelVenda) objeto);
+		}
+	}
+	public List<ConteudoProdutoKiwify> getConteudoProdutoKiwifys() {
+		return  ConteudoProdutoKiwifys;
+	}
+	public void setConteudoProdutoKiwifys(List<ConteudoProdutoKiwify> valores) {
+		this.ConteudoProdutoKiwifys = new ArrayList<ConteudoProdutoKiwify>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ConteudoProdutoKiwify();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ConteudoProdutoKiwifys.add((ConteudoProdutoKiwify) objeto);
+		}
+	}
+	public List<WhatsappGrupoPadraoMensagem> getWhatsappGrupoPadraoMensagems() {
+		return  WhatsappGrupoPadraoMensagems;
+	}
+	public void setWhatsappGrupoPadraoMensagems(List<WhatsappGrupoPadraoMensagem> valores) {
+		this.WhatsappGrupoPadraoMensagems = new ArrayList<WhatsappGrupoPadraoMensagem>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new WhatsappGrupoPadraoMensagem();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.WhatsappGrupoPadraoMensagems.add((WhatsappGrupoPadraoMensagem) objeto);
 		}
 	}
 }

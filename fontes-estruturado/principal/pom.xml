@@ -56,6 +56,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>criapaginavendaaberta</module>
 		<module>criaimagemjpg</module>
 		<module>obtemimagempaginavendaaberta</module>
+		<module>atualizaperformancemetaadsanuncio</module>
+		<module>geraimagemcriativometa</module>
+		<module>geralistaconteudoproduto</module>
+		<module>criaitemconteudoproduto</module>
+		<module>atualizametaadscampanhaintraday</module>
+		<module>geramensagemwhatsapp</module>
+		<module>gerafluxowhatsapptexto</module>
 	</modules>
 
 </project>

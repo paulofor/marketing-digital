@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.util.Properties;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import gerador.obtempublicoalvoads.passo.*;
 import gerador.obtempublicoalvoads.passo.impl.*;
@@ -17,12 +19,15 @@ public class ObtemPublicoAlvoAds {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemPublicoAlvoAds");
-		System.out.println("(26/03/2024 19:04:29)");
+		System.out.println("(17/04/2024 01:22:33)");
 		try {
 			carregaProp();
 			ObtemPublicoAlvoAdsObj obj = new ObtemPublicoAlvoAdsObj();
 			obj.executa();
-			System.out.println("finalizou");
+			LocalDateTime dataHoraAtual = LocalDateTime.now();
+			DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+			String dataHoraFormatada = dataHoraAtual.format(formatador);
+			System.out.println("finalizou " + dataHoraFormatada);
 			System.exit(0);
 		} catch (Exception e) {
 			gravarErro(e);

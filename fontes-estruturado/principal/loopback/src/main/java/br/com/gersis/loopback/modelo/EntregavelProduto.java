@@ -16,12 +16,16 @@ public class EntregavelProduto extends Model {
 
 	private String nome;
 	private String tipo;
+	private String promptLista;
+	private int geraLista;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
 	private List<ConteudoProdutoKiwify> ConteudoProdutoKiwifys;
-	private List<EntregavelPrompt> EntregavelPrompts;
 	private List<PromptImagemConteudo> PromptImagemConteudos;
+	private List<PromptItem> PromptItems;
+	private List<ConteudoEntregavel> ConteudoEntregavels;
+	private List<WhatsappGrupoPadraoMensagem> WhatsappGrupoPadraoMensagems;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -43,6 +47,8 @@ public class EntregavelProduto extends Model {
 			obj.put("id",getId());
 			obj.put("nome", nome);
 			obj.put("tipo", tipo);
+			obj.put("promptLista", promptLista);
+			obj.put("geraLista", geraLista);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,6 +67,18 @@ public class EntregavelProduto extends Model {
 	}
 	public String getTipo() { 
 		return this.tipo;
+	}
+	public void setPromptLista(String valor) { 
+		this.promptLista = valor;
+	}
+	public String getPromptLista() { 
+		return this.promptLista;
+	}
+	public void setGeraLista(int valor) { 
+		this.geraLista = valor;
+	}
+	public int getGeraLista() { 
+		return this.geraLista;
 	}
 
 	public ProdutoProprio getProdutoProprio() {
@@ -82,18 +100,6 @@ public class EntregavelProduto extends Model {
 			this.ConteudoProdutoKiwifys.add((ConteudoProdutoKiwify) objeto);
 		}
 	}
-	public List<EntregavelPrompt> getEntregavelPrompts() {
-		return  EntregavelPrompts;
-	}
-	public void setEntregavelPrompts(List<EntregavelPrompt> valores) {
-		this.EntregavelPrompts = new ArrayList<EntregavelPrompt>();
-		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new EntregavelPrompt();
-			System.out.println(" --> ObjetoMap ");
-			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.EntregavelPrompts.add((EntregavelPrompt) objeto);
-		}
-	}
 	public List<PromptImagemConteudo> getPromptImagemConteudos() {
 		return  PromptImagemConteudos;
 	}
@@ -104,6 +110,42 @@ public class EntregavelProduto extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PromptImagemConteudos.add((PromptImagemConteudo) objeto);
+		}
+	}
+	public List<PromptItem> getPromptItems() {
+		return  PromptItems;
+	}
+	public void setPromptItems(List<PromptItem> valores) {
+		this.PromptItems = new ArrayList<PromptItem>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PromptItem();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PromptItems.add((PromptItem) objeto);
+		}
+	}
+	public List<ConteudoEntregavel> getConteudoEntregavels() {
+		return  ConteudoEntregavels;
+	}
+	public void setConteudoEntregavels(List<ConteudoEntregavel> valores) {
+		this.ConteudoEntregavels = new ArrayList<ConteudoEntregavel>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ConteudoEntregavel();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ConteudoEntregavels.add((ConteudoEntregavel) objeto);
+		}
+	}
+	public List<WhatsappGrupoPadraoMensagem> getWhatsappGrupoPadraoMensagems() {
+		return  WhatsappGrupoPadraoMensagems;
+	}
+	public void setWhatsappGrupoPadraoMensagems(List<WhatsappGrupoPadraoMensagem> valores) {
+		this.WhatsappGrupoPadraoMensagems = new ArrayList<WhatsappGrupoPadraoMensagem>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new WhatsappGrupoPadraoMensagem();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.WhatsappGrupoPadraoMensagems.add((WhatsappGrupoPadraoMensagem) objeto);
 		}
 	}
 }

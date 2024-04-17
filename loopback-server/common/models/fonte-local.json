@@ -1,0 +1,30 @@
+{
+	"name": "FonteLocal",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"arquivo": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"criativoAnuncios": {
+			"type": "hasMany",
+			"model": "CriativoAnuncio",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"name": "MetaAdsAnuncioMetrica",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"dataHora": {
+			"type": "date"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"name": "ConteudoEntregavel",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"entregavelProdutoId": {
+			"type": "number"
+		},
+		"conteudoProdutoKiwifyId": {
+			"type": "number"
+		},
+		"ordenacao": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"entregavelProduto": {
+			"type": "belongsTo",
+			"model": "EntregavelProduto",
+			"foreignKey": ""
+		},
+		"conteudoProdutoKiwify": {
+			"type": "belongsTo",
+			"model": "ConteudoProdutoKiwify",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

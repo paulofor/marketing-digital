@@ -31,7 +31,7 @@ public class ImportaImagemImpl extends ImportaImagem {
 	private String SSH_USER = "root";
 	private int SSH_PORT = 22;
 	private String TEMP_FILE = "imagens";
-	private String PREFIXO_URL = "https://www.palfmarketing.online/imagens";
+	private String PREFIXO_URL = "http://www.palfmarketing.online/imagens";
 
 	SecureRandom random = new SecureRandom();
 	
@@ -39,7 +39,7 @@ public class ImportaImagemImpl extends ImportaImagem {
 	protected boolean executaCustom(ConteudoProdutoKiwify conteudoCorrente, ImagemConteudo imagemNova) {
 		Properties prop = new Properties();
 		String path = "/etc/openai/config.properties"; 
-		PromptImagemConteudo promptObj = conteudoCorrente.getEntregavelProduto().getPromptImagemConteudos().get(0);
+		//PromptImagemConteudo promptObj = conteudoCorrente.getEntregavelProduto().getPromptImagemConteudos().get(0);
 
 		try {
 			
@@ -50,7 +50,7 @@ public class ImportaImagemImpl extends ImportaImagem {
 			String imagemUrl = imagemNova.getUrlOriginal();
 			String codigoImagem = this.generateRandomHex() ;
 			String nomeArquivo = codigoImagem + ".png";
-			String nomeCompactado = conteudoCorrente.getNome() + "-" + promptObj.getIdInteger() + ".jpg";
+			String nomeCompactado = conteudoCorrente.getNome() + "-" + imagemNova.getPromptImagemConteudoId() + ".jpg";
 			imagemNova.setArquivoLocal(nomeArquivo);
 			String destino = PATH_IMAGENS + "/" + imagemNova.getArquivoLocal();
 			String arquivoLocal = TEMP_FILE + "/" + nomeArquivo;

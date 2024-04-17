@@ -1,0 +1,70 @@
+{
+	"name": "WhatsappGrupoPadraoMensagem",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"geraMensagem": {
+			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		},
+		"entregavelProdutoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"entregavelProduto": {
+			"type": "belongsTo",
+			"model": "EntregavelProduto",
+			"foreignKey": ""
+		},
+		"whatsappGrupoDiaAgendas": {
+			"type": "hasMany",
+			"model": "WhatsappGrupoDiaAgenda",
+			"foreignKey": ""
+		},
+		"whatsappMensagemTextos": {
+			"type": "hasMany",
+			"model": "WhatsappMensagemTexto",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ObtemParaGerarMensagem": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemParaGerarMensagem",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

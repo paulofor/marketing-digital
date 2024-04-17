@@ -15,7 +15,28 @@
 		"ordenacao": {
 			"type": "number"
 		},
+		"geraImagem": {
+			"type": "number"
+		},
+		"promptIndividual1": {
+			"type": "string"
+		},
+		"promptIndividual2": {
+			"type": "string"
+		},
+		"promptIndividual3": {
+			"type": "string"
+		},
+		"numeroBonus": {
+			"type": "number"
+		},
 		"entregavelProdutoId": {
+			"type": "number"
+		},
+		"geraTexto": {
+			"type": "number"
+		},
+		"produtoProprioId": {
 			"type": "number"
 		}
 	},
@@ -26,6 +47,11 @@
 			"model": "EntregavelProduto",
 			"foreignKey": ""
 		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
 		"itemConteudoProdutos": {
 			"type": "hasMany",
 			"model": "ItemConteudoProduto",
@@ -34,6 +60,11 @@
 		"imagemConteudos": {
 			"type": "hasMany",
 			"model": "ImagemConteudo",
+			"foreignKey": ""
+		},
+		"conteudoEntregavels": {
+			"type": "hasMany",
+			"model": "ConteudoEntregavel",
 			"foreignKey": ""
 		}
 	},
@@ -79,6 +110,112 @@
 			"http": [
          		{
           			"path": "/listaParaGeracaoImagem",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AjustaGeraImagem": {
+			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/ajustaGeraImagem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"CriaListaProduto": {
+			"accepts": [
+				{
+					"arg": "listaConteudo",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/criaListaProduto",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"BatchGeraTexto": {
+			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "valor",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/batchGeraTexto",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"CompletoPorEntregavel": {
+			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/completoPorEntregavel",
    					"verb": "get"
  				}
  			]

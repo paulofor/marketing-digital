@@ -6,10 +6,19 @@
 		</div>
 	</div>
 
+	<div class="dgc-card">
+		<pre>
+		<ng-container *ngFor="let item of principal.itemConteudoProdutos"><ng-container *ngIf="item.ordenacao>0">
+&lt;b&gt;{{ item.promptItem.titulo }}&lt;/b&gt;
+&lt;p&gt;{{ ajustaComPre(item.texto) }}&lt;/p&gt;
+&lt;br&gt;</ng-container></ng-container>
+		</pre>
+	</div>
+
 
 	<div class="dgc-card" *ngFor="let item of principal.itemConteudoProdutos">
 		<div class="dgc-card-header">
-			<span>{{item.promptItem.titulo}}</span>
+			<span>{{item.ordenacao}} - {{item.promptItem.titulo}}</span>
 		</div>
 		<div class="dgc-card-detalhe">
 			<span [innerHTML]="ajustaTexto(item.texto)"></span>

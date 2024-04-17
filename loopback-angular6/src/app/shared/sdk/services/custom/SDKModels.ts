@@ -19,7 +19,6 @@ import { ModeloCampanhaAdsTeste } from '../../models/ModeloCampanhaAdsTeste';
 import { PixelGoogle } from '../../models/PixelGoogle';
 import { PalavraChaveCampanhaAdsTeste } from '../../models/PalavraChaveCampanhaAdsTeste';
 import { AnuncioCampanhaAdsTeste } from '../../models/AnuncioCampanhaAdsTeste';
-import { FacebookConta } from '../../models/FacebookConta';
 import { ProdutoAfiliadoMetrica } from '../../models/ProdutoAfiliadoMetrica';
 import { ContaGoogle } from '../../models/ContaGoogle';
 import { CampanhaAdsMetrica } from '../../models/CampanhaAdsMetrica';
@@ -102,7 +101,6 @@ import { ContaInstagram } from '../../models/ContaInstagram';
 import { ContaFacebook } from '../../models/ContaFacebook';
 import { PaginaFacebook } from '../../models/PaginaFacebook';
 import { PromptItem } from '../../models/PromptItem';
-import { EntregavelPrompt } from '../../models/EntregavelPrompt';
 import { PromptImagemConteudo } from '../../models/PromptImagemConteudo';
 import { ImagemConteudo } from '../../models/ImagemConteudo';
 import { ItemConteudoProduto } from '../../models/ItemConteudoProduto';
@@ -112,6 +110,21 @@ import { PaginaImplementacao } from '../../models/PaginaImplementacao';
 import { ItemEstruturaPaginaVenda } from '../../models/ItemEstruturaPaginaVenda';
 import { ImplementacaoItemEstrutura } from '../../models/ImplementacaoItemEstrutura';
 import { CheckoutProdutoProprio } from '../../models/CheckoutProdutoProprio';
+import { MetaAdsCampanha } from '../../models/MetaAdsCampanha';
+import { MetaAdsConjuntoAnuncio } from '../../models/MetaAdsConjuntoAnuncio';
+import { MetaAdsAnuncio } from '../../models/MetaAdsAnuncio';
+import { CriativoAnuncio } from '../../models/CriativoAnuncio';
+import { FonteLocal } from '../../models/FonteLocal';
+import { MetaAdsPixelVenda } from '../../models/MetaAdsPixelVenda';
+import { ConteudoEntregavel } from '../../models/ConteudoEntregavel';
+import { ContaWhatsapp } from '../../models/ContaWhatsapp';
+import { WhatsappGrupoPadraoMensagem } from '../../models/WhatsappGrupoPadraoMensagem';
+import { WhatsappGrupoDiaAgenda } from '../../models/WhatsappGrupoDiaAgenda';
+import { WhatsappModeloMensagem } from '../../models/WhatsappModeloMensagem';
+import { WhatsappMensagemTexto } from '../../models/WhatsappMensagemTexto';
+import { MetaAdsCampanhaMetrica } from '../../models/MetaAdsCampanhaMetrica';
+import { MetaAdsConjuntoAnuncioMetrica } from '../../models/MetaAdsConjuntoAnuncioMetrica';
+import { MetaAdsAnuncioMetrica } from '../../models/MetaAdsAnuncioMetrica';
 
 export interface Models { [name: string]: any }
 
@@ -138,7 +151,6 @@ export class SDKModels {
     PixelGoogle: PixelGoogle,
     PalavraChaveCampanhaAdsTeste: PalavraChaveCampanhaAdsTeste,
     AnuncioCampanhaAdsTeste: AnuncioCampanhaAdsTeste,
-    FacebookConta: FacebookConta,
     ProdutoAfiliadoMetrica: ProdutoAfiliadoMetrica,
     ContaGoogle: ContaGoogle,
     CampanhaAdsMetrica: CampanhaAdsMetrica,
@@ -221,7 +233,6 @@ export class SDKModels {
     ContaFacebook: ContaFacebook,
     PaginaFacebook: PaginaFacebook,
     PromptItem: PromptItem,
-    EntregavelPrompt: EntregavelPrompt,
     PromptImagemConteudo: PromptImagemConteudo,
     ImagemConteudo: ImagemConteudo,
     ItemConteudoProduto: ItemConteudoProduto,
@@ -231,6 +242,21 @@ export class SDKModels {
     ItemEstruturaPaginaVenda: ItemEstruturaPaginaVenda,
     ImplementacaoItemEstrutura: ImplementacaoItemEstrutura,
     CheckoutProdutoProprio: CheckoutProdutoProprio,
+    MetaAdsCampanha: MetaAdsCampanha,
+    MetaAdsConjuntoAnuncio: MetaAdsConjuntoAnuncio,
+    MetaAdsAnuncio: MetaAdsAnuncio,
+    CriativoAnuncio: CriativoAnuncio,
+    FonteLocal: FonteLocal,
+    MetaAdsPixelVenda: MetaAdsPixelVenda,
+    ConteudoEntregavel: ConteudoEntregavel,
+    ContaWhatsapp: ContaWhatsapp,
+    WhatsappGrupoPadraoMensagem: WhatsappGrupoPadraoMensagem,
+    WhatsappGrupoDiaAgenda: WhatsappGrupoDiaAgenda,
+    WhatsappModeloMensagem: WhatsappModeloMensagem,
+    WhatsappMensagemTexto: WhatsappMensagemTexto,
+    MetaAdsCampanhaMetrica: MetaAdsCampanhaMetrica,
+    MetaAdsConjuntoAnuncioMetrica: MetaAdsConjuntoAnuncioMetrica,
+    MetaAdsAnuncioMetrica: MetaAdsAnuncioMetrica,
     
   };
 

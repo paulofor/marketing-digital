@@ -107,10 +107,6 @@
     "dataSource": "mysqlds",
     "public": true
   },
-  "FacebookConta": {
-    "dataSource": "mysqlds",
-    "public": true
-  },
   "ProdutoAfiliadoMetrica": {
     "dataSource": "mysqlds",
     "public": true
@@ -439,10 +435,6 @@
     "dataSource": "mysqlds",
     "public": true
   },
-  "EntregavelPrompt": {
-    "dataSource": "mysqlds",
-    "public": true
-  },
   "PromptImagemConteudo": {
     "dataSource": "mysqlds",
     "public": true
@@ -476,6 +468,66 @@
     "public": true
   },
   "CheckoutProdutoProprio": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetaAdsCampanha": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetaAdsConjuntoAnuncio": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetaAdsAnuncio": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "CriativoAnuncio": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "FonteLocal": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetaAdsPixelVenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ConteudoEntregavel": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ContaWhatsapp": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "WhatsappGrupoPadraoMensagem": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "WhatsappGrupoDiaAgenda": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "WhatsappModeloMensagem": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "WhatsappMensagemTexto": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetaAdsCampanhaMetrica": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetaAdsConjuntoAnuncioMetrica": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetaAdsAnuncioMetrica": {
     "dataSource": "mysqlds",
     "public": true
   }

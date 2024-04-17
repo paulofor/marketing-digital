@@ -19,11 +19,15 @@
 			<button (click)="selectTab(5, principal.id)">Campanha Rede Display</button>
 			<button (click)="selectTab(7, principal.id)">Pixel Google</button>
 			<button (click)="selectTab(8, principal.id)">Entregável</button>
+			<button (click)="selectTab(18, principal.id)">Conteudo Entregável</button>
 			<button (click)="selectTab(9, principal.id)">Grupo Whatsapp</button>
 			<button (click)="selectTab(11, principal.id)">Dall-E</button>
 			<button (click)="selectTab(12, principal.id)">Dall-E Imagens</button>
-			<button (click)="selectTab(13, principal.id)">Facebook Anúncios</button>
-			<button (click)="selectTab(14, principal.id)">Prompt de Entregável</button>
+			<button (click)="selectTab(13, principal.id)">Criativos</button>
+			<button (click)="selectTab(14, principal.id)">Prompt para os capítulos do entregável (texto)</button>
+			<button (click)="selectTab(16, principal.id)">Campanhas Meta</button>
+			<button (click)="selectTab(17, principal.id)">Pixel Meta</button>
+			<button (click)="selectTab(19, principal.id)">Whatsapp Padrão</button>
 		  </div>
 		  <div *ngIf="tabService.selectedTab">
 			<div [ngSwitch]="tabService.selectedTab">
@@ -35,12 +39,17 @@
 				<app-publico-alvo-ads-palavra-produto-proprio-list *ngSwitchCase="6" [produto]="principal"></app-publico-alvo-ads-palavra-produto-proprio-list>
 				<app-pixel-google-produto-proprio-list *ngSwitchCase="7" [produto]="principal"></app-pixel-google-produto-proprio-list>
 				<app-entregavel-produto-list *ngSwitchCase="8" [produto]="principal"></app-entregavel-produto-list>
+				<app-whatsapp-grupo-por-produto-list *ngSwitchCase="9" [produto]="principal"></app-whatsapp-grupo-por-produto-list>
 				<app-pagina-venda-aberta-list *ngSwitchCase="10" [produto]="principal"></app-pagina-venda-aberta-list>
 				<app-dalle-solicitacao-imagem-produto-proprio-list *ngSwitchCase="11" [produto]="principal"></app-dalle-solicitacao-imagem-produto-proprio-list>
 				<app-dalle-solicitacao-com-imagem-por-proprio-list *ngSwitchCase="12" [produto]="principal"></app-dalle-solicitacao-com-imagem-por-proprio-list>
-				<app-anuncio-facebook-list *ngSwitchCase="13" [produto]="principal"></app-anuncio-facebook-list>
+				<app-criativo-anuncio-list *ngSwitchCase="13" [produto]="principal"></app-criativo-anuncio-list>
 				<app-prompt-item-list *ngSwitchCase="14" [produto]="principal"></app-prompt-item-list>
 				<app-checkout-produto-proprio-list *ngSwitchCase="15" [produto]="principal"></app-checkout-produto-proprio-list>
+				<app-meta-ads-campanha-list *ngSwitchCase="16" [produto]="principal"></app-meta-ads-campanha-list>
+				<app-meta-ads-pixel-venda-list *ngSwitchCase="17" [produto]="principal"></app-meta-ads-pixel-venda-list>
+				<app-conteudo-produto-kiwify-por-produto-list *ngSwitchCase="18" [produto]="principal"></app-conteudo-produto-kiwify-por-produto-list>
+				<app-whatsapp-grupo-padrao-mensagem-list *ngSwitchCase="19" [produto]="principal"></app-whatsapp-grupo-padrao-mensagem-list>
 			</div>
 		  </div>
 	</div>

@@ -8,9 +8,6 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.util.Properties;
 
-import com.jcraft.jsch.ChannelSftp;
-import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.Session;
 
 import br.com.gersis.loopback.modelo.ImagemConteudo;
 import gerador.obtemimagemparaproduto.passo.CriaJpegLocal;
@@ -20,14 +17,18 @@ import gerador.obtemimagemparaproduto.passo.CriaJpegLocal;
 public class CriaJpegLocalImpl extends CriaJpegLocal {
 	
 	
-
+	final public String TEMP_FILE = "/home/usuario/Imagens/ImagemProduto";
 
 	@Override
 	protected boolean executaCustom(ImagemConteudo imagemCorrente) {
-		String imageUrl = imagemCorrente.getUrlFinal();
-        String outputFileName = TEMP_FILE + "/" + imagemCorrente.getConteudoProdutoKiwify().getNome() + ".jpg"; // Nome do arquivo de saída em JPG
-
+		
         try {
+        	String imageUrl = imagemCorrente.getUrlFinal();
+    		if (imagemCorrente.getConteudoProdutoKiwify()==null) {
+    			throw new Exception("Imagem " + imagemCorrente.getUrlFinal() + " não está associada com ConteudoProduto");
+    		}
+            String outputFileName = TEMP_FILE + "/" + imagemCorrente.getConteudoProdutoKiwify().getNome() + ".jpg"; // Nome do arquivo de saída em JPG
+
             // Obter a imagem da URL
             URL url = new URL(imageUrl);
             InputStream inputStream = url.openStream();
@@ -50,7 +51,7 @@ public class CriaJpegLocalImpl extends CriaJpegLocal {
             int exitCode = process.waitFor();
 
             if (exitCode == 0) {
-                System.out.println("Imagem convertida para JPG com sucesso!");
+                System.out.println("Imagem convertida para JPG com sucesso em " + TEMP_FILE);
             } else {
                 System.err.println("Erro ao converter a imagem para JPG.");
             }

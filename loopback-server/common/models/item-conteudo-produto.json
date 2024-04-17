@@ -18,11 +18,13 @@
 		"ordenacao": {
 			"type": "number"
 		},
-		"conteudoProdutoKiwifyId": {
-			"type": "number"
-		},
 		"promptItemId": {
 			"type": "number"
+			,"id": true
+		},
+		"conteudoProdutoKiwifyId": {
+			"type": "number"
+			,"id": true
 		}
 	},
 	"validations": [],
@@ -42,6 +44,12 @@
 	"methods": {
 		"OrdenacaoAlfabetica": {
 			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
 			],
 			"returns": [
  				{
@@ -55,6 +63,31 @@
 			"http": [
          		{
           			"path": "/ordenacaoAlfabetica",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"CriaConteudoItem": {
+			"accepts": [
+				{
+					"arg": "listaConteudo",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/criaConteudoItem",
    					"verb": "post"
  				}
  			]

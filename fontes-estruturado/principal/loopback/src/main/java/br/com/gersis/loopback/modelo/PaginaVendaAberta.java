@@ -25,7 +25,7 @@ public class PaginaVendaAberta extends Model {
 	private ProdutoProprio ProdutoProprio;
 	private EstruturaPaginaVendaAberta EstruturaPaginaVendaAberta;
 	// Relacionamentos N
-	private List<AnuncioFacebook> AnuncioFacebooks;
+	private List<MetaAdsAnuncio> MetaAdsAnuncios;
 	private List<PaginaImplementacao> PaginaImplementacaos;
 
 	public void setId(Long id) {
@@ -117,16 +117,16 @@ public class PaginaVendaAberta extends Model {
 		this.EstruturaPaginaVendaAberta = new EstruturaPaginaVendaAberta();
 		BeanUtil.setProperties(this.EstruturaPaginaVendaAberta, (Map<String, ? extends Object>) valor, true);
 	}
-	public List<AnuncioFacebook> getAnuncioFacebooks() {
-		return  AnuncioFacebooks;
+	public List<MetaAdsAnuncio> getMetaAdsAnuncios() {
+		return  MetaAdsAnuncios;
 	}
-	public void setAnuncioFacebooks(List<AnuncioFacebook> valores) {
-		this.AnuncioFacebooks = new ArrayList<AnuncioFacebook>();
+	public void setMetaAdsAnuncios(List<MetaAdsAnuncio> valores) {
+		this.MetaAdsAnuncios = new ArrayList<MetaAdsAnuncio>();
 		for (int i = 0; i < valores.size(); i++) {
-			Object objeto = new AnuncioFacebook();
+			Object objeto = new MetaAdsAnuncio();
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.AnuncioFacebooks.add((AnuncioFacebook) objeto);
+			this.MetaAdsAnuncios.add((MetaAdsAnuncio) objeto);
 		}
 	}
 	public List<PaginaImplementacao> getPaginaImplementacaos() {

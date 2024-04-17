@@ -11,6 +11,8 @@
     "name": "mysqlds",
     "user": "mktdigitalnode",
     "connector": "mysql",
-    "connectTimeout": 20000 
+    "connectionTimeout": 30000,
+    "acquireTimeout": 30000,
+    "idleTimeout": 30000
   }
 }

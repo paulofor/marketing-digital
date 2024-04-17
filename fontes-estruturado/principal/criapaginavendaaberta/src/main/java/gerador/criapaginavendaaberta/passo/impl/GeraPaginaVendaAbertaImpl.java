@@ -59,16 +59,22 @@ public class GeraPaginaVendaAbertaImpl extends GeraPaginaVendaAberta {
 			
 			String html = paginaCorrente.getEstruturaPaginaVendaAberta().getCodigoHtml();
 			String interno = this.montaInterno(paginaCorrente);
+			if (paginaCorrente.getCodigoHexa() == null) {
+				paginaCorrente.setCodigoHexa(this.generateRandomHex());
+			}
+			if (paginaCorrente.getCheckoutProdutoProprio()==null) {
+				throw new Exception("Precisa configurar o checkout");
+			}
 			// Troca Headline
 			html = html.replace("---headline---", paginaCorrente.getProdutoProprio().getNome());
 			html = html.replace("---dominio---", PREFIXO_URL);
 			html = html.replace("---produto---",paginaCorrente.getProdutoProprio().getNome());
 			html = html.replace("---icone---", paginaCorrente.getProdutoProprio().getUrlIconePaginaVenda());
+			html = html.replace("---codigoPagina---", paginaCorrente.getCodigoHexa());
+			html = html.replace("---linkPagamento---", paginaCorrente.getCheckoutProdutoProprio().getUrl());
 			html = html.replace("---corpo---", interno);
 			//paginaCorrente.setHtml(html);
-			if (paginaCorrente.getCodigoHexa() == null) {
-				paginaCorrente.setCodigoHexa(this.generateRandomHex());
-			}
+			
 			//paginaCorrente.setProntoCriacao(2);
 			localFilePath = this.gravaTemp(html);
 			this.enviaArquivo(paginaCorrente);

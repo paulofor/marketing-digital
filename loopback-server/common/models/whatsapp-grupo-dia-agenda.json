@@ -1,0 +1,40 @@
+{
+	"name": "WhatsappGrupoDiaAgenda",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"dia": {
+			"type": "number"
+		},
+		"whatsappGrupoPadraoMensagemId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"whatsappGrupoPadraoMensagem": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupoPadraoMensagem",
+			"foreignKey": ""
+		},
+		"whatsappModeloMensagems": {
+			"type": "hasMany",
+			"model": "WhatsappModeloMensagem",
+			"foreignKey": ""
+		},
+		"whatsappMensagemTextos": {
+			"type": "hasMany",
+			"model": "WhatsappMensagemTexto",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

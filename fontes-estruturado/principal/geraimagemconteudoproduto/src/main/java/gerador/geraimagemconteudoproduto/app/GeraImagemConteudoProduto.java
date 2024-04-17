@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.util.Properties;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import gerador.geraimagemconteudoproduto.passo.*;
 import gerador.geraimagemconteudoproduto.passo.impl.*;
@@ -17,12 +19,15 @@ public class GeraImagemConteudoProduto {
 
 	public static void main(String[] args) {
 		System.out.print("GeraImagemConteudoProduto");
-		System.out.println("(26/03/2024 19:04:45)");
+		System.out.println("(17/04/2024 01:22:53)");
 		try {
 			carregaProp();
 			GeraImagemConteudoProdutoObj obj = new GeraImagemConteudoProdutoObj();
 			obj.executa();
-			System.out.println("finalizou");
+			LocalDateTime dataHoraAtual = LocalDateTime.now();
+			DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+			String dataHoraFormatada = dataHoraAtual.format(formatador);
+			System.out.println("finalizou " + dataHoraFormatada);
 			System.exit(0);
 		} catch (Exception e) {
 			gravarErro(e);

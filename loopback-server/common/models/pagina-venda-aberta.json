@@ -54,9 +54,9 @@
 			"model": "EstruturaPaginaVendaAberta",
 			"foreignKey": ""
 		},
-		"anuncioFacebooks": {
+		"metaAdsAnuncios": {
 			"type": "hasMany",
-			"model": "AnuncioFacebook",
+			"model": "MetaAdsAnuncio",
 			"foreignKey": ""
 		},
 		"paginaImplementacaos": {

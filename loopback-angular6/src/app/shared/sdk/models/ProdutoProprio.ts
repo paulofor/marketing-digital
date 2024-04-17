@@ -14,12 +14,18 @@ import {
   PaginaVendaVsl,
   WhatsappGrupo,
   AgendaCampanha,
+  ConteudoProdutoKiwify,
   TentativaOferta,
   PaginaVendaAberta,
   EntregavelProduto,
   PromptItem,
   IdeiaUnica,
-  CheckoutProdutoProprio
+  CheckoutProdutoProprio,
+  MetaAdsCampanha,
+  MetaAdsAnuncio,
+  CriativoAnuncio,
+  MetaAdsPixelVenda,
+  WhatsappGrupoPadraoMensagem
 } from '../index';
 
 declare var Object: any;
@@ -28,6 +34,7 @@ export interface ProdutoProprioInterface {
   "status"?: string;
   "urlKiwify"?: string;
   "urlIconePaginaVenda"?: string;
+  "promptEspecialista"?: string;
   "contaGoogleId"?: number;
   "id"?: number;
   contaGoogle?: ContaGoogle;
@@ -44,12 +51,18 @@ export interface ProdutoProprioInterface {
   paginaVendaVsls?: PaginaVendaVsl[];
   whatsappGrupos?: WhatsappGrupo[];
   agendaCampanhas?: AgendaCampanha[];
+  conteudoProdutoKiwifys?: ConteudoProdutoKiwify[];
   tentativaOfertas?: TentativaOferta[];
   paginaVendaAbertas?: PaginaVendaAberta[];
   entregavelProdutos?: EntregavelProduto[];
   promptItems?: PromptItem[];
   ideiaUnicas?: IdeiaUnica[];
   checkoutProdutoProprios?: CheckoutProdutoProprio[];
+  metaAdsCampanhas?: MetaAdsCampanha[];
+  metaAdsAnuncios?: MetaAdsAnuncio[];
+  criativoAnuncios?: CriativoAnuncio[];
+  metaAdsPixelVendas?: MetaAdsPixelVenda[];
+  whatsappGrupoPadraoMensagems?: WhatsappGrupoPadraoMensagem[];
 }
 
 export class ProdutoProprio implements ProdutoProprioInterface {
@@ -57,6 +70,7 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   "status": string;
   "urlKiwify": string;
   "urlIconePaginaVenda": string;
+  "promptEspecialista": string;
   "contaGoogleId": number;
   "id": number;
   contaGoogle: ContaGoogle;
@@ -73,12 +87,18 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   paginaVendaVsls: PaginaVendaVsl[];
   whatsappGrupos: WhatsappGrupo[];
   agendaCampanhas: AgendaCampanha[];
+  conteudoProdutoKiwifys: ConteudoProdutoKiwify[];
   tentativaOfertas: TentativaOferta[];
   paginaVendaAbertas: PaginaVendaAberta[];
   entregavelProdutos: EntregavelProduto[];
   promptItems: PromptItem[];
   ideiaUnicas: IdeiaUnica[];
   checkoutProdutoProprios: CheckoutProdutoProprio[];
+  metaAdsCampanhas: MetaAdsCampanha[];
+  metaAdsAnuncios: MetaAdsAnuncio[];
+  criativoAnuncios: CriativoAnuncio[];
+  metaAdsPixelVendas: MetaAdsPixelVenda[];
+  whatsappGrupoPadraoMensagems: WhatsappGrupoPadraoMensagem[];
   constructor(data?: ProdutoProprioInterface) {
     Object.assign(this, data);
   }
@@ -126,6 +146,10 @@ export class ProdutoProprio implements ProdutoProprioInterface {
         },
         "urlIconePaginaVenda": {
           name: 'urlIconePaginaVenda',
+          type: 'string'
+        },
+        "promptEspecialista": {
+          name: 'promptEspecialista',
           type: 'string'
         },
         "contaGoogleId": {
@@ -250,6 +274,14 @@ export class ProdutoProprio implements ProdutoProprioInterface {
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'
         },
+        conteudoProdutoKiwifys: {
+          name: 'conteudoProdutoKiwifys',
+          type: 'ConteudoProdutoKiwify[]',
+          model: 'ConteudoProdutoKiwify',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
         tentativaOfertas: {
           name: 'tentativaOfertas',
           type: 'TentativaOferta[]',
@@ -294,6 +326,46 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'checkoutProdutoProprios',
           type: 'CheckoutProdutoProprio[]',
           model: 'CheckoutProdutoProprio',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        metaAdsCampanhas: {
+          name: 'metaAdsCampanhas',
+          type: 'MetaAdsCampanha[]',
+          model: 'MetaAdsCampanha',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        metaAdsAnuncios: {
+          name: 'metaAdsAnuncios',
+          type: 'MetaAdsAnuncio[]',
+          model: 'MetaAdsAnuncio',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        criativoAnuncios: {
+          name: 'criativoAnuncios',
+          type: 'CriativoAnuncio[]',
+          model: 'CriativoAnuncio',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        metaAdsPixelVendas: {
+          name: 'metaAdsPixelVendas',
+          type: 'MetaAdsPixelVenda[]',
+          model: 'MetaAdsPixelVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        whatsappGrupoPadraoMensagems: {
+          name: 'whatsappGrupoPadraoMensagems',
+          type: 'WhatsappGrupoPadraoMensagem[]',
+          model: 'WhatsappGrupoPadraoMensagem',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'

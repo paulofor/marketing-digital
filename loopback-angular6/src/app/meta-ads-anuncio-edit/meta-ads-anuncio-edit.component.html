@@ -1,0 +1,35 @@
+<h2 *ngIf="item" mat-dialog-title>MetaAdsAnuncio</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+	<mat-dialog-content>
+
+		<mat-form-field class="example-full-width">
+		<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaPaginaVenda">
+			<mat-select placeholder="Página de Venda" #paginaVendaPropriaId [(ngModel)]="item.paginaVendaPropriaId" name="paginaVendaPropriaId">
+				<mat-option *ngFor="let item of listaPaginaVenda" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaCriativo">
+			<mat-select placeholder="Criativo" #criativoAnuncioId [(ngModel)]="item.criativoAnuncioId" name="criativoAnuncioId">
+				<mat-option *ngFor="let item of listaCriativo" [value]="item.id">
+					{{ item.nome }} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+		<button mat-raised-button>Salvar</button>
+		<button mat-raised-button mat-dialog-close>Fechar</button>
+	</mat-dialog-actions>
+
+</form>

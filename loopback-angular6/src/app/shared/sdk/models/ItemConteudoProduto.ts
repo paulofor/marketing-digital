@@ -9,9 +9,8 @@ export interface ItemConteudoProdutoInterface {
   "titulo"?: string;
   "texto"?: string;
   "ordenacao"?: number;
-  "conteudoProdutoKiwifyId"?: number;
   "promptItemId"?: number;
-  "id"?: number;
+  "conteudoProdutoKiwifyId"?: number;
   conteudoProdutoKiwify?: ConteudoProdutoKiwify;
   promptItem?: PromptItem;
 }
@@ -20,9 +19,8 @@ export class ItemConteudoProduto implements ItemConteudoProdutoInterface {
   "titulo": string;
   "texto": string;
   "ordenacao": number;
-  "conteudoProdutoKiwifyId": number;
   "promptItemId": number;
-  "id": number;
+  "conteudoProdutoKiwifyId": number;
   conteudoProdutoKiwify: ConteudoProdutoKiwify;
   promptItem: PromptItem;
   constructor(data?: ItemConteudoProdutoInterface) {
@@ -56,7 +54,7 @@ export class ItemConteudoProduto implements ItemConteudoProdutoInterface {
       name: 'ItemConteudoProduto',
       plural: 'ItemConteudoProdutos',
       path: 'ItemConteudoProdutos',
-      idName: 'id',
+      idName: 'promptItemId',
       properties: {
         "titulo": {
           name: 'titulo',
@@ -70,16 +68,12 @@ export class ItemConteudoProduto implements ItemConteudoProdutoInterface {
           name: 'ordenacao',
           type: 'number'
         },
-        "conteudoProdutoKiwifyId": {
-          name: 'conteudoProdutoKiwifyId',
-          type: 'number'
-        },
         "promptItemId": {
           name: 'promptItemId',
           type: 'number'
         },
-        "id": {
-          name: 'id',
+        "conteudoProdutoKiwifyId": {
+          name: 'conteudoProdutoKiwifyId',
           type: 'number'
         },
       },

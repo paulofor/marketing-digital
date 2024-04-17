@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { WhatsappGrupoApi } from '../shared/sdk';
+import { WhatsappGrupo, WhatsappGrupoApi } from '../shared/sdk';
 import { WhatsappGrupoEditBaseComponent } from './whatsapp-grupo-edit-base.component';
 
 @Component({
@@ -14,6 +14,12 @@ export class WhatsappGrupoEditComponent extends WhatsappGrupoEditBaseComponent {
 	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: WhatsappGrupoApi
 		  ) {
 	   super(dialogRef,data,servico);
+	}
+
+	criaItem(): WhatsappGrupo {
+		let saida = new WhatsappGrupo();
+		saida.produtoProprioId = this.origem.id;
+		return saida;
 	}
 
 }

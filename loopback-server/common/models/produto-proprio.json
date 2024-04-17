@@ -21,6 +21,9 @@
 		"urlIconePaginaVenda": {
 			"type": "string"
 		},
+		"promptEspecialista": {
+			"type": "string"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}
@@ -125,6 +128,36 @@
 		"paginaVendaAbertas": {
 			"type": "hasMany",
 			"model": "PaginaVendaAberta",
+			"foreignKey": ""
+		},
+		"criativoAnuncios": {
+			"type": "hasMany",
+			"model": "CriativoAnuncio",
+			"foreignKey": ""
+		},
+		"metaAdsCampanhas": {
+			"type": "hasMany",
+			"model": "MetaAdsCampanha",
+			"foreignKey": ""
+		},
+		"metaAdsAnuncios": {
+			"type": "hasMany",
+			"model": "MetaAdsAnuncio",
+			"foreignKey": ""
+		},
+		"metaAdsPixelVendas": {
+			"type": "hasMany",
+			"model": "MetaAdsPixelVenda",
+			"foreignKey": ""
+		},
+		"conteudoProdutoKiwifys": {
+			"type": "hasMany",
+			"model": "ConteudoProdutoKiwify",
+			"foreignKey": ""
+		},
+		"whatsappGrupoPadraoMensagems": {
+			"type": "hasMany",
+			"model": "WhatsappGrupoPadraoMensagem",
 			"foreignKey": ""
 		}
 	},

@@ -30,11 +30,20 @@ public class RepositorioItemConteudoProduto extends ModelRepository<ItemConteudo
 
 	// ***  Operações  ***
 
-	public synchronized void ordenacaoAlfabetica(final VoidCallback callback ) {
+	public synchronized void ordenacaoAlfabetica(int idEntregavel ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ItemConteudoProdutos/ordenacaoAlfabetica","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "ItemConteudoProduto.ordenacaoAlfabetica");
 		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idEntregavel", idEntregavel);
 		invokeStaticMethod("ordenacaoAlfabetica", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void criaConteudoItem(List<ItemConteudoProduto> listaConteudo ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ItemConteudoProdutos/criaConteudoItem","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ItemConteudoProduto.criaConteudoItem");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("listaConteudo",obtemLista(listaConteudo));
+		invokeStaticMethod("criaConteudoItem", params,   new EmptyResponseParser(callback));
 	}
 
 

@@ -70,9 +70,9 @@
 			"model": "PaginaVendaPropria",
 			"foreignKey": ""
 		},
-		"anuncioFacebooks": {
+		"criativoAnuncios": {
 			"type": "hasMany",
-			"model": "AnuncioFacebook",
+			"model": "CriativoAnuncio",
 			"foreignKey": ""
 		}
 	},
