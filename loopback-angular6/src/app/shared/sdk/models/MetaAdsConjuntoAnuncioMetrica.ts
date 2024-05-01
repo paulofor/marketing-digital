@@ -7,6 +7,7 @@ export interface MetaAdsConjuntoAnuncioMetricaInterface {
   "idMetaCampanha"?: string;
   "status"?: string;
   "dataHora"?: Date;
+  "json"?: string;
 }
 
 export class MetaAdsConjuntoAnuncioMetrica implements MetaAdsConjuntoAnuncioMetricaInterface {
@@ -15,6 +16,7 @@ export class MetaAdsConjuntoAnuncioMetrica implements MetaAdsConjuntoAnuncioMetr
   "idMetaCampanha": string;
   "status": string;
   "dataHora": Date;
+  "json": string;
   constructor(data?: MetaAdsConjuntoAnuncioMetricaInterface) {
     Object.assign(this, data);
   }
@@ -67,6 +69,10 @@ export class MetaAdsConjuntoAnuncioMetrica implements MetaAdsConjuntoAnuncioMetr
         "dataHora": {
           name: 'dataHora',
           type: 'Date'
+        },
+        "json": {
+          name: 'json',
+          type: 'string'
         },
       },
       relations: {

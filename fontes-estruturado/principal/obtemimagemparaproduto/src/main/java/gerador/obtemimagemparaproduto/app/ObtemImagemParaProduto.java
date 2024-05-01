@@ -19,7 +19,7 @@ public class ObtemImagemParaProduto {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemImagemParaProduto");
-		System.out.println("(17/04/2024 01:22:54)");
+		System.out.println("(30/04/2024 13:08:14)");
 		try {
 			carregaProp();
 			ObtemImagemParaProdutoObj obj = new ObtemImagemParaProdutoObj();

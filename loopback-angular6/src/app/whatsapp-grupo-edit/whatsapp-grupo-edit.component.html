@@ -8,6 +8,11 @@
 			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" autocomplete="off" />
 		</mat-form-field>
 
+
+		<mat-form-field class="example-full-width">
+			<input matInput #link [(ngModel)]="item.link" name="link" placeholder="Link" autocomplete="off" />
+		</mat-form-field>
+
 		<mat-form-field class="example-full-width">
 			<textarea rows="4" matInput #descricao [(ngModel)]="item.descricao" name="descricao"
 				placeholder="Descrição">

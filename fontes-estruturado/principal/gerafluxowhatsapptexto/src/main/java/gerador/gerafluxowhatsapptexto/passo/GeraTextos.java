@@ -22,7 +22,7 @@ public abstract class GeraTextos extends DaoAplicacao {
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		if (executaCustom(ds.getGrupoPadraoCorrente(), ds.getListaConteudoCompleto())) {
+		if (executaCustom(ds.getGrupoPadraoCorrente(), ds.getListaConteudo())) {
 			ds.setListaMensagemTexto(saidaListaMensagemTexto);
 			executaProximo();
 		} else {
@@ -33,11 +33,11 @@ public abstract class GeraTextos extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new WhatsappMensagemTexto_SalvaListaProdutoGrupoPadraoImpl();
+		return new WhatsappMensagemTexto_LimpaPorGrupoImpl();
 	}
 
 
-	protected boolean executaCustom( WhatsappGrupoPadraoMensagem grupoPadraoCorrente , List<ConteudoProdutoKiwify> listaConteudoCompleto ) { return true; }
+	protected boolean executaCustom( WhatsappGrupoPadraoMensagem grupoPadraoCorrente , List<ConteudoProdutoKiwify> listaConteudo ) { return true; }
 
 	protected void preFinalizar() { return; }
 

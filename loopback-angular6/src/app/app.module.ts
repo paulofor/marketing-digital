@@ -199,6 +199,14 @@ import { WhatsappGrupoDiaAgendaEditComponent } from './whatsapp-grupo-dia-agenda
 import { WhatsappGrupoPadraoMensagemListComponent } from './whatsapp-grupo-padrao-mensagem-list/whatsapp-grupo-padrao-mensagem-list.component';
 import { WhatsappGrupoPadraoMensagemEditComponent } from './whatsapp-grupo-padrao-mensagem-edit/whatsapp-grupo-padrao-mensagem-edit.component';
 import { WhatsappGrupoPadraoMensagemDetalheComponent } from './whatsapp-grupo-padrao-mensagem-detalhe/whatsapp-grupo-padrao-mensagem-detalhe.component';
+import { MetaAdsCampanhaMetricaListSimplesComponent } from './meta-ads-campanha-metrica-list-simples/meta-ads-campanha-metrica-list-simples.component';
+import { MetaAdsAnuncioMetricaListSimplesComponent } from './meta-ads-anuncio-metrica-list-simples/meta-ads-anuncio-metrica-list-simples.component';
+import { WhatsappGrupoPadraoMensagemTextoDetalheComponent } from './whatsapp-grupo-padrao-mensagem-texto-detalhe/whatsapp-grupo-padrao-mensagem-texto-detalhe.component';
+import { MetaAdsConjuntoAnuncioDetalheComponent } from './meta-ads-conjunto-anuncio-detalhe/meta-ads-conjunto-anuncio-detalhe.component';
+import { PaginaWhatsappGrupoListComponent } from './pagina-whatsapp-grupo-list/pagina-whatsapp-grupo-list.component';
+import { PaginaWhatsappGrupoEditComponent } from './pagina-whatsapp-grupo-edit/pagina-whatsapp-grupo-edit.component';
+import { PaginaWhatsappExemploEditComponent } from './pagina-whatsapp-exemplo-edit/pagina-whatsapp-exemplo-edit.component';
+import { PaginaWhatsappExemploListComponent } from './pagina-whatsapp-exemplo-list/pagina-whatsapp-exemplo-list.component';
 
 
 
@@ -376,8 +384,15 @@ registerLocaleData(localePt, 'pt-BR');
     WhatsappGrupoDiaAgendaEditComponent,
     WhatsappGrupoPadraoMensagemListComponent,
     WhatsappGrupoPadraoMensagemEditComponent,
-    WhatsappGrupoPadraoMensagemDetalheComponent
-
+    WhatsappGrupoPadraoMensagemDetalheComponent,
+    MetaAdsCampanhaMetricaListSimplesComponent,
+    MetaAdsAnuncioMetricaListSimplesComponent,
+    WhatsappGrupoPadraoMensagemTextoDetalheComponent,
+    MetaAdsConjuntoAnuncioDetalheComponent,
+    PaginaWhatsappGrupoListComponent,
+    PaginaWhatsappGrupoEditComponent,
+    PaginaWhatsappExemploListComponent,
+    PaginaWhatsappExemploEditComponent
   ],
   imports: [
     BrowserModule,
@@ -492,7 +507,9 @@ registerLocaleData(localePt, 'pt-BR');
     WhatsappGrupoEditComponent,
     WhatsappModeloMensagemEditComponent,
     WhatsappGrupoDiaAgendaEditComponent,
-    WhatsappGrupoPadraoMensagemEditComponent
+    WhatsappGrupoPadraoMensagemEditComponent,
+    PaginaWhatsappGrupoEditComponent,
+    PaginaWhatsappExemploEditComponent
   ],
   bootstrap: [AppComponent]
 })

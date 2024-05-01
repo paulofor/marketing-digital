@@ -10,8 +10,8 @@ declare var Object: any;
 export interface WhatsappGrupoPadraoMensagemInterface {
   "nome"?: string;
   "geraMensagem"?: number;
-  "produtoProprioId"?: number;
   "entregavelProdutoId"?: number;
+  "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
   entregavelProduto?: EntregavelProduto;
@@ -22,8 +22,8 @@ export interface WhatsappGrupoPadraoMensagemInterface {
 export class WhatsappGrupoPadraoMensagem implements WhatsappGrupoPadraoMensagemInterface {
   "nome": string;
   "geraMensagem": number;
-  "produtoProprioId": number;
   "entregavelProdutoId": number;
+  "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
   entregavelProduto: EntregavelProduto;
@@ -70,12 +70,12 @@ export class WhatsappGrupoPadraoMensagem implements WhatsappGrupoPadraoMensagemI
           name: 'geraMensagem',
           type: 'number'
         },
-        "produtoProprioId": {
-          name: 'produtoProprioId',
-          type: 'number'
-        },
         "entregavelProdutoId": {
           name: 'entregavelProdutoId',
+          type: 'number'
+        },
+        "produtoProprioId": {
+          name: 'produtoProprioId',
           type: 'number'
         },
         "id": {

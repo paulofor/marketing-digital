@@ -38,7 +38,7 @@ public abstract class MetaAdsCampanhaMetrica_InsereObservacao extends DaoAplicac
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new MetaAdsAnuncioMetrica_InsereObservacaoImpl();
 	}
 
 

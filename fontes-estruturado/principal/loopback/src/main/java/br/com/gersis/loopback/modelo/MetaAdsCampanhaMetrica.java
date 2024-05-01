@@ -23,6 +23,7 @@ public class MetaAdsCampanhaMetrica extends Model {
 	private String idMeta;
 	private int maisRecente;
 	private int contaFacebookId;
+	private String json;
 	// Relacionamentos 1
 	private ContaFacebook ContaFacebook;
 	// Relacionamentos N
@@ -54,6 +55,7 @@ public class MetaAdsCampanhaMetrica extends Model {
 			obj.put("idMeta", idMeta);
 			obj.put("maisRecente", maisRecente);
 			obj.put("contaFacebookId", contaFacebookId);
+			obj.put("json", json);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -114,6 +116,12 @@ public class MetaAdsCampanhaMetrica extends Model {
 	}
 	public int getContaFacebookId() { 
 		return this.contaFacebookId;
+	}
+	public void setJson(String valor) { 
+		this.json = valor;
+	}
+	public String getJson() { 
+		return this.json;
 	}
 
 	public ContaFacebook getContaFacebook() {

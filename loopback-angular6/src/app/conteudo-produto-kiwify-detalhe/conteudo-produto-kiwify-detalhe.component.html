@@ -1,6 +1,6 @@
 <div class="dgc-painel" *ngIf="principal">
 	<div class="dgc-painel-header" *ngIf="principal">
-		<span>{{principal.nome}}</span>
+		<span>{{principal.ordenacao}} {{principal.nome}}</span>
 		<div class="dgc-direita">
 			<span class="dgc-link" routerLink="/conteudoProdutoOrdenado/{{principal.entregavelProdutoId}}/{{principal.ordenacao+1}}">Próximo</span>
 		</div>

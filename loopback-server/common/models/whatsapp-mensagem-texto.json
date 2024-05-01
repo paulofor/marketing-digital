@@ -12,16 +12,20 @@
 		"texto": {
 			"type": "string"
 		},
-		"indice": {
+		"numeroDia": {
 			"type": "number"
 			,"id": true
 		},
 		"whatsappModeloMensagemId": {
 			"type": "number"
+		},
+		"indiceDia": {
+			"type": "number"
 			,"id": true
 		},
 		"whatsappGrupoPadraoMensagemId": {
 			"type": "number"
+			,"id": true
 		},
 		"whatsappGrupoDiaAgendaId": {
 			"type": "number"
@@ -54,6 +58,12 @@
 					"type": "array",
    					"required": false,
     				"description": ""
+				},
+				{
+					"arg": "idGrupo",
+					"type": "number",
+   					"required": false,
+    				"description": ""
 				}
 			],
 			"returns": [
@@ -68,6 +78,56 @@
 			"http": [
          		{
           			"path": "/salvaListaProdutoGrupoPadrao",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"SalvaItem": {
+			"accepts": [
+				{
+					"arg": "mensagem",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/salvaItem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"LimpaPorGrupo": {
+			"accepts": [
+				{
+					"arg": "idGrupoPadrao",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/limpaPorGrupo",
    					"verb": "post"
  				}
  			]

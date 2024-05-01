@@ -25,6 +25,7 @@ public class CriativoAnuncio extends Model {
 	private String gravity;
 	private int geraImagem;
 	private String nome;
+	private String fundoColor;
 	// Relacionamentos 1
 	private ImagemPaginaVenda ImagemPaginaVenda;
 	private ProdutoProprio ProdutoProprio;
@@ -61,6 +62,7 @@ public class CriativoAnuncio extends Model {
 			obj.put("gravity", gravity);
 			obj.put("geraImagem", geraImagem);
 			obj.put("nome", nome);
+			obj.put("fundoColor", fundoColor);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -133,6 +135,12 @@ public class CriativoAnuncio extends Model {
 	}
 	public String getNome() { 
 		return this.nome;
+	}
+	public void setFundoColor(String valor) { 
+		this.fundoColor = valor;
+	}
+	public String getFundoColor() { 
+		return this.fundoColor;
 	}
 
 	public ImagemPaginaVenda getImagemPaginaVenda() {

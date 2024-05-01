@@ -85,11 +85,14 @@ public class GeraImagemEditadaPublicaImpl extends GeraImagemEditadaPublica {
 		  
 		  String mensagem = criativo.getTextoCopyLinha1() + "\\n" + criativo.getTextoCopyLinha2();
 		
-	      //String command = "convert imagens/402155edf138cd42d456dbaa5c1637.png -gravity south -splice 0x160 \\( -size 1240x160 xc:blue \\) -composite -fill white -font Arial -pointsize 60 -annotate +0+20 \"Você precisa saber disso \\n para perder peso\" output.png";
-	      //String command = "convert " + imagemEntrada + " -gravity south -splice 0x160 \\( -size 1240x160 xc:blue \\) -composite -fill white -font Arial -pointsize 60 -annotate +0+20 \"Você precisa saber disso \\n para perder peso\" " + imagemSaida ;
-	      //String command = "convert " + imagemEntrada + " -gravity south -splice 0x160 \\( -size 1240x160 xc:blue \\) -composite -fill white -font Arial -pointsize 60 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
-	      String command = "convert " + imagemEntrada + " -gravity south -splice 0x180 \\( -size 1240x180 xc:#000000 \\) -composite -fill white -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
 
+		  
+		  //String command = "convert " + imagemEntrada + " -gravity south -splice 0x180 \\( -size 1240x180 xc:#000000 \\) -composite -fill white -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
+
+		  // colocando um posicionamento north / sotuh
+		  String command = "convert " + imagemEntrada + " -gravity " + criativo.getGravity() + " -splice 0x180 \\( -size 1240x180 xc:" + criativo.getFundoColor() + " \\) -composite -fill \"" + criativo.getFontColor() + "\" -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
+
+		  
 	      System.out.println(command);
 		  ProcessBuilder processBuilder = new ProcessBuilder("/bin/bash", "-c", command);
           Process process = processBuilder.start();

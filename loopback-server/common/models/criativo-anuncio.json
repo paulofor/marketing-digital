@@ -42,6 +42,9 @@
 		"nome": {
 			"type": "string"
 		},
+		"fundoColor": {
+			"type": "string"
+		},
 		"imagemPaginaVendaId": {
 			"type": "number"
 		},

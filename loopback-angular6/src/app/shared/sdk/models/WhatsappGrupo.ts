@@ -2,7 +2,10 @@
 import {
   ProdutoProprio,
   WhatsappMensagem,
-  ContaWhatsapp
+  ContaWhatsapp,
+  WhatsappGrupoMetrica,
+  MembroWhatsappGrupo,
+  PaginaWhatsappGrupo
 } from '../index';
 
 declare var Object: any;
@@ -18,6 +21,9 @@ export interface WhatsappGrupoInterface {
   produtoProprio?: ProdutoProprio;
   whatsappMensagems?: WhatsappMensagem[];
   contaWhatsapp?: ContaWhatsapp;
+  whatsappGrupoMetricas?: WhatsappGrupoMetrica[];
+  membroWhatsappGrupos?: MembroWhatsappGrupo[];
+  paginaWhatsappGrupos?: PaginaWhatsappGrupo[];
 }
 
 export class WhatsappGrupo implements WhatsappGrupoInterface {
@@ -32,6 +38,9 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
   produtoProprio: ProdutoProprio;
   whatsappMensagems: WhatsappMensagem[];
   contaWhatsapp: ContaWhatsapp;
+  whatsappGrupoMetricas: WhatsappGrupoMetrica[];
+  membroWhatsappGrupos: MembroWhatsappGrupo[];
+  paginaWhatsappGrupos: PaginaWhatsappGrupo[];
   constructor(data?: WhatsappGrupoInterface) {
     Object.assign(this, data);
   }
@@ -122,6 +131,30 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
           relationType: 'belongsTo',
                   keyFrom: 'contaWhatsappId',
           keyTo: 'id'
+        },
+        whatsappGrupoMetricas: {
+          name: 'whatsappGrupoMetricas',
+          type: 'WhatsappGrupoMetrica[]',
+          model: 'WhatsappGrupoMetrica',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'whatsappGrupoId'
+        },
+        membroWhatsappGrupos: {
+          name: 'membroWhatsappGrupos',
+          type: 'MembroWhatsappGrupo[]',
+          model: 'MembroWhatsappGrupo',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'whatsappGrupoId'
+        },
+        paginaWhatsappGrupos: {
+          name: 'paginaWhatsappGrupos',
+          type: 'PaginaWhatsappGrupo[]',
+          model: 'PaginaWhatsappGrupo',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'whatsappGrupoId'
         },
       }
     }

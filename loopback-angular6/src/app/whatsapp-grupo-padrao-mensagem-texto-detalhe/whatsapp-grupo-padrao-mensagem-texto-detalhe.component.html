@@ -1,0 +1,18 @@
+<div class="dgc-painel" *ngIf="principal">
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
+		<span class="dgc-direita">gera mensagem: {{principal.geraMensagem}}</span>
+	</div>
+
+	<div class="dgc-card" *ngFor="let msg of principal.whatsappMensagemTextos">
+		<div class="dgc-card-header">
+			<span>Dia: {{msg.numeroDia}}</span>
+			<span class="dgc-direita">{{msg.indiceDia}}</span>
+		</div>
+		<div class="dgc-card-detalhe">
+			<span [innerHTML]="ajustaTexto(msg.texto)"></span>
+		</div>
+
+	</div>
+
+</div>

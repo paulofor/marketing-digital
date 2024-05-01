@@ -15,6 +15,9 @@
 		"nome": {
 			"type": "string"
 		},
+		"custo": {
+			"type": "number"
+		},
 		"metaAdsCampanhaId": {
 			"type": "number"
 		}

@@ -45,6 +45,14 @@ public class RepositorioPromptItem extends ModelRepository<PromptItem> {
 		invokeStaticMethod("atualizaOrdenacaoConteudo", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void obtemComConteudoPorEntregavel(int idEntregavel ,final ListCallback<PromptItem> callback ) {
+		RestContractItem contrato = new RestContractItem("PromptItems/obtemComConteudoPorEntregavel","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PromptItem.obtemComConteudoPorEntregavel");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idEntregavel", idEntregavel);
+		invokeStaticMethod("obtemComConteudoPorEntregavel", params,   new JsonArrayParser<PromptItem>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<PromptItem> listaEntrada) {
 		JSONArray lista = new JSONArray();

@@ -17,6 +17,21 @@
 		},
 		"instagram": {
 			"type": "string"
+		},
+		"senha": {
+			"type": "string"
+		},
+		"dataNascimento": {
+			"type": "date"
+		},
+		"genero": {
+			"type": "string"
+		},
+		"bio": {
+			"type": "string"
+		},
+		"urlFoto": {
+			"type": "string"
 		}
 	},
 	"validations": [],

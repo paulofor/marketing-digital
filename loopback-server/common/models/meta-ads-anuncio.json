@@ -81,6 +81,12 @@
 		"titulo5": {
 			"type": "string"
 		},
+		"custo": {
+			"type": "number"
+		},
+		"status": {
+			"type": "string"
+		},
 		"paginaVendaAbertaId": {
 			"type": "number"
 		},
@@ -91,6 +97,9 @@
 			"type": "number"
 		},
 		"contaInstagramId": {
+			"type": "number"
+		},
+		"paginaWhatsappGrupoId": {
 			"type": "number"
 		}
 	},
@@ -119,6 +128,11 @@
 		"contaInstagram": {
 			"type": "belongsTo",
 			"model": "ContaInstagram",
+			"foreignKey": ""
+		},
+		"paginaWhatsappGrupo": {
+			"type": "belongsTo",
+			"model": "PaginaWhatsappGrupo",
 			"foreignKey": ""
 		}
 	},

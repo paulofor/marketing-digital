@@ -19,7 +19,7 @@ public class AtualizaMetaAdsCampanhaIntraday {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaMetaAdsCampanhaIntraday");
-		System.out.println("(17/04/2024 01:22:58)");
+		System.out.println("(30/04/2024 13:08:20)");
 		try {
 			carregaProp();
 			AtualizaMetaAdsCampanhaIntradayObj obj = new AtualizaMetaAdsCampanhaIntradayObj();
@@ -61,5 +61,7 @@ public class AtualizaMetaAdsCampanhaIntraday {
 		DaoBaseComum.setProximo("AtualizaMetaAdsCampanhaIntradayObj", new ContaFacebook_ObtemContaAnuncioImpl());
 		DaoBaseComum.setProximo("ContaFacebook_ObtemContaAnuncio", new AcessaMetaAdsImpl());
 		DaoBaseComum.setProximo("AcessaMetaAds", new MetaAdsCampanhaMetrica_InsereObservacaoImpl());
+		DaoBaseComum.setProximo("MetaAdsCampanhaMetrica_InsereObservacao", new MetaAdsAnuncioMetrica_InsereObservacaoImpl());
+		DaoBaseComum.setProximo("MetaAdsAnuncioMetrica_InsereObservacao", new MetaAdsAnuncioMetrica_AtualizaAnuncioMetaImpl());
 	}
 }

@@ -19,7 +19,7 @@ public class MonitorIntraday {
 
 	public static void main(String[] args) {
 		System.out.print("MonitorIntraday");
-		System.out.println("(17/04/2024 01:22:25)");
+		System.out.println("(30/04/2024 13:07:44)");
 		try {
 			carregaProp();
 			MonitorIntradayObj obj = new MonitorIntradayObj();

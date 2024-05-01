@@ -15,8 +15,10 @@ public class WhatsappMensagemTexto extends Model {
 
 
 	private String texto;
-	private int indice;
+	private int numeroDia;
 	private int whatsappModeloMensagemId;
+	private int indiceDia;
+	private int whatsappGrupoPadraoMensagemId;
 	// Relacionamentos 1
 	private WhatsappGrupoPadraoMensagem WhatsappGrupoPadraoMensagem;
 	private WhatsappGrupoDiaAgenda WhatsappGrupoDiaAgenda;
@@ -42,8 +44,10 @@ public class WhatsappMensagemTexto extends Model {
 		try {
 			obj.put("id",getId());
 			obj.put("texto", texto);
-			obj.put("indice", indice);
+			obj.put("numeroDia", numeroDia);
 			obj.put("whatsappModeloMensagemId", whatsappModeloMensagemId);
+			obj.put("indiceDia", indiceDia);
+			obj.put("whatsappGrupoPadraoMensagemId", whatsappGrupoPadraoMensagemId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -57,17 +61,29 @@ public class WhatsappMensagemTexto extends Model {
 	public String getTexto() { 
 		return this.texto;
 	}
-	public void setIndice(int valor) { 
-		this.indice = valor;
+	public void setNumeroDia(int valor) { 
+		this.numeroDia = valor;
 	}
-	public int getIndice() { 
-		return this.indice;
+	public int getNumeroDia() { 
+		return this.numeroDia;
 	}
 	public void setWhatsappModeloMensagemId(int valor) { 
 		this.whatsappModeloMensagemId = valor;
 	}
 	public int getWhatsappModeloMensagemId() { 
 		return this.whatsappModeloMensagemId;
+	}
+	public void setIndiceDia(int valor) { 
+		this.indiceDia = valor;
+	}
+	public int getIndiceDia() { 
+		return this.indiceDia;
+	}
+	public void setWhatsappGrupoPadraoMensagemId(int valor) { 
+		this.whatsappGrupoPadraoMensagemId = valor;
+	}
+	public int getWhatsappGrupoPadraoMensagemId() { 
+		return this.whatsappGrupoPadraoMensagemId;
 	}
 
 	public WhatsappGrupoPadraoMensagem getWhatsappGrupoPadraoMensagem() {

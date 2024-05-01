@@ -18,16 +18,19 @@
 				<span>Imagem Origem: {{item.imagemPaginaVenda.codigoHexa}}</span>
 			</div>
  			<div class="dgc-card-detalhe">
-				<span>Fonte: </span><span *ngIf="item.fonteLocal">{{item.fonteLocal.nome}}</span>
-				<span> size: {{item.fontSize}}</span>
+				<span>Fonte: </span><span *ngIf="item.fonteLocal">{{item.fonteLocal.nome}}<br></span>
+				<!--<span> size: {{item.fontSize}}</span>-->
 				<span> color: {{item.fontColor}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Fundo: {{item.fundoColor}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>Gera Imagem: {{item.geraImagem}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>gravity: {{item.gravity}}  </span>
-				<span>annotate: {{item.annotate}} </span>
+				<!--<span>annotate: {{item.annotate}} </span>-->
 			</div>
 			<img *ngIf="item.urlImagemEditada" width="300" align="center" src="{{item.urlImagemEditada}}">
  			<div class="dgc-card-comandos">

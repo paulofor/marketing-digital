@@ -94,6 +94,31 @@
    					"verb": "post"
  				}
  			]
+		},
+		"ObtemComConteudoPorEntregavel": {
+			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemComConteudoPorEntregavel",
+   					"verb": "get"
+ 				}
+ 			]
 		}
 	}
 }

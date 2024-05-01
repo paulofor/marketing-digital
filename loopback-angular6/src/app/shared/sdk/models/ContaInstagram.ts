@@ -8,6 +8,11 @@ export interface ContaInstagramInterface {
   "nome"?: string;
   "email"?: string;
   "instagram"?: string;
+  "senha"?: string;
+  "dataNascimento"?: Date;
+  "genero"?: string;
+  "bio"?: string;
+  "urlFoto"?: string;
   "id"?: number;
   metaAdsAnuncios?: MetaAdsAnuncio[];
 }
@@ -16,6 +21,11 @@ export class ContaInstagram implements ContaInstagramInterface {
   "nome": string;
   "email": string;
   "instagram": string;
+  "senha": string;
+  "dataNascimento": Date;
+  "genero": string;
+  "bio": string;
+  "urlFoto": string;
   "id": number;
   metaAdsAnuncios: MetaAdsAnuncio[];
   constructor(data?: ContaInstagramInterface) {
@@ -61,6 +71,26 @@ export class ContaInstagram implements ContaInstagramInterface {
         },
         "instagram": {
           name: 'instagram',
+          type: 'string'
+        },
+        "senha": {
+          name: 'senha',
+          type: 'string'
+        },
+        "dataNascimento": {
+          name: 'dataNascimento',
+          type: 'Date'
+        },
+        "genero": {
+          name: 'genero',
+          type: 'string'
+        },
+        "bio": {
+          name: 'bio',
+          type: 'string'
+        },
+        "urlFoto": {
+          name: 'urlFoto',
           type: 'string'
         },
         "id": {

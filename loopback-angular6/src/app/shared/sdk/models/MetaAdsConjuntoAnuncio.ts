@@ -8,6 +8,7 @@ declare var Object: any;
 export interface MetaAdsConjuntoAnuncioInterface {
   "idMeta"?: string;
   "nome"?: string;
+  "custo"?: number;
   "metaAdsCampanhaId"?: number;
   "id"?: number;
   metaAdsCampanha?: MetaAdsCampanha;
@@ -17,6 +18,7 @@ export interface MetaAdsConjuntoAnuncioInterface {
 export class MetaAdsConjuntoAnuncio implements MetaAdsConjuntoAnuncioInterface {
   "idMeta": string;
   "nome": string;
+  "custo": number;
   "metaAdsCampanhaId": number;
   "id": number;
   metaAdsCampanha: MetaAdsCampanha;
@@ -61,6 +63,10 @@ export class MetaAdsConjuntoAnuncio implements MetaAdsConjuntoAnuncioInterface {
         "nome": {
           name: 'nome',
           type: 'string'
+        },
+        "custo": {
+          name: 'custo',
+          type: 'number'
         },
         "metaAdsCampanhaId": {
           name: 'metaAdsCampanhaId',

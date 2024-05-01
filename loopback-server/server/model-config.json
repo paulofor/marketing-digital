@@ -530,5 +530,21 @@
   "MetaAdsAnuncioMetrica": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "WhatsappGrupoMetrica": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MembroWhatsappGrupo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaWhatsappGrupo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PaginaWhatsappExemplo": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

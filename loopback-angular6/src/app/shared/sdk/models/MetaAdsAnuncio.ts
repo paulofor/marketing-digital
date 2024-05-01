@@ -4,7 +4,8 @@ import {
   MetaAdsConjuntoAnuncio,
   ProdutoProprio,
   ContaInstagram,
-  CriativoAnuncio
+  CriativoAnuncio,
+  PaginaWhatsappGrupo
 } from '../index';
 
 declare var Object: any;
@@ -32,16 +33,20 @@ export interface MetaAdsAnuncioInterface {
   "titulo3"?: string;
   "titulo4"?: string;
   "titulo5"?: string;
+  "custo"?: number;
+  "status"?: string;
   "paginaVendaAbertaId"?: number;
   "criativoAnuncioId"?: number;
   "metaAdsConjuntoAnuncioId"?: number;
   "contaInstagramId"?: number;
+  "paginaWhatsappGrupoId"?: number;
   "id"?: number;
   paginaVendaAberta?: PaginaVendaAberta;
   metaAdsConjuntoAnuncio?: MetaAdsConjuntoAnuncio;
   produtoProprio?: ProdutoProprio;
   contaInstagram?: ContaInstagram;
   criativoAnuncio?: CriativoAnuncio;
+  paginaWhatsappGrupo?: PaginaWhatsappGrupo;
 }
 
 export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
@@ -68,16 +73,20 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
   "titulo3": string;
   "titulo4": string;
   "titulo5": string;
+  "custo": number;
+  "status": string;
   "paginaVendaAbertaId": number;
   "criativoAnuncioId": number;
   "metaAdsConjuntoAnuncioId": number;
   "contaInstagramId": number;
+  "paginaWhatsappGrupoId": number;
   "id": number;
   paginaVendaAberta: PaginaVendaAberta;
   metaAdsConjuntoAnuncio: MetaAdsConjuntoAnuncio;
   produtoProprio: ProdutoProprio;
   contaInstagram: ContaInstagram;
   criativoAnuncio: CriativoAnuncio;
+  paginaWhatsappGrupo: PaginaWhatsappGrupo;
   constructor(data?: MetaAdsAnuncioInterface) {
     Object.assign(this, data);
   }
@@ -203,6 +212,14 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
           name: 'titulo5',
           type: 'string'
         },
+        "custo": {
+          name: 'custo',
+          type: 'number'
+        },
+        "status": {
+          name: 'status',
+          type: 'string'
+        },
         "paginaVendaAbertaId": {
           name: 'paginaVendaAbertaId',
           type: 'number'
@@ -217,6 +234,10 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
         },
         "contaInstagramId": {
           name: 'contaInstagramId',
+          type: 'number'
+        },
+        "paginaWhatsappGrupoId": {
+          name: 'paginaWhatsappGrupoId',
           type: 'number'
         },
         "id": {
@@ -263,6 +284,14 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
           model: 'CriativoAnuncio',
           relationType: 'belongsTo',
                   keyFrom: 'criativoAnuncioId',
+          keyTo: 'id'
+        },
+        paginaWhatsappGrupo: {
+          name: 'paginaWhatsappGrupo',
+          type: 'PaginaWhatsappGrupo',
+          model: 'PaginaWhatsappGrupo',
+          relationType: 'belongsTo',
+                  keyFrom: 'paginaWhatsappGrupoId',
           keyTo: 'id'
         },
       }

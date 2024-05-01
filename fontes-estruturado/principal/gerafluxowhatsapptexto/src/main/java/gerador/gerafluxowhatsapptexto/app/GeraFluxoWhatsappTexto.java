@@ -19,7 +19,7 @@ public class GeraFluxoWhatsappTexto {
 
 	public static void main(String[] args) {
 		System.out.print("GeraFluxoWhatsappTexto");
-		System.out.println("(17/04/2024 01:23:00)");
+		System.out.println("(30/04/2024 13:08:21)");
 		try {
 			carregaProp();
 			GeraFluxoWhatsappTextoObj obj = new GeraFluxoWhatsappTextoObj();
@@ -61,6 +61,8 @@ public class GeraFluxoWhatsappTexto {
 		DaoBaseComum.setProximo("GeraFluxoWhatsappTextoObj", new WhatsappGrupoPadraoMensagem_ObtemParaGerarMensagemImpl());
 		DaoBaseComum.setProximo("WhatsappGrupoPadraoMensagem_ObtemParaGerarMensagem", new ConteudoProdutoKiwify_CompletoPorEntregavelImpl());
 		DaoBaseComum.setProximo("ConteudoProdutoKiwify_CompletoPorEntregavel", new GeraTextosImpl());
-		DaoBaseComum.setProximo("GeraTextos", new WhatsappMensagemTexto_SalvaListaProdutoGrupoPadraoImpl());
+		DaoBaseComum.setProximo("GeraTextos", new WhatsappMensagemTexto_LimpaPorGrupoImpl());
+		DaoBaseComum.setProximo("WhatsappMensagemTexto_LimpaPorGrupo", new LoopItemImpl());
+		DaoBaseComum.setProximo("LoopItem", new WhatsappMensagemTexto_SalvaItemImpl());
 	}
 }

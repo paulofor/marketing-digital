@@ -1,0 +1,69 @@
+{
+	"name": "PaginaWhatsappExemplo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"url": {
+			"type": "string"
+		},
+		"urlImagem": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+		"AtualizaImagem": {
+			"accepts": [
+				{
+					"arg": "pagina",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaImagem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaColetarImagem": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaColetarImagem",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

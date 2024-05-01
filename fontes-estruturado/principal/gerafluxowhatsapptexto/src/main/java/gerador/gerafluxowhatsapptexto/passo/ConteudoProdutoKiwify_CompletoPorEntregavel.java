@@ -24,7 +24,7 @@ public abstract class ConteudoProdutoKiwify_CompletoPorEntregavel extends DaoApl
 		if (executaCustom(ds.getGrupoPadraoCorrente())) {
 			repConteudoProdutoKiwify.completoPorEntregavel( idEntregavel, new ListCallback<ConteudoProdutoKiwify>() { 
 				public void onSuccess(List<ConteudoProdutoKiwify> lista) {
-						ds.setListaConteudoCompleto(lista);
+						ds.setListaConteudo(lista);
 						executaProximo();
 				}
 				public void onError(Throwable t) {

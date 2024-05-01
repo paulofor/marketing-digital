@@ -32,6 +32,17 @@
 			<input matInput #fontColor [(ngModel)]="item.fontColor" name="fontColor" placeholder="Font Color" autocomplete="off"/>
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<input matInput #fundoColor [(ngModel)]="item.fundoColor" name="fundoColor" placeholder="Fundo Color" autocomplete="off"/>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<mat-select #gravity [(ngModel)]="item.gravity" name="gravity" placeholder="Gravity">
+				<mat-option value='north'>north</mat-option>
+				<mat-option value='south'>south</mat-option>
+			</mat-select>
+		</mat-form-field>
+
 		<mat-form-field class="example-full-width" *ngIf="listaImagem">
 			<mat-select placeholder="Imagem Produto" #imagemPaginaVendaId [(ngModel)]="item.imagemPaginaVendaId" name="imagemPaginaVendaId">
 				<mat-option *ngFor="let item of listaImagem" [value]="item.id">
@@ -44,9 +55,7 @@
 			<input matInput #geraImagem [(ngModel)]="item.geraImagem" name="geraImagem" placeholder="geraImagem" />
 		</mat-form-field>
 
-		<mat-form-field class="example-full-width">
-			<input matInput #gravity [(ngModel)]="item.gravity" name="gravity" placeholder="gravity" autocomplete="off"/>
-		</mat-form-field>
+	
 
 		<mat-form-field class="example-full-width">
 			<input matInput #annotate [(ngModel)]="item.annotate" name="annotate" placeholder="annotate" autocomplete="off"/>

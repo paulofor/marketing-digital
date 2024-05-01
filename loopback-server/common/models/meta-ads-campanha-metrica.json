@@ -37,6 +37,9 @@
 		},
 		"contaFacebookId": {
 			"type": "number"
+		},
+		"json": {
+			"type": "string"
 		}
 	},
 	"validations": [],

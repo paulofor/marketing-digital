@@ -8,6 +8,7 @@ declare var Object: any;
 export interface MetaAdsCampanhaInterface {
   "nome"?: string;
   "idMeta"?: string;
+  "custo"?: number;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
@@ -17,6 +18,7 @@ export interface MetaAdsCampanhaInterface {
 export class MetaAdsCampanha implements MetaAdsCampanhaInterface {
   "nome": string;
   "idMeta": string;
+  "custo": number;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
@@ -61,6 +63,10 @@ export class MetaAdsCampanha implements MetaAdsCampanhaInterface {
         "idMeta": {
           name: 'idMeta',
           type: 'string'
+        },
+        "custo": {
+          name: 'custo',
+          type: 'number'
         },
         "produtoProprioId": {
           name: 'produtoProprioId',

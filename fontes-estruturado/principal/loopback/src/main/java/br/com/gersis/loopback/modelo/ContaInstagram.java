@@ -17,6 +17,11 @@ public class ContaInstagram extends Model {
 	private String nome;
 	private String email;
 	private String instagram;
+	private String senha;
+	private String dataNascimento;
+	private String genero;
+	private String bio;
+	private String urlFoto;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<MetaAdsAnuncio> MetaAdsAnuncios;
@@ -42,6 +47,11 @@ public class ContaInstagram extends Model {
 			obj.put("nome", nome);
 			obj.put("email", email);
 			obj.put("instagram", instagram);
+			obj.put("senha", senha);
+			obj.put("dataNascimento", dataNascimento);
+			obj.put("genero", genero);
+			obj.put("bio", bio);
+			obj.put("urlFoto", urlFoto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -66,6 +76,36 @@ public class ContaInstagram extends Model {
 	}
 	public String getInstagram() { 
 		return this.instagram;
+	}
+	public void setSenha(String valor) { 
+		this.senha = valor;
+	}
+	public String getSenha() { 
+		return this.senha;
+	}
+	public void setDataNascimento(String valor) { 
+		this.dataNascimento = valor;
+	}
+	public String getDataNascimento() { 
+		return this.dataNascimento;
+	}
+	public void setGenero(String valor) { 
+		this.genero = valor;
+	}
+	public String getGenero() { 
+		return this.genero;
+	}
+	public void setBio(String valor) { 
+		this.bio = valor;
+	}
+	public String getBio() { 
+		return this.bio;
+	}
+	public void setUrlFoto(String valor) { 
+		this.urlFoto = valor;
+	}
+	public String getUrlFoto() { 
+		return this.urlFoto;
 	}
 
 	public List<MetaAdsAnuncio> getMetaAdsAnuncios() {

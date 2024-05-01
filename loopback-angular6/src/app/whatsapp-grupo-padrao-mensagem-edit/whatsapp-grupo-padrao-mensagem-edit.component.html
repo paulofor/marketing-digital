@@ -12,9 +12,12 @@
 		<input matInput #geraMensagem [(ngModel)]="item.geraMensagem" name="geraMensagem" placeholder="Gera Mensagem" />
 		</mat-form-field>
 
-		<mat-form-field class="example-full-width">
-		<textarea rows="4" matInput #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição">
-		</textarea>
+		<mat-form-field class="example-full-width" *ngIf="listaEntregavel">
+			<mat-select placeholder="Entregável" #entregavelProdutoId [(ngModel)]="item.entregavelProdutoId" name="entregavelProdutoId">
+				<mat-option *ngFor="let item of listaEntregavel" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
 		</mat-form-field>
 
 

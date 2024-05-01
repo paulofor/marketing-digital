@@ -24,6 +24,9 @@ public class WhatsappGrupo extends Model {
 	private ContaWhatsapp ContaWhatsapp;
 	// Relacionamentos N
 	private List<WhatsappMensagem> WhatsappMensagems;
+	private List<WhatsappGrupoMetrica> WhatsappGrupoMetricas;
+	private List<MembroWhatsappGrupo> MembroWhatsappGrupos;
+	private List<PaginaWhatsappGrupo> PaginaWhatsappGrupos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -110,6 +113,42 @@ public class WhatsappGrupo extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.WhatsappMensagems.add((WhatsappMensagem) objeto);
+		}
+	}
+	public List<WhatsappGrupoMetrica> getWhatsappGrupoMetricas() {
+		return  WhatsappGrupoMetricas;
+	}
+	public void setWhatsappGrupoMetricas(List<WhatsappGrupoMetrica> valores) {
+		this.WhatsappGrupoMetricas = new ArrayList<WhatsappGrupoMetrica>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new WhatsappGrupoMetrica();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.WhatsappGrupoMetricas.add((WhatsappGrupoMetrica) objeto);
+		}
+	}
+	public List<MembroWhatsappGrupo> getMembroWhatsappGrupos() {
+		return  MembroWhatsappGrupos;
+	}
+	public void setMembroWhatsappGrupos(List<MembroWhatsappGrupo> valores) {
+		this.MembroWhatsappGrupos = new ArrayList<MembroWhatsappGrupo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MembroWhatsappGrupo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MembroWhatsappGrupos.add((MembroWhatsappGrupo) objeto);
+		}
+	}
+	public List<PaginaWhatsappGrupo> getPaginaWhatsappGrupos() {
+		return  PaginaWhatsappGrupos;
+	}
+	public void setPaginaWhatsappGrupos(List<PaginaWhatsappGrupo> valores) {
+		this.PaginaWhatsappGrupos = new ArrayList<PaginaWhatsappGrupo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaWhatsappGrupo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaWhatsappGrupos.add((PaginaWhatsappGrupo) objeto);
 		}
 	}
 }

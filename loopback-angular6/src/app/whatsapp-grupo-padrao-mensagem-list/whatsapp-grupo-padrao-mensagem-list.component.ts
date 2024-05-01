@@ -19,7 +19,8 @@ export class WhatsappGrupoPadraoMensagemListComponent extends WhatsappGrupoPadra
 
 	getFiltro() {
 		let filtro =  {
-			'where' : {'produtoProprioId' : this.produto.id}
+			'where' : {'produtoProprioId' : this.produto.id},
+			'include' : 'entregavelProduto'
 		};
 		console.log('filtro-pagina:' , filtro);
 		return filtro;

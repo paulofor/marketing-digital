@@ -19,6 +19,7 @@ public class MetaAdsConjuntoAnuncioMetrica extends Model {
 	private String idMetaCampanha;
 	private String status;
 	private String dataHora;
+	private String json;
 	// Relacionamentos 1
 	// Relacionamentos N
 
@@ -45,6 +46,7 @@ public class MetaAdsConjuntoAnuncioMetrica extends Model {
 			obj.put("idMetaCampanha", idMetaCampanha);
 			obj.put("status", status);
 			obj.put("dataHora", dataHora);
+			obj.put("json", json);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -81,6 +83,12 @@ public class MetaAdsConjuntoAnuncioMetrica extends Model {
 	}
 	public String getDataHora() { 
 		return this.dataHora;
+	}
+	public void setJson(String valor) { 
+		this.json = valor;
+	}
+	public String getJson() { 
+		return this.json;
 	}
 
 }

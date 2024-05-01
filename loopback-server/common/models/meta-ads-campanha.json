@@ -15,6 +15,9 @@
 		"idMeta": {
 			"type": "string"
 		},
+		"custo": {
+			"type": "number"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}

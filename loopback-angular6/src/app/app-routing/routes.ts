@@ -74,6 +74,11 @@ import { ContaFacebookListComponent } from '../conta-facebook-list/conta-faceboo
 import { ContaWhatsappListComponent } from '../conta-whatsapp-list/conta-whatsapp-list.component';
 import { WhatsappGrupoDetalheComponent } from '../whatsapp-grupo-detalhe/whatsapp-grupo-detalhe.component';
 import { WhatsappGrupoPadraoMensagemDetalheComponent } from '../whatsapp-grupo-padrao-mensagem-detalhe/whatsapp-grupo-padrao-mensagem-detalhe.component';
+import { MetaAdsCampanhaMetricaListSimplesComponent } from '../meta-ads-campanha-metrica-list-simples/meta-ads-campanha-metrica-list-simples.component';
+import { MetaAdsAnuncioMetricaListSimplesComponent } from '../meta-ads-anuncio-metrica-list-simples/meta-ads-anuncio-metrica-list-simples.component';
+import { WhatsappGrupoPadraoMensagemTextoDetalheComponent } from '../whatsapp-grupo-padrao-mensagem-texto-detalhe/whatsapp-grupo-padrao-mensagem-texto-detalhe.component';
+import { MetaAdsConjuntoAnuncioDetalheComponent } from '../meta-ads-conjunto-anuncio-detalhe/meta-ads-conjunto-anuncio-detalhe.component';
+import { PaginaWhatsappExemploListComponent } from '../pagina-whatsapp-exemplo-list/pagina-whatsapp-exemplo-list.component';
 
 
 
@@ -180,6 +185,14 @@ export const routes : Routes = [
 
     { path: 'whatsappGrupoDetalhe/:id' , component: WhatsappGrupoDetalheComponent },
     { path: 'whatsappGrupoPadraoMensagemDetalhe/:id' , component: WhatsappGrupoPadraoMensagemDetalheComponent },
+    { path: 'whatsappGrupoPadraoMensagemTextoDetalhe/:id' , component: WhatsappGrupoPadraoMensagemTextoDetalheComponent },
+
+    { path: 'metaAdsCampanhaMetricaListSimples', component: MetaAdsCampanhaMetricaListSimplesComponent},
+    { path: 'metaAdsAnuncioMetricaListSimples', component: MetaAdsAnuncioMetricaListSimplesComponent},
+
+    { path: 'metaAdsConjuntoAnuncioDetalhe/:id' , component: MetaAdsConjuntoAnuncioDetalheComponent },
+
+    { path: 'paginaWhatsappExemploList' , component: PaginaWhatsappExemploListComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

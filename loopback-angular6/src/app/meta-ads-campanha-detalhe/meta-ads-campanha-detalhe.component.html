@@ -1,21 +1,31 @@
 <div class="dgc-painel" *ngIf="principal">
 	<div class="dgc-painel-header" *ngIf="principal">
 		<span>{{principal.nome}}</span>
+		<span class="dgc-direita">{{principal.idMeta}}</span>
 	</div>
 
 	<div class="dgc-card" *ngFor="let conjunto of principal.metaAdsConjuntoAnuncios">
 		<div class="dgc-card-header">
-			<span>{{conjunto.nome}}</span>
+			<span class="dgc-link" routerLink="/metaAdsConjuntoAnuncioDetalhe/{{conjunto.id}}">{{conjunto.nome}}</span>
 			<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaConjunto(conjunto)">
 				<i class="fas fa-edit text-primary"></i>
 			</button>
+			<span class="dgc-direita">{{conjunto.idMeta}}</span>
 		</div>
+		<div class="dgc-card-detalhe">
+			<span>Anúncios: {{conjunto.metaAdsAnuncios.length}}</span>
+		</div>
+		<!--
 		<div class="dgc-card" *ngFor="let anuncio of conjunto.metaAdsAnuncios">
 			<div class="dgc-card-header">
 				<span>{{anuncio.nome}}</span>
 				<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaAnuncio(conjunto,anuncio)">
 					<i class="fas fa-edit text-primary"></i>
 				</button>
+				<span class="dgc-direita">{{anuncio.idMeta}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				Título 1: {{ anuncio.titulo1 }}
 			</div>
 			<div class="dgc-card-detalhe" *ngIf="anuncio.paginaVendaAberta">
 				<span>Página Venda: {{anuncio.paginaVendaAberta.nome}}</span>
@@ -23,10 +33,17 @@
 			<div class="dgc-card-detalhe" *ngIf="anuncio.criativoAnuncio">
 				<img src="{{anuncio.criativoAnuncio.urlImagemEditada}}" width="300">
 			</div>
+			<div class="dgc-card-detalhe">
+				impressão: {{ anuncio.impressao }}<br>
+				cliques: {{ anuncio.clique }}<br>
+				ctr: {{ anuncio.ctr }}<br>
+				cpc : {{ anuncio.cpc | currency : 'BRL'}}<br>
+			</div>
 		</div>
 		<div class="dgc-card-comandos">
 			<button class="btn-primary btn-sm btn" (click)="editaAnuncio(conjunto)">Novo Anuncio</button>
 		</div>
+		-->
 	</div>
 
 

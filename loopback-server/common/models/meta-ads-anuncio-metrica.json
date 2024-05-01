@@ -11,6 +11,53 @@
 	"properties": {
 		"dataHora": {
 			"type": "date"
+			,"id": true
+		},
+		"nome": {
+			"type": "string"
+		},
+		"idMeta": {
+			"type": "string"
+			,"id": true
+		},
+		"status": {
+			"type": "string"
+		},
+		"spend": {
+			"type": "number"
+		},
+		"cpc": {
+			"type": "number"
+		},
+		"cpa": {
+			"type": "number"
+		},
+		"impressao": {
+			"type": "number"
+		},
+		"clique": {
+			"type": "number"
+		},
+		"ctr": {
+			"type": "number"
+		},
+		"maisRecente": {
+			"type": "number"
+		},
+		"idMetaCampanha": {
+			"type": "string"
+		},
+		"idMetaConjunto": {
+			"type": "string"
+		},
+		"nomeCampanha": {
+			"type": "string"
+		},
+		"nomeConjunto": {
+			"type": "string"
+		},
+		"json": {
+			"type": "string"
 		}
 	},
 	"validations": [],
@@ -18,5 +65,49 @@
 	},
 	"acls": [],
 	"methods": {
+		"InsereObservacao": {
+			"accepts": [
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereObservacao",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"AtualizaAnuncioMeta": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaAnuncioMeta",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

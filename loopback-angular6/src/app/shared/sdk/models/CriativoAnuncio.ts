@@ -19,6 +19,7 @@ export interface CriativoAnuncioInterface {
   "gravity"?: string;
   "geraImagem"?: number;
   "nome"?: string;
+  "fundoColor"?: string;
   "imagemPaginaVendaId"?: number;
   "produtoProprioId"?: number;
   "fonteLocalId"?: number;
@@ -41,6 +42,7 @@ export class CriativoAnuncio implements CriativoAnuncioInterface {
   "gravity": string;
   "geraImagem": number;
   "nome": string;
+  "fundoColor": string;
   "imagemPaginaVendaId": number;
   "produtoProprioId": number;
   "fonteLocalId": number;
@@ -124,6 +126,10 @@ export class CriativoAnuncio implements CriativoAnuncioInterface {
         },
         "nome": {
           name: 'nome',
+          type: 'string'
+        },
+        "fundoColor": {
+          name: 'fundoColor',
           type: 'string'
         },
         "imagemPaginaVendaId": {

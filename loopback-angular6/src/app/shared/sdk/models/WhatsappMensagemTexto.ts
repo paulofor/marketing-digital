@@ -8,8 +8,9 @@ import {
 declare var Object: any;
 export interface WhatsappMensagemTextoInterface {
   "texto"?: string;
-  "indice"?: number;
+  "numeroDia"?: number;
   "whatsappModeloMensagemId"?: number;
+  "indiceDia"?: number;
   "whatsappGrupoPadraoMensagemId"?: number;
   "whatsappGrupoDiaAgendaId"?: number;
   whatsappGrupoPadraoMensagem?: WhatsappGrupoPadraoMensagem;
@@ -19,8 +20,9 @@ export interface WhatsappMensagemTextoInterface {
 
 export class WhatsappMensagemTexto implements WhatsappMensagemTextoInterface {
   "texto": string;
-  "indice": number;
+  "numeroDia": number;
   "whatsappModeloMensagemId": number;
+  "indiceDia": number;
   "whatsappGrupoPadraoMensagemId": number;
   "whatsappGrupoDiaAgendaId": number;
   whatsappGrupoPadraoMensagem: WhatsappGrupoPadraoMensagem;
@@ -57,18 +59,22 @@ export class WhatsappMensagemTexto implements WhatsappMensagemTextoInterface {
       name: 'WhatsappMensagemTexto',
       plural: 'WhatsappMensagemTextos',
       path: 'WhatsappMensagemTextos',
-      idName: 'indice',
+      idName: 'numeroDia',
       properties: {
         "texto": {
           name: 'texto',
           type: 'string'
         },
-        "indice": {
-          name: 'indice',
+        "numeroDia": {
+          name: 'numeroDia',
           type: 'number'
         },
         "whatsappModeloMensagemId": {
           name: 'whatsappModeloMensagemId',
+          type: 'number'
+        },
+        "indiceDia": {
+          name: 'indiceDia',
           type: 'number'
         },
         "whatsappGrupoPadraoMensagemId": {

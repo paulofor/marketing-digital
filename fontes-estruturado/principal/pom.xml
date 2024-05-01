@@ -63,6 +63,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>atualizametaadscampanhaintraday</module>
 		<module>geramensagemwhatsapp</module>
 		<module>gerafluxowhatsapptexto</module>
+		<module>geraimagempaginagrupowhatsapp</module>
+		<module>geraimagempaginaexemplogrupowhatsapp</module>
 	</modules>
 
 </project>

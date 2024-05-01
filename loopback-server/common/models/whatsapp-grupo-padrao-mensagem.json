@@ -15,10 +15,10 @@
 		"geraMensagem": {
 			"type": "number"
 		},
-		"produtoProprioId": {
+		"entregavelProdutoId": {
 			"type": "number"
 		},
-		"entregavelProdutoId": {
+		"produtoProprioId": {
 			"type": "number"
 		}
 	},

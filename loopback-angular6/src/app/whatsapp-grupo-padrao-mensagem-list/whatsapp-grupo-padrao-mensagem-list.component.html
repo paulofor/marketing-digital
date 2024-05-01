@@ -6,12 +6,17 @@
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card" *ngFor="let item of listaBase">
  			<div class="dgc-card-header">
-				 <span class="dgc-link" routerLink="/whatsappGrupoPadraoMensagemDetalhe/{{item.id}}">{{item.nome}}</span>
+				 <span>{{item.nome}}</span>
  			</div>
-			 <div class="dgc-card-detalhe">
+			<div class="dgc-card-detalhe">
 				<span>Gera Texto: {{item.geraMensagem}}</span>
 			</div>
+			<div class="dgc-card-detalhe" *ngIf="item.entregavelProduto">
+				<span>Entregável: {{item.entregavelProduto.nome}}</span>
+			</div>
  			<div class="dgc-card-comandos">
+				<button class="btn-primary btn-sm btn" [routerLink]="['/whatsappGrupoPadraoMensagemDetalhe' , item.id]">Planejamento</button>
+				<button class="btn-primary btn-sm btn" [routerLink]="['/whatsappGrupoPadraoMensagemTextoDetalhe' , item.id]">Textos</button>
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
  			</div>
  		</div>

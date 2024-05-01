@@ -25,6 +25,9 @@
 		"dataHora": {
 			"type": "date"
 			,"id": true
+		},
+		"json": {
+			"type": "string"
 		}
 	},
 	"validations": [],

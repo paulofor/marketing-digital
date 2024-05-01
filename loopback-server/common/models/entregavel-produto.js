@@ -3,7 +3,7 @@
 module.exports = function(Entregavelproduto) {
 
     Entregavelproduto.ListaParaGerarLista = function(callback) {
-        let filtro = {'where' : {'geraLista' : 1}}
+        let filtro = {'include': 'produtoProprio', 'where' : {'geraLista' : 1}}
         Entregavelproduto.find(filtro,callback);
     }
 

@@ -2,7 +2,16 @@
 
 module.exports = function(Conteudoprodutokiwify) {
     
-    
+    Conteudoprodutokiwify.CompletoPorEntregavel = function(idEntregavel, callback) {
+        let filtro = {
+            'where' : {'entregavelProdutoId' : idEntregavel},
+            'order' : 'ordenacao',
+            'include' : {'relation' : 'itemConteudoProdutos' , 'scope' : {
+                'include' : 'promptItem'
+            }}
+        }
+        Conteudoprodutokiwify.find(filtro,callback);
+    }
     
     Conteudoprodutokiwify.BatchGeraTexto = function(idEntregavel,valor,callback) {
         const sql = "update ConteudoProdutoKiwify set geraTexto = " + valor + " where entregavelProdutoId = " + idEntregavel;
@@ -14,7 +23,9 @@ module.exports = function(Conteudoprodutokiwify) {
     Conteudoprodutokiwify.CriaListaProduto= function(listaConteudo, callback) {
         console.log('tamanho lista:' , listaConteudo.length);
         for (let i=0; i<listaConteudo.length;i++) {
-            Conteudoprodutokiwify.create(listaConteudo[i]);
+            Conteudoprodutokiwify.create(listaConteudo[i], (err,result) => {
+                console.log('Err:' , err);
+            });
             console.log('executou create');
         }
         console.log('saiu do for');

@@ -7,8 +7,9 @@ import java.util.List;
 
 public class DatasetAplicacao  implements IDatasetComum {
 	private WhatsappGrupoPadraoMensagem grupoPadraoCorrente;
-	private List<ConteudoProdutoKiwify> listaConteudoCompleto;
+	private List<ConteudoProdutoKiwify> listaConteudo;
 	private List<WhatsappMensagemTexto> listaMensagemTexto;
+	private WhatsappMensagemTexto textoCorrente;
 
 
 	public void setGrupoPadraoCorrente(WhatsappGrupoPadraoMensagem valor) { 
@@ -17,16 +18,22 @@ public class DatasetAplicacao  implements IDatasetComum {
 	public WhatsappGrupoPadraoMensagem getGrupoPadraoCorrente() { 
 		return this.grupoPadraoCorrente;
 	}
-	public void setListaConteudoCompleto(List<ConteudoProdutoKiwify> valor) { 
-		this.listaConteudoCompleto = valor;
+	public void setListaConteudo(List<ConteudoProdutoKiwify> valor) { 
+		this.listaConteudo = valor;
 	}
-	public List<ConteudoProdutoKiwify> getListaConteudoCompleto() { 
-		return this.listaConteudoCompleto;
+	public List<ConteudoProdutoKiwify> getListaConteudo() { 
+		return this.listaConteudo;
 	}
 	public void setListaMensagemTexto(List<WhatsappMensagemTexto> valor) { 
 		this.listaMensagemTexto = valor;
 	}
 	public List<WhatsappMensagemTexto> getListaMensagemTexto() { 
 		return this.listaMensagemTexto;
+	}
+	public void setTextoCorrente(WhatsappMensagemTexto valor) { 
+		this.textoCorrente = valor;
+	}
+	public WhatsappMensagemTexto getTextoCorrente() { 
+		return this.textoCorrente;
 	}
 }

@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { CriativoAnuncio, CriativoAnuncioApi, MetaAdsAnuncio, MetaAdsAnuncioApi, PaginaVendaAberta, PaginaVendaAbertaApi } from '../shared/sdk';
+import { CriativoAnuncio, CriativoAnuncioApi, MetaAdsAnuncio, MetaAdsAnuncioApi, PaginaVendaAberta, PaginaVendaAbertaApi, PaginaWhatsappGrupo, PaginaWhatsappGrupoApi } from '../shared/sdk';
 import { MetaAdsAnuncioEditBaseComponent } from './meta-ads-anuncio-edit-base.component';
 
 @Component({
@@ -12,15 +12,16 @@ export class MetaAdsAnuncioEditComponent extends MetaAdsAnuncioEditBaseComponent
 
 	listaCriativo: CriativoAnuncio[];
 	listaPaginaVenda: PaginaVendaAberta[];
-
+	listaPaginaGrupo: PaginaWhatsappGrupo[];
 
 	constructor(protected dialogRef: MatDialogRef<any>, private srvCriativo:CriativoAnuncioApi, private srvPaginaVenda:PaginaVendaAbertaApi
-	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: MetaAdsAnuncioApi
+	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: MetaAdsAnuncioApi, private srvPaginaGrupo:PaginaWhatsappGrupoApi
 		  ) {
 	   super(dialogRef,data,servico);
 	}
 
 	montaCombos(): void {
+		console.log('origem:' , this.origem);
 		let filtro = {'where' : {'produtoProprioId' : this.origem.metaAdsCampanha.produtoProprioId}}
 		console.log('filtro combo' , filtro);
 		this.srvCriativo.find(filtro) 
@@ -30,6 +31,10 @@ export class MetaAdsAnuncioEditComponent extends MetaAdsAnuncioEditBaseComponent
 		this.srvPaginaVenda.find(filtro)
 			.subscribe((result:PaginaVendaAberta[]) => {
 				this.listaPaginaVenda = result;
+			})
+		this.srvPaginaGrupo.find(filtro)
+			.subscribe((result:PaginaWhatsappGrupo[]) => {
+				this.listaPaginaGrupo = result;
 			})
 	}
 

@@ -47,6 +47,21 @@
 			"type": "hasMany",
 			"model": "WhatsappMensagem",
 			"foreignKey": ""
+		},
+		"whatsappGrupoMetricas": {
+			"type": "hasMany",
+			"model": "WhatsappGrupoMetrica",
+			"foreignKey": ""
+		},
+		"membroWhatsappGrupos": {
+			"type": "hasMany",
+			"model": "MembroWhatsappGrupo",
+			"foreignKey": ""
+		},
+		"paginaWhatsappGrupos": {
+			"type": "hasMany",
+			"model": "PaginaWhatsappGrupo",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

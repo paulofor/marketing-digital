@@ -1,0 +1,82 @@
+{
+	"name": "PaginaWhatsappGrupo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"url": {
+			"type": "string"
+		},
+		"urlImagem": {
+			"type": "string"
+		},
+		"whatsappGrupoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"whatsappGrupo": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupo",
+			"foreignKey": ""
+		},
+		"metaAdsAnuncios": {
+			"type": "hasMany",
+			"model": "MetaAdsAnuncio",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ListaParaObterImagem": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaObterImagem",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaImagem": {
+			"accepts": [
+				{
+					"arg": "pagina",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaImagem",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

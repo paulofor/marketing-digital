@@ -14,6 +14,7 @@ export interface MetaAdsCampanhaMetricaInterface {
   "idMeta"?: string;
   "maisRecente"?: number;
   "contaFacebookId"?: number;
+  "json"?: string;
   contaFacebook?: ContaFacebook;
 }
 
@@ -27,6 +28,7 @@ export class MetaAdsCampanhaMetrica implements MetaAdsCampanhaMetricaInterface {
   "idMeta": string;
   "maisRecente": number;
   "contaFacebookId": number;
+  "json": string;
   contaFacebook: ContaFacebook;
   constructor(data?: MetaAdsCampanhaMetricaInterface) {
     Object.assign(this, data);
@@ -96,6 +98,10 @@ export class MetaAdsCampanhaMetrica implements MetaAdsCampanhaMetricaInterface {
         "contaFacebookId": {
           name: 'contaFacebookId',
           type: 'number'
+        },
+        "json": {
+          name: 'json',
+          type: 'string'
         },
       },
       relations: {

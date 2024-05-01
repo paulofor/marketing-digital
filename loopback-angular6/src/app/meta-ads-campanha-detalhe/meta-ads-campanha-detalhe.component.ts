@@ -39,18 +39,5 @@ export class MetaAdsCampanhaDetalheComponent extends MetaAdsCampanhaDetalheBaseC
 		});
 	}
 
-	editaAnuncio(conjunto: MetaAdsConjuntoAnuncio, item) {
-		this.dialog.afterAllClosed.subscribe(result => {
-			this.carregaTela();
-		});
-		conjunto.metaAdsCampanha = this.principal;
-		this.dialog.open(MetaAdsAnuncioEditComponent, {
-			width: '800px',
-			data: {
-				item: item,
-				origem: conjunto
-			}
-		});
-	}
-
+	
 }

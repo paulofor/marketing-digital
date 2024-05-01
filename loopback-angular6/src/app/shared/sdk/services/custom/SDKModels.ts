@@ -125,6 +125,10 @@ import { WhatsappMensagemTexto } from '../../models/WhatsappMensagemTexto';
 import { MetaAdsCampanhaMetrica } from '../../models/MetaAdsCampanhaMetrica';
 import { MetaAdsConjuntoAnuncioMetrica } from '../../models/MetaAdsConjuntoAnuncioMetrica';
 import { MetaAdsAnuncioMetrica } from '../../models/MetaAdsAnuncioMetrica';
+import { WhatsappGrupoMetrica } from '../../models/WhatsappGrupoMetrica';
+import { MembroWhatsappGrupo } from '../../models/MembroWhatsappGrupo';
+import { PaginaWhatsappGrupo } from '../../models/PaginaWhatsappGrupo';
+import { PaginaWhatsappExemplo } from '../../models/PaginaWhatsappExemplo';
 
 export interface Models { [name: string]: any }
 
@@ -257,6 +261,10 @@ export class SDKModels {
     MetaAdsCampanhaMetrica: MetaAdsCampanhaMetrica,
     MetaAdsConjuntoAnuncioMetrica: MetaAdsConjuntoAnuncioMetrica,
     MetaAdsAnuncioMetrica: MetaAdsAnuncioMetrica,
+    WhatsappGrupoMetrica: WhatsappGrupoMetrica,
+    MembroWhatsappGrupo: MembroWhatsappGrupo,
+    PaginaWhatsappGrupo: PaginaWhatsappGrupo,
+    PaginaWhatsappExemplo: PaginaWhatsappExemplo,
     
   };
 

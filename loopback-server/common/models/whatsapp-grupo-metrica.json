@@ -1,0 +1,33 @@
+{
+	"name": "WhatsappGrupoMetrica",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"data": {
+			"type": "date"
+		},
+		"quantidadeMembro": {
+			"type": "number"
+		},
+		"whatsappGrupoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"whatsappGrupo": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupo",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

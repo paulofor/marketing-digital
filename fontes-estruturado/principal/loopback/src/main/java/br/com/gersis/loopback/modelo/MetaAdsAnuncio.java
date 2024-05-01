@@ -38,12 +38,15 @@ public class MetaAdsAnuncio extends Model {
 	private String titulo3;
 	private String titulo4;
 	private String titulo5;
+	private double custo;
+	private String status;
 	// Relacionamentos 1
 	private PaginaVendaAberta PaginaVendaAberta;
 	private CriativoAnuncio CriativoAnuncio;
 	private MetaAdsConjuntoAnuncio MetaAdsConjuntoAnuncio;
 	private ProdutoProprio ProdutoProprio;
 	private ContaInstagram ContaInstagram;
+	private PaginaWhatsappGrupo PaginaWhatsappGrupo;
 	// Relacionamentos N
 
 	public void setId(Long id) {
@@ -88,6 +91,8 @@ public class MetaAdsAnuncio extends Model {
 			obj.put("titulo3", titulo3);
 			obj.put("titulo4", titulo4);
 			obj.put("titulo5", titulo5);
+			obj.put("custo", custo);
+			obj.put("status", status);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -239,6 +244,18 @@ public class MetaAdsAnuncio extends Model {
 	public String getTitulo5() { 
 		return this.titulo5;
 	}
+	public void setCusto(double valor) { 
+		this.custo = valor;
+	}
+	public double getCusto() { 
+		return this.custo;
+	}
+	public void setStatus(String valor) { 
+		this.status = valor;
+	}
+	public String getStatus() { 
+		return this.status;
+	}
 
 	public PaginaVendaAberta getPaginaVendaAberta() {
 		return PaginaVendaAberta;
@@ -274,5 +291,12 @@ public class MetaAdsAnuncio extends Model {
 	public void setContaInstagram(HashMap valor) {
 		this.ContaInstagram = new ContaInstagram();
 		BeanUtil.setProperties(this.ContaInstagram, (Map<String, ? extends Object>) valor, true);
+	}
+	public PaginaWhatsappGrupo getPaginaWhatsappGrupo() {
+		return PaginaWhatsappGrupo;
+	}
+	public void setPaginaWhatsappGrupo(HashMap valor) {
+		this.PaginaWhatsappGrupo = new PaginaWhatsappGrupo();
+		BeanUtil.setProperties(this.PaginaWhatsappGrupo, (Map<String, ? extends Object>) valor, true);
 	}
 }

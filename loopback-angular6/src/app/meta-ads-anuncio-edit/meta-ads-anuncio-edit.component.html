@@ -5,7 +5,23 @@
 	<mat-dialog-content>
 
 		<mat-form-field class="example-full-width">
-		<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #idMeta [(ngModel)]="item.idMeta" name="idMeta" placeholder="Id Meta" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #titulo1 [(ngModel)]="item.titulo1" name="titulo1" placeholder="Título 1" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaPaginaGrupo">
+			<mat-select placeholder="Página Grupo Whatsapp" #paginaWhatsappGrupoId [(ngModel)]="item.paginaWhatsappGrupoId" name="paginaWhatsappGrupoId">
+				<mat-option *ngFor="let item of listaPaginaGrupo" [value]="item.id">
+					{{ item.url }} 
+				</mat-option>
+			</mat-select>
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width" *ngIf="listaPaginaVenda">

@@ -173,6 +173,10 @@ import { WhatsappMensagemTextoApi } from './services/custom/WhatsappMensagemText
 import { MetaAdsCampanhaMetricaApi } from './services/custom/MetaAdsCampanhaMetrica';
 import { MetaAdsConjuntoAnuncioMetricaApi } from './services/custom/MetaAdsConjuntoAnuncioMetrica';
 import { MetaAdsAnuncioMetricaApi } from './services/custom/MetaAdsAnuncioMetrica';
+import { WhatsappGrupoMetricaApi } from './services/custom/WhatsappGrupoMetrica';
+import { MembroWhatsappGrupoApi } from './services/custom/MembroWhatsappGrupo';
+import { PaginaWhatsappGrupoApi } from './services/custom/PaginaWhatsappGrupo';
+import { PaginaWhatsappExemploApi } from './services/custom/PaginaWhatsappExemplo';
 /**
 * @module SDKBrowserModule
 * @description
@@ -328,6 +332,10 @@ export class SDKBrowserModule {
         MetaAdsCampanhaMetricaApi,
         MetaAdsConjuntoAnuncioMetricaApi,
         MetaAdsAnuncioMetricaApi,
+        WhatsappGrupoMetricaApi,
+        MembroWhatsappGrupoApi,
+        PaginaWhatsappGrupoApi,
+        PaginaWhatsappExemploApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

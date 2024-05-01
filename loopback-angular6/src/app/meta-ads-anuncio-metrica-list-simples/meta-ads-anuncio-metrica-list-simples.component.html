@@ -1,0 +1,47 @@
+<div class="dgc-painel">
+	<div class="dgc-painel-header">
+		<span>MetaAds Anúncio Métrica</span>
+	</div>
+	<div class="dgc-painel-principal" *ngIf="listaBase">
+		<div class="dgc-card" *ngFor="let item of listaBase">
+			<div class="dgc-card-header">
+				<span>{{item.nome}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>{{item.spend | currency : 'BRL'}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>impressao: {{item.impressao }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>cliques: {{item.clique }}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>cpc: {{item.cpc | currency : 'BRL'}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>ctr: {{item.ctr }}</span>
+			</div>
+
+			<div class="dgc-card-detalhe">
+				<span>{{item.status}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Meta Id: {{item.idMeta}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<b>Campanha:</b><br>
+				{{item.nomeCampanha}}<br>
+				{{item.idMetaCampanha}}
+			</div>
+			<div class="dgc-card-detalhe">
+				<b>Conjunto:</b><br>
+				{{item.nomeConjunto}}<br>
+				{{item.idMetaConjunto}}
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>{{item.dataHora | date : 'dd-MM-yyyy HH:mm:ss' : 'UTC'}}</span>
+			</div>
+		</div>
+	</div>
+</div>

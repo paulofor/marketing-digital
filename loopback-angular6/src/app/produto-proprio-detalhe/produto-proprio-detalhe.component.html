@@ -28,6 +28,7 @@
 			<button (click)="selectTab(16, principal.id)">Campanhas Meta</button>
 			<button (click)="selectTab(17, principal.id)">Pixel Meta</button>
 			<button (click)="selectTab(19, principal.id)">Whatsapp Padrão</button>
+			<button (click)="selectTab(20, principal.id)">Página Grupo Whatsapp</button>
 		  </div>
 		  <div *ngIf="tabService.selectedTab">
 			<div [ngSwitch]="tabService.selectedTab">
@@ -50,6 +51,7 @@
 				<app-meta-ads-pixel-venda-list *ngSwitchCase="17" [produto]="principal"></app-meta-ads-pixel-venda-list>
 				<app-conteudo-produto-kiwify-por-produto-list *ngSwitchCase="18" [produto]="principal"></app-conteudo-produto-kiwify-por-produto-list>
 				<app-whatsapp-grupo-padrao-mensagem-list *ngSwitchCase="19" [produto]="principal"></app-whatsapp-grupo-padrao-mensagem-list>
+				<app-pagina-whatsapp-grupo-list *ngSwitchCase="20" [produto]="principal"></app-pagina-whatsapp-grupo-list>
 			</div>
 		  </div>
 	</div>

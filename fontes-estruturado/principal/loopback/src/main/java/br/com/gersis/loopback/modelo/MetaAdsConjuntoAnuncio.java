@@ -16,6 +16,7 @@ public class MetaAdsConjuntoAnuncio extends Model {
 
 	private String idMeta;
 	private String nome;
+	private double custo;
 	// Relacionamentos 1
 	private MetaAdsCampanha MetaAdsCampanha;
 	// Relacionamentos N
@@ -41,6 +42,7 @@ public class MetaAdsConjuntoAnuncio extends Model {
 			obj.put("id",getId());
 			obj.put("idMeta", idMeta);
 			obj.put("nome", nome);
+			obj.put("custo", custo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -59,6 +61,12 @@ public class MetaAdsConjuntoAnuncio extends Model {
 	}
 	public String getNome() { 
 		return this.nome;
+	}
+	public void setCusto(double valor) { 
+		this.custo = valor;
+	}
+	public double getCusto() { 
+		return this.custo;
 	}
 
 	public MetaAdsCampanha getMetaAdsCampanha() {

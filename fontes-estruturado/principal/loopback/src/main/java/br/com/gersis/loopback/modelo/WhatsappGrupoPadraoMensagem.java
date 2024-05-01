@@ -16,6 +16,7 @@ public class WhatsappGrupoPadraoMensagem extends Model {
 
 	private String nome;
 	private int geraMensagem;
+	private int entregavelProdutoId;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	private EntregavelProduto EntregavelProduto;
@@ -43,6 +44,7 @@ public class WhatsappGrupoPadraoMensagem extends Model {
 			obj.put("id",getId());
 			obj.put("nome", nome);
 			obj.put("geraMensagem", geraMensagem);
+			obj.put("entregavelProdutoId", entregavelProdutoId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,6 +63,12 @@ public class WhatsappGrupoPadraoMensagem extends Model {
 	}
 	public int getGeraMensagem() { 
 		return this.geraMensagem;
+	}
+	public void setEntregavelProdutoId(int valor) { 
+		this.entregavelProdutoId = valor;
+	}
+	public int getEntregavelProdutoId() { 
+		return this.entregavelProdutoId;
 	}
 
 	public ProdutoProprio getProdutoProprio() {

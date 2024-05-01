@@ -193,6 +193,8 @@ export class WhatsappMensagemTextoApi extends BaseLoopBackApi {
    *
    *  - `listaMensagem` – `{any}` - 
    *
+   *  - `idGrupo` – `{number}` - 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -202,7 +204,7 @@ export class WhatsappMensagemTextoApi extends BaseLoopBackApi {
    * This usually means the response is a `WhatsappMensagemTexto` object.)
    * </em>
    */
-  public SalvaListaProdutoGrupoPadrao(listaMensagem: any = {}, customHeaders?: Function): Observable<any> {
+  public SalvaListaProdutoGrupoPadrao(listaMensagem: any = {}, idGrupo: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/WhatsappMensagemTextos/salvaListaProdutoGrupoPadrao";
@@ -210,6 +212,67 @@ export class WhatsappMensagemTextoApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (typeof listaMensagem !== 'undefined' && listaMensagem !== null) _urlParams.listaMensagem = listaMensagem;
+    if (typeof idGrupo !== 'undefined' && idGrupo !== null) _urlParams.idGrupo = idGrupo;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `mensagem` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappMensagemTexto` object.)
+   * </em>
+   */
+  public SalvaItem(mensagem: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappMensagemTextos/salvaItem";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof mensagem !== 'undefined' && mensagem !== null) _urlParams.mensagem = mensagem;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idGrupoPadrao` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappMensagemTexto` object.)
+   * </em>
+   */
+  public LimpaPorGrupo(idGrupoPadrao: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappMensagemTextos/limpaPorGrupo";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idGrupoPadrao !== 'undefined' && idGrupoPadrao !== null) _urlParams.idGrupoPadrao = idGrupoPadrao;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

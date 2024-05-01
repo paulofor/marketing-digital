@@ -26,7 +26,7 @@ public class ObtemListaNoChatGptImpl extends ObtemListaNoChatGpt {
 	@Override
 	protected boolean executaCustom(EntregavelProduto entregavelCorrente) {
 		String promptCompleto = entregavelCorrente.getPromptLista() + ". Responda em formato de lista um array de strings";
-		String resposta = this.fazerRequisicao(promptCompleto);
+		String resposta = this.fazerRequisicao(promptCompleto, entregavelCorrente.getProdutoProprio().getPromptEspecialista());
 		resposta = resposta.replaceAll("\n", "");
 		int startIndex = resposta.indexOf("["); // O índice do primeiro caractere após "```json"
         int endIndex = resposta.lastIndexOf("]") + 2; // O índice do último caractere antes do último "```"
@@ -58,7 +58,7 @@ public class ObtemListaNoChatGptImpl extends ObtemListaNoChatGpt {
 		return true;
 	} 
 
-	private String fazerRequisicao(String prompt) {
+	private String fazerRequisicao(String prompt, String regra) {
 		try {
 			Properties prop = new Properties();
 			String path = "/etc/openai/config.properties"; // Substitua pelo seu caminho
@@ -68,7 +68,7 @@ public class ObtemListaNoChatGptImpl extends ObtemListaNoChatGpt {
 	
 			JSONObject criterio = new JSONObject();
 			criterio.put("role", "system");
-			criterio.put("content", URLEncoder.encode("Responda como um especialista em nutrição", "UTF-8"));
+			criterio.put("content", URLEncoder.encode(regra, "UTF-8"));
 			JSONObject solicitacao = new JSONObject();
 			solicitacao.put("role", "user");
 			solicitacao.put("content", URLEncoder.encode(prompt, "UTF-8"));
