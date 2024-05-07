@@ -17,6 +17,9 @@
 		},
 		"whatsappGrupoId": {
 			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -24,6 +27,11 @@
 		"whatsappGrupo": {
 			"type": "belongsTo",
 			"model": "WhatsappGrupo",
+			"foreignKey": ""
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
 			"foreignKey": ""
 		},
 		"metaAdsAnuncios": {

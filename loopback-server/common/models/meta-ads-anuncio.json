@@ -87,6 +87,15 @@
 		"status": {
 			"type": "string"
 		},
+		"quantidadeEntradaGrupo": {
+			"type": "number"
+		},
+		"custoEntradaGrupo": {
+			"type": "number"
+		},
+		"percentualEntradaGrupo": {
+			"type": "number"
+		},
 		"paginaVendaAbertaId": {
 			"type": "number"
 		},

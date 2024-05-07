@@ -22,9 +22,16 @@ public class ImagemConjunto extends Model {
 	private String urlImagem2;
 	private String urlImagemQuadrada;
 	private int produtoProprioId;
+	private int geraDeImagemVenda;
+	private String textoCopyLinha1;
+	private String textoCopyLinha2;
+	private String fontColor;
+	private String fundoColor;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ProdutoProprio ProdutoProprio;
+	private ImagemPaginaVenda ImagemPaginaVenda;
+	private FonteLocal FonteLocal;
 	// Relacionamentos N
 	private List<AnuncioAdsDisplay> AnuncioAdsDisplays;
 	private List<AnuncioConceitoAdsRedeDisplay> AnuncioConceitoAdsRedeDisplays;
@@ -56,6 +63,11 @@ public class ImagemConjunto extends Model {
 			obj.put("urlImagem2", urlImagem2);
 			obj.put("urlImagemQuadrada", urlImagemQuadrada);
 			obj.put("produtoProprioId", produtoProprioId);
+			obj.put("geraDeImagemVenda", geraDeImagemVenda);
+			obj.put("textoCopyLinha1", textoCopyLinha1);
+			obj.put("textoCopyLinha2", textoCopyLinha2);
+			obj.put("fontColor", fontColor);
+			obj.put("fundoColor", fundoColor);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -111,6 +123,36 @@ public class ImagemConjunto extends Model {
 	public int getProdutoProprioId() { 
 		return this.produtoProprioId;
 	}
+	public void setGeraDeImagemVenda(int valor) { 
+		this.geraDeImagemVenda = valor;
+	}
+	public int getGeraDeImagemVenda() { 
+		return this.geraDeImagemVenda;
+	}
+	public void setTextoCopyLinha1(String valor) { 
+		this.textoCopyLinha1 = valor;
+	}
+	public String getTextoCopyLinha1() { 
+		return this.textoCopyLinha1;
+	}
+	public void setTextoCopyLinha2(String valor) { 
+		this.textoCopyLinha2 = valor;
+	}
+	public String getTextoCopyLinha2() { 
+		return this.textoCopyLinha2;
+	}
+	public void setFontColor(String valor) { 
+		this.fontColor = valor;
+	}
+	public String getFontColor() { 
+		return this.fontColor;
+	}
+	public void setFundoColor(String valor) { 
+		this.fundoColor = valor;
+	}
+	public String getFundoColor() { 
+		return this.fundoColor;
+	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
 		return ProdutoAfiliadoHotmart;
@@ -125,6 +167,20 @@ public class ImagemConjunto extends Model {
 	public void setProdutoProprio(HashMap valor) {
 		this.ProdutoProprio = new ProdutoProprio();
 		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	}
+	public ImagemPaginaVenda getImagemPaginaVenda() {
+		return ImagemPaginaVenda;
+	}
+	public void setImagemPaginaVenda(HashMap valor) {
+		this.ImagemPaginaVenda = new ImagemPaginaVenda();
+		BeanUtil.setProperties(this.ImagemPaginaVenda, (Map<String, ? extends Object>) valor, true);
+	}
+	public FonteLocal getFonteLocal() {
+		return FonteLocal;
+	}
+	public void setFonteLocal(HashMap valor) {
+		this.FonteLocal = new FonteLocal();
+		BeanUtil.setProperties(this.FonteLocal, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<AnuncioAdsDisplay> getAnuncioAdsDisplays() {
 		return  AnuncioAdsDisplays;

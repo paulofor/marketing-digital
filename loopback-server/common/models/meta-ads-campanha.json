@@ -18,6 +18,9 @@
 		"custo": {
 			"type": "number"
 		},
+		"objetivo": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}

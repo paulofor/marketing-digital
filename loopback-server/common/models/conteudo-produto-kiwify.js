@@ -19,6 +19,12 @@ module.exports = function(Conteudoprodutokiwify) {
         ds.connector.query(sql,callback);
     }
 
+    Conteudoprodutokiwify.BatchGeraImagem = function(idEntregavel,valor,callback) {
+        const sql = "update ConteudoProdutoKiwify set geraImagem = " + valor + " where entregavelProdutoId = " + idEntregavel;
+        const ds = Conteudoprodutokiwify.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
 
     Conteudoprodutokiwify.CriaListaProduto= function(listaConteudo, callback) {
         console.log('tamanho lista:' , listaConteudo.length);
@@ -51,7 +57,7 @@ module.exports = function(Conteudoprodutokiwify) {
         const sql = "UPDATE ConteudoProdutoKiwify AS icp1 " +
             " JOIN ( " +
             " SELECT id, " + 
-            "        @row_number:=CASE WHEN @prev_nome = nome THEN @row_number ELSE @row_number+1 END AS new_order, " +
+            "        @row_number:=CASE WHEN @prev_nome = nome THEN @row_number ELSE @row_number+10 END AS new_order, " +
             "        @prev_nome:=nome " +
             " FROM (SELECT * FROM ConteudoProdutoKiwify WHERE numeroBonus= 0 and entregavelProdutoId = " + IdEntregavel + " ORDER BY upper(nome)) AS sorted, " +
             "      (SELECT @row_number:=0, @prev_nome:='') AS vars " +

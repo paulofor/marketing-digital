@@ -4,6 +4,7 @@ import {
   ProdutoAfiliadoHotlink,
   ProdutoProprio,
   ArquivoPaginaVenda,
+  ImagemConjunto,
   PaginaVendaPropria,
   CriativoAnuncio
 } from '../index';
@@ -26,6 +27,7 @@ export interface ImagemPaginaVendaInterface {
   produtoAfiliadoHotlink?: ProdutoAfiliadoHotlink;
   produtoProprio?: ProdutoProprio;
   arquivoPaginaVendas?: ArquivoPaginaVenda[];
+  imagemConjuntos?: ImagemConjunto[];
   paginaVendaProprias?: PaginaVendaPropria[];
   criativoAnuncios?: CriativoAnuncio[];
 }
@@ -47,6 +49,7 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
   produtoAfiliadoHotlink: ProdutoAfiliadoHotlink;
   produtoProprio: ProdutoProprio;
   arquivoPaginaVendas: ArquivoPaginaVenda[];
+  imagemConjuntos: ImagemConjunto[];
   paginaVendaProprias: PaginaVendaPropria[];
   criativoAnuncios: CriativoAnuncio[];
   constructor(data?: ImagemPaginaVendaInterface) {
@@ -160,6 +163,14 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
           name: 'arquivoPaginaVendas',
           type: 'ArquivoPaginaVenda[]',
           model: 'ArquivoPaginaVenda',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'imagemPaginaVendaId'
+        },
+        imagemConjuntos: {
+          name: 'imagemConjuntos',
+          type: 'ImagemConjunto[]',
+          model: 'ImagemConjunto',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'imagemPaginaVendaId'

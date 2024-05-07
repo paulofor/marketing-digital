@@ -19,7 +19,7 @@ public class CriaAudioLegendaVsl {
 
 	public static void main(String[] args) {
 		System.out.print("CriaAudioLegendaVsl");
-		System.out.println("(30/04/2024 13:08:09)");
+		System.out.println("(07/05/2024 19:11:29)");
 		try {
 			carregaProp();
 			CriaAudioLegendaVslObj obj = new CriaAudioLegendaVslObj();

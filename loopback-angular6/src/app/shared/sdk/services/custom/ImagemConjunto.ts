@@ -15,7 +15,9 @@ import { ProdutoAfiliadoHotmart } from '../../models/ProdutoAfiliadoHotmart';
 import { AnuncioAdsDisplay } from '../../models/AnuncioAdsDisplay';
 import { CampanhaAdsRedeDisplay } from '../../models/CampanhaAdsRedeDisplay';
 import { ProdutoProprio } from '../../models/ProdutoProprio';
+import { ImagemPaginaVenda } from '../../models/ImagemPaginaVenda';
 import { AnuncioConceitoAdsRedeDisplay } from '../../models/AnuncioConceitoAdsRedeDisplay';
+import { FonteLocal } from '../../models/FonteLocal';
 
 
 /**
@@ -281,6 +283,36 @@ export class ImagemConjuntoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Busca relação imagemPaginaVenda de belongsTo.
+   *
+   * @param {any} id ImagemConjunto id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemConjunto` object.)
+   * </em>
+   */
+  public getImagemPaginaVenda(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemConjuntos/:id/imagemPaginaVenda";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Localize um item relacionado por ID para anuncioConceitoAdsRedeDisplays.
    *
    * @param {any} id ImagemConjunto id
@@ -369,6 +401,36 @@ export class ImagemConjuntoApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Busca relação fonteLocal de belongsTo.
+   *
+   * @param {any} id ImagemConjunto id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemConjunto` object.)
+   * </em>
+   */
+  public getFonteLocal(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemConjuntos/:id/fonteLocal";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -779,6 +841,61 @@ export class ImagemConjuntoApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemConjunto` object.)
+   * </em>
+   */
+  public ObtemListaParaGerarDeImagemVenda(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemConjuntos/obtemListaParaGerarDeImagemVenda";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `imagem` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ImagemConjunto` object.)
+   * </em>
+   */
+  public AtualizaImagemDePaginaVenda(imagem: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ImagemConjuntos/atualizaImagemDePaginaVenda";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof imagem !== 'undefined' && imagem !== null) _urlParams.imagem = imagem;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

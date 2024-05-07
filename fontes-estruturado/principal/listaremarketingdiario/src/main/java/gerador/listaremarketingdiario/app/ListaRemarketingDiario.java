@@ -19,7 +19,7 @@ public class ListaRemarketingDiario {
 
 	public static void main(String[] args) {
 		System.out.print("ListaRemarketingDiario");
-		System.out.println("(30/04/2024 13:07:47)");
+		System.out.println("(07/05/2024 19:11:15)");
 		try {
 			carregaProp();
 			ListaRemarketingDiarioObj obj = new ListaRemarketingDiarioObj();

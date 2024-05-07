@@ -47,6 +47,7 @@ public class ProdutoProprio extends Model {
 	private List<MetaAdsPixelVenda> MetaAdsPixelVendas;
 	private List<ConteudoProdutoKiwify> ConteudoProdutoKiwifys;
 	private List<WhatsappGrupoPadraoMensagem> WhatsappGrupoPadraoMensagems;
+	private List<PaginaWhatsappGrupo> PaginaWhatsappGrupos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -414,6 +415,18 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.WhatsappGrupoPadraoMensagems.add((WhatsappGrupoPadraoMensagem) objeto);
+		}
+	}
+	public List<PaginaWhatsappGrupo> getPaginaWhatsappGrupos() {
+		return  PaginaWhatsappGrupos;
+	}
+	public void setPaginaWhatsappGrupos(List<PaginaWhatsappGrupo> valores) {
+		this.PaginaWhatsappGrupos = new ArrayList<PaginaWhatsappGrupo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaWhatsappGrupo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaWhatsappGrupos.add((PaginaWhatsappGrupo) objeto);
 		}
 	}
 }

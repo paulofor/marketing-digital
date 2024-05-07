@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   WhatsappGrupo,
+  ProdutoProprio,
   MetaAdsAnuncio
 } from '../index';
 
@@ -9,8 +10,10 @@ export interface PaginaWhatsappGrupoInterface {
   "url"?: string;
   "urlImagem"?: string;
   "whatsappGrupoId"?: number;
+  "produtoProprioId"?: number;
   "id"?: number;
   whatsappGrupo?: WhatsappGrupo;
+  produtoProprio?: ProdutoProprio;
   metaAdsAnuncios?: MetaAdsAnuncio[];
 }
 
@@ -18,8 +21,10 @@ export class PaginaWhatsappGrupo implements PaginaWhatsappGrupoInterface {
   "url": string;
   "urlImagem": string;
   "whatsappGrupoId": number;
+  "produtoProprioId": number;
   "id": number;
   whatsappGrupo: WhatsappGrupo;
+  produtoProprio: ProdutoProprio;
   metaAdsAnuncios: MetaAdsAnuncio[];
   constructor(data?: PaginaWhatsappGrupoInterface) {
     Object.assign(this, data);
@@ -66,6 +71,10 @@ export class PaginaWhatsappGrupo implements PaginaWhatsappGrupoInterface {
           name: 'whatsappGrupoId',
           type: 'number'
         },
+        "produtoProprioId": {
+          name: 'produtoProprioId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -78,6 +87,14 @@ export class PaginaWhatsappGrupo implements PaginaWhatsappGrupoInterface {
           model: 'WhatsappGrupo',
           relationType: 'belongsTo',
                   keyFrom: 'whatsappGrupoId',
+          keyTo: 'id'
+        },
+        produtoProprio: {
+          name: 'produtoProprio',
+          type: 'ProdutoProprio',
+          model: 'ProdutoProprio',
+          relationType: 'belongsTo',
+                  keyFrom: 'produtoProprioId',
           keyTo: 'id'
         },
         metaAdsAnuncios: {

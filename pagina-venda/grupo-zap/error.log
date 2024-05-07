@@ -1,0 +1,11 @@
+[Wed May 01 00:00:07.906922 2024] [ssl:warn] [pid 3487347] AH01909: www.palfmarketing.online:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 01 00:00:07.917473 2024] [ssl:warn] [pid 3487347] AH01909: www.digicomonline.shop:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 01 00:00:07.928158 2024] [mpm_prefork:notice] [pid 3487347] AH00163: Apache/2.4.41 (Ubuntu) OpenSSL/1.1.1f configured -- resuming normal operations
+[Wed May 01 00:00:07.928181 2024] [core:notice] [pid 3487347] AH00094: Command line: '/usr/sbin/apache2'
+[Wed May 01 00:15:58.559846 2024] [php7:error] [pid 1052588] [client 88.116.99.194:32794] script '/var/www/html/check.php' not found or unable to stat
+[Wed May 01 02:08:19.595612 2024] [php7:error] [pid 1052589] [client 34.16.139.173:52305] script '/var/www/html/xmlrpc.php' not found or unable to stat
+[Wed May 01 03:13:12.783456 2024] [php7:error] [pid 1053938] [client 212.132.106.128:51933] script '/var/www/html/xmlrpc.php' not found or unable to stat
+[Wed May 01 03:45:54.683168 2024] [php7:error] [pid 1053917] [client 194.38.23.16:49804] script '/var/www/html/index.php' not found or unable to stat
+[Wed May 01 03:47:55.884688 2024] [php7:error] [pid 1053937] [client 194.38.23.16:56451] script '/var/www/html/index.php' not found or unable to stat
+[Wed May 01 04:53:43.775218 2024] [php7:error] [pid 1053936] [client 68.183.176.53:59245] script '/var/www/html/xmlrpc.php' not found or unable to stat
+[Wed May 01 14:53:35.293335 2024] [php7:error] [pid 1075452] [client 88.116.99.194:38854] script '/var/www/html/check.php' not found or unable to stat

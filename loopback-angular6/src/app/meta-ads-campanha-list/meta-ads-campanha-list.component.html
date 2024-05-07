@@ -1,19 +1,22 @@
 <div class="dgc-painel">
 	<div class="dgc-painel-header">
 		<span>MetaAds Campanha</span>
-  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card" *ngFor="let item of listaBase">
- 			<div class="dgc-card-header">
+			<div class="dgc-card-header">
 				<span class="dgc-link" routerLink="/metaAdsCampanhaDetalhe/{{item.id}}">{{item.nome}}</span>
- 			</div>
-			 <div class="dgc-card-detalhe">
+			</div>
+			<div class="dgc-card-detalhe">
 				<span>Id Meta: {{item.idMeta}}</span>
- 			</div>
- 			<div class="dgc-card-comandos">
- 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
- 			</div>
- 		</div>
-  	</div>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Objetivo: {{item.objetivo}}</span>
+			</div>
+			<div class="dgc-card-comandos">
+				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+			</div>
+		</div>
+	</div>
 </div>

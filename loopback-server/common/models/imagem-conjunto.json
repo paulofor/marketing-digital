@@ -32,6 +32,27 @@
 		},
 		"produtoProprioId": {
 			"type": "number"
+		},
+		"geraDeImagemVenda": {
+			"type": "number"
+		},
+		"textoCopyLinha1": {
+			"type": "string"
+		},
+		"textoCopyLinha2": {
+			"type": "string"
+		},
+		"fontColor": {
+			"type": "string"
+		},
+		"fundoColor": {
+			"type": "string"
+		},
+		"imagemPaginaVendaId": {
+			"type": "number"
+		},
+		"fonteLocalId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -44,6 +65,16 @@
 		"produtoProprio": {
 			"type": "belongsTo",
 			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"imagemPaginaVenda": {
+			"type": "belongsTo",
+			"model": "ImagemPaginaVenda",
+			"foreignKey": ""
+		},
+		"fonteLocal": {
+			"type": "belongsTo",
+			"model": "FonteLocal",
 			"foreignKey": ""
 		},
 		"anuncioAdsDisplays": {
@@ -64,5 +95,49 @@
 	},
 	"acls": [],
 	"methods": {
+		"ObtemListaParaGerarDeImagemVenda": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaParaGerarDeImagemVenda",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"AtualizaImagemDePaginaVenda": {
+			"accepts": [
+				{
+					"arg": "imagem",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaImagemDePaginaVenda",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

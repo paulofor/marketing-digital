@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  CriativoAnuncio
+  CriativoAnuncio,
+  ImagemConjunto
 } from '../index';
 
 declare var Object: any;
@@ -9,6 +10,7 @@ export interface FonteLocalInterface {
   "arquivo"?: string;
   "id"?: number;
   criativoAnuncios?: CriativoAnuncio[];
+  imagemConjuntos?: ImagemConjunto[];
 }
 
 export class FonteLocal implements FonteLocalInterface {
@@ -16,6 +18,7 @@ export class FonteLocal implements FonteLocalInterface {
   "arquivo": string;
   "id": number;
   criativoAnuncios: CriativoAnuncio[];
+  imagemConjuntos: ImagemConjunto[];
   constructor(data?: FonteLocalInterface) {
     Object.assign(this, data);
   }
@@ -67,6 +70,14 @@ export class FonteLocal implements FonteLocalInterface {
           name: 'criativoAnuncios',
           type: 'CriativoAnuncio[]',
           model: 'CriativoAnuncio',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'fonteLocalId'
+        },
+        imagemConjuntos: {
+          name: 'imagemConjuntos',
+          type: 'ImagemConjunto[]',
+          model: 'ImagemConjunto',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'fonteLocalId'

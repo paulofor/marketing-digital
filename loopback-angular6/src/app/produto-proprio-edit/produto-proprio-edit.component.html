@@ -8,6 +8,13 @@
 			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
 		</mat-form-field>
 
+
+		<mat-form-field class="example-full-width">
+			<textarea rows="4" matInput #promptEspecialista [(ngModel)]="item.promptEspecialista"
+				name="promptEspecialista" placeholder="Prompt Especialista">
+		</textarea>
+		</mat-form-field>
+
 		<mat-form-field class="example-full-width">
 			<input matInput #urlKiwify [(ngModel)]="item.urlKiwify" name="urlKiwify" placeholder="Url Kiwify" />
 		</mat-form-field>
@@ -33,11 +40,6 @@
 		</textarea>
 		</mat-form-field>
 
-		<mat-form-field class="example-full-width">
-			<textarea rows="4" matInput #promptEspecialista [(ngModel)]="item.promptEspecialista" name="promptEspecialista"
-				placeholder="Prompt Especialista">
-		</textarea>
-		</mat-form-field>
 
 	</mat-dialog-content>
 

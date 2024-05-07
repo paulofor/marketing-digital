@@ -78,6 +78,15 @@ public class RepositorioConteudoProdutoKiwify extends ModelRepository<ConteudoPr
 		invokeStaticMethod("completoPorEntregavel", params,   new JsonArrayParser<ConteudoProdutoKiwify>(this, callback));
 	}
 
+	public synchronized void batchGeraImagem(int idEntregavel ,int valor ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ConteudoProdutoKiwifies/batchGeraImagem","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ConteudoProdutoKiwify.batchGeraImagem");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idEntregavel", idEntregavel);
+		params.put("valor", valor);
+		invokeStaticMethod("batchGeraImagem", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<ConteudoProdutoKiwify> listaEntrada) {
 		JSONArray lista = new JSONArray();

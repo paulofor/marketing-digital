@@ -74,6 +74,11 @@
 			"type": "hasMany",
 			"model": "CriativoAnuncio",
 			"foreignKey": ""
+		},
+		"imagemConjuntos": {
+			"type": "hasMany",
+			"model": "ImagemConjunto",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

@@ -2,12 +2,20 @@ package gerador.geralistaconteudoproduto.passo.impl;
 
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -23,10 +31,18 @@ import gerador.geralistaconteudoproduto.passo.ObtemListaNoChatGpt;
 
 public class ObtemListaNoChatGptImpl extends ObtemListaNoChatGpt {
 
+	private static String PATH_ARQUIVO = "prompt";
+	
 	@Override
 	protected boolean executaCustom(EntregavelProduto entregavelCorrente) {
-		String promptCompleto = entregavelCorrente.getPromptLista() + ". Responda em formato de lista um array de strings";
+		String promptCompleto = " Responda em formato de lista um array de strings: " + entregavelCorrente.getPromptLista() ;
 		String resposta = this.fazerRequisicao(promptCompleto, entregavelCorrente.getProdutoProprio().getPromptEspecialista());
+		
+		try {
+			this.saveStringToFile(promptCompleto,resposta);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		resposta = resposta.replaceAll("\n", "");
 		int startIndex = resposta.indexOf("["); // O índice do primeiro caractere após "```json"
         int endIndex = resposta.lastIndexOf("]") + 2; // O índice do último caractere antes do último "```"
@@ -128,5 +144,25 @@ public class ObtemListaNoChatGptImpl extends ObtemListaNoChatGpt {
 		JSONObject message = choices.getJSONObject(0).getJSONObject("message");
 		return message.getString("content");
 	}
+	
+	 public static void saveStringToFile(String pergunta, String resposta) throws IOException {
+	        // Obter a data e hora atuais
+	        LocalDateTime now = LocalDateTime.now();
+
+	        // Definir um formato seguro para o nome do arquivo
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
+
+	        // Criar o nome do arquivo a partir da data e hora
+	        String fileName = now.format(formatter) + ".txt";
+
+	        // Gravar o conteúdo no arquivo
+	        BufferedWriter writer = new BufferedWriter(new FileWriter(PATH_ARQUIVO + "/"+ fileName));
+	        // Escreve as duas strings no arquivo
+	        writer.write(pergunta);
+	        writer.newLine();  // Adiciona uma quebra de linha entre as duas strings
+	        writer.write(resposta);
+            
+
+	    }
 }
 

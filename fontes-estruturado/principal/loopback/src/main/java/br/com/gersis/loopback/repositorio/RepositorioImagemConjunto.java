@@ -30,6 +30,21 @@ public class RepositorioImagemConjunto extends ModelRepository<ImagemConjunto> {
 
 	// ***  Operações  ***
 
+	public synchronized void obtemListaParaGerarDeImagemVenda(final ListCallback<ImagemConjunto> callback ) {
+		RestContractItem contrato = new RestContractItem("ImagemConjuntos/obtemListaParaGerarDeImagemVenda","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ImagemConjunto.obtemListaParaGerarDeImagemVenda");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemListaParaGerarDeImagemVenda", params,   new JsonArrayParser<ImagemConjunto>(this, callback));
+	}
+
+	public synchronized void atualizaImagemDePaginaVenda(ImagemConjunto imagem ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ImagemConjuntos/atualizaImagemDePaginaVenda","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ImagemConjunto.atualizaImagemDePaginaVenda");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("imagem", imagem.getJSON());
+		invokeStaticMethod("atualizaImagemDePaginaVenda", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<ImagemConjunto> listaEntrada) {
 		JSONArray lista = new JSONArray();

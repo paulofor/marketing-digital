@@ -32,11 +32,15 @@
 				ctr: {{ anuncio.ctr }}<br>
 				cpc : {{ anuncio.cpc | currency : 'BRL'}}<br>
 				status: {{anuncio.status}}<br>
+				qtde entrada grupo: {{ anuncio.quantidadeEntradaGrupo }}<br>
+				valor entrada grupo: {{ anuncio.custoEntradaGrupo | currency : 'BRL'}}<br>
+				percentual entrada grupo: {{anuncio.percentualEntradaGrupo | number : '1.2-2'}}%<br>
 				atualização: {{anuncio.dataHora | date: 'dd/MM/yyyy HH:mm:ss' : 'UTC' }}
 			</div>
 			<div class="dgc-card-detalhe" *ngIf="anuncio.paginaWhatsappGrupo && anuncio.paginaWhatsappGrupo.urlImagem">
 				<div>Grupo</div>
 				<img src="{{anuncio.paginaWhatsappGrupo.urlImagem}}" width="300">
+				<div>{{anuncio.paginaWhatsappGrupo.url}}</div>
 			</div>
 		</div>
 	</div>

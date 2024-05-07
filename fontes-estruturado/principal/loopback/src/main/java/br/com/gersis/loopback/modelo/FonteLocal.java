@@ -19,6 +19,7 @@ public class FonteLocal extends Model {
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<CriativoAnuncio> CriativoAnuncios;
+	private List<ImagemConjunto> ImagemConjuntos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -70,6 +71,18 @@ public class FonteLocal extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.CriativoAnuncios.add((CriativoAnuncio) objeto);
+		}
+	}
+	public List<ImagemConjunto> getImagemConjuntos() {
+		return  ImagemConjuntos;
+	}
+	public void setImagemConjuntos(List<ImagemConjunto> valores) {
+		this.ImagemConjuntos = new ArrayList<ImagemConjunto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ImagemConjunto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ImagemConjuntos.add((ImagemConjunto) objeto);
 		}
 	}
 }

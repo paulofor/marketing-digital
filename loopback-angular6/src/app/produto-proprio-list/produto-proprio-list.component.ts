@@ -16,7 +16,7 @@ export class ProdutoProprioListComponent extends ProdutoProprioListBaseComponent
 	}
 
 	getFiltro(): {} {
-		let filtro = {'include' : 'contaGoogle'};
+		let filtro = {'include' : 'contaGoogle', 'order' : 'id desc'};
 		return filtro;
 	}
 

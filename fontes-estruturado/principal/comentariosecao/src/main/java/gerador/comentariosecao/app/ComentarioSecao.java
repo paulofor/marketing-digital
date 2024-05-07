@@ -19,7 +19,7 @@ public class ComentarioSecao {
 
 	public static void main(String[] args) {
 		System.out.print("ComentarioSecao");
-		System.out.println("(30/04/2024 13:07:56)");
+		System.out.println("(07/05/2024 19:11:21)");
 		try {
 			carregaProp();
 			ComentarioSecaoObj obj = new ComentarioSecaoObj();

@@ -25,7 +25,8 @@ import {
   MetaAdsAnuncio,
   CriativoAnuncio,
   MetaAdsPixelVenda,
-  WhatsappGrupoPadraoMensagem
+  WhatsappGrupoPadraoMensagem,
+  PaginaWhatsappGrupo
 } from '../index';
 
 declare var Object: any;
@@ -63,6 +64,7 @@ export interface ProdutoProprioInterface {
   criativoAnuncios?: CriativoAnuncio[];
   metaAdsPixelVendas?: MetaAdsPixelVenda[];
   whatsappGrupoPadraoMensagems?: WhatsappGrupoPadraoMensagem[];
+  paginaWhatsappGrupos?: PaginaWhatsappGrupo[];
 }
 
 export class ProdutoProprio implements ProdutoProprioInterface {
@@ -99,6 +101,7 @@ export class ProdutoProprio implements ProdutoProprioInterface {
   criativoAnuncios: CriativoAnuncio[];
   metaAdsPixelVendas: MetaAdsPixelVenda[];
   whatsappGrupoPadraoMensagems: WhatsappGrupoPadraoMensagem[];
+  paginaWhatsappGrupos: PaginaWhatsappGrupo[];
   constructor(data?: ProdutoProprioInterface) {
     Object.assign(this, data);
   }
@@ -366,6 +369,14 @@ export class ProdutoProprio implements ProdutoProprioInterface {
           name: 'whatsappGrupoPadraoMensagems',
           type: 'WhatsappGrupoPadraoMensagem[]',
           model: 'WhatsappGrupoPadraoMensagem',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoProprioId'
+        },
+        paginaWhatsappGrupos: {
+          name: 'paginaWhatsappGrupos',
+          type: 'PaginaWhatsappGrupo[]',
+          model: 'PaginaWhatsappGrupo',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'produtoProprioId'

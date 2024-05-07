@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { PaginaWhatsappGrupoApi, WhatsappGrupoApi } from '../shared/sdk';
+import { PaginaWhatsappGrupo, PaginaWhatsappGrupoApi, WhatsappGrupoApi } from '../shared/sdk';
 import { PaginaWhatsappGrupoEditBaseComponent } from './pagina-whatsapp-grupo-edit-base.component';
 import { WhatsappGrupo } from '../shared/sdk/models/WhatsappGrupo';
 
@@ -26,6 +26,12 @@ export class PaginaWhatsappGrupoEditComponent extends PaginaWhatsappGrupoEditBas
 			.subscribe( (result:WhatsappGrupo[]) => {
 				this.listaGrupo = result;
 			} )
+	}
+
+	criaItem() {
+		let saida = new PaginaWhatsappGrupo();
+		saida.produtoProprioId = this.origem.id;
+		return saida;
 	}
 
 }

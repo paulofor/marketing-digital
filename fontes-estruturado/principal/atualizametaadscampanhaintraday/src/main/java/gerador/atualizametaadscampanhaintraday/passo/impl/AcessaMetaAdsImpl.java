@@ -30,7 +30,7 @@ public class AcessaMetaAdsImpl extends AcessaMetaAds {
         
         
         try {
-            String encodedFields = URLEncoder.encode("campaigns{id,name,account_id,daily_budget,status,adsets{name,ads{status,name,insights{clicks,cost_per_unique_click,cpc,impressions,quality_ranking,video_play_actions,inline_link_click_ctr,full_view_impressions,optimization_goal,objective,place_page_name,qualifying_question_qualify_answer_rate,social_spend,spend,outbound_clicks_ctr,reach}}},spend_cap,insights{spend}}", "UTF-8");
+            String encodedFields = URLEncoder.encode("campaigns{id,name,account_id,daily_budget,status,objective,buying_type,bid_strategy,adsets{name,ads{status,name,optimization_goal,insights{clicks,cost_per_unique_click,cpc,impressions,quality_ranking,video_play_actions,inline_link_click_ctr,full_view_impressions,optimization_goal,objective,place_page_name,qualifying_question_qualify_answer_rate,social_spend,spend,outbound_clicks_ctr,reach}}},spend_cap,insights{spend}}", "UTF-8");
             String apiUrl = "https://graph.facebook.com/v19.0/me/adaccounts?fields=" + encodedFields + "&access_token=" + accessToken + "&time_increment=0";
  		
     		// Cria um cliente HTTP
@@ -166,17 +166,22 @@ public class AcessaMetaAdsImpl extends AcessaMetaAds {
         	MetaAdsCampanhaMetrica metrica = new MetaAdsCampanhaMetrica();
         	
             JSONObject campanha = campanhas.getJSONObject(i);
-            JSONObject valores = campanha.getJSONObject("insights").getJSONArray("data").getJSONObject(0);
+
 
             metrica.setJson(campanha.toString());
             metrica.setNome(campanha.getString("name"));
             metrica.setIdMeta(campanha.getString("id"));
             metrica.setStatus(campanha.getString("status"));
             metrica.setContaFacebookId(contaMeta.getIdInteger());
-            metrica.setSpend(valores.getDouble("spend"));
-            metrica.setDateStart(valores.getString("date_start"));
-            metrica.setDateStop(valores.getString("date_stop"));
             metrica.setMaisRecente(1);
+            
+            if (campanha.has("insights")) {
+            	JSONObject valores = campanha.getJSONObject("insights").getJSONArray("data").getJSONObject(0);
+            
+            	metrica.setSpend(valores.getDouble("spend"));
+            	metrica.setDateStart(valores.getString("date_start"));
+            	metrica.setDateStop(valores.getString("date_stop"));
+            }
             
             listaCampanha.add(metrica);
         }

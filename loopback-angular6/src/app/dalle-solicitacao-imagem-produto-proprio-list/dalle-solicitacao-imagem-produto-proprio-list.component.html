@@ -1,8 +1,7 @@
 <div class="dgc-painel">
 	<div class="dgc-painel-header" *ngIf="produto">
-		<span>{{produto.nome}} - DALL-E</span>
+		<span>{{produto.nome}} - DALL-E Solicitações</span>
 		<div class="dgc-direita">
-			<button [routerLink]="['/dalleComImagemPorProduto' , produto.hotmartId]" class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" style="margin-right: 8px;">imagens</button>
 			<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 		</div>
 	</div>

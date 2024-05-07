@@ -6,6 +6,12 @@
 		<div class="dgc-card-detalhe">
 			<span>Conta: <span *ngIf="principal.contaGoogle">{{principal.contaGoogle.nome}}</span></span>
 		</div>
+		<div class="dgc-card-detalhe">
+			<span>Especialista: {{principal.promptEspecialista}}</span>
+		</div>
+		<div class="dgc-card-comandos">
+            <button class="btn-primary btn-sm btn" (click)="edita(principal)">Editar</button>
+        </div>
 	</div>
 	<div class="dgc-card">
 		<div>
@@ -20,13 +26,13 @@
 			<button (click)="selectTab(7, principal.id)">Pixel Google</button>
 			<button (click)="selectTab(8, principal.id)">Entregável</button>
 			<button (click)="selectTab(18, principal.id)">Conteudo Entregável</button>
-			<button (click)="selectTab(9, principal.id)">Grupo Whatsapp</button>
 			<button (click)="selectTab(11, principal.id)">Dall-E</button>
 			<button (click)="selectTab(12, principal.id)">Dall-E Imagens</button>
 			<button (click)="selectTab(13, principal.id)">Criativos</button>
 			<button (click)="selectTab(14, principal.id)">Prompt para os capítulos do entregável (texto)</button>
 			<button (click)="selectTab(16, principal.id)">Campanhas Meta</button>
 			<button (click)="selectTab(17, principal.id)">Pixel Meta</button>
+			<button (click)="selectTab(9, principal.id)">Grupo Whatsapp</button>
 			<button (click)="selectTab(19, principal.id)">Whatsapp Padrão</button>
 			<button (click)="selectTab(20, principal.id)">Página Grupo Whatsapp</button>
 		  </div>

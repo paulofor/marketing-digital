@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { ImagemConjuntoApi, ProdutoProprio } from '../shared/sdk';
 import { ImagemConjuntoProdutoProprioListBaseComponent } from './imagem-conjunto-produto-proprio-list-base.component';
+import { ImagemConjuntoEditDeImagemComponent } from '../imagem-conjunto-edit-de-imagem/imagem-conjunto-edit-de-imagem.component';
 
 @Component({
 	selector: 'app-imagem-conjunto-produto-proprio-list',
@@ -18,7 +19,7 @@ export class ImagemConjuntoProdutoProprioListComponent extends ImagemConjuntoPro
 	}
 
 	getFiltro() {
-		let filtro =  {'where' : {'produtoProprioId' : this.produto.id}};
+		let filtro =  {'where' : {'produtoProprioId' : this.produto.id} , 'include' : 'fonteLocal'};
 		console.log('filtro-produto:' , filtro);
 		return filtro;
 	}
@@ -28,6 +29,19 @@ export class ImagemConjuntoProdutoProprioListComponent extends ImagemConjuntoPro
 			this.carregaTela();
 		});
 		this.dialog.open(this.getComponente(), {
+			width: '800px',
+			data: {
+				item: edicao,
+				origem: this.produto
+			}
+		});
+	}
+
+	editaDeImagem(edicao?) {
+		this.dialog.afterAllClosed.subscribe(result => {
+			this.carregaTela();
+		});
+		this.dialog.open(ImagemConjuntoEditDeImagemComponent, {
 			width: '800px',
 			data: {
 				item: edicao,

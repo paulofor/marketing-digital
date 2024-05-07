@@ -18,6 +18,7 @@ public class PaginaWhatsappGrupo extends Model {
 	private String urlImagem;
 	// Relacionamentos 1
 	private WhatsappGrupo WhatsappGrupo;
+	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
 	private List<MetaAdsAnuncio> MetaAdsAnuncios;
 
@@ -67,6 +68,13 @@ public class PaginaWhatsappGrupo extends Model {
 	public void setWhatsappGrupo(HashMap valor) {
 		this.WhatsappGrupo = new WhatsappGrupo();
 		BeanUtil.setProperties(this.WhatsappGrupo, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoProprio getProdutoProprio() {
+		return ProdutoProprio;
+	}
+	public void setProdutoProprio(HashMap valor) {
+		this.ProdutoProprio = new ProdutoProprio();
+		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<MetaAdsAnuncio> getMetaAdsAnuncios() {
 		return  MetaAdsAnuncios;

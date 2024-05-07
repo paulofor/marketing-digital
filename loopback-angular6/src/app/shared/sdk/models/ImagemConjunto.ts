@@ -4,7 +4,9 @@ import {
   AnuncioAdsDisplay,
   CampanhaAdsRedeDisplay,
   ProdutoProprio,
-  AnuncioConceitoAdsRedeDisplay
+  ImagemPaginaVenda,
+  AnuncioConceitoAdsRedeDisplay,
+  FonteLocal
 } from '../index';
 
 declare var Object: any;
@@ -17,13 +19,22 @@ export interface ImagemConjuntoInterface {
   "urlImagem2"?: string;
   "urlImagemQuadrada"?: string;
   "produtoProprioId"?: number;
+  "geraDeImagemVenda"?: number;
+  "textoCopyLinha1"?: string;
+  "textoCopyLinha2"?: string;
+  "fontColor"?: string;
+  "fundoColor"?: string;
+  "imagemPaginaVendaId"?: number;
+  "fonteLocalId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   anuncioAdsDisplays?: AnuncioAdsDisplay[];
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   produtoProprio?: ProdutoProprio;
+  imagemPaginaVenda?: ImagemPaginaVenda;
   anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
+  fonteLocal?: FonteLocal;
 }
 
 export class ImagemConjunto implements ImagemConjuntoInterface {
@@ -35,13 +46,22 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
   "urlImagem2": string;
   "urlImagemQuadrada": string;
   "produtoProprioId": number;
+  "geraDeImagemVenda": number;
+  "textoCopyLinha1": string;
+  "textoCopyLinha2": string;
+  "fontColor": string;
+  "fundoColor": string;
+  "imagemPaginaVendaId": number;
+  "fonteLocalId": number;
   "id": number;
   "hotmartId": number;
   produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   anuncioAdsDisplays: AnuncioAdsDisplay[];
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   produtoProprio: ProdutoProprio;
+  imagemPaginaVenda: ImagemPaginaVenda;
   anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
+  fonteLocal: FonteLocal;
   constructor(data?: ImagemConjuntoInterface) {
     Object.assign(this, data);
   }
@@ -107,6 +127,34 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
           name: 'produtoProprioId',
           type: 'number'
         },
+        "geraDeImagemVenda": {
+          name: 'geraDeImagemVenda',
+          type: 'number'
+        },
+        "textoCopyLinha1": {
+          name: 'textoCopyLinha1',
+          type: 'string'
+        },
+        "textoCopyLinha2": {
+          name: 'textoCopyLinha2',
+          type: 'string'
+        },
+        "fontColor": {
+          name: 'fontColor',
+          type: 'string'
+        },
+        "fundoColor": {
+          name: 'fundoColor',
+          type: 'string'
+        },
+        "imagemPaginaVendaId": {
+          name: 'imagemPaginaVendaId',
+          type: 'number'
+        },
+        "fonteLocalId": {
+          name: 'fonteLocalId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -149,6 +197,14 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
                   keyFrom: 'produtoProprioId',
           keyTo: 'id'
         },
+        imagemPaginaVenda: {
+          name: 'imagemPaginaVenda',
+          type: 'ImagemPaginaVenda',
+          model: 'ImagemPaginaVenda',
+          relationType: 'belongsTo',
+                  keyFrom: 'imagemPaginaVendaId',
+          keyTo: 'id'
+        },
         anuncioConceitoAdsRedeDisplays: {
           name: 'anuncioConceitoAdsRedeDisplays',
           type: 'AnuncioConceitoAdsRedeDisplay[]',
@@ -156,6 +212,14 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'imagemConjuntoId'
+        },
+        fonteLocal: {
+          name: 'fonteLocal',
+          type: 'FonteLocal',
+          model: 'FonteLocal',
+          relationType: 'belongsTo',
+                  keyFrom: 'fonteLocalId',
+          keyTo: 'id'
         },
       }
     }

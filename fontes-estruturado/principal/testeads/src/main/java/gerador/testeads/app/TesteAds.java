@@ -19,7 +19,7 @@ public class TesteAds {
 
 	public static void main(String[] args) {
 		System.out.print("TesteAds");
-		System.out.println("(30/04/2024 13:07:49)");
+		System.out.println("(07/05/2024 19:11:16)");
 		try {
 			carregaProp();
 			TesteAdsObj obj = new TesteAdsObj();

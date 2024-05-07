@@ -36,6 +36,9 @@
 		"geraTexto": {
 			"type": "number"
 		},
+		"subNome": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}
@@ -217,6 +220,37 @@
          		{
           			"path": "/completoPorEntregavel",
    					"verb": "get"
+ 				}
+ 			]
+		},
+		"BatchGeraImagem": {
+			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "valor",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/batchGeraImagem",
+   					"verb": "post"
  				}
  			]
 		}

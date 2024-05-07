@@ -14,7 +14,12 @@ import org.json.JSONObject;
 public class RecursoIA extends Model {
 
 
+	private String nome;
+	private String observacao;
+	private String precos;
+	private String dataHoraObservacao;
 	// Relacionamentos 1
+	private TipoRecursoIA TipoRecursoIA;
 	// Relacionamentos N
 
 	public void setId(Long id) {
@@ -35,6 +40,10 @@ public class RecursoIA extends Model {
 		JSONObject obj = new JSONObject();
 		try {
 			obj.put("id",getId());
+			obj.put("nome", nome);
+			obj.put("observacao", observacao);
+			obj.put("precos", precos);
+			obj.put("dataHoraObservacao", dataHoraObservacao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -42,5 +51,36 @@ public class RecursoIA extends Model {
 	}
 
 
+	public void setNome(String valor) { 
+		this.nome = valor;
+	}
+	public String getNome() { 
+		return this.nome;
+	}
+	public void setObservacao(String valor) { 
+		this.observacao = valor;
+	}
+	public String getObservacao() { 
+		return this.observacao;
+	}
+	public void setPrecos(String valor) { 
+		this.precos = valor;
+	}
+	public String getPrecos() { 
+		return this.precos;
+	}
+	public void setDataHoraObservacao(String valor) { 
+		this.dataHoraObservacao = valor;
+	}
+	public String getDataHoraObservacao() { 
+		return this.dataHoraObservacao;
+	}
 
+	public TipoRecursoIA getTipoRecursoIA() {
+		return TipoRecursoIA;
+	}
+	public void setTipoRecursoIA(HashMap valor) {
+		this.TipoRecursoIA = new TipoRecursoIA();
+		BeanUtil.setProperties(this.TipoRecursoIA, (Map<String, ? extends Object>) valor, true);
+	}
 }

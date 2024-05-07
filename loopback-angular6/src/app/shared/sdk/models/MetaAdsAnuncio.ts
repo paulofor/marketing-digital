@@ -35,6 +35,9 @@ export interface MetaAdsAnuncioInterface {
   "titulo5"?: string;
   "custo"?: number;
   "status"?: string;
+  "quantidadeEntradaGrupo"?: number;
+  "custoEntradaGrupo"?: number;
+  "percentualEntradaGrupo"?: number;
   "paginaVendaAbertaId"?: number;
   "criativoAnuncioId"?: number;
   "metaAdsConjuntoAnuncioId"?: number;
@@ -75,6 +78,9 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
   "titulo5": string;
   "custo": number;
   "status": string;
+  "quantidadeEntradaGrupo": number;
+  "custoEntradaGrupo": number;
+  "percentualEntradaGrupo": number;
   "paginaVendaAbertaId": number;
   "criativoAnuncioId": number;
   "metaAdsConjuntoAnuncioId": number;
@@ -219,6 +225,18 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
         "status": {
           name: 'status',
           type: 'string'
+        },
+        "quantidadeEntradaGrupo": {
+          name: 'quantidadeEntradaGrupo',
+          type: 'number'
+        },
+        "custoEntradaGrupo": {
+          name: 'custoEntradaGrupo',
+          type: 'number'
+        },
+        "percentualEntradaGrupo": {
+          name: 'percentualEntradaGrupo',
+          type: 'number'
         },
         "paginaVendaAbertaId": {
           name: 'paginaVendaAbertaId',

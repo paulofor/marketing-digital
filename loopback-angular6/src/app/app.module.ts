@@ -207,6 +207,7 @@ import { PaginaWhatsappGrupoListComponent } from './pagina-whatsapp-grupo-list/p
 import { PaginaWhatsappGrupoEditComponent } from './pagina-whatsapp-grupo-edit/pagina-whatsapp-grupo-edit.component';
 import { PaginaWhatsappExemploEditComponent } from './pagina-whatsapp-exemplo-edit/pagina-whatsapp-exemplo-edit.component';
 import { PaginaWhatsappExemploListComponent } from './pagina-whatsapp-exemplo-list/pagina-whatsapp-exemplo-list.component';
+import { ImagemConjuntoEditDeImagemComponent } from './imagem-conjunto-edit-de-imagem/imagem-conjunto-edit-de-imagem.component';
 
 
 
@@ -392,7 +393,8 @@ registerLocaleData(localePt, 'pt-BR');
     PaginaWhatsappGrupoListComponent,
     PaginaWhatsappGrupoEditComponent,
     PaginaWhatsappExemploListComponent,
-    PaginaWhatsappExemploEditComponent
+    PaginaWhatsappExemploEditComponent,
+    ImagemConjuntoEditDeImagemComponent
   ],
   imports: [
     BrowserModule,
@@ -509,7 +511,8 @@ registerLocaleData(localePt, 'pt-BR');
     WhatsappGrupoDiaAgendaEditComponent,
     WhatsappGrupoPadraoMensagemEditComponent,
     PaginaWhatsappGrupoEditComponent,
-    PaginaWhatsappExemploEditComponent
+    PaginaWhatsappExemploEditComponent,
+    ImagemConjuntoEditDeImagemComponent
   ],
   bootstrap: [AppComponent]
 })

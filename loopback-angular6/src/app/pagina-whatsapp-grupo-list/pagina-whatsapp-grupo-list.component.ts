@@ -18,12 +18,6 @@ export class PaginaWhatsappGrupoListComponent extends PaginaWhatsappGrupoListBas
 	}
 
 
-
-
-
-
-
-
 	getFiltro() {
 		let filtro =  {
 			'where' : {'produtoProprioId' : this.produto.id},

@@ -23,6 +23,7 @@ public class ConteudoProdutoKiwify extends Model {
 	private int numeroBonus;
 	private int entregavelProdutoId;
 	private int geraTexto;
+	private String subNome;
 	// Relacionamentos 1
 	private EntregavelProduto EntregavelProduto;
 	private ProdutoProprio ProdutoProprio;
@@ -58,6 +59,7 @@ public class ConteudoProdutoKiwify extends Model {
 			obj.put("numeroBonus", numeroBonus);
 			obj.put("entregavelProdutoId", entregavelProdutoId);
 			obj.put("geraTexto", geraTexto);
+			obj.put("subNome", subNome);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -118,6 +120,12 @@ public class ConteudoProdutoKiwify extends Model {
 	}
 	public int getGeraTexto() { 
 		return this.geraTexto;
+	}
+	public void setSubNome(String valor) { 
+		this.subNome = valor;
+	}
+	public String getSubNome() { 
+		return this.subNome;
 	}
 
 	public EntregavelProduto getEntregavelProduto() {

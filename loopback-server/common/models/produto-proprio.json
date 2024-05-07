@@ -159,6 +159,11 @@
 			"type": "hasMany",
 			"model": "WhatsappGrupoPadraoMensagem",
 			"foreignKey": ""
+		},
+		"paginaWhatsappGrupos": {
+			"type": "hasMany",
+			"model": "PaginaWhatsappGrupo",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

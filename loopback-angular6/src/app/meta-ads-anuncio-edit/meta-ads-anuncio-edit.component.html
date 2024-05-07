@@ -16,6 +16,10 @@
 			<input matInput #titulo1 [(ngModel)]="item.titulo1" name="titulo1" placeholder="Título 1" />
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<input matInput #quantidadeEntradaGrupo [(ngModel)]="item.quantidadeEntradaGrupo" name="quantidadeEntradaGrupo" placeholder="Qtde Entrada Grupo" />
+		</mat-form-field>
+
 		<mat-form-field class="example-full-width" *ngIf="listaPaginaGrupo">
 			<mat-select placeholder="Página Grupo Whatsapp" #paginaWhatsappGrupoId [(ngModel)]="item.paginaWhatsappGrupoId" name="paginaWhatsappGrupoId">
 				<mat-option *ngFor="let item of listaPaginaGrupo" [value]="item.id">

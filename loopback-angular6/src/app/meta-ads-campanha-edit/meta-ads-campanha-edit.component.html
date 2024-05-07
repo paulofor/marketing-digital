@@ -12,6 +12,16 @@
 		<input matInput #idMeta [(ngModel)]="item.idMeta" name="idMeta" placeholder="Id Meta" autocomplete="off"/>
 		</mat-form-field>
 
+		<mat-form-field  class="example-full-width">
+			<mat-select #objetivo [(ngModel)]="item.objetivo" name="objetivo" placeholder="Objetivo">
+			  <mat-option value='RECONHECIMENTO'>Reconhecimento</mat-option>
+			  <mat-option value='TRAFEGO'>Tráfego</mat-option>
+			  <mat-option value='ENGAJAMENTO'>Engajamento</mat-option>
+			  <mat-option value='CADASTROS'>Cadastros</mat-option>
+			  <mat-option value='PROMOCAO_APP'>Promoção do app</mat-option>
+			  <mat-option value='VENDAS'>Vendas</mat-option>
+			</mat-select>
+		  </mat-form-field>
 
 
 	</mat-dialog-content>

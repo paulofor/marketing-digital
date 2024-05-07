@@ -69,6 +69,12 @@ export class EntregavelProdutoDetalheComponent extends EntregavelProdutoDetalheB
 				this.carregaTela();
 			})
 	}
+	geraImagem(valor) {
+		this.srvConteudo.BatchGeraImagem(this.principal.id,valor)
+			.subscribe((result) => {
+				this.carregaTela();
+			})
+	}
 
 	ajustaOrdenacao() {
 		this.srvItemConteudo.OrdenacaoAlfabetica(this.principal.id)

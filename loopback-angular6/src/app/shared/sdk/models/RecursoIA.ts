@@ -2,10 +2,20 @@
 
 declare var Object: any;
 export interface RecursoIAInterface {
+  "nome"?: string;
+  "observacao"?: string;
+  "precos"?: string;
+  "dataHoraObservacao"?: Date;
+  "tipoRecursoIAId"?: number;
   "id"?: number;
 }
 
 export class RecursoIA implements RecursoIAInterface {
+  "nome": string;
+  "observacao": string;
+  "precos": string;
+  "dataHoraObservacao": Date;
+  "tipoRecursoIAId": number;
   "id": number;
   constructor(data?: RecursoIAInterface) {
     Object.assign(this, data);
@@ -40,6 +50,26 @@ export class RecursoIA implements RecursoIAInterface {
       path: 'RecursoIa',
       idName: 'id',
       properties: {
+        "nome": {
+          name: 'nome',
+          type: 'string'
+        },
+        "observacao": {
+          name: 'observacao',
+          type: 'string'
+        },
+        "precos": {
+          name: 'precos',
+          type: 'string'
+        },
+        "dataHoraObservacao": {
+          name: 'dataHoraObservacao',
+          type: 'Date'
+        },
+        "tipoRecursoIAId": {
+          name: 'tipoRecursoIAId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'

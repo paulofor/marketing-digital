@@ -18,6 +18,7 @@ export interface ConteudoProdutoKiwifyInterface {
   "numeroBonus"?: number;
   "entregavelProdutoId"?: number;
   "geraTexto"?: number;
+  "subNome"?: string;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
@@ -37,6 +38,7 @@ export class ConteudoProdutoKiwify implements ConteudoProdutoKiwifyInterface {
   "numeroBonus": number;
   "entregavelProdutoId": number;
   "geraTexto": number;
+  "subNome": string;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
@@ -112,6 +114,10 @@ export class ConteudoProdutoKiwify implements ConteudoProdutoKiwifyInterface {
         "geraTexto": {
           name: 'geraTexto',
           type: 'number'
+        },
+        "subNome": {
+          name: 'subNome',
+          type: 'string'
         },
         "produtoProprioId": {
           name: 'produtoProprioId',

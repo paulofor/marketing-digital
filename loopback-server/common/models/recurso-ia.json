@@ -9,9 +9,29 @@
     	"Counts": true
   	},
 	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"observacao": {
+			"type": "string"
+		},
+		"precos": {
+			"type": "string"
+		},
+		"dataHoraObservacao": {
+			"type": "date"
+		},
+		"tipoRecursoIAId": {
+			"type": "number"
+		}
 	},
 	"validations": [],
 	"relations": {
+		"tipoRecursoIA": {
+			"type": "belongsTo",
+			"model": "TipoRecursoIA",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {

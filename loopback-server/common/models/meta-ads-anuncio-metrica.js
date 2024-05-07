@@ -15,11 +15,12 @@ module.exports = function(Metaadsanunciometrica) {
             " MetaAdsAnuncio.status = MetaAdsAnuncioMetrica.status, " +
             " MetaAdsAnuncio.dataHora = now(), " +
             " MetaAdsAnuncio.ctr = MetaAdsAnuncioMetrica.ctr";
+        const sql2 = "update MetaAdsAnuncio set custoEntradaGrupo = (custo/quantidadeEntradaGrupo) , " +
+            " percentualEntradaGrupo = (quantidadeEntradaGrupo/clique) * 100 " +
+            " where quantidadeEntradaGrupo > 0";
         console.log(sql);
         ds.connector.query(sql,(err,result) => {
-            console.log('Err:' , err);
-            console.log('Result:' , result);
-            callback(err,result);
+            ds.connector.query(sql2,callback);
         });
     }
 

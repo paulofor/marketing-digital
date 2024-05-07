@@ -52,7 +52,7 @@ export class ImagemConjuntoEditComponent extends ImagemConjuntoEditBaseComponent
   	}
 
 
-	  criaItem() {
+	criaItem() {
 		let saida = new ImagemConjunto();
 		if (this.origem instanceof ProdutoAfiliadoHotmart) {
 			saida.hotmartId = this.origem.hotmartId;

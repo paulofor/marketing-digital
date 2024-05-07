@@ -19,7 +19,7 @@ public class AtualizaMetaAdsCampanhaIntraday {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaMetaAdsCampanhaIntraday");
-		System.out.println("(30/04/2024 13:08:20)");
+		System.out.println("(07/05/2024 19:11:38)");
 		try {
 			carregaProp();
 			AtualizaMetaAdsCampanhaIntradayObj obj = new AtualizaMetaAdsCampanhaIntradayObj();

@@ -40,6 +40,9 @@ public class MetaAdsAnuncio extends Model {
 	private String titulo5;
 	private double custo;
 	private String status;
+	private int quantidadeEntradaGrupo;
+	private double custoEntradaGrupo;
+	private double percentualEntradaGrupo;
 	// Relacionamentos 1
 	private PaginaVendaAberta PaginaVendaAberta;
 	private CriativoAnuncio CriativoAnuncio;
@@ -93,6 +96,9 @@ public class MetaAdsAnuncio extends Model {
 			obj.put("titulo5", titulo5);
 			obj.put("custo", custo);
 			obj.put("status", status);
+			obj.put("quantidadeEntradaGrupo", quantidadeEntradaGrupo);
+			obj.put("custoEntradaGrupo", custoEntradaGrupo);
+			obj.put("percentualEntradaGrupo", percentualEntradaGrupo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -255,6 +261,24 @@ public class MetaAdsAnuncio extends Model {
 	}
 	public String getStatus() { 
 		return this.status;
+	}
+	public void setQuantidadeEntradaGrupo(int valor) { 
+		this.quantidadeEntradaGrupo = valor;
+	}
+	public int getQuantidadeEntradaGrupo() { 
+		return this.quantidadeEntradaGrupo;
+	}
+	public void setCustoEntradaGrupo(double valor) { 
+		this.custoEntradaGrupo = valor;
+	}
+	public double getCustoEntradaGrupo() { 
+		return this.custoEntradaGrupo;
+	}
+	public void setPercentualEntradaGrupo(double valor) { 
+		this.percentualEntradaGrupo = valor;
+	}
+	public double getPercentualEntradaGrupo() { 
+		return this.percentualEntradaGrupo;
 	}
 
 	public PaginaVendaAberta getPaginaVendaAberta() {

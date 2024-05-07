@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProdutoProprioApi } from '../shared/sdk';
 import { ProdutoProprioDetalheBaseComponent } from './produto-proprio-detalhe-base.component';
 import { TabService } from '../tab.service';
+import { ProdutoProprioEditComponent } from '../produto-proprio-edit/produto-proprio-edit.component';
 
 
 @Component({
@@ -26,4 +27,19 @@ export class ProdutoProprioDetalheComponent extends ProdutoProprioDetalheBaseCom
 		this.tabService.selectTab(tabNumber);
 		this.tabService.setCurrentObjectId(objectId); // Define o ID do objeto atual
 	  }
+
+	edita(edicao?) {
+		this.dialog.afterAllClosed.subscribe(result => {
+			this.carregaTela();
+		});
+		this.dialog.open(this.getComponente(), {
+			width: '800px',
+			data: {
+				item: edicao
+			}
+		});
+	}
+	getComponente() : any {
+		return ProdutoProprioEditComponent
+	}
 }

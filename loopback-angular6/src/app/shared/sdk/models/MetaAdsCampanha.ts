@@ -9,6 +9,7 @@ export interface MetaAdsCampanhaInterface {
   "nome"?: string;
   "idMeta"?: string;
   "custo"?: number;
+  "objetivo"?: string;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
@@ -19,6 +20,7 @@ export class MetaAdsCampanha implements MetaAdsCampanhaInterface {
   "nome": string;
   "idMeta": string;
   "custo": number;
+  "objetivo": string;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
@@ -67,6 +69,10 @@ export class MetaAdsCampanha implements MetaAdsCampanhaInterface {
         "custo": {
           name: 'custo',
           type: 'number'
+        },
+        "objetivo": {
+          name: 'objetivo',
+          type: 'string'
         },
         "produtoProprioId": {
           name: 'produtoProprioId',
