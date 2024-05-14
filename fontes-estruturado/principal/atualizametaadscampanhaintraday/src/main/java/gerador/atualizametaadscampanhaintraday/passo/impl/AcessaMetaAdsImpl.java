@@ -30,9 +30,13 @@ public class AcessaMetaAdsImpl extends AcessaMetaAds {
         
         
         try {
-            String encodedFields = URLEncoder.encode("campaigns{id,name,account_id,daily_budget,status,objective,buying_type,bid_strategy,adsets{name,ads{status,name,optimization_goal,insights{clicks,cost_per_unique_click,cpc,impressions,quality_ranking,video_play_actions,inline_link_click_ctr,full_view_impressions,optimization_goal,objective,place_page_name,qualifying_question_qualify_answer_rate,social_spend,spend,outbound_clicks_ctr,reach}}},spend_cap,insights{spend}}", "UTF-8");
-            String apiUrl = "https://graph.facebook.com/v19.0/me/adaccounts?fields=" + encodedFields + "&access_token=" + accessToken + "&time_increment=0";
- 		
+            String encodedFields = URLEncoder.encode("campaigns{id,name,account_id,daily_budget,status,objective,buying_type,bid_strategy,adsets{name,ads{status,name,optimization_goal,insights{inline_link_clicks,outbound_clicks,clicks,cost_per_inline_link_click,cost_per_unique_click,cpc,impressions,quality_ranking,video_play_actions,inline_link_click_ctr,full_view_impressions,optimization_goal,objective,place_page_name,qualifying_question_qualify_answer_rate,social_spend,spend,outbound_clicks_ctr,reach}}},spend_cap,insights{spend}}", "UTF-8");
+            String tempo = URLEncoder.encode("{\"since\":\"2021-01-01\",\"until\":\"2030-12-31\"}");
+            //String apiUrl = "https://graph.facebook.com/v19.0/me/adaccounts?fields=" + encodedFields + "&access_token=" + accessToken + "&time_increment=0";
+            String apiUrl = "https://graph.facebook.com/v19.0/me/adaccounts?fields=" + encodedFields + "&access_token=" + accessToken + "&time_range=" + tempo;
+
+            
+            System.out.println(apiUrl);
     		// Cria um cliente HTTP
             try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
                 // Cria uma solicitação HTTP GET
@@ -102,8 +106,8 @@ public class AcessaMetaAdsImpl extends AcessaMetaAds {
             			JSONObject valores = anuncio.getJSONObject("insights").getJSONArray("data").getJSONObject(0);
  
             			metrica.setSpend(valores.getDouble("spend"));
-            			metrica.setClique(valores.getInt("clicks"));
-            			if (valores.has("cpc")) metrica.setCpc(valores.getDouble("cpc"));
+            			if (valores.has("inline_link_clicks")) metrica.setClique(valores.getInt("inline_link_clicks"));
+            			if (valores.has("cost_per_inline_link_click")) metrica.setCpc(valores.getDouble("cost_per_inline_link_click"));
             			if (valores.has("inline_link_click_ctr")) metrica.setCtr(valores.getDouble("inline_link_click_ctr"));
             			metrica.setImpressao(valores.getInt("impressions"));
 

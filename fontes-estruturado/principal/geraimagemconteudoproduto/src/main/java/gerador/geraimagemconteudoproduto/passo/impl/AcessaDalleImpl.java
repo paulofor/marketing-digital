@@ -58,6 +58,7 @@ public class AcessaDalleImpl extends AcessaDalle {
 	private String obtemPrompt(PromptImagemConteudo promptObj, ConteudoProdutoKiwify conteudoCorrente) {
 		String prompt = promptObj.getPrompt();
 		prompt = prompt.replaceAll("---nome---", conteudoCorrente.getNome());
+		prompt = prompt.replaceAll("---subNome---", conteudoCorrente.getSubNome());
 		for (ItemConteudoProduto item : conteudoCorrente.getItemConteudoProdutos()) {
 			String palavra = item.getPromptItem().getCodigoReplace();
 			String texto = item.getTexto();

@@ -162,7 +162,7 @@ public class ObtemListaNoChatGptImpl extends ObtemListaNoChatGpt {
 	        writer.newLine();  // Adiciona uma quebra de linha entre as duas strings
 	        writer.write(resposta);
             
-
+	        writer.close();
 	    }
 }
 

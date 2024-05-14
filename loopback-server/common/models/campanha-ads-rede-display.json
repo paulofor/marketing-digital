@@ -102,6 +102,15 @@
 		"percentualLoad": {
 			"type": "number"
 		},
+		"quantidadeEntradaGrupo": {
+			"type": "number"
+		},
+		"custoEntradaGrupo": {
+			"type": "number"
+		},
+		"percentualEntradaGrupo": {
+			"type": "number"
+		},
 		"paginaVendaPropriaId": {
 			"type": "number"
 		},
@@ -121,6 +130,9 @@
 			"type": "number"
 		},
 		"paginaVendaVslId": {
+			"type": "number"
+		},
+		"whatsappGrupoId": {
 			"type": "number"
 		}
 	},
@@ -169,6 +181,11 @@
 		"paginaVendaVsl": {
 			"type": "belongsTo",
 			"model": "PaginaVendaVsl",
+			"foreignKey": ""
+		},
+		"whatsappGrupo": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupo",
 			"foreignKey": ""
 		},
 		"anuncioCampanhaAdsRedeDisplays": {

@@ -46,6 +46,19 @@ export class EntregavelProdutoDetalheComponent extends EntregavelProdutoDetalheB
 			})
 	}
 
+	subirItem(item) {
+		this.srvConteudo.SubirItem(item.id)
+			.subscribe((result) => {
+				this.carregaTela();
+			})
+	}
+	descerItem(item) {
+		this.srvConteudo.DescerItem(item.id)
+			.subscribe((result) => {
+				this.carregaTela();
+			})
+	}
+
 	ajustaGeraImagem() {
 		this.srvConteudo.AjustaGeraImagem(this.principal.id)
 			.subscribe((result) => {

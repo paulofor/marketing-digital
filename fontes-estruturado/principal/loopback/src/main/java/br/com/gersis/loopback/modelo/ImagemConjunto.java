@@ -27,6 +27,7 @@ public class ImagemConjunto extends Model {
 	private String textoCopyLinha2;
 	private String fontColor;
 	private String fundoColor;
+	private String logoGrupoWhatsapp;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ProdutoProprio ProdutoProprio;
@@ -68,6 +69,7 @@ public class ImagemConjunto extends Model {
 			obj.put("textoCopyLinha2", textoCopyLinha2);
 			obj.put("fontColor", fontColor);
 			obj.put("fundoColor", fundoColor);
+			obj.put("logoGrupoWhatsapp", logoGrupoWhatsapp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -152,6 +154,12 @@ public class ImagemConjunto extends Model {
 	}
 	public String getFundoColor() { 
 		return this.fundoColor;
+	}
+	public void setLogoGrupoWhatsapp(String valor) { 
+		this.logoGrupoWhatsapp = valor;
+	}
+	public String getLogoGrupoWhatsapp() { 
+		return this.logoGrupoWhatsapp;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {

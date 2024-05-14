@@ -21,7 +21,6 @@ export interface MetaAdsAnuncioInterface {
   "conversao"?: number;
   "cpa"?: number;
   "textoPrincipal1"?: string;
-  "titulo1"?: string;
   "imagemAnuncio"?: string;
   "idMeta"?: string;
   "imagemInstagramReels"?: string;
@@ -29,6 +28,7 @@ export interface MetaAdsAnuncioInterface {
   "dataHora"?: Date;
   "produtoProprioId"?: number;
   "nome"?: string;
+  "titulo1"?: string;
   "titulo2"?: string;
   "titulo3"?: string;
   "titulo4"?: string;
@@ -38,6 +38,8 @@ export interface MetaAdsAnuncioInterface {
   "quantidadeEntradaGrupo"?: number;
   "custoEntradaGrupo"?: number;
   "percentualEntradaGrupo"?: number;
+  "cta"?: string;
+  "linkExibicao"?: string;
   "paginaVendaAbertaId"?: number;
   "criativoAnuncioId"?: number;
   "metaAdsConjuntoAnuncioId"?: number;
@@ -64,7 +66,6 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
   "conversao": number;
   "cpa": number;
   "textoPrincipal1": string;
-  "titulo1": string;
   "imagemAnuncio": string;
   "idMeta": string;
   "imagemInstagramReels": string;
@@ -72,6 +73,7 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
   "dataHora": Date;
   "produtoProprioId": number;
   "nome": string;
+  "titulo1": string;
   "titulo2": string;
   "titulo3": string;
   "titulo4": string;
@@ -81,6 +83,8 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
   "quantidadeEntradaGrupo": number;
   "custoEntradaGrupo": number;
   "percentualEntradaGrupo": number;
+  "cta": string;
+  "linkExibicao": string;
   "paginaVendaAbertaId": number;
   "criativoAnuncioId": number;
   "metaAdsConjuntoAnuncioId": number;
@@ -170,10 +174,6 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
           name: 'textoPrincipal1',
           type: 'string'
         },
-        "titulo1": {
-          name: 'titulo1',
-          type: 'string'
-        },
         "imagemAnuncio": {
           name: 'imagemAnuncio',
           type: 'string'
@@ -200,6 +200,10 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
         },
         "nome": {
           name: 'nome',
+          type: 'string'
+        },
+        "titulo1": {
+          name: 'titulo1',
           type: 'string'
         },
         "titulo2": {
@@ -237,6 +241,14 @@ export class MetaAdsAnuncio implements MetaAdsAnuncioInterface {
         "percentualEntradaGrupo": {
           name: 'percentualEntradaGrupo',
           type: 'number'
+        },
+        "cta": {
+          name: 'cta',
+          type: 'string'
+        },
+        "linkExibicao": {
+          name: 'linkExibicao',
+          type: 'string'
         },
         "paginaVendaAbertaId": {
           name: 'paginaVendaAbertaId',

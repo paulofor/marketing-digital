@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   ProdutoProprio,
+  CampanhaAdsRedeDisplay,
   WhatsappMensagem,
   ContaWhatsapp,
   WhatsappGrupoMetrica,
@@ -19,6 +20,7 @@ export interface WhatsappGrupoInterface {
   "contaWhatsappId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
+  campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   whatsappMensagems?: WhatsappMensagem[];
   contaWhatsapp?: ContaWhatsapp;
   whatsappGrupoMetricas?: WhatsappGrupoMetrica[];
@@ -36,6 +38,7 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
   "contaWhatsappId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
+  campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   whatsappMensagems: WhatsappMensagem[];
   contaWhatsapp: ContaWhatsapp;
   whatsappGrupoMetricas: WhatsappGrupoMetrica[];
@@ -115,6 +118,14 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
           relationType: 'belongsTo',
                   keyFrom: 'produtoProprioId',
           keyTo: 'id'
+        },
+        campanhaAdsRedeDisplays: {
+          name: 'campanhaAdsRedeDisplays',
+          type: 'CampanhaAdsRedeDisplay[]',
+          model: 'CampanhaAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'whatsappGrupoId'
         },
         whatsappMensagems: {
           name: 'whatsappMensagems',

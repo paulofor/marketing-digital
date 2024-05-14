@@ -79,6 +79,8 @@ import { MetaAdsAnuncioMetricaListSimplesComponent } from '../meta-ads-anuncio-m
 import { WhatsappGrupoPadraoMensagemTextoDetalheComponent } from '../whatsapp-grupo-padrao-mensagem-texto-detalhe/whatsapp-grupo-padrao-mensagem-texto-detalhe.component';
 import { MetaAdsConjuntoAnuncioDetalheComponent } from '../meta-ads-conjunto-anuncio-detalhe/meta-ads-conjunto-anuncio-detalhe.component';
 import { PaginaWhatsappExemploListComponent } from '../pagina-whatsapp-exemplo-list/pagina-whatsapp-exemplo-list.component';
+import { EntregavelProdutoListGeraImagemConteudoComponent } from '../entregavel-produto-list-gera-imagem-conteudo/entregavel-produto-list-gera-imagem-conteudo.component';
+import { ConteudoProdutoKiwifyListGerarImagemComponent } from '../conteudo-produto-kiwify-list-gerar-imagem/conteudo-produto-kiwify-list-gerar-imagem.component';
 
 
 
@@ -193,6 +195,8 @@ export const routes : Routes = [
     { path: 'metaAdsConjuntoAnuncioDetalhe/:id' , component: MetaAdsConjuntoAnuncioDetalheComponent },
 
     { path: 'paginaWhatsappExemploList' , component: PaginaWhatsappExemploListComponent },
+    { path: 'entregavelProdutoListGeraImagemConteudo', component: EntregavelProdutoListGeraImagemConteudoComponent},
+    { path: 'conteudoProdutoKiwifyListGerarImagem' , component: ConteudoProdutoKiwifyListGerarImagemComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

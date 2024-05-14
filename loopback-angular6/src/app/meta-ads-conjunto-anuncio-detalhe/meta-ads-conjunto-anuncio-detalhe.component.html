@@ -17,7 +17,10 @@
 				<span class="dgc-direita">{{anuncio.idMeta}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
-				Título 1: {{ anuncio.titulo1 }}
+				Texto Principal: {{ anuncio.textoPrincipal1 }}<br>
+				Titulo: {{ anuncio.titulo1 }}<br>
+				CTA: {{anuncio.cta}}<br>
+				Link Exibição: {{anuncio.linkExibicao}}
 			</div>
 			<div class="dgc-card-detalhe" *ngIf="anuncio.paginaVendaAberta">
 				<span>Página Venda: {{anuncio.paginaVendaAberta.nome}}</span>

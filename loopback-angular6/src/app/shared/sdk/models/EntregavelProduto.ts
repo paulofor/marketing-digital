@@ -14,6 +14,7 @@ export interface EntregavelProdutoInterface {
   "tipo"?: string;
   "promptLista"?: string;
   "geraLista"?: number;
+  "geraImagemConteudo"?: number;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
@@ -29,6 +30,7 @@ export class EntregavelProduto implements EntregavelProdutoInterface {
   "tipo": string;
   "promptLista": string;
   "geraLista": number;
+  "geraImagemConteudo": number;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
@@ -84,6 +86,10 @@ export class EntregavelProduto implements EntregavelProdutoInterface {
         },
         "geraLista": {
           name: 'geraLista',
+          type: 'number'
+        },
+        "geraImagemConteudo": {
+          name: 'geraImagemConteudo',
           type: 'number'
         },
         "produtoProprioId": {

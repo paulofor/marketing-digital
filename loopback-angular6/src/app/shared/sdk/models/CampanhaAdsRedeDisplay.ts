@@ -10,7 +10,8 @@ import {
   PublicoAlvoAdsPalavra,
   AnuncioConceitoAdsRedeDisplay,
   MetricaCampanhaAdsRedeDisplay,
-  PaginaVendaVsl
+  PaginaVendaVsl,
+  WhatsappGrupo
 } from '../index';
 
 declare var Object: any;
@@ -46,6 +47,9 @@ export interface CampanhaAdsRedeDisplayInterface {
   "cps"?: number;
   "cpcheck"?: number;
   "percentualLoad"?: number;
+  "quantidadeEntradaGrupo"?: number;
+  "custoEntradaGrupo"?: number;
+  "percentualEntradaGrupo"?: number;
   "paginaVendaPropriaId"?: number;
   "faixaHorarioCampanhaAdsId"?: number;
   "publicoAlvoAdsPalavraId"?: number;
@@ -53,6 +57,7 @@ export interface CampanhaAdsRedeDisplayInterface {
   "imagemConjuntoId"?: number;
   "produtoProprioId"?: number;
   "paginaVendaVslId"?: number;
+  "whatsappGrupoId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   contaGoogle?: ContaGoogle;
@@ -66,6 +71,7 @@ export interface CampanhaAdsRedeDisplayInterface {
   anuncioConceitoAdsRedeDisplay?: AnuncioConceitoAdsRedeDisplay;
   metricaCampanhaAdsRedeDisplays?: MetricaCampanhaAdsRedeDisplay[];
   paginaVendaVsl?: PaginaVendaVsl;
+  whatsappGrupo?: WhatsappGrupo;
 }
 
 export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
@@ -100,6 +106,9 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
   "cps": number;
   "cpcheck": number;
   "percentualLoad": number;
+  "quantidadeEntradaGrupo": number;
+  "custoEntradaGrupo": number;
+  "percentualEntradaGrupo": number;
   "paginaVendaPropriaId": number;
   "faixaHorarioCampanhaAdsId": number;
   "publicoAlvoAdsPalavraId": number;
@@ -107,6 +116,7 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
   "imagemConjuntoId": number;
   "produtoProprioId": number;
   "paginaVendaVslId": number;
+  "whatsappGrupoId": number;
   "id": number;
   "hotmartId": number;
   contaGoogle: ContaGoogle;
@@ -120,6 +130,7 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
   anuncioConceitoAdsRedeDisplay: AnuncioConceitoAdsRedeDisplay;
   metricaCampanhaAdsRedeDisplays: MetricaCampanhaAdsRedeDisplay[];
   paginaVendaVsl: PaginaVendaVsl;
+  whatsappGrupo: WhatsappGrupo;
   constructor(data?: CampanhaAdsRedeDisplayInterface) {
     Object.assign(this, data);
   }
@@ -277,6 +288,18 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           name: 'percentualLoad',
           type: 'number'
         },
+        "quantidadeEntradaGrupo": {
+          name: 'quantidadeEntradaGrupo',
+          type: 'number'
+        },
+        "custoEntradaGrupo": {
+          name: 'custoEntradaGrupo',
+          type: 'number'
+        },
+        "percentualEntradaGrupo": {
+          name: 'percentualEntradaGrupo',
+          type: 'number'
+        },
         "paginaVendaPropriaId": {
           name: 'paginaVendaPropriaId',
           type: 'number'
@@ -303,6 +326,10 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
         },
         "paginaVendaVslId": {
           name: 'paginaVendaVslId',
+          type: 'number'
+        },
+        "whatsappGrupoId": {
+          name: 'whatsappGrupoId',
           type: 'number'
         },
         "id": {
@@ -401,6 +428,14 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           model: 'PaginaVendaVsl',
           relationType: 'belongsTo',
                   keyFrom: 'paginaVendaVslId',
+          keyTo: 'id'
+        },
+        whatsappGrupo: {
+          name: 'whatsappGrupo',
+          type: 'WhatsappGrupo',
+          model: 'WhatsappGrupo',
+          relationType: 'belongsTo',
+                  keyFrom: 'whatsappGrupoId',
           keyTo: 'id'
         },
       }

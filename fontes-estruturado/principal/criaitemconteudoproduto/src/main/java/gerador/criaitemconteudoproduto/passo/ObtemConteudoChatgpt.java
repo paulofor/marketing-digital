@@ -33,7 +33,7 @@ public abstract class ObtemConteudoChatgpt extends DaoAplicacao {
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new ItemConteudoProduto_CriaConteudoItemImpl();
+		return new LoopItemImpl();
 	}
 
 

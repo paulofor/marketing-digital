@@ -8,6 +8,7 @@ import java.util.List;
 public class DatasetAplicacao  implements IDatasetComum {
 	private PromptItem promptItemCorrente;
 	private List<ItemConteudoProduto> listaNovoConteudo;
+	private ItemConteudoProduto conteudoCorrente;
 
 
 	public void setPromptItemCorrente(PromptItem valor) { 
@@ -21,5 +22,11 @@ public class DatasetAplicacao  implements IDatasetComum {
 	}
 	public List<ItemConteudoProduto> getListaNovoConteudo() { 
 		return this.listaNovoConteudo;
+	}
+	public void setConteudoCorrente(ItemConteudoProduto valor) { 
+		this.conteudoCorrente = valor;
+	}
+	public ItemConteudoProduto getConteudoCorrente() { 
+		return this.conteudoCorrente;
 	}
 }

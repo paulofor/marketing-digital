@@ -13,6 +13,10 @@
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
+			<input matInput #subNome [(ngModel)]="item.subNome" name="subNome" placeholder="SubNome" autocomplete="off" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
 			<input matInput #geraImagem [(ngModel)]="item.geraImagem" name="geraImagem" placeholder="Gera Imagem" />
 		</mat-form-field>
 

@@ -20,6 +20,7 @@ export interface CriativoAnuncioInterface {
   "geraImagem"?: number;
   "nome"?: string;
   "fundoColor"?: string;
+  "logoGrupoWhatsapp"?: string;
   "imagemPaginaVendaId"?: number;
   "produtoProprioId"?: number;
   "fonteLocalId"?: number;
@@ -43,6 +44,7 @@ export class CriativoAnuncio implements CriativoAnuncioInterface {
   "geraImagem": number;
   "nome": string;
   "fundoColor": string;
+  "logoGrupoWhatsapp": string;
   "imagemPaginaVendaId": number;
   "produtoProprioId": number;
   "fonteLocalId": number;
@@ -130,6 +132,10 @@ export class CriativoAnuncio implements CriativoAnuncioInterface {
         },
         "fundoColor": {
           name: 'fundoColor',
+          type: 'string'
+        },
+        "logoGrupoWhatsapp": {
+          name: 'logoGrupoWhatsapp',
           type: 'string'
         },
         "imagemPaginaVendaId": {

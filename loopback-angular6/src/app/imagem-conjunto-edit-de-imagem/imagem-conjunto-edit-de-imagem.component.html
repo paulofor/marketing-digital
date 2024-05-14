@@ -17,7 +17,7 @@
 			<input matInput #textoCopyLinha2 [(ngModel)]="item.textoCopyLinha2" name="textoCopyLinha2"
 				placeholder="Texto Copy - Linha2" autocomplete="off" />
 		</mat-form-field>
-
+		
 		<mat-form-field class="example-full-width" *ngIf="listaFonte">
 			<mat-select placeholder="Fonte" #fonteLocalId [(ngModel)]="item.fonteLocalId" name="fonteLocalId">
 				<mat-option *ngFor="let item of listaFonte" [value]="item.id">
@@ -48,6 +48,11 @@
 		<mat-form-field class="example-full-width">
 			<input matInput #geraDeImagemVenda [(ngModel)]="item.geraDeImagemVenda" name="geraDeImagemVenda"
 				placeholder="Gera de Imagem Venda" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #logoGrupoWhatsapp [(ngModel)]="item.logoGrupoWhatsapp" name="logoGrupoWhatsapp"
+				placeholder="Diretório de Logo Grupo Whatsapp" />
 		</mat-form-field>
 
 	</mat-dialog-content>

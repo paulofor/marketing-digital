@@ -21,6 +21,12 @@
 		"geraLista": {
 			"type": "number"
 		},
+		"geraImagemConteudo": {
+			"type": "number"
+		},
+		"diretorioGravacaoLocal": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}
@@ -100,6 +106,25 @@
 			"http": [
          		{
           			"path": "/listaParaGerarLista",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaParaGerarImagemConteudo": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGerarImagemConteudo",
    					"verb": "get"
  				}
  			]

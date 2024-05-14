@@ -42,8 +42,8 @@
 		"textoPrincipal1": {
 			"type": "string"
 		},
-		"titulo1": {
-			"type": "string"
+		"frequencia": {
+			"type": "number"
 		},
 		"imagemAnuncio": {
 			"type": "string"
@@ -95,6 +95,12 @@
 		},
 		"percentualEntradaGrupo": {
 			"type": "number"
+		},
+		"cta": {
+			"type": "string"
+		},
+		"linkExibicao": {
+			"type": "string"
 		},
 		"paginaVendaAbertaId": {
 			"type": "number"

@@ -17,6 +17,18 @@
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
+			<input matInput #textoPrincipal1 [(ngModel)]="item.textoPrincipal1" name="textoPrincipal1" placeholder="Texto Principal 1" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #cta [(ngModel)]="item.cta" name="cta" placeholder="CTA" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #linkExibicao [(ngModel)]="item.linkExibicao" name="linkExibicao" placeholder="Link Exibição" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
 			<input matInput #quantidadeEntradaGrupo [(ngModel)]="item.quantidadeEntradaGrupo" name="quantidadeEntradaGrupo" placeholder="Qtde Entrada Grupo" />
 		</mat-form-field>
 

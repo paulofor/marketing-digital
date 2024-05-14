@@ -91,6 +91,31 @@
    					"verb": "post"
  				}
  			]
+		},
+		"CriaConteudoUnico": {
+			"accepts": [
+				{
+					"arg": "conteudo",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/criaConteudoUnico",
+   					"verb": "post"
+ 				}
+ 			]
 		}
 	}
 }

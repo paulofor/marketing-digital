@@ -45,6 +45,9 @@ public class CampanhaAdsRedeDisplay extends Model {
 	private double cps;
 	private double cpcheck;
 	private double percentualLoad;
+	private int quantidadeEntradaGrupo;
+	private double custoEntradaGrupo;
+	private double percentualEntradaGrupo;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
@@ -55,6 +58,7 @@ public class CampanhaAdsRedeDisplay extends Model {
 	private ImagemConjunto ImagemConjunto;
 	private ProdutoProprio ProdutoProprio;
 	private PaginaVendaVsl PaginaVendaVsl;
+	private WhatsappGrupo WhatsappGrupo;
 	// Relacionamentos N
 	private List<AnuncioCampanhaAdsRedeDisplay> AnuncioCampanhaAdsRedeDisplays;
 	private List<GrupoCampanhaAdsRedeDisplay> GrupoCampanhaAdsRedeDisplays;
@@ -109,6 +113,9 @@ public class CampanhaAdsRedeDisplay extends Model {
 			obj.put("cps", cps);
 			obj.put("cpcheck", cpcheck);
 			obj.put("percentualLoad", percentualLoad);
+			obj.put("quantidadeEntradaGrupo", quantidadeEntradaGrupo);
+			obj.put("custoEntradaGrupo", custoEntradaGrupo);
+			obj.put("percentualEntradaGrupo", percentualEntradaGrupo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -302,6 +309,24 @@ public class CampanhaAdsRedeDisplay extends Model {
 	public double getPercentualLoad() { 
 		return this.percentualLoad;
 	}
+	public void setQuantidadeEntradaGrupo(int valor) { 
+		this.quantidadeEntradaGrupo = valor;
+	}
+	public int getQuantidadeEntradaGrupo() { 
+		return this.quantidadeEntradaGrupo;
+	}
+	public void setCustoEntradaGrupo(double valor) { 
+		this.custoEntradaGrupo = valor;
+	}
+	public double getCustoEntradaGrupo() { 
+		return this.custoEntradaGrupo;
+	}
+	public void setPercentualEntradaGrupo(double valor) { 
+		this.percentualEntradaGrupo = valor;
+	}
+	public double getPercentualEntradaGrupo() { 
+		return this.percentualEntradaGrupo;
+	}
 
 	public ContaGoogle getContaGoogle() {
 		return ContaGoogle;
@@ -365,6 +390,13 @@ public class CampanhaAdsRedeDisplay extends Model {
 	public void setPaginaVendaVsl(HashMap valor) {
 		this.PaginaVendaVsl = new PaginaVendaVsl();
 		BeanUtil.setProperties(this.PaginaVendaVsl, (Map<String, ? extends Object>) valor, true);
+	}
+	public WhatsappGrupo getWhatsappGrupo() {
+		return WhatsappGrupo;
+	}
+	public void setWhatsappGrupo(HashMap valor) {
+		this.WhatsappGrupo = new WhatsappGrupo();
+		BeanUtil.setProperties(this.WhatsappGrupo, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<AnuncioCampanhaAdsRedeDisplay> getAnuncioCampanhaAdsRedeDisplays() {
 		return  AnuncioCampanhaAdsRedeDisplays;

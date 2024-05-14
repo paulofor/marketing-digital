@@ -64,6 +64,7 @@ public class GeraTextosImpl extends GeraTextos {
 	private String ajustaTexto(ConteudoProdutoKiwify conteudo, String texto) {
 		String saida = texto;
 		saida = saida.replace("---nome---", conteudo.getNome());
+		saida = saida.replaceAll("---subNome---", conteudo.getSubNome());
 		for (ItemConteudoProduto item : conteudo.getItemConteudoProdutos()) {
 			saida = saida.replace("---" + item.getPromptItem().getCodigoReplace() + "---", item.getTexto());
 		}

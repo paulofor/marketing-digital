@@ -208,6 +208,8 @@ import { PaginaWhatsappGrupoEditComponent } from './pagina-whatsapp-grupo-edit/p
 import { PaginaWhatsappExemploEditComponent } from './pagina-whatsapp-exemplo-edit/pagina-whatsapp-exemplo-edit.component';
 import { PaginaWhatsappExemploListComponent } from './pagina-whatsapp-exemplo-list/pagina-whatsapp-exemplo-list.component';
 import { ImagemConjuntoEditDeImagemComponent } from './imagem-conjunto-edit-de-imagem/imagem-conjunto-edit-de-imagem.component';
+import { EntregavelProdutoListGeraImagemConteudoComponent } from './entregavel-produto-list-gera-imagem-conteudo/entregavel-produto-list-gera-imagem-conteudo.component';
+import { ConteudoProdutoKiwifyListGerarImagemComponent } from './conteudo-produto-kiwify-list-gerar-imagem/conteudo-produto-kiwify-list-gerar-imagem.component';
 
 
 
@@ -394,7 +396,9 @@ registerLocaleData(localePt, 'pt-BR');
     PaginaWhatsappGrupoEditComponent,
     PaginaWhatsappExemploListComponent,
     PaginaWhatsappExemploEditComponent,
-    ImagemConjuntoEditDeImagemComponent
+    ImagemConjuntoEditDeImagemComponent,
+    EntregavelProdutoListGeraImagemConteudoComponent,
+    ConteudoProdutoKiwifyListGerarImagemComponent
   ],
   imports: [
     BrowserModule,

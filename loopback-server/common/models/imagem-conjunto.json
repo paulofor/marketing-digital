@@ -48,6 +48,9 @@
 		"fundoColor": {
 			"type": "string"
 		},
+		"logoGrupoWhatsapp": {
+			"type": "string"
+		},
 		"imagemPaginaVendaId": {
 			"type": "number"
 		},

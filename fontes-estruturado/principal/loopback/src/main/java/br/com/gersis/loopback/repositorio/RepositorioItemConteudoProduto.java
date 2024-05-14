@@ -46,6 +46,14 @@ public class RepositorioItemConteudoProduto extends ModelRepository<ItemConteudo
 		invokeStaticMethod("criaConteudoItem", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void criaConteudoUnico(ItemConteudoProduto conteudo ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ItemConteudoProdutos/criaConteudoUnico","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ItemConteudoProduto.criaConteudoUnico");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("conteudo", conteudo.getJSON());
+		invokeStaticMethod("criaConteudoUnico", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<ItemConteudoProduto> listaEntrada) {
 		JSONArray lista = new JSONArray();

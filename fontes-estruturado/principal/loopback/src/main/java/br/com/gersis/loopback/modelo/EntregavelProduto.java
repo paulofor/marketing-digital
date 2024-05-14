@@ -18,6 +18,8 @@ public class EntregavelProduto extends Model {
 	private String tipo;
 	private String promptLista;
 	private int geraLista;
+	private int geraImagemConteudo;
+	private String diretorioGravacaoLocal;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
@@ -49,6 +51,8 @@ public class EntregavelProduto extends Model {
 			obj.put("tipo", tipo);
 			obj.put("promptLista", promptLista);
 			obj.put("geraLista", geraLista);
+			obj.put("geraImagemConteudo", geraImagemConteudo);
+			obj.put("diretorioGravacaoLocal", diretorioGravacaoLocal);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -79,6 +83,18 @@ public class EntregavelProduto extends Model {
 	}
 	public int getGeraLista() { 
 		return this.geraLista;
+	}
+	public void setGeraImagemConteudo(int valor) { 
+		this.geraImagemConteudo = valor;
+	}
+	public int getGeraImagemConteudo() { 
+		return this.geraImagemConteudo;
+	}
+	public void setDiretorioGravacaoLocal(String valor) { 
+		this.diretorioGravacaoLocal = valor;
+	}
+	public String getDiretorioGravacaoLocal() { 
+		return this.diretorioGravacaoLocal;
 	}
 
 	public ProdutoProprio getProdutoProprio() {

@@ -25,7 +25,7 @@ public class MetaAdsAnuncio extends Model {
 	private int conversao;
 	private double cpa;
 	private String textoPrincipal1;
-	private String titulo1;
+	private double frequencia;
 	private String imagemAnuncio;
 	private String idMeta;
 	private String imagemInstagramReels;
@@ -43,6 +43,8 @@ public class MetaAdsAnuncio extends Model {
 	private int quantidadeEntradaGrupo;
 	private double custoEntradaGrupo;
 	private double percentualEntradaGrupo;
+	private String cta;
+	private String linkExibicao;
 	// Relacionamentos 1
 	private PaginaVendaAberta PaginaVendaAberta;
 	private CriativoAnuncio CriativoAnuncio;
@@ -81,7 +83,7 @@ public class MetaAdsAnuncio extends Model {
 			obj.put("conversao", conversao);
 			obj.put("cpa", cpa);
 			obj.put("textoPrincipal1", textoPrincipal1);
-			obj.put("titulo1", titulo1);
+			obj.put("frequencia", frequencia);
 			obj.put("imagemAnuncio", imagemAnuncio);
 			obj.put("idMeta", idMeta);
 			obj.put("imagemInstagramReels", imagemInstagramReels);
@@ -99,6 +101,8 @@ public class MetaAdsAnuncio extends Model {
 			obj.put("quantidadeEntradaGrupo", quantidadeEntradaGrupo);
 			obj.put("custoEntradaGrupo", custoEntradaGrupo);
 			obj.put("percentualEntradaGrupo", percentualEntradaGrupo);
+			obj.put("cta", cta);
+			obj.put("linkExibicao", linkExibicao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -172,11 +176,11 @@ public class MetaAdsAnuncio extends Model {
 	public String getTextoPrincipal1() { 
 		return this.textoPrincipal1;
 	}
-	public void setTitulo1(String valor) { 
-		this.titulo1 = valor;
+	public void setFrequencia(double valor) { 
+		this.frequencia = valor;
 	}
-	public String getTitulo1() { 
-		return this.titulo1;
+	public double getFrequencia() { 
+		return this.frequencia;
 	}
 	public void setImagemAnuncio(String valor) { 
 		this.imagemAnuncio = valor;
@@ -279,6 +283,18 @@ public class MetaAdsAnuncio extends Model {
 	}
 	public double getPercentualEntradaGrupo() { 
 		return this.percentualEntradaGrupo;
+	}
+	public void setCta(String valor) { 
+		this.cta = valor;
+	}
+	public String getCta() { 
+		return this.cta;
+	}
+	public void setLinkExibicao(String valor) { 
+		this.linkExibicao = valor;
+	}
+	public String getLinkExibicao() { 
+		return this.linkExibicao;
 	}
 
 	public PaginaVendaAberta getPaginaVendaAberta() {

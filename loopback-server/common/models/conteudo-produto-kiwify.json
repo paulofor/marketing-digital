@@ -253,6 +253,81 @@
    					"verb": "post"
  				}
  			]
+		},
+		"SubirItem": {
+			"accepts": [
+				{
+					"arg": "idItem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/subirItem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"DescerItem": {
+			"accepts": [
+				{
+					"arg": "idItem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/descerItem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ObtemPorEntregavelComImagemPrincipal": {
+			"accepts": [
+				{
+					"arg": "idEntregavel",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemPorEntregavelComImagemPrincipal",
+   					"verb": "get"
+ 				}
+ 			]
 		}
 	}
 }

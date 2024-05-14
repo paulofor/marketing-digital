@@ -1,6 +1,43 @@
 'use strict';
 
 module.exports = function(Conteudoprodutokiwify) {
+
+
+    Conteudoprodutokiwify.ObtemPorEntregavelComImagemPrincipal = function(idEntregavel,callback) {
+        let filtro = { 'where' : {'entregavelProdutoId' : idEntregavel} , 'include' : {'relation' : 'imagemConteudos' , 'scope' : {
+            'where' : {'principal' : 1}
+        }}}
+        Conteudoprodutokiwify.find(filtro,callback);
+    }
+
+    Conteudoprodutokiwify.SubirItem = function(idItem,callback) {
+        Conteudoprodutokiwify.findById(idItem, (err,result) => {
+            const sql1 = "update ConteudoProdutoKiwify set ordenacao = ordenacao + 1 where entregavelProdutoId = " + result.entregavelProdutoId + 
+                " and ordenacao = " + (parseInt(result.ordenacao, 10)-1);
+            const ds = Conteudoprodutokiwify.dataSource;
+            //console.log(sql1);
+            ds.connector.query(sql1, (err,result2) => {
+                const sql2 = "update ConteudoProdutoKiwify set ordenacao = ordenacao - 1 where id = " + result.id;
+                //console.log(sql2);
+                ds.connector.query(sql2, callback);
+            })
+        })
+    }
+
+     Conteudoprodutokiwify.DescerItem = function(idItem,callback) {
+        Conteudoprodutokiwify.findById(idItem, (err,result) => {
+            const sql1 = "update ConteudoProdutoKiwify set ordenacao = ordenacao - 1 where entregavelProdutoId = " + result.entregavelProdutoId + 
+                " and ordenacao = " + (parseInt(result.ordenacao, 10)+1);
+            const ds = Conteudoprodutokiwify.dataSource;
+            //console.log(sql1);
+            ds.connector.query(sql1, (err,result2) => {
+                const sql2 = "update ConteudoProdutoKiwify set ordenacao = ordenacao + 1 where id = " + result.id;
+                //console.log(sql2);
+                ds.connector.query(sql2, callback);
+            })
+        })
+    }
+
     
     Conteudoprodutokiwify.CompletoPorEntregavel = function(idEntregavel, callback) {
         let filtro = {
@@ -76,6 +113,7 @@ module.exports = function(Conteudoprodutokiwify) {
             {'relation' : 'entregavelProduto' , 'scope' : 
                 {
                     'include' : [
+                        'produtoProprio',
                         {'relation' : 'promptImagemConteudos' , 'scope' : {'where' : {'geraImagem' : 1}}}
                     ]
                 }

@@ -19,7 +19,7 @@ public class CriaItemConteudoProduto {
 
 	public static void main(String[] args) {
 		System.out.print("CriaItemConteudoProduto");
-		System.out.println("(07/05/2024 19:11:38)");
+		System.out.println("(14/05/2024 12:23:36)");
 		try {
 			carregaProp();
 			CriaItemConteudoProdutoObj obj = new CriaItemConteudoProdutoObj();
@@ -60,6 +60,7 @@ public class CriaItemConteudoProduto {
 		DaoBaseComum.setUrl(UrlLoopback);
 		DaoBaseComum.setProximo("CriaItemConteudoProdutoObj", new PromptItem_ListaParaCriacaoComConteudosImpl());
 		DaoBaseComum.setProximo("PromptItem_ListaParaCriacaoComConteudos", new ObtemConteudoChatgptImpl());
-		DaoBaseComum.setProximo("ObtemConteudoChatgpt", new ItemConteudoProduto_CriaConteudoItemImpl());
+		DaoBaseComum.setProximo("ObtemConteudoChatgpt", new LoopItemImpl());
+		DaoBaseComum.setProximo("LoopItem", new ItemConteudoProduto_CriaConteudoUnicoImpl());
 	}
 }

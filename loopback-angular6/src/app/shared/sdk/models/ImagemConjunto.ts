@@ -24,6 +24,7 @@ export interface ImagemConjuntoInterface {
   "textoCopyLinha2"?: string;
   "fontColor"?: string;
   "fundoColor"?: string;
+  "logoGrupoWhatsapp"?: string;
   "imagemPaginaVendaId"?: number;
   "fonteLocalId"?: number;
   "id"?: number;
@@ -51,6 +52,7 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
   "textoCopyLinha2": string;
   "fontColor": string;
   "fundoColor": string;
+  "logoGrupoWhatsapp": string;
   "imagemPaginaVendaId": number;
   "fonteLocalId": number;
   "id": number;
@@ -145,6 +147,10 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
         },
         "fundoColor": {
           name: 'fundoColor',
+          type: 'string'
+        },
+        "logoGrupoWhatsapp": {
+          name: 'logoGrupoWhatsapp',
           type: 'string'
         },
         "imagemPaginaVendaId": {

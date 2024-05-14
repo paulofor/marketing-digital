@@ -26,6 +26,7 @@ public class CriativoAnuncio extends Model {
 	private int geraImagem;
 	private String nome;
 	private String fundoColor;
+	private String logoGrupoWhatsapp;
 	// Relacionamentos 1
 	private ImagemPaginaVenda ImagemPaginaVenda;
 	private ProdutoProprio ProdutoProprio;
@@ -63,6 +64,7 @@ public class CriativoAnuncio extends Model {
 			obj.put("geraImagem", geraImagem);
 			obj.put("nome", nome);
 			obj.put("fundoColor", fundoColor);
+			obj.put("logoGrupoWhatsapp", logoGrupoWhatsapp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -141,6 +143,12 @@ public class CriativoAnuncio extends Model {
 	}
 	public String getFundoColor() { 
 		return this.fundoColor;
+	}
+	public void setLogoGrupoWhatsapp(String valor) { 
+		this.logoGrupoWhatsapp = valor;
+	}
+	public String getLogoGrupoWhatsapp() { 
+		return this.logoGrupoWhatsapp;
 	}
 
 	public ImagemPaginaVenda getImagemPaginaVenda() {

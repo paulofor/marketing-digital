@@ -46,6 +46,9 @@ public class GeraImagemEditadaPublicaImpl extends GeraImagemEditadaPublica {
 	}
 	
 	protected String geraImagemHil(CriativoAnuncio criativo) throws Exception {
+		if (criativo.getImagemPaginaVenda()==null) {
+			throw new RuntimeException("Faltando imagem");
+		}
 		String imageUrl = criativo.getImagemPaginaVenda().getUrlFinal();
 		String imagemEntrada = TEMP_FILE + "/" + criativo.getImagemPaginaVenda().getCodigoHexa() + ".png"; 
 		String imagemSaida = TEMP_FILE + "/" + criativo.getImagemPaginaVenda().getCodigoHexa() + "-criativo.jpg";
@@ -90,7 +93,13 @@ public class GeraImagemEditadaPublicaImpl extends GeraImagemEditadaPublica {
 		  //String command = "convert " + imagemEntrada + " -gravity south -splice 0x180 \\( -size 1240x180 xc:#000000 \\) -composite -fill white -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
 
 		  // colocando um posicionamento north / sotuh
-		  String command = "convert " + imagemEntrada + " -gravity " + criativo.getGravity() + " -splice 0x180 \\( -size 1240x180 xc:" + criativo.getFundoColor() + " \\) -composite -fill \"" + criativo.getFontColor() + "\" -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
+		  String zap = "";
+		  
+		  if (criativo.getLogoGrupoWhatsapp()!=null) {
+			  zap = "  " + criativo.getLogoGrupoWhatsapp() + " -gravity southeast -geometry +5+5 -composite  ";
+		  }
+		  
+		  String command = "convert " + imagemEntrada + " -gravity " + criativo.getGravity() + " -splice 0x180 \\( -size 1240x180 xc:" + criativo.getFundoColor() + " \\) -composite -fill \"" + criativo.getFontColor() + "\" -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + zap + imagemSaida ;
 
 		  
 	      System.out.println(command);

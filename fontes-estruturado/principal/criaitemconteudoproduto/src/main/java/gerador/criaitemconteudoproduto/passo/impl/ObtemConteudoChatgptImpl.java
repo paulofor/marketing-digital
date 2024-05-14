@@ -33,6 +33,7 @@ public class ObtemConteudoChatgptImpl extends ObtemConteudoChatgpt {
 		for (ConteudoProdutoKiwify item : promptItemCorrente.getEntregavelProduto().getConteudoProdutoKiwifys()) {
 			if (item.getGeraTexto()==1) {
 				String promptFinal = prompt1.replaceAll("---nome---", item.getNome());
+				promptFinal = promptFinal.replaceAll("---subNome---", item.getSubNome());
 				String resposta = this.fazerRequisicao(prompt2, promptFinal);
 				ItemConteudoProduto conteudo = new ItemConteudoProduto();
 				conteudo.setTexto(resposta);

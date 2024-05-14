@@ -87,6 +87,30 @@ public class RepositorioConteudoProdutoKiwify extends ModelRepository<ConteudoPr
 		invokeStaticMethod("batchGeraImagem", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void subirItem(int idItem ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ConteudoProdutoKiwifies/subirItem","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ConteudoProdutoKiwify.subirItem");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idItem", idItem);
+		invokeStaticMethod("subirItem", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void descerItem(int idItem ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ConteudoProdutoKiwifies/descerItem","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ConteudoProdutoKiwify.descerItem");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idItem", idItem);
+		invokeStaticMethod("descerItem", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void obtemPorEntregavelComImagemPrincipal(int idEntregavel ,final ListCallback<ConteudoProdutoKiwify> callback ) {
+		RestContractItem contrato = new RestContractItem("ConteudoProdutoKiwifies/obtemPorEntregavelComImagemPrincipal","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ConteudoProdutoKiwify.obtemPorEntregavelComImagemPrincipal");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idEntregavel", idEntregavel);
+		invokeStaticMethod("obtemPorEntregavelComImagemPrincipal", params,   new JsonArrayParser<ConteudoProdutoKiwify>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<ConteudoProdutoKiwify> listaEntrada) {
 		JSONArray lista = new JSONArray();

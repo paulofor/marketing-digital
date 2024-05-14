@@ -16,7 +16,7 @@
 			<span> ( gera conteudo: {{rel.geraConteudo}} ) </span>
 		</div>
 		<div class="dgc-card-comandos">
-			<button class="btn-primary btn-sm btn" (click)="ajustaOrdenacao()">Ajustar Ordenação</button>
+			<button class="btn-primary btn-sm btn" (click)="ajustaOrdenacao()">Gerar Html Kiwify</button>
 			<button class="btn-primary btn-sm btn" (click)="editaPromptItem()">Criar</button>
 		</div>
 	</div>
@@ -50,10 +50,19 @@
 				<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaModulo(rel)">
 					<i class="fas fa-edit text-primary"></i>
 				</button>
+				<button *ngIf="rel.ordenacao!=1" class="btn btn-sm" style="background-color: white; border-color: white;" (click)="subirItem(rel)">
+					<i class="fas fa-arrow-circle-up"></i>
+				</button>
+				<button *ngIf="rel.ordenacao!=1" class="btn btn-sm" style="background-color: white; border-color: white;" (click)="descerItem(rel)">
+					<i class="fas fa-arrow-circle-down"></i>
+				</button>
 				<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="excluiModulo(rel)">
 					<i class="fas fa-trash-alt text-danger"></i>
 				</button>
 
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>{{rel.subNome}}</span>
 			</div>
 			<div class="dgc-card-header">
 				<div *ngFor="let imagem of rel.imagemConteudos">

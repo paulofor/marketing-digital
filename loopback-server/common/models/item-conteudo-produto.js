@@ -2,6 +2,14 @@
 
 module.exports = function(Itemconteudoproduto) {
 
+    
+
+
+    Itemconteudoproduto.CriaConteudoUnico = function(conteudo, callback) {
+        Itemconteudoproduto.upsert(conteudo,callback);
+    }
+
+
     Itemconteudoproduto.CriaConteudoItem = function(listaConteudo,callback) {
         for (let i=0; i<listaConteudo.length;i++) {
             Itemconteudoproduto.upsert(listaConteudo[i])

@@ -2,6 +2,11 @@
 
 module.exports = function(Entregavelproduto) {
 
+    Entregavelproduto.ListaParaGerarImagemConteudo = function(callback) {
+        let filtro = {'where' : {'geraImagemConteudo' : 1} , 'include' : 'produtoProprio'};
+        Entregavelproduto.find(filtro,callback);
+    }
+
     Entregavelproduto.ListaParaGerarLista = function(callback) {
         let filtro = {'include': 'produtoProprio', 'where' : {'geraLista' : 1}}
         Entregavelproduto.find(filtro,callback);

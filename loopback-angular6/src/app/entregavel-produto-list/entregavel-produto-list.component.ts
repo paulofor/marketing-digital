@@ -22,7 +22,7 @@ export class EntregavelProdutoListComponent extends EntregavelProdutoListBaseCom
 
 	getFiltro() {
 		let filtro =  {
-			'where' : {'produtoProprioId' : this.produto.id}
+			'where' : {'produtoProprioId' : this.produto.id}, 'order' : 'id desc'
 		};
 		console.log('filtro-pagina:' , filtro);
 		return filtro;
