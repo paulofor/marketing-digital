@@ -3,10 +3,12 @@ import {
   ProdutoProprio,
   CampanhaAdsRedeDisplay,
   WhatsappMensagem,
+  CheckoutProdutoProprio,
   ContaWhatsapp,
   WhatsappGrupoMetrica,
   MembroWhatsappGrupo,
-  PaginaWhatsappGrupo
+  PaginaWhatsappGrupo,
+  WhatsappGrupoDia
 } from '../index';
 
 declare var Object: any;
@@ -16,16 +18,22 @@ export interface WhatsappGrupoInterface {
   "link"?: string;
   "imagem"?: string;
   "dataCriacao"?: string;
+  "custoTotal"?: number;
+  "custoPessoa"?: number;
+  "quantidadePessoa"?: number;
   "produtoProprioId"?: number;
   "contaWhatsappId"?: number;
+  "checkoutProdutoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
   campanhaAdsRedeDisplays?: CampanhaAdsRedeDisplay[];
   whatsappMensagems?: WhatsappMensagem[];
+  checkoutProdutoProprio?: CheckoutProdutoProprio;
   contaWhatsapp?: ContaWhatsapp;
   whatsappGrupoMetricas?: WhatsappGrupoMetrica[];
   membroWhatsappGrupos?: MembroWhatsappGrupo[];
   paginaWhatsappGrupos?: PaginaWhatsappGrupo[];
+  whatsappGrupoDias?: WhatsappGrupoDia[];
 }
 
 export class WhatsappGrupo implements WhatsappGrupoInterface {
@@ -34,16 +42,22 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
   "link": string;
   "imagem": string;
   "dataCriacao": string;
+  "custoTotal": number;
+  "custoPessoa": number;
+  "quantidadePessoa": number;
   "produtoProprioId": number;
   "contaWhatsappId": number;
+  "checkoutProdutoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
   campanhaAdsRedeDisplays: CampanhaAdsRedeDisplay[];
   whatsappMensagems: WhatsappMensagem[];
+  checkoutProdutoProprio: CheckoutProdutoProprio;
   contaWhatsapp: ContaWhatsapp;
   whatsappGrupoMetricas: WhatsappGrupoMetrica[];
   membroWhatsappGrupos: MembroWhatsappGrupo[];
   paginaWhatsappGrupos: PaginaWhatsappGrupo[];
+  whatsappGrupoDias: WhatsappGrupoDia[];
   constructor(data?: WhatsappGrupoInterface) {
     Object.assign(this, data);
   }
@@ -97,12 +111,28 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
           name: 'dataCriacao',
           type: 'string'
         },
+        "custoTotal": {
+          name: 'custoTotal',
+          type: 'number'
+        },
+        "custoPessoa": {
+          name: 'custoPessoa',
+          type: 'number'
+        },
+        "quantidadePessoa": {
+          name: 'quantidadePessoa',
+          type: 'number'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
           type: 'number'
         },
         "contaWhatsappId": {
           name: 'contaWhatsappId',
+          type: 'number'
+        },
+        "checkoutProdutoProprioId": {
+          name: 'checkoutProdutoProprioId',
           type: 'number'
         },
         "id": {
@@ -135,6 +165,14 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
                   keyFrom: 'id',
           keyTo: 'whatsappGrupoId'
         },
+        checkoutProdutoProprio: {
+          name: 'checkoutProdutoProprio',
+          type: 'CheckoutProdutoProprio',
+          model: 'CheckoutProdutoProprio',
+          relationType: 'belongsTo',
+                  keyFrom: 'checkoutProdutoProprioId',
+          keyTo: 'id'
+        },
         contaWhatsapp: {
           name: 'contaWhatsapp',
           type: 'ContaWhatsapp',
@@ -163,6 +201,14 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
           name: 'paginaWhatsappGrupos',
           type: 'PaginaWhatsappGrupo[]',
           model: 'PaginaWhatsappGrupo',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'whatsappGrupoId'
+        },
+        whatsappGrupoDias: {
+          name: 'whatsappGrupoDias',
+          type: 'WhatsappGrupoDia[]',
+          model: 'WhatsappGrupoDia',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'whatsappGrupoId'

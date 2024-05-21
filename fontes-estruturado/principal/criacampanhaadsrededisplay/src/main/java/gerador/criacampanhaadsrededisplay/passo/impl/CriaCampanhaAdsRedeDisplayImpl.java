@@ -71,7 +71,7 @@ import gerador.criacampanhaadsrededisplay.passo.CriaCampanhaAdsRedeDisplay;
 
 public class CriaCampanhaAdsRedeDisplayImpl extends CriaCampanhaAdsRedeDisplay {
 
-	private final String VERSAO = "v_03"; 
+	private final String VERSAO = "v_01"; 
 	private final long VALOR_ORCAMENTO = 20 * 1000000;
 	private final long VALOR_CPC = 1 * 10000;
 	
@@ -286,7 +286,8 @@ public class CriaCampanhaAdsRedeDisplayImpl extends CriaCampanhaAdsRedeDisplay {
 		            .build();
 
 		    // Creates the ad.
-		    String urlPrincipal = campanha.getPaginaVendaVsl().getUrl() + "?utm_campaign=" + campanha.getCodigoHexa();
+		    //String urlPrincipal = campanha.getPaginaVendaVsl().getUrl() + "?utm_campaign=" + campanha.getCodigoHexa();
+		    String urlPrincipal = campanha.getWhatsappGrupo().getLink();
 		    campanha.setUrlPrincipal(urlPrincipal);
 		    Ad ad =
 		        Ad.newBuilder()

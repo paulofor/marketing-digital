@@ -210,6 +210,11 @@ import { PaginaWhatsappExemploListComponent } from './pagina-whatsapp-exemplo-li
 import { ImagemConjuntoEditDeImagemComponent } from './imagem-conjunto-edit-de-imagem/imagem-conjunto-edit-de-imagem.component';
 import { EntregavelProdutoListGeraImagemConteudoComponent } from './entregavel-produto-list-gera-imagem-conteudo/entregavel-produto-list-gera-imagem-conteudo.component';
 import { ConteudoProdutoKiwifyListGerarImagemComponent } from './conteudo-produto-kiwify-list-gerar-imagem/conteudo-produto-kiwify-list-gerar-imagem.component';
+import { PromptItemListCriaItemConteudoComponent } from './prompt-item-list-cria-item-conteudo/prompt-item-list-cria-item-conteudo.component';
+import { WhatsappGrupoEditQtdeComponent } from './whatsapp-grupo-edit-qtde/whatsapp-grupo-edit-qtde.component';
+import { WhatsappGrupoListQtdeComponent } from './whatsapp-grupo-list-qtde/whatsapp-grupo-list-qtde.component';
+import { ImagemConjuntoListProcessoJavaComponent } from './imagem-conjunto-list-processo-java/imagem-conjunto-list-processo-java.component';
+import { EntregavelProdutoListParaGerarListaComponent } from './entregavel-produto-list-para-gerar-lista/entregavel-produto-list-para-gerar-lista.component';
 
 
 
@@ -398,7 +403,12 @@ registerLocaleData(localePt, 'pt-BR');
     PaginaWhatsappExemploEditComponent,
     ImagemConjuntoEditDeImagemComponent,
     EntregavelProdutoListGeraImagemConteudoComponent,
-    ConteudoProdutoKiwifyListGerarImagemComponent
+    ConteudoProdutoKiwifyListGerarImagemComponent,
+    PromptItemListCriaItemConteudoComponent,
+    WhatsappGrupoEditQtdeComponent,
+    WhatsappGrupoListQtdeComponent,
+    ImagemConjuntoListProcessoJavaComponent,
+    EntregavelProdutoListParaGerarListaComponent
   ],
   imports: [
     BrowserModule,
@@ -516,7 +526,8 @@ registerLocaleData(localePt, 'pt-BR');
     WhatsappGrupoPadraoMensagemEditComponent,
     PaginaWhatsappGrupoEditComponent,
     PaginaWhatsappExemploEditComponent,
-    ImagemConjuntoEditDeImagemComponent
+    ImagemConjuntoEditDeImagemComponent,
+    WhatsappGrupoEditQtdeComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -21,7 +21,8 @@ export class WhatsappGrupoPorProdutoListComponent extends WhatsappGrupoPorProdut
 
 	getFiltro() {
 		let filtro =  {
-			'where' : {'produtoProprioId' : this.produto.id}
+			'where' : {'produtoProprioId' : this.produto.id},
+			'include' : 'checkoutProdutoProprio'
 		};
 		console.log('filtro-pagina:' , filtro);
 		return filtro;

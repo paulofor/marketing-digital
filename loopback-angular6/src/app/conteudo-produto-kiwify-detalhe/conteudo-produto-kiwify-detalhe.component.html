@@ -10,7 +10,7 @@
 		<pre>
 		<ng-container *ngFor="let item of principal.itemConteudoProdutos"><ng-container *ngIf="item.ordenacao>0">
 &lt;b&gt;{{ item.promptItem.titulo }}&lt;/b&gt;
-&lt;p&gt;{{ ajustaComPre(item.texto) }}&lt;/p&gt;
+&lt;p&gt;{{ ajustaComPre(item.texto,item.promptItem) }}&lt;/p&gt;
 &lt;br&gt;</ng-container></ng-container>
 		</pre>
 	</div>

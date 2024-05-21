@@ -21,7 +21,7 @@ export class CampanhaAdsRedeDisplayProdutoProprioListComponent extends CampanhaA
 	getFiltro() {
 		let filtro =  {
 			'where' : {'produtoProprioId' : this.produto.id},
-			'include' : ['publicoAlvoAdsPalavra','imagemConjunto','anuncioConceitoAdsRedeDisplay','paginaVendaVsl','contaGoogle']
+			'include' : ['publicoAlvoAdsPalavra','imagemConjunto','anuncioConceitoAdsRedeDisplay','paginaVendaVsl','contaGoogle','whatsappGrupo']
 		};
 		console.log('filtro-produto:' , filtro);
 		return filtro;

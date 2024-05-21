@@ -13,7 +13,9 @@ module.exports = function(Imagempaginavenda) {
 
 
     Imagempaginavenda.RegistraJpg = function(imagem, callback) {
-        const sql = "update ImagemPaginaVenda set urlJpeg = '" + imagem.urlJpeg + "' where id = " + imagem.id;
+        const sql = "update ImagemPaginaVenda set urlJpeg = '" + imagem.urlJpeg + "', " +
+            " urlJpeg20 = '" + imagem.urlJpeg20 + "' " + 
+            " where id = " + imagem.id;
         const ds = Imagempaginavenda.dataSource;
         ds.connector.query(sql,callback);
     }

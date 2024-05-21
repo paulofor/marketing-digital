@@ -22,6 +22,7 @@ export interface ImagemPaginaVendaInterface {
   "urlJpeg"?: string;
   "geraJpg"?: number;
   "codigoHexa"?: string;
+  "urlJpeg20"?: string;
   "id"?: number;
   dalleSolicitacaoImagem?: DalleSolicitacaoImagem;
   produtoAfiliadoHotlink?: ProdutoAfiliadoHotlink;
@@ -44,6 +45,7 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
   "urlJpeg": string;
   "geraJpg": number;
   "codigoHexa": string;
+  "urlJpeg20": string;
   "id": number;
   dalleSolicitacaoImagem: DalleSolicitacaoImagem;
   produtoAfiliadoHotlink: ProdutoAfiliadoHotlink;
@@ -127,6 +129,10 @@ export class ImagemPaginaVenda implements ImagemPaginaVendaInterface {
         },
         "codigoHexa": {
           name: 'codigoHexa',
+          type: 'string'
+        },
+        "urlJpeg20": {
+          name: 'urlJpeg20',
           type: 'string'
         },
         "id": {

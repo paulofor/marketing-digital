@@ -81,6 +81,10 @@ import { MetaAdsConjuntoAnuncioDetalheComponent } from '../meta-ads-conjunto-anu
 import { PaginaWhatsappExemploListComponent } from '../pagina-whatsapp-exemplo-list/pagina-whatsapp-exemplo-list.component';
 import { EntregavelProdutoListGeraImagemConteudoComponent } from '../entregavel-produto-list-gera-imagem-conteudo/entregavel-produto-list-gera-imagem-conteudo.component';
 import { ConteudoProdutoKiwifyListGerarImagemComponent } from '../conteudo-produto-kiwify-list-gerar-imagem/conteudo-produto-kiwify-list-gerar-imagem.component';
+import { PromptItemListCriaItemConteudoComponent } from '../prompt-item-list-cria-item-conteudo/prompt-item-list-cria-item-conteudo.component';
+import { WhatsappGrupoListQtdeComponent } from '../whatsapp-grupo-list-qtde/whatsapp-grupo-list-qtde.component';
+import { ImagemConjuntoListProcessoJavaComponent } from '../imagem-conjunto-list-processo-java/imagem-conjunto-list-processo-java.component';
+import { EntregavelProdutoListParaGerarListaComponent } from '../entregavel-produto-list-para-gerar-lista/entregavel-produto-list-para-gerar-lista.component';
 
 
 
@@ -197,6 +201,12 @@ export const routes : Routes = [
     { path: 'paginaWhatsappExemploList' , component: PaginaWhatsappExemploListComponent },
     { path: 'entregavelProdutoListGeraImagemConteudo', component: EntregavelProdutoListGeraImagemConteudoComponent},
     { path: 'conteudoProdutoKiwifyListGerarImagem' , component: ConteudoProdutoKiwifyListGerarImagemComponent },
+
+    { path: 'promptItemListCriaItemConteudo' , component: PromptItemListCriaItemConteudoComponent },
+
+    { path: 'whatsappGrupoListQtde' , component: WhatsappGrupoListQtdeComponent },
+    { path: 'imagemConjuntoListProcessoJava' , component: ImagemConjuntoListProcessoJavaComponent },
+    { path: 'entregavelProdutoListParaGerarLista' , component: EntregavelProdutoListParaGerarListaComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

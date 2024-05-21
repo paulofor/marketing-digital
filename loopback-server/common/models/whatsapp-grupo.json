@@ -24,10 +24,22 @@
 		"dataCriacao": {
 			"type": "string"
 		},
+		"custoTotal": {
+			"type": "number"
+		},
+		"custoPessoa": {
+			"type": "number"
+		},
+		"quantidadePessoa": {
+			"type": "number"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		},
 		"contaWhatsappId": {
+			"type": "number"
+		},
+		"checkoutProdutoProprioId": {
 			"type": "number"
 		}
 	},
@@ -41,6 +53,11 @@
 		"contaWhatsapp": {
 			"type": "belongsTo",
 			"model": "ContaWhatsapp",
+			"foreignKey": ""
+		},
+		"checkoutProdutoProprio": {
+			"type": "belongsTo",
+			"model": "CheckoutProdutoProprio",
 			"foreignKey": ""
 		},
 		"whatsappMensagems": {
@@ -67,9 +84,33 @@
 			"type": "hasMany",
 			"model": "CampanhaAdsRedeDisplay",
 			"foreignKey": ""
+		},
+		"whatsappGrupoDias": {
+			"type": "hasMany",
+			"model": "WhatsappGrupoDia",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],
 	"methods": {
+		"FinalizaDadosDia": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/finalizaDadosDia",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

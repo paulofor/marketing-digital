@@ -25,6 +25,15 @@
 			<input matInput #ordenacao [(ngModel)]="item.ordenacao" name="ordenacao" placeholder="Ordenação" />
 		</mat-form-field>
 
+
+		<mat-form-field class="example-half-width">
+			<input matInput #textoInicioNegrito [(ngModel)]="item.textoInicioNegrito" name="textoInicioNegrito" placeholder="Início Negrito" />
+		</mat-form-field>
+		<mat-form-field class="example-half-width">
+			<input matInput #textoFinalNegrito [(ngModel)]="item.textoFinalNegrito" name="textoFinalNegrito" placeholder="Final Negrito" />
+		</mat-form-field>
+
+
 	</mat-dialog-content>
 
 	<mat-dialog-actions>

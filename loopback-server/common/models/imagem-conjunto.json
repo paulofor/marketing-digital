@@ -51,6 +51,9 @@
 		"logoGrupoWhatsapp": {
 			"type": "string"
 		},
+		"textoCopyLinha3": {
+			"type": "string"
+		},
 		"imagemPaginaVendaId": {
 			"type": "number"
 		},

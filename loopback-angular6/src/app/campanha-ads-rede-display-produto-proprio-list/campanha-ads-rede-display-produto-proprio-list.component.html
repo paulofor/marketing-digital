@@ -17,16 +17,34 @@
 			<div class="dgc-card-detalhe">
 				<span>Anúncio: <span *ngIf="item.anuncioConceitoAdsRedeDisplay">{{item.anuncioConceitoAdsRedeDisplay.nomeEmpresa}}</span></span>
 			</div>
+			<!--
 			<div class="dgc-card-detalhe">
 				<span>Página Venda: <span *ngIf="item.paginaVendaVsl">{{item.paginaVendaVsl.nome}}</span></span>
 			</div>
+			-->
 			<div class="dgc-card-detalhe">
-				<span>Conta: <span *ngIf="item.contaGoogle">{{item.contaGoogle.nome}</span></span>
+				<span>Conta: <span *ngIf="item.contaGoogle">{{item.contaGoogle.nome}}</span></span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Grupo Whatsapp: <span *ngIf="item.whatsappGrupo">{{item.whatsappGrupo.nome}}</span></span>
 			</div>
 			<div class="dgc-card-detalhe">
 				<span>Pronta: {{item.prontaParaEnvio}}</span>
 			</div>
- 			<div class="dgc-card-comandos">
+
+			<div class="dgc-card-detalhe">
+				Custo Total : {{item.custoTotal | currency : 'BRL'}}<br>
+				Clique Total: {{item.cliqueTotal }} ( ctr : {{(item.ctr * 100) | number : '1.2-2'}}% )<br>
+				Cpc: {{item.cpc | currency : 'BRL'}}
+			</div>
+
+			<div class="dgc-card-detalhe">
+				Qtde Entrada Grupo: {{item.quantidadeEntradaGrupo}} <br>
+				Percentual: {{item.percentualEntradaGrupo | number : '1.2-2'}}%<br>
+				Custo Entrada:  {{item.custoEntradaGrupo | currency : 'BRL'}}<br>
+			</div>
+ 			
+			<div class="dgc-card-comandos">
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
  			</div>
  		</div>

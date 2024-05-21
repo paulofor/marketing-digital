@@ -21,6 +21,9 @@
 		"nome": {
 			"type": "string"
 		},
+		"urlRedirecionamento": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}
@@ -35,6 +38,11 @@
 		"paginaVendaAbertas": {
 			"type": "hasMany",
 			"model": "PaginaVendaAberta",
+			"foreignKey": ""
+		},
+		"whatsappGrupos": {
+			"type": "hasMany",
+			"model": "WhatsappGrupo",
 			"foreignKey": ""
 		}
 	},

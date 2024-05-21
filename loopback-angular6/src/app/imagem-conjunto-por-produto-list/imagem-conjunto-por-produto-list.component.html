@@ -1,7 +1,7 @@
 <div class="dgc-painel">
 	<div class="dgc-painel-header">
 		<span>Conjunto de Imagem Anúncio</span>
-  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="editaItem()">novo</button>
+		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="editaItem()">novo</button>
 	</div>
 	<div class="dgc-painel-principal" *ngIf="produtoAfiliado">
 		<div class="dgc-card" *ngFor="let item of produtoAfiliado.imagemConjuntos">
@@ -13,22 +13,28 @@
 				Gera de Imagem Venda: {{item.geraDeImagemVenda}}
 			</div>
 
-			<span>Quadrada</span>
-			<img class="imagem-container" src="{{item.urlImagemQuadrada}}" alt="urlImagemQuadrada">
+			<div class="dgc-card-detalhe">
+				<span>Quadrada:</span><br>
+				<img class="imagem-container" src="{{item.urlImagemQuadrada}}" alt="urlImagemQuadrada">
+			</div>
 
-			<span>Deitada</span>
-			<img class="imagem-container" src="{{item.urlImagemDeitada}}" alt="urlImagemDeitada">
+			<div class="dgc-card-detalhe">
+				<span>Deitada:</span><br>
+				<img class="imagem-container" src="{{item.urlImagemDeitada}}" alt="urlImagemDeitada">
+			</div>
 
-			<span>Imagem 2</span>
-			<img class="imagem-container" src="{{item.urlImagem2}}" alt="urlImagem2">
+			<div class="dgc-card-detalhe">
+				<span>Imagem 2</span>
+				<img class="imagem-container" src="{{item.urlImagem2}}" alt="urlImagem2">
+			</div>
 
 			<div class="dgc-card-detalhe">
 				Diretorio Zap: {{item.logoGrupoWhatsapp}}
 			</div>
 
 			<div class="dgc-card-comandos">
- 				<button class="btn-primary btn-sm btn" (click)="editaItem(item)">Editar</button>
- 			</div>
- 		</div>
-  	</div>
+				<button class="btn-primary btn-sm btn" (click)="editaItem(item)">Editar</button>
+			</div>
+		</div>
+	</div>
 </div>

@@ -19,6 +19,8 @@ public class PromptItem extends Model {
 	private String codigoReplace;
 	private int geraConteudo;
 	private int ordenacao;
+	private String textoInicioNegrito;
+	private String textoFinalNegrito;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	private EntregavelProduto EntregavelProduto;
@@ -48,6 +50,8 @@ public class PromptItem extends Model {
 			obj.put("codigoReplace", codigoReplace);
 			obj.put("geraConteudo", geraConteudo);
 			obj.put("ordenacao", ordenacao);
+			obj.put("textoInicioNegrito", textoInicioNegrito);
+			obj.put("textoFinalNegrito", textoFinalNegrito);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -84,6 +88,18 @@ public class PromptItem extends Model {
 	}
 	public int getOrdenacao() { 
 		return this.ordenacao;
+	}
+	public void setTextoInicioNegrito(String valor) { 
+		this.textoInicioNegrito = valor;
+	}
+	public String getTextoInicioNegrito() { 
+		return this.textoInicioNegrito;
+	}
+	public void setTextoFinalNegrito(String valor) { 
+		this.textoFinalNegrito = valor;
+	}
+	public String getTextoFinalNegrito() { 
+		return this.textoFinalNegrito;
 	}
 
 	public ProdutoProprio getProdutoProprio() {

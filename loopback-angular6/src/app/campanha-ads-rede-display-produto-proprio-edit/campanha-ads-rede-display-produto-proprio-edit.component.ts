@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { AnuncioCampanhaAdsRedeDisplay, AnuncioConceitoAdsRedeDisplayApi, CampanhaAdsRedeDisplay, CampanhaAdsRedeDisplayApi, ContaGoogle, ContaGoogleApi, ImagemConjunto, ImagemConjuntoApi, PaginaVenda, PaginaVendaPropriaApi, PaginaVendaVsl, PaginaVendaVslApi, PublicoAlvoAdsPalavra, PublicoAlvoAdsPalavraApi } from '../shared/sdk';
+import { AnuncioCampanhaAdsRedeDisplay, AnuncioConceitoAdsRedeDisplayApi, CampanhaAdsRedeDisplay, CampanhaAdsRedeDisplayApi, ContaGoogle, ContaGoogleApi, ImagemConjunto, ImagemConjuntoApi, PaginaVenda, PaginaVendaPropriaApi, PaginaVendaVsl, PaginaVendaVslApi, PublicoAlvoAdsPalavra, PublicoAlvoAdsPalavraApi, WhatsappGrupo, WhatsappGrupoApi } from '../shared/sdk';
 import { CampanhaAdsRedeDisplayProdutoProprioEditBaseComponent } from './campanha-ads-rede-display-produto-proprio-edit-base.component';
 
 @Component({
@@ -15,13 +15,15 @@ export class CampanhaAdsRedeDisplayProdutoProprioEditComponent extends CampanhaA
 	listaAnuncioRedeAds:AnuncioCampanhaAdsRedeDisplay[];
 	listaSegmento:PublicoAlvoAdsPalavra[];
 	listaConta:ContaGoogle[];
+	listaGrupoZap:WhatsappGrupo[];
 
 	constructor(protected dialogRef: MatDialogRef<any>
 	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: CampanhaAdsRedeDisplayApi,
 		private srvImagemConjunto:ImagemConjuntoApi, private srvPaginaVenda:PaginaVendaVslApi, 
 			private srvListaAnuncio:AnuncioConceitoAdsRedeDisplayApi,
 			private	srvPublicoAlvo:PublicoAlvoAdsPalavraApi,
-			private srvConta:ContaGoogleApi
+			private srvConta:ContaGoogleApi,
+			private srvGrupoZap: WhatsappGrupoApi
 		  ) {
 	   super(dialogRef,data,servico);
 	}
@@ -61,6 +63,12 @@ export class CampanhaAdsRedeDisplayProdutoProprioEditComponent extends CampanhaA
 		this.srvConta.ListaAtivaCampanha()
 			.subscribe((result:ContaGoogle[]) => {
 				this.listaConta = result;
+			})
+		const filtro5 = {'where'  : {'produtoProprioId' : this.origem.id}}
+		console.log('filtro zap: ', filtro5);
+		this.srvGrupoZap.find(filtro5)
+			.subscribe((result:WhatsappGrupo[]) => {
+				this.listaGrupoZap = result;
 			})
 	}
 

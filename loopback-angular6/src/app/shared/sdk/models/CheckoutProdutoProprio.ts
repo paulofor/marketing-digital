@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   ProdutoProprio,
-  PaginaVendaAberta
+  PaginaVendaAberta,
+  WhatsappGrupo
 } from '../index';
 
 declare var Object: any;
@@ -10,10 +11,12 @@ export interface CheckoutProdutoProprioInterface {
   "preco"?: number;
   "ativo"?: number;
   "nome"?: string;
+  "urlRedirecionamento"?: string;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
   paginaVendaAbertas?: PaginaVendaAberta[];
+  whatsappGrupos?: WhatsappGrupo[];
 }
 
 export class CheckoutProdutoProprio implements CheckoutProdutoProprioInterface {
@@ -21,10 +24,12 @@ export class CheckoutProdutoProprio implements CheckoutProdutoProprioInterface {
   "preco": number;
   "ativo": number;
   "nome": string;
+  "urlRedirecionamento": string;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
   paginaVendaAbertas: PaginaVendaAberta[];
+  whatsappGrupos: WhatsappGrupo[];
   constructor(data?: CheckoutProdutoProprioInterface) {
     Object.assign(this, data);
   }
@@ -74,6 +79,10 @@ export class CheckoutProdutoProprio implements CheckoutProdutoProprioInterface {
           name: 'nome',
           type: 'string'
         },
+        "urlRedirecionamento": {
+          name: 'urlRedirecionamento',
+          type: 'string'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
           type: 'number'
@@ -96,6 +105,14 @@ export class CheckoutProdutoProprio implements CheckoutProdutoProprioInterface {
           name: 'paginaVendaAbertas',
           type: 'PaginaVendaAberta[]',
           model: 'PaginaVendaAberta',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'checkoutProdutoProprioId'
+        },
+        whatsappGrupos: {
+          name: 'whatsappGrupos',
+          type: 'WhatsappGrupo[]',
+          model: 'WhatsappGrupo',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'checkoutProdutoProprioId'

@@ -12,6 +12,8 @@ export interface PromptItemInterface {
   "codigoReplace"?: string;
   "geraConteudo"?: number;
   "ordenacao"?: number;
+  "textoInicioNegrito"?: string;
+  "textoFinalNegrito"?: string;
   "produtoProprioId"?: number;
   "entregavelProdutoId"?: number;
   "id"?: number;
@@ -26,6 +28,8 @@ export class PromptItem implements PromptItemInterface {
   "codigoReplace": string;
   "geraConteudo": number;
   "ordenacao": number;
+  "textoInicioNegrito": string;
+  "textoFinalNegrito": string;
   "produtoProprioId": number;
   "entregavelProdutoId": number;
   "id": number;
@@ -84,6 +88,14 @@ export class PromptItem implements PromptItemInterface {
         "ordenacao": {
           name: 'ordenacao',
           type: 'number'
+        },
+        "textoInicioNegrito": {
+          name: 'textoInicioNegrito',
+          type: 'string'
+        },
+        "textoFinalNegrito": {
+          name: 'textoFinalNegrito',
+          type: 'string'
         },
         "produtoProprioId": {
           name: 'produtoProprioId',

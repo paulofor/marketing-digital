@@ -128,5 +128,7 @@ export * from './WhatsappGrupoMetrica';
 export * from './MembroWhatsappGrupo';
 export * from './PaginaWhatsappGrupo';
 export * from './PaginaWhatsappExemplo';
+export * from './WhatsappGrupoDiario';
+export * from './WhatsappGrupoDia';
 export * from './BaseModels';
 export * from './FireLoopRef';

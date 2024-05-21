@@ -129,6 +129,8 @@ import { WhatsappGrupoMetrica } from '../../models/WhatsappGrupoMetrica';
 import { MembroWhatsappGrupo } from '../../models/MembroWhatsappGrupo';
 import { PaginaWhatsappGrupo } from '../../models/PaginaWhatsappGrupo';
 import { PaginaWhatsappExemplo } from '../../models/PaginaWhatsappExemplo';
+import { WhatsappGrupoDiario } from '../../models/WhatsappGrupoDiario';
+import { WhatsappGrupoDia } from '../../models/WhatsappGrupoDia';
 
 export interface Models { [name: string]: any }
 
@@ -265,6 +267,8 @@ export class SDKModels {
     MembroWhatsappGrupo: MembroWhatsappGrupo,
     PaginaWhatsappGrupo: PaginaWhatsappGrupo,
     PaginaWhatsappExemplo: PaginaWhatsappExemplo,
+    WhatsappGrupoDiario: WhatsappGrupoDiario,
+    WhatsappGrupoDia: WhatsappGrupoDia,
     
   };
 

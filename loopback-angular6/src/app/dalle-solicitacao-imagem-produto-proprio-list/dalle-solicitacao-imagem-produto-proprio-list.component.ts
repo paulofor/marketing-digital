@@ -26,7 +26,7 @@ export class DalleSolicitacaoImagemProdutoProprioListComponent extends DalleSoli
 	
 	getFiltro() {
 		console.log('produto:' , this.produto);
-		return {'where' : {'produtoProprioId' : this.produto.id}}
+		return {'where' : {'produtoProprioId' : this.produto.id} , 'order' : 'id desc'}
 	}
 
 	edita(edicao?) {

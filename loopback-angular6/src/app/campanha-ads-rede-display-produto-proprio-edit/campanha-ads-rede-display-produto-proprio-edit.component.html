@@ -49,6 +49,18 @@
 			</mat-select>
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width" *ngIf="listaGrupoZap">
+			<mat-select placeholder="Grupo Whatsapp" #whatsappGrupoId [(ngModel)]="item.whatsappGrupoId" name="whatsappGrupoId">
+				<mat-option *ngFor="let item of listaGrupoZap" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #quantidadeEntradaGrupo [(ngModel)]="item.quantidadeEntradaGrupo" name="quantidadeEntradaGrupo" placeholder="Qtde Entrada Grupo" />
+		</mat-form-field>
+
 		<mat-form-field class="example-full-width">
 			<input matInput #prontaParaEnvio [(ngModel)]="item.prontaParaEnvio" name="prontaParaEnvio" placeholder="Pronta" />
 		</mat-form-field>

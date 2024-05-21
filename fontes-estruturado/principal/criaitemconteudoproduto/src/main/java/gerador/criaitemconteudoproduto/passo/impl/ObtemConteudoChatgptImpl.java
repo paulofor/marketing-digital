@@ -73,7 +73,7 @@ public class ObtemConteudoChatgptImpl extends ObtemConteudoChatgpt {
 			String apiKey = prop.getProperty("api_key");
 
 			String endpoint = "https://api.openai.com/v1/chat/completions";
-			int maxTokens = 2000;
+			int maxTokens = 3000;
 			float temperature = 0.2f;
 
 			URL url = new URL(endpoint);

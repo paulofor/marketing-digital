@@ -1,49 +1,61 @@
 <div class="dgc-painel">
 	<div class="dgc-painel-header">
-		<span>ImagemConjunto</span>
-  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
-		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="editaDeImagem()">Novo de Imagem</button>
+		<span>Imagem Conjunto</span>
+		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="editaDeImagem()">Novo de
+			Imagem</button>
 	</div>
 	<div class="dgc-painel-principal" *ngIf="listaBase">
-		<div class="dgc-card" *ngFor="let item of listaBase">
- 			<div class="dgc-card-header">
- 				<span>{{item.nome}}</span>
- 			</div>
-			 <div class="dgc-card-detalhe">
+		<div class="dgc-card dgc-card-descricao">
+			<span>Processo Java de Criação: <a
+					routerLink="/imagemConjuntoListProcessoJava">CriaImagemCriativoRedeDisplay</a></span>
+		</div>
+		<div class="dgc-card dgc-card-2" *ngFor="let item of listaBase">
+			<div class="dgc-card-header">
+				<span>{{item.nome}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
 				<span>Linha1: {{item.textoCopyLinha1}}</span>
 			</div>
-		   <div class="dgc-card-detalhe">
-			   <span>Linha2: {{item.textoCopyLinha2}}</span>
-		   </div>
-		   <div class="dgc-card-detalhe" *ngIf="item.imagemPaginaVenda">
-			   <span>Imagem Origem: {{item.imagemPaginaVenda.codigoHexa}}</span>
-		   </div>
 			<div class="dgc-card-detalhe">
-			   <span>Fonte: </span><span *ngIf="item.fonteLocal">{{item.fonteLocal.nome}}<br></span>
-			   <!--<span> size: {{item.fontSize}}</span>-->
-			   <span> color: {{item.fontColor}}</span>
-		   </div>
-		   <div class="dgc-card-detalhe">
-			   <span>Fundo: {{item.fundoColor}}</span>
-		   </div>
-			 <div class="dgc-card-detalhe">
+				<span>Linha2: {{item.textoCopyLinha2}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Linha3: {{item.textoCopyLinha3}}</span>
+			</div>
+			<div class="dgc-card-detalhe" >
+				<span>Imagem Origem: <span *ngIf="item.imagemPaginaVenda">{{item.imagemPaginaVenda.codigoHexa}}</span></span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Fonte: </span><span *ngIf="item.fonteLocal">{{item.fonteLocal.nome}}<br></span>
+				<!--<span> size: {{item.fontSize}}</span>-->
+				<span> color: {{item.fontColor}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Fundo: {{item.fundoColor}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
 				<span>Gera de Imagem Venda: {{item.geraDeImagemVenda}}</span>
 			</div>
 
-			<span>Quadrada</span>
-			<img class="imagem-container" src="{{item.urlImagemQuadrada}}" alt="urlImagemQuadrada">
+			<div class="dgc-card-detalhe">
+				<span>Quadrada</span><br>
+				<img class="imagem-container" src="{{item.urlImagemQuadrada}}" alt="urlImagemQuadrada">
+			</div>
 
-			<span>Deitada</span>
-			<img class="imagem-container" src="{{item.urlImagemDeitada}}" alt="urlImagemDeitada">
+			<div class="dgc-card-detalhe">
+				<span>Deitada</span><br>
+				<img class="imagem-container" src="{{item.urlImagemDeitada}}" alt="urlImagemDeitada">
+			</div>
 
 			<div class="dgc-card-detalhe">
 				Imagem Zap: {{item.logoGrupoWhatsapp}}
 			</div>
 
- 			<div class="dgc-card-comandos">
+			<div class="dgc-card-comandos">
 				<button class="btn-primary btn-sm btn" (click)="editaDeImagem(item)">Editar de Imagem</button>
- 				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
- 			</div>
- 		</div>
-  	</div>
+				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+			</div>
+		</div>
+	</div>
 </div>

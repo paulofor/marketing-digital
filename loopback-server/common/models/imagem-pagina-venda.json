@@ -41,6 +41,9 @@
 		},
 		"codigoHexa": {
 			"type": "string"
+		},
+		"urlJpeg20": {
+			"type": "string"
 		}
 	},
 	"validations": [],

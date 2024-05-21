@@ -56,7 +56,7 @@ export class DalleSolicitacaoComImagemPorProprioListComponent extends DalleSolic
         this.dialog.open(ExibeTextoSemPreComponent, {
             width: '800px',
             data: {
-                texto: imagem.urlJpeg
+                texto: imagem.urlJpeg + "\n" + imagem.urlJpeg20
             }
         });
 

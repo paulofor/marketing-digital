@@ -26,12 +26,20 @@ public class CriaJpgEnviaImpl extends CriaJpgEnvia {
 	private String TEMP_FILE = "imagens";
 	private String PREFIXO_URL = "https://www.marketingpalf.shop/imagens";
 	
+	private String imagemMenor;
+	
 	@Override
 	protected boolean executaCustom(ImagemPaginaVenda imagemCorrente) {
 		try {
 			String imagem = this.obtemImagem(imagemCorrente);
-			this.sendViaSSH(imagem, imagemCorrente);
+			// Imagem-80
+			String destino = PATH_IMAGENS + "/" + imagemCorrente.getCodigoHexa() + "-80.jpg";
+			this.sendViaSSH(imagem, destino);
 			imagemCorrente.setUrlJpeg(PREFIXO_URL + "/" +  imagemCorrente.getCodigoHexa() + "-80.jpg");
+			// Imagem-20
+			destino = PATH_IMAGENS + "/" + imagemCorrente.getCodigoHexa() + "-20.jpg";
+			this.sendViaSSH(this.imagemMenor, destino);
+			imagemCorrente.setUrlJpeg20(PREFIXO_URL + "/" +  imagemCorrente.getCodigoHexa() + "-20.jpg");
 			this.saidaImagemCorrente = imagemCorrente;
 			return true;
 		} catch (Exception e) {
@@ -41,10 +49,10 @@ public class CriaJpgEnviaImpl extends CriaJpgEnvia {
 		}
 	}
 
-	private void sendViaSSH(String imagem, ImagemPaginaVenda imagemCorrente) throws Exception {
+	private void sendViaSSH(String imagem, String destino) throws Exception {
 		// TODO Auto-generated method stub
 		
-		String destino = PATH_IMAGENS + "/" + imagemCorrente.getCodigoHexa() + "-80.jpg";
+		
 		
 		Properties prop = new Properties();
 		String path = "/etc/openai/config.properties"; 
@@ -82,9 +90,11 @@ public class CriaJpgEnviaImpl extends CriaJpgEnvia {
 
 	private String obtemImagem(ImagemPaginaVenda imagemCorrente) throws Exception {
 		String imageUrl = imagemCorrente.getUrlFinal();
-		String outputFileName = "imagens/" + imagemCorrente.getProdutoProprio().getNome() + ".jpg"; // Nome do arquivo
-																									// de saída em JPG
-
+		String outputFileName = "imagens/" + imagemCorrente.getProdutoProprio().getNome() + ".jpg"; 
+		
+		String imagem80 = "imagens/" + imagemCorrente.getProdutoProprio().getNome() + "-80.jpg"; 
+		String imagem20 = "imagens/" + imagemCorrente.getProdutoProprio().getNome() + "-20.jpg";
+		
 		// Obter a imagem da URL
 		URL url = new URL(imageUrl);
 		InputStream inputStream = url.openStream();
@@ -99,19 +109,32 @@ public class CriaJpgEnviaImpl extends CriaJpgEnvia {
 
 		inputStream.close();
 		outputStream.close();
-
+		
 		// Executar o comando convert para converter a imagem para JPG
-		ProcessBuilder processBuilder = new ProcessBuilder("convert", outputFileName, "-quality", "80", outputFileName);
+		ProcessBuilder processBuilder = new ProcessBuilder("convert", outputFileName, "-resize", "20%", imagem20);
 		Process process = processBuilder.start();
 
 		int exitCode = process.waitFor();
 
 		if (exitCode == 0) {
-			System.out.println("Imagem convertida para JPG com sucesso!");
+			System.out.println("Imagem convertida para JPG-20 com sucesso!");
+		} else {
+			System.err.println("Erro ao converter a imagem para JPG-20.");
+		}
+		this.imagemMenor = imagem20;
+
+		// Executar o comando convert para converter a imagem para JPG
+		processBuilder = new ProcessBuilder("convert", outputFileName, "-resize", "80%", imagem80);
+		process = processBuilder.start();
+
+		exitCode = process.waitFor();
+
+		if (exitCode == 0) {
+			System.out.println("Imagem convertida para JPG-80 com sucesso!");
 		} else {
 			System.err.println("Erro ao converter a imagem para JPG.");
 		}
-		return outputFileName;
+		return imagem80;
 	}
 	
 	

@@ -546,5 +546,13 @@
   "PaginaWhatsappExemplo": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "WhatsappGrupoDiario": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "WhatsappGrupoDia": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

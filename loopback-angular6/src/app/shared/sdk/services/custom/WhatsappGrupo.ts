@@ -14,10 +14,12 @@ import { SocketConnection } from '../../sockets/socket.connections';
 import { ProdutoProprio } from '../../models/ProdutoProprio';
 import { CampanhaAdsRedeDisplay } from '../../models/CampanhaAdsRedeDisplay';
 import { WhatsappMensagem } from '../../models/WhatsappMensagem';
+import { CheckoutProdutoProprio } from '../../models/CheckoutProdutoProprio';
 import { ContaWhatsapp } from '../../models/ContaWhatsapp';
 import { WhatsappGrupoMetrica } from '../../models/WhatsappGrupoMetrica';
 import { MembroWhatsappGrupo } from '../../models/MembroWhatsappGrupo';
 import { PaginaWhatsappGrupo } from '../../models/PaginaWhatsappGrupo';
+import { WhatsappGrupoDia } from '../../models/WhatsappGrupoDia';
 
 
 /**
@@ -248,6 +250,36 @@ export class WhatsappGrupoApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Busca relação checkoutProdutoProprio de belongsTo.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappGrupo` object.)
+   * </em>
+   */
+  public getCheckoutProdutoProprio(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/checkoutProdutoProprio";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -549,6 +581,99 @@ export class WhatsappGrupoApi extends BaseLoopBackApi {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/WhatsappGrupos/:id/paginaWhatsappGrupos/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Localize um item relacionado por ID para whatsappGrupoDias.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @param {any} fk Chave estrangeira para whatsappGrupoDias
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappGrupo` object.)
+   * </em>
+   */
+  public findByIdWhatsappGrupoDias(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/whatsappGrupoDias/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Excluir um item relacionado por ID para whatsappGrupoDias.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @param {any} fk Chave estrangeira para whatsappGrupoDias
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdWhatsappGrupoDias(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/whatsappGrupoDias/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualizar um item relacionado por ID para whatsappGrupoDias.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @param {any} fk Chave estrangeira para whatsappGrupoDias
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappGrupo` object.)
+   * </em>
+   */
+  public updateByIdWhatsappGrupoDias(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/whatsappGrupoDias/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -1142,6 +1267,122 @@ export class WhatsappGrupoApi extends BaseLoopBackApi {
   }
 
   /**
+   * whatsappGrupoDias consultas de WhatsappGrupo.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappGrupo` object.)
+   * </em>
+   */
+  public getWhatsappGrupoDias(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/whatsappGrupoDias";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no whatsappGrupoDias deste modelo.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappGrupo` object.)
+   * </em>
+   */
+  public createWhatsappGrupoDias(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/whatsappGrupoDias";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Exclui todos os whatsappGrupoDias deste modelo.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteWhatsappGrupoDias(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/whatsappGrupoDias";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * whatsappGrupoDias contagens de WhatsappGrupo.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countWhatsappGrupoDias(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/whatsappGrupoDias/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Patch an existing model instance or insert a new one into the data source.
    *
    * @param {object} data Request data.
@@ -1198,6 +1439,35 @@ export class WhatsappGrupoApi extends BaseLoopBackApi {
     let _postBody: any = {
       data: data
     };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   * This method does not accept any data. Supply an empty object.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappGrupo` object.)
+   * </em>
+   */
+  public FinalizaDadosDia(customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/finalizaDadosDia";
+    let _routeParams: any = {};
+    let _postBody: any = {};
     let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
@@ -1357,6 +1627,39 @@ export class WhatsappGrupoApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/WhatsappGrupos/:id/paginaWhatsappGrupos";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Cria uma nova instância no whatsappGrupoDias deste modelo.
+   *
+   * @param {any} id WhatsappGrupo id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `WhatsappGrupo` object.)
+   * </em>
+   */
+  public createManyWhatsappGrupoDias(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/WhatsappGrupos/:id/whatsappGrupoDias";
     let _routeParams: any = {
       id: id
     };

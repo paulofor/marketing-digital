@@ -30,6 +30,13 @@ public class RepositorioWhatsappGrupo extends ModelRepository<WhatsappGrupo> {
 
 	// ***  Operações  ***
 
+	public synchronized void finalizaDadosDia(final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("WhatsappGrupos/finalizaDadosDia","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "WhatsappGrupo.finalizaDadosDia");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("finalizaDadosDia", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<WhatsappGrupo> listaEntrada) {
 		JSONArray lista = new JSONArray();

@@ -12,8 +12,15 @@
 				<span>{{item.link}}</span>
  			</div>
 			 <div class="dgc-card-detalhe">
-				<span>{{item.descricao}}</span>
+				<span>
+					Quantidade Pessoas: {{item.quantidadePessoa}}<br>
+					Custo Total: {{item.custoTotal | currency : 'BRL'}}<br>
+					Custo Pessoa: {{item.custoPessoa | currency : 'BRL'}}
+				</span>
  			</div>
+			<div class="dgc-card-detalhe" >
+				<span>Chekcout: <span *ngIf="item.checkoutProdutoProprio" >{{item.checkoutProdutoProprio.nome}}</span></span>
+			</div>
  			<div class="dgc-card-comandos">
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
  			</div>

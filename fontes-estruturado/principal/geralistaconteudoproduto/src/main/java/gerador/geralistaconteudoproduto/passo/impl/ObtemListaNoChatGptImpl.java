@@ -46,34 +46,91 @@ public class ObtemListaNoChatGptImpl extends ObtemListaNoChatGpt {
 		resposta = resposta.replaceAll("\n", "");
 		int startIndex = resposta.indexOf("["); // O índice do primeiro caractere após "```json"
         int endIndex = resposta.lastIndexOf("]") + 2; // O índice do último caractere antes do último "```"
-        String jsonString = resposta.substring(startIndex, endIndex);
+        if (startIndex!=-1 && endIndex!=-1) {
+            String jsonString = resposta.substring(startIndex, endIndex);
 
-        // Parseando a string JSON para um JSONArray
-        JSONArray jsonArray = new JSONArray(jsonString);
+            // Parseando a string JSON para um JSONArray
+            JSONArray jsonArray = new JSONArray(jsonString);
 
-        // Criando uma lista para armazenar os tipos de dieta
-        List<String> dietas = new ArrayList<>();
+            // Criando uma lista para armazenar os tipos de dieta
+            List<String> dietas = new ArrayList<>();
 
-        // Iterando sobre os elementos do JSONArray e adicionando à lista
-        for (int i = 0; i < jsonArray.length(); i++) {
-            String dieta = jsonArray.getString(i);
-            dietas.add(dieta);
+            // Iterando sobre os elementos do JSONArray e adicionando à lista
+            for (int i = 0; i < jsonArray.length(); i++) {
+                String dieta = jsonArray.getString(i);
+                dietas.add(dieta);
+            }
+
+            // Convertendo a lista para um array de strings
+            String[] termo = dietas.toArray(new String[0]);
+    		
+    		List<ConteudoProdutoKiwify> listaConteudo = new ArrayList<ConteudoProdutoKiwify>();
+    		for (String item : termo) {
+    			ConteudoProdutoKiwify conteudo = new ConteudoProdutoKiwify();
+    			conteudo.setEntregavelProdutoId(entregavelCorrente.getIdInteger());
+    			conteudo.setNome(item);
+    			listaConteudo.add(conteudo);
+    		}
+    		this.saidaListaConteudo = listaConteudo;
+    		return true;
+        } else {
+        	String[] linhas = resposta.split("\\R");
+
+            // Imprimir cada linha separadamente
+        	List<ConteudoProdutoKiwify> listaConteudo = new ArrayList<ConteudoProdutoKiwify>();
+            for (String linha : linhas) {
+            	ConteudoProdutoKiwify conteudo = processarString(linha);
+            	listaConteudo.add(conteudo);
+            }
+            this.saidaListaConteudo = listaConteudo;
+     		return true;
         }
-
-        // Convertendo a lista para um array de strings
-        String[] termo = dietas.toArray(new String[0]);
-		
-		List<ConteudoProdutoKiwify> listaConteudo = new ArrayList<ConteudoProdutoKiwify>();
-		for (String item : termo) {
-			ConteudoProdutoKiwify conteudo = new ConteudoProdutoKiwify();
-			conteudo.setEntregavelProdutoId(entregavelCorrente.getIdInteger());
-			conteudo.setNome(item);
-			listaConteudo.add(conteudo);
-		}
-		this.saidaListaConteudo = listaConteudo;
-		return true;
 	} 
 
+	 // Método para processar a string de entrada
+    public ConteudoProdutoKiwify processarString(String linha) {
+    	ConteudoProdutoKiwify conteudo = new ConteudoProdutoKiwify();
+        String[] partes = linha.split("\\.\\s\\*\\*");
+        if (partes.length == 2) {
+            try {
+            	conteudo.setOrdenacao(Integer.parseInt(partes[0].trim()));
+            } catch (NumberFormatException e) {
+                // Handle o erro de formato de número, se necessário
+                e.printStackTrace();
+            }
+            String[] subPartes = partes[1].split("\\*\\*:\\s");
+            if (subPartes.length == 2) {
+                conteudo.setNome(subPartes[0].trim());
+                conteudo.setSubNome(subPartes[1].trim());
+            }
+        }
+        return conteudo;
+    }
+
+    /*
+    // Método para processar a string e preencher os campos
+    public void processarString(String input) {
+        // Dividir a string no primeiro ". " encontrado para obter a ordenação e o resto
+        String[] partes = input.split("\\. ", 2);
+        if (partes.length < 2) {
+            throw new IllegalArgumentException("Entrada no formato incorreto.");
+        }
+
+        // Extrair e definir a ordenação
+        this.ordenacao = Integer.parseInt(partes[0].trim());
+
+        // Dividir o resto no primeiro ": " encontrado para obter o nome e o subNome
+        String[] nomeSubNome = partes[1].split(": ", 2);
+        if (nomeSubNome.length < 2) {
+            throw new IllegalArgumentException("Entrada no formato incorreto.");
+        }
+
+        // Definir o nome e o subNome
+        this.nome = nomeSubNome[0].trim();
+        this.subNome = nomeSubNome[1].trim();
+    }
+	*/
+	
 	private String fazerRequisicao(String prompt, String regra) {
 		try {
 			Properties prop = new Properties();

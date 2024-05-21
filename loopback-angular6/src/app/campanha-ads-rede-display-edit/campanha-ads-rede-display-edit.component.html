@@ -1,4 +1,4 @@
-<h2 *ngIf="item" mat-dialog-title>CampanhaAdsRedeDisplay</h2>
+<h2 *ngIf="item" mat-dialog-title>CampanhaAds RedeDisplay</h2>
 
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 
@@ -36,6 +36,14 @@
 		<mat-form-field class="example-full-width" *ngIf="listaImagemConjunto">
 			<mat-select placeholder="Imagem Conjunto" #imagemConjuntoId [(ngModel)]="item.imagemConjuntoId" name="imagemConjuntoId">
 				<mat-option *ngFor="let item of listaImagemConjunto" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaGrupoZap">
+			<mat-select placeholder="Grupo Whatsapp" #whatsappGrupoId [(ngModel)]="item.whatsappGrupoId" name="whatsappGrupoId">
+				<mat-option *ngFor="let item of listaGrupoZap" [value]="item.id">
 					{{ item.nome}} 
 				</mat-option>
 			</mat-select>

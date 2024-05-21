@@ -1,0 +1,41 @@
+{
+	"name": "WhatsappGrupoDia",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"custoTotal": {
+			"type": "number"
+		},
+		"custoPessoa": {
+			"type": "number"
+		},
+		"quantidadePessoa": {
+			"type": "number"
+		},
+		"data": {
+			"type": "date"
+			,"id": true
+		},
+		"whatsappGrupoId": {
+			"type": "number"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"whatsappGrupo": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupo",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

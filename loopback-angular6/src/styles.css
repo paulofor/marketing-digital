@@ -216,7 +216,23 @@ body {
   padding-right: 1.25rem;
   text-align: center;
  }
- 
+ .dgc-card-descricao {
+  width: 100%;
+  color: blue;
+ }
+ .dgc-card-1 {
+  width: 100%;
+ }
+ .dgc-card-2 {
+  width: 48%;
+ }
+ .dgc-card-3 {
+  width: 32%;
+ }
+ .dgc-card-4 {
+  width: 22%;
+ } 
+
  .dgc-card-metrica-celula-label {
   font-size: 12px;
  }

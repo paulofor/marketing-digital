@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
-import { ConteudoProdutoKiwify, ConteudoProdutoKiwifyApi } from '../shared/sdk';
+import { ConteudoProdutoKiwify, ConteudoProdutoKiwifyApi, PromptItem } from '../shared/sdk';
 import { ConteudoProdutoKiwifyDetalheBaseComponent } from './conteudo-produto-kiwify-detalhe-base.component';
 import { ConteudoProdutoKiwifyEditComponent } from '../conteudo-produto-kiwify-edit/conteudo-produto-kiwify-edit.component';
 import { ItemConteudoProdutoEditComponent } from '../item-conteudo-produto-edit/item-conteudo-produto-edit.component';
@@ -58,13 +58,38 @@ export class ConteudoProdutoKiwifyDetalheComponent extends ConteudoProdutoKiwify
 
 	ajustaTexto(texto: string): SafeHtml {
 		// Substitui as quebras de linha por <br>
-		const textoFormatado = texto.replace(/\n/g, '<br/>');
+
+		let textoFormatado = texto.replace(/\n/g, '<br/>');
+		
 		// Retorna o texto formatado como HTML seguro
 		return this.sanitizer.bypassSecurityTrustHtml(textoFormatado);
 	}
 
-	ajustaComPre(texto:string) {
-		const textoFormatado = texto.replace(/\n/g,'<br/>');
+	negritarTrechos(texto: string, textoInicio: string, textoFinal: string): string {
+		// Verificar se textoFinal é um caractere de nova linha
+		const isNewLineFinal = textoFinal === '\n';
+	
+		// Criar uma expressão regular que captura o texto entre textoInicio e textoFinal
+		const regex = new RegExp(`${textoInicio}(.*?)${textoFinal}`, 'g');
+	
+		// Substituir os trechos encontrados pela versão envolvida com <b> e </b>
+		const resultado = texto.replace(regex, (match, p1) => {
+			if (isNewLineFinal) {
+				// Se textoFinal é '\n', mantemos o final e adicionamos <b> ao texto capturado
+				return `<b>${p1}${textoFinal}</b>`;
+			} else {
+				// Caso contrário, removemos textoInicio e textoFinal e adicionamos <b> ao texto capturado
+				return `<b>${p1}</b>`;
+			}
+		});
+	
+		return resultado;
+	}
+
+	ajustaComPre(texto:string, prompt:PromptItem) {
+		console.log('prompt:' , prompt);
+		let textoFormatado = this.negritarTrechos(texto,prompt.textoInicioNegrito, prompt.textoFinalNegrito);
+		textoFormatado = textoFormatado.replace(/\n/g,'<br/>');
 		return textoFormatado
 	}
 }

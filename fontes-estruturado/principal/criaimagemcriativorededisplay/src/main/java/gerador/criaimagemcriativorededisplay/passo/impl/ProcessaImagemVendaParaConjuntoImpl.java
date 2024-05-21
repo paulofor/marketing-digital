@@ -17,7 +17,7 @@ import gerador.criaimagemcriativorededisplay.passo.*;
 
 public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaParaConjunto {
 	
-	private final String TEMP_FILE = "/home/usuario/aplicacoes/MarketingDigital/fontes-estruturado/principal/geraimagemcriativometa/imagens";
+	private final String TEMP_FILE = "/home/usuario/aplicacoes/MarketingDigital/fontes-estruturado/principal/criaimagemcriativorededisplay/imagens";
 	private final String diretorioRemoto = "";
 	private final String urlRemoto = "";
 	private String PATH_IMAGENS = "/var/www/palfmarketing.online/www/criativos";
@@ -29,8 +29,17 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 		
 		try {
 			String imagemQuadrada = this.geraImagemQuadrada(imagemConjuntoCorrente);
-			String imagemDeitadaTextoEsquerda = this.geraImagemDeitadaTextoEsquerda(imagemConjuntoCorrente);
+			String destinoQuadrada = PATH_IMAGENS + "/" + imagemConjuntoCorrente.getImagemPaginaVenda().getCodigoHexa() + "-criativo-google-quadrada.jpg";
+			String imagemQuadradaUrl = PREFIXO_URL + "/" + imagemConjuntoCorrente.getImagemPaginaVenda().getCodigoHexa() + "-criativo-google-quadrada.jpg";
+			this.enviaParaServidor(imagemQuadrada, destinoQuadrada);
+			//String imagemDeitadaTextoEsquerda = this.geraImagemDeitadaTextoEsquerda(imagemConjuntoCorrente);
 			String imagemDeitadaTextoDireita = this.geraImagemDeitadaTextoDireita(imagemConjuntoCorrente);
+			String destinoDeitada = PATH_IMAGENS + "/" + imagemConjuntoCorrente.getImagemPaginaVenda().getCodigoHexa() + "-criativo-google-deitada.jpg";
+			String imagemDeitadaUrl = PREFIXO_URL + "/" + imagemConjuntoCorrente.getImagemPaginaVenda().getCodigoHexa() + "-criativo-google-deitada.jpg";
+			this.enviaParaServidor(imagemDeitadaTextoDireita, destinoDeitada);
+			this.saidaImagemConjuntoCorrente = imagemConjuntoCorrente;
+			this.saidaImagemConjuntoCorrente.setUrlImagemQuadrada(imagemQuadradaUrl);
+			this.saidaImagemConjuntoCorrente.setUrlImagemDeitada(imagemDeitadaUrl);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,8 +48,13 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 	} 
 
 	
+	
+	
 
 	protected String geraImagemQuadrada(ImagemConjunto criativo) throws Exception {
+		if (criativo.getImagemPaginaVenda()==null) {
+			throw new RuntimeException("Criativo " + criativo.getNome() + " sem imagem");
+		}
 		String imageUrl = criativo.getImagemPaginaVenda().getUrlFinal();
 		String imagemEntrada = TEMP_FILE + "/" + criativo.getImagemPaginaVenda().getCodigoHexa() + ".png"; 
 		String imagemSaida = TEMP_FILE + "/" + criativo.getImagemPaginaVenda().getCodigoHexa() + "-criativo-google-quadrada.jpg";
@@ -80,7 +94,7 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 		  
 		  String mensagem = criativo.getTextoCopyLinha1() + "\\n" + criativo.getTextoCopyLinha2();
 		
-		  String imagem_pequena_redimensionada="/home/usuario/Imagens/Criativos/imagem_pequena_redimensionada.png";
+		  String imagem_pequena_redimensionada= criativo.getLogoGrupoWhatsapp();
 		  
 		  //String command = "convert " + imagemEntrada + " -gravity south -splice 0x180 \\( -size 1240x180 xc:#000000 \\) -composite -fill white -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
 
@@ -226,14 +240,9 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 		  
 		  String mensagem = criativo.getTextoCopyLinha1() + "\\n" + criativo.getTextoCopyLinha2();
 		
-		  String imagem_pequena_redimensionada="/home/usuario/Imagens/Criativos/imagem_pequena_redimensionada.png";
+		  String imagem_pequena_redimensionada= criativo.getLogoGrupoWhatsapp();
 		  
-		  //String command = "convert " + imagemEntrada + " -gravity south -splice 0x180 \\( -size 1240x180 xc:#000000 \\) -composite -fill white -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
-
-		  // colocando um posicionamento north / sotuh
-		  String command = "convert " + imagemEntrada + " -gravity north -splice 0x186 \\( -size 1240x186 xc:" + criativo.getFundoColor() + " \\) -composite -fill \"" + criativo.getFontColor() + "\" -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\" " + imagemSaida ;
-		  command = "convert " + imagemEntrada + " -gravity north -splice 0x186 \\( -size 1240x186 xc:" + criativo.getFundoColor() + " \\) -composite -fill \"" + criativo.getFontColor() + "\" -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\"  -gravity center -background \"" + criativo.getFundoColor() + "\" -extent 1210x1210 " + imagemSaida ;
-		  command = "convert " + imagemEntrada + " -gravity north -splice 0x186 \\( -size 1240x186 xc:" + criativo.getFundoColor() + " \\) -composite -fill \"" + criativo.getFontColor() + "\" -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 58 -annotate +0+20 \"" + mensagem + "\"  -gravity center -background \"" + criativo.getFundoColor() + "\" -extent 1210x1210 " + imagem_pequena_redimensionada + " -gravity southeast -geometry +10+10 -composite  " + imagemSaida ;
+		  String command = "convert " +  imagemEntrada + " -resize 1200x628 -gravity west -background white -extent 1200x628 -gravity east -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 42 -annotate +20-200 \"" + criativo.getTextoCopyLinha1() + "\" -annotate +20-140 \"" + criativo.getTextoCopyLinha2() + "\" -annotate +20-50 \"" + criativo.getTextoCopyLinha3() + "\" -gravity center -background \"" + criativo.getFundoColor()  +"\" " + imagem_pequena_redimensionada + " -gravity southeast -geometry +10+10 -composite " + imagemSaida;
 
 		  
 	      System.out.println(command);

@@ -3,15 +3,20 @@
 module.exports = function(Campanhaadsrededisplay) {
 
     Campanhaadsrededisplay.AtualizaIndicadorAds = function(campanha, callback) {
-        const sql = "update CampanhaAdsRedeDisplay set custoTotal = " + campanha.custoTotal + " , " +
+        const sql = "update CampanhaAdsRedeDisplay set custoTotal .= " + campanha.custoTotal + " , " +
             " cpc = " + campanha.cpc + " , " + 
             " cliqueTotal = " + campanha.cliqueTotal + " , " +
             " impressaoTotal = " + campanha.impressaoTotal + " , " +
             " ctr = " + campanha.ctr + " , " +
             " atualizacaoAds = now() " +
             " where id = " + campanha.id;
+        const sql2 = "update CampanhaAdsRedeDisplay set custoEntradaGrupo = (custoTotal/quantidadeEntradaGrupo) , " +
+            " percentualEntradaGrupo = (quantidadeEntradaGrupo/cliqueTotal) * 100 " +
+            " where id = " + campanha.id + " and quantidadeEntradaGrupo > 0";
         const ds = Campanhaadsrededisplay.dataSource;
-        ds.connector.query(sql,callback);
+        ds.connector.query(sql,(err,result) => {
+            ds.connector.query(sql2,callback);
+        });
     }
 
 
@@ -61,6 +66,7 @@ module.exports = function(Campanhaadsrededisplay) {
                 {'relation' : 'imagemConjunto'},
                 {'relation' : 'anuncioConceitoAdsRedeDisplay'},
                 {'relation' : 'paginaVendaPropria'},
+                {'relation' : 'whatsappGrupo'},
                 {'relation' : 'publicoAlvoAdsPalavra' , 'scope' : {'include' : 
                     {'relation' : 'contaPublicoAlvoAdsPalavras' }
                 }}
@@ -74,7 +80,7 @@ module.exports = function(Campanhaadsrededisplay) {
             " resourceNameGrupo = '" + resourceNameGrupo + "' , " +
             " nomeAds = '" + nomeAds + "' , " +
             " dataEnvioGoogle = now() , prontaParaEnvio = 2 " +
-            " where id = " + id;
+            " where id = " + idCampanha;
         const ds = Campanhaadsrededisplay.dataSource;
         ds.connector.query(sql,callback);
     }

@@ -1053,6 +1053,34 @@ export class ConteudoProdutoKiwifyApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {number} idEntregavel 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConteudoProdutoKiwify` object.)
+   * </em>
+   */
+  public ObtemPorEntregavelComImagemPrincipal(idEntregavel: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConteudoProdutoKiwifies/obtemPorEntregavelComImagemPrincipal";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idEntregavel !== 'undefined' && idEntregavel !== null) _urlParams.idEntregavel = idEntregavel;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Cria uma nova instância no imagemConteudos deste modelo.
    *
    * @param {any} id ConteudoProdutoKiwify id

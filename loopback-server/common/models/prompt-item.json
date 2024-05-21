@@ -24,6 +24,12 @@
 		"ordenacao": {
 			"type": "number"
 		},
+		"textoInicioNegrito": {
+			"type": "string"
+		},
+		"textoFinalNegrito": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		},

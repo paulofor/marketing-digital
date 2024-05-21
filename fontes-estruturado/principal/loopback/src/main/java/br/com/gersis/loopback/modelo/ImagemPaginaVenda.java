@@ -25,6 +25,7 @@ public class ImagemPaginaVenda extends Model {
 	private String urlJpeg;
 	private int geraJpg;
 	private String codigoHexa;
+	private String urlJpeg20;
 	// Relacionamentos 1
 	private DalleSolicitacaoImagem DalleSolicitacaoImagem;
 	private ProdutoAfiliadoHotlink ProdutoAfiliadoHotlink;
@@ -64,6 +65,7 @@ public class ImagemPaginaVenda extends Model {
 			obj.put("urlJpeg", urlJpeg);
 			obj.put("geraJpg", geraJpg);
 			obj.put("codigoHexa", codigoHexa);
+			obj.put("urlJpeg20", urlJpeg20);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -136,6 +138,12 @@ public class ImagemPaginaVenda extends Model {
 	}
 	public String getCodigoHexa() { 
 		return this.codigoHexa;
+	}
+	public void setUrlJpeg20(String valor) { 
+		this.urlJpeg20 = valor;
+	}
+	public String getUrlJpeg20() { 
+		return this.urlJpeg20;
 	}
 
 	public DalleSolicitacaoImagem getDalleSolicitacaoImagem() {

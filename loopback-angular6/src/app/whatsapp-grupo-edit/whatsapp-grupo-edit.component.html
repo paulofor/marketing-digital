@@ -19,6 +19,17 @@
 			</textarea>
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<input matInput #quantidadePessoa [(ngModel)]="item.quantidadePessoa" name="quantidadePessoa" placeholder="Qtde Pessoas" autocomplete="off" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaCheckout">
+			<mat-select placeholder="Chekcout" #checkoutProdutoProprioId [(ngModel)]="item.checkoutProdutoProprioId" name="checkoutProdutoProprioId">
+				<mat-option *ngFor="let item of listaCheckout" [value]="item.id">
+					{{ item.nome}} 
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
 
 	</mat-dialog-content>
 

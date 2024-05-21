@@ -150,6 +150,7 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioAcessoPaginaGrupo repAcessoPaginaGrupo = adapter.createRepository(RepositorioAcessoPaginaGrupo.class);
 	protected RepositorioProjetoIA repProjetoIA = adapter.createRepository(RepositorioProjetoIA.class);
 	protected RepositorioTipoRecursoIA repTipoRecursoIA = adapter.createRepository(RepositorioTipoRecursoIA.class);
+	protected RepositorioWhatsappGrupoDia repWhatsappGrupoDia = adapter.createRepository(RepositorioWhatsappGrupoDia.class);
 
 
 	@Override
