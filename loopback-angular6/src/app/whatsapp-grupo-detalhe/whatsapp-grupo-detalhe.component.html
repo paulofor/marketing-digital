@@ -1,31 +1,33 @@
 <div class="dgc-painel" *ngIf="principal">
-<div class="dgc-painel-header" *ngIf="principal">
-	<span>{{principal.nome}}</span>
-</div>
-
-<div class="dgc-card">
-<div class="dgc-card-header">
-<span>Quadro 1</span>
-</div>
-<div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeSaida">
-<span></span>
-</div>
-<div class="dgc-card-comandos">
-</div> 
- </div>
-	
-<div class="dgc-card">
-<div class="dgc-card-header">
-<span>Quadro 2</span>
+	<div class="dgc-painel-header" *ngIf="principal">
+		<span>{{principal.nome}}</span>
 	</div>
-<div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeSaida">
-<span></span>
-</div>
-<div class="dgc-card-comandos">
-			</div> 
-  </div>
-<div class="dgc-card-comandos">
-<button class="btn-primary btn-sm btn" (click)="editaPasso()">Novo</button>
-</div> 
-</div>
 
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Mensagens do Dia</span>
+		</div>
+		<div class="dgc-card-detalhe" *ngFor="let mensagem of listaMensagem">
+			<span>{{mensagem.ordenacaoDia}}</span>
+			<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="editaMensagem(mensagem)">
+				<i class="fas fa-edit text-primary"></i>
+			</button><br>
+			<span>{{mensagem.texto}}</span>
+		</div>
+		<div class="dgc-card-comandos">
+			<button class="btn-primary btn-sm btn" (click)="editaMensagem()">Nova</button>
+		</div>
+	</div>
+
+	<div class="dgc-card">
+		<div class="dgc-card-header">
+			<span>Quadro 2</span>
+		</div>
+		<div class="dgc-card-detalhe" *ngFor="let rel of principal.processoEntidadeSaida">
+			<span></span>
+		</div>
+		<div class="dgc-card-comandos">
+		</div>
+	</div>
+
+</div>

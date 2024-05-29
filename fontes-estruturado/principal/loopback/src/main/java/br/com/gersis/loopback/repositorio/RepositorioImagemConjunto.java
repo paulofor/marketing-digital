@@ -45,6 +45,14 @@ public class RepositorioImagemConjunto extends ModelRepository<ImagemConjunto> {
 		invokeStaticMethod("atualizaImagemDePaginaVenda", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void atualizaMetrica(int idImagemConjunto ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ImagemConjuntos/atualizaMetrica","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ImagemConjunto.atualizaMetrica");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idImagemConjunto", idImagemConjunto);
+		invokeStaticMethod("atualizaMetrica", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<ImagemConjunto> listaEntrada) {
 		JSONArray lista = new JSONArray();

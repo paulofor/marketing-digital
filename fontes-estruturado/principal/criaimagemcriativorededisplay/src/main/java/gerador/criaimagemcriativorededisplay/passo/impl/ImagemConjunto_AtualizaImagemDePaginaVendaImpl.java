@@ -11,6 +11,7 @@ public class ImagemConjunto_AtualizaImagemDePaginaVendaImpl extends ImagemConjun
 	@Override
 	protected boolean executaCustom(ImagemConjunto imagemConjuntoCorrente) {
 		this.imagem = imagemConjuntoCorrente;
+		this.imagem.setGeraDeImagemVenda(0);
 		return true;
 	} 
 

@@ -19,7 +19,7 @@ public class ExtraiArtigoParaProduto {
 
 	public static void main(String[] args) {
 		System.out.print("ExtraiArtigoParaProduto");
-		System.out.println("(20/05/2024 18:36:40)");
+		System.out.println("(29/05/2024 02:10:57)");
 		try {
 			carregaProp();
 			ExtraiArtigoParaProdutoObj obj = new ExtraiArtigoParaProdutoObj();

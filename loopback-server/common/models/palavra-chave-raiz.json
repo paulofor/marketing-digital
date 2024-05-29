@@ -1,0 +1,52 @@
+{
+	"name": "PalavraChaveRaiz",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"palavra": {
+			"type": "string"
+		},
+		"ativo": {
+			"type": "number"
+		},
+		"dataUltimaAtualizacao": {
+			"type": "date"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"palavraChaveEstatisticas": {
+			"type": "hasMany",
+			"model": "PalavraChaveEstatistica",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"ListaParaPesquisa": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaPesquisa",
+   					"verb": "get"
+ 				}
+ 			]
+		}
+	}
+}

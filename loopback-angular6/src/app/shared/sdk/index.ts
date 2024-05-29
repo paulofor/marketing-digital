@@ -179,6 +179,10 @@ import { PaginaWhatsappGrupoApi } from './services/custom/PaginaWhatsappGrupo';
 import { PaginaWhatsappExemploApi } from './services/custom/PaginaWhatsappExemplo';
 import { WhatsappGrupoDiarioApi } from './services/custom/WhatsappGrupoDiario';
 import { WhatsappGrupoDiaApi } from './services/custom/WhatsappGrupoDia';
+import { WhatsappMensagemEnviadaGrupoApi } from './services/custom/WhatsappMensagemEnviadaGrupo';
+import { PalavraChaveEstatisticaApi } from './services/custom/PalavraChaveEstatistica';
+import { PalavraChaveGoogleApi } from './services/custom/PalavraChaveGoogle';
+import { PalavraChaveRaizApi } from './services/custom/PalavraChaveRaiz';
 /**
 * @module SDKBrowserModule
 * @description
@@ -340,6 +344,10 @@ export class SDKBrowserModule {
         PaginaWhatsappExemploApi,
         WhatsappGrupoDiarioApi,
         WhatsappGrupoDiaApi,
+        WhatsappMensagemEnviadaGrupoApi,
+        PalavraChaveEstatisticaApi,
+        PalavraChaveGoogleApi,
+        PalavraChaveRaizApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

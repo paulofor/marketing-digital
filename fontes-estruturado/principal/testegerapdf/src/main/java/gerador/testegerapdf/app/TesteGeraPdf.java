@@ -19,7 +19,7 @@ public class TesteGeraPdf {
 
 	public static void main(String[] args) {
 		System.out.print("TesteGeraPdf");
-		System.out.println("(20/05/2024 18:36:32)");
+		System.out.println("(29/05/2024 02:10:51)");
 		try {
 			carregaProp();
 			TesteGeraPdfObj obj = new TesteGeraPdfObj();

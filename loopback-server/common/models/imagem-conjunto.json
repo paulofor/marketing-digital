@@ -54,6 +54,39 @@
 		"textoCopyLinha3": {
 			"type": "string"
 		},
+		"quantidadeEntradaGrupo": {
+			"type": "number"
+		},
+		"custoEntradaGrupo": {
+			"type": "number"
+		},
+		"percentualEntradaGrupo": {
+			"type": "number"
+		},
+		"cliqueTotal": {
+			"type": "number"
+		},
+		"custoTotal": {
+			"type": "number"
+		},
+		"dataGeracao": {
+			"type": "date"
+		},
+		"quadradaTexto1": {
+			"type": "string"
+		},
+		"quadradaTexto2": {
+			"type": "string"
+		},
+		"deitadaTexto1": {
+			"type": "string"
+		},
+		"deitadaTexto2": {
+			"type": "string"
+		},
+		"deitadaTexto3": {
+			"type": "string"
+		},
 		"imagemPaginaVendaId": {
 			"type": "number"
 		},
@@ -141,6 +174,31 @@
 			"http": [
          		{
           			"path": "/atualizaImagemDePaginaVenda",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"AtualizaMetrica": {
+			"accepts": [
+				{
+					"arg": "idImagemConjunto",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaMetrica",
    					"verb": "post"
  				}
  			]

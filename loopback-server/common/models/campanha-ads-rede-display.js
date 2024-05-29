@@ -3,7 +3,7 @@
 module.exports = function(Campanhaadsrededisplay) {
 
     Campanhaadsrededisplay.AtualizaIndicadorAds = function(campanha, callback) {
-        const sql = "update CampanhaAdsRedeDisplay set custoTotal .= " + campanha.custoTotal + " , " +
+        const sql = "update CampanhaAdsRedeDisplay set custoTotal = " + campanha.custoTotal + " , " +
             " cpc = " + campanha.cpc + " , " + 
             " cliqueTotal = " + campanha.cliqueTotal + " , " +
             " impressaoTotal = " + campanha.impressaoTotal + " , " +
@@ -15,6 +15,8 @@ module.exports = function(Campanhaadsrededisplay) {
             " where id = " + campanha.id + " and quantidadeEntradaGrupo > 0";
         const ds = Campanhaadsrededisplay.dataSource;
         ds.connector.query(sql,(err,result) => {
+            console.log('err:' ,err );
+            //console.log(sql)
             ds.connector.query(sql2,callback);
         });
     }

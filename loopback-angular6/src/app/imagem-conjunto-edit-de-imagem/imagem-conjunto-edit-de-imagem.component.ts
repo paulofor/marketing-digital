@@ -33,6 +33,12 @@ export class ImagemConjuntoEditDeImagemComponent extends ImagemConjuntoEditDeIma
 		
 	}
 
+	preSubmit(): void {
+		delete this.item['fonteLocal'];
+		delete this.item['imagemPaginaVenda'];
+
+	}
+
 	criaItem() {
 		let saida = new ImagemConjunto();
 		saida.produtoProprioId = this.origem.id;

@@ -111,6 +111,14 @@ public class RepositorioConteudoProdutoKiwify extends ModelRepository<ConteudoPr
 		invokeStaticMethod("obtemPorEntregavelComImagemPrincipal", params,   new JsonArrayParser<ConteudoProdutoKiwify>(this, callback));
 	}
 
+	public synchronized void desligaGeraImagem(int idItem ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("ConteudoProdutoKiwifies/desligaGeraImagem","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "ConteudoProdutoKiwify.desligaGeraImagem");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idItem", idItem);
+		invokeStaticMethod("desligaGeraImagem", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<ConteudoProdutoKiwify> listaEntrada) {
 		JSONArray lista = new JSONArray();

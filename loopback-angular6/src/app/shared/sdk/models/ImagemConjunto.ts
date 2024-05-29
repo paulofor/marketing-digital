@@ -26,6 +26,17 @@ export interface ImagemConjuntoInterface {
   "fundoColor"?: string;
   "logoGrupoWhatsapp"?: string;
   "textoCopyLinha3"?: string;
+  "quantidadeEntradaGrupo"?: number;
+  "custoEntradaGrupo"?: number;
+  "percentualEntradaGrupo"?: number;
+  "cliqueTotal"?: number;
+  "custoTotal"?: number;
+  "dataGeracao"?: Date;
+  "quadradaTexto1"?: string;
+  "quadradaTexto2"?: string;
+  "deitadaTexto1"?: string;
+  "deitadaTexto2"?: string;
+  "deitadaTexto3"?: string;
   "imagemPaginaVendaId"?: number;
   "fonteLocalId"?: number;
   "id"?: number;
@@ -55,6 +66,17 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
   "fundoColor": string;
   "logoGrupoWhatsapp": string;
   "textoCopyLinha3": string;
+  "quantidadeEntradaGrupo": number;
+  "custoEntradaGrupo": number;
+  "percentualEntradaGrupo": number;
+  "cliqueTotal": number;
+  "custoTotal": number;
+  "dataGeracao": Date;
+  "quadradaTexto1": string;
+  "quadradaTexto2": string;
+  "deitadaTexto1": string;
+  "deitadaTexto2": string;
+  "deitadaTexto3": string;
   "imagemPaginaVendaId": number;
   "fonteLocalId": number;
   "id": number;
@@ -157,6 +179,50 @@ export class ImagemConjunto implements ImagemConjuntoInterface {
         },
         "textoCopyLinha3": {
           name: 'textoCopyLinha3',
+          type: 'string'
+        },
+        "quantidadeEntradaGrupo": {
+          name: 'quantidadeEntradaGrupo',
+          type: 'number'
+        },
+        "custoEntradaGrupo": {
+          name: 'custoEntradaGrupo',
+          type: 'number'
+        },
+        "percentualEntradaGrupo": {
+          name: 'percentualEntradaGrupo',
+          type: 'number'
+        },
+        "cliqueTotal": {
+          name: 'cliqueTotal',
+          type: 'number'
+        },
+        "custoTotal": {
+          name: 'custoTotal',
+          type: 'number'
+        },
+        "dataGeracao": {
+          name: 'dataGeracao',
+          type: 'Date'
+        },
+        "quadradaTexto1": {
+          name: 'quadradaTexto1',
+          type: 'string'
+        },
+        "quadradaTexto2": {
+          name: 'quadradaTexto2',
+          type: 'string'
+        },
+        "deitadaTexto1": {
+          name: 'deitadaTexto1',
+          type: 'string'
+        },
+        "deitadaTexto2": {
+          name: 'deitadaTexto2',
+          type: 'string'
+        },
+        "deitadaTexto3": {
+          name: 'deitadaTexto3',
           type: 'string'
         },
         "imagemPaginaVendaId": {

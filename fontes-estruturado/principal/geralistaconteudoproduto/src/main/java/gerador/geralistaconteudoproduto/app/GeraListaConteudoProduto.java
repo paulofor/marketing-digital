@@ -19,7 +19,7 @@ public class GeraListaConteudoProduto {
 
 	public static void main(String[] args) {
 		System.out.print("GeraListaConteudoProduto");
-		System.out.println("(20/05/2024 18:36:52)");
+		System.out.println("(29/05/2024 02:11:04)");
 		try {
 			carregaProp();
 			GeraListaConteudoProdutoObj obj = new GeraListaConteudoProdutoObj();

@@ -13,7 +13,7 @@ import com.strongloop.android.loopback.callbacks.*;
 
 public abstract class CampanhaAdsRedeDisplay_AtualizaIndicadorPessoal extends DaoAplicacao { 
 
-	private int NUM_PASSO = 4;
+	private int NUM_PASSO = 6;
 
 
 

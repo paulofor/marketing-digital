@@ -1,0 +1,87 @@
+{
+	"name": "PalavraChaveEstatistica",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"dataConsulta": {
+			"type": "date"
+		},
+		"maxCpc": {
+			"type": "number"
+		},
+		"volumePesquisa": {
+			"type": "number"
+		},
+		"indiceCompeticao": {
+			"type": "number"
+		},
+		"palavraChaveRaizId": {
+			"type": "number"
+		},
+		"maisRecente": {
+			"type": "number"
+		},
+		"palavra": {
+			"type": "string"
+		},
+		"minCpc": {
+			"type": "number"
+		},
+		"palavraChaveGoogleId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"palavraChaveRaiz": {
+			"type": "belongsTo",
+			"model": "PalavraChaveRaiz",
+			"foreignKey": ""
+		},
+		"palavraChaveGoogle": {
+			"type": "belongsTo",
+			"model": "PalavraChaveGoogle",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"InsereLista": {
+			"accepts": [
+				{
+					"arg": "listaPalavra",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "palavraChaveRaizId",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereLista",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

@@ -50,14 +50,15 @@ export interface CampanhaAdsRedeDisplayInterface {
   "quantidadeEntradaGrupo"?: number;
   "custoEntradaGrupo"?: number;
   "percentualEntradaGrupo"?: number;
+  "observacao"?: string;
+  "imagemConjuntoId"?: number;
+  "whatsappGrupoId"?: number;
   "paginaVendaPropriaId"?: number;
   "faixaHorarioCampanhaAdsId"?: number;
   "publicoAlvoAdsPalavraId"?: number;
   "anuncioConceitoAdsRedeDisplayId"?: number;
-  "imagemConjuntoId"?: number;
   "produtoProprioId"?: number;
   "paginaVendaVslId"?: number;
-  "whatsappGrupoId"?: number;
   "id"?: number;
   "hotmartId"?: number;
   contaGoogle?: ContaGoogle;
@@ -109,14 +110,15 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
   "quantidadeEntradaGrupo": number;
   "custoEntradaGrupo": number;
   "percentualEntradaGrupo": number;
+  "observacao": string;
+  "imagemConjuntoId": number;
+  "whatsappGrupoId": number;
   "paginaVendaPropriaId": number;
   "faixaHorarioCampanhaAdsId": number;
   "publicoAlvoAdsPalavraId": number;
   "anuncioConceitoAdsRedeDisplayId": number;
-  "imagemConjuntoId": number;
   "produtoProprioId": number;
   "paginaVendaVslId": number;
-  "whatsappGrupoId": number;
   "id": number;
   "hotmartId": number;
   contaGoogle: ContaGoogle;
@@ -300,6 +302,18 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           name: 'percentualEntradaGrupo',
           type: 'number'
         },
+        "observacao": {
+          name: 'observacao',
+          type: 'string'
+        },
+        "imagemConjuntoId": {
+          name: 'imagemConjuntoId',
+          type: 'number'
+        },
+        "whatsappGrupoId": {
+          name: 'whatsappGrupoId',
+          type: 'number'
+        },
         "paginaVendaPropriaId": {
           name: 'paginaVendaPropriaId',
           type: 'number'
@@ -316,20 +330,12 @@ export class CampanhaAdsRedeDisplay implements CampanhaAdsRedeDisplayInterface {
           name: 'anuncioConceitoAdsRedeDisplayId',
           type: 'number'
         },
-        "imagemConjuntoId": {
-          name: 'imagemConjuntoId',
-          type: 'number'
-        },
         "produtoProprioId": {
           name: 'produtoProprioId',
           type: 'number'
         },
         "paginaVendaVslId": {
           name: 'paginaVendaVslId',
-          type: 'number'
-        },
-        "whatsappGrupoId": {
-          name: 'whatsappGrupoId',
           type: 'number'
         },
         "id": {

@@ -17,7 +17,7 @@ import gerador.criaimagemcriativorededisplay.passo.*;
 
 public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaParaConjunto {
 	
-	private final String TEMP_FILE = "/home/usuario/aplicacoes/MarketingDigital/fontes-estruturado/principal/criaimagemcriativorededisplay/imagens";
+	private final String TEMP_FILE = "imagens";
 	private final String diretorioRemoto = "";
 	private final String urlRemoto = "";
 	private String PATH_IMAGENS = "/var/www/palfmarketing.online/www/criativos";
@@ -57,7 +57,7 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 		}
 		String imageUrl = criativo.getImagemPaginaVenda().getUrlFinal();
 		String imagemEntrada = TEMP_FILE + "/" + criativo.getImagemPaginaVenda().getCodigoHexa() + ".png"; 
-		String imagemSaida = TEMP_FILE + "/" + criativo.getImagemPaginaVenda().getCodigoHexa() + "-criativo-google-quadrada.jpg";
+		String imagemSaida = TEMP_FILE + "/conjunto-" + criativo.getIdInteger() + "-criativo-google-quadrada.jpg";
 
         // Criando um objeto File com o caminho do arquivo
         File arquivo = new File(imagemSaida);
@@ -90,9 +90,9 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 		inputStream.close();
 		outputStream.close();
 		
-		if (criativo.getTextoCopyLinha1()!=null) {
+		if (criativo.getQuadradaTexto1()!=null) {
 		  
-		  String mensagem = criativo.getTextoCopyLinha1() + "\\n" + criativo.getTextoCopyLinha2();
+		  String mensagem = criativo.getQuadradaTexto1() + "\\n" + criativo.getQuadradaTexto2();
 		
 		  String imagem_pequena_redimensionada= criativo.getLogoGrupoWhatsapp();
 		  
@@ -130,7 +130,7 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 	protected String geraImagemDeitadaTextoEsquerda(ImagemConjunto criativo) throws Exception {
 		String imageUrl = criativo.getImagemPaginaVenda().getUrlFinal();
 		String imagemEntrada = TEMP_FILE + "/" + criativo.getImagemPaginaVenda().getCodigoHexa() + ".png"; 
-		String imagemSaida = TEMP_FILE + "/" + criativo.getImagemPaginaVenda().getCodigoHexa() + "-criativo-google-deitada.jpg";
+		String imagemSaida = TEMP_FILE + "/conjunto-" + criativo.getIdLong() + "-criativo-google-deitada.jpg";
 
         // Criando um objeto File com o caminho do arquivo
         File arquivo = new File(imagemSaida);
@@ -163,7 +163,7 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 		inputStream.close();
 		outputStream.close();
 		
-		if (criativo.getTextoCopyLinha1()!=null) {
+		if (criativo.getDeitadaTexto1()!=null) {
 		  
 		  String mensagem = criativo.getTextoCopyLinha1() + "\\n" + criativo.getTextoCopyLinha2();
 		
@@ -236,13 +236,12 @@ public class ProcessaImagemVendaParaConjuntoImpl extends ProcessaImagemVendaPara
 		inputStream.close();
 		outputStream.close();
 		
-		if (criativo.getTextoCopyLinha1()!=null) {
+		if (criativo.getDeitadaTexto1()!=null) {
 		  
-		  String mensagem = criativo.getTextoCopyLinha1() + "\\n" + criativo.getTextoCopyLinha2();
 		
 		  String imagem_pequena_redimensionada= criativo.getLogoGrupoWhatsapp();
 		  
-		  String command = "convert " +  imagemEntrada + " -resize 1200x628 -gravity west -background white -extent 1200x628 -gravity east -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 42 -annotate +20-200 \"" + criativo.getTextoCopyLinha1() + "\" -annotate +20-140 \"" + criativo.getTextoCopyLinha2() + "\" -annotate +20-50 \"" + criativo.getTextoCopyLinha3() + "\" -gravity center -background \"" + criativo.getFundoColor()  +"\" " + imagem_pequena_redimensionada + " -gravity southeast -geometry +10+10 -composite " + imagemSaida;
+		  String command = "convert " +  imagemEntrada + " -resize 1200x628 -gravity west -background white -extent 1200x628 -gravity east -font " + criativo.getFonteLocal().getArquivo() + " -pointsize 42 -annotate +20-200 \"" + criativo.getDeitadaTexto1() + "\" -annotate +20-140 \"" + criativo.getDeitadaTexto2() + "\" -annotate +20-50 \"" + criativo.getDeitadaTexto3() + "\" -gravity center -background \"" + criativo.getFundoColor()  +"\" " + imagem_pequena_redimensionada + " -gravity southeast -geometry +10+10 -composite " + imagemSaida;
 
 		  
 	      System.out.println(command);

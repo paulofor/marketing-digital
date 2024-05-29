@@ -37,6 +37,14 @@ public class RepositorioWhatsappGrupo extends ModelRepository<WhatsappGrupo> {
 		invokeStaticMethod("finalizaDadosDia", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void atualizaMetricaGrupo(int idGrupoWhatsapp ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("WhatsappGrupos/atualizaMetricaGrupo","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "WhatsappGrupo.atualizaMetricaGrupo");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idGrupoWhatsapp", idGrupoWhatsapp);
+		invokeStaticMethod("atualizaMetricaGrupo", params,   new EmptyResponseParser(callback));
+	}
+
 
 	private JSONArray obtemLista(List<WhatsappGrupo> listaEntrada) {
 		JSONArray lista = new JSONArray();

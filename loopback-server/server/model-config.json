@@ -554,5 +554,21 @@
   "WhatsappGrupoDia": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "WhatsappMensagemEnviadaGrupo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PalavraChaveEstatistica": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PalavraChaveGoogle": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PalavraChaveRaiz": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

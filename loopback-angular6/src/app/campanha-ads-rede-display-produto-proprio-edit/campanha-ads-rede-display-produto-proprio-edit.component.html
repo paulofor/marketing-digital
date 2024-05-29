@@ -65,6 +65,11 @@
 			<input matInput #prontaParaEnvio [(ngModel)]="item.prontaParaEnvio" name="prontaParaEnvio" placeholder="Pronta" />
 		</mat-form-field>
 
+		<mat-form-field class="example-full-width">
+			<textarea rows="3" matInput #observacao [(ngModel)]="item.observacao" name="observacao" placeholder="Observação">
+			</textarea>
+		</mat-form-field>
+
 	</mat-dialog-content>
 
 	<mat-dialog-actions>

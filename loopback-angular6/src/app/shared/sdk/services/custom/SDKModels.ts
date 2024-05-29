@@ -131,6 +131,10 @@ import { PaginaWhatsappGrupo } from '../../models/PaginaWhatsappGrupo';
 import { PaginaWhatsappExemplo } from '../../models/PaginaWhatsappExemplo';
 import { WhatsappGrupoDiario } from '../../models/WhatsappGrupoDiario';
 import { WhatsappGrupoDia } from '../../models/WhatsappGrupoDia';
+import { WhatsappMensagemEnviadaGrupo } from '../../models/WhatsappMensagemEnviadaGrupo';
+import { PalavraChaveEstatistica } from '../../models/PalavraChaveEstatistica';
+import { PalavraChaveGoogle } from '../../models/PalavraChaveGoogle';
+import { PalavraChaveRaiz } from '../../models/PalavraChaveRaiz';
 
 export interface Models { [name: string]: any }
 
@@ -269,6 +273,10 @@ export class SDKModels {
     PaginaWhatsappExemplo: PaginaWhatsappExemplo,
     WhatsappGrupoDiario: WhatsappGrupoDiario,
     WhatsappGrupoDia: WhatsappGrupoDia,
+    WhatsappMensagemEnviadaGrupo: WhatsappMensagemEnviadaGrupo,
+    PalavraChaveEstatistica: PalavraChaveEstatistica,
+    PalavraChaveGoogle: PalavraChaveGoogle,
+    PalavraChaveRaiz: PalavraChaveRaiz,
     
   };
 

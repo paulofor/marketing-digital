@@ -85,6 +85,10 @@ import { PromptItemListCriaItemConteudoComponent } from '../prompt-item-list-cri
 import { WhatsappGrupoListQtdeComponent } from '../whatsapp-grupo-list-qtde/whatsapp-grupo-list-qtde.component';
 import { ImagemConjuntoListProcessoJavaComponent } from '../imagem-conjunto-list-processo-java/imagem-conjunto-list-processo-java.component';
 import { EntregavelProdutoListParaGerarListaComponent } from '../entregavel-produto-list-para-gerar-lista/entregavel-produto-list-para-gerar-lista.component';
+import { PalavraChaveRaizListComponent } from '../palavra-chave-raiz-list/palavra-chave-raiz-list.component';
+import { PalavraChaveRaizDetalheComponent } from '../palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
+import { PalavraChaveEstatisticaListMelhoresComponent } from '../palavra-chave-estatistica-list-melhores/palavra-chave-estatistica-list-melhores.component';
+import { PalavraChaveEstatisticaListCrescimentoComponent } from '../palavra-chave-estatistica-list-crescimento/palavra-chave-estatistica-list-crescimento.component';
 
 
 
@@ -207,6 +211,11 @@ export const routes : Routes = [
     { path: 'whatsappGrupoListQtde' , component: WhatsappGrupoListQtdeComponent },
     { path: 'imagemConjuntoListProcessoJava' , component: ImagemConjuntoListProcessoJavaComponent },
     { path: 'entregavelProdutoListParaGerarLista' , component: EntregavelProdutoListParaGerarListaComponent },
+    { path: 'palavraChaveRaizList' , component: PalavraChaveRaizListComponent },
+
+    { path: 'palavraChaveRaizDetalhe/:id' , component: PalavraChaveRaizDetalheComponent },
+    { path: 'palavraChaveEstatisticaListMelhores' , component: PalavraChaveEstatisticaListMelhoresComponent },
+    { path: 'palavraChaveEstatisticaListCrescimento' , component: PalavraChaveEstatisticaListCrescimentoComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

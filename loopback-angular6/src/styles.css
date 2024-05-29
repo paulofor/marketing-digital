@@ -137,7 +137,11 @@ body {
  .dgc-painel-tabela {
    margin-top: 8px;
  }
-  
+ .dgc-processo-java {
+  text-transform: none;
+ } 
+
+
  .dgc-card {
   margin: 8px;
   border: solid 1px #ccc;
@@ -232,6 +236,9 @@ body {
  .dgc-card-4 {
   width: 22%;
  } 
+ .dgc-card-5 {
+  width: 17%
+}
 
  .dgc-card-metrica-celula-label {
   font-size: 12px;

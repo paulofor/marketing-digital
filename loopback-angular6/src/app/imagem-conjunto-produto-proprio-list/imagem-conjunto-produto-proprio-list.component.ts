@@ -19,7 +19,7 @@ export class ImagemConjuntoProdutoProprioListComponent extends ImagemConjuntoPro
 	}
 
 	getFiltro() {
-		let filtro =  {'where' : {'produtoProprioId' : this.produto.id} , 'include' : 'fonteLocal'};
+		let filtro =  {'order' : 'id desc' , 'where' : {'produtoProprioId' : this.produto.id} , 'include' : ['fonteLocal','imagemPaginaVenda']};
 		console.log('filtro-produto:' , filtro);
 		return filtro;
 	}

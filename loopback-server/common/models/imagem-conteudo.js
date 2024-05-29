@@ -2,6 +2,9 @@
 
 module.exports = function(Imagemconteudo) {
 
+
+ 
+
     Imagemconteudo.ListaPrincipalGeraJpg = function(callback) {
         let filtro = {'where' : {'principal' : 1}, 'include' : 'conteudoProdutoKiwify'}
         Imagemconteudo.find(filtro,callback);

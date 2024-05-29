@@ -19,7 +19,7 @@ public class GeraMensagemWhatsapp {
 
 	public static void main(String[] args) {
 		System.out.print("GeraMensagemWhatsapp");
-		System.out.println("(20/05/2024 18:36:54)");
+		System.out.println("(29/05/2024 02:11:05)");
 		try {
 			carregaProp();
 			GeraMensagemWhatsappObj obj = new GeraMensagemWhatsappObj();

@@ -1,0 +1,19 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "gerProjDS": {
+    "host": "d555d.vps-kinghost.net",
+    "port": 3306,
+    "database": "lojadigicom",
+    "password": "GerProj2004$",
+    "name": "gerProjDS",
+    "user": "lojadigicom",
+    "connector": "mysql",
+    "connectTimeout": 30000,
+    "acquireTimeout": 30000,
+    "idleTimeout": 30000
+  }
+
+}

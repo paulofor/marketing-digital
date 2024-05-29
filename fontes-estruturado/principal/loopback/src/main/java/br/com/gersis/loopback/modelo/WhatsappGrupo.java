@@ -33,6 +33,7 @@ public class WhatsappGrupo extends Model {
 	private List<PaginaWhatsappGrupo> PaginaWhatsappGrupos;
 	private List<CampanhaAdsRedeDisplay> CampanhaAdsRedeDisplays;
 	private List<WhatsappGrupoDia> WhatsappGrupoDias;
+	private List<WhatsappMensagemEnviadaGrupo> WhatsappMensagemEnviadaGrupos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -207,6 +208,18 @@ public class WhatsappGrupo extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.WhatsappGrupoDias.add((WhatsappGrupoDia) objeto);
+		}
+	}
+	public List<WhatsappMensagemEnviadaGrupo> getWhatsappMensagemEnviadaGrupos() {
+		return  WhatsappMensagemEnviadaGrupos;
+	}
+	public void setWhatsappMensagemEnviadaGrupos(List<WhatsappMensagemEnviadaGrupo> valores) {
+		this.WhatsappMensagemEnviadaGrupos = new ArrayList<WhatsappMensagemEnviadaGrupo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new WhatsappMensagemEnviadaGrupo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.WhatsappMensagemEnviadaGrupos.add((WhatsappMensagemEnviadaGrupo) objeto);
 		}
 	}
 }

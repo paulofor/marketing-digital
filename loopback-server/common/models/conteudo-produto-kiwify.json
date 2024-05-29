@@ -328,6 +328,31 @@
    					"verb": "get"
  				}
  			]
+		},
+		"DesligaGeraImagem": {
+			"accepts": [
+				{
+					"arg": "idItem",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/desligaGeraImagem",
+   					"verb": "post"
+ 				}
+ 			]
 		}
 	}
 }

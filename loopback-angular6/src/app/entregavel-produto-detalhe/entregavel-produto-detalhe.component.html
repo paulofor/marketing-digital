@@ -29,7 +29,7 @@
 		</div>
 	</div>
 	<div class="dgc-card dgc-card-descricao">
-		<span>Processo para gerar imagens:  </span>
+		<span>Processo para gerar imagens:   <a routerLink="/conteudoProdutoKiwifyListGerarImagem">GeraImagemConteudoProduto.jar</a></span>
 	</div>
 	<div class="dgc-card">
 		<div class="dgc-card-header">
@@ -113,6 +113,9 @@
 		</div>
 		<div class="dgc-card-detalhe" *ngFor="let rel of principal.conteudoProdutoKiwifys">
 			<span>{{rel.ordenacao}} - {{rel.nome}}</span>
+			<button class="btn btn-sm" style="background-color: white; border-color: white;" (click)="copiaItem(rel.nome)">
+				<i class="fas fa-copy text-primary"></i>
+			</button>
 		</div>
 	</div>
 </div>

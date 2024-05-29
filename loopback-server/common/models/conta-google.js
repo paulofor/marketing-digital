@@ -29,4 +29,9 @@ module.exports = function(Contagoogle) {
         const filtro = {'where' : {'and' : [{'tipo' : 'CAMPANHA'},{'ativo' : 1} ]}}
         Contagoogle.find(filtro,callback);
     }
+
+    Contagoogle.ObtemContaDisponivel = function(callback) {
+        const filtro = {'where' :{'and' : [{'suspensa' : 0},{'ativo' : 1} ]}}
+        Contagoogle.findOne(filtro,callback);
+    }
 };

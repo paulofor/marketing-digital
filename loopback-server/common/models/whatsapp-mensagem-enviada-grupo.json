@@ -1,0 +1,36 @@
+{
+	"name": "WhatsappMensagemEnviadaGrupo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"texto": {
+			"type": "string"
+		},
+		"data": {
+			"type": "date"
+		},
+		"ordenacaoDia": {
+			"type": "number"
+		},
+		"whatsappGrupoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"whatsappGrupo": {
+			"type": "belongsTo",
+			"model": "WhatsappGrupo",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

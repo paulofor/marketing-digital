@@ -112,7 +112,7 @@ public class CriaCampanhaAdsRedeDisplayImpl extends CriaCampanhaAdsRedeDisplay {
 			System.err.printf("Failed to create GoogleAdsClient. Exception: %s%n", ioe);
 			System.exit(1);
 		}
-		return super.executaCustom(campanhaCorrente);
+		return true;
 	}
 
 	

@@ -1,0 +1,175 @@
+package gerador.atualizademandapalavrachave.loopback;
+
+
+import com.strongloop.android.loopback.RestAdapter;
+
+import br.com.gersis.daobase.DaoBase;
+import br.com.gersis.daobase.IDatasetComum;
+import br.com.gersis.daobase.comum.DaoBaseComum;
+import br.com.gersis.loopback.repositorio.*;
+
+public abstract class DaoAplicacao extends DaoBase {
+
+	private RestAdapter adapter = new RestAdapter(DaoBaseComum.urlLoopback);
+	protected RepositorioVisitaProdutoPlataforma repVisitaProdutoPlataforma = adapter.createRepository(RepositorioVisitaProdutoPlataforma.class);
+	protected RepositorioTokenAcesso repTokenAcesso = adapter.createRepository(RepositorioTokenAcesso.class);
+	protected RepositorioIdeiaPalavraChave repIdeiaPalavraChave = adapter.createRepository(RepositorioIdeiaPalavraChave.class);
+	protected RepositorioPlataformaVenda repPlataformaVenda = adapter.createRepository(RepositorioPlataformaVenda.class);
+	protected RepositorioProdutoPlataforma repProdutoPlataforma = adapter.createRepository(RepositorioProdutoPlataforma.class);
+	protected RepositorioVisitaProdutoHotmart repVisitaProdutoHotmart = adapter.createRepository(RepositorioVisitaProdutoHotmart.class);
+	protected RepositorioCampanhaAds repCampanhaAds = adapter.createRepository(RepositorioCampanhaAds.class);
+	protected RepositorioAnuncioCampanhaAds repAnuncioCampanhaAds = adapter.createRepository(RepositorioAnuncioCampanhaAds.class);
+	protected RepositorioPalavraChaveCampanhaAds repPalavraChaveCampanhaAds = adapter.createRepository(RepositorioPalavraChaveCampanhaAds.class);
+	protected RepositorioCampanhaAdsTeste repCampanhaAdsTeste = adapter.createRepository(RepositorioCampanhaAdsTeste.class);
+	protected RepositorioAnuncioCampanhaAdsTeste repAnuncioCampanhaAdsTeste = adapter.createRepository(RepositorioAnuncioCampanhaAdsTeste.class);
+	protected RepositorioAnuncioAds repAnuncioAds = adapter.createRepository(RepositorioAnuncioAds.class);
+	protected RepositorioModeloCampanhaAdsTeste repModeloCampanhaAdsTeste = adapter.createRepository(RepositorioModeloCampanhaAdsTeste.class);
+	protected RepositorioPixelGoogle repPixelGoogle = adapter.createRepository(RepositorioPixelGoogle.class);
+	protected RepositorioProdutoAfiliadoHotmart repProdutoAfiliadoHotmart = adapter.createRepository(RepositorioProdutoAfiliadoHotmart.class);
+	protected RepositorioPalavraChaveCampanhaAdsTeste repPalavraChaveCampanhaAdsTeste = adapter.createRepository(RepositorioPalavraChaveCampanhaAdsTeste.class);
+	protected RepositorioAgendaVisitaHotmart repAgendaVisitaHotmart = adapter.createRepository(RepositorioAgendaVisitaHotmart.class);
+	protected RepositorioProdutoHotmart repProdutoHotmart = adapter.createRepository(RepositorioProdutoHotmart.class);
+	protected RepositorioProdutoAfiliadoMetrica repProdutoAfiliadoMetrica = adapter.createRepository(RepositorioProdutoAfiliadoMetrica.class);
+	protected RepositorioContaGoogle repContaGoogle = adapter.createRepository(RepositorioContaGoogle.class);
+	protected RepositorioCampanhaAdsMetrica repCampanhaAdsMetrica = adapter.createRepository(RepositorioCampanhaAdsMetrica.class);
+	protected RepositorioSolicitacaoCheckout repSolicitacaoCheckout = adapter.createRepository(RepositorioSolicitacaoCheckout.class);
+	protected RepositorioLoadPaginaVenda repLoadPaginaVenda = adapter.createRepository(RepositorioLoadPaginaVenda.class);
+	protected RepositorioPlanoProduto repPlanoProduto = adapter.createRepository(RepositorioPlanoProduto.class);
+	protected RepositorioContaGoogleMetricaMes repContaGoogleMetricaMes = adapter.createRepository(RepositorioContaGoogleMetricaMes.class);
+	protected RepositorioLinkCheckout repLinkCheckout = adapter.createRepository(RepositorioLinkCheckout.class);
+	protected RepositorioCampanhaAdsMetricaIntraday repCampanhaAdsMetricaIntraday = adapter.createRepository(RepositorioCampanhaAdsMetricaIntraday.class);
+	protected RepositorioPrecoProdutoAfiliado repPrecoProdutoAfiliado = adapter.createRepository(RepositorioPrecoProdutoAfiliado.class);
+	protected RepositorioAnuncioAdsDisplay repAnuncioAdsDisplay = adapter.createRepository(RepositorioAnuncioAdsDisplay.class);
+	protected RepositorioImagemConjunto repImagemConjunto = adapter.createRepository(RepositorioImagemConjunto.class);
+	protected RepositorioVisitante repVisitante = adapter.createRepository(RepositorioVisitante.class);
+	protected RepositorioProdutoProprio repProdutoProprio = adapter.createRepository(RepositorioProdutoProprio.class);
+	protected RepositorioVideoExecucaoPaginaVenda repVideoExecucaoPaginaVenda = adapter.createRepository(RepositorioVideoExecucaoPaginaVenda.class);
+	protected RepositorioProdutoAfiliadoHotlink repProdutoAfiliadoHotlink = adapter.createRepository(RepositorioProdutoAfiliadoHotlink.class);
+	protected RepositorioTagIdSecaoPaginaVenda repTagIdSecaoPaginaVenda = adapter.createRepository(RepositorioTagIdSecaoPaginaVenda.class);
+	protected RepositorioCampanhaAdsRedeDisplay repCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioCampanhaAdsRedeDisplay.class);
+	protected RepositorioOtimizacaoCampanhaAdsRedeDisplay repOtimizacaoCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioOtimizacaoCampanhaAdsRedeDisplay.class);
+	protected RepositorioPaginaVenda repPaginaVenda = adapter.createRepository(RepositorioPaginaVenda.class);
+	protected RepositorioPublicoAlvoAds repPublicoAlvoAds = adapter.createRepository(RepositorioPublicoAlvoAds.class);
+	protected RepositorioPublicoAlvoAdsDiario repPublicoAlvoAdsDiario = adapter.createRepository(RepositorioPublicoAlvoAdsDiario.class);
+	protected RepositorioFaixaHorarioCampanhaAds repFaixaHorarioCampanhaAds = adapter.createRepository(RepositorioFaixaHorarioCampanhaAds.class);
+	protected RepositorioAnuncioCampanhaAdsRedeDisplay repAnuncioCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioAnuncioCampanhaAdsRedeDisplay.class);
+	protected RepositorioMetaVenda repMetaVenda = adapter.createRepository(RepositorioMetaVenda.class);
+	protected RepositorioMercadoAlvo repMercadoAlvo = adapter.createRepository(RepositorioMercadoAlvo.class);
+	protected RepositorioProdutoMercado repProdutoMercado = adapter.createRepository(RepositorioProdutoMercado.class);
+	protected RepositorioPaginaVendaPrecoProduto repPaginaVendaPrecoProduto = adapter.createRepository(RepositorioPaginaVendaPrecoProduto.class);
+	protected RepositorioConcorrenteAfiliado repConcorrenteAfiliado = adapter.createRepository(RepositorioConcorrenteAfiliado.class);
+	protected RepositorioSegmentoMercadoIntereseAds repSegmentoMercadoIntereseAds = adapter.createRepository(RepositorioSegmentoMercadoIntereseAds.class);
+	protected RepositorioContaHotmart repContaHotmart = adapter.createRepository(RepositorioContaHotmart.class);
+	protected RepositorioProdutoAfiliadoHotmartPendente repProdutoAfiliadoHotmartPendente = adapter.createRepository(RepositorioProdutoAfiliadoHotmartPendente.class);
+	protected RepositorioSegmentoMercadoAdsPersonalizado repSegmentoMercadoAdsPersonalizado = adapter.createRepository(RepositorioSegmentoMercadoAdsPersonalizado.class);
+	protected RepositorioPaginaVendaSecao repPaginaVendaSecao = adapter.createRepository(RepositorioPaginaVendaSecao.class);
+	protected RepositorioSecaoWeb repSecaoWeb = adapter.createRepository(RepositorioSecaoWeb.class);
+	protected RepositorioProdutoProprioVersao repProdutoProprioVersao = adapter.createRepository(RepositorioProdutoProprioVersao.class);
+	protected RepositorioProdutoProprioItemNivel1 repProdutoProprioItemNivel1 = adapter.createRepository(RepositorioProdutoProprioItemNivel1.class);
+	protected RepositorioProdutoAmpliado repProdutoAmpliado = adapter.createRepository(RepositorioProdutoAmpliado.class);
+	protected RepositorioPaginaVendaScroll repPaginaVendaScroll = adapter.createRepository(RepositorioPaginaVendaScroll.class);
+	protected RepositorioExperimentoModelo repExperimentoModelo = adapter.createRepository(RepositorioExperimentoModelo.class);
+	protected RepositorioEvolucaoExperimento repEvolucaoExperimento = adapter.createRepository(RepositorioEvolucaoExperimento.class);
+	protected RepositorioCampanhaAdsExperimento repCampanhaAdsExperimento = adapter.createRepository(RepositorioCampanhaAdsExperimento.class);
+	protected RepositorioDalleSolicitacaoImagem repDalleSolicitacaoImagem = adapter.createRepository(RepositorioDalleSolicitacaoImagem.class);
+	protected RepositorioModeloPaginaVenda repModeloPaginaVenda = adapter.createRepository(RepositorioModeloPaginaVenda.class);
+	protected RepositorioPosicaoElementoPaginaVenda repPosicaoElementoPaginaVenda = adapter.createRepository(RepositorioPosicaoElementoPaginaVenda.class);
+	protected RepositorioElementoModeloPaginaVenda repElementoModeloPaginaVenda = adapter.createRepository(RepositorioElementoModeloPaginaVenda.class);
+	protected RepositorioVersaoPaginaVenda repVersaoPaginaVenda = adapter.createRepository(RepositorioVersaoPaginaVenda.class);
+	protected RepositorioConteudoElemento repConteudoElemento = adapter.createRepository(RepositorioConteudoElemento.class);
+	protected RepositorioImagemPaginaVenda repImagemPaginaVenda = adapter.createRepository(RepositorioImagemPaginaVenda.class);
+	protected RepositorioArquivoPaginaVenda repArquivoPaginaVenda = adapter.createRepository(RepositorioArquivoPaginaVenda.class);
+	protected RepositorioProdutoAfiliadoClickbank repProdutoAfiliadoClickbank = adapter.createRepository(RepositorioProdutoAfiliadoClickbank.class);
+	protected RepositorioVersaoImagemPaginaVenda repVersaoImagemPaginaVenda = adapter.createRepository(RepositorioVersaoImagemPaginaVenda.class);
+	protected RepositorioPixelAdsSegmentoMercado repPixelAdsSegmentoMercado = adapter.createRepository(RepositorioPixelAdsSegmentoMercado.class);
+	protected RepositorioPaginaVendaPropria repPaginaVendaPropria = adapter.createRepository(RepositorioPaginaVendaPropria.class);
+	protected RepositorioGrupoCampanhaAdsRedeDisplay repGrupoCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioGrupoCampanhaAdsRedeDisplay.class);
+	protected RepositorioLoadPaginaVendaPropria repLoadPaginaVendaPropria = adapter.createRepository(RepositorioLoadPaginaVendaPropria.class);
+	protected RepositorioScrollPaginaVendaPropria repScrollPaginaVendaPropria = adapter.createRepository(RepositorioScrollPaginaVendaPropria.class);
+	protected RepositorioSolicitacaoCheckoutPaginaVendaPropria repSolicitacaoCheckoutPaginaVendaPropria = adapter.createRepository(RepositorioSolicitacaoCheckoutPaginaVendaPropria.class);
+	protected RepositorioPublicoAlvoAdsPalavra repPublicoAlvoAdsPalavra = adapter.createRepository(RepositorioPublicoAlvoAdsPalavra.class);
+	protected RepositorioContaPublicoAlvoAdsPalavra repContaPublicoAlvoAdsPalavra = adapter.createRepository(RepositorioContaPublicoAlvoAdsPalavra.class);
+	protected RepositorioProdutoPublicoAdsPalavra repProdutoPublicoAdsPalavra = adapter.createRepository(RepositorioProdutoPublicoAdsPalavra.class);
+	protected RepositorioArtigoParaProduto repArtigoParaProduto = adapter.createRepository(RepositorioArtigoParaProduto.class);
+	protected RepositorioPixelProdutoHotmartConta repPixelProdutoHotmartConta = adapter.createRepository(RepositorioPixelProdutoHotmartConta.class);
+	protected RepositorioPixelProdutoHotmartContaCheckout repPixelProdutoHotmartContaCheckout = adapter.createRepository(RepositorioPixelProdutoHotmartContaCheckout.class);
+	protected RepositorioPixelProdutoHotmartContaCompra repPixelProdutoHotmartContaCompra = adapter.createRepository(RepositorioPixelProdutoHotmartContaCompra.class);
+	protected RepositorioProdutoHotmartConta repProdutoHotmartConta = adapter.createRepository(RepositorioProdutoHotmartConta.class);
+	protected RepositorioAnuncioConceitoAdsRedeDisplay repAnuncioConceitoAdsRedeDisplay = adapter.createRepository(RepositorioAnuncioConceitoAdsRedeDisplay.class);
+	protected RepositorioMetricaCampanhaAdsRedeDisplay repMetricaCampanhaAdsRedeDisplay = adapter.createRepository(RepositorioMetricaCampanhaAdsRedeDisplay.class);
+	protected RepositorioPaginaVendaVsl repPaginaVendaVsl = adapter.createRepository(RepositorioPaginaVendaVsl.class);
+	protected RepositorioVideoVsl repVideoVsl = adapter.createRepository(RepositorioVideoVsl.class);
+	protected RepositorioTrechoVsl repTrechoVsl = adapter.createRepository(RepositorioTrechoVsl.class);
+	protected RepositorioModeloPaginaVendaVsl repModeloPaginaVendaVsl = adapter.createRepository(RepositorioModeloPaginaVendaVsl.class);
+	protected RepositorioScriptGeraVideo repScriptGeraVideo = adapter.createRepository(RepositorioScriptGeraVideo.class);
+	protected RepositorioWhatsappGrupo repWhatsappGrupo = adapter.createRepository(RepositorioWhatsappGrupo.class);
+	protected RepositorioWhatsappMensagem repWhatsappMensagem = adapter.createRepository(RepositorioWhatsappMensagem.class);
+	protected RepositorioAgendaCampanha repAgendaCampanha = adapter.createRepository(RepositorioAgendaCampanha.class);
+	protected RepositorioItemConteudoProduto repItemConteudoProduto = adapter.createRepository(RepositorioItemConteudoProduto.class);
+	protected RepositorioConteudoProdutoKiwify repConteudoProdutoKiwify = adapter.createRepository(RepositorioConteudoProdutoKiwify.class);
+	protected RepositorioTentativaOferta repTentativaOferta = adapter.createRepository(RepositorioTentativaOferta.class);
+	protected RepositorioPaginaVendaAberta repPaginaVendaAberta = adapter.createRepository(RepositorioPaginaVendaAberta.class);
+	protected RepositorioPaginaVendaModelada repPaginaVendaModelada = adapter.createRepository(RepositorioPaginaVendaModelada.class);
+	protected RepositorioSecaoPaginaVendaModelada repSecaoPaginaVendaModelada = adapter.createRepository(RepositorioSecaoPaginaVendaModelada.class);
+	protected RepositorioTipoSecaoPaginaVenda repTipoSecaoPaginaVenda = adapter.createRepository(RepositorioTipoSecaoPaginaVenda.class);
+	protected RepositorioVisitaAnuncioFacebook repVisitaAnuncioFacebook = adapter.createRepository(RepositorioVisitaAnuncioFacebook.class);
+	protected RepositorioEntregavelProduto repEntregavelProduto = adapter.createRepository(RepositorioEntregavelProduto.class);
+	protected RepositorioRecursoIA repRecursoIA = adapter.createRepository(RepositorioRecursoIA.class);
+	protected RepositorioMetaAdsAnuncio repMetaAdsAnuncio = adapter.createRepository(RepositorioMetaAdsAnuncio.class);
+	protected RepositorioContaFacebook repContaFacebook = adapter.createRepository(RepositorioContaFacebook.class);
+	protected RepositorioContaInstagram repContaInstagram = adapter.createRepository(RepositorioContaInstagram.class);
+	protected RepositorioPaginaFacebook repPaginaFacebook = adapter.createRepository(RepositorioPaginaFacebook.class);
+	protected RepositorioPromptItem repPromptItem = adapter.createRepository(RepositorioPromptItem.class);
+	protected RepositorioImagemConteudo repImagemConteudo = adapter.createRepository(RepositorioImagemConteudo.class);
+	protected RepositorioPromptImagemConteudo repPromptImagemConteudo = adapter.createRepository(RepositorioPromptImagemConteudo.class);
+	protected RepositorioIdeiaUnica repIdeiaUnica = adapter.createRepository(RepositorioIdeiaUnica.class);
+	protected RepositorioFasePaginaVenda repFasePaginaVenda = adapter.createRepository(RepositorioFasePaginaVenda.class);
+	protected RepositorioEstruturaPaginaVendaAberta repEstruturaPaginaVendaAberta = adapter.createRepository(RepositorioEstruturaPaginaVendaAberta.class);
+	protected RepositorioItemEstruturaPaginaVenda repItemEstruturaPaginaVenda = adapter.createRepository(RepositorioItemEstruturaPaginaVenda.class);
+	protected RepositorioCheckoutProdutoProprio repCheckoutProdutoProprio = adapter.createRepository(RepositorioCheckoutProdutoProprio.class);
+	protected RepositorioPaginaImplementacao repPaginaImplementacao = adapter.createRepository(RepositorioPaginaImplementacao.class);
+	protected RepositorioImplementacaoItemEstrutura repImplementacaoItemEstrutura = adapter.createRepository(RepositorioImplementacaoItemEstrutura.class);
+	protected RepositorioMetaAdsAnuncioMetrica repMetaAdsAnuncioMetrica = adapter.createRepository(RepositorioMetaAdsAnuncioMetrica.class);
+	protected RepositorioCriativoAnuncio repCriativoAnuncio = adapter.createRepository(RepositorioCriativoAnuncio.class);
+	protected RepositorioMetaAdsConjuntoAnuncio repMetaAdsConjuntoAnuncio = adapter.createRepository(RepositorioMetaAdsConjuntoAnuncio.class);
+	protected RepositorioMetaAdsCampanha repMetaAdsCampanha = adapter.createRepository(RepositorioMetaAdsCampanha.class);
+	protected RepositorioFonteLocal repFonteLocal = adapter.createRepository(RepositorioFonteLocal.class);
+	protected RepositorioMetaAdsPixelVenda repMetaAdsPixelVenda = adapter.createRepository(RepositorioMetaAdsPixelVenda.class);
+	protected RepositorioConteudoEntregavel repConteudoEntregavel = adapter.createRepository(RepositorioConteudoEntregavel.class);
+	protected RepositorioMetaAdsConjuntoAnuncioMetrica repMetaAdsConjuntoAnuncioMetrica = adapter.createRepository(RepositorioMetaAdsConjuntoAnuncioMetrica.class);
+	protected RepositorioMetaAdsCampanhaMetrica repMetaAdsCampanhaMetrica = adapter.createRepository(RepositorioMetaAdsCampanhaMetrica.class);
+	protected RepositorioContaWhatsapp repContaWhatsapp = adapter.createRepository(RepositorioContaWhatsapp.class);
+	protected RepositorioWhatsappGrupoPadraoMensagem repWhatsappGrupoPadraoMensagem = adapter.createRepository(RepositorioWhatsappGrupoPadraoMensagem.class);
+	protected RepositorioWhatsappGrupoDiaAgenda repWhatsappGrupoDiaAgenda = adapter.createRepository(RepositorioWhatsappGrupoDiaAgenda.class);
+	protected RepositorioWhatsappModeloMensagem repWhatsappModeloMensagem = adapter.createRepository(RepositorioWhatsappModeloMensagem.class);
+	protected RepositorioWhatsappMensagemTexto repWhatsappMensagemTexto = adapter.createRepository(RepositorioWhatsappMensagemTexto.class);
+	protected RepositorioWhatsappGrupoMetrica repWhatsappGrupoMetrica = adapter.createRepository(RepositorioWhatsappGrupoMetrica.class);
+	protected RepositorioMembroWhatsappGrupo repMembroWhatsappGrupo = adapter.createRepository(RepositorioMembroWhatsappGrupo.class);
+	protected RepositorioPaginaWhatsappGrupo repPaginaWhatsappGrupo = adapter.createRepository(RepositorioPaginaWhatsappGrupo.class);
+	protected RepositorioPaginaWhatsappExemplo repPaginaWhatsappExemplo = adapter.createRepository(RepositorioPaginaWhatsappExemplo.class);
+	protected RepositorioAcessoPaginaGrupo repAcessoPaginaGrupo = adapter.createRepository(RepositorioAcessoPaginaGrupo.class);
+	protected RepositorioProjetoIA repProjetoIA = adapter.createRepository(RepositorioProjetoIA.class);
+	protected RepositorioTipoRecursoIA repTipoRecursoIA = adapter.createRepository(RepositorioTipoRecursoIA.class);
+	protected RepositorioWhatsappGrupoDia repWhatsappGrupoDia = adapter.createRepository(RepositorioWhatsappGrupoDia.class);
+	protected RepositorioWhatsappMensagemEnviadaGrupo repWhatsappMensagemEnviadaGrupo = adapter.createRepository(RepositorioWhatsappMensagemEnviadaGrupo.class);
+	protected RepositorioPalavraChaveEstatistica repPalavraChaveEstatistica = adapter.createRepository(RepositorioPalavraChaveEstatistica.class);
+	protected RepositorioPalavraChaveGoogle repPalavraChaveGoogle = adapter.createRepository(RepositorioPalavraChaveGoogle.class);
+	protected RepositorioPalavraChaveRaiz repPalavraChaveRaiz = adapter.createRepository(RepositorioPalavraChaveRaiz.class);
+
+
+	@Override
+	protected long getTempo() {
+		return 5000;
+	}
+
+	@Override
+	protected IDatasetComum criaDataSet() {
+		return new DatasetAplicacao();
+	}
+
+	@Override
+	protected DaoBase getProximo() {
+		return null;
+	} 
+
+}

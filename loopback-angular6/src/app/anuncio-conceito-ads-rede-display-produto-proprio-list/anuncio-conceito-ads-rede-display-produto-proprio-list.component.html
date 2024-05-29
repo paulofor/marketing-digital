@@ -4,18 +4,18 @@
   		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
 	<div class="dgc-painel-principal">
-		<div class="dgc-card" *ngFor="let item of listaBase">
+		<div class="dgc-card dgc-card-3" *ngFor="let item of listaBase">
  			<div class="dgc-card-detalhe">
- 				<span>Nome Empresa: {{item.nomeEmpresa}}</span>
+ 				<span>Nome Empresa:<br>{{item.nomeEmpresa}}</span>
  			</div>
  			<div class="dgc-card-detalhe">
-				<span>Título: {{item.titulo}}</span>
+				<span>Título:<br>{{item.titulo}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
-				<span>Título Longo: {{item.tituloLongo}}</span>
+				<span>Título Longo:<br>{{item.tituloLongo}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
-				<span>Descrição: {{item.descricao}}</span>
+				<span>Descrição:<br>{{item.descricao}}</span>
 			</div>
 
 			<div class="dgc-card-comandos">

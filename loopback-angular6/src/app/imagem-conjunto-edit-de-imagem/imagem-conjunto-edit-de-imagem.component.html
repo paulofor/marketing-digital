@@ -9,18 +9,28 @@
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-			<input matInput #textoCopyLinha1 [(ngModel)]="item.textoCopyLinha1" name="textoCopyLinha1"
-				placeholder="Texto Copy - Linha1" autocomplete="off" />
+			<input matInput #quadradaTexto1 [(ngModel)]="item.quadradaTexto1" name="quadradaTexto1" placeholder="Texto Copy - Quadrada Linha1" autocomplete="off"/>
+			<mat-hint align="end">{{ (quadradaTexto1.value?quadradaTexto1.value.length:0) }}</mat-hint>
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-			<input matInput #textoCopyLinha2 [(ngModel)]="item.textoCopyLinha2" name="textoCopyLinha2"
-				placeholder="Texto Copy - Linha2" autocomplete="off" />
+			<input matInput #quadradaTexto2 [(ngModel)]="item.quadradaTexto2" name="quadradaTexto2" placeholder="Texto Copy - Quadrada Linha2" autocomplete="off"/>
+			<mat-hint align="end">{{ (quadradaTexto2.value?quadradaTexto2.value.length:0) }}</mat-hint>
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-			<input matInput #textoCopyLinha3 [(ngModel)]="item.textoCopyLinha3" name="textoCopyLinha3"
-				placeholder="Texto Copy - Linha3" autocomplete="off" />
+			<input matInput #deitadaTexto1 [(ngModel)]="item.deitadaTexto1" name="deitadaTexto1" placeholder="Texto Copy - Deitada Linha1" autocomplete="off"/>
+			<mat-hint align="end">{{ (deitadaTexto1.value?deitadaTexto1.value.length:0) }}</mat-hint>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #deitadaTexto2 [(ngModel)]="item.deitadaTexto2" name="deitadaTexto2" placeholder="Texto Copy - Deitada Linha2" autocomplete="off"/>
+			<mat-hint align="end">{{ (deitadaTexto2.value?deitadaTexto2.value.length:0) }}</mat-hint>
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #deitadaTexto3 [(ngModel)]="item.deitadaTexto3" name="deitadaTexto3" placeholder="Texto Copy - Deitada Linha3" autocomplete="off"/>
+			<mat-hint align="end">{{ (deitadaTexto3.value?deitadaTexto3.value.length:0) }}</mat-hint>
 		</mat-form-field>
 		
 		<mat-form-field class="example-full-width" *ngIf="listaFonte">

@@ -19,7 +19,7 @@ public class GeraImagemPaginaExemploGrupoWhatsapp {
 
 	public static void main(String[] args) {
 		System.out.print("GeraImagemPaginaExemploGrupoWhatsapp");
-		System.out.println("(20/05/2024 18:36:56)");
+		System.out.println("(29/05/2024 02:11:07)");
 		try {
 			carregaProp();
 			GeraImagemPaginaExemploGrupoWhatsappObj obj = new GeraImagemPaginaExemploGrupoWhatsappObj();

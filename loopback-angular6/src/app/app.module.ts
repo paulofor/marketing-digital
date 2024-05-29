@@ -215,6 +215,13 @@ import { WhatsappGrupoEditQtdeComponent } from './whatsapp-grupo-edit-qtde/whats
 import { WhatsappGrupoListQtdeComponent } from './whatsapp-grupo-list-qtde/whatsapp-grupo-list-qtde.component';
 import { ImagemConjuntoListProcessoJavaComponent } from './imagem-conjunto-list-processo-java/imagem-conjunto-list-processo-java.component';
 import { EntregavelProdutoListParaGerarListaComponent } from './entregavel-produto-list-para-gerar-lista/entregavel-produto-list-para-gerar-lista.component';
+import { WhatsappMensagemEnviadaGrupoEditComponent } from './whatsapp-mensagem-enviada-grupo-edit/whatsapp-mensagem-enviada-grupo-edit.component';
+import { WhatsappMensagemEnviadaGrupoListComponent } from './whatsapp-mensagem-enviada-grupo-list/whatsapp-mensagem-enviada-grupo-list.component';
+import { PalavraChaveRaizEditComponent } from './palavra-chave-raiz-edit/palavra-chave-raiz-edit.component';
+import { PalavraChaveRaizListComponent } from './palavra-chave-raiz-list/palavra-chave-raiz-list.component';
+import { PalavraChaveEstatisticaListCrescimentoComponent } from './palavra-chave-estatistica-list-crescimento/palavra-chave-estatistica-list-crescimento.component';
+import { PalavraChaveRaizDetalheComponent } from './palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
+import { PalavraChaveEstatisticaListMelhoresComponent } from './palavra-chave-estatistica-list-melhores/palavra-chave-estatistica-list-melhores.component';
 
 
 
@@ -408,7 +415,14 @@ registerLocaleData(localePt, 'pt-BR');
     WhatsappGrupoEditQtdeComponent,
     WhatsappGrupoListQtdeComponent,
     ImagemConjuntoListProcessoJavaComponent,
-    EntregavelProdutoListParaGerarListaComponent
+    EntregavelProdutoListParaGerarListaComponent,
+    WhatsappMensagemEnviadaGrupoEditComponent,
+    WhatsappMensagemEnviadaGrupoListComponent,
+    PalavraChaveRaizListComponent,
+    PalavraChaveRaizEditComponent,
+    PalavraChaveRaizDetalheComponent,
+    PalavraChaveEstatisticaListMelhoresComponent,
+    PalavraChaveEstatisticaListCrescimentoComponent
   ],
   imports: [
     BrowserModule,
@@ -527,7 +541,9 @@ registerLocaleData(localePt, 'pt-BR');
     PaginaWhatsappGrupoEditComponent,
     PaginaWhatsappExemploEditComponent,
     ImagemConjuntoEditDeImagemComponent,
-    WhatsappGrupoEditQtdeComponent
+    WhatsappGrupoEditQtdeComponent,
+    WhatsappMensagemEnviadaGrupoEditComponent,
+    PalavraChaveRaizEditComponent
   ],
   bootstrap: [AppComponent]
 })

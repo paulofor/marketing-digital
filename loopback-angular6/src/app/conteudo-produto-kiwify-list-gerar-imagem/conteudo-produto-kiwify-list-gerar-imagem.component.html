@@ -1,7 +1,7 @@
 <div class="dgc-painel">
 	<div class="dgc-painel-header">
-		<span>Conteúdo Produto que Vai Gerar Imagem</span>
-  		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+		<span>GeraImagemConteudoProduto</span>
+  		<span *ngIf="listaBase" class="dgc-direita">{{listaBase.length}}</span>
 	</div>
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card dgc-card-explicacao">
@@ -17,7 +17,7 @@
 				<span>Entregável: {{item.entregavelProduto.nome}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
-				<span>Conteúdo: {{item.nome}}</span>
+				<span>Conteúdo: {{item.nome}} ({{item.ordenacao}})</span>
 			</div>
  			<div class="dgc-card-comandos">
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>

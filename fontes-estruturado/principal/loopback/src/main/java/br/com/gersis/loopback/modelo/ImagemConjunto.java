@@ -29,6 +29,17 @@ public class ImagemConjunto extends Model {
 	private String fundoColor;
 	private String logoGrupoWhatsapp;
 	private String textoCopyLinha3;
+	private int quantidadeEntradaGrupo;
+	private double custoEntradaGrupo;
+	private double percentualEntradaGrupo;
+	private int cliqueTotal;
+	private double custoTotal;
+	private String dataGeracao;
+	private String quadradaTexto1;
+	private String quadradaTexto2;
+	private String deitadaTexto1;
+	private String deitadaTexto2;
+	private String deitadaTexto3;
 	// Relacionamentos 1
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	private ProdutoProprio ProdutoProprio;
@@ -72,6 +83,17 @@ public class ImagemConjunto extends Model {
 			obj.put("fundoColor", fundoColor);
 			obj.put("logoGrupoWhatsapp", logoGrupoWhatsapp);
 			obj.put("textoCopyLinha3", textoCopyLinha3);
+			obj.put("quantidadeEntradaGrupo", quantidadeEntradaGrupo);
+			obj.put("custoEntradaGrupo", custoEntradaGrupo);
+			obj.put("percentualEntradaGrupo", percentualEntradaGrupo);
+			obj.put("cliqueTotal", cliqueTotal);
+			obj.put("custoTotal", custoTotal);
+			obj.put("dataGeracao", dataGeracao);
+			obj.put("quadradaTexto1", quadradaTexto1);
+			obj.put("quadradaTexto2", quadradaTexto2);
+			obj.put("deitadaTexto1", deitadaTexto1);
+			obj.put("deitadaTexto2", deitadaTexto2);
+			obj.put("deitadaTexto3", deitadaTexto3);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -168,6 +190,72 @@ public class ImagemConjunto extends Model {
 	}
 	public String getTextoCopyLinha3() { 
 		return this.textoCopyLinha3;
+	}
+	public void setQuantidadeEntradaGrupo(int valor) { 
+		this.quantidadeEntradaGrupo = valor;
+	}
+	public int getQuantidadeEntradaGrupo() { 
+		return this.quantidadeEntradaGrupo;
+	}
+	public void setCustoEntradaGrupo(double valor) { 
+		this.custoEntradaGrupo = valor;
+	}
+	public double getCustoEntradaGrupo() { 
+		return this.custoEntradaGrupo;
+	}
+	public void setPercentualEntradaGrupo(double valor) { 
+		this.percentualEntradaGrupo = valor;
+	}
+	public double getPercentualEntradaGrupo() { 
+		return this.percentualEntradaGrupo;
+	}
+	public void setCliqueTotal(int valor) { 
+		this.cliqueTotal = valor;
+	}
+	public int getCliqueTotal() { 
+		return this.cliqueTotal;
+	}
+	public void setCustoTotal(double valor) { 
+		this.custoTotal = valor;
+	}
+	public double getCustoTotal() { 
+		return this.custoTotal;
+	}
+	public void setDataGeracao(String valor) { 
+		this.dataGeracao = valor;
+	}
+	public String getDataGeracao() { 
+		return this.dataGeracao;
+	}
+	public void setQuadradaTexto1(String valor) { 
+		this.quadradaTexto1 = valor;
+	}
+	public String getQuadradaTexto1() { 
+		return this.quadradaTexto1;
+	}
+	public void setQuadradaTexto2(String valor) { 
+		this.quadradaTexto2 = valor;
+	}
+	public String getQuadradaTexto2() { 
+		return this.quadradaTexto2;
+	}
+	public void setDeitadaTexto1(String valor) { 
+		this.deitadaTexto1 = valor;
+	}
+	public String getDeitadaTexto1() { 
+		return this.deitadaTexto1;
+	}
+	public void setDeitadaTexto2(String valor) { 
+		this.deitadaTexto2 = valor;
+	}
+	public String getDeitadaTexto2() { 
+		return this.deitadaTexto2;
+	}
+	public void setDeitadaTexto3(String valor) { 
+		this.deitadaTexto3 = valor;
+	}
+	public String getDeitadaTexto3() { 
+		return this.deitadaTexto3;
 	}
 
 	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {

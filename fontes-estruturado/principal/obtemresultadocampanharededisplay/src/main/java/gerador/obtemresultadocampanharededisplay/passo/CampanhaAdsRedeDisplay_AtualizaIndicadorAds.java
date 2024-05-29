@@ -41,7 +41,7 @@ public abstract class CampanhaAdsRedeDisplay_AtualizaIndicadorAds extends DaoApl
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new ImagemConjunto_AtualizaMetricaImpl();
 	}
 
 

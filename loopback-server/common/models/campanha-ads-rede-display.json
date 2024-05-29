@@ -111,6 +111,15 @@
 		"percentualEntradaGrupo": {
 			"type": "number"
 		},
+		"observacao": {
+			"type": "string"
+		},
+		"imagemConjuntoId": {
+			"type": "number"
+		},
+		"whatsappGrupoId": {
+			"type": "number"
+		},
 		"paginaVendaPropriaId": {
 			"type": "number"
 		},
@@ -123,16 +132,10 @@
 		"anuncioConceitoAdsRedeDisplayId": {
 			"type": "number"
 		},
-		"imagemConjuntoId": {
-			"type": "number"
-		},
 		"produtoProprioId": {
 			"type": "number"
 		},
 		"paginaVendaVslId": {
-			"type": "number"
-		},
-		"whatsappGrupoId": {
 			"type": "number"
 		}
 	},

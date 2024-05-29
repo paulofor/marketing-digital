@@ -19,7 +19,7 @@ public class ObtemResultadoCampanhaRedeDisplay {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemResultadoCampanhaRedeDisplay");
-		System.out.println("(20/05/2024 18:36:42)");
+		System.out.println("(29/05/2024 02:10:58)");
 		try {
 			carregaProp();
 			ObtemResultadoCampanhaRedeDisplayObj obj = new ObtemResultadoCampanhaRedeDisplayObj();
@@ -61,6 +61,8 @@ public class ObtemResultadoCampanhaRedeDisplay {
 		DaoBaseComum.setProximo("ObtemResultadoCampanhaRedeDisplayObj", new CampanhaAdsRedeDisplay_ListaParaResultadoComContaImpl());
 		DaoBaseComum.setProximo("CampanhaAdsRedeDisplay_ListaParaResultadoComConta", new ObtemResultadoCampanhaImpl());
 		DaoBaseComum.setProximo("ObtemResultadoCampanha", new CampanhaAdsRedeDisplay_AtualizaIndicadorAdsImpl());
-		DaoBaseComum.setProximo("CampanhaAdsRedeDisplay_AtualizaIndicadorAds", new CampanhaAdsRedeDisplay_AtualizaIndicadorPessoalImpl());
+		DaoBaseComum.setProximo("CampanhaAdsRedeDisplay_AtualizaIndicadorAds", new ImagemConjunto_AtualizaMetricaImpl());
+		DaoBaseComum.setProximo("ImagemConjunto_AtualizaMetrica", new WhatsappGrupo_AtualizaMetricaGrupoImpl());
+		DaoBaseComum.setProximo("WhatsappGrupo_AtualizaMetricaGrupo", new CampanhaAdsRedeDisplay_AtualizaIndicadorPessoalImpl());
 	}
 }

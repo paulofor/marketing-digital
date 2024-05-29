@@ -31,6 +31,9 @@ public class ObtemParaAmbienteLocalImpl extends ObtemParaAmbienteLocal {
 	@Override
 	protected boolean executaCustom(EntregavelProduto entregavelCorrente, List<ConteudoProdutoKiwify> conteudoLista) {
 		try {
+			if (entregavelCorrente.getDiretorioGravacaoLocal()==null) {
+				throw new RuntimeException("Entragavel " + entregavelCorrente.getNome() + " sem diretorio de gravacao local");
+			} 
 			limpaDiretorio(entregavelCorrente.getDiretorioGravacaoLocal());
 			for (ConteudoProdutoKiwify conteudo : conteudoLista) {
 				if (conteudo.getImagemConteudos().size()==1) {
@@ -55,7 +58,7 @@ public class ObtemParaAmbienteLocalImpl extends ObtemParaAmbienteLocal {
 		DecimalFormat df = new DecimalFormat("00");
 		String numeroString = df.format(conteudo.getOrdenacao());
 		String imageUrl = imagem.getUrlFinal();
-		String outputFileName = entregavelCorrente.getDiretorioGravacaoLocal() + "/" + numeroString + "-" + conteudo.getNome() + ".jpg"; 
+		String outputFileName = entregavelCorrente.getDiretorioGravacaoLocal() + "/" + numeroString + "-" + conteudo.getNome().replace('/', ' ') + ".jpg"; 
 		// Obter a imagem da URL
 		URL url = new URL(imageUrl);
 		InputStream inputStream = url.openStream();
@@ -90,6 +93,7 @@ public class ObtemParaAmbienteLocalImpl extends ObtemParaAmbienteLocal {
 
 	private void limpaDiretorio(String diretorio) {
 		// Listar todos os arquivos no diretório
+		System.out.println("Limpando..." + diretorio);
         File folder = new File(diretorio);
         File[] files = folder.listFiles();
 

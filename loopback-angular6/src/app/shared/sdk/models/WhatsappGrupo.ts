@@ -8,7 +8,8 @@ import {
   WhatsappGrupoMetrica,
   MembroWhatsappGrupo,
   PaginaWhatsappGrupo,
-  WhatsappGrupoDia
+  WhatsappGrupoDia,
+  WhatsappMensagemEnviadaGrupo
 } from '../index';
 
 declare var Object: any;
@@ -34,6 +35,7 @@ export interface WhatsappGrupoInterface {
   membroWhatsappGrupos?: MembroWhatsappGrupo[];
   paginaWhatsappGrupos?: PaginaWhatsappGrupo[];
   whatsappGrupoDias?: WhatsappGrupoDia[];
+  whatsappMensagemEnviadaGrupos?: WhatsappMensagemEnviadaGrupo[];
 }
 
 export class WhatsappGrupo implements WhatsappGrupoInterface {
@@ -58,6 +60,7 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
   membroWhatsappGrupos: MembroWhatsappGrupo[];
   paginaWhatsappGrupos: PaginaWhatsappGrupo[];
   whatsappGrupoDias: WhatsappGrupoDia[];
+  whatsappMensagemEnviadaGrupos: WhatsappMensagemEnviadaGrupo[];
   constructor(data?: WhatsappGrupoInterface) {
     Object.assign(this, data);
   }
@@ -209,6 +212,14 @@ export class WhatsappGrupo implements WhatsappGrupoInterface {
           name: 'whatsappGrupoDias',
           type: 'WhatsappGrupoDia[]',
           model: 'WhatsappGrupoDia',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'whatsappGrupoId'
+        },
+        whatsappMensagemEnviadaGrupos: {
+          name: 'whatsappMensagemEnviadaGrupos',
+          type: 'WhatsappMensagemEnviadaGrupo[]',
+          model: 'WhatsappMensagemEnviadaGrupo',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'whatsappGrupoId'

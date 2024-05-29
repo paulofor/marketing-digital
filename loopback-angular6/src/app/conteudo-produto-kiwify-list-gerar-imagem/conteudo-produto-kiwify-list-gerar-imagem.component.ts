@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { ConteudoProdutoKiwify, ConteudoProdutoKiwifyApi } from '../shared/sdk';
 import { ConteudoProdutoKiwifyListGerarImagemBaseComponent } from './conteudo-produto-kiwify-list-gerar-imagem-base.component';
+import { ConteudoProdutoKiwifyEditComponent } from '../conteudo-produto-kiwify-edit/conteudo-produto-kiwify-edit.component';
 
 @Component({
 	selector: 'app-conteudo-produto-kiwify-list-gerar-imagem',
@@ -23,5 +24,20 @@ export class ConteudoProdutoKiwifyListGerarImagemComponent extends ConteudoProdu
             this.posCarregaLista();
         })
     }
+
+	edita(edicao?) {
+		this.dialog.afterAllClosed.subscribe(result => {
+			this.carregaTela();
+		});
+		this.dialog.open(this.getComponente(), {
+			width: '800px',
+			data: {
+				item: edicao
+			}
+		});
+	}
+	getComponente() : any {
+		return ConteudoProdutoKiwifyEditComponent
+	}
 
 }

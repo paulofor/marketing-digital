@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { ConteudoProdutoKiwify, ConteudoProdutoKiwifyApi, PromptItem } from '../shared/sdk';
@@ -76,7 +76,7 @@ export class ConteudoProdutoKiwifyDetalheComponent extends ConteudoProdutoKiwify
 		const resultado = texto.replace(regex, (match, p1) => {
 			if (isNewLineFinal) {
 				// Se textoFinal é '\n', mantemos o final e adicionamos <b> ao texto capturado
-				return `<b>${p1}${textoFinal}</b>`;
+				return `<b>${p1}${textoFinal}</b><br>`;
 			} else {
 				// Caso contrário, removemos textoInicio e textoFinal e adicionamos <b> ao texto capturado
 				return `<b>${p1}</b>`;
@@ -85,6 +85,54 @@ export class ConteudoProdutoKiwifyDetalheComponent extends ConteudoProdutoKiwify
 	
 		return resultado;
 	}
+	@ViewChild('conteudoPre') conteudoPre: ElementRef;
+
+	copiaItem(textoParaCopiar): void {
+		// Cria um elemento textarea
+		const campoTemp = document.createElement('textarea');
+		
+		// Define o valor do textarea como o texto a ser copiado
+		campoTemp.value = textoParaCopiar;
+		
+		// Adiciona o textarea ao corpo do documento
+		document.body.appendChild(campoTemp);
+		
+		// Seleciona todo o texto no textarea
+		campoTemp.select();
+		
+		// Copia o texto selecionado para a área de transferência do sistema
+		document.execCommand('copy');
+		
+		// Remove o textarea do documento
+		document.body.removeChild(campoTemp);
+		
+		// Exibe uma mensagem de confirmação
+		alert('Texto copiado para a área de transferência!');
+	}
+
+	copiarConteudo(): void {
+		// Obtém o texto do elemento <pre>
+		const texto = this.conteudoPre.nativeElement.innerText;
+	
+		// Cria um campo de texto temporário
+		const campoTemp = document.createElement('textarea');
+		campoTemp.value = texto;
+		
+		// Adiciona o campo de texto ao corpo do documento
+		document.body.appendChild(campoTemp);
+		
+		// Seleciona todo o texto no campo de texto
+		campoTemp.select();
+		
+		// Copia o texto selecionado para a área de transferência do sistema
+		document.execCommand('copy');
+		
+		// Remove o campo de texto temporário
+		document.body.removeChild(campoTemp);
+		
+		// Exibe uma mensagem de confirmação
+		alert('Conteúdo copiado para a área de transferência!');
+	  }
 
 	ajustaComPre(texto:string, prompt:PromptItem) {
 		console.log('prompt:' , prompt);

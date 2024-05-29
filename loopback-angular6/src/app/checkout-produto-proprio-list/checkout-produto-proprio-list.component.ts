@@ -18,7 +18,28 @@ export class CheckoutProdutoProprioListComponent extends CheckoutProdutoProprioL
 		super(srv,router,dialog);
 	}
 
-
+	copiaItem(textoParaCopiar): void {
+		// Cria um elemento textarea
+		const campoTemp = document.createElement('textarea');
+		
+		// Define o valor do textarea como o texto a ser copiado
+		campoTemp.value = textoParaCopiar;
+		
+		// Adiciona o textarea ao corpo do documento
+		document.body.appendChild(campoTemp);
+		
+		// Seleciona todo o texto no textarea
+		campoTemp.select();
+		
+		// Copia o texto selecionado para a área de transferência do sistema
+		document.execCommand('copy');
+		
+		// Remove o textarea do documento
+		document.body.removeChild(campoTemp);
+		
+		// Exibe uma mensagem de confirmação
+		alert('Texto copiado para a área de transferência!');
+	}
 
 	getFiltro() {
 		let filtro =  {

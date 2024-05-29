@@ -4,12 +4,20 @@
   		<button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
 	</div>
 	<div class="dgc-painel-principal" *ngIf="listaBase">
-		<div class="dgc-card" *ngFor="let item of listaBase">
+		<div class="dgc-card dgc-card-3" *ngFor="let item of listaBase">
  			<div class="dgc-card-header">
  				<span>{{item.nome}}</span>
  			</div>
 			<div class="dgc-card-detalhe">
 				<span>{{item.preco | currency : 'BRL'}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Url:</span><br>
+				<span>{{item.url}}</span>
+			</div>
+			<div class="dgc-card-detalhe">
+				<span>Redirect:</span><br>
+				<span>{{item.urlRedirecionamento}}</span>
 			</div>
  			<div class="dgc-card-comandos">
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>

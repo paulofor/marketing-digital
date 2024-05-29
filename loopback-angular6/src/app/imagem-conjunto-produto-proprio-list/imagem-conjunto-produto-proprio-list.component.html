@@ -8,20 +8,23 @@
 	<div class="dgc-painel-principal" *ngIf="listaBase">
 		<div class="dgc-card dgc-card-descricao">
 			<span>Processo Java de Criação: <a
-					routerLink="/imagemConjuntoListProcessoJava">CriaImagemCriativoRedeDisplay</a></span>
+					routerLink="/imagemConjuntoListProcessoJava">CriaImagemCriativoRedeDisplay</a> (*/20)</span>
 		</div>
 		<div class="dgc-card dgc-card-2" *ngFor="let item of listaBase">
 			<div class="dgc-card-header">
 				<span>{{item.nome}}</span>
 			</div>
+
 			<div class="dgc-card-detalhe">
-				<span>Linha1: {{item.textoCopyLinha1}}</span>
+				<span><b>Quadrada:</b></span><br>
+				<span>{{item.quadradaTexto1}}</span><br>
+				<span>{{item.quadradaTexto2}}</span>
 			</div>
 			<div class="dgc-card-detalhe">
-				<span>Linha2: {{item.textoCopyLinha2}}</span>
-			</div>
-			<div class="dgc-card-detalhe">
-				<span>Linha3: {{item.textoCopyLinha3}}</span>
+				<span><b>Deitada:</b></span><br>
+				<span>{{item.deitadaTexto1}}</span><br>
+				<span>{{item.deitadaTexto2}}</span><br>
+				<span>{{item.deitadaTexto3}}</span>
 			</div>
 			<div class="dgc-card-detalhe" >
 				<span>Imagem Origem: <span *ngIf="item.imagemPaginaVenda">{{item.imagemPaginaVenda.codigoHexa}}</span></span>
@@ -50,6 +53,15 @@
 
 			<div class="dgc-card-detalhe">
 				Imagem Zap: {{item.logoGrupoWhatsapp}}
+			</div>
+
+			<div class="dgc-card-header">
+				Percentual Entrada Grupo: {{item.percentualEntradaGrupo | number : '1.2-2'}} %<br>
+				Custo Entrada Grupo: {{item.custoEntradaGrupo | currency : 'BRL'}}
+			</div>
+
+			<div class="dgc-card-detalhe">
+				{{item.dataGeracao  | date : 'dd-MM-yyyy HH:mm:ss' }}
 			</div>
 
 			<div class="dgc-card-comandos">

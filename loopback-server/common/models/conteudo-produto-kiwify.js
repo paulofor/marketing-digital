@@ -105,6 +105,13 @@ module.exports = function(Conteudoprodutokiwify) {
         ds.connector.query(sql,callback);
     }
 
+    Conteudoprodutokiwify.DesligaGeraImagem = function(idItem,callback) {
+        const sql = "update ConteudoProdutoKiwify set geraImagem = 0 where id = " + idItem;
+        const ds = Conteudoprodutokiwify.dataSource;
+        ds.connector.query(sql,callback);
+    }
+
+
     Conteudoprodutokiwify.ListaParaGeracaoImagem = function(callback) {
         let filtro = {
             'where' : {'geraImagem' : 1},

@@ -48,6 +48,9 @@ public class CampanhaAdsRedeDisplay extends Model {
 	private int quantidadeEntradaGrupo;
 	private double custoEntradaGrupo;
 	private double percentualEntradaGrupo;
+	private String observacao;
+	private int imagemConjuntoId;
+	private int whatsappGrupoId;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
 	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
@@ -116,6 +119,9 @@ public class CampanhaAdsRedeDisplay extends Model {
 			obj.put("quantidadeEntradaGrupo", quantidadeEntradaGrupo);
 			obj.put("custoEntradaGrupo", custoEntradaGrupo);
 			obj.put("percentualEntradaGrupo", percentualEntradaGrupo);
+			obj.put("observacao", observacao);
+			obj.put("imagemConjuntoId", imagemConjuntoId);
+			obj.put("whatsappGrupoId", whatsappGrupoId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -326,6 +332,24 @@ public class CampanhaAdsRedeDisplay extends Model {
 	}
 	public double getPercentualEntradaGrupo() { 
 		return this.percentualEntradaGrupo;
+	}
+	public void setObservacao(String valor) { 
+		this.observacao = valor;
+	}
+	public String getObservacao() { 
+		return this.observacao;
+	}
+	public void setImagemConjuntoId(int valor) { 
+		this.imagemConjuntoId = valor;
+	}
+	public int getImagemConjuntoId() { 
+		return this.imagemConjuntoId;
+	}
+	public void setWhatsappGrupoId(int valor) { 
+		this.whatsappGrupoId = valor;
+	}
+	public int getWhatsappGrupoId() { 
+		return this.whatsappGrupoId;
 	}
 
 	public ContaGoogle getContaGoogle() {

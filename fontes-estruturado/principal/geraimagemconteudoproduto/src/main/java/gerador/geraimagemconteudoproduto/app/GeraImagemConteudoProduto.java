@@ -19,7 +19,7 @@ public class GeraImagemConteudoProduto {
 
 	public static void main(String[] args) {
 		System.out.print("GeraImagemConteudoProduto");
-		System.out.println("(20/05/2024 18:36:48)");
+		System.out.println("(29/05/2024 02:11:01)");
 		try {
 			carregaProp();
 			GeraImagemConteudoProdutoObj obj = new GeraImagemConteudoProdutoObj();
@@ -62,5 +62,6 @@ public class GeraImagemConteudoProduto {
 		DaoBaseComum.setProximo("ConteudoProdutoKiwify_ListaParaGeracaoImagem", new AcessaDalleImpl());
 		DaoBaseComum.setProximo("AcessaDalle", new ImportaImagemImpl());
 		DaoBaseComum.setProximo("ImportaImagem", new ImagemConteudo_RegistraImagemImpl());
+		DaoBaseComum.setProximo("ImagemConteudo_RegistraImagem", new ConteudoProdutoKiwify_DesligaGeraImagemImpl());
 	}
 }

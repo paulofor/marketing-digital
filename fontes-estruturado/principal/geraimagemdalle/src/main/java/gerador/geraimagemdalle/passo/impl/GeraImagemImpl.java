@@ -89,6 +89,7 @@ public class GeraImagemImpl extends GeraImagem {
 			// Obtenha a api_key
 			String apiKey = prop.getProperty("api_key");
 
+			
 			String endpoint = "https://api.openai.com/v1/images/generations";
 
 			URL url = new URL(endpoint);
