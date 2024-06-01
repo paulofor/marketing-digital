@@ -19,7 +19,7 @@ public class AtualizaPerformanceMetaAdsAnuncio {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaPerformanceMetaAdsAnuncio");
-		System.out.println("(29/05/2024 02:11:03)");
+		System.out.println("(01/06/2024 00:08:53)");
 		try {
 			carregaProp();
 			AtualizaPerformanceMetaAdsAnuncioObj obj = new AtualizaPerformanceMetaAdsAnuncioObj();

@@ -19,7 +19,7 @@ public class GeraImagemCriativoMeta {
 
 	public static void main(String[] args) {
 		System.out.print("GeraImagemCriativoMeta");
-		System.out.println("(29/05/2024 02:11:04)");
+		System.out.println("(01/06/2024 00:08:54)");
 		try {
 			carregaProp();
 			GeraImagemCriativoMetaObj obj = new GeraImagemCriativoMetaObj();

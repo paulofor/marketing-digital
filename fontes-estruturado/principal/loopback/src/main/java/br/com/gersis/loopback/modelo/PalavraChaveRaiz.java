@@ -17,6 +17,7 @@ public class PalavraChaveRaiz extends Model {
 	private String palavra;
 	private int ativo;
 	private String dataUltimaAtualizacao;
+	private int qtdePalavra;
 	// Relacionamentos 1
 	// Relacionamentos N
 	private List<PalavraChaveEstatistica> PalavraChaveEstatisticas;
@@ -42,6 +43,7 @@ public class PalavraChaveRaiz extends Model {
 			obj.put("palavra", palavra);
 			obj.put("ativo", ativo);
 			obj.put("dataUltimaAtualizacao", dataUltimaAtualizacao);
+			obj.put("qtdePalavra", qtdePalavra);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -66,6 +68,12 @@ public class PalavraChaveRaiz extends Model {
 	}
 	public String getDataUltimaAtualizacao() { 
 		return this.dataUltimaAtualizacao;
+	}
+	public void setQtdePalavra(int valor) { 
+		this.qtdePalavra = valor;
+	}
+	public int getQtdePalavra() { 
+		return this.qtdePalavra;
 	}
 
 	public List<PalavraChaveEstatistica> getPalavraChaveEstatisticas() {

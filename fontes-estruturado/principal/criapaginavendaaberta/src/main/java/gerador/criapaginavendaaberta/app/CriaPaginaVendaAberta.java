@@ -19,7 +19,7 @@ public class CriaPaginaVendaAberta {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPaginaVendaAberta");
-		System.out.println("(29/05/2024 02:11:02)");
+		System.out.println("(01/06/2024 00:08:51)");
 		try {
 			carregaProp();
 			CriaPaginaVendaAbertaObj obj = new CriaPaginaVendaAbertaObj();

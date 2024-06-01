@@ -19,7 +19,7 @@ public class ObtemResultadoCampanhaRedeDisplay {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemResultadoCampanhaRedeDisplay");
-		System.out.println("(29/05/2024 02:10:58)");
+		System.out.println("(01/06/2024 00:08:46)");
 		try {
 			carregaProp();
 			ObtemResultadoCampanhaRedeDisplayObj obj = new ObtemResultadoCampanhaRedeDisplayObj();

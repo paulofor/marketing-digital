@@ -33,6 +33,12 @@
 		"minCpc": {
 			"type": "number"
 		},
+		"volumePesquisaMedio": {
+			"type": "number"
+		},
+		"volumePesquisadoDiferencaMedia": {
+			"type": "number"
+		},
 		"palavraChaveGoogleId": {
 			"type": "number"
 		}

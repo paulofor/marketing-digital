@@ -19,7 +19,7 @@ public class GravacaoLocalImagemConteudo {
 
 	public static void main(String[] args) {
 		System.out.print("GravacaoLocalImagemConteudo");
-		System.out.println("(29/05/2024 02:11:07)");
+		System.out.println("(01/06/2024 00:08:59)");
 		try {
 			carregaProp();
 			GravacaoLocalImagemConteudoObj obj = new GravacaoLocalImagemConteudoObj();

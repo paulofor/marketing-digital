@@ -17,6 +17,9 @@
 		},
 		"dataUltimaAtualizacao": {
 			"type": "date"
+		},
+		"qtdePalavra": {
+			"type": "number"
 		}
 	},
 	"validations": [],

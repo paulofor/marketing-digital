@@ -22,6 +22,8 @@ public class PalavraChaveEstatistica extends Model {
 	private int maisRecente;
 	private String palavra;
 	private double minCpc;
+	private int volumePesquisaMedio;
+	private int volumePesquisadoDiferencaMedia;
 	// Relacionamentos 1
 	private PalavraChaveRaiz PalavraChaveRaiz;
 	private PalavraChaveGoogle PalavraChaveGoogle;
@@ -53,6 +55,8 @@ public class PalavraChaveEstatistica extends Model {
 			obj.put("maisRecente", maisRecente);
 			obj.put("palavra", palavra);
 			obj.put("minCpc", minCpc);
+			obj.put("volumePesquisaMedio", volumePesquisaMedio);
+			obj.put("volumePesquisadoDiferencaMedia", volumePesquisadoDiferencaMedia);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -107,6 +111,18 @@ public class PalavraChaveEstatistica extends Model {
 	}
 	public double getMinCpc() { 
 		return this.minCpc;
+	}
+	public void setVolumePesquisaMedio(int valor) { 
+		this.volumePesquisaMedio = valor;
+	}
+	public int getVolumePesquisaMedio() { 
+		return this.volumePesquisaMedio;
+	}
+	public void setVolumePesquisadoDiferencaMedia(int valor) { 
+		this.volumePesquisadoDiferencaMedia = valor;
+	}
+	public int getVolumePesquisadoDiferencaMedia() { 
+		return this.volumePesquisadoDiferencaMedia;
 	}
 
 	public PalavraChaveRaiz getPalavraChaveRaiz() {
