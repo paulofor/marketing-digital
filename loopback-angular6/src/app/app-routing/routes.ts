@@ -89,6 +89,9 @@ import { PalavraChaveRaizListComponent } from '../palavra-chave-raiz-list/palavr
 import { PalavraChaveRaizDetalheComponent } from '../palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
 import { PalavraChaveEstatisticaListMelhoresComponent } from '../palavra-chave-estatistica-list-melhores/palavra-chave-estatistica-list-melhores.component';
 import { PalavraChaveEstatisticaListCrescimentoComponent } from '../palavra-chave-estatistica-list-crescimento/palavra-chave-estatistica-list-crescimento.component';
+import { PlayerListComponent } from '../player-list/player-list.component';
+import { FerramentaIaListComponent } from '../ferramenta-ia-list/ferramenta-ia-list.component';
+
 
 
 
@@ -216,6 +219,9 @@ export const routes : Routes = [
     { path: 'palavraChaveRaizDetalhe/:id' , component: PalavraChaveRaizDetalheComponent },
     { path: 'palavraChaveEstatisticaListMelhores' , component: PalavraChaveEstatisticaListMelhoresComponent },
     { path: 'palavraChaveEstatisticaListCrescimento' , component: PalavraChaveEstatisticaListCrescimentoComponent },
+
+    { path: 'playerList' , component: PlayerListComponent},
+    { path: 'ferramentaIa' , component: FerramentaIaListComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

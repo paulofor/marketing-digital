@@ -13,6 +13,9 @@
 			<div class="dgc-card-detalhe">
 				<span>{{item.palavraChaveRaiz.palavra}}</span>
 			</div>
+			<div class="dgc-card-detalhe">
+				<span>CPC: {{item.minCpc | currency: 'BRL'}} até {{item.maxCpc | currency: 'BRL'}}</span>
+			</div>
  			<div class="dgc-card-comandos">
  				<button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
  			</div>

@@ -11,10 +11,24 @@
 	"properties": {
 		"nome": {
 			"type": "string"
+		},
+		"login": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		},
+		"senha": {
+			"type": "string"
 		}
 	},
 	"validations": [],
 	"relations": {
+		"produtoAfiliadoGenericos": {
+			"type": "hasMany",
+			"model": "ProdutoAfiliadoGenerico",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {

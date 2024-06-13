@@ -1,0 +1,31 @@
+{
+	"name": "Player",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"instagram": {
+			"type": "string"
+		},
+		"youtube": {
+			"type": "string"
+		},
+		"observacao": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+	}
+}

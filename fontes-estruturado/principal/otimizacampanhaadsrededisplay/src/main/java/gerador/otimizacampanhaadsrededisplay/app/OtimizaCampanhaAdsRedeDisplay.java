@@ -19,7 +19,7 @@ public class OtimizaCampanhaAdsRedeDisplay {
 
 	public static void main(String[] args) {
 		System.out.print("OtimizaCampanhaAdsRedeDisplay");
-		System.out.println("(01/06/2024 00:08:34)");
+		System.out.println("(13/06/2024 07:40:17)");
 		try {
 			carregaProp();
 			OtimizaCampanhaAdsRedeDisplayObj obj = new OtimizaCampanhaAdsRedeDisplayObj();

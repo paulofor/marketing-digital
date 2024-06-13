@@ -19,7 +19,7 @@ public class AtualizaAfiliados {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaAfiliados");
-		System.out.println("(01/06/2024 00:08:32)");
+		System.out.println("(13/06/2024 07:40:16)");
 		try {
 			carregaProp();
 			AtualizaAfiliadosObj obj = new AtualizaAfiliadosObj();

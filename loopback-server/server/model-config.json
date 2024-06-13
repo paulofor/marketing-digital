@@ -570,5 +570,17 @@
   "PalavraChaveRaiz": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "Player": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "FerramentaIa": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ProdutoAfiliadoGenerico": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

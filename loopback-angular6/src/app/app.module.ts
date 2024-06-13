@@ -222,6 +222,10 @@ import { PalavraChaveRaizListComponent } from './palavra-chave-raiz-list/palavra
 import { PalavraChaveEstatisticaListCrescimentoComponent } from './palavra-chave-estatistica-list-crescimento/palavra-chave-estatistica-list-crescimento.component';
 import { PalavraChaveRaizDetalheComponent } from './palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
 import { PalavraChaveEstatisticaListMelhoresComponent } from './palavra-chave-estatistica-list-melhores/palavra-chave-estatistica-list-melhores.component';
+import { PlayerEditComponent } from './player-edit/player-edit.component';
+import { PlayerListComponent } from './player-list/player-list.component';
+import { FerramentaIaEditComponent } from './ferramenta-ia-edit/ferramenta-ia-edit.component';
+import { FerramentaIaListComponent } from './ferramenta-ia-list/ferramenta-ia-list.component';
 
 
 
@@ -422,7 +426,11 @@ registerLocaleData(localePt, 'pt-BR');
     PalavraChaveRaizEditComponent,
     PalavraChaveRaizDetalheComponent,
     PalavraChaveEstatisticaListMelhoresComponent,
-    PalavraChaveEstatisticaListCrescimentoComponent
+    PalavraChaveEstatisticaListCrescimentoComponent,
+    PlayerListComponent,
+    PlayerEditComponent,
+    FerramentaIaListComponent,
+    FerramentaIaEditComponent
   ],
   imports: [
     BrowserModule,
@@ -543,7 +551,9 @@ registerLocaleData(localePt, 'pt-BR');
     ImagemConjuntoEditDeImagemComponent,
     WhatsappGrupoEditQtdeComponent,
     WhatsappMensagemEnviadaGrupoEditComponent,
-    PalavraChaveRaizEditComponent
+    PalavraChaveRaizEditComponent,
+    PlayerEditComponent,
+    FerramentaIaEditComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -183,6 +183,8 @@ import { WhatsappMensagemEnviadaGrupoApi } from './services/custom/WhatsappMensa
 import { PalavraChaveEstatisticaApi } from './services/custom/PalavraChaveEstatistica';
 import { PalavraChaveGoogleApi } from './services/custom/PalavraChaveGoogle';
 import { PalavraChaveRaizApi } from './services/custom/PalavraChaveRaiz';
+import { PlayerApi } from './services/custom/Player';
+import { FerramentaIaApi } from './services/custom/FerramentaIa';
 /**
 * @module SDKBrowserModule
 * @description
@@ -348,6 +350,8 @@ export class SDKBrowserModule {
         PalavraChaveEstatisticaApi,
         PalavraChaveGoogleApi,
         PalavraChaveRaizApi,
+        PlayerApi,
+        FerramentaIaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

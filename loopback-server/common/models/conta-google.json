@@ -140,6 +140,11 @@
 			"type": "hasMany",
 			"model": "PublicoAlvoAdsPalavra",
 			"foreignKey": ""
+		},
+		"produtoAfiliadoGenericos": {
+			"type": "hasMany",
+			"model": "ProdutoAfiliadoGenerico",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

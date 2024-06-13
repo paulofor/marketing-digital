@@ -135,6 +135,8 @@ import { WhatsappMensagemEnviadaGrupo } from '../../models/WhatsappMensagemEnvia
 import { PalavraChaveEstatistica } from '../../models/PalavraChaveEstatistica';
 import { PalavraChaveGoogle } from '../../models/PalavraChaveGoogle';
 import { PalavraChaveRaiz } from '../../models/PalavraChaveRaiz';
+import { Player } from '../../models/Player';
+import { FerramentaIa } from '../../models/FerramentaIa';
 
 export interface Models { [name: string]: any }
 
@@ -277,6 +279,8 @@ export class SDKModels {
     PalavraChaveEstatistica: PalavraChaveEstatistica,
     PalavraChaveGoogle: PalavraChaveGoogle,
     PalavraChaveRaiz: PalavraChaveRaiz,
+    Player: Player,
+    FerramentaIa: FerramentaIa,
     
   };
 

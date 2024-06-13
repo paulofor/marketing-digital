@@ -19,7 +19,7 @@ public class CriaImagemCriativoRedeDisplay {
 
 	public static void main(String[] args) {
 		System.out.print("CriaImagemCriativoRedeDisplay");
-		System.out.println("(01/06/2024 00:08:58)");
+		System.out.println("(13/06/2024 07:40:40)");
 		try {
 			carregaProp();
 			CriaImagemCriativoRedeDisplayObj obj = new CriaImagemCriativoRedeDisplayObj();

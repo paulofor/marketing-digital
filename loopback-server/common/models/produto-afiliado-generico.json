@@ -1,0 +1,56 @@
+{
+	"name": "ProdutoAfiliadoGenerico",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"pixelVendaGoogle": {
+			"type": "string"
+		},
+		"pixelVendaMeta": {
+			"type": "string"
+		},
+		"pixelVendaMetaInstalado": {
+			"type": "number"
+		},
+		"pixelVendaGoogleInstalado": {
+			"type": "number"
+		},
+		"urlAfiliadoPaginaVenda": {
+			"type": "string"
+		},
+		"percentualAfiliado": {
+			"type": "number"
+		},
+		"contaGoogleId": {
+			"type": "number"
+		},
+		"plataformaVendaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaGoogle": {
+			"type": "belongsTo",
+			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
+		"plataformaVenda": {
+			"type": "belongsTo",
+			"model": "PlataformaVenda",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

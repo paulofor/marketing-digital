@@ -134,5 +134,7 @@ export * from './WhatsappMensagemEnviadaGrupo';
 export * from './PalavraChaveEstatistica';
 export * from './PalavraChaveGoogle';
 export * from './PalavraChaveRaiz';
+export * from './Player';
+export * from './FerramentaIa';
 export * from './BaseModels';
 export * from './FireLoopRef';

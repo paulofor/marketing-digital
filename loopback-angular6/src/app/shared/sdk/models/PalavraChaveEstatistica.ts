@@ -7,11 +7,15 @@ import {
 declare var Object: any;
 export interface PalavraChaveEstatisticaInterface {
   "dataConsulta"?: Date;
-  "mediaCpc"?: number;
+  "maxCpc"?: number;
   "volumePesquisa"?: number;
   "indiceCompeticao"?: number;
   "palavraChaveRaizId"?: number;
   "maisRecente"?: number;
+  "palavra"?: string;
+  "minCpc"?: number;
+  "volumePesquisaMedio"?: number;
+  "volumePesquisadoDiferencaMedia"?: number;
   "palavraChaveGoogleId"?: string;
   "id"?: number;
   palavraChaveGoogle?: PalavraChaveGoogle;
@@ -20,11 +24,15 @@ export interface PalavraChaveEstatisticaInterface {
 
 export class PalavraChaveEstatistica implements PalavraChaveEstatisticaInterface {
   "dataConsulta": Date;
-  "mediaCpc": number;
+  "maxCpc": number;
   "volumePesquisa": number;
   "indiceCompeticao": number;
   "palavraChaveRaizId": number;
   "maisRecente": number;
+  "palavra": string;
+  "minCpc": number;
+  "volumePesquisaMedio": number;
+  "volumePesquisadoDiferencaMedia": number;
   "palavraChaveGoogleId": string;
   "id": number;
   palavraChaveGoogle: PalavraChaveGoogle;
@@ -66,8 +74,8 @@ export class PalavraChaveEstatistica implements PalavraChaveEstatisticaInterface
           name: 'dataConsulta',
           type: 'Date'
         },
-        "mediaCpc": {
-          name: 'mediaCpc',
+        "maxCpc": {
+          name: 'maxCpc',
           type: 'number'
         },
         "volumePesquisa": {
@@ -84,6 +92,22 @@ export class PalavraChaveEstatistica implements PalavraChaveEstatisticaInterface
         },
         "maisRecente": {
           name: 'maisRecente',
+          type: 'number'
+        },
+        "palavra": {
+          name: 'palavra',
+          type: 'string'
+        },
+        "minCpc": {
+          name: 'minCpc',
+          type: 'number'
+        },
+        "volumePesquisaMedio": {
+          name: 'volumePesquisaMedio',
+          type: 'number'
+        },
+        "volumePesquisadoDiferencaMedia": {
+          name: 'volumePesquisadoDiferencaMedia',
           type: 'number'
         },
         "palavraChaveGoogleId": {

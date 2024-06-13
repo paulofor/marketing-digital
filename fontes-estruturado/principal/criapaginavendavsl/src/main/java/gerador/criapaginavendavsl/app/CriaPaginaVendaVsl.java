@@ -19,7 +19,7 @@ public class CriaPaginaVendaVsl {
 
 	public static void main(String[] args) {
 		System.out.print("CriaPaginaVendaVsl");
-		System.out.println("(01/06/2024 00:08:48)");
+		System.out.println("(13/06/2024 07:40:29)");
 		try {
 			carregaProp();
 			CriaPaginaVendaVslObj obj = new CriaPaginaVendaVslObj();

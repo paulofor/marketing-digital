@@ -19,7 +19,7 @@ public class MontaCampanhaTesteAfiliadoHotmartConversao {
 
 	public static void main(String[] args) {
 		System.out.print("MontaCampanhaTesteAfiliadoHotmartConversao");
-		System.out.println("(01/06/2024 00:08:29)");
+		System.out.println("(13/06/2024 07:40:12)");
 		try {
 			carregaProp();
 			MontaCampanhaTesteAfiliadoHotmartConversaoObj obj = new MontaCampanhaTesteAfiliadoHotmartConversaoObj();

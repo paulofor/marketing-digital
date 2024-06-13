@@ -154,6 +154,39 @@ export class PalavraChaveEstatisticaApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `listaPalavra` – `{any}` - 
+   *
+   *  - `palavraChaveRaizId` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PalavraChaveEstatistica` object.)
+   * </em>
+   */
+  public InsereLista(listaPalavra: any = {}, palavraChaveRaizId: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PalavraChaveEstatisticas/insereLista";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof listaPalavra !== 'undefined' && listaPalavra !== null) _urlParams.listaPalavra = listaPalavra;
+    if (typeof palavraChaveRaizId !== 'undefined' && palavraChaveRaizId !== null) _urlParams.palavraChaveRaizId = palavraChaveRaizId;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `PalavraChaveEstatistica`.
    */

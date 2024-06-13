@@ -1,0 +1,31 @@
+{
+	"name": "FerramentaIa",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"observacao": {
+			"type": "string"
+		},
+		"preco": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+	},
+	"acls": [],
+	"methods": {
+	}
+}

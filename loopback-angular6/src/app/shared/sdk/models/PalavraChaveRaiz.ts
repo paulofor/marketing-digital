@@ -8,6 +8,7 @@ export interface PalavraChaveRaizInterface {
   "palavra"?: string;
   "ativo"?: number;
   "dataUltimaAtualizacao"?: Date;
+  "qtdePalavra"?: number;
   "id"?: number;
   palavraChaveEstatisticas?: PalavraChaveEstatistica[];
 }
@@ -16,6 +17,7 @@ export class PalavraChaveRaiz implements PalavraChaveRaizInterface {
   "palavra": string;
   "ativo": number;
   "dataUltimaAtualizacao": Date;
+  "qtdePalavra": number;
   "id": number;
   palavraChaveEstatisticas: PalavraChaveEstatistica[];
   constructor(data?: PalavraChaveRaizInterface) {
@@ -62,6 +64,10 @@ export class PalavraChaveRaiz implements PalavraChaveRaizInterface {
         "dataUltimaAtualizacao": {
           name: 'dataUltimaAtualizacao',
           type: 'Date'
+        },
+        "qtdePalavra": {
+          name: 'qtdePalavra',
+          type: 'number'
         },
         "id": {
           name: 'id',

@@ -47,6 +47,7 @@ public class ContaGoogle extends Model {
 	private List<VersaoPaginaVenda> VersaoPaginaVendas;
 	private List<ProdutoProprio> ProdutoProprios;
 	private List<PublicoAlvoAdsPalavra> PublicoAlvoAdsPalavras;
+	private List<ProdutoAfiliadoGenerico> ProdutoAfiliadoGenericos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -379,6 +380,18 @@ public class ContaGoogle extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PublicoAlvoAdsPalavras.add((PublicoAlvoAdsPalavra) objeto);
+		}
+	}
+	public List<ProdutoAfiliadoGenerico> getProdutoAfiliadoGenericos() {
+		return  ProdutoAfiliadoGenericos;
+	}
+	public void setProdutoAfiliadoGenericos(List<ProdutoAfiliadoGenerico> valores) {
+		this.ProdutoAfiliadoGenericos = new ArrayList<ProdutoAfiliadoGenerico>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ProdutoAfiliadoGenerico();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ProdutoAfiliadoGenericos.add((ProdutoAfiliadoGenerico) objeto);
 		}
 	}
 }

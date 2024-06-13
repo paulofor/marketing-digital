@@ -19,7 +19,7 @@ public class GeraImagemDalle {
 
 	public static void main(String[] args) {
 		System.out.print("GeraImagemDalle");
-		System.out.println("(01/06/2024 00:08:42)");
+		System.out.println("(13/06/2024 07:40:24)");
 		try {
 			carregaProp();
 			GeraImagemDalleObj obj = new GeraImagemDalleObj();
