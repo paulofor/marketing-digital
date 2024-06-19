@@ -91,6 +91,9 @@ import { PalavraChaveEstatisticaListMelhoresComponent } from '../palavra-chave-e
 import { PalavraChaveEstatisticaListCrescimentoComponent } from '../palavra-chave-estatistica-list-crescimento/palavra-chave-estatistica-list-crescimento.component';
 import { PlayerListComponent } from '../player-list/player-list.component';
 import { FerramentaIaListComponent } from '../ferramenta-ia-list/ferramenta-ia-list.component';
+import { PlataformaVendaListComponent } from '../plataforma-venda-list/plataforma-venda-list.component';
+import { ProdutoAfiliadoGenericoListComponent } from '../produto-afiliado-generico-list/produto-afiliado-generico-list.component';
+import { ProdutoAfiliadoHotmartListLowTicketComponent } from '../produto-afiliado-hotmart-list-low-ticket/produto-afiliado-hotmart-list-low-ticket.component';
 
 
 
@@ -222,6 +225,12 @@ export const routes : Routes = [
 
     { path: 'playerList' , component: PlayerListComponent},
     { path: 'ferramentaIa' , component: FerramentaIaListComponent },
+
+    { path: 'plataformaVenda' , component: PlataformaVendaListComponent },
+    { path: 'produtoAfiliadoGenerico' , component: ProdutoAfiliadoGenericoListComponent },
+
+
+    { path: 'produtoAfiliadoHotmartListLowTicket', component: ProdutoAfiliadoHotmartListLowTicketComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

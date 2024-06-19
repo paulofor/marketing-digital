@@ -69,6 +69,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>gravacaolocalimagemconteudo</module>
 		<module>finalizadadosdia</module>
 		<module>atualizademandapalavrachave</module>
+		<module>obtemvendashotmartfinalizacao</module>
 	</modules>
 
 </project>

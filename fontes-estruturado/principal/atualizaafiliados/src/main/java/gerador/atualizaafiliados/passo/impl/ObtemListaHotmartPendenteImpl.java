@@ -53,7 +53,7 @@ public class ObtemListaHotmartPendenteImpl extends ObtemListaHotmartPendente imp
 	}
 
 	public URL getUrl() throws MalformedURLException {
-		return new URL("https://api-affiliation.hotmart.com/v2/product/affiliate/solicitation?page=1&rows=50");
+		return new URL("https://api-affiliation.hotmart.com/v2/product/affiliate/solicitation?page=1&rows=150");
 
 	}
 	public String getBody() {

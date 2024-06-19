@@ -4,7 +4,10 @@ module.exports = function(Palavrachaveraiz) {
 
 
     Palavrachaveraiz.ListaParaPesquisa = function(callback) {
-        let filtro = {'where' : {'ativo' : 1}};
-        Palavrachaveraiz.find(filtro,callback);
+        let sql = "select * from PalavraChaveRaiz where ativo = 1 and " + 
+            " (YEAR(dataUltimaAtualizacao) = YEAR(CURDATE()) AND MONTH(dataUltimaAtualizacao) != MONTH(CURDATE()) or " +
+            " dataUltimaAtualizacao is null)";
+        let ds = Palavrachaveraiz.dataSource;
+        ds.connector.query(sql,callback);
     }
 };

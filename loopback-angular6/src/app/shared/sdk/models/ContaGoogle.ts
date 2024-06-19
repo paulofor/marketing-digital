@@ -16,7 +16,8 @@ import {
   PublicoAlvoAdsPalavra,
   PixelProdutoHotmartConta,
   PixelProdutoHotmartContaCheckout,
-  ProdutoHotmartConta
+  ProdutoHotmartConta,
+  ProdutoAfiliadoGenerico
 } from '../index';
 
 declare var Object: any;
@@ -53,6 +54,7 @@ export interface ContaGoogleInterface {
   pixelProdutoHotmartContas?: PixelProdutoHotmartConta[];
   pixelProdutoHotmartContaCheckouts?: PixelProdutoHotmartContaCheckout[];
   produtoHotmartContas?: ProdutoHotmartConta[];
+  produtoAfiliadoGenericos?: ProdutoAfiliadoGenerico[];
 }
 
 export class ContaGoogle implements ContaGoogleInterface {
@@ -88,6 +90,7 @@ export class ContaGoogle implements ContaGoogleInterface {
   pixelProdutoHotmartContas: PixelProdutoHotmartConta[];
   pixelProdutoHotmartContaCheckouts: PixelProdutoHotmartContaCheckout[];
   produtoHotmartContas: ProdutoHotmartConta[];
+  produtoAfiliadoGenericos: ProdutoAfiliadoGenerico[];
   constructor(data?: ContaGoogleInterface) {
     Object.assign(this, data);
   }
@@ -319,6 +322,14 @@ export class ContaGoogle implements ContaGoogleInterface {
           name: 'produtoHotmartContas',
           type: 'ProdutoHotmartConta[]',
           model: 'ProdutoHotmartConta',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'contaGoogleId'
+        },
+        produtoAfiliadoGenericos: {
+          name: 'produtoAfiliadoGenericos',
+          type: 'ProdutoAfiliadoGenerico[]',
+          model: 'ProdutoAfiliadoGenerico',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'contaGoogleId'

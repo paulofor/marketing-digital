@@ -136,5 +136,6 @@ export * from './PalavraChaveGoogle';
 export * from './PalavraChaveRaiz';
 export * from './Player';
 export * from './FerramentaIa';
+export * from './ProdutoAfiliadoGenerico';
 export * from './BaseModels';
 export * from './FireLoopRef';

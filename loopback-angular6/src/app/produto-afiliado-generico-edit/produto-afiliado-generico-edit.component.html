@@ -5,13 +5,39 @@
 	<mat-dialog-content>
 
 		<mat-form-field class="example-full-width">
-		<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+			<input matInput #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width" *ngIf="listaPlataforma">
+			<mat-select placeholder="Anúncio" #plataformaVendaId [(ngModel)]="item.plataformaVendaId"
+				name="plataformaVendaId">
+				<mat-option *ngFor="let item of listaPlataforma" [value]="item.id">
+					{{ item.nome}}
+				</mat-option>
+			</mat-select>
 		</mat-form-field>
 
 		<mat-form-field class="example-full-width">
-		<textarea rows="4" matInput #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição">
-		</textarea>
+			<input matInput #pixelVendaGoogle [(ngModel)]="item.pixelVendaGoogle" name="pixelVendaGoogle" placeholder="Pixel Google" />
 		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #pixelVendaGoogleInstalado [(ngModel)]="item.pixelVendaGoogleInstalado" name="pixelVendaGoogleInstalado" placeholder="Pixel Google Instalado" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #pixelVendaMeta [(ngModel)]="item.pixelVendaMeta" name="pixelVendaMeta" placeholder="Pixel Meta" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #pixelVendaMetaInstalado [(ngModel)]="item.pixelVendaMetaInstalado" name="pixelVendaMetaInstalado" placeholder="Pixel Meta Instalado" />
+		</mat-form-field>
+
+		<mat-form-field class="example-full-width">
+			<input matInput #urlAfiliadoPaginaVenda [(ngModel)]="item.urlAfiliadoPaginaVenda" name="urlAfiliadoPaginaVenda" placeholder="Url Página Venda" />
+		</mat-form-field>
+
+
 
 
 	</mat-dialog-content>

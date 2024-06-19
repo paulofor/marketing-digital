@@ -15,4 +15,8 @@ export class PlataformaVendaListComponent extends PlataformaVendaListBaseCompone
 		super(srv,router,dialog);
 	}
 
+	getFiltro() {
+		return {'order' : 'nome'}
+	}
+
 }

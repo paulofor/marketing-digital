@@ -185,6 +185,7 @@ import { PalavraChaveGoogleApi } from './services/custom/PalavraChaveGoogle';
 import { PalavraChaveRaizApi } from './services/custom/PalavraChaveRaiz';
 import { PlayerApi } from './services/custom/Player';
 import { FerramentaIaApi } from './services/custom/FerramentaIa';
+import { ProdutoAfiliadoGenericoApi } from './services/custom/ProdutoAfiliadoGenerico';
 /**
 * @module SDKBrowserModule
 * @description
@@ -352,6 +353,7 @@ export class SDKBrowserModule {
         PalavraChaveRaizApi,
         PlayerApi,
         FerramentaIaApi,
+        ProdutoAfiliadoGenericoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

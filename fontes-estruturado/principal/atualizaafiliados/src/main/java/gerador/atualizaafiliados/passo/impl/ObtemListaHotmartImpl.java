@@ -70,7 +70,7 @@ public class ObtemListaHotmartImpl extends ObtemListaHotmart implements ICallbac
 	}
 
 	public URL getUrl() throws MalformedURLException {
-		return new URL("https://api-affiliation.hotmart.com/v2/product/affiliate?page=1&rows=100");
+		return new URL("https://api-affiliation.hotmart.com/v2/product/affiliate?page=1&rows=150");
 
 	}
 	public String getBody() {

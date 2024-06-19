@@ -1,14 +1,25 @@
 /* tslint:disable */
+import {
+  ProdutoAfiliadoGenerico
+} from '../index';
 
 declare var Object: any;
 export interface PlataformaVendaInterface {
   "nome"?: string;
+  "login"?: string;
+  "url"?: string;
+  "senha"?: string;
   "id"?: number;
+  produtoAfiliadoGenericos?: ProdutoAfiliadoGenerico[];
 }
 
 export class PlataformaVenda implements PlataformaVendaInterface {
   "nome": string;
+  "login": string;
+  "url": string;
+  "senha": string;
   "id": number;
+  produtoAfiliadoGenericos: ProdutoAfiliadoGenerico[];
   constructor(data?: PlataformaVendaInterface) {
     Object.assign(this, data);
   }
@@ -46,12 +57,32 @@ export class PlataformaVenda implements PlataformaVendaInterface {
           name: 'nome',
           type: 'string'
         },
+        "login": {
+          name: 'login',
+          type: 'string'
+        },
+        "url": {
+          name: 'url',
+          type: 'string'
+        },
+        "senha": {
+          name: 'senha',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        produtoAfiliadoGenericos: {
+          name: 'produtoAfiliadoGenericos',
+          type: 'ProdutoAfiliadoGenerico[]',
+          model: 'ProdutoAfiliadoGenerico',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'plataformaVendaId'
+        },
       }
     }
   }

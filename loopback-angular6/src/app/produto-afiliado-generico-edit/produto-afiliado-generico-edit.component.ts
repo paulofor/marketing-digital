@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { ProdutoAfiliadoGenericoApi } from '../shared/sdk';
+import { PlataformaVenda, PlataformaVendaApi, ProdutoAfiliadoGenericoApi } from '../shared/sdk';
 import { ProdutoAfiliadoGenericoEditBaseComponent } from './produto-afiliado-generico-edit-base.component';
 
 @Component({
@@ -10,10 +10,21 @@ import { ProdutoAfiliadoGenericoEditBaseComponent } from './produto-afiliado-gen
 })
 export class ProdutoAfiliadoGenericoEditComponent extends ProdutoAfiliadoGenericoEditBaseComponent {
 
-	 constructor(protected dialogRef: MatDialogRef<any>
+	listaPlataforma: PlataformaVenda[];
+
+	 constructor(protected dialogRef: MatDialogRef<any>, private srvPlataforma:PlataformaVendaApi
 	    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: ProdutoAfiliadoGenericoApi
 		  ) {
 	   super(dialogRef,data,servico);
+	}
+
+	montaCombos() {
+		let filtro = {'order' : 'nome'} 
+		this.srvPlataforma.find(filtro)
+			.subscribe((lista:PlataformaVenda[])=> {
+				console.log('lista:' , lista);
+				this.listaPlataforma = lista;
+			})
 	}
 
 }

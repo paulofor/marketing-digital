@@ -226,6 +226,11 @@ import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { PlayerListComponent } from './player-list/player-list.component';
 import { FerramentaIaEditComponent } from './ferramenta-ia-edit/ferramenta-ia-edit.component';
 import { FerramentaIaListComponent } from './ferramenta-ia-list/ferramenta-ia-list.component';
+import { ProdutoAfiliadoGenericoEditComponent } from './produto-afiliado-generico-edit/produto-afiliado-generico-edit.component';
+import { ProdutoAfiliadoGenericoListComponent } from './produto-afiliado-generico-list/produto-afiliado-generico-list.component';
+import { PlataformaVendaEditComponent } from './plataforma-venda-edit/plataforma-venda-edit.component';
+import { PlataformaVendaListComponent } from './plataforma-venda-list/plataforma-venda-list.component';
+import { ProdutoAfiliadoHotmartListLowTicketComponent } from './produto-afiliado-hotmart-list-low-ticket/produto-afiliado-hotmart-list-low-ticket.component';
 
 
 
@@ -430,7 +435,12 @@ registerLocaleData(localePt, 'pt-BR');
     PlayerListComponent,
     PlayerEditComponent,
     FerramentaIaListComponent,
-    FerramentaIaEditComponent
+    FerramentaIaEditComponent,
+    PlataformaVendaListComponent,
+    PlataformaVendaEditComponent,
+    ProdutoAfiliadoGenericoEditComponent,
+    ProdutoAfiliadoGenericoListComponent,
+    ProdutoAfiliadoHotmartListLowTicketComponent
   ],
   imports: [
     BrowserModule,
@@ -553,7 +563,9 @@ registerLocaleData(localePt, 'pt-BR');
     WhatsappMensagemEnviadaGrupoEditComponent,
     PalavraChaveRaizEditComponent,
     PlayerEditComponent,
-    FerramentaIaEditComponent
+    FerramentaIaEditComponent,
+    PlataformaVendaEditComponent,
+    ProdutoAfiliadoGenericoEditComponent
   ],
   bootstrap: [AppComponent]
 })

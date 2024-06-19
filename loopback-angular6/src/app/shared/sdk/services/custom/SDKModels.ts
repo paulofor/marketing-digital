@@ -137,6 +137,7 @@ import { PalavraChaveGoogle } from '../../models/PalavraChaveGoogle';
 import { PalavraChaveRaiz } from '../../models/PalavraChaveRaiz';
 import { Player } from '../../models/Player';
 import { FerramentaIa } from '../../models/FerramentaIa';
+import { ProdutoAfiliadoGenerico } from '../../models/ProdutoAfiliadoGenerico';
 
 export interface Models { [name: string]: any }
 
@@ -281,6 +282,7 @@ export class SDKModels {
     PalavraChaveRaiz: PalavraChaveRaiz,
     Player: Player,
     FerramentaIa: FerramentaIa,
+    ProdutoAfiliadoGenerico: ProdutoAfiliadoGenerico,
     
   };
 

@@ -19,7 +19,7 @@ public class AtualizaDemandaPalavraChave {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaDemandaPalavraChave");
-		System.out.println("(13/06/2024 07:40:41)");
+		System.out.println("(19/06/2024 19:15:01)");
 		try {
 			carregaProp();
 			AtualizaDemandaPalavraChaveObj obj = new AtualizaDemandaPalavraChaveObj();
