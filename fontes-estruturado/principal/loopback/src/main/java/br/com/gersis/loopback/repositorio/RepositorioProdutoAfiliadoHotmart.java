@@ -83,7 +83,7 @@ public class RepositorioProdutoAfiliadoHotmart extends ModelRepository<ProdutoAf
 	}
 
 	public synchronized void atualizaTemperaturaAtual(final VoidCallback callback ) {
-		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/atualizaTemperaturaAtual","POST");
+		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/atualizaTemperaturaAtual","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "ProdutoAfiliadoHotmart.atualizaTemperaturaAtual");
 		Map<String, Object> params = new HashMap<String, Object>();
 		invokeStaticMethod("atualizaTemperaturaAtual", params,   new EmptyResponseParser(callback));

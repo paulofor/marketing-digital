@@ -65,6 +65,9 @@ export interface ProdutoAfiliadoHotmartInterface {
   "cpaInicial"?: number;
   "urlPresell"?: string;
   "urlRaizPaginaVendaPropria"?: string;
+  "ativo"?: number;
+  "afiliacaoValor"?: number;
+  "afiliacaoPercentual"?: number;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
@@ -133,6 +136,9 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "cpaInicial": number;
   "urlPresell": string;
   "urlRaizPaginaVendaPropria": string;
+  "ativo": number;
+  "afiliacaoValor": number;
+  "afiliacaoPercentual": number;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
@@ -326,6 +332,18 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
         "urlRaizPaginaVendaPropria": {
           name: 'urlRaizPaginaVendaPropria',
           type: 'string'
+        },
+        "ativo": {
+          name: 'ativo',
+          type: 'number'
+        },
+        "afiliacaoValor": {
+          name: 'afiliacaoValor',
+          type: 'number'
+        },
+        "afiliacaoPercentual": {
+          name: 'afiliacaoPercentual',
+          type: 'number'
         },
         "contaGoogleId": {
           name: 'contaGoogleId',

@@ -46,6 +46,9 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private double cpaInicial;
 	private String urlPresell;
 	private String urlRaizPaginaVendaPropria;
+	private int ativo;
+	private double afiliacaoValor;
+	private double afiliacaoPercentual;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -133,6 +136,9 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("cpaInicial", cpaInicial);
 			obj.put("urlPresell", urlPresell);
 			obj.put("urlRaizPaginaVendaPropria", urlRaizPaginaVendaPropria);
+			obj.put("ativo", ativo);
+			obj.put("afiliacaoValor", afiliacaoValor);
+			obj.put("afiliacaoPercentual", afiliacaoPercentual);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -331,6 +337,24 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public String getUrlRaizPaginaVendaPropria() { 
 		return this.urlRaizPaginaVendaPropria;
+	}
+	public void setAtivo(int valor) { 
+		this.ativo = valor;
+	}
+	public int getAtivo() { 
+		return this.ativo;
+	}
+	public void setAfiliacaoValor(double valor) { 
+		this.afiliacaoValor = valor;
+	}
+	public double getAfiliacaoValor() { 
+		return this.afiliacaoValor;
+	}
+	public void setAfiliacaoPercentual(double valor) { 
+		this.afiliacaoPercentual = valor;
+	}
+	public double getAfiliacaoPercentual() { 
+		return this.afiliacaoPercentual;
 	}
 
 	public PixelGoogle getPixelGoogle() {

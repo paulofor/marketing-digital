@@ -19,7 +19,7 @@ public class GeraPdfEbookTermos {
 
 	public static void main(String[] args) {
 		System.out.print("GeraPdfEbookTermos");
-		System.out.println("(19/06/2024 19:14:42)");
+		System.out.println("(20/06/2024 03:05:42)");
 		try {
 			carregaProp();
 			GeraPdfEbookTermosObj obj = new GeraPdfEbookTermosObj();

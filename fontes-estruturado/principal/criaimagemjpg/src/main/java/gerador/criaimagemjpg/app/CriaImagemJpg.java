@@ -19,7 +19,7 @@ public class CriaImagemJpg {
 
 	public static void main(String[] args) {
 		System.out.print("CriaImagemJpg");
-		System.out.println("(19/06/2024 19:14:54)");
+		System.out.println("(20/06/2024 03:05:55)");
 		try {
 			carregaProp();
 			CriaImagemJpgObj obj = new CriaImagemJpgObj();

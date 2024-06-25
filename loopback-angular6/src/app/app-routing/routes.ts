@@ -94,6 +94,7 @@ import { FerramentaIaListComponent } from '../ferramenta-ia-list/ferramenta-ia-l
 import { PlataformaVendaListComponent } from '../plataforma-venda-list/plataforma-venda-list.component';
 import { ProdutoAfiliadoGenericoListComponent } from '../produto-afiliado-generico-list/produto-afiliado-generico-list.component';
 import { ProdutoAfiliadoHotmartListLowTicketComponent } from '../produto-afiliado-hotmart-list-low-ticket/produto-afiliado-hotmart-list-low-ticket.component';
+import { ListaLowTickerComponent } from '../lista-low-ticker/lista-low-ticker.component';
 
 
 
@@ -231,6 +232,7 @@ export const routes : Routes = [
 
 
     { path: 'produtoAfiliadoHotmartListLowTicket', component: ProdutoAfiliadoHotmartListLowTicketComponent },
+    { path: 'listaLowTicket' , component: ListaLowTickerComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

@@ -17,6 +17,7 @@ export class ProdutoAfiliadoHotmartListLowTicketComponent extends ProdutoAfiliad
 
 	getFiltro() {
 		return {
+			'where' : {'and' : [{'ativo' : 1} , {'afiliacaoValor' : {'lt' : 70}}, {'afiliacaoPercentual' : {'gte' : 40}}]},
 			'order' : 'temperaturaAtual desc',
 			'include' : {'relation' :'visitaProdutoHotmarts' , 'scope' : {'where' : {'maisRecente' : 1 }}}
 		}

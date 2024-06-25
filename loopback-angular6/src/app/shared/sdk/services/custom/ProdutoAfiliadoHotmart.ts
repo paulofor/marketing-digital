@@ -6110,10 +6110,6 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
          * (The remote method definition does not provide any description.)
          * </em>
    *
-   * @param {object} data Request data.
-   *
-   * This method does not accept any data. Supply an empty object.
-   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -6124,7 +6120,7 @@ export class ProdutoAfiliadoHotmartApi extends BaseLoopBackApi {
    * </em>
    */
   public AtualizaTemperaturaAtual(customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
+    let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProdutoAfiliadoHotmarts/atualizaTemperaturaAtual";
     let _routeParams: any = {};

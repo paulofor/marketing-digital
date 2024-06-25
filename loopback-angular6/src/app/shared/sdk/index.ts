@@ -356,6 +356,7 @@ export class SDKBrowserModule {
         ProdutoAfiliadoGenericoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

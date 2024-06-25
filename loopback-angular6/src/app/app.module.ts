@@ -231,6 +231,7 @@ import { ProdutoAfiliadoGenericoListComponent } from './produto-afiliado-generic
 import { PlataformaVendaEditComponent } from './plataforma-venda-edit/plataforma-venda-edit.component';
 import { PlataformaVendaListComponent } from './plataforma-venda-list/plataforma-venda-list.component';
 import { ProdutoAfiliadoHotmartListLowTicketComponent } from './produto-afiliado-hotmart-list-low-ticket/produto-afiliado-hotmart-list-low-ticket.component';
+import { ListaLowTickerComponent } from './lista-low-ticker/lista-low-ticker.component';
 
 
 
@@ -440,7 +441,8 @@ registerLocaleData(localePt, 'pt-BR');
     PlataformaVendaEditComponent,
     ProdutoAfiliadoGenericoEditComponent,
     ProdutoAfiliadoGenericoListComponent,
-    ProdutoAfiliadoHotmartListLowTicketComponent
+    ProdutoAfiliadoHotmartListLowTicketComponent,
+    ListaLowTickerComponent
   ],
   imports: [
     BrowserModule,

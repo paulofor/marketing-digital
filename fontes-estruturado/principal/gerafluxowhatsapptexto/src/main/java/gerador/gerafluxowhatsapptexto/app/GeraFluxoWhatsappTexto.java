@@ -19,7 +19,7 @@ public class GeraFluxoWhatsappTexto {
 
 	public static void main(String[] args) {
 		System.out.print("GeraFluxoWhatsappTexto");
-		System.out.println("(19/06/2024 19:14:58)");
+		System.out.println("(20/06/2024 03:06:00)");
 		try {
 			carregaProp();
 			GeraFluxoWhatsappTextoObj obj = new GeraFluxoWhatsappTextoObj();

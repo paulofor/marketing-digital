@@ -19,7 +19,7 @@ public class FinalizaDadosDia {
 
 	public static void main(String[] args) {
 		System.out.print("FinalizaDadosDia");
-		System.out.println("(19/06/2024 19:15:00)");
+		System.out.println("(20/06/2024 03:06:02)");
 		try {
 			carregaProp();
 			FinalizaDadosDiaObj obj = new FinalizaDadosDiaObj();

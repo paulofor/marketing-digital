@@ -1,0 +1,906 @@
+Web server listening at: http://localhost:23101
+Browse your REST API at http://localhost:23101/visao
+tamanho afiliado:  75
+Total Insert:  0
+Total update:  0
+Total update:  1
+Total update:  2
+Total update:  3
+Total update:  4
+Total update:  5
+Total update:  6
+Total update:  7
+Total update:  8
+Total update:  9
+Total update:  10
+Total update:  11
+Total update:  12
+Total update:  13
+Total update:  14
+Total update:  15
+Total update:  16
+Total update:  17
+Total update:  18
+Total update:  19
+Total update:  20
+Total update:  21
+Total update:  22
+Total update:  23
+Total update:  24
+Total update:  25
+Total update:  26
+Total update:  27
+Total update:  28
+Total update:  29
+Total update:  30
+Total update:  31
+Total update:  32
+Total update:  33
+Total update:  34
+Total update:  35
+Total update:  36
+Total update:  37
+Total update:  38
+Total update:  39
+Total update:  40
+Total update:  41
+Total update:  42
+Total update:  43
+Total update:  44
+Total update:  45
+Total update:  46
+Total update:  47
+Total update:  48
+Total update:  49
+Total update:  50
+Total update:  51
+Total update:  52
+Total update:  53
+Total update:  54
+Total update:  55
+Total update:  56
+Total update:  57
+Total update:  58
+Total update:  59
+Total update:  60
+Total update:  61
+Total update:  62
+Total update:  63
+Total update:  64
+Total update:  65
+Total update:  66
+Total update:  67
+Total update:  68
+Total update:  69
+Total update:  70
+Total update:  71
+Total update:  72
+Total update:  73
+Total update:  74
+Total update:  75
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2663267
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2663267
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2075799
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2075799
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  895927
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 895927
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  4025924
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 4025924
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3462804
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3462804
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3644394
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3644394
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  979346
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 979346
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3090597
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3090597
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1478189
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1478189
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1076072
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1076072
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2743885
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2743885
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2618953
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2618953
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1758448
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1758448
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1231280
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1231280
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1864852
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1864852
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1497354
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1497354
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1461303
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1461303
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3561189
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3561189
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3196496
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3196496
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1225711
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1225711
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  92138
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 92138
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  306147
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 306147
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  895938
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 895938
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  385789
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 385789
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2017243
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2017243
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3673318
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3673318
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1429848
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1429848
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  433015
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 433015
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  892277
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 892277
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  573360
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 573360
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0
+}  -  433015
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 433015
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2515615
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2515615
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2228538
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2228538
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  492187
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 492187
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3063559
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3063559
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1409642
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1409642
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2687944
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2687944
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3184037
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3184037
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1240334
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1240334
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  18399
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 18399
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3591087
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3591087
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  487518
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 487518
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  914672
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 914672
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3888132
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3888132
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3255526
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3255526
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1052972
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1052972
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2171671
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2171671
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  3708223
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 3708223
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2810155
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2810155
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2323147
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2323147
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2239636
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2239636
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1422915
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1422915
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  997222
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 997222
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1600938
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1600938
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1543458
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1543458
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2124533
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2124533
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  192202
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 192202
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2551349
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2551349
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1733641
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1733641
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  463510
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 463510
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2222632
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2222632
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  462687
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 462687
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1594734
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1594734
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  976542
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 976542
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2173524
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2173524
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  886396
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 886396
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1244113
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1244113
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0
+}  -  976542
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 976542
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1074883
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1074883
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  262665
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 262665
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  967883
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 967883
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1275100
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1275100
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  352011
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 352011
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  1931139
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 1931139
+result OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}  -  2084310
+update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = 2084310
+Tamanho Pendente:  58

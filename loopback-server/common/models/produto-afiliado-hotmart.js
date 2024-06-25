@@ -22,8 +22,12 @@ module.exports = function(Produtoafiliadohotmart) {
     Produtoafiliadohotmart.AtualizaTemperaturaAtual = function(callback) {
         const sql1 = "update ProdutoAfiliadoHotmart " +
                 " set temperaturaAtual = (select temperatura from VisitaProdutoHotmart " +
+                " where maisRecente = 1 and ProdutoAfiliadoHotmart.hotmartId = VisitaProdutoHotmart.hotmartId)" +
+                " , afiliacaoValor = (select afiliacaoValor from VisitaProdutoHotmart " +
+                " where maisRecente = 1 and ProdutoAfiliadoHotmart.hotmartId = VisitaProdutoHotmart.hotmartId)" + 
+                " , afiliacaoPercentual = (select afiliacaoPercentual from VisitaProdutoHotmart " +
                 " where maisRecente = 1 and ProdutoAfiliadoHotmart.hotmartId = VisitaProdutoHotmart.hotmartId)";
-        const sql0 = "update ProdutoAfiliadoHotmart set temperaturaAtual = 0";
+        const sql0 = "update ProdutoAfiliadoHotmart set temperaturaAtual = 0, afiliacaoValor = 0 , afiliacaoPercentual = 0";
         let ds = Produtoafiliadohotmart.dataSource;
         ds.connector.query(sql0, (err,result) => {
             ds.connector.query(sql1, callback);
@@ -34,20 +38,38 @@ module.exports = function(Produtoafiliadohotmart) {
 
     Produtoafiliadohotmart.AtualizaAfiliados = function(listaAfiliado,callback) {
         let ds = Produtoafiliadohotmart.dataSource;
-        console.log('tamanho: ' , listaAfiliado.length);
-        for (let i=0; i < listaAfiliado.length ; i++) {
-            let item = listaAfiliado[i];
-            Produtoafiliadohotmart.findById(item.hotmartId, (err,result) => {
-                if (!result && !err) {
-                    let sql = "insert into ProdutoAfiliadoHotmart (hotmartId, nome, hotmartUcode) values (" + item.hotmartId + " , '" + item.nome + "' , '" + item.hotmartUcode + "') ";
-                    //console.log(sql);
-                    ds.connector.query(sql,(err,result) => {
-
-                    })
-                }
-            })
-        }
-        callback(null, {'recebi' : 'ok'});
+        console.log('tamanho afiliado: ' , listaAfiliado.length);
+        const sqlDesliga = "update ProdutoAfiliadoHotmart set ativo = 0";
+        let contaInsert = 0;
+        let contaUpdate = 0;
+        ds.connector.query(sqlDesliga, (err,result) => {
+            for (let i=0; i < listaAfiliado.length ; i++) {
+                let item = listaAfiliado[i];
+                Produtoafiliadohotmart.findById(item.hotmartId, (err,result) => {
+                    //console.log('result:' , result);
+                    if (!result && !err) {
+                        let sql = "insert into ProdutoAfiliadoHotmart (hotmartId, nome, hotmartUcode, ativo) values (" + item.hotmartId + " , '" + item.nome + "' , '" + item.hotmartUcode + "', 1) ";
+                        //console.log(sql);
+                        ds.connector.query(sql,(err,result) => {
+                            //console.log('erro afiliado: ' , err);
+                        });
+                        contaInsert++;
+                    } else {
+                        let sql = "update ProdutoAfiliadoHotmart set ativo = 1 where hotmartId = " + item.hotmartId;
+                        ds.connector.query(sql, (err,result) => {
+                            console.log('result', result , ' - ' , item.hotmartId);
+                            console.log(sql);
+                        })
+                        contaUpdate++
+                        console.log('Total update: ' , contaUpdate);
+                    }
+                })
+            }
+            console.log('Total Insert: ' , contaInsert);
+            console.log('Total update: ' , contaUpdate);
+            callback(null, {'recebi' : 'ok'});
+        })
+       
     }
 
 
