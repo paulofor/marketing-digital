@@ -186,6 +186,13 @@ import { PalavraChaveRaizApi } from './services/custom/PalavraChaveRaiz';
 import { PlayerApi } from './services/custom/Player';
 import { FerramentaIaApi } from './services/custom/FerramentaIa';
 import { ProdutoAfiliadoGenericoApi } from './services/custom/ProdutoAfiliadoGenerico';
+import { BusinessManagerApi } from './services/custom/BusinessManager';
+import { ContaNegocioFacebookApi } from './services/custom/ContaNegocioFacebook';
+import { ContaBmApi } from './services/custom/ContaBm';
+import { MetaAdsPublicoApi } from './services/custom/MetaAdsPublico';
+import { PublicoInteresseApi } from './services/custom/PublicoInteresse';
+import { FrameworkPublicoInteresseApi } from './services/custom/FrameworkPublicoInteresse';
+import { FrameworkPublicoCategoriaApi } from './services/custom/FrameworkPublicoCategoria';
 /**
 * @module SDKBrowserModule
 * @description
@@ -354,6 +361,13 @@ export class SDKBrowserModule {
         PlayerApi,
         FerramentaIaApi,
         ProdutoAfiliadoGenericoApi,
+        BusinessManagerApi,
+        ContaNegocioFacebookApi,
+        ContaBmApi,
+        MetaAdsPublicoApi,
+        PublicoInteresseApi,
+        FrameworkPublicoInteresseApi,
+        FrameworkPublicoCategoriaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

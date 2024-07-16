@@ -1,0 +1,48 @@
+{
+	"name": "MetaAdsPublico",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"hotmartId": {
+			"type": "number"
+		},
+		"produtoAfiliadoGenericoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"produtoAfiliadoGenerico": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoGenerico",
+			"foreignKey": ""
+		},
+		"metaAdsConjuntoAnuncios": {
+			"type": "hasMany",
+			"model": "MetaAdsConjuntoAnuncio",
+			"foreignKey": ""
+		},
+		"publicoInteresses": {
+			"type": "hasMany",
+			"model": "PublicoInteresse",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

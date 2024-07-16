@@ -20,6 +20,9 @@
 		},
 		"metaAdsCampanhaId": {
 			"type": "number"
+		},
+		"metaAdsPublicoId": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -27,6 +30,11 @@
 		"metaAdsCampanha": {
 			"type": "belongsTo",
 			"model": "MetaAdsCampanha",
+			"foreignKey": ""
+		},
+		"metaAdsPublico": {
+			"type": "belongsTo",
+			"model": "MetaAdsPublico",
 			"foreignKey": ""
 		},
 		"metaAdsAnuncios": {

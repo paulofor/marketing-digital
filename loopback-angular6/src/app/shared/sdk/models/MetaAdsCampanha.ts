@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   ProdutoProprio,
+  ProdutoAfiliadoHotmart,
   MetaAdsConjuntoAnuncio
 } from '../index';
 
@@ -10,9 +11,12 @@ export interface MetaAdsCampanhaInterface {
   "idMeta"?: string;
   "custo"?: number;
   "objetivo"?: string;
+  "hotmartId"?: number;
+  "cbo"?: number;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
+  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
   metaAdsConjuntoAnuncios?: MetaAdsConjuntoAnuncio[];
 }
 
@@ -21,9 +25,12 @@ export class MetaAdsCampanha implements MetaAdsCampanhaInterface {
   "idMeta": string;
   "custo": number;
   "objetivo": string;
+  "hotmartId": number;
+  "cbo": number;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
+  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   metaAdsConjuntoAnuncios: MetaAdsConjuntoAnuncio[];
   constructor(data?: MetaAdsCampanhaInterface) {
     Object.assign(this, data);
@@ -74,6 +81,14 @@ export class MetaAdsCampanha implements MetaAdsCampanhaInterface {
           name: 'objetivo',
           type: 'string'
         },
+        "hotmartId": {
+          name: 'hotmartId',
+          type: 'number'
+        },
+        "cbo": {
+          name: 'cbo',
+          type: 'number'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
           type: 'number'
@@ -91,6 +106,14 @@ export class MetaAdsCampanha implements MetaAdsCampanhaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'produtoProprioId',
           keyTo: 'id'
+        },
+        produtoAfiliadoHotmart: {
+          name: 'produtoAfiliadoHotmart',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
         },
         metaAdsConjuntoAnuncios: {
           name: 'metaAdsConjuntoAnuncios',

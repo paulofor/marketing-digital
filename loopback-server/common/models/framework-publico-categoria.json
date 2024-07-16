@@ -1,0 +1,24 @@
+{
+	"name": "FrameworkPublicoCategoria",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+	},
+	"validations": [],
+	"relations": {
+		"frameworkPublicoInteresses": {
+			"type": "hasMany",
+			"model": "FrameworkPublicoInteresse",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

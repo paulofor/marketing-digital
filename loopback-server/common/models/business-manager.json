@@ -1,0 +1,30 @@
+{
+	"name": "BusinessManager",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"matriz": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaBms": {
+			"type": "hasMany",
+			"model": "ContaBm",
+			"foreignKey": "businessManagerId"
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

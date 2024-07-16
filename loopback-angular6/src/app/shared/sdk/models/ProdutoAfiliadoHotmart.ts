@@ -28,7 +28,10 @@ import {
   PixelProdutoHotmartConta,
   PixelProdutoHotmartContaCheckout,
   ProdutoHotmartConta,
-  AnuncioConceitoAdsRedeDisplay
+  AnuncioConceitoAdsRedeDisplay,
+  MetaAdsCampanha,
+  MetaAdsPublico,
+  FrameworkPublicoInteresse
 } from '../index';
 
 declare var Object: any;
@@ -68,6 +71,8 @@ export interface ProdutoAfiliadoHotmartInterface {
   "ativo"?: number;
   "afiliacaoValor"?: number;
   "afiliacaoPercentual"?: number;
+  "cpaIdeal"?: number;
+  "cpaMaximo"?: number;
   "contaGoogleId"?: number;
   visitaProdutoHotmarts?: VisitaProdutoHotmart[];
   ideiaPalavraChaves?: IdeiaPalavraChave[];
@@ -101,6 +106,9 @@ export interface ProdutoAfiliadoHotmartInterface {
   pixelProdutoHotmartContaCheckouts?: PixelProdutoHotmartContaCheckout[];
   produtoHotmartContas?: ProdutoHotmartConta[];
   anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
+  metaAdsCampanhas?: MetaAdsCampanha[];
+  metaAdsPublicos?: MetaAdsPublico[];
+  frameworkPublicoInteresses?: FrameworkPublicoInteresse[];
 }
 
 export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
@@ -139,6 +147,8 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   "ativo": number;
   "afiliacaoValor": number;
   "afiliacaoPercentual": number;
+  "cpaIdeal": number;
+  "cpaMaximo": number;
   "contaGoogleId": number;
   visitaProdutoHotmarts: VisitaProdutoHotmart[];
   ideiaPalavraChaves: IdeiaPalavraChave[];
@@ -172,6 +182,9 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   pixelProdutoHotmartContaCheckouts: PixelProdutoHotmartContaCheckout[];
   produtoHotmartContas: ProdutoHotmartConta[];
   anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
+  metaAdsCampanhas: MetaAdsCampanha[];
+  metaAdsPublicos: MetaAdsPublico[];
+  frameworkPublicoInteresses: FrameworkPublicoInteresse[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
     Object.assign(this, data);
   }
@@ -343,6 +356,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
         },
         "afiliacaoPercentual": {
           name: 'afiliacaoPercentual',
+          type: 'number'
+        },
+        "cpaIdeal": {
+          name: 'cpaIdeal',
+          type: 'number'
+        },
+        "cpaMaximo": {
+          name: 'cpaMaximo',
           type: 'number'
         },
         "contaGoogleId": {
@@ -603,6 +624,30 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'anuncioConceitoAdsRedeDisplays',
           type: 'AnuncioConceitoAdsRedeDisplay[]',
           model: 'AnuncioConceitoAdsRedeDisplay',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        metaAdsCampanhas: {
+          name: 'metaAdsCampanhas',
+          type: 'MetaAdsCampanha[]',
+          model: 'MetaAdsCampanha',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        metaAdsPublicos: {
+          name: 'metaAdsPublicos',
+          type: 'MetaAdsPublico[]',
+          model: 'MetaAdsPublico',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        frameworkPublicoInteresses: {
+          name: 'frameworkPublicoInteresses',
+          type: 'FrameworkPublicoInteresse[]',
+          model: 'FrameworkPublicoInteresse',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'

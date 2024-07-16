@@ -49,6 +49,8 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private int ativo;
 	private double afiliacaoValor;
 	private double afiliacaoPercentual;
+	private double cpaIdeal;
+	private double cpaMaximo;
 	// Relacionamentos 1
 	private PixelGoogle PixelGoogle;
 	private ContaGoogle ContaGoogle;
@@ -85,6 +87,9 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<ProdutoHotmartConta> ProdutoHotmartContas;
 	private List<AnuncioConceitoAdsRedeDisplay> AnuncioConceitoAdsRedeDisplays;
 	private List<PaginaVendaPropria> PaginaVendaProprias;
+	private List<MetaAdsCampanha> MetaAdsCampanhas;
+	private List<MetaAdsPublico> MetaAdsPublicos;
+	private List<FrameworkPublicoInteresse> FrameworkPublicoInteresses;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -139,6 +144,8 @@ public class ProdutoAfiliadoHotmart extends Model {
 			obj.put("ativo", ativo);
 			obj.put("afiliacaoValor", afiliacaoValor);
 			obj.put("afiliacaoPercentual", afiliacaoPercentual);
+			obj.put("cpaIdeal", cpaIdeal);
+			obj.put("cpaMaximo", cpaMaximo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -355,6 +362,18 @@ public class ProdutoAfiliadoHotmart extends Model {
 	}
 	public double getAfiliacaoPercentual() { 
 		return this.afiliacaoPercentual;
+	}
+	public void setCpaIdeal(double valor) { 
+		this.cpaIdeal = valor;
+	}
+	public double getCpaIdeal() { 
+		return this.cpaIdeal;
+	}
+	public void setCpaMaximo(double valor) { 
+		this.cpaMaximo = valor;
+	}
+	public double getCpaMaximo() { 
+		return this.cpaMaximo;
 	}
 
 	public PixelGoogle getPixelGoogle() {
@@ -738,6 +757,42 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PaginaVendaProprias.add((PaginaVendaPropria) objeto);
+		}
+	}
+	public List<MetaAdsCampanha> getMetaAdsCampanhas() {
+		return  MetaAdsCampanhas;
+	}
+	public void setMetaAdsCampanhas(List<MetaAdsCampanha> valores) {
+		this.MetaAdsCampanhas = new ArrayList<MetaAdsCampanha>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaAdsCampanha();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaAdsCampanhas.add((MetaAdsCampanha) objeto);
+		}
+	}
+	public List<MetaAdsPublico> getMetaAdsPublicos() {
+		return  MetaAdsPublicos;
+	}
+	public void setMetaAdsPublicos(List<MetaAdsPublico> valores) {
+		this.MetaAdsPublicos = new ArrayList<MetaAdsPublico>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaAdsPublico();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaAdsPublicos.add((MetaAdsPublico) objeto);
+		}
+	}
+	public List<FrameworkPublicoInteresse> getFrameworkPublicoInteresses() {
+		return  FrameworkPublicoInteresses;
+	}
+	public void setFrameworkPublicoInteresses(List<FrameworkPublicoInteresse> valores) {
+		this.FrameworkPublicoInteresses = new ArrayList<FrameworkPublicoInteresse>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new FrameworkPublicoInteresse();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.FrameworkPublicoInteresses.add((FrameworkPublicoInteresse) objeto);
 		}
 	}
 }

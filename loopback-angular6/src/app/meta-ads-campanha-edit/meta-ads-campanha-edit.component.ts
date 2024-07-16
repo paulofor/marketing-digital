@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { MetaAdsCampanha, MetaAdsCampanhaApi } from '../shared/sdk';
+import { MetaAdsCampanha, MetaAdsCampanhaApi, ProdutoAfiliadoHotmart, ProdutoProprio } from '../shared/sdk';
 import { MetaAdsCampanhaEditBaseComponent } from './meta-ads-campanha-edit-base.component';
 
 @Component({
@@ -18,7 +18,11 @@ export class MetaAdsCampanhaEditComponent extends MetaAdsCampanhaEditBaseCompone
 
 	criaItem(): MetaAdsCampanha {
 		let saida = new MetaAdsCampanha();
-		saida.produtoProprioId = this.origem.id;
+		console.log('origem' , this.origem);
+		if (this.origem.id)
+			saida.produtoProprioId = this.origem.id;
+		if (this.origem.hotmartId)
+			saida.hotmartId = this.origem.hotmartId;
 		return saida;
 	}
 

@@ -138,6 +138,13 @@ import { PalavraChaveRaiz } from '../../models/PalavraChaveRaiz';
 import { Player } from '../../models/Player';
 import { FerramentaIa } from '../../models/FerramentaIa';
 import { ProdutoAfiliadoGenerico } from '../../models/ProdutoAfiliadoGenerico';
+import { BusinessManager } from '../../models/BusinessManager';
+import { ContaNegocioFacebook } from '../../models/ContaNegocioFacebook';
+import { ContaBm } from '../../models/ContaBm';
+import { MetaAdsPublico } from '../../models/MetaAdsPublico';
+import { PublicoInteresse } from '../../models/PublicoInteresse';
+import { FrameworkPublicoInteresse } from '../../models/FrameworkPublicoInteresse';
+import { FrameworkPublicoCategoria } from '../../models/FrameworkPublicoCategoria';
 
 export interface Models { [name: string]: any }
 
@@ -283,6 +290,13 @@ export class SDKModels {
     Player: Player,
     FerramentaIa: FerramentaIa,
     ProdutoAfiliadoGenerico: ProdutoAfiliadoGenerico,
+    BusinessManager: BusinessManager,
+    ContaNegocioFacebook: ContaNegocioFacebook,
+    ContaBm: ContaBm,
+    MetaAdsPublico: MetaAdsPublico,
+    PublicoInteresse: PublicoInteresse,
+    FrameworkPublicoInteresse: FrameworkPublicoInteresse,
+    FrameworkPublicoCategoria: FrameworkPublicoCategoria,
     
   };
 

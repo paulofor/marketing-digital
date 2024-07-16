@@ -1,0 +1,27 @@
+{
+	"name": "ContaNegocioFacebook",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"contaBms": {
+			"type": "hasMany",
+			"model": "ContaBm",
+			"foreignKey": "contaNegocioFacebookId"
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

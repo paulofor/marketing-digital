@@ -13,6 +13,7 @@ import { MetaAdsConjuntoAnuncio } from '../../models/MetaAdsConjuntoAnuncio';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { MetaAdsCampanha } from '../../models/MetaAdsCampanha';
 import { MetaAdsAnuncio } from '../../models/MetaAdsAnuncio';
+import { MetaAdsPublico } from '../../models/MetaAdsPublico';
 
 
 /**
@@ -150,6 +151,36 @@ export class MetaAdsConjuntoAnuncioApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Busca relação metaAdsPublico de belongsTo.
+   *
+   * @param {any} id MetaAdsConjuntoAnuncio id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `MetaAdsConjuntoAnuncio` object.)
+   * </em>
+   */
+  public getMetaAdsPublico(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/MetaAdsConjuntoAnuncios/:id/metaAdsPublico";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

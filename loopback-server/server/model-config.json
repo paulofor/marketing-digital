@@ -582,5 +582,33 @@
   "ProdutoAfiliadoGenerico": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "BusinessManager": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ContaNegocioFacebook": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ContaBm": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "MetaAdsPublico": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PublicoInteresse": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "FrameworkPublicoInteresse": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "FrameworkPublicoCategoria": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

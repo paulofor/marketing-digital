@@ -232,6 +232,16 @@ import { PlataformaVendaEditComponent } from './plataforma-venda-edit/plataforma
 import { PlataformaVendaListComponent } from './plataforma-venda-list/plataforma-venda-list.component';
 import { ProdutoAfiliadoHotmartListLowTicketComponent } from './produto-afiliado-hotmart-list-low-ticket/produto-afiliado-hotmart-list-low-ticket.component';
 import { ListaLowTickerComponent } from './lista-low-ticker/lista-low-ticker.component';
+import { ContaNegocioFacebookEditComponent } from './conta-negocio-facebook-edit/conta-negocio-facebook-edit.component';
+import { ContaNegocioFacebookListComponent } from './conta-negocio-facebook-list/conta-negocio-facebook-list.component';
+import { BusinessManagerListComponent } from './business-manager-list/business-manager-list.component';
+import { BusinessManagerEditComponent } from './business-manager-edit/business-manager-edit.component';
+import { MetaAdsPublicoEditComponent } from './meta-ads-publico-edit/meta-ads-publico-edit.component';
+import { FrameworkPublicoInteresseEditComponent } from './framework-publico-interesse-edit/framework-publico-interesse-edit.component';
+import { FrameworkPublicoInteresseListComponent } from './framework-publico-interesse-list/framework-publico-interesse-list.component';
+import { MetaAdsPublicoListComponent } from './meta-ads-publico-list/meta-ads-publico-list.component';
+import { MetaAdsCampanhaAfiliadoHotmartComponent } from './meta-ads-campanha-afiliado-hotmart/meta-ads-campanha-afiliado-hotmart.component';
+import { MetaAdsCampanhaAfiliadoGenericoComponent } from './meta-ads-campanha-afiliado-generico/meta-ads-campanha-afiliado-generico.component';
 
 
 
@@ -442,7 +452,17 @@ registerLocaleData(localePt, 'pt-BR');
     ProdutoAfiliadoGenericoEditComponent,
     ProdutoAfiliadoGenericoListComponent,
     ProdutoAfiliadoHotmartListLowTicketComponent,
-    ListaLowTickerComponent
+    ListaLowTickerComponent,
+    BusinessManagerListComponent,
+    BusinessManagerEditComponent,
+    ContaNegocioFacebookEditComponent,
+    ContaNegocioFacebookListComponent,
+    MetaAdsPublicoEditComponent,
+    FrameworkPublicoInteresseEditComponent,
+    MetaAdsPublicoListComponent,
+    FrameworkPublicoInteresseListComponent,
+    MetaAdsCampanhaAfiliadoHotmartComponent,
+    MetaAdsCampanhaAfiliadoGenericoComponent
   ],
   imports: [
     BrowserModule,
@@ -567,7 +587,11 @@ registerLocaleData(localePt, 'pt-BR');
     PlayerEditComponent,
     FerramentaIaEditComponent,
     PlataformaVendaEditComponent,
-    ProdutoAfiliadoGenericoEditComponent
+    ProdutoAfiliadoGenericoEditComponent,
+    BusinessManagerEditComponent,
+    ContaNegocioFacebookEditComponent,
+    MetaAdsPublicoEditComponent,
+    FrameworkPublicoInteresseEditComponent
   ],
   bootstrap: [AppComponent]
 })

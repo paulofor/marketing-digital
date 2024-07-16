@@ -48,6 +48,11 @@
 			"type": "belongsTo",
 			"model": "PlataformaVenda",
 			"foreignKey": ""
+		},
+		"metaAdsPublicos": {
+			"type": "hasMany",
+			"model": "MetaAdsPublico",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],

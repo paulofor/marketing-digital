@@ -158,6 +158,13 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioPlayer repPlayer = adapter.createRepository(RepositorioPlayer.class);
 	protected RepositorioFerramentaIa repFerramentaIa = adapter.createRepository(RepositorioFerramentaIa.class);
 	protected RepositorioProdutoAfiliadoGenerico repProdutoAfiliadoGenerico = adapter.createRepository(RepositorioProdutoAfiliadoGenerico.class);
+	protected RepositorioFrameworkPublicoCategoria repFrameworkPublicoCategoria = adapter.createRepository(RepositorioFrameworkPublicoCategoria.class);
+	protected RepositorioFrameworkPublicoInteresse repFrameworkPublicoInteresse = adapter.createRepository(RepositorioFrameworkPublicoInteresse.class);
+	protected RepositorioBusinessManager repBusinessManager = adapter.createRepository(RepositorioBusinessManager.class);
+	protected RepositorioContaNegocioFacebook repContaNegocioFacebook = adapter.createRepository(RepositorioContaNegocioFacebook.class);
+	protected RepositorioContaBm repContaBm = adapter.createRepository(RepositorioContaBm.class);
+	protected RepositorioMetaAdsPublico repMetaAdsPublico = adapter.createRepository(RepositorioMetaAdsPublico.class);
+	protected RepositorioPublicoInteresse repPublicoInteresse = adapter.createRepository(RepositorioPublicoInteresse.class);
 
 
 	@Override

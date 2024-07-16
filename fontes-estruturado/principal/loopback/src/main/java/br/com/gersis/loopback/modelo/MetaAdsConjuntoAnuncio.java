@@ -19,6 +19,7 @@ public class MetaAdsConjuntoAnuncio extends Model {
 	private double custo;
 	// Relacionamentos 1
 	private MetaAdsCampanha MetaAdsCampanha;
+	private MetaAdsPublico MetaAdsPublico;
 	// Relacionamentos N
 	private List<MetaAdsAnuncio> MetaAdsAnuncios;
 
@@ -75,6 +76,13 @@ public class MetaAdsConjuntoAnuncio extends Model {
 	public void setMetaAdsCampanha(HashMap valor) {
 		this.MetaAdsCampanha = new MetaAdsCampanha();
 		BeanUtil.setProperties(this.MetaAdsCampanha, (Map<String, ? extends Object>) valor, true);
+	}
+	public MetaAdsPublico getMetaAdsPublico() {
+		return MetaAdsPublico;
+	}
+	public void setMetaAdsPublico(HashMap valor) {
+		this.MetaAdsPublico = new MetaAdsPublico();
+		BeanUtil.setProperties(this.MetaAdsPublico, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<MetaAdsAnuncio> getMetaAdsAnuncios() {
 		return  MetaAdsAnuncios;

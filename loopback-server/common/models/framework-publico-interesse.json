@@ -1,0 +1,43 @@
+{
+	"name": "FrameworkPublicoInteresse",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"hotmartId": {
+			"type": "number"
+		},
+		"frameworkPublicoCategoriaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"frameworkPublicoCategoria": {
+			"type": "belongsTo",
+			"model": "FrameworkPublicoCategoria",
+			"foreignKey": ""
+		},
+		"produtoAfiliadoHotmart": {
+			"type": "belongsTo",
+			"model": "ProdutoAfiliadoHotmart",
+			"foreignKey": "hotmartId"
+		},
+		"publicoInteresses": {
+			"type": "hasMany",
+			"model": "PublicoInteresse",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

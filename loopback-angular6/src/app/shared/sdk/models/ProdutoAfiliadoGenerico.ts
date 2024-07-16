@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   ContaGoogle,
-  PlataformaVenda
+  PlataformaVenda,
+  MetaAdsPublico
 } from '../index';
 
 declare var Object: any;
@@ -18,6 +19,7 @@ export interface ProdutoAfiliadoGenericoInterface {
   "id"?: number;
   contaGoogle?: ContaGoogle;
   plataformaVenda?: PlataformaVenda;
+  metaAdsPublicos?: MetaAdsPublico[];
 }
 
 export class ProdutoAfiliadoGenerico implements ProdutoAfiliadoGenericoInterface {
@@ -33,6 +35,7 @@ export class ProdutoAfiliadoGenerico implements ProdutoAfiliadoGenericoInterface
   "id": number;
   contaGoogle: ContaGoogle;
   plataformaVenda: PlataformaVenda;
+  metaAdsPublicos: MetaAdsPublico[];
   constructor(data?: ProdutoAfiliadoGenericoInterface) {
     Object.assign(this, data);
   }
@@ -123,6 +126,14 @@ export class ProdutoAfiliadoGenerico implements ProdutoAfiliadoGenericoInterface
           relationType: 'belongsTo',
                   keyFrom: 'plataformaVendaId',
           keyTo: 'id'
+        },
+        metaAdsPublicos: {
+          name: 'metaAdsPublicos',
+          type: 'MetaAdsPublico[]',
+          model: 'MetaAdsPublico',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'produtoAfiliadoGenericoId'
         },
       }
     }

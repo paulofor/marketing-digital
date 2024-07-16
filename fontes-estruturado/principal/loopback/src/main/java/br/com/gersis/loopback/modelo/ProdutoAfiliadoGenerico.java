@@ -25,6 +25,7 @@ public class ProdutoAfiliadoGenerico extends Model {
 	private ContaGoogle ContaGoogle;
 	private PlataformaVenda PlataformaVenda;
 	// Relacionamentos N
+	private List<MetaAdsPublico> MetaAdsPublicos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -114,5 +115,17 @@ public class ProdutoAfiliadoGenerico extends Model {
 	public void setPlataformaVenda(HashMap valor) {
 		this.PlataformaVenda = new PlataformaVenda();
 		BeanUtil.setProperties(this.PlataformaVenda, (Map<String, ? extends Object>) valor, true);
+	}
+	public List<MetaAdsPublico> getMetaAdsPublicos() {
+		return  MetaAdsPublicos;
+	}
+	public void setMetaAdsPublicos(List<MetaAdsPublico> valores) {
+		this.MetaAdsPublicos = new ArrayList<MetaAdsPublico>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaAdsPublico();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaAdsPublicos.add((MetaAdsPublico) objeto);
+		}
 	}
 }

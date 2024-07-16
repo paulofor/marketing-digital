@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   MetaAdsCampanha,
-  MetaAdsAnuncio
+  MetaAdsAnuncio,
+  MetaAdsPublico
 } from '../index';
 
 declare var Object: any;
@@ -10,9 +11,11 @@ export interface MetaAdsConjuntoAnuncioInterface {
   "nome"?: string;
   "custo"?: number;
   "metaAdsCampanhaId"?: number;
+  "metaAdsPublicoId"?: number;
   "id"?: number;
   metaAdsCampanha?: MetaAdsCampanha;
   metaAdsAnuncios?: MetaAdsAnuncio[];
+  metaAdsPublico?: MetaAdsPublico;
 }
 
 export class MetaAdsConjuntoAnuncio implements MetaAdsConjuntoAnuncioInterface {
@@ -20,9 +23,11 @@ export class MetaAdsConjuntoAnuncio implements MetaAdsConjuntoAnuncioInterface {
   "nome": string;
   "custo": number;
   "metaAdsCampanhaId": number;
+  "metaAdsPublicoId": number;
   "id": number;
   metaAdsCampanha: MetaAdsCampanha;
   metaAdsAnuncios: MetaAdsAnuncio[];
+  metaAdsPublico: MetaAdsPublico;
   constructor(data?: MetaAdsConjuntoAnuncioInterface) {
     Object.assign(this, data);
   }
@@ -72,6 +77,10 @@ export class MetaAdsConjuntoAnuncio implements MetaAdsConjuntoAnuncioInterface {
           name: 'metaAdsCampanhaId',
           type: 'number'
         },
+        "metaAdsPublicoId": {
+          name: 'metaAdsPublicoId',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -93,6 +102,14 @@ export class MetaAdsConjuntoAnuncio implements MetaAdsConjuntoAnuncioInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'metaAdsConjuntoAnuncioId'
+        },
+        metaAdsPublico: {
+          name: 'metaAdsPublico',
+          type: 'MetaAdsPublico',
+          model: 'MetaAdsPublico',
+          relationType: 'belongsTo',
+                  keyFrom: 'metaAdsPublicoId',
+          keyTo: 'id'
         },
       }
     }

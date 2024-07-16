@@ -1,0 +1,37 @@
+{
+	"name": "ContaBm",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"contaNegocioFacebookId": {
+			"type": "number"
+			,"id": true
+		},
+		"businessManagerId": {
+			"type": "number"
+			,"id": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"businessManager": {
+			"type": "belongsTo",
+			"model": "BusinessManager",
+			"foreignKey": "businessManagerId"
+		},
+		"contaNegocioFacebook": {
+			"type": "belongsTo",
+			"model": "ContaNegocioFacebook",
+			"foreignKey": "contaNegocioFacebookId"
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

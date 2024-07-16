@@ -12,6 +12,9 @@
     <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsRedeDisplayPorProdutoList' , principal.hotmartId]">Campanha Rede Display</button>
     <button class="btn-primary btn-sm btn"  [routerLink]="['/anuncioAds' , principal.hotmartId]">Anúncio Google</button>
     <button class="btn-primary btn-sm btn"  [routerLink]="['/campanhaAdsTeste' , principal.hotmartId]">Campanha Teste Google</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/frameworkPublicoInteresse' , principal.hotmartId]">Framework Interesses</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/metaAdsPublico' , principal.hotmartId]">Publico Meta Ads</button>
+    <button class="btn-primary btn-sm btn"  [routerLink]="['/metaAdsCampanhaAfiliadoHotmart' , principal.hotmartId]">Campanha Meta Ads</button>
   </div>
 
   <div class="dgc-card">
@@ -33,6 +36,10 @@
     </div>
     <div class="dgc-card-detalhe">
       Página de Venda: <a href="{{principal.salesPage}}" target="_blank">{{principal.salesPage}}</a>
+    </div>
+    <div class="dgc-card-detalhe" >
+      <span>CPA Ideal: {{principal.cpaIdeal| currency : 'BRL'}}</span><br>
+      <span>CPA Máximo: {{principal.cpaMaximo| currency : 'BRL'}}</span>
     </div>
     <div class="dgc-card-detalhe">
       <span>Work: {{principal.trabalho}}</span>

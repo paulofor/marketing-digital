@@ -95,6 +95,12 @@ import { PlataformaVendaListComponent } from '../plataforma-venda-list/plataform
 import { ProdutoAfiliadoGenericoListComponent } from '../produto-afiliado-generico-list/produto-afiliado-generico-list.component';
 import { ProdutoAfiliadoHotmartListLowTicketComponent } from '../produto-afiliado-hotmart-list-low-ticket/produto-afiliado-hotmart-list-low-ticket.component';
 import { ListaLowTickerComponent } from '../lista-low-ticker/lista-low-ticker.component';
+import { BusinessManagerListComponent } from '../business-manager-list/business-manager-list.component';
+import { ContaNegocioFacebookListComponent } from '../conta-negocio-facebook-list/conta-negocio-facebook-list.component';
+import { FrameworkPublicoInteresseListComponent } from '../framework-publico-interesse-list/framework-publico-interesse-list.component';
+import { MetaAdsPublicoListComponent } from '../meta-ads-publico-list/meta-ads-publico-list.component';
+import { MetaAdsCampanhaAfiliadoGenericoComponent } from '../meta-ads-campanha-afiliado-generico/meta-ads-campanha-afiliado-generico.component';
+import { MetaAdsCampanhaAfiliadoHotmartComponent } from '../meta-ads-campanha-afiliado-hotmart/meta-ads-campanha-afiliado-hotmart.component';
 
 
 
@@ -233,6 +239,15 @@ export const routes : Routes = [
 
     { path: 'produtoAfiliadoHotmartListLowTicket', component: ProdutoAfiliadoHotmartListLowTicketComponent },
     { path: 'listaLowTicket' , component: ListaLowTickerComponent },
+
+    { path: 'businessManager' , component: BusinessManagerListComponent },
+    { path: 'contaNegocioFacebook' , component: ContaNegocioFacebookListComponent },
+
+    { path: 'frameworkPublicoInteresse/:id' , component:FrameworkPublicoInteresseListComponent },
+    { path: 'metaAdsPublico/:id' , component:MetaAdsPublicoListComponent },
+
+    { path: 'metaAdsCampanhaAfiliadoHotmart/:id' , component: MetaAdsCampanhaAfiliadoHotmartComponent},
+    { path: 'metaAdsCampanhaAfiliadoGenerico/:id' , component: MetaAdsCampanhaAfiliadoGenericoComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

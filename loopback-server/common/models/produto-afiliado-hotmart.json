@@ -115,6 +115,12 @@
 		"afiliacaoPercentual": {
 			"type": "number"
 		},
+		"cpaIdeal": {
+			"type": "number"
+		},
+		"cpaMaximo": {
+			"type": "number"
+		},
 		"contaGoogleId": {
 			"type": "number"
 		}
@@ -289,6 +295,21 @@
 		"paginaVendaProprias": {
 			"type": "hasMany",
 			"model": "PaginaVendaPropria",
+			"foreignKey": "hotmartId"
+		},
+		"metaAdsCampanhas": {
+			"type": "hasMany",
+			"model": "MetaAdsCampanha",
+			"foreignKey": "hotmartId"
+		},
+		"metaAdsPublicos": {
+			"type": "hasMany",
+			"model": "MetaAdsPublico",
+			"foreignKey": "hotmartId"
+		},
+		"frameworkPublicoInteresses": {
+			"type": "hasMany",
+			"model": "FrameworkPublicoInteresse",
 			"foreignKey": "hotmartId"
 		}
 	},

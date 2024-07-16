@@ -37,6 +37,14 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
+      <input matInput #cpaIdeal  [(ngModel)]="item.cpaIdeal" name="cpaIdeal" placeholder="CPA Ideal" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #cpaMaximo  [(ngModel)]="item.cpaMaximo" name="cpaMaximo" placeholder="CPA Máximo" autocomplete="off"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
       <input matInput #vendaTotal  [(ngModel)]="item.vendaTotal" name="vendaTotal" placeholder="Valor Venda" autocomplete="off"/>
     </mat-form-field>
 

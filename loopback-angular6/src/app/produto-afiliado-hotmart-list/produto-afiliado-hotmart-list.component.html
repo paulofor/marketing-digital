@@ -42,6 +42,11 @@
         <div class="dgc-card-detalhe" >
           <span>Valor Real: {{item.precoReal| currency : 'BRL'}} ({{item.qtdeVenda}})</span>
         </div>
+        <div class="dgc-card-detalhe" >
+          <span>CPA Ideal: {{item.cpaIdeal| currency : 'BRL'}}</span><br>
+          <span>CPA Máximo: {{item.cpaMaximo| currency : 'BRL'}}</span>
+        </div>
+
         <div class="dgc-card-detalhe" *ngIf="item.visitaProdutoHotmarts != null && item.visitaProdutoHotmarts.length > 0" >
           <div *ngFor="let metrica of item.visitaProdutoHotmarts[0].produtoAfiliadoMetricas">
             {{metrica.palavra}} (cpc: {{metrica.cpcMin | currency: 'BRL'}} até {{metrica.cpcMax | currency: 'BRL' }})
