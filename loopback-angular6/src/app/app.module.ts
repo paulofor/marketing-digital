@@ -242,6 +242,8 @@ import { FrameworkPublicoInteresseListComponent } from './framework-publico-inte
 import { MetaAdsPublicoListComponent } from './meta-ads-publico-list/meta-ads-publico-list.component';
 import { MetaAdsCampanhaAfiliadoHotmartComponent } from './meta-ads-campanha-afiliado-hotmart/meta-ads-campanha-afiliado-hotmart.component';
 import { MetaAdsCampanhaAfiliadoGenericoComponent } from './meta-ads-campanha-afiliado-generico/meta-ads-campanha-afiliado-generico.component';
+import { MetaAdsPixelAfiliadoHotmartComponent } from './meta-ads-pixel-afiliado-hotmart/meta-ads-pixel-afiliado-hotmart.component';
+import { EntregavelProdutoListParaEbookComponent } from './entregavel-produto-list-para-ebook/entregavel-produto-list-para-ebook.component';
 
 
 
@@ -462,7 +464,9 @@ registerLocaleData(localePt, 'pt-BR');
     MetaAdsPublicoListComponent,
     FrameworkPublicoInteresseListComponent,
     MetaAdsCampanhaAfiliadoHotmartComponent,
-    MetaAdsCampanhaAfiliadoGenericoComponent
+    MetaAdsCampanhaAfiliadoGenericoComponent,
+    MetaAdsPixelAfiliadoHotmartComponent,
+    EntregavelProdutoListParaEbookComponent
   ],
   imports: [
     BrowserModule,

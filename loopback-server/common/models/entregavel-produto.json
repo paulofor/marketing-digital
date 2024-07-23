@@ -27,6 +27,9 @@
 		"diretorioGravacaoLocal": {
 			"type": "string"
 		},
+		"geraEbook": {
+			"type": "number"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}
@@ -125,6 +128,25 @@
 			"http": [
          		{
           			"path": "/listaParaGerarImagemConteudo",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaParaGerarEbook": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGerarEbook",
    					"verb": "get"
  				}
  			]

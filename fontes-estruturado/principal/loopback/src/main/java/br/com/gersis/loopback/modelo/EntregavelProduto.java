@@ -20,6 +20,7 @@ public class EntregavelProduto extends Model {
 	private int geraLista;
 	private int geraImagemConteudo;
 	private String diretorioGravacaoLocal;
+	private int geraEbook;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
@@ -53,6 +54,7 @@ public class EntregavelProduto extends Model {
 			obj.put("geraLista", geraLista);
 			obj.put("geraImagemConteudo", geraImagemConteudo);
 			obj.put("diretorioGravacaoLocal", diretorioGravacaoLocal);
+			obj.put("geraEbook", geraEbook);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -95,6 +97,12 @@ public class EntregavelProduto extends Model {
 	}
 	public String getDiretorioGravacaoLocal() { 
 		return this.diretorioGravacaoLocal;
+	}
+	public void setGeraEbook(int valor) { 
+		this.geraEbook = valor;
+	}
+	public int getGeraEbook() { 
+		return this.geraEbook;
 	}
 
 	public ProdutoProprio getProdutoProprio() {

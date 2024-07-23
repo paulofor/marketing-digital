@@ -370,7 +370,6 @@ export class SDKBrowserModule {
         FrameworkPublicoCategoriaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-
       ]
     };
   }

@@ -311,6 +311,11 @@
 			"type": "hasMany",
 			"model": "FrameworkPublicoInteresse",
 			"foreignKey": "hotmartId"
+		},
+		"metaAdsPixelVendas": {
+			"type": "hasMany",
+			"model": "MetaAdsPixelVenda",
+			"foreignKey": "hotmartId"
 		}
 	},
 	"acls": [],

@@ -19,7 +19,7 @@ public class ObtemVendasHotmartFinalizacao {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemVendasHotmartFinalizacao");
-		System.out.println("(06/07/2024 12:36:43)");
+		System.out.println("(18/07/2024 22:27:06)");
 		try {
 			carregaProp();
 			ObtemVendasHotmartFinalizacaoObj obj = new ObtemVendasHotmartFinalizacaoObj();

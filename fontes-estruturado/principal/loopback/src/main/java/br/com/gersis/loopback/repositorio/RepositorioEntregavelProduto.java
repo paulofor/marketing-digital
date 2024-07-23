@@ -52,6 +52,13 @@ public class RepositorioEntregavelProduto extends ModelRepository<EntregavelProd
 		invokeStaticMethod("listaParaGerarImagemConteudo", params,   new JsonArrayParser<EntregavelProduto>(this, callback));
 	}
 
+	public synchronized void listaParaGerarEbook(final ListCallback<EntregavelProduto> callback ) {
+		RestContractItem contrato = new RestContractItem("EntregavelProdutos/listaParaGerarEbook","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "EntregavelProduto.listaParaGerarEbook");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaGerarEbook", params,   new JsonArrayParser<EntregavelProduto>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<EntregavelProduto> listaEntrada) {
 		JSONArray lista = new JSONArray();

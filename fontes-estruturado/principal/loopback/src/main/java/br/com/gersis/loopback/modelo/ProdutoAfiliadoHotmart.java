@@ -90,6 +90,7 @@ public class ProdutoAfiliadoHotmart extends Model {
 	private List<MetaAdsCampanha> MetaAdsCampanhas;
 	private List<MetaAdsPublico> MetaAdsPublicos;
 	private List<FrameworkPublicoInteresse> FrameworkPublicoInteresses;
+	private List<MetaAdsPixelVenda> MetaAdsPixelVendas;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -793,6 +794,18 @@ public class ProdutoAfiliadoHotmart extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.FrameworkPublicoInteresses.add((FrameworkPublicoInteresse) objeto);
+		}
+	}
+	public List<MetaAdsPixelVenda> getMetaAdsPixelVendas() {
+		return  MetaAdsPixelVendas;
+	}
+	public void setMetaAdsPixelVendas(List<MetaAdsPixelVenda> valores) {
+		this.MetaAdsPixelVendas = new ArrayList<MetaAdsPixelVenda>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new MetaAdsPixelVenda();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.MetaAdsPixelVendas.add((MetaAdsPixelVenda) objeto);
 		}
 	}
 }

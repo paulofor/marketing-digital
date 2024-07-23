@@ -16,6 +16,7 @@ export interface EntregavelProdutoInterface {
   "geraLista"?: number;
   "geraImagemConteudo"?: number;
   "diretorioGravacaoLocal"?: string;
+  "geraEbook"?: number;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
@@ -33,6 +34,7 @@ export class EntregavelProduto implements EntregavelProdutoInterface {
   "geraLista": number;
   "geraImagemConteudo": number;
   "diretorioGravacaoLocal": string;
+  "geraEbook": number;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
@@ -97,6 +99,10 @@ export class EntregavelProduto implements EntregavelProdutoInterface {
         "diretorioGravacaoLocal": {
           name: 'diretorioGravacaoLocal',
           type: 'string'
+        },
+        "geraEbook": {
+          name: 'geraEbook',
+          type: 'number'
         },
         "produtoProprioId": {
           name: 'produtoProprioId',

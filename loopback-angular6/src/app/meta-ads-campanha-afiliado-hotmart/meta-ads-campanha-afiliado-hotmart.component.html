@@ -11,7 +11,7 @@
   <div class="dgc-painel-principal">
     <div class="dgc-card" *ngFor="let item of principal.metaAdsCampanhas">
       <div class="dgc-card-detalhe">
-        {{item.nome}}
+        <span class="dgc-link" routerLink="/metaAdsCampanhaDetalhe/{{item.id}}">{{item.nome}}</span>
       </div>
 
       <div class="dgc-card-comandos">

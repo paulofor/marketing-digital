@@ -101,6 +101,7 @@ import { FrameworkPublicoInteresseListComponent } from '../framework-publico-int
 import { MetaAdsPublicoListComponent } from '../meta-ads-publico-list/meta-ads-publico-list.component';
 import { MetaAdsCampanhaAfiliadoGenericoComponent } from '../meta-ads-campanha-afiliado-generico/meta-ads-campanha-afiliado-generico.component';
 import { MetaAdsCampanhaAfiliadoHotmartComponent } from '../meta-ads-campanha-afiliado-hotmart/meta-ads-campanha-afiliado-hotmart.component';
+import { EntregavelProdutoListParaEbookComponent } from '../entregavel-produto-list-para-ebook/entregavel-produto-list-para-ebook.component';
 
 
 
@@ -248,6 +249,8 @@ export const routes : Routes = [
 
     { path: 'metaAdsCampanhaAfiliadoHotmart/:id' , component: MetaAdsCampanhaAfiliadoHotmartComponent},
     { path: 'metaAdsCampanhaAfiliadoGenerico/:id' , component: MetaAdsCampanhaAfiliadoGenericoComponent },
+
+    { path: 'entregavelProdutoListParaEbook', component: EntregavelProdutoListParaEbookComponent },
 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }

@@ -30,6 +30,7 @@ import {
   ProdutoHotmartConta,
   AnuncioConceitoAdsRedeDisplay,
   MetaAdsCampanha,
+  MetaAdsPixelVenda,
   MetaAdsPublico,
   FrameworkPublicoInteresse
 } from '../index';
@@ -107,6 +108,7 @@ export interface ProdutoAfiliadoHotmartInterface {
   produtoHotmartContas?: ProdutoHotmartConta[];
   anuncioConceitoAdsRedeDisplays?: AnuncioConceitoAdsRedeDisplay[];
   metaAdsCampanhas?: MetaAdsCampanha[];
+  metaAdsPixelVendas?: MetaAdsPixelVenda[];
   metaAdsPublicos?: MetaAdsPublico[];
   frameworkPublicoInteresses?: FrameworkPublicoInteresse[];
 }
@@ -183,6 +185,7 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
   produtoHotmartContas: ProdutoHotmartConta[];
   anuncioConceitoAdsRedeDisplays: AnuncioConceitoAdsRedeDisplay[];
   metaAdsCampanhas: MetaAdsCampanha[];
+  metaAdsPixelVendas: MetaAdsPixelVenda[];
   metaAdsPublicos: MetaAdsPublico[];
   frameworkPublicoInteresses: FrameworkPublicoInteresse[];
   constructor(data?: ProdutoAfiliadoHotmartInterface) {
@@ -632,6 +635,14 @@ export class ProdutoAfiliadoHotmart implements ProdutoAfiliadoHotmartInterface {
           name: 'metaAdsCampanhas',
           type: 'MetaAdsCampanha[]',
           model: 'MetaAdsCampanha',
+          relationType: 'hasMany',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
+        },
+        metaAdsPixelVendas: {
+          name: 'metaAdsPixelVendas',
+          type: 'MetaAdsPixelVenda[]',
+          model: 'MetaAdsPixelVenda',
           relationType: 'hasMany',
                   keyFrom: 'hotmartId',
           keyTo: 'hotmartId'

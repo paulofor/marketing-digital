@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  ProdutoProprio
+  ProdutoProprio,
+  ProdutoAfiliadoHotmart
 } from '../index';
 
 declare var Object: any;
@@ -8,18 +9,22 @@ export interface MetaAdsPixelVendaInterface {
   "instalado"?: number;
   "nome"?: string;
   "identificador"?: string;
+  "hotmartId"?: number;
   "produtoProprioId"?: number;
   "id"?: number;
   produtoProprio?: ProdutoProprio;
+  produtoAfiliadoHotmart?: ProdutoAfiliadoHotmart;
 }
 
 export class MetaAdsPixelVenda implements MetaAdsPixelVendaInterface {
   "instalado": number;
   "nome": string;
   "identificador": string;
+  "hotmartId": number;
   "produtoProprioId": number;
   "id": number;
   produtoProprio: ProdutoProprio;
+  produtoAfiliadoHotmart: ProdutoAfiliadoHotmart;
   constructor(data?: MetaAdsPixelVendaInterface) {
     Object.assign(this, data);
   }
@@ -65,6 +70,10 @@ export class MetaAdsPixelVenda implements MetaAdsPixelVendaInterface {
           name: 'identificador',
           type: 'string'
         },
+        "hotmartId": {
+          name: 'hotmartId',
+          type: 'number'
+        },
         "produtoProprioId": {
           name: 'produtoProprioId',
           type: 'number'
@@ -82,6 +91,14 @@ export class MetaAdsPixelVenda implements MetaAdsPixelVendaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'produtoProprioId',
           keyTo: 'id'
+        },
+        produtoAfiliadoHotmart: {
+          name: 'produtoAfiliadoHotmart',
+          type: 'ProdutoAfiliadoHotmart',
+          model: 'ProdutoAfiliadoHotmart',
+          relationType: 'belongsTo',
+                  keyFrom: 'hotmartId',
+          keyTo: 'hotmartId'
         },
       }
     }

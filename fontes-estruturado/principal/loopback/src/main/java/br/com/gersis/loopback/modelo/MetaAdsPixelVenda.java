@@ -17,8 +17,10 @@ public class MetaAdsPixelVenda extends Model {
 	private int instalado;
 	private String nome;
 	private String identificador;
+	private int hotmartId;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
+	private ProdutoAfiliadoHotmart ProdutoAfiliadoHotmart;
 	// Relacionamentos N
 
 	public void setId(Long id) {
@@ -42,6 +44,7 @@ public class MetaAdsPixelVenda extends Model {
 			obj.put("instalado", instalado);
 			obj.put("nome", nome);
 			obj.put("identificador", identificador);
+			obj.put("hotmartId", hotmartId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -67,6 +70,12 @@ public class MetaAdsPixelVenda extends Model {
 	public String getIdentificador() { 
 		return this.identificador;
 	}
+	public void setHotmartId(int valor) { 
+		this.hotmartId = valor;
+	}
+	public int getHotmartId() { 
+		return this.hotmartId;
+	}
 
 	public ProdutoProprio getProdutoProprio() {
 		return ProdutoProprio;
@@ -74,5 +83,12 @@ public class MetaAdsPixelVenda extends Model {
 	public void setProdutoProprio(HashMap valor) {
 		this.ProdutoProprio = new ProdutoProprio();
 		BeanUtil.setProperties(this.ProdutoProprio, (Map<String, ? extends Object>) valor, true);
+	}
+	public ProdutoAfiliadoHotmart getProdutoAfiliadoHotmart() {
+		return ProdutoAfiliadoHotmart;
+	}
+	public void setProdutoAfiliadoHotmart(HashMap valor) {
+		this.ProdutoAfiliadoHotmart = new ProdutoAfiliadoHotmart();
+		BeanUtil.setProperties(this.ProdutoAfiliadoHotmart, (Map<String, ? extends Object>) valor, true);
 	}
 }
