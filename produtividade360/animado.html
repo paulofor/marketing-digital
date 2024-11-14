@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animação de Entrada - Teste com Scroll</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 200vh; /* Para permitir a rolagem */
+    }
+
+    .content {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 20px;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+
+    /* Estilo da animação */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    /* Quando a classe 'show' é adicionada, o elemento aparece */
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content fade-in-up" id="animatedContent">
+    <h1>Seja Bem-vindo!</h1>
+    <p>Conteúdo animado aparece quando a página rola.</p>
+    <button>Saiba Mais</button>
+  </div>
+
+  <script>
+    // Função que verifica a rolagem e exibe o conteúdo quando visível
+    function handleScroll() {
+      const element = document.getElementById('animatedContent');
+      const elementPosition = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      // Verifica se o elemento está visível na tela
+      if (elementPosition < windowHeight - 100) {
+        element.classList.add('show');
+      }
+    }
+
+    // Adiciona o evento de rolagem para chamar a função
+    window.addEventListener('scroll', handleScroll);
+
+    // Chama a função ao carregar a página, para caso o elemento já esteja visível
+    handleScroll();
+  </script>
+
+</body>
+</html>

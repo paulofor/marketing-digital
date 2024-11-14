@@ -20,6 +20,10 @@ public class PaginaVendaAberta extends Model {
 	private int atualiza;
 	private String urlImagemCompleta;
 	private int geraImagemCompleta;
+	private String htmlInicial;
+	private String htmlFinal;
+	private String cssGlobal;
+	private int geraComSecao;
 	// Relacionamentos 1
 	private CheckoutProdutoProprio CheckoutProdutoProprio;
 	private ProdutoProprio ProdutoProprio;
@@ -27,6 +31,7 @@ public class PaginaVendaAberta extends Model {
 	// Relacionamentos N
 	private List<MetaAdsAnuncio> MetaAdsAnuncios;
 	private List<PaginaImplementacao> PaginaImplementacaos;
+	private List<PaginaVendaAbertaSecao> PaginaVendaAbertaSecaos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -52,6 +57,10 @@ public class PaginaVendaAberta extends Model {
 			obj.put("atualiza", atualiza);
 			obj.put("urlImagemCompleta", urlImagemCompleta);
 			obj.put("geraImagemCompleta", geraImagemCompleta);
+			obj.put("htmlInicial", htmlInicial);
+			obj.put("htmlFinal", htmlFinal);
+			obj.put("cssGlobal", cssGlobal);
+			obj.put("geraComSecao", geraComSecao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -94,6 +103,30 @@ public class PaginaVendaAberta extends Model {
 	}
 	public int getGeraImagemCompleta() { 
 		return this.geraImagemCompleta;
+	}
+	public void setHtmlInicial(String valor) { 
+		this.htmlInicial = valor;
+	}
+	public String getHtmlInicial() { 
+		return this.htmlInicial;
+	}
+	public void setHtmlFinal(String valor) { 
+		this.htmlFinal = valor;
+	}
+	public String getHtmlFinal() { 
+		return this.htmlFinal;
+	}
+	public void setCssGlobal(String valor) { 
+		this.cssGlobal = valor;
+	}
+	public String getCssGlobal() { 
+		return this.cssGlobal;
+	}
+	public void setGeraComSecao(int valor) { 
+		this.geraComSecao = valor;
+	}
+	public int getGeraComSecao() { 
+		return this.geraComSecao;
 	}
 
 	public CheckoutProdutoProprio getCheckoutProdutoProprio() {
@@ -139,6 +172,18 @@ public class PaginaVendaAberta extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PaginaImplementacaos.add((PaginaImplementacao) objeto);
+		}
+	}
+	public List<PaginaVendaAbertaSecao> getPaginaVendaAbertaSecaos() {
+		return  PaginaVendaAbertaSecaos;
+	}
+	public void setPaginaVendaAbertaSecaos(List<PaginaVendaAbertaSecao> valores) {
+		this.PaginaVendaAbertaSecaos = new ArrayList<PaginaVendaAbertaSecao>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new PaginaVendaAbertaSecao();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.PaginaVendaAbertaSecaos.add((PaginaVendaAbertaSecao) objeto);
 		}
 	}
 }

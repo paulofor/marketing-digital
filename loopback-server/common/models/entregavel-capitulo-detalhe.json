@@ -1,0 +1,45 @@
+{
+	"name": "EntregavelCapituloDetalhe",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"html": {
+			"type": "string"
+		},
+		"prompt": {
+			"type": "string"
+		},
+		"urlChatGpt": {
+			"type": "string"
+		},
+		"markup": {
+			"type": "string"
+		},
+		"texto": {
+			"type": "string"
+		},
+		"posicao": {
+			"type": "number"
+		},
+		"entregavelCapituloId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"entregavelCapitulo": {
+			"type": "belongsTo",
+			"model": "EntregavelCapitulo",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

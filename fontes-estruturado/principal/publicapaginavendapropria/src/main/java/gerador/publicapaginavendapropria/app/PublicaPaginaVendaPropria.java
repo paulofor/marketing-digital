@@ -19,7 +19,7 @@ public class PublicaPaginaVendaPropria {
 
 	public static void main(String[] args) {
 		System.out.print("PublicaPaginaVendaPropria");
-		System.out.println("(18/07/2024 22:26:48)");
+		System.out.println("(13/11/2024 12:10:38)");
 		try {
 			carregaProp();
 			PublicaPaginaVendaPropriaObj obj = new PublicaPaginaVendaPropriaObj();

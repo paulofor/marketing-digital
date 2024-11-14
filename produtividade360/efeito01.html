@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Venda Impactante</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Seção com Parallax */
+        .parallax {
+            background-image: url('imagens/descobertas.webp');
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parallax-text {
+            color: #fff;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Seções */
+        .section {
+            padding: 50px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        /* Botões de Ação */
+        .cta-button, .cta-button-final {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover, .cta-button-final:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Efeito Hover em Cards */
+        .ebook-card {
+            display: inline-block;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 250px;
+        }
+
+        .ebook-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .ebook-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .ebook-card h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+        /* Imagens Responsivas com Efeito de Aparecer */
+        .responsive-image {
+            opacity: 0;
+            filter: blur(10px);
+            transition: opacity 0.5s ease, filter 0.5s ease;
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .responsive-image.appear {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Transforme Sua Produtividade</h1>
+    </header>
+
+    <!-- Seção Parallax -->
+    <div class="parallax">
+        <div class="parallax-text">Domine Seu Tempo Agora</div>
+    </div>
+
+    <!-- Seção 1 -->
+    <section class="section">
+        <h2>O Método Que Vai Mudar Sua Vida</h2>
+        <p>Descubra as melhores técnicas de gestão de tempo com um sistema de pontuação exclusivo que vai te ajudar a priorizar suas tarefas de forma eficiente e atingir seus objetivos pessoais e profissionais.</p>
+        <button class="cta-button">Saiba Mais</button>
+    </section>
+
+    <!-- Seção 2 com Cards -->
+    <section class="section">
+        <h2>Nossos Ebooks Exclusivos</h2>
+        <div class="ebook-card">
+            <img src="https://via.placeholder.com/250x150" alt="Ebook 1">
+            <h3>Princípio de Pareto</h3>
+            <p>Aprenda como aplicar o Princípio de Pareto (80/20) e concentre-se no que realmente importa.</p>
+        </div>
+        <div class="ebook-card">
+            <img src="https://via.placeholder.com/250x150" alt="Ebook 2">
+            <h3>Time Blocking Avançado</h3>
+            <p>Descubra como dominar seus dias com técnicas avançadas de Time Blocking.</p>
+        </div>
+        <div class="ebook-card">
+            <img src="https://via.placeholder.com/250x150" alt="Ebook 3">
+            <h3>Método Pomodoro</h3>
+            <p>Maximize sua produtividade com blocos de tempo focados e controlados.</p>
+        </div>
+    </section>
+
+    <!-- Seção 3 com Imagens -->
+    <section class="section">
+        <h2>O Que Dizem Nossos Clientes</h2>
+        <img class="responsive-image" src="https://via.placeholder.com/600x300" alt="Testemunho 1">
+        <p>"Desde que comecei a aplicar o Método Pomodoro, minha produtividade disparou!"</p>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Sua Empresa. Todos os Direitos Reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Efeito de Scroll para aparecer as seções
+        document.addEventListener("scroll", function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('appear');
+                }
+            });
+
+            const images = document.querySelectorAll('.responsive-image');
+            images.forEach(image => {
+                const imgTop = image.getBoundingClientRect().top;
+                if (imgTop < window.innerHeight - 100) {
+                    image.classList.add('appear');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

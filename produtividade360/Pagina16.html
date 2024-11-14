@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtividade 360 - Gestão de Tempo Eficiente</title>
+
+  <!-- Preload de fontes e recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+  <!-- Estilos CSS -->
+  <style>
+    /* Estilos Globais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden; /* Evitar scroll horizontal */
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section:nth-child(even) {
+      background-color: #fff;
+    }
+
+    /* Cabeçalho */
+    header {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    }
+    header h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.5em;
+      margin-bottom: 40px;
+    }
+    .header-btn {
+      display: inline-block;
+      background-color: #fff;
+      color: #4e54c8;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 50px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .header-btn:hover {
+      background-color: #4e54c8;
+      color: #fff;
+    }
+
+    /* Títulos de Seção */
+    .section-title {
+      font-size: 2.5em;
+      color: #4e54c8;
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background-color: #4e54c8;
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Seção de História */
+    .story-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .story-section .text {
+      flex: 1;
+      padding-right: 20px;
+    }
+    .story-section .image {
+      flex: 1;
+      text-align: center;
+    }
+    .story-section .image img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Metáforas */
+    .metaphors {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    .metaphor {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+    .metaphor:hover {
+      transform: translateY(-10px);
+    }
+    .metaphor-icon {
+      font-size: 4em;
+      color: #8f94fb;
+      margin-bottom: 20px;
+    }
+    .metaphor h3 {
+      font-size: 1.8em;
+      color: #4e54c8;
+      margin-bottom: 20px;
+    }
+    .metaphor p {
+      font-size: 1.1em;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* Histórias */
+    .stories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+    .story-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+    .story-card:hover {
+      transform: translateY(-10px);
+    }
+    .story-card h3 {
+      font-size: 1.8em;
+      color: #4e54c8;
+      margin-bottom: 20px;
+    }
+    .story-card p {
+      font-size: 1em;
+      color: #555;
+    }
+
+    /* Lista de Perguntas */
+    .questions-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+    }
+    .questions-list li {
+      background-color: #fff;
+      padding: 20px;
+      border-left: 5px solid #4e54c8;
+      border-radius: 5px;
+      position: relative;
+      list-style: none;
+      font-size: 1.1em;
+      color: #555;
+    }
+    .questions-list li::before {
+      content: "?";
+      color: #4e54c8;
+      font-size: 2em;
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      font-weight: bold;
+    }
+
+    /* Caixa de Destaque */
+    .highlight-box {
+      background-color: #fff8e1;
+      padding: 40px;
+      border: 2px solid #ffd54f;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .highlight-box h2 {
+      font-size: 2.5em;
+      color: #ff6f00;
+      margin-bottom: 20px;
+    }
+    .highlight-box p {
+      font-size: 1.3em;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .highlight-box .btn-highlight {
+      background-color: #ff6f00;
+      color: #fff;
+      padding: 15px 40px;
+      font-size: 1.4em;
+      border-radius: 50px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .highlight-box .btn-highlight:hover {
+      background-color: #ff9800;
+      transform: translateY(-5px);
+    }
+
+    /* Detalhes do Produto */
+    .product-details {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .product-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+    .product-card h3 {
+      font-size: 1.8em;
+      color: #4e54c8;
+      margin-bottom: 10px;
+    }
+    .product-card h4 {
+      font-size: 1.2em;
+      color: #8f94fb;
+      margin-bottom: 20px;
+    }
+    .product-card p {
+      font-size: 1.1em;
+      color: #555;
+    }
+    .product-card img {
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
+
+    /* Chamada para Ação */
+    .call-to-action {
+      font-size: 2em;
+      color: #4e54c8;
+      text-align: center;
+      margin: 60px 0 40px;
+      font-weight: bold;
+    }
+    .btn-cta {
+      display: inline-block;
+      background-color: #4e54c8;
+      color: #fff;
+      padding: 20px 40px;
+      text-decoration: none;
+      font-size: 1.5em;
+      border-radius: 50px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .btn-cta:hover {
+      background-color: #8f94fb;
+      transform: translateY(-5px);
+    }
+
+    /* Estilos Responsivos */
+    @media (max-width: 768px) {
+      /* Ajuste do Padding das Seções */
+      .section {
+        padding: 40px 0;
+      }
+
+      /* Ajuste do Cabeçalho */
+      header {
+        padding: 50px 0;
+      }
+      header h1 {
+        font-size: 2em;
+      }
+      header p {
+        font-size: 1.2em;
+      }
+
+      /* Stack na Seção de História */
+      .story-section {
+        flex-direction: column;
+      }
+      .story-section .text,
+      .story-section .image {
+        flex: none;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+
+      /* Ajuste do Título da Seção */
+      .section-title {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+      }
+
+      /* Grid de Metáforas em uma Coluna */
+      .metaphors {
+        grid-template-columns: 1fr;
+      }
+
+      /* Grid de Histórias em uma Coluna */
+      .stories {
+        grid-template-columns: 1fr;
+      }
+
+      /* Lista de Perguntas em uma Coluna */
+      .questions-list {
+        grid-template-columns: 1fr;
+      }
+
+      /* Ajuste da Imagem do Produto */
+      .product-card img {
+        max-width: 150px;
+      }
+
+      /* Ajuste da Chamada para Ação */
+      .call-to-action {
+        font-size: 1.5em;
+        margin: 40px 0 20px;
+      }
+      .btn-cta {
+        padding: 15px 30px;
+        font-size: 1.2em;
+      }
+
+      /* Ajuste de Margens e Paddings */
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    /* Ajuste para Tamanhos Maiores */
+    @media (min-width: 768px) {
+      .product-details {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container">
+      <h1>Transforme Sua Produtividade</h1>
+      <p>Descubra como gerenciar seu tempo de forma eficiente e alcançar o sucesso que você merece.</p>
+      <a href="#seu-produto" class="header-btn">Saiba Mais</a>
+    </div>
+  </header>
+
+  <!-- Seção: História Envolvente -->
+  <section id="historia-envolvente" class="section">
+    <div class="container story-section">
+      <div class="text">
+        <h2 class="section-title">A Virada de Lucas: Transformando Desafios em Sucesso</h2>
+        <p><strong>Lucas</strong> é um profissional dedicado de 35 anos que trabalha como analista sênior em uma grande empresa. Apesar de seu comprometimento e esforço, ele percebeu que as oportunidades de promoção estavam escapando, sempre sendo ultrapassado por colegas. Sentia-se preso em sua posição, mesmo sabendo que tinha potencial para mais.</p>
+        <p>Um dia, após perder mais uma oportunidade de promoção, Lucas decidiu que era hora de mudar. Ele descobriu novas técnicas de gestão do tempo que prometiam ajudá-lo a reorganizar sua rotina e focar no que realmente importava.</p>
+        <p>Ao aplicar essas estratégias, Lucas começou a notar uma transformação. Passou a ser mais produtivo, entregando projetos de alta qualidade e ganhando reconhecimento de seus superiores. Finalmente, a tão desejada promoção chegou.</p>
+      </div>
+      <div class="image">
+        <img src="imagem-lucas.jpg" alt="Lucas transformando sua vida profissional">
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção: Aproveitando Oportunidades e Foco -->
+  <section id="aproveitando-oportunidades" class="section">
+    <div class="container">
+      <h2 class="section-title">Está Perdendo Oportunidades Preciosas Sem Nem Perceber?</h2>
+      <p style="text-align: center; font-size: 1.3em; color: #555; margin-bottom: 40px;">Descubra como distrações diárias podem estar roubando seu potencial e sabotando seu sucesso. É hora de tomar o controle antes que suas chances se esgotem.</p>
+      <div class="metaphors">
+        <div class="metaphor">
+          <div class="metaphor-icon">⏳</div>
+          <h3>Seu Futuro Flui como um Rio</h3>
+          <p>Assim como um rio que segue seu curso ininterrupto, o futuro avança sem parar. A água que passou não volta mais, e cada corrente traz uma nova chance. Saber navegar esse fluxo leva você ao destino desejado de forma mais suave e eficiente.</p>
+        </div>
+        <div class="metaphor">
+          <div class="metaphor-icon">🎯</div>
+          <h3>O Foco Ilumina o Caminho</h3>
+          <p>Pense no seu foco como um feixe de luz cortando a escuridão. Ele destaca o que realmente importa, enquanto deixa as distrações no escuro. Com o foco ajustado, seus esforços se concentram na direção certa.</p>
+        </div>
+        <div class="metaphor">
+          <div class="metaphor-icon">🌱</div>
+          <h3>Realizações Crescem como um Jardim</h3>
+          <p>Assim como plantas, suas tarefas diárias precisam de cuidado e atenção para florescer. Cada semente que você planta pode se transformar em algo grandioso com dedicação contínua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção: Descobertas -->
+  <section id="historias-descobertas" class="section">
+    <div class="container">
+      <h2 class="section-title">Descobertas que Estão Transformando Vidas</h2>
+      <div class="stories">
+        <div class="story-card">
+          <h3>A Revolução da Gamificação na Produtividade Pessoal</h3>
+          <p>Pesquisas recentes têm mostrado como a gamificação está transformando a gestão do tempo em algo não apenas eficiente, mas também prazeroso.</p>
+        </div>
+        <div class="story-card">
+          <h3>A Ciência por Trás do Foco e da Prioridade Eficiente</h3>
+          <p>Estudos do MIT revelaram insights fascinantes sobre como o cérebro humano lida com prioridades.</p>
+        </div>
+        <div class="story-card">
+          <h3>O Poder Transformador do Princípio de Pareto Modernizado</h3>
+          <p>O clássico Princípio de Pareto ganhou nova vida graças a pesquisas recentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Introdução ao Produto: Produtividade 360 -->
+  <section id="produto" class="section">
+    <div class="container">
+      <div class="highlight-box">
+        <h2>Produtividade 360: A Solução Completa para sua Gestão de Tempo</h2>
+        <p>
+          Está cansado de sentir que o tempo está escapando das suas mãos? Você já tentou várias técnicas de gestão de tempo, mas ainda sente que está perdendo oportunidades? O <strong>Produtividade 360</strong> é o pacote definitivo que vai transformar a maneira como você gerencia seu tempo, com uma abordagem única e poderosa.
+        </p>
+        <p>
+          Nosso pacote de <strong>6 eBooks</strong> vai além das metodologias tradicionais, trazendo recursos inovadores de <strong>pontuação matemática</strong> para ajudar você a aplicar os conceitos com precisão, tornando a sua rotina muito mais eficiente. O Produtividade 360 é a chave para alcançar resultados mensuráveis e de impacto real.
+        </p>
+        <a href="#comprar" class="btn-highlight">Descubra o Produtividade 360 Agora</a>
+      </div>
+
+      <!-- Apresentação dos 6 eBooks com Subtítulos -->
+      <div class="product-details">
+        <div class="product-card">
+          <img src="principio-pareto.jpg" alt="Princípio de Pareto 2.0">
+          <h3>Princípio de Pareto 2.0</h3>
+          <h4>A Fórmula de Ouro para Multiplicar Seus Resultados</h4>
+          <p>Aprenda a identificar as atividades que realmente importam e a maximizar seus resultados. Com nossa abordagem baseada em pontuação, você irá transformar 20% de esforço em 80% de impacto.</p>
+        </div>
+        <div class="product-card">
+          <img src="time-blocking.jpg" alt="Time Blocking Avançado">
+          <h3>Time Blocking Avançado</h3>
+          <h4>Domine Seu Dia com Blocos de Tempo Inteligentes</h4>
+          <p>Organize seu tempo de forma estratégica com blocos que priorizam as atividades de maior valor. A pontuação otimiza seus blocos de tempo para garantir o máximo de produtividade.</p>
+        </div>
+        <div class="product-card">
+          <img src="matriz-eisenhower.jpg" alt="Matriz Eisenhower Potencializada">
+          <h3>Matriz Eisenhower Potencializada</h3>
+          <h4>Decisões Rápidas com Prioridade Matemática</h4>
+          <p>Tome decisões rápidas e assertivas com a ajuda de nosso sistema de priorização. Visualize claramente o que é urgente e importante, sem perder tempo.</p>
+        </div>
+        <div class="product-card">
+          <img src="pomodoro.jpg" alt="Pomodoro Turbo">
+          <h3>Pomodoro Turbo</h3>
+          <h4>Aumente Seu Foco e Eficiência com Precisão</h4>
+          <p>Melhore seu foco e mantenha a concentração com ciclos curtos e produtivos. A pontuação garante que cada sessão seja eficiente e que você avance com clareza.</p>
+        </div>
+        <div class="product-card">
+          <img src="regra-2-minutos.jpg" alt="Regra dos 2 Minutos Maximizada">
+          <h3>Regra dos 2 Minutos Maximizada</h3>
+          <h4>Agilidade Decisiva para um Dia Produtivo</h4>
+          <p>Aprenda a tomar decisões rápidas sobre tarefas curtas e aprimore sua capacidade de eliminar, delegar ou concluir atividades sem perder tempo.</p>
+        </div>
+        <div class="product-card">
+          <img src="planejamento-diario.jpg" alt="Planejamento Diário Estratégico">
+          <h3>Planejamento Diário Estratégico</h3>
+          <h4>Otimize Suas Prioridades com Alta Precisão</h4>
+          <p>Defina suas prioridades com uma precisão estratégica. Nosso sistema de pontuação ajuda você a planejar dias mais produtivos e alcançar resultados visíveis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Perguntas Provocativas -->
+  <section id="conexao-profunda" class="section">
+    <div class="container">
+      <h2 class="section-title">Você já se perguntou?</h2>
+      <ul class="questions-list">
+        <li>Você deseja alcançar mais sucesso profissional?</li>
+        <li>Quer ter mais tempo para as coisas que realmente importam?</li>
+        <li>Está em busca de maneiras eficazes de aumentar sua produtividade?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Chamada para Ação -->
+  <div class="call-to-action">
+    <a href="#seu-produto" class="btn-cta">Descubra Como Transformar Sua Vida Agora</a>
+  </div>
+
+</body>
+</html>

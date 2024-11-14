@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Vendas - Gestão do Tempo</title>
+  <!-- Estilos CSS -->
+  <style>
+    /* Estilos gerais */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f7f9fc;
+      color: #34495e;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3, h4 {
+      color: #2c3e50;
+    }
+    /* Seções */
+    .section {
+      padding: 60px 20px;
+    }
+    .section-title {
+      font-size: 2.5em;
+      color: #e74c3c;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .section-subtitle {
+      font-size: 1.5em;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    .section-text {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+    /* Histórias */
+    .story {
+      margin-bottom: 50px;
+    }
+    .story-title {
+      font-size: 1.8em;
+      color: #e74c3c;
+      margin-bottom: 15px;
+    }
+    .story-subtitle {
+      font-size: 1.3em;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    .story-text {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    /* Seção Destaque */
+    .section-highlight {
+      background-color: #f7f9fc;
+    }
+    /* Seção de Perguntas */
+    .section-questions {
+      background-color: #ffffff;
+      padding: 60px 20px;
+    }
+    .questions-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .questions-list li {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 30px;
+    }
+    .questions-list li::before {
+      content: "?";
+      color: #e74c3c;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5em;
+    }
+    /* Outros estilos */
+    .question-heading {
+      font-size: 2em;
+      color: #e74c3c;
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+    .imagine-text {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      text-align: justify;
+    }
+    .imagine-text strong {
+      color: #e74c3c;
+    }
+    .risks {
+      background-color: #ffffff;
+      border-left: 5px solid #e74c3c;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .risks h4 {
+      font-size: 1.5em;
+      color: #e74c3c;
+      margin-bottom: 15px;
+    }
+    .risks ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .risks li {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+    .risks li::before {
+      content: "✔";
+      color: #27ae60;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .solution-intro {
+      font-size: 1.3em;
+      text-align: center;
+      margin: 40px 0 20px;
+      font-style: italic;
+      color: #2c3e50;
+    }
+    .self-reflection {
+      background-color: #ecf0f1;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+    }
+    .self-reflection p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    .self-reflection ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    .self-reflection li {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    .call-to-action {
+      font-size: 1.4em;
+      color: #27ae60;
+      text-align: center;
+      margin: 50px 0 30px;
+      font-weight: bold;
+    }
+    .closing-remark {
+      font-size: 1.2em;
+      color: #7f8c8d;
+      text-align: center;
+      font-style: italic;
+    }
+    /* Botão CTA */
+    .btn-cta {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .btn-cta:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <!-- Seção Histórias -->
+  <section id="historias-descobertas" class="section">
+    <div class="container">
+      <h2 class="section-title">Descobertas que Estão Transformando Vidas</h2>
+      <!-- História 1 -->
+      <div class="story">
+        <h3 class="story-title">A Revolução da Gamificação na Produtividade Pessoal</h3>
+        <p class="story-text">
+          Pesquisas recentes têm mostrado como a <strong>gamificação</strong> está transformando a gestão do tempo em algo não apenas eficiente, mas também prazeroso. Cientistas da Universidade de Stanford descobriram que quando as pessoas atribuem <strong>pontuações às suas tarefas diárias</strong>, elas se sentem mais motivadas e engajadas. Essa abordagem lúdica transforma obrigações em desafios pessoais, aumentando significativamente a produtividade.
+        </p>
+        <p class="story-text">
+          Imagine acordar todos os dias empolgado para "ganhar pontos" ao completar tarefas, sentindo-se realizado a cada conquista. Profissionais que adotaram esse método relataram não apenas um aumento na eficiência, mas também uma maior satisfação pessoal e profissional. Essa simples mudança de perspectiva pode ser o segredo para desbloquear todo o seu potencial.
+        </p>
+      </div>
+      <!-- História 2 -->
+      <div class="story">
+        <h3 class="story-title">A Ciência por Trás do Foco e da Prioridade Eficiente</h3>
+        <p class="story-text">
+          Estudos conduzidos pelo <strong>Instituto de Tecnologia de Massachusetts (MIT)</strong> revelaram insights fascinantes sobre como o cérebro humano lida com prioridades. Usando a Matriz Eisenhower aprimorada com sistemas de pontuação, os participantes conseguiram visualizar claramente quais tarefas tinham maior impacto em seus objetivos de longo prazo.
+        </p>
+        <p class="story-text">
+          Ao atribuir pontuações baseadas na urgência e importância, eles transformaram listas caóticas em planos de ação claros e direcionados. O resultado? Uma redução significativa no estresse e uma aceleração notável no alcance de metas profissionais. Essa técnica permite que você concentre sua energia no que realmente importa, abrindo caminho para conquistas incríveis.
+        </p>
+      </div>
+      <!-- História 3 -->
+      <div class="story">
+        <h3 class="story-title">O Poder Transformador do Princípio de Pareto Modernizado</h3>
+        <p class="story-text">
+          O clássico <strong>Princípio de Pareto</strong>, que afirma que 80% dos resultados vêm de 20% dos esforços, ganhou uma nova vida graças a pesquisas recentes. Especialistas em produtividade incorporaram sistemas de pontuação para identificar com precisão essas tarefas de alto impacto. Segundo um estudo publicado na Harvard Business Review, profissionais que aplicaram essa abordagem moderna alcançaram um aumento de até 70% em eficiência.
+        </p>
+        <p class="story-text">
+          Essa metodologia não apenas otimiza o uso do tempo, mas também libera espaço na agenda para inovações, aprendizado e crescimento pessoal. Imagine atingir seus objetivos com menos esforço e ainda ter tempo para desfrutar das coisas que ama. Esse é o poder de combinar sabedoria clássica com técnicas modernas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção "Não Deixe a Oportunidade Passar" -->
+  <section id="nao-deixe-a-oportunidade-passar" class="section section-highlight">
+    <div class="container">
+      <h2 class="section-title">Não Deixe a Oportunidade Passar</h2>
+      <p class="intro-text">
+        O mundo está em constante evolução, e as pessoas ao seu redor estão aproveitando novas técnicas e conhecimentos para alcançar resultados incríveis. Enquanto elas avançam, adotando estratégias modernas de gestão do tempo e conquistando metas ambiciosas, muitos ainda permanecem presos em métodos ultrapassados, enfrentando os mesmos desafios de sempre.
+      </p>
+
+      <h3 class="question-heading">Você realmente quer ficar para trás?</h3>
+      <p class="imagine-text">
+        <strong>Imagine</strong> observar colegas sendo promovidos, amigos iniciando novos projetos de sucesso e profissionais se destacando em suas áreas, tudo porque decidiram agir e implementar novas abordagens em suas rotinas. Enquanto isso, aqueles que não tomam essa iniciativa podem sentir-se estagnados, vendo as oportunidades escaparem.
+      </p>
+
+      <div class="risks">
+        <h4>Os riscos de não agir agora:</h4>
+        <ul>
+          <li><strong>Perda de Competitividade:</strong> Não atualizar suas habilidades pode resultar em ficar atrás da concorrência.</li>
+          <li><strong>Estagnação Profissional:</strong> Sem melhorias na gestão do tempo, é difícil progredir na carreira ou alcançar novos patamares de sucesso.</li>
+          <li><strong>Sentimento de Frustração:</strong> Ver os outros alcançando objetivos enquanto você permanece no mesmo lugar pode gerar insatisfação e desmotivação.</li>
+          <li><strong>Limitações Pessoais:</strong> A má gestão do tempo não afeta apenas o trabalho, mas também reduz o tempo para hobbies, família e autocuidado.</li>
+        </ul>
+      </div>
+
+      <p class="solution-intro"><em>Mas há uma solução ao seu alcance.</em></p>
+      <p class="opportunity-text">
+        Você tem a oportunidade de transformar essa realidade, adotando métodos comprovados que já estão fazendo a diferença na vida de muitas pessoas. Não se deixe limitar por técnicas obsoletas ou pela falta de ação. Cada dia é uma nova chance de iniciar mudanças positivas.
+      </p>
+
+      <div class="self-reflection">
+        <p><strong>Pergunte a si mesmo:</strong></p>
+        <ul>
+          <li><em>Estou satisfeito com meu progresso atual?</em></li>
+          <li><em>Quero continuar vendo os outros avançarem enquanto permaneço no mesmo lugar?</em></li>
+          <li><em>O que poderia alcançar se otimizasse meu tempo e aumentasse minha produtividade?</em></li>
+        </ul>
+      </div>
+
+      <p class="call-to-action">
+        O momento de agir é agora.<br>
+        Não permita que a indecisão impeça você de atingir todo o seu potencial. Aproveite as novidades e recursos disponíveis para impulsionar sua carreira e sua vida pessoal. Dê o primeiro passo rumo à transformação que você merece.
+      </p>
+
+      <p class="closing-remark">
+        <em>Lembre-se, o futuro pertence àqueles que se preparam hoje. Não deixe que esta oportunidade passe. Faça a escolha que seu "eu" futuro agradecerá.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção de Perguntas -->
+  <section id="conexao-profunda" class="section section-questions">
+    <div class="container">
+      <h2 class="section-title">Você já se perguntou?</h2>
+      <ul class="questions-list">
+        <li>Você deseja alcançar mais sucesso profissional?</li>
+        <li>Quer ter mais tempo para as coisas que realmente importam?</li>
+        <li>Você sente que poderia ser mais produtivo se tivesse as ferramentas certas?</li>
+        <li>Gostaria de reduzir o estresse causado pela falta de tempo?</li>
+        <li>Você busca um melhor equilíbrio entre trabalho e vida pessoal?</li>
+        <li>Já pensou em como seria bom concluir suas tarefas com eficiência?</li>
+        <li>Você quer se destacar em sua carreira e ser reconhecido por isso?</li>
+        <li>Está interessado em melhorar sua qualidade de vida?</li>
+        <li>Você acredita que uma boa gestão do tempo pode transformar sua rotina?</li>
+        <li>Deseja aprender técnicas práticas e fáceis de implementar?</li>
+        <li>Você se sente sobrecarregado com tantas responsabilidades?</li>
+        <li>Gostaria de ter mais controle sobre o seu dia a dia?</li>
+        <li>Você quer deixar de procrastinar e agir com mais determinação?</li>
+        <li>Está pronto para dar o próximo passo rumo ao sucesso?</li>
+        <li>Você acredita que merece viver uma vida mais equilibrada e satisfatória?</li>
+        <li>Quer descobrir como pessoas bem-sucedidas gerenciam seu tempo?</li>
+        <li>Você está em busca de maneiras eficazes de aumentar sua produtividade?</li>
+        <li>Gostaria de alcançar seus objetivos de forma mais rápida?</li>
+        <li>Você se imagina tendo mais tempo livre para si mesmo e para sua família?</li>
+        <li>Está disposto a investir em si mesmo para transformar sua realidade?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Chamada para Ação (Opcional) -->
+  <div class="call-to-action" style="text-align:center; margin:40px 0;">
+    <a href="#seu-produto" class="btn-cta">Descubra Como Transformar Sua Vida Agora</a>
+  </div>
+
+</body>
+</html>

@@ -27,6 +27,18 @@
 		"geraImagemCompleta": {
 			"type": "number"
 		},
+		"htmlInicial": {
+			"type": "string"
+		},
+		"htmlFinal": {
+			"type": "string"
+		},
+		"cssGlobal": {
+			"type": "string"
+		},
+		"geraComSecao": {
+			"type": "number"
+		},
 		"checkoutProdutoProprioId": {
 			"type": "number"
 		},
@@ -62,6 +74,11 @@
 		"paginaImplementacaos": {
 			"type": "hasMany",
 			"model": "PaginaImplementacao",
+			"foreignKey": ""
+		},
+		"paginaVendaAbertaSecaos": {
+			"type": "hasMany",
+			"model": "PaginaVendaAbertaSecao",
 			"foreignKey": ""
 		}
 	},
@@ -152,6 +169,25 @@
          		{
           			"path": "/atualizaPaginaCompleta",
    					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaGeracaoSecao": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaGeracaoSecao",
+   					"verb": "get"
  				}
  			]
 		}

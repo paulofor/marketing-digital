@@ -60,6 +60,13 @@ public class RepositorioPaginaVendaAberta extends ModelRepository<PaginaVendaAbe
 		invokeStaticMethod("atualizaPaginaCompleta", params,   new EmptyResponseParser(callback));
 	}
 
+	public synchronized void listaParaGeracaoSecao(final ListCallback<PaginaVendaAberta> callback ) {
+		RestContractItem contrato = new RestContractItem("PaginaVendaAberta/listaParaGeracaoSecao","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PaginaVendaAberta.listaParaGeracaoSecao");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaGeracaoSecao", params,   new JsonArrayParser<PaginaVendaAberta>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<PaginaVendaAberta> listaEntrada) {
 		JSONArray lista = new JSONArray();

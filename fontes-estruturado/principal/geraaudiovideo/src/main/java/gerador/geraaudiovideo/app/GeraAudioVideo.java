@@ -19,7 +19,7 @@ public class GeraAudioVideo {
 
 	public static void main(String[] args) {
 		System.out.print("GeraAudioVideo");
-		System.out.println("(18/07/2024 22:26:51)");
+		System.out.println("(13/11/2024 12:10:40)");
 		try {
 			carregaProp();
 			GeraAudioVideoObj obj = new GeraAudioVideoObj();

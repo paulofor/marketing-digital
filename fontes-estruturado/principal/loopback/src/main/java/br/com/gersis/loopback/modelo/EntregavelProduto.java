@@ -21,6 +21,8 @@ public class EntregavelProduto extends Model {
 	private int geraImagemConteudo;
 	private String diretorioGravacaoLocal;
 	private int geraEbook;
+	private String urlChatGpt;
+	private String promptDefinicao;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
@@ -29,6 +31,7 @@ public class EntregavelProduto extends Model {
 	private List<PromptItem> PromptItems;
 	private List<ConteudoEntregavel> ConteudoEntregavels;
 	private List<WhatsappGrupoPadraoMensagem> WhatsappGrupoPadraoMensagems;
+	private List<EntregavelCapitulo> EntregavelCapitulos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -55,6 +58,8 @@ public class EntregavelProduto extends Model {
 			obj.put("geraImagemConteudo", geraImagemConteudo);
 			obj.put("diretorioGravacaoLocal", diretorioGravacaoLocal);
 			obj.put("geraEbook", geraEbook);
+			obj.put("urlChatGpt", urlChatGpt);
+			obj.put("promptDefinicao", promptDefinicao);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -103,6 +108,18 @@ public class EntregavelProduto extends Model {
 	}
 	public int getGeraEbook() { 
 		return this.geraEbook;
+	}
+	public void setUrlChatGpt(String valor) { 
+		this.urlChatGpt = valor;
+	}
+	public String getUrlChatGpt() { 
+		return this.urlChatGpt;
+	}
+	public void setPromptDefinicao(String valor) { 
+		this.promptDefinicao = valor;
+	}
+	public String getPromptDefinicao() { 
+		return this.promptDefinicao;
 	}
 
 	public ProdutoProprio getProdutoProprio() {
@@ -170,6 +187,18 @@ public class EntregavelProduto extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.WhatsappGrupoPadraoMensagems.add((WhatsappGrupoPadraoMensagem) objeto);
+		}
+	}
+	public List<EntregavelCapitulo> getEntregavelCapitulos() {
+		return  EntregavelCapitulos;
+	}
+	public void setEntregavelCapitulos(List<EntregavelCapitulo> valores) {
+		this.EntregavelCapitulos = new ArrayList<EntregavelCapitulo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new EntregavelCapitulo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.EntregavelCapitulos.add((EntregavelCapitulo) objeto);
 		}
 	}
 }

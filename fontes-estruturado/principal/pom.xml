@@ -71,6 +71,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>atualizademandapalavrachave</module>
 		<module>obtemvendashotmartfinalizacao</module>
 		<module>geraebookentregavel</module>
+		<module>criapaginavendasecao</module>
 	</modules>
 
 </project>

@@ -30,6 +30,12 @@
 		"geraEbook": {
 			"type": "number"
 		},
+		"urlChatGpt": {
+			"type": "string"
+		},
+		"promptDefinicao": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
 		}
@@ -64,6 +70,11 @@
 		"whatsappGrupoPadraoMensagems": {
 			"type": "hasMany",
 			"model": "WhatsappGrupoPadraoMensagem",
+			"foreignKey": ""
+		},
+		"entregavelCapitulos": {
+			"type": "hasMany",
+			"model": "EntregavelCapitulo",
 			"foreignKey": ""
 		}
 	},

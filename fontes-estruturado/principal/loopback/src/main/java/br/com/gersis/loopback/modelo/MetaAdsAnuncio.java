@@ -25,7 +25,6 @@ public class MetaAdsAnuncio extends Model {
 	private int conversao;
 	private double cpa;
 	private String textoPrincipal1;
-	private double frequencia;
 	private String imagemAnuncio;
 	private String idMeta;
 	private String imagemInstagramReels;
@@ -83,7 +82,6 @@ public class MetaAdsAnuncio extends Model {
 			obj.put("conversao", conversao);
 			obj.put("cpa", cpa);
 			obj.put("textoPrincipal1", textoPrincipal1);
-			obj.put("frequencia", frequencia);
 			obj.put("imagemAnuncio", imagemAnuncio);
 			obj.put("idMeta", idMeta);
 			obj.put("imagemInstagramReels", imagemInstagramReels);
@@ -175,12 +173,6 @@ public class MetaAdsAnuncio extends Model {
 	}
 	public String getTextoPrincipal1() { 
 		return this.textoPrincipal1;
-	}
-	public void setFrequencia(double valor) { 
-		this.frequencia = valor;
-	}
-	public double getFrequencia() { 
-		return this.frequencia;
 	}
 	public void setImagemAnuncio(String valor) { 
 		this.imagemAnuncio = valor;

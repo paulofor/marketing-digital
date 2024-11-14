@@ -1,0 +1,45 @@
+{
+	"name": "PaginaVendaAbertaSecao",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"html": {
+			"type": "string"
+		},
+		"css": {
+			"type": "string"
+		},
+		"posicao": {
+			"type": "number"
+		},
+		"promptBase": {
+			"type": "string"
+		},
+		"ativo": {
+			"type": "number"
+		},
+		"paginaVendaAbertaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"paginaVendaAberta": {
+			"type": "belongsTo",
+			"model": "PaginaVendaAberta",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

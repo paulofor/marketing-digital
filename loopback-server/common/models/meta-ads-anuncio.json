@@ -42,9 +42,6 @@
 		"textoPrincipal1": {
 			"type": "string"
 		},
-		"frequencia": {
-			"type": "number"
-		},
 		"imagemAnuncio": {
 			"type": "string"
 		},

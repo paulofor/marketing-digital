@@ -2,6 +2,15 @@
 
 module.exports = function(Paginavendaaberta) {
 
+    Paginavendaaberta.ListaParaGeracaoSecao = function(callback) {
+        const filtro = {'where' : {'geraComSecao' : 1}, 'include' : 
+                {'relation' : 'paginaVendaAbertaSecaos' , 'scope' : 
+                    {'order' : 'posicao' , 'where' : {'ativo' : 1} }
+                }
+            }
+        Paginavendaaberta.find(filtro,callback);
+    }
+
     Paginavendaaberta.ListaParaImagemCompleta = function(callback) {
         const filtro = {'where' : {'geraImagemCompleta' : 1}}
         Paginavendaaberta.find(filtro,callback);

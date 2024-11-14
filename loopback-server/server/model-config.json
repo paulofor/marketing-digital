@@ -211,6 +211,10 @@
     "dataSource": "mysqlds",
     "public": true
   },
+  "PaginaVendaAbertaSecao": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
   "SecaoWeb": {
     "dataSource": "mysqlds",
     "public": true
@@ -608,6 +612,22 @@
     "public": true
   },
   "FrameworkPublicoCategoria": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "EntregavelCapitulo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "EntregavelCapituloDetalhe": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ElementoPaginaCheckout": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PerguntaPublicoAlvo": {
     "dataSource": "mysqlds",
     "public": true
   }

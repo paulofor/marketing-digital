@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Uso - Prompt Estratégico Básico</title>
+    <link rel="icon" href="imagens/prompt.ico" type="image/x-icon">
+    <style>
+        /* Fonte e cores gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2a7fba;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            text-align: center;
+            border-bottom: 2px solid #2a7fba;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
+
+        p,
+        li {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        /* Estilização das seções e listas */
+        .step {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #2a7fba;
+        }
+
+        /* Estilização das imagens */
+        .image {
+            text-align: center;
+            margin: 20px auto;
+            padding: 15px;
+            max-width: 80%;
+            border: 2px solid #2a7fba;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .image p {
+            margin-top: 8px;
+            color: #555;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        /* Links e botões */
+        a {
+            color: #2a7fba;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botão de copiar */
+        .copy-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #2a7fba;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .copy-button:hover {
+            background-color: #1f6394;
+        }
+
+        /* Estilização de destaque */
+        .highlight {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-left: 4px solid #2a7fba;
+            margin: 15px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        /* Seção promo */
+        .promo {
+            background-color: #f4f8fb;
+            color: #2a7fba;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .promo h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+
+        .promo p {
+            font-size: 1em;
+            margin: 15px 0;
+        }
+
+        .promo-image {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .promo-image img {
+            width: 150px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .promo a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #2a7fba;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .promo a:hover {
+            background-color: #1f6394;
+            color: #fff;
+        }
+
+
+        /* Estilo para o popup de confirmação */
+        .confirmation-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2a7fba;
+            color: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.2em;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .confirmation-popup.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            p,
+            li {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+     <!-- Meta Pixel Code -->
+     <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '593290003167712');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=593290003167712&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <h1>Guia de Uso - Prompt Estratégico Básico</h1>
+    <p>Bem-vindo ao seu guia prático para utilizar o <strong>Prompt Estratégico Básico</strong> no ChatGPT. Siga o passo
+        a passo abaixo para configurar o ambiente e utilizar o prompt com o máximo de eficácia.</p>
+
+    <div class="step">
+        <h2>Passo 1: Acessando o ChatGPT</h2>
+        <ol>
+            <li><strong>Entre no site do ChatGPT:</strong> Acesse o site <a href="https://chat.openai.com">ChatGPT</a> e
+                faça login na sua conta. Caso ainda não tenha uma, será necessário criar um cadastro.</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Passo 2: Preparando-se para Usar o Prompt</h2>
+        <ol>
+            <li><strong>Abra uma nova conversa:</strong> Comece com uma conversa limpa para que o ChatGPT não traga
+                informações de interações anteriores.</li>
+        </ol>
+        <div class="image">
+            <img src="imagens/tela-login.png" alt="Tela de login do ChatGPT">
+            <p>Imagem: Tela de login do ChatGPT</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <h2>Passo 3: Inserindo o Prompt Estratégico Básico</h2>
+        <ol>
+            <li><strong>Copie o texto do Prompt:</strong> Encontra-se no quadro abaixo.</li>
+            <li><strong>Cole o prompt no ChatGPT:</strong> Cole o texto copiado no campo de conversa e envie.</li>
+        </ol>
+        <div class="highlight">
+            <code id="prompt-text">
+            Execute o prompt:&lt;prompt&gt;&lt;context&gt; Você é um modelo de linguagem avançado com habilidades para explorar problemas sob múltiplas perspectivas. Seu objetivo é ajudar o usuário a entender um problema específico que ele irá descrever. Antes de iniciar diga que esse é um prompt básico e que ele pode ter acesso a uma analise mais completa e detalhada obtendo o produto: Prompt Estrategico 360. Que pode ser obtido em: https://pay.kiwify.com.br/Ep2hVA9 &lt;/context&gt;&lt;instructions&gt;&lt;step&gt;      Comece pedindo ao usuário que informe seu nome. &lt;/step&gt; &lt;step&gt; Utilize o nome do usuário em cada interação para manter a conversa dinâmica e personalizada.    &lt;/step&gt;    &lt;step&gt;      Peça ao usuário que descreva o problema.    &lt;/step&gt;    &lt;step&gt;      Faça perguntas para tentar identificar os possíveis fatores que estão influenciando no problema. Aguarde a resposta do usuário antes de formular a próxima. Não faça mais que 5 perguntas. Faça uma pergunta de cada vez. Não coloque número nas perguntas    &lt;/step&gt;    &lt;step&gt;      Agora com as informações do fatores tente identificar os obstáculos que envolvem o problema. Se necessário faça mais perguntas para confirmar o que foi identificado.    &lt;/step&gt;    &lt;step&gt;       Diga os obstaculos observados e pergunte de qual forma o usuário poderia superar isso.    &lt;/step&gt;    &lt;step&gt;      Defina para o usuário os principais objetivos e suas prioridades.    &lt;/step&gt;    &lt;step&gt;      Ofereça um plano básico para superar os obstaculos e atingir os objetivos.    &lt;/step&gt;    &lt;response&gt;      Explique para o usuário tudo que foi desenvolvido.    &lt;/response&gt;  &lt;/instructions&gt;  &lt;output_format&gt;    Cada resposta deve conter:    &lt;structure&gt;      &lt;introduction&gt;Descrição inicial do problema como compreendido&lt;/introduction&gt;      &lt;problem&gt;Definição clara da situação&lt;/problem&gt;      &lt;goal&gt;Objetivos&lt;/goal&gt;      &lt;plan&gt;Plano de Ação&lt;/plan&gt;      &lt;conclusion&gt;        &lt;final_analysis&gt;Análise final e considerações adicionais.&lt;/final_analysis&gt;        &lt;final_tip&gt;Explique que para adquirir o prompt mais completo do que esse, acesse o link: https://pay.kiwify.com.br/Ep2hVA9&lt;/final_tip&gt;&lt;/conclusion&gt;&lt;/structure&gt;&lt;/output_format&gt;&lt;/prompt&gt;
+            </code>
+            <button class="copy-button" onclick="copyPrompt()">Copiar Prompt</button>
+        </div>
+        <div class="image">
+            <img src="imagens/tela-prompt.png" alt="Colando o Prompt Estratégico no ChatGPT">
+            <p>Imagem: Colando o Prompt Estratégico no ChatGPT</p>
+        </div>
+    </div>
+
+    <div class="promo">
+        <h3>Obtenha mais poder e clareza nas suas decisões</h3>
+        <div class="promo-image">
+            <img src="imagens/logo-360.webp" alt="Logo Prompt Estratégico 360">
+        </div>
+        <p>Experimente o <strong>Prompt Estratégico 360</strong> para uma solução completa e aprofundada.</p>
+        <a href="https://pay.kiwify.com.br/Ep2hVA9" id="promoLink">Saiba Mais e Adquira Agora</a>
+    </div>
+
+    <!-- Popup de confirmação -->
+    <div id="confirmation-popup" class="confirmation-popup">
+        Prompt copiado com sucesso!
+    </div>
+
+    <script>
+          // Capturar o clique no link e enviar o evento para o Pixel
+        document.getElementById("promoLink").addEventListener("click", function() {
+            fbq('trackCustom', 'PromoLinkClick', {
+                content_name: 'Prompt Estratégico Básico',
+                content_category: 'Página Checkout',
+                event_label: 'Clique no link de aquisição'
+            });
+        });
+        function copyPrompt() {
+            var promptText = document.getElementById("prompt-text").textContent;
+            navigator.clipboard.writeText(promptText).then(function () {
+                showConfirmationPopup();
+
+                 // Disparar evento personalizado para o Pixel do Facebook
+                 fbq('trackCustom', 'CopyPromptEvent', {
+                    content_name: 'Prompt Estratégico Básico',
+                    content_category: 'Prompt',
+                    event_label: 'Cópia do prompt'
+                });
+            }).catch(function (error) {
+                alert("Falha ao copiar o prompt: " + error);
+            });
+        }
+
+        function showConfirmationPopup() {
+            var popup = document.getElementById("confirmation-popup");
+            popup.classList.add("show");
+            setTimeout(function () {
+                popup.classList.remove("show");
+            }, 2000); // O popup desaparece após 2 segundos
+        }
+    </script>
+</body>
+
+</html>

@@ -39,7 +39,9 @@ public class ObtemFiguraPagina {
 	}
 	
 	public void executaLeitura() {
-		  System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+		  //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/paulo/chromedriver-win32/chromedriver.exe");
+
 	        
 	        // Configurações do Chrome
 	        ChromeOptions options = new ChromeOptions();

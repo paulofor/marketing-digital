@@ -19,7 +19,7 @@ public class GeraEbookEntregavel {
 
 	public static void main(String[] args) {
 		System.out.print("GeraEbookEntregavel");
-		System.out.println("(18/07/2024 22:27:06)");
+		System.out.println("(13/11/2024 12:10:46)");
 		try {
 			carregaProp();
 			GeraEbookEntregavelObj obj = new GeraEbookEntregavelObj();

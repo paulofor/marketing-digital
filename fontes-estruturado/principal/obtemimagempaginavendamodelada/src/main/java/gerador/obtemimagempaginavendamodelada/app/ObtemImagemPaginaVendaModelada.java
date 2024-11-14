@@ -19,7 +19,7 @@ public class ObtemImagemPaginaVendaModelada {
 
 	public static void main(String[] args) {
 		System.out.print("ObtemImagemPaginaVendaModelada");
-		System.out.println("(18/07/2024 22:26:55)");
+		System.out.println("(13/11/2024 12:10:41)");
 		try {
 			carregaProp();
 			ObtemImagemPaginaVendaModeladaObj obj = new ObtemImagemPaginaVendaModeladaObj();

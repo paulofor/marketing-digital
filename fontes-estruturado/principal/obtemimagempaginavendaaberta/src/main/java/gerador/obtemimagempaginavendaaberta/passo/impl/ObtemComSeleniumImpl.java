@@ -16,7 +16,7 @@ public class ObtemComSeleniumImpl extends ObtemComSelenium {
 		try {
 			ObtemFiguraPagina selenium = new ObtemFiguraPagina();
 			selenium.setUrl(paginaCorrente.getUrlFinal());
-			selenium.setArquivoImagem("/home/usuario/aplicacoes/MarketingDigital/imagem/" + paginaCorrente.getCodigoHexa() + ".png");
+			selenium.setArquivoImagem("C:/Projetos/marketing-digital/imagem/" + paginaCorrente.getCodigoHexa() + ".png");
 			selenium.executaLeitura();
 			this.saidaPaginaCorrente = paginaCorrente;
 			long timestamp = System.currentTimeMillis();
