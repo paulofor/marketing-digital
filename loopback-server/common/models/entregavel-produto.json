@@ -36,8 +36,17 @@
 		"promptDefinicao": {
 			"type": "string"
 		},
+		"area": {
+			"type": "string"
+		},
+		"descricao": {
+			"type": "string"
+		},
 		"produtoProprioId": {
 			"type": "number"
+		},
+		"urlImagemCapa": {
+			"type": "string"
 		}
 	},
 	"validations": [],
@@ -158,6 +167,113 @@
 			"http": [
          		{
           			"path": "/listaParaGerarEbook",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"RecebeLista": {
+			"accepts": [
+				{
+					"arg": "listaEntregavel",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/recebeLista",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaComProdutoMercado": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaComProdutoMercado",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ListaGeraDetalhe": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaGeraDetalhe",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"LimpaPorProduto": {
+			"accepts": [
+				{
+					"arg": "idProduto",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/limpaPorProduto",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaComDetalhe": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaComDetalhe",
    					"verb": "get"
  				}
  			]

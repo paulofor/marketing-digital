@@ -28,7 +28,7 @@ public class RepositorioLoadPaginaVenda extends ModelRepository<LoadPaginaVenda>
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void insereItem(int idHm ,String visitante ,int tempo ,String dominio ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("LoadPaginaVendas/insereItem","GET");

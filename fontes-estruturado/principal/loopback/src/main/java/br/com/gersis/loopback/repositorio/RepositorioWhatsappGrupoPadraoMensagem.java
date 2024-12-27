@@ -28,7 +28,7 @@ public class RepositorioWhatsappGrupoPadraoMensagem extends ModelRepository<What
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemParaGerarMensagem(final ListCallback<WhatsappGrupoPadraoMensagem> callback ) {
 		RestContractItem contrato = new RestContractItem("WhatsappGrupoPadraoMensagems/obtemParaGerarMensagem","GET");

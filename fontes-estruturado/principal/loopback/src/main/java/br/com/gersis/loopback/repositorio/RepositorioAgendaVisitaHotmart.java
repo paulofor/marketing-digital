@@ -28,7 +28,7 @@ public class RepositorioAgendaVisitaHotmart extends ModelRepository<AgendaVisita
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<AgendaVisitaHotmart> listaEntrada) {

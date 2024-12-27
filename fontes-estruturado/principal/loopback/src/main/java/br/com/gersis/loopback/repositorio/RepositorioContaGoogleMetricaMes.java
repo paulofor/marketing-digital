@@ -28,7 +28,7 @@ public class RepositorioContaGoogleMetricaMes extends ModelRepository<ContaGoogl
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaDiaConta(ContaGoogleMetricaMes metrica ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ContaGoogleMetricaMes/atualizaDiaConta","POST");

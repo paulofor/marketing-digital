@@ -28,7 +28,7 @@ public class RepositorioAnuncioCampanhaAdsTeste extends ModelRepository<AnuncioC
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaPorCampanhaAdsTeste(int campanhaAdsTesteId ,List<AnuncioCampanhaAdsTeste> listaAnuncio ,final ObjectCallback<AnuncioCampanhaAdsTeste> callback ) {
 		RestContractItem contrato = new RestContractItem("AnuncioCampanhaAdsTestes/atualizaPorCampanhaAdsTeste","POST");

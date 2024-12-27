@@ -28,7 +28,14 @@ public class RepositorioPerguntaPublicoAlvo extends ModelRepository<PerguntaPubl
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
+
+	public synchronized void listaPerguntaAtiva(final ListCallback<PerguntaPublicoAlvo> callback ) {
+		RestContractItem contrato = new RestContractItem("PerguntaPublicoAlvos/listaPerguntaAtiva","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PerguntaPublicoAlvo.listaPerguntaAtiva");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaPerguntaAtiva", params,   new JsonArrayParser<PerguntaPublicoAlvo>(this, callback));
+	}
 
 
 	private JSONArray obtemLista(List<PerguntaPublicoAlvo> listaEntrada) {

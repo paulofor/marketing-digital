@@ -28,7 +28,7 @@ public class RepositorioEstruturaPaginaVendaAberta extends ModelRepository<Estru
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<EstruturaPaginaVendaAberta> listaEntrada) {

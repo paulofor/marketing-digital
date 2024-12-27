@@ -28,7 +28,7 @@ public class RepositorioAcessoPaginaGrupo extends ModelRepository<AcessoPaginaGr
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<AcessoPaginaGrupo> listaEntrada) {

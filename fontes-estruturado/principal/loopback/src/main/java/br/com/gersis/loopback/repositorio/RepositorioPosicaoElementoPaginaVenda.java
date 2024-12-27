@@ -28,7 +28,7 @@ public class RepositorioPosicaoElementoPaginaVenda extends ModelRepository<Posic
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaRelacionamento(int idPrincipal ,List<PosicaoElementoPaginaVenda> lista ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PosicaoElementoPaginaVendas/atualizaRelacionamento","POST");

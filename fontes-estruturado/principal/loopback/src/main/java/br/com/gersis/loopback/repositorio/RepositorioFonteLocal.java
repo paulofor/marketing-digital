@@ -28,7 +28,7 @@ public class RepositorioFonteLocal extends ModelRepository<FonteLocal> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<FonteLocal> listaEntrada) {

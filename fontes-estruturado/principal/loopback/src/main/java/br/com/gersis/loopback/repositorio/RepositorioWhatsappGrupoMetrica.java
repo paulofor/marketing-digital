@@ -28,7 +28,7 @@ public class RepositorioWhatsappGrupoMetrica extends ModelRepository<WhatsappGru
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<WhatsappGrupoMetrica> listaEntrada) {

@@ -28,7 +28,7 @@ public class RepositorioFaixaHorarioCampanhaAds extends ModelRepository<FaixaHor
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<FaixaHorarioCampanhaAds> listaEntrada) {

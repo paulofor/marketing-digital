@@ -28,7 +28,7 @@ public class RepositorioItemConteudoProduto extends ModelRepository<ItemConteudo
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void ordenacaoAlfabetica(int idEntregavel ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ItemConteudoProdutos/ordenacaoAlfabetica","POST");

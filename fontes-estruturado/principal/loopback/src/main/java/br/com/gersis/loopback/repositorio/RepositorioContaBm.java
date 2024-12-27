@@ -28,7 +28,7 @@ public class RepositorioContaBm extends ModelRepository<ContaBm> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ContaBm> listaEntrada) {

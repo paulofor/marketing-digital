@@ -28,7 +28,7 @@ public class RepositorioScrollPaginaVendaPropria extends ModelRepository<ScrollP
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void insereItem(String codigoPagina ,int posicao ,String visitante ,String utmCampaign ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ScrollPaginaVendaPropria/insereItem","GET");

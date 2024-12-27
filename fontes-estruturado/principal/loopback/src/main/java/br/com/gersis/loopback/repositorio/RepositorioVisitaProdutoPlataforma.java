@@ -28,7 +28,7 @@ public class RepositorioVisitaProdutoPlataforma extends ModelRepository<VisitaPr
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<VisitaProdutoPlataforma> listaEntrada) {

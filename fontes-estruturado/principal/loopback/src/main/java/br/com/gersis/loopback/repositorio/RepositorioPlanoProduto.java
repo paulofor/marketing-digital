@@ -28,7 +28,7 @@ public class RepositorioPlanoProduto extends ModelRepository<PlanoProduto> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<PlanoProduto> listaEntrada) {

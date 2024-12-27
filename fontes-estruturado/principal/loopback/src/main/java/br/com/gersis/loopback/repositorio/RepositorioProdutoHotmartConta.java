@@ -28,7 +28,7 @@ public class RepositorioProdutoHotmartConta extends ModelRepository<ProdutoHotma
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaRelacionamento(int idItem ,List<ProdutoHotmartConta> lista ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ProdutoHotmartConta/atualizaRelacionamento","GET");

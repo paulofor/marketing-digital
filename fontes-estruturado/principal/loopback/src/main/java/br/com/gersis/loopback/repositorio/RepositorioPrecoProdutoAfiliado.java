@@ -28,7 +28,7 @@ public class RepositorioPrecoProdutoAfiliado extends ModelRepository<PrecoProdut
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void calculaComissao(final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PrecoProdutoAfiliados/calculaComissao","POST");

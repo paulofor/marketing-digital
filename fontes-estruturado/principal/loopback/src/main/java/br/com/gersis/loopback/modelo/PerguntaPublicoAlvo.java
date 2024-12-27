@@ -19,6 +19,7 @@ public class PerguntaPublicoAlvo extends Model {
 	private int ativa;
 	// Relacionamentos 1
 	// Relacionamentos N
+	private List<RespostaPublicoAlvo> RespostaPublicoAlvos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -67,4 +68,16 @@ public class PerguntaPublicoAlvo extends Model {
 		return this.ativa;
 	}
 
+	public List<RespostaPublicoAlvo> getRespostaPublicoAlvos() {
+		return  RespostaPublicoAlvos;
+	}
+	public void setRespostaPublicoAlvos(List<RespostaPublicoAlvo> valores) {
+		this.RespostaPublicoAlvos = new ArrayList<RespostaPublicoAlvo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new RespostaPublicoAlvo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.RespostaPublicoAlvos.add((RespostaPublicoAlvo) objeto);
+		}
+	}
 }

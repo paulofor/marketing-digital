@@ -28,7 +28,7 @@ public class RepositorioWhatsappGrupo extends ModelRepository<WhatsappGrupo> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void finalizaDadosDia(final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("WhatsappGrupos/finalizaDadosDia","POST");

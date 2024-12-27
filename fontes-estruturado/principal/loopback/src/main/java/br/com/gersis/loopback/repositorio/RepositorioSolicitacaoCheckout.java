@@ -28,7 +28,7 @@ public class RepositorioSolicitacaoCheckout extends ModelRepository<SolicitacaoC
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void insereItem(int idHm ,String visitante ,String url ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("SolicitacaoCheckouts/insereItem","GET");

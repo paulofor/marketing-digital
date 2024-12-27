@@ -21,8 +21,32 @@
 	},
 	"validations": [],
 	"relations": {
+		"respostaPublicoAlvos": {
+			"type": "hasMany",
+			"model": "RespostaPublicoAlvo",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {
+		"ListaPerguntaAtiva": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaPerguntaAtiva",
+   					"verb": "get"
+ 				}
+ 			]
+		}
 	}
 }

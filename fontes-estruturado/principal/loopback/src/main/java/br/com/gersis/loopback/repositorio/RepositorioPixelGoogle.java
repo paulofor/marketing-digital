@@ -28,7 +28,7 @@ public class RepositorioPixelGoogle extends ModelRepository<PixelGoogle> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void registraCriacao(PixelGoogle pixelPaginaVenda ,PixelGoogle pixelVenda ,int produtoAfiliadoId ,PixelGoogle pixelCheckout ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PixelGoogles/registraCriacao","POST");

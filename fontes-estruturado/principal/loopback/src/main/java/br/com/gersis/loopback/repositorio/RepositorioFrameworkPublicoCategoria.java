@@ -28,7 +28,7 @@ public class RepositorioFrameworkPublicoCategoria extends ModelRepository<Framew
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<FrameworkPublicoCategoria> listaEntrada) {

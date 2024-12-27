@@ -79,7 +79,7 @@ export class PaginaImplementacaoEditRelBaseComponent implements OnInit {
 			}
 		}
 		if (!this.srvRel['AtualizaRelacionamento']) {
-			console.log('NÃ£o existe AtualizaRelacionamento em ' , this.srvRel);
+			console.log('Não existe AtualizaRelacionamento em ' , this.srvRel);
 		}
 		this.srvRel['AtualizaRelacionamento'](this.principal.id, listaEnvio)
 			.subscribe((resultado) => {

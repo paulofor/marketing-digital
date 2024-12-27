@@ -28,7 +28,7 @@ public class RepositorioEvolucaoExperimento extends ModelRepository<EvolucaoExpe
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<EvolucaoExperimento> listaEntrada) {

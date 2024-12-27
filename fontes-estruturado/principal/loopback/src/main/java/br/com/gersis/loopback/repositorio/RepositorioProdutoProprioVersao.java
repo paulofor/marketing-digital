@@ -28,7 +28,7 @@ public class RepositorioProdutoProprioVersao extends ModelRepository<ProdutoProp
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ProdutoProprioVersao> listaEntrada) {

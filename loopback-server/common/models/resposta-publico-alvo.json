@@ -1,0 +1,118 @@
+{
+	"name": "RespostaPublicoAlvo",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"resposta": {
+			"type": "string"
+		},
+		"perguntaPublicoAlvoId": {
+			"type": "number"
+		},
+		"produtoProprioId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"perguntaPublicoAlvo": {
+			"type": "belongsTo",
+			"model": "PerguntaPublicoAlvo",
+			"foreignKey": ""
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		},
+		"produtoProprios": {
+			"type": "hasMany",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"InsereResposta": {
+			"accepts": [
+				{
+					"arg": "resposta",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereResposta",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"LimpaPorProduto": {
+			"accepts": [
+				{
+					"arg": "idProduto",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/limpaPorProduto",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"AtualizaUltimaRespostaProduto": {
+			"accepts": [
+				{
+					"arg": "idProduto",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaUltimaRespostaProduto",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

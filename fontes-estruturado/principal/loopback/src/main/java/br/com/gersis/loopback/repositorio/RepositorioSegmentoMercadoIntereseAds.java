@@ -28,7 +28,7 @@ public class RepositorioSegmentoMercadoIntereseAds extends ModelRepository<Segme
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<SegmentoMercadoIntereseAds> listaEntrada) {

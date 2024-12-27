@@ -28,7 +28,7 @@ public class RepositorioTagIdSecaoPaginaVenda extends ModelRepository<TagIdSecao
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<TagIdSecaoPaginaVenda> listaEntrada) {

@@ -28,7 +28,7 @@ public class RepositorioContaFacebook extends ModelRepository<ContaFacebook> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemContaAnuncio(final ObjectCallback<ContaFacebook> callback ) {
 		RestContractItem contrato = new RestContractItem("ContaFacebooks/obtemContaAnuncio","GET");

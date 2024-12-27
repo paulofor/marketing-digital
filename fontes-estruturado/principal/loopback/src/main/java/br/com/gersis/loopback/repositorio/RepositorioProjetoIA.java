@@ -28,7 +28,7 @@ public class RepositorioProjetoIA extends ModelRepository<ProjetoIA> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ProjetoIA> listaEntrada) {

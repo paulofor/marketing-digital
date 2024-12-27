@@ -28,7 +28,7 @@ public class RepositorioContaPublicoAlvoAdsPalavra extends ModelRepository<Conta
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaCriar(final ListCallback<ContaPublicoAlvoAdsPalavra> callback ) {
 		RestContractItem contrato = new RestContractItem("ContaPublicoAlvoAdsPalavras/listaParaCriar","GET");

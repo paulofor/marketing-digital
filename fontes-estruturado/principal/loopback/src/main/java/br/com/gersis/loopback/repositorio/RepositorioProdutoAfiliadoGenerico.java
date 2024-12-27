@@ -28,7 +28,7 @@ public class RepositorioProdutoAfiliadoGenerico extends ModelRepository<ProdutoA
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ProdutoAfiliadoGenerico> listaEntrada) {

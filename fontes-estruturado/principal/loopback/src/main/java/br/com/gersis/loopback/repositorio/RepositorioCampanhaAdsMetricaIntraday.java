@@ -28,7 +28,7 @@ public class RepositorioCampanhaAdsMetricaIntraday extends ModelRepository<Campa
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaIntraday(List<CampanhaAdsMetricaIntraday> metricaIntraday ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricaIntradays/atualizaIntraday","POST");

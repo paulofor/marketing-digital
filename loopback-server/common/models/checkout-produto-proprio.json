@@ -48,5 +48,30 @@
 	},
 	"acls": [],
 	"methods": {
+		"InsereItem": {
+			"accepts": [
+				{
+					"arg": "item",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereItem",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

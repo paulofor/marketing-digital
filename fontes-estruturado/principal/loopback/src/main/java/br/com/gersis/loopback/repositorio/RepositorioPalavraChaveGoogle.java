@@ -28,7 +28,7 @@ public class RepositorioPalavraChaveGoogle extends ModelRepository<PalavraChaveG
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<PalavraChaveGoogle> listaEntrada) {

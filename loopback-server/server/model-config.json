@@ -630,5 +630,17 @@
   "PerguntaPublicoAlvo": {
     "dataSource": "mysqlds",
     "public": true
+  },
+  "MercadoPotencial": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "RespostaPublicoAlvo": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "ElementoCheckoutProduto": {
+    "dataSource": "mysqlds",
+    "public": true
   }
 }

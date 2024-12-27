@@ -28,7 +28,7 @@ public class RepositorioConteudoProdutoKiwify extends ModelRepository<ConteudoPr
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void ordenacaoAlfabetica(int IdEntregavel ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ConteudoProdutoKiwifies/ordenacaoAlfabetica","POST");

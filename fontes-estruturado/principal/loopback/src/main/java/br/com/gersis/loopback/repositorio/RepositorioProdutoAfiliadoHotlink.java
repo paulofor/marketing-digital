@@ -28,7 +28,7 @@ public class RepositorioProdutoAfiliadoHotlink extends ModelRepository<ProdutoAf
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaProdutoHotlink(List<ProdutoAfiliadoHotlink> listaHotlink ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotlinks/atualizaProdutoHotlink","POST");

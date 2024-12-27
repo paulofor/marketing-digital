@@ -19,8 +19,12 @@ public class ProdutoProprio extends Model {
 	private String urlKiwify;
 	private String urlIconePaginaVenda;
 	private String promptEspecialista;
+	private int geraPaginaCheckout;
+	private int geraEntregavel;
 	// Relacionamentos 1
 	private ContaGoogle ContaGoogle;
+	private MercadoPotencial MercadoPotencial;
+	private RespostaPublicoAlvo DescricaoPublicoAlvo;
 	// Relacionamentos N
 	private List<ProdutoProprioVersao> ProdutoProprioVersaos;
 	private List<VersaoPaginaVenda> VersaoPaginaVendas;
@@ -48,6 +52,9 @@ public class ProdutoProprio extends Model {
 	private List<ConteudoProdutoKiwify> ConteudoProdutoKiwifys;
 	private List<WhatsappGrupoPadraoMensagem> WhatsappGrupoPadraoMensagems;
 	private List<PaginaWhatsappGrupo> PaginaWhatsappGrupos;
+	private List<RespostaPublicoAlvo> RespostaPublicoAlvos;
+	private List<CheckoutSecaoProduto> CheckoutSecaoProdutos;
+	private List<ElementoCheckoutProduto> ElementoCheckoutProdutos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -72,6 +79,8 @@ public class ProdutoProprio extends Model {
 			obj.put("urlKiwify", urlKiwify);
 			obj.put("urlIconePaginaVenda", urlIconePaginaVenda);
 			obj.put("promptEspecialista", promptEspecialista);
+			obj.put("geraPaginaCheckout", geraPaginaCheckout);
+			obj.put("geraEntregavel", geraEntregavel);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -109,6 +118,18 @@ public class ProdutoProprio extends Model {
 	public String getPromptEspecialista() { 
 		return this.promptEspecialista;
 	}
+	public void setGeraPaginaCheckout(int valor) { 
+		this.geraPaginaCheckout = valor;
+	}
+	public int getGeraPaginaCheckout() { 
+		return this.geraPaginaCheckout;
+	}
+	public void setGeraEntregavel(int valor) { 
+		this.geraEntregavel = valor;
+	}
+	public int getGeraEntregavel() { 
+		return this.geraEntregavel;
+	}
 
 	public ContaGoogle getContaGoogle() {
 		return ContaGoogle;
@@ -116,6 +137,20 @@ public class ProdutoProprio extends Model {
 	public void setContaGoogle(HashMap valor) {
 		this.ContaGoogle = new ContaGoogle();
 		BeanUtil.setProperties(this.ContaGoogle, (Map<String, ? extends Object>) valor, true);
+	}
+	public MercadoPotencial getMercadoPotencial() {
+		return MercadoPotencial;
+	}
+	public void setMercadoPotencial(HashMap valor) {
+		this.MercadoPotencial = new MercadoPotencial();
+		BeanUtil.setProperties(this.MercadoPotencial, (Map<String, ? extends Object>) valor, true);
+	}
+	public RespostaPublicoAlvo getDescricaoPublicoAlvo() {
+		return DescricaoPublicoAlvo;
+	}
+	public void setDescricaoPublicoAlvo(HashMap valor) {
+		this.DescricaoPublicoAlvo = new RespostaPublicoAlvo();
+		BeanUtil.setProperties(this.DescricaoPublicoAlvo, (Map<String, ? extends Object>) valor, true);
 	}
 	public List<ProdutoProprioVersao> getProdutoProprioVersaos() {
 		return  ProdutoProprioVersaos;
@@ -427,6 +462,42 @@ public class ProdutoProprio extends Model {
 			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PaginaWhatsappGrupos.add((PaginaWhatsappGrupo) objeto);
+		}
+	}
+	public List<RespostaPublicoAlvo> getRespostaPublicoAlvos() {
+		return  RespostaPublicoAlvos;
+	}
+	public void setRespostaPublicoAlvos(List<RespostaPublicoAlvo> valores) {
+		this.RespostaPublicoAlvos = new ArrayList<RespostaPublicoAlvo>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new RespostaPublicoAlvo();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.RespostaPublicoAlvos.add((RespostaPublicoAlvo) objeto);
+		}
+	}
+	public List<CheckoutSecaoProduto> getCheckoutSecaoProdutos() {
+		return  CheckoutSecaoProdutos;
+	}
+	public void setCheckoutSecaoProdutos(List<CheckoutSecaoProduto> valores) {
+		this.CheckoutSecaoProdutos = new ArrayList<CheckoutSecaoProduto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new CheckoutSecaoProduto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.CheckoutSecaoProdutos.add((CheckoutSecaoProduto) objeto);
+		}
+	}
+	public List<ElementoCheckoutProduto> getElementoCheckoutProdutos() {
+		return  ElementoCheckoutProdutos;
+	}
+	public void setElementoCheckoutProdutos(List<ElementoCheckoutProduto> valores) {
+		this.ElementoCheckoutProdutos = new ArrayList<ElementoCheckoutProduto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ElementoCheckoutProduto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ElementoCheckoutProdutos.add((ElementoCheckoutProduto) objeto);
 		}
 	}
 }

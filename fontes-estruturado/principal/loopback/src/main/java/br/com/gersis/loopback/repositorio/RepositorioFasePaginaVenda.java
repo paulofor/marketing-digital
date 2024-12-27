@@ -28,7 +28,7 @@ public class RepositorioFasePaginaVenda extends ModelRepository<FasePaginaVenda>
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<FasePaginaVenda> listaEntrada) {

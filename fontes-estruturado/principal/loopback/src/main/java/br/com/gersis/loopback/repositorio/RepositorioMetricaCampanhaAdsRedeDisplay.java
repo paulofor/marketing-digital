@@ -28,7 +28,7 @@ public class RepositorioMetricaCampanhaAdsRedeDisplay extends ModelRepository<Me
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<MetricaCampanhaAdsRedeDisplay> listaEntrada) {

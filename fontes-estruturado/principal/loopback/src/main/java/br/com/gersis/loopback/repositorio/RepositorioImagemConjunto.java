@@ -28,7 +28,7 @@ public class RepositorioImagemConjunto extends ModelRepository<ImagemConjunto> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemListaParaGerarDeImagemVenda(final ListCallback<ImagemConjunto> callback ) {
 		RestContractItem contrato = new RestContractItem("ImagemConjuntos/obtemListaParaGerarDeImagemVenda","GET");

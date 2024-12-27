@@ -28,7 +28,7 @@ public class RepositorioOtimizacaoCampanhaAdsRedeDisplay extends ModelRepository
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<OtimizacaoCampanhaAdsRedeDisplay> listaEntrada) {

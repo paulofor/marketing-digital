@@ -28,7 +28,7 @@ public class RepositorioFerramentaIa extends ModelRepository<FerramentaIa> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<FerramentaIa> listaEntrada) {

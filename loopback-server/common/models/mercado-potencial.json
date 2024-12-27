@@ -1,0 +1,39 @@
+{
+	"name": "MercadoPotencial",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"descricao": {
+			"type": "string"
+		},
+		"fonte": {
+			"type": "string"
+		},
+		"data": {
+			"type": "date"
+		},
+		"nome": {
+			"type": "string"
+		},
+		"volumePesquisa": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"produtoProprios": {
+			"type": "hasMany",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

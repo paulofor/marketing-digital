@@ -72,6 +72,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>obtemvendashotmartfinalizacao</module>
 		<module>geraebookentregavel</module>
 		<module>criapaginavendasecao</module>
+		<module>chatgptrespondepublicoalvo</module>
+		<module>chatgptgeraentregavel</module>
+		<module>chatgptgeraentregavelcapitulo</module>
+		<module>chatgptgeraentregavelcapitulodetalhe</module>
+		<module>chatgptgerahtmlcapitulodetalhe</module>
+		<module>montaentregavel</module>
+		<module>chatgptrespondecheckout</module>
 	</modules>
 
 </project>

@@ -28,7 +28,7 @@ public class RepositorioPaginaFacebook extends ModelRepository<PaginaFacebook> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<PaginaFacebook> listaEntrada) {

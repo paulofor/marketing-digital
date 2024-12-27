@@ -28,7 +28,7 @@ public class RepositorioProdutoAfiliadoHotmartPendente extends ModelRepository<P
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaPendente(List<ProdutoAfiliadoHotmartPendente> listaHotmartId ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmartPendentes/atualizaPendente","POST");

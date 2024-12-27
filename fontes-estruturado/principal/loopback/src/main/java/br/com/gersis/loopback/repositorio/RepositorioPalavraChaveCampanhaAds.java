@@ -28,7 +28,7 @@ public class RepositorioPalavraChaveCampanhaAds extends ModelRepository<PalavraC
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<PalavraChaveCampanhaAds> listaEntrada) {

@@ -28,13 +28,34 @@ public class RepositorioProdutoProprio extends ModelRepository<ProdutoProprio> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemParaGeracao(final ObjectCallback<ProdutoProprio> callback ) {
 		RestContractItem contrato = new RestContractItem("ProdutoProprios/obtemParaGeracao","GET");
 		this.getRestAdapter().getContract().addItem(contrato, "ProdutoProprio.obtemParaGeracao");
 		Map<String, Object> params = new HashMap<String, Object>();
 		invokeStaticMethod("obtemParaGeracao", params,   new JsonObjectParser<ProdutoProprio>(this, callback));
+	}
+
+	public synchronized void obtemParaCriacaoPaginaCheckout(final ObjectCallback<ProdutoProprio> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoProprios/obtemParaCriacaoPaginaCheckout","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoProprio.obtemParaCriacaoPaginaCheckout");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemParaCriacaoPaginaCheckout", params,   new JsonObjectParser<ProdutoProprio>(this, callback));
+	}
+
+	public synchronized void obtemParaGeracaoEntregavel(final ObjectCallback<ProdutoProprio> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoProprios/obtemParaGeracaoEntregavel","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoProprio.obtemParaGeracaoEntregavel");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemParaGeracaoEntregavel", params,   new JsonObjectParser<ProdutoProprio>(this, callback));
+	}
+
+	public synchronized void obtemParaGeracaoCapitulo(final ObjectCallback<ProdutoProprio> callback ) {
+		RestContractItem contrato = new RestContractItem("ProdutoProprios/obtemParaGeracaoCapitulo","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ProdutoProprio.obtemParaGeracaoCapitulo");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemParaGeracaoCapitulo", params,   new JsonObjectParser<ProdutoProprio>(this, callback));
 	}
 
 

@@ -28,7 +28,7 @@ public class RepositorioVideoVsl extends ModelRepository<VideoVsl> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaGeraAudioComTrecho(final ListCallback<VideoVsl> callback ) {
 		RestContractItem contrato = new RestContractItem("VideoVsls/listaGeraAudioComTrecho","GET");

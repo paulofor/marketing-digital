@@ -28,7 +28,7 @@ public class RepositorioExperimentoModelo extends ModelRepository<ExperimentoMod
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ExperimentoModelo> listaEntrada) {

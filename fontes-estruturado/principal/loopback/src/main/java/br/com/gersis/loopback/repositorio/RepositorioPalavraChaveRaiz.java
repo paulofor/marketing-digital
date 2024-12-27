@@ -28,7 +28,7 @@ public class RepositorioPalavraChaveRaiz extends ModelRepository<PalavraChaveRai
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaPesquisa(final ListCallback<PalavraChaveRaiz> callback ) {
 		RestContractItem contrato = new RestContractItem("PalavraChaveRaizs/listaParaPesquisa","GET");

@@ -28,7 +28,7 @@ public class RepositorioPublicoInteresse extends ModelRepository<PublicoInteress
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<PublicoInteresse> listaEntrada) {

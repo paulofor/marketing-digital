@@ -28,7 +28,7 @@ public class RepositorioMetaVenda extends ModelRepository<MetaVenda> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<MetaVenda> listaEntrada) {

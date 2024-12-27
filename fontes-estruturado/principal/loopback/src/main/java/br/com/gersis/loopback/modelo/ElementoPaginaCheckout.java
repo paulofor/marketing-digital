@@ -19,6 +19,7 @@ public class ElementoPaginaCheckout extends Model {
 	private String nome;
 	// Relacionamentos 1
 	// Relacionamentos N
+	private List<ElementoCheckoutProduto> ElementoCheckoutProdutos;
 
 	public void setId(Long id) {
 		this.setIdObjeto(id);
@@ -67,4 +68,16 @@ public class ElementoPaginaCheckout extends Model {
 		return this.nome;
 	}
 
+	public List<ElementoCheckoutProduto> getElementoCheckoutProdutos() {
+		return  ElementoCheckoutProdutos;
+	}
+	public void setElementoCheckoutProdutos(List<ElementoCheckoutProduto> valores) {
+		this.ElementoCheckoutProdutos = new ArrayList<ElementoCheckoutProduto>();
+		for (int i = 0; i < valores.size(); i++) {
+			Object objeto = new ElementoCheckoutProduto();
+			System.out.println(" --> ObjetoMap ");
+			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+			this.ElementoCheckoutProdutos.add((ElementoCheckoutProduto) objeto);
+		}
+	}
 }

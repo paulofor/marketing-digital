@@ -28,7 +28,7 @@ public class RepositorioVisitaProdutoHotmart extends ModelRepository<VisitaProdu
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaMaisRecenteProdutoHotmart(final ObjectCallback<VisitaProdutoHotmart> callback ) {
 		RestContractItem contrato = new RestContractItem("VisitaProdutoHotmarts/atualizaMaisRecenteProdutoHotmart","POST");

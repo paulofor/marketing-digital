@@ -28,7 +28,7 @@ public class RepositorioContaGoogle extends ModelRepository<ContaGoogle> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemContaDisponivel(final ObjectCallback<ContaGoogle> callback ) {
 		RestContractItem contrato = new RestContractItem("ContaGoogles/obtemContaDisponivel","GET");

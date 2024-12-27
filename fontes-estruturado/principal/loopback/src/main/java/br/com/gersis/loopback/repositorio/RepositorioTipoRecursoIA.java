@@ -28,7 +28,7 @@ public class RepositorioTipoRecursoIA extends ModelRepository<TipoRecursoIA> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<TipoRecursoIA> listaEntrada) {

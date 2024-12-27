@@ -21,8 +21,32 @@
 	},
 	"validations": [],
 	"relations": {
+		"elementoCheckoutProdutos": {
+			"type": "hasMany",
+			"model": "ElementoCheckoutProduto",
+			"foreignKey": ""
+		}
 	},
 	"acls": [],
 	"methods": {
+		"ObtemListaAtivo": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemListaAtivo",
+   					"verb": "get"
+ 				}
+ 			]
+		}
 	}
 }

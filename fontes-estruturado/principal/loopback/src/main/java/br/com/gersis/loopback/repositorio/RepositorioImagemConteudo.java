@@ -28,7 +28,7 @@ public class RepositorioImagemConteudo extends ModelRepository<ImagemConteudo> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void registraImagem(ImagemConteudo imagem ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ImagemConteudos/registraImagem","POST");

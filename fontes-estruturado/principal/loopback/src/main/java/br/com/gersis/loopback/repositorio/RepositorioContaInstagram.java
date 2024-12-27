@@ -28,7 +28,7 @@ public class RepositorioContaInstagram extends ModelRepository<ContaInstagram> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ContaInstagram> listaEntrada) {

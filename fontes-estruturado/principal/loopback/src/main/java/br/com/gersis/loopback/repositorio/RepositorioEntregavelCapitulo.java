@@ -28,7 +28,22 @@ public class RepositorioEntregavelCapitulo extends ModelRepository<EntregavelCap
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
+
+	public synchronized void recebeLista(List<EntregavelCapitulo> listaCapitulo ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("EntregavelCapitulos/recebeLista","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "EntregavelCapitulo.recebeLista");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("listaCapitulo",obtemLista(listaCapitulo));
+		invokeStaticMethod("recebeLista", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void listaParaDetalhe(final ListCallback<EntregavelCapitulo> callback ) {
+		RestContractItem contrato = new RestContractItem("EntregavelCapitulos/listaParaDetalhe","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "EntregavelCapitulo.listaParaDetalhe");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaParaDetalhe", params,   new JsonArrayParser<EntregavelCapitulo>(this, callback));
+	}
 
 
 	private JSONArray obtemLista(List<EntregavelCapitulo> listaEntrada) {

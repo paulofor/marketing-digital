@@ -28,7 +28,7 @@ public class RepositorioCriativoAnuncio extends ModelRepository<CriativoAnuncio>
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaGerarImagem(final ListCallback<CriativoAnuncio> callback ) {
 		RestContractItem contrato = new RestContractItem("CriativoAnuncios/listaParaGerarImagem","GET");

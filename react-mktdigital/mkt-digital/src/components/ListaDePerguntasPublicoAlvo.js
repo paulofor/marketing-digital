@@ -1,6 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { List, ListItem, ListItemText, ListItemAvatar, Avatar, Typography, CircularProgress, Box, Button, Pagination, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  Avatar,
+  Typography,
+  CircularProgress,
+  Box,
+  Button,
+  Pagination,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import EditIcon from '@mui/icons-material/Edit';
 
@@ -20,7 +36,9 @@ const ListaDePerguntasPublicoAlvo = () => {
     const fetchPerguntas = async () => {
       try {
         const response = await axios.get('http://vps-40d69db1.vps.ovh.ca:23101/api/PerguntaPublicoAlvos');
-        setPerguntas(response.data);
+        // Ordena as perguntas pelo campo 'ordenacao'
+        const sortedPerguntas = response.data.sort((a, b) => a.ordenacao - b.ordenacao);
+        setPerguntas(sortedPerguntas);
         setLoading(false);
       } catch (error) {
         setError('Erro ao buscar as perguntas. Tente novamente mais tarde.');
@@ -34,7 +52,7 @@ const ListaDePerguntasPublicoAlvo = () => {
   // Função para calcular as perguntas a serem exibidas na página atual
   const paginatedPerguntas = () => {
     const startIndex = (page - 1) * itemsPerPage;
-    return perguntas.slice(startIndex, startIndex + itemsPerPage);
+    return [...perguntas].sort((a, b) => a.ordenacao - b.ordenacao).slice(startIndex, startIndex + itemsPerPage);
   };
 
   const handleOpenEditDialog = (pergunta) => {
@@ -58,8 +76,13 @@ const ListaDePerguntasPublicoAlvo = () => {
 
   const handleSaveEdit = async () => {
     try {
-      await axios.put(`http://vps-40d69db1.vps.ovh.ca:23101/api/PerguntaPublicoAlvos/${selectedPergunta.id}`, selectedPergunta);
-      setPerguntas((prev) => prev.map((pq) => (pq.id === selectedPergunta.id ? selectedPergunta : pq)));
+      await axios.put(
+        `http://vps-40d69db1.vps.ovh.ca:23101/api/PerguntaPublicoAlvos/${selectedPergunta.id}`,
+        selectedPergunta
+      );
+      setPerguntas((prev) =>
+        [...prev].map((pq) => (pq.id === selectedPergunta.id ? selectedPergunta : pq)).sort((a, b) => a.ordenacao - b.ordenacao)
+      );
       handleCloseEdit();
     } catch (error) {
       setError('Erro ao salvar as alterações. Tente novamente.');
@@ -69,7 +92,7 @@ const ListaDePerguntasPublicoAlvo = () => {
   const handleSaveAdd = async () => {
     try {
       const response = await axios.post('http://vps-40d69db1.vps.ovh.ca:23101/api/PerguntaPublicoAlvos', novaPergunta);
-      setPerguntas((prev) => [...prev, response.data]);
+      setPerguntas((prev) => [...prev, response.data].sort((a, b) => a.ordenacao - b.ordenacao));
       handleCloseAdd();
     } catch (error) {
       setError('Erro ao adicionar a nova pergunta. Tente novamente.');
@@ -129,7 +152,12 @@ const ListaDePerguntasPublicoAlvo = () => {
         {paginatedPerguntas().map((pergunta) => (
           <ListItem
             key={pergunta.id}
-            sx={{ marginBottom: 2, backgroundColor: '#f4f4f4', borderRadius: '10px', cursor: 'pointer' }}
+            sx={{
+              marginBottom: 2,
+              backgroundColor: '#f4f4f4',
+              borderRadius: '10px',
+              cursor: 'pointer',
+            }}
           >
             <ListItemAvatar>
               <Avatar>
@@ -174,6 +202,8 @@ const ListaDePerguntasPublicoAlvo = () => {
             onChange={handleChangeEdit}
             fullWidth
             margin="normal"
+            multiline
+            rows={8}
           />
           <TextField
             label="Ativo"
@@ -215,6 +245,8 @@ const ListaDePerguntasPublicoAlvo = () => {
             onChange={handleChangeAdd}
             fullWidth
             margin="normal"
+            multiline
+            rows={8}
           />
           <TextField
             label="Ativo"

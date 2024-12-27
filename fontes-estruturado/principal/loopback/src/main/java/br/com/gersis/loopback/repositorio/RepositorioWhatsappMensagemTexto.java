@@ -28,7 +28,7 @@ public class RepositorioWhatsappMensagemTexto extends ModelRepository<WhatsappMe
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void salvaListaProdutoGrupoPadrao(List<WhatsappMensagemTexto> listaMensagem ,int idGrupo ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("WhatsappMensagemTextos/salvaListaProdutoGrupoPadrao","POST");

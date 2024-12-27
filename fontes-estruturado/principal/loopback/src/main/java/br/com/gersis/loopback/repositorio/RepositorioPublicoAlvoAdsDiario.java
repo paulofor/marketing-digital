@@ -28,7 +28,7 @@ public class RepositorioPublicoAlvoAdsDiario extends ModelRepository<PublicoAlvo
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaListaPorConta(List<PublicoAlvoAdsDiario> listaPublicoAlvo ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PublicoAlvoAdsDiarios/atualizaListaPorConta","POST");

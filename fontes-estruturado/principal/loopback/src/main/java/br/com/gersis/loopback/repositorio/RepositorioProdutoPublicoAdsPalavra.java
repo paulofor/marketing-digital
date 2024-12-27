@@ -28,7 +28,7 @@ public class RepositorioProdutoPublicoAdsPalavra extends ModelRepository<Produto
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ProdutoPublicoAdsPalavra> listaEntrada) {

@@ -176,6 +176,11 @@ public abstract class DaoAplicacao extends DaoBase {
 	protected RepositorioEntregavelCapituloDetalhe repEntregavelCapituloDetalhe = adapter.createRepository(RepositorioEntregavelCapituloDetalhe.class);
 	protected RepositorioElementoPaginaCheckout repElementoPaginaCheckout = adapter.createRepository(RepositorioElementoPaginaCheckout.class);
 	protected RepositorioPerguntaPublicoAlvo repPerguntaPublicoAlvo = adapter.createRepository(RepositorioPerguntaPublicoAlvo.class);
+	protected RepositorioRespostaPublicoAlvo repRespostaPublicoAlvo = adapter.createRepository(RepositorioRespostaPublicoAlvo.class);
+	protected RepositorioMercadoPotencial repMercadoPotencial = adapter.createRepository(RepositorioMercadoPotencial.class);
+	protected RepositorioCheckoutSecao repCheckoutSecao = adapter.createRepository(RepositorioCheckoutSecao.class);
+	protected RepositorioCheckoutSecaoProduto repCheckoutSecaoProduto = adapter.createRepository(RepositorioCheckoutSecaoProduto.class);
+	protected RepositorioElementoCheckoutProduto repElementoCheckoutProduto = adapter.createRepository(RepositorioElementoCheckoutProduto.class);
 
 
 	@Override

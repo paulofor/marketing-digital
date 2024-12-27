@@ -28,7 +28,7 @@ public class RepositorioProdutoAfiliadoClickbank extends ModelRepository<Produto
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ProdutoAfiliadoClickbank> listaEntrada) {

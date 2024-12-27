@@ -28,7 +28,7 @@ public class RepositorioContaNegocioFacebook extends ModelRepository<ContaNegoci
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ContaNegocioFacebook> listaEntrada) {

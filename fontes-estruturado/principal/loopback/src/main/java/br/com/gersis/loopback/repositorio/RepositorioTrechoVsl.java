@@ -28,7 +28,7 @@ public class RepositorioTrechoVsl extends ModelRepository<TrechoVsl> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaListaAudioGerado(List<TrechoVsl> listaTrecho ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("TrechoVsls/atualizaListaAudioGerado","POST");

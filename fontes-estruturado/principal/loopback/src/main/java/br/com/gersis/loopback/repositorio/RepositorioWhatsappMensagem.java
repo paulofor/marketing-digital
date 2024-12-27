@@ -28,7 +28,7 @@ public class RepositorioWhatsappMensagem extends ModelRepository<WhatsappMensage
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<WhatsappMensagem> listaEntrada) {

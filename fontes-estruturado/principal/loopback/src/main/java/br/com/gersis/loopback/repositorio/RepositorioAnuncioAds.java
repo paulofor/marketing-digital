@@ -28,7 +28,7 @@ public class RepositorioAnuncioAds extends ModelRepository<AnuncioAds> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<AnuncioAds> listaEntrada) {

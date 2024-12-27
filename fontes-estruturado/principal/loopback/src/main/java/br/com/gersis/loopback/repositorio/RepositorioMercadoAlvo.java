@@ -28,7 +28,7 @@ public class RepositorioMercadoAlvo extends ModelRepository<MercadoAlvo> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<MercadoAlvo> listaEntrada) {

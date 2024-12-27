@@ -10,7 +10,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<groupId>br.com.gersis</groupId>
 	<artifactId>criaebookparaproduto</artifactId>
 	<version>1.0.0</version>
-	<!-- Outras configuraÃ§Ãµes -->
+	<!-- Outras configurações -->
 	<dependencies>
 <dependency>
         <groupId>org.apache.pdfbox</groupId>
@@ -22,7 +22,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
-            <version>5.5.13</version> <!-- Substitua pela versÃ£o mais recente -->
+            <version>5.5.13</version> <!-- Substitua pela versão mais recente -->
         </dependency>
 
 		<dependency>

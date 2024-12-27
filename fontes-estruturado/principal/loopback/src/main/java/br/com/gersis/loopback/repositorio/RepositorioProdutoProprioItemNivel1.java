@@ -28,7 +28,7 @@ public class RepositorioProdutoProprioItemNivel1 extends ModelRepository<Produto
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaItem(ProdutoProprioItemNivel1 item ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ProdutoProprioItemNivel1s/atualizaItem","POST");

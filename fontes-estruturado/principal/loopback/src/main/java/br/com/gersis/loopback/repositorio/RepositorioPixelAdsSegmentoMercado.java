@@ -28,7 +28,7 @@ public class RepositorioPixelAdsSegmentoMercado extends ModelRepository<PixelAds
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<PixelAdsSegmentoMercado> listaEntrada) {

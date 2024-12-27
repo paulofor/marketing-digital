@@ -1,31 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { List, ListItem, ListItemText, ListItemAvatar, Avatar, Typography, CircularProgress, Box, Button, IconButton, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  Avatar,
+  Typography,
+  CircularProgress,
+  Box,
+  Button,
+  IconButton,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from '@mui/material';
 import FolderIcon from '@mui/icons-material/Folder';
 import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
-import { useParams, useNavigate } from 'react-router-dom'; // Para navegação e capturar parâmetros da URL
+import { useParams, useNavigate } from 'react-router-dom';
 
 const ListaDeEntregaveis = () => {
-  const { produtoId } = useParams(); // Captura o produtoId da URL
+  const { produtoId } = useParams();
   const [entregaveis, setEntregaveis] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [open, setOpen] = useState(false); // Estado para controlar o modal
-  const [editEntregavel, setEditEntregavel] = useState(null); // Estado para saber se está editando ou criando um novo
-  const [nome, setNome] = useState(''); // Estado para o nome do entregável
-  const [promptDefinicao, setPromptDefinicao] = useState(''); // Estado para o promptDefinicao do entregável
-  const navigate = useNavigate(); // Hook de navegação
+  const [open, setOpen] = useState(false);
+  const [editEntregavel, setEditEntregavel] = useState(null);
+  const [nome, setNome] = useState('');
+  const [promptDefinicao, setPromptDefinicao] = useState('');
+  const [geraEbook, setGeraEbook] = useState(0);
+  const [area, setArea] = useState('');
+  const [urlImagemCapa, setUrlImagemCapa] = useState(''); // Estado para manter a URL
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEntregaveis = async () => {
       try {
-        // Faz a chamada para buscar os entregáveis relacionados ao produto selecionado
-        const response = await axios.get(`http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos`, {
-          params: {
-            filter: JSON.stringify({ where: { produtoProprioId: Number(produtoId) } }),
-          },
-        });
+        const response = await axios.get(
+          `http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos`,
+          {
+            params: {
+              filter: JSON.stringify({
+                where: { produtoProprioId: Number(produtoId) },
+              }),
+            },
+          }
+        );
         setEntregaveis(response.data);
         setLoading(false);
       } catch (error) {
@@ -35,54 +62,69 @@ const ListaDeEntregaveis = () => {
     };
 
     fetchEntregaveis();
-  }, [produtoId]); // Reexecuta o efeito quando o produtoId mudar
+  }, [produtoId]);
 
-  // Função para abrir o modal de edição ou criação
   const handleOpen = (entregavel = null) => {
-    setEditEntregavel(entregavel); // Se entregável for passado, abre para edição
-    setNome(entregavel ? entregavel.nome : ''); // Se tiver um entregável, edita, se não, cria um novo
-    setPromptDefinicao(entregavel ? entregavel.promptDefinicao : ''); // Preenche promptDefinicao se estiver editando
+    setEditEntregavel(entregavel);
+    setNome(entregavel ? entregavel.nome : '');
+    setPromptDefinicao(entregavel ? entregavel.promptDefinicao : '');
+    setGeraEbook(entregavel ? entregavel.geraEbook : 0);
+    setArea(entregavel ? entregavel.area || '' : '');
+    setUrlImagemCapa(entregavel ? entregavel.urlImagemCapa || '' : ''); // Preenche o estado com a URL
     setOpen(true);
   };
 
-  // Função para fechar o modal
   const handleClose = () => {
     setOpen(false);
     setNome('');
     setPromptDefinicao('');
+    setGeraEbook(0);
+    setArea('');
+    setUrlImagemCapa('');
     setEditEntregavel(null);
   };
 
-  // Função para salvar o entregável (criar ou editar)
   const handleSave = async () => {
     try {
       const entregavelData = {
         nome,
         promptDefinicao,
-        produtoProprioId: Number(produtoId), // Certifica-se de que o produtoProprioId seja enviado
+        geraEbook,
+        area,
+        urlImagemCapa, // Inclui a URL no objeto enviado
+        produtoProprioId: Number(produtoId),
       };
 
       if (editEntregavel) {
-        // Edição de entregável
-        await axios.put(`http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos/${editEntregavel.id}`, entregavelData);
+        await axios.put(
+          `http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos/${editEntregavel.id}`,
+          entregavelData
+        );
       } else {
-        // Criação de novo entregável
-        await axios.post(`http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos`, entregavelData);
+        await axios.post(
+          `http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos`,
+          entregavelData
+        );
       }
+
       handleClose();
-      // Recarrega a lista de entregáveis
-      const response = await axios.get(`http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos`, {
-        params: {
-          filter: JSON.stringify({ where: { produtoProprioId: Number(produtoId) } }),
-        },
-      });
+
+      const response = await axios.get(
+        `http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos`,
+        {
+          params: {
+            filter: JSON.stringify({
+              where: { produtoProprioId: Number(produtoId) },
+            }),
+          },
+        }
+      );
       setEntregaveis(response.data);
     } catch (error) {
       setError('Erro ao salvar o entregável.');
     }
   };
 
-  // Verificação se está carregando
   if (loading) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
@@ -107,7 +149,6 @@ const ListaDeEntregaveis = () => {
         Entregáveis do Produto
       </Typography>
 
-      {/* Botão para adicionar um novo entregável */}
       <Button variant="contained" startIcon={<AddIcon />} onClick={() => handleOpen()}>
         Novo Entregável
       </Button>
@@ -116,41 +157,77 @@ const ListaDeEntregaveis = () => {
         {entregaveis.map((entregavel) => (
           <ListItem
             key={entregavel.id}
-            sx={{ marginBottom: 2, backgroundColor: '#f4f4f4', borderRadius: '10px', cursor: 'pointer' }}
-            onClick={() => navigate(`/entregaveis/${entregavel.id}/capitulos`)} // Link para a lista de capítulos
+            sx={{
+              marginBottom: 2,
+              backgroundColor: '#f4f4f4',
+              borderRadius: '10px',
+              padding: 2,
+              display: 'flex',
+              alignItems: 'center',
+              cursor: 'pointer',
+              justifyContent: 'space-between',
+            }}
+            onClick={() => navigate(`/entregaveis/${entregavel.id}/capitulos`)}
           >
-            <ListItemAvatar>
-              <Avatar>
-                <FolderIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText
-              primary={entregavel.nome}
-              secondary={
-                <Typography variant="body2" color="textSecondary">
-                  {entregavel.tipo ? `Tipo: ${entregavel.tipo}` : 'Sem tipo definido'}
-                </Typography>
-              }
-            />
-            <IconButton edge="end" aria-label="edit" onClick={(e) => {
-              e.stopPropagation(); // Evita que o clique no botão de edição redirecione
-              handleOpen(entregavel); // Abre o modal para editar
-            }}>
-              <EditIcon />
-            </IconButton>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <ListItemAvatar sx={{ marginRight: 2 }}>
+                {entregavel.urlImagemCapa ? (
+                  <Avatar
+                    src={entregavel.urlImagemCapa}
+                    alt={entregavel.nome}
+                    variant="square"
+                    sx={{ width: 64, height: 64 }}
+                  />
+                ) : (
+                  <Avatar>
+                    <FolderIcon />
+                  </Avatar>
+                )}
+              </ListItemAvatar>
+              <ListItemText
+                primary={
+                  <Typography variant="h6" fontWeight="bold">
+                    {entregavel.nome}
+                  </Typography>
+                }
+                secondary={
+                  <Typography variant="body2" color="textSecondary">
+                    {entregavel.area ? `Área: ${entregavel.area}` : 'Sem área definida'}
+                  </Typography>
+                }
+              />
+            </Box>
+
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontWeight: 'bold',
+                  color: entregavel.geraEbook === 1 ? 'green' : 'red',
+                  marginRight: 2,
+                }}
+              >
+                {entregavel.geraEbook === 1 ? 'Ligado' : 'Desligado'}
+              </Typography>
+              <IconButton
+                edge="end"
+                aria-label="edit"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleOpen(entregavel);
+                }}
+              >
+                <EditIcon />
+              </IconButton>
+            </Box>
           </ListItem>
         ))}
       </List>
 
-      {/* Modal para adicionar/editar entregável com largura maior e novo campo */}
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        maxWidth="lg" // Define a largura máxima como "lg" (grande)
-        fullWidth // Garante que o modal ocupe toda a largura disponível
-      >
+      <Dialog open={open} onClose={handleClose} maxWidth="lg" fullWidth>
         <DialogTitle>{editEntregavel ? 'Editar Entregável' : 'Novo Entregável'}</DialogTitle>
         <DialogContent>
+          <input type="hidden" name="urlImagemCapa" value={urlImagemCapa} />
           <TextField
             autoFocus
             margin="dense"
@@ -164,10 +241,24 @@ const ListaDeEntregaveis = () => {
             label="Prompt Definição"
             fullWidth
             multiline
-            rows={4} // Deixa o campo de definição com mais espaço
+            rows={4}
             value={promptDefinicao}
             onChange={(e) => setPromptDefinicao(e.target.value)}
           />
+          <TextField
+            margin="dense"
+            label="Área"
+            fullWidth
+            value={area}
+            onChange={(e) => setArea(e.target.value)}
+          />
+          <FormControl fullWidth margin="dense">
+            <InputLabel>Gera Ebook</InputLabel>
+            <Select value={geraEbook} onChange={(e) => setGeraEbook(e.target.value)}>
+              <MenuItem value={1}>Ligado</MenuItem>
+              <MenuItem value={0}>Desligado</MenuItem>
+            </Select>
+          </FormControl>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">

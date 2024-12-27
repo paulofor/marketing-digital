@@ -28,7 +28,7 @@ public class RepositorioLinkCheckout extends ModelRepository<LinkCheckout> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<LinkCheckout> listaEntrada) {

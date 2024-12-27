@@ -19,7 +19,7 @@ public class CriaItemConteudoProduto {
 
 	public static void main(String[] args) {
 		System.out.print("CriaItemConteudoProduto");
-		System.out.println("(13/11/2024 12:10:43)");
+		System.out.println("(13/12/2024 11:00:43)");
 		try {
 			carregaProp();
 			CriaItemConteudoProdutoObj obj = new CriaItemConteudoProdutoObj();

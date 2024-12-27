@@ -28,7 +28,7 @@ public class RepositorioCampanhaAdsRedeDisplay extends ModelRepository<CampanhaA
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemListaParaCriacao(final ListCallback<CampanhaAdsRedeDisplay> callback ) {
 		RestContractItem contrato = new RestContractItem("CampanhaAdsRedeDisplays/obtemListaParaCriacao","GET");

@@ -20,6 +20,9 @@ public class EntregavelCapitulo extends Model {
 	private String urlChatGpt;
 	private String html;
 	private String markup;
+	private int entregavelProdutoId;
+	private String descricao;
+	private int criaDetalhe;
 	// Relacionamentos 1
 	private EntregavelProduto EntregavelProduto;
 	// Relacionamentos N
@@ -49,6 +52,9 @@ public class EntregavelCapitulo extends Model {
 			obj.put("urlChatGpt", urlChatGpt);
 			obj.put("html", html);
 			obj.put("markup", markup);
+			obj.put("entregavelProdutoId", entregavelProdutoId);
+			obj.put("descricao", descricao);
+			obj.put("criaDetalhe", criaDetalhe);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -91,6 +97,24 @@ public class EntregavelCapitulo extends Model {
 	}
 	public String getMarkup() { 
 		return this.markup;
+	}
+	public void setEntregavelProdutoId(int valor) { 
+		this.entregavelProdutoId = valor;
+	}
+	public int getEntregavelProdutoId() { 
+		return this.entregavelProdutoId;
+	}
+	public void setDescricao(String valor) { 
+		this.descricao = valor;
+	}
+	public String getDescricao() { 
+		return this.descricao;
+	}
+	public void setCriaDetalhe(int valor) { 
+		this.criaDetalhe = valor;
+	}
+	public int getCriaDetalhe() { 
+		return this.criaDetalhe;
 	}
 
 	public EntregavelProduto getEntregavelProduto() {

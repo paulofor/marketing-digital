@@ -28,7 +28,7 @@ public class RepositorioPaginaWhatsappExemplo extends ModelRepository<PaginaWhat
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaImagem(PaginaWhatsappExemplo pagina ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PaginaWhatsappExemplos/atualizaImagem","POST");

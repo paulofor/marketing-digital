@@ -28,7 +28,7 @@ public class RepositorioPlayer extends ModelRepository<Player> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<Player> listaEntrada) {

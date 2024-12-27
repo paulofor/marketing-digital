@@ -28,7 +28,7 @@ public class RepositorioProdutoAfiliadoHotmart extends ModelRepository<ProdutoAf
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaCriarPixelGoogle(final ListCallback<ProdutoAfiliadoHotmart> callback ) {
 		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoHotmarts/listaCriarPixelGoogle","GET");

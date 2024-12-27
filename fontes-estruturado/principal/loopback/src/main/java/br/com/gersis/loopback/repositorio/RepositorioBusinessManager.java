@@ -28,7 +28,7 @@ public class RepositorioBusinessManager extends ModelRepository<BusinessManager>
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<BusinessManager> listaEntrada) {

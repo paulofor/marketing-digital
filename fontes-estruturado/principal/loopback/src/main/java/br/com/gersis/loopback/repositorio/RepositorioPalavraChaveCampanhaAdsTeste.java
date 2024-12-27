@@ -28,7 +28,7 @@ public class RepositorioPalavraChaveCampanhaAdsTeste extends ModelRepository<Pal
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaPalavraChavePorCampanhaAdsTeste(int campanhaAdsTesteId ,List<PalavraChaveCampanhaAdsTeste> listaIdeiaPalavraChave ,final ObjectCallback<PalavraChaveCampanhaAdsTeste> callback ) {
 		RestContractItem contrato = new RestContractItem("PalavraChaveCampanhaAdsTestes/atualizaPalavraChavePorCampanhaAdsTeste","POST");

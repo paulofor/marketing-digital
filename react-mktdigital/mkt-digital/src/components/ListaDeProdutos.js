@@ -2,17 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { List, ListItem, ListItemText, ListItemAvatar, Avatar, Typography, CircularProgress, Box, Pagination } from '@mui/material';
 import StoreIcon from '@mui/icons-material/Store';
-import { useNavigate } from 'react-router-dom'; // Para navegação
+import { useNavigate } from 'react-router-dom';
 
 const ListaDeProdutos = () => {
   const [produtos, setProdutos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [page, setPage] = useState(1); // Página atual
-  const itemsPerPage = 20; // Itens por página
-  const navigate = useNavigate(); // Hook para navegação
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 20;
+  const navigate = useNavigate();
 
-  // Função para buscar os produtos da API
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
@@ -28,7 +27,6 @@ const ListaDeProdutos = () => {
     fetchProdutos();
   }, []);
 
-  // Função para calcular os produtos a serem exibidos na página atual
   const paginatedProdutos = () => {
     const startIndex = (page - 1) * itemsPerPage;
     return produtos.slice(startIndex, startIndex + itemsPerPage);
@@ -63,7 +61,7 @@ const ListaDeProdutos = () => {
           <ListItem
             key={produto.id}
             sx={{ marginBottom: 2, backgroundColor: '#f4f4f4', borderRadius: '10px', cursor: 'pointer' }}
-            onClick={() => navigate(`/produtos/${produto.id}`)} // Redireciona para a tela de detalhes do produto
+            onClick={() => navigate(`/produtos/${produto.id}`)}
           >
             <ListItemAvatar>
               <Avatar>
@@ -71,7 +69,16 @@ const ListaDeProdutos = () => {
               </Avatar>
             </ListItemAvatar>
             <ListItemText
-              primary={produto.nome}
+              primary={
+                <Typography variant="body1">
+                  {produto.nome}
+                  {produto.geraPaginaCheckout === 1 && (
+                    <Typography variant="body2" color="primary" component="span" sx={{ marginLeft: 1 }}>
+                      (Página de Checkout Ligada)
+                    </Typography>
+                  )}
+                </Typography>
+              }
               secondary={
                 <Typography variant="body2" color="textSecondary">
                   {produto.promptEspecialista ? produto.promptEspecialista : 'Descrição não disponível'}
@@ -83,9 +90,9 @@ const ListaDeProdutos = () => {
       </List>
 
       <Pagination
-        count={Math.ceil(produtos.length / itemsPerPage)} // Total de páginas
-        page={page} // Página atual
-        onChange={(event, value) => setPage(value)} // Função para mudar de página
+        count={Math.ceil(produtos.length / itemsPerPage)}
+        page={page}
+        onChange={(event, value) => setPage(value)}
         sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}
       />
     </Box>

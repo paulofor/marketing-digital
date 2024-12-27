@@ -28,7 +28,7 @@ public class RepositorioPalavraChaveEstatistica extends ModelRepository<PalavraC
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void insereLista(List<PalavraChaveEstatistica> listaPalavra ,int palavraChaveRaizId ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PalavraChaveEstatisticas/insereLista","POST");

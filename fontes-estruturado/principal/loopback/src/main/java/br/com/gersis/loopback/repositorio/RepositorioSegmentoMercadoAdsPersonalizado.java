@@ -28,7 +28,7 @@ public class RepositorioSegmentoMercadoAdsPersonalizado extends ModelRepository<
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaListaPorConta(List<SegmentoMercadoAdsPersonalizado> listaItem ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("SegmentoMercadoAdsPersonalizados/atualizaListaPorConta","POST");

@@ -28,7 +28,7 @@ public class RepositorioArtigoParaProduto extends ModelRepository<ArtigoParaProd
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaExtrair(final ListCallback<ArtigoParaProduto> callback ) {
 		RestContractItem contrato = new RestContractItem("ArtigoParaProdutos/listaParaExtrair","GET");

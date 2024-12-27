@@ -28,7 +28,7 @@ public class RepositorioTokenAcesso extends ModelRepository<TokenAcesso> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemPorNome(String nome ,final ObjectCallback<TokenAcesso> callback ) {
 		RestContractItem contrato = new RestContractItem("TokenAcessos/obtemPorNome","GET");

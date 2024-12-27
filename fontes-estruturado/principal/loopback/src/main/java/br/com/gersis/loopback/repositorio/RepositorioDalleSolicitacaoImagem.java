@@ -28,7 +28,7 @@ public class RepositorioDalleSolicitacaoImagem extends ModelRepository<DalleSoli
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemProximo(final ObjectCallback<DalleSolicitacaoImagem> callback ) {
 		RestContractItem contrato = new RestContractItem("DalleSolicitacaoImagems/obtemProximo","GET");

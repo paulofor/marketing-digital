@@ -28,7 +28,7 @@ public class RepositorioPaginaVendaScroll extends ModelRepository<PaginaVendaScr
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void insereItem(int hotmartId ,int posicao ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PaginaVendaScrolls/insereItem","GET");

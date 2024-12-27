@@ -28,7 +28,7 @@ public class RepositorioCampanhaAdsMetrica extends ModelRepository<CampanhaAdsMe
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void insereMetrica(CampanhaAdsMetrica metricaCampanha ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("CampanhaAdsMetricas/insereMetrica","POST");

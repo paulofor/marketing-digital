@@ -28,7 +28,7 @@ public class RepositorioPaginaWhatsappGrupo extends ModelRepository<PaginaWhatsa
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaObterImagem(final ListCallback<PaginaWhatsappGrupo> callback ) {
 		RestContractItem contrato = new RestContractItem("PaginaWhatsappGrupos/listaParaObterImagem","GET");

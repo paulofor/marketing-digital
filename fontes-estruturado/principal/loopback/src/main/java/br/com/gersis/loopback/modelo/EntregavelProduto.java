@@ -23,6 +23,10 @@ public class EntregavelProduto extends Model {
 	private int geraEbook;
 	private String urlChatGpt;
 	private String promptDefinicao;
+	private String area;
+	private String descricao;
+	private int produtoProprioId;
+	private String urlImagemCapa;
 	// Relacionamentos 1
 	private ProdutoProprio ProdutoProprio;
 	// Relacionamentos N
@@ -60,6 +64,10 @@ public class EntregavelProduto extends Model {
 			obj.put("geraEbook", geraEbook);
 			obj.put("urlChatGpt", urlChatGpt);
 			obj.put("promptDefinicao", promptDefinicao);
+			obj.put("area", area);
+			obj.put("descricao", descricao);
+			obj.put("produtoProprioId", produtoProprioId);
+			obj.put("urlImagemCapa", urlImagemCapa);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -120,6 +128,30 @@ public class EntregavelProduto extends Model {
 	}
 	public String getPromptDefinicao() { 
 		return this.promptDefinicao;
+	}
+	public void setArea(String valor) { 
+		this.area = valor;
+	}
+	public String getArea() { 
+		return this.area;
+	}
+	public void setDescricao(String valor) { 
+		this.descricao = valor;
+	}
+	public String getDescricao() { 
+		return this.descricao;
+	}
+	public void setProdutoProprioId(int valor) { 
+		this.produtoProprioId = valor;
+	}
+	public int getProdutoProprioId() { 
+		return this.produtoProprioId;
+	}
+	public void setUrlImagemCapa(String valor) { 
+		this.urlImagemCapa = valor;
+	}
+	public String getUrlImagemCapa() { 
+		return this.urlImagemCapa;
 	}
 
 	public ProdutoProprio getProdutoProprio() {

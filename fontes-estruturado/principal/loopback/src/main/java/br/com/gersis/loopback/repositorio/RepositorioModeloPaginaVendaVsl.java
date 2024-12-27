@@ -28,7 +28,7 @@ public class RepositorioModeloPaginaVendaVsl extends ModelRepository<ModeloPagin
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ModeloPaginaVendaVsl> listaEntrada) {

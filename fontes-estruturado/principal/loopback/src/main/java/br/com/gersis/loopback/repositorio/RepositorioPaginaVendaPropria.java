@@ -28,7 +28,7 @@ public class RepositorioPaginaVendaPropria extends ModelRepository<PaginaVendaPr
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void inserePaginaVenda(List<PaginaVendaPropria> listaPagina ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PaginaVendaPropria/inserePaginaVenda","POST");

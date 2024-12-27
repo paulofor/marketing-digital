@@ -28,7 +28,7 @@ public class RepositorioPromptItem extends ModelRepository<PromptItem> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaCriacaoComConteudos(final ListCallback<PromptItem> callback ) {
 		RestContractItem contrato = new RestContractItem("PromptItems/listaParaCriacaoComConteudos","GET");

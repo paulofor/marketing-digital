@@ -28,7 +28,7 @@ public class RepositorioMetaAdsAnuncioMetrica extends ModelRepository<MetaAdsAnu
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void insereObservacao(List<MetaAdsAnuncioMetrica> lista ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("MetaAdsAnuncioMetricas/insereObservacao","POST");

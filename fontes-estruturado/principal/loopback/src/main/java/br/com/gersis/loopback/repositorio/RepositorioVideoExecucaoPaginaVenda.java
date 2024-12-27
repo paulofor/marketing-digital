@@ -28,7 +28,7 @@ public class RepositorioVideoExecucaoPaginaVenda extends ModelRepository<VideoEx
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<VideoExecucaoPaginaVenda> listaEntrada) {

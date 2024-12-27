@@ -28,7 +28,7 @@ public class RepositorioPaginaVendaModelada extends ModelRepository<PaginaVendaM
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaBuscarImagem(final ListCallback<PaginaVendaModelada> callback ) {
 		RestContractItem contrato = new RestContractItem("PaginaVendaModeladas/listaParaBuscarImagem","GET");

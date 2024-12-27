@@ -28,7 +28,7 @@ public class RepositorioVisitante extends ModelRepository<Visitante> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<Visitante> listaEntrada) {

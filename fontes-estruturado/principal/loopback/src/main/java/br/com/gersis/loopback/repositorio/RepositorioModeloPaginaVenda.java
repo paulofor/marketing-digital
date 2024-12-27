@@ -28,7 +28,7 @@ public class RepositorioModeloPaginaVenda extends ModelRepository<ModeloPaginaVe
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ModeloPaginaVenda> listaEntrada) {

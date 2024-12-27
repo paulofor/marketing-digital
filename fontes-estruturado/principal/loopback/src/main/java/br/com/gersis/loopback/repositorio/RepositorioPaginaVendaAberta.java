@@ -28,7 +28,7 @@ public class RepositorioPaginaVendaAberta extends ModelRepository<PaginaVendaAbe
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaGeracao(final ListCallback<PaginaVendaAberta> callback ) {
 		RestContractItem contrato = new RestContractItem("PaginaVendaAberta/listaParaGeracao","GET");

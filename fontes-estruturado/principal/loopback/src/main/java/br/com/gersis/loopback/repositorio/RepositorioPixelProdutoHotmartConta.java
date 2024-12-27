@@ -28,7 +28,7 @@ public class RepositorioPixelProdutoHotmartConta extends ModelRepository<PixelPr
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void registraLista(List<PixelProdutoHotmartConta> listaItem ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PixelProdutoHotmartConta/registraLista","POST");

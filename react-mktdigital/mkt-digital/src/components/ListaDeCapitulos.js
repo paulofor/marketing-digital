@@ -1,6 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { List, ListItem, ListItemText, ListItemAvatar, Avatar, CircularProgress, Box, IconButton, Typography, Breadcrumbs, Link, Dialog, DialogActions, DialogContent, DialogTitle, Button, TextField } from '@mui/material';
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  Avatar,
+  CircularProgress,
+  Box,
+  IconButton,
+  Typography,
+  Breadcrumbs,
+  Link,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Button,
+  TextField,
+} from '@mui/material';
 import FolderIcon from '@mui/icons-material/Folder';
 import EditIcon from '@mui/icons-material/Edit';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -11,16 +29,19 @@ import { useNavigate, useParams } from 'react-router-dom';
 const ListaDeCapitulos = () => {
   const { entregavelId } = useParams(); // Captura o ID do entregável da URL
   const [capitulos, setCapitulos] = useState([]);
-  const [entregavel, setEntregavel] = useState({ nome: '', produtoProprioId: '' }); // Estado para o nome e produtoProprioId do entregável
+  const [entregavel, setEntregavel] = useState({ nome: '', produtoProprioId: '', urlImagemCapa: '' }); // Estado para o nome, produtoProprioId e urlImagemCapa do entregável
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [open, setOpen] = useState(false); // Estado para controlar o modal
+  const [open, setOpen] = useState(false); // Estado para controlar o modal de edição de capítulo
   const [editCapitulo, setEditCapitulo] = useState(null); // Estado para controlar o capítulo sendo editado
   const [numero, setNumero] = useState(''); // Estado para o número do capítulo
   const [nome, setNome] = useState(''); // Estado para o nome do capítulo
   const [prompt, setPrompt] = useState(''); // Estado para o prompt do capítulo
   const [html, setHtml] = useState(''); // Estado para o HTML do capítulo
   const [markup, setMarkup] = useState(''); // Estado para o markup do capítulo
+  const [openImageModal, setOpenImageModal] = useState(false); // Estado para controlar o modal da imagem de capa
+  const [newUrlImagemCapa, setNewUrlImagemCapa] = useState(''); // Estado para a nova URL da imagem de capa
+
   const navigate = useNavigate(); // Navegação para os detalhes do capítulo
 
   useEffect(() => {
@@ -47,7 +68,7 @@ const ListaDeCapitulos = () => {
     fetchCapitulos();
   }, [entregavelId]);
 
-  // Função para abrir o modal de edição
+  // Função para abrir o modal de edição de capítulo
   const handleOpen = (capitulo) => {
     if (capitulo) {
       setEditCapitulo(capitulo); // Define o capítulo a ser editado
@@ -67,7 +88,7 @@ const ListaDeCapitulos = () => {
     setOpen(true); // Abre o modal
   };
 
-  // Função para fechar o modal
+  // Função para fechar o modal de edição de capítulo
   const handleClose = () => {
     setOpen(false);
     setEditCapitulo(null);
@@ -78,7 +99,7 @@ const ListaDeCapitulos = () => {
     setMarkup('');
   };
 
-  // Função para salvar as alterações
+  // Função para salvar as alterações do capítulo
   const handleSave = async () => {
     const updatedCapitulo = {
       numero,
@@ -108,6 +129,31 @@ const ListaDeCapitulos = () => {
       setCapitulos(response.data);
     } catch (error) {
       console.error('Erro ao salvar o capítulo:', error);
+    }
+  };
+
+  // Função para abrir o modal da imagem de capa
+  const handleOpenImageModal = () => {
+    setNewUrlImagemCapa(entregavel.urlImagemCapa || '');
+    setOpenImageModal(true);
+  };
+
+  // Função para fechar o modal da imagem de capa
+  const handleCloseImageModal = () => {
+    setOpenImageModal(false);
+    setNewUrlImagemCapa('');
+  };
+
+  // Função para salvar a URL da imagem de capa
+  const handleSaveImageUrl = async () => {
+    try {
+      await axios.patch(`http://vps-40d69db1.vps.ovh.ca:23101/api/EntregavelProdutos/${entregavelId}`, {
+        urlImagemCapa: newUrlImagemCapa,
+      });
+      setEntregavel((prev) => ({ ...prev, urlImagemCapa: newUrlImagemCapa }));
+      handleCloseImageModal();
+    } catch (error) {
+      console.error('Erro ao atualizar a URL da imagem de capa:', error);
     }
   };
 
@@ -145,6 +191,13 @@ const ListaDeCapitulos = () => {
       </Breadcrumbs>
 
       {/* Botão para criar novo capítulo */}
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 2 }}>
+        <Typography variant="h4">{entregavel.nome}</Typography>
+        <Button variant="outlined" onClick={handleOpenImageModal}>
+          Editar URL da Imagem de Capa
+        </Button>
+      </Box>
+
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 2 }}>
         <Button variant="contained" color="primary" startIcon={<AddIcon />} onClick={() => handleOpen()}>
           Novo Capítulo
@@ -168,23 +221,31 @@ const ListaDeCapitulos = () => {
               secondary={`Número: ${capitulo.numero}`}
             />
             {/* Botões para mover o capítulo */}
-            <IconButton onClick={(event) => {
-              event.stopPropagation(); // Evita que o clique no botão dispare o clique no item da lista
-              // lógica de mover para cima
-            }}>
+            <IconButton
+              onClick={(event) => {
+                event.stopPropagation(); // Evita que o clique no botão dispare o clique no item da lista
+                // lógica de mover para cima
+              }}
+            >
               <ArrowUpwardIcon />
             </IconButton>
-            <IconButton onClick={(event) => {
-              event.stopPropagation(); // Evita que o clique no botão dispare o clique no item da lista
-              // lógica de mover para baixo
-            }}>
+            <IconButton
+              onClick={(event) => {
+                event.stopPropagation(); // Evita que o clique no botão dispare o clique no item da lista
+                // lógica de mover para baixo
+              }}
+            >
               <ArrowDownwardIcon />
             </IconButton>
             {/* Botão de editar */}
-            <IconButton edge="end" aria-label="edit" onClick={(event) => {
-              event.stopPropagation(); // Evita que o clique no botão dispare o clique no item da lista
-              handleOpen(capitulo); // Abre o modal para editar o capítulo
-            }}>
+            <IconButton
+              edge="end"
+              aria-label="edit"
+              onClick={(event) => {
+                event.stopPropagation(); // Evita que o clique no botão dispare o clique no item da lista
+                handleOpen(capitulo); // Abre o modal para editar o capítulo
+              }}
+            >
               <EditIcon />
             </IconButton>
           </ListItem>
@@ -195,51 +256,40 @@ const ListaDeCapitulos = () => {
       <Dialog open={open} onClose={handleClose} maxWidth="lg" fullWidth>
         <DialogTitle>{editCapitulo ? 'Editar Capítulo' : 'Novo Capítulo'}</DialogTitle>
         <DialogContent>
-          <TextField
-            margin="dense"
-            label="Número do Capítulo"
-            fullWidth
-            value={numero}
-            onChange={(e) => setNumero(e.target.value)}
-          />
-          <TextField
-            margin="dense"
-            label="Nome do Capítulo"
-            fullWidth
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-          />
-          <TextField
-            margin="dense"
-            label="Prompt do Capítulo"
-            fullWidth
-            multiline
-            rows={4}
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-          />
-          <TextField
-            margin="dense"
-            label="HTML do Capítulo"
-            fullWidth
-            multiline
-            rows={6}
-            value={html}
-            onChange={(e) => setHtml(e.target.value)}
-          />
-          <TextField
-            margin="dense"
-            label="Markup do Capítulo"
-            fullWidth
-            multiline
-            rows={4}
-            value={markup}
-            onChange={(e) => setMarkup(e.target.value)}
-          />
+          <TextField margin="dense" label="Número do Capítulo" fullWidth value={numero} onChange={(e) => setNumero(e.target.value)} />
+          <TextField margin="dense" label="Nome do Capítulo" fullWidth value={nome} onChange={(e) => setNome(e.target.value)} />
+          <TextField margin="dense" label="Prompt do Capítulo" fullWidth multiline rows={4} value={prompt} onChange={(e) => setPrompt(e.target.value)} />
+          <TextField margin="dense" label="HTML do Capítulo" fullWidth multiline rows={6} value={html} onChange={(e) => setHtml(e.target.value)} />
+          <TextField margin="dense" label="Markup do Capítulo" fullWidth multiline rows={4} value={markup} onChange={(e) => setMarkup(e.target.value)} />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>
           <Button onClick={handleSave} variant="contained" color="primary">
+            Salvar
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Modal para editar a URL da imagem de capa */}
+      <Dialog open={openImageModal} onClose={handleCloseImageModal} maxWidth="sm" fullWidth>
+        <DialogTitle>Editar URL da Imagem de Capa</DialogTitle>
+        <DialogContent>
+          <TextField
+            margin="dense"
+            label="URL da Imagem de Capa"
+            fullWidth
+            value={newUrlImagemCapa}
+            onChange={(e) => setNewUrlImagemCapa(e.target.value)}
+          />
+          {newUrlImagemCapa && (
+            <Box sx={{ marginTop: 2 }}>
+              <img src={newUrlImagemCapa} alt="Imagem de Capa" style={{ maxWidth: '100%', height: 'auto' }} />
+            </Box>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseImageModal}>Cancelar</Button>
+          <Button onClick={handleSaveImageUrl} variant="contained" color="primary">
             Salvar
           </Button>
         </DialogActions>

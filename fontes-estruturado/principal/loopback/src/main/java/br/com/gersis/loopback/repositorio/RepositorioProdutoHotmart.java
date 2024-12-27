@@ -28,7 +28,7 @@ public class RepositorioProdutoHotmart extends ModelRepository<ProdutoHotmart> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ProdutoHotmart> listaEntrada) {

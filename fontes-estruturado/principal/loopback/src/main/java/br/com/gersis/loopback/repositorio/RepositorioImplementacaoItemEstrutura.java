@@ -28,7 +28,7 @@ public class RepositorioImplementacaoItemEstrutura extends ModelRepository<Imple
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void possiveisParaPaginaItem(int idPaginaAberta ,int idItem ,final ListCallback<ImplementacaoItemEstrutura> callback ) {
 		RestContractItem contrato = new RestContractItem("ImplementacaoItemEstruturas/possiveisParaPaginaItem","GET");

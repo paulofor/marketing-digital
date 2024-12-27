@@ -28,7 +28,7 @@ public class RepositorioArquivoPaginaVenda extends ModelRepository<ArquivoPagina
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaRelacionamento(int item ,List<ArquivoPaginaVenda> lista ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ArquivoPaginaVendas/atualizaRelacionamento","POST");

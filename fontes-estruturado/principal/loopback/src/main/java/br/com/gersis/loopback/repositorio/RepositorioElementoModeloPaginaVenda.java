@@ -28,7 +28,7 @@ public class RepositorioElementoModeloPaginaVenda extends ModelRepository<Elemen
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaComConteudoPorVersaoPagina(int idVersao ,final ListCallback<ElementoModeloPaginaVenda> callback ) {
 		RestContractItem contrato = new RestContractItem("ElementoModeloPaginaVendas/listaComConteudoPorVersaoPagina","GET");

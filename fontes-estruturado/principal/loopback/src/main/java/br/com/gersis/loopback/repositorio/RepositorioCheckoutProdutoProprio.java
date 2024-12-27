@@ -28,7 +28,15 @@ public class RepositorioCheckoutProdutoProprio extends ModelRepository<CheckoutP
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
+
+	public synchronized void insereItem(CheckoutProdutoProprio item ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("CheckoutProdutoProprios/insereItem","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "CheckoutProdutoProprio.insereItem");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("item", item.getJSON());
+		invokeStaticMethod("insereItem", params,   new EmptyResponseParser(callback));
+	}
 
 
 	private JSONArray obtemLista(List<CheckoutProdutoProprio> listaEntrada) {

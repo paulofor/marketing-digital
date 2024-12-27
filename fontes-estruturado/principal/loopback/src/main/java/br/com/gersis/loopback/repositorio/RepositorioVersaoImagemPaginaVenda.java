@@ -28,7 +28,7 @@ public class RepositorioVersaoImagemPaginaVenda extends ModelRepository<VersaoIm
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaRelacionamento(int item ,List<VersaoImagemPaginaVenda> lista ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("VersaoImagemPaginaVendas/atualizaRelacionamento","POST");

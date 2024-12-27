@@ -28,7 +28,7 @@ public class RepositorioConteudoEntregavel extends ModelRepository<ConteudoEntre
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ConteudoEntregavel> listaEntrada) {

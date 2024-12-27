@@ -28,7 +28,7 @@ public class RepositorioIdeiaUnica extends ModelRepository<IdeiaUnica> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<IdeiaUnica> listaEntrada) {

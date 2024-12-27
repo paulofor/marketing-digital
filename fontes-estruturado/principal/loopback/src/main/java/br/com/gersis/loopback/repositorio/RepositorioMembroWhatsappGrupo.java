@@ -28,7 +28,7 @@ public class RepositorioMembroWhatsappGrupo extends ModelRepository<MembroWhatsa
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<MembroWhatsappGrupo> listaEntrada) {

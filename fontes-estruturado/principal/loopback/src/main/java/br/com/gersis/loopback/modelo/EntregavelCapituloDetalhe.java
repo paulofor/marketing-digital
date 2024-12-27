@@ -20,6 +20,7 @@ public class EntregavelCapituloDetalhe extends Model {
 	private String markup;
 	private String texto;
 	private int posicao;
+	private int entregavelCapituloId;
 	// Relacionamentos 1
 	private EntregavelCapitulo EntregavelCapitulo;
 	// Relacionamentos N
@@ -48,6 +49,7 @@ public class EntregavelCapituloDetalhe extends Model {
 			obj.put("markup", markup);
 			obj.put("texto", texto);
 			obj.put("posicao", posicao);
+			obj.put("entregavelCapituloId", entregavelCapituloId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -90,6 +92,12 @@ public class EntregavelCapituloDetalhe extends Model {
 	}
 	public int getPosicao() { 
 		return this.posicao;
+	}
+	public void setEntregavelCapituloId(int valor) { 
+		this.entregavelCapituloId = valor;
+	}
+	public int getEntregavelCapituloId() { 
+		return this.entregavelCapituloId;
 	}
 
 	public EntregavelCapitulo getEntregavelCapitulo() {

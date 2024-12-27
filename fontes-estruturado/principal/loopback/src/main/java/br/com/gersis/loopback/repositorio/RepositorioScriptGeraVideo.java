@@ -28,7 +28,7 @@ public class RepositorioScriptGeraVideo extends ModelRepository<ScriptGeraVideo>
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ScriptGeraVideo> listaEntrada) {

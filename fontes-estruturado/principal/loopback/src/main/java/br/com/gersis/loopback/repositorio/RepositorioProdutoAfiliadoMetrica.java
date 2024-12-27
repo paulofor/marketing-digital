@@ -28,7 +28,7 @@ public class RepositorioProdutoAfiliadoMetrica extends ModelRepository<ProdutoAf
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void calculaAtual(final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ProdutoAfiliadoMetricas/calculaAtual","POST");

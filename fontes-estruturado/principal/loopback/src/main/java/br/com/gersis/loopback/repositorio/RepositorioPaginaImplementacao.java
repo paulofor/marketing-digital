@@ -28,7 +28,7 @@ public class RepositorioPaginaImplementacao extends ModelRepository<PaginaImplem
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaRelacionamento(int idItem ,List<PaginaImplementacao> lista ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("PaginaImplementacaos/atualizaRelacionamento","GET");

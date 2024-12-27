@@ -24,7 +24,19 @@
 		"promptEspecialista": {
 			"type": "string"
 		},
+		"geraPaginaCheckout": {
+			"type": "number"
+		},
+		"geraEntregavel": {
+			"type": "number"
+		},
 		"contaGoogleId": {
+			"type": "number"
+		},
+		"mercadoPotencialId": {
+			"type": "number"
+		},
+		"descricaoPublicoAlvoId": {
 			"type": "number"
 		}
 	},
@@ -33,6 +45,16 @@
 		"contaGoogle": {
 			"type": "belongsTo",
 			"model": "ContaGoogle",
+			"foreignKey": ""
+		},
+		"mercadoPotencial": {
+			"type": "belongsTo",
+			"model": "MercadoPotencial",
+			"foreignKey": ""
+		},
+		"descricaoPublicoAlvo": {
+			"type": "belongsTo",
+			"model": "RespostaPublicoAlvo",
 			"foreignKey": ""
 		},
 		"produtoProprioVersaos": {
@@ -164,6 +186,21 @@
 			"type": "hasMany",
 			"model": "PaginaWhatsappGrupo",
 			"foreignKey": ""
+		},
+		"respostaPublicoAlvos": {
+			"type": "hasMany",
+			"model": "RespostaPublicoAlvo",
+			"foreignKey": ""
+		},
+		"checkoutSecaoProdutos": {
+			"type": "hasMany",
+			"model": "CheckoutSecaoProduto",
+			"foreignKey": ""
+		},
+		"elementoCheckoutProdutos": {
+			"type": "hasMany",
+			"model": "ElementoCheckoutProduto",
+			"foreignKey": ""
 		}
 	},
 	"acls": [],
@@ -183,6 +220,63 @@
 			"http": [
          		{
           			"path": "/obtemParaGeracao",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ObtemParaCriacaoPaginaCheckout": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemParaCriacaoPaginaCheckout",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ObtemParaGeracaoEntregavel": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemParaGeracaoEntregavel",
+   					"verb": "get"
+ 				}
+ 			]
+		},
+		"ObtemParaGeracaoCapitulo": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/obtemParaGeracaoCapitulo",
    					"verb": "get"
  				}
  			]

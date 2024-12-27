@@ -28,7 +28,7 @@ public class RepositorioTentativaOferta extends ModelRepository<TentativaOferta>
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<TentativaOferta> listaEntrada) {

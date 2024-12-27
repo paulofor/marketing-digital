@@ -1,0 +1,90 @@
+{
+	"name": "ElementoCheckoutProduto",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"produtoProprioId": {
+			"type": "number"
+			,"id": true
+		},
+		"elementoPaginaCheckoutId": {
+			"type": "number"
+			,"id": true
+		},
+		"texto": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"elementoPaginaCheckout": {
+			"type": "belongsTo",
+			"model": "ElementoPaginaCheckout",
+			"foreignKey": ""
+		},
+		"produtoProprio": {
+			"type": "belongsTo",
+			"model": "ProdutoProprio",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+		"InsereItem": {
+			"accepts": [
+				{
+					"arg": "item",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereItem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"InsereLista": {
+			"accepts": [
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/insereLista",
+   					"verb": "post"
+ 				}
+ 			]
+		}
+	}
+}

@@ -28,7 +28,7 @@ public class RepositorioSecaoWeb extends ModelRepository<SecaoWeb> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<SecaoWeb> listaEntrada) {

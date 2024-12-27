@@ -28,7 +28,7 @@ public class RepositorioSolicitacaoCheckoutPaginaVendaPropria extends ModelRepos
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void insereItem(String codigoPagina ,String utmCampaign ,String utmContent ,String visitante ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("SolicitacaoCheckoutPaginaVendaPropria/insereItem","GET");

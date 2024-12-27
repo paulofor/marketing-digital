@@ -28,7 +28,7 @@ public class RepositorioIdeiaPalavraChave extends ModelRepository<IdeiaPalavraCh
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void atualizaMaisRecentePalavraChave(final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("IdeiaPalavraChaves/atualizaMaisRecentePalavraChave","POST");

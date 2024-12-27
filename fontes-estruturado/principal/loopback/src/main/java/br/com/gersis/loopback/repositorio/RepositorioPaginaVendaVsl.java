@@ -28,7 +28,7 @@ public class RepositorioPaginaVendaVsl extends ModelRepository<PaginaVendaVsl> {
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void listaParaCriacao(final ListCallback<PaginaVendaVsl> callback ) {
 		RestContractItem contrato = new RestContractItem("PaginaVendaVsls/listaParaCriacao","GET");

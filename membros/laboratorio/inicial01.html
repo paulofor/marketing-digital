@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NúcleoExpert - Vitrine</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .navbar .logo {
+            font-size: 1.5em;
+            color: #ffa500;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar .menu a:hover {
+            color: #ffa500;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            color: #ffa500;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #1a1a1a;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            }
+
+            .navbar .menu.open {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .content {
+            padding: 120px 40px 40px 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #222;
+            border-radius: 10px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #ffa500;
+        }
+
+        .card p {
+            color: #aaa;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">NúcleoExpert</a>
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <div class="menu">
+            <a href="#">Início</a>
+            <a href="#">Suporte</a>
+            <a href="#">Dúvidas Frequentes</a>
+            <a href="#">Instagram do Alex</a>
+            <a href="#">Canal Alex Vargas</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Imagem do curso">
+            <h3>Seja Nosso Afiliado</h3>
+            <p>Participe de nosso programa de afiliados e maximize seus ganhos.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Imagem do curso">
+            <h3>Dominando a Inteligência Artificial</h3>
+            <p>Método DIA 2.0: Master Edition. Aprenda sobre inteligência artificial com facilidade.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Imagem do curso">
+            <h3>EasySite PRO</h3>
+            <p>Crie sites facilmente com nosso novo sistema intuitivo e poderoso.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Você Ainda Não Tem Acesso</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

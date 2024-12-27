@@ -28,7 +28,7 @@ public class RepositorioImagemPaginaVenda extends ModelRepository<ImagemPaginaVe
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void registraImagem(List<ImagemPaginaVenda> imagens ,final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("ImagemPaginaVendas/registraImagem","POST");

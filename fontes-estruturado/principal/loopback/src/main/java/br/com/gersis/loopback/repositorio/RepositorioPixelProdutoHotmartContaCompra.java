@@ -28,7 +28,7 @@ public class RepositorioPixelProdutoHotmartContaCompra extends ModelRepository<P
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<PixelProdutoHotmartContaCompra> listaEntrada) {

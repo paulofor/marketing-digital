@@ -41,5 +41,86 @@
 	},
 	"acls": [],
 	"methods": {
+		"RecebeLista": {
+			"accepts": [
+				{
+					"arg": "lista",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/recebeLista",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"RecebeItem": {
+			"accepts": [
+				{
+					"arg": "item",
+					"type": "object",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/recebeItem",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"AtualizaHtml": {
+			"accepts": [
+				{
+					"arg": "idDetalhe",
+					"type": "number",
+   					"required": false,
+    				"description": ""
+				},
+				{
+					"arg": "html",
+					"type": "string",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/atualizaHtml",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

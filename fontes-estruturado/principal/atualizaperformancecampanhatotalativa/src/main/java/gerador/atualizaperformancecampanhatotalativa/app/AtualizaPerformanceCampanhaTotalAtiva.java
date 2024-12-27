@@ -19,7 +19,7 @@ public class AtualizaPerformanceCampanhaTotalAtiva {
 
 	public static void main(String[] args) {
 		System.out.print("AtualizaPerformanceCampanhaTotalAtiva");
-		System.out.println("(13/11/2024 12:10:30)");
+		System.out.println("(13/12/2024 11:00:33)");
 		try {
 			carregaProp();
 			AtualizaPerformanceCampanhaTotalAtivaObj obj = new AtualizaPerformanceCampanhaTotalAtivaObj();

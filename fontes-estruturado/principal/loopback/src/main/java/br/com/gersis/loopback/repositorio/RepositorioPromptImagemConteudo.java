@@ -28,7 +28,7 @@ public class RepositorioPromptImagemConteudo extends ModelRepository<PromptImage
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<PromptImagemConteudo> listaEntrada) {

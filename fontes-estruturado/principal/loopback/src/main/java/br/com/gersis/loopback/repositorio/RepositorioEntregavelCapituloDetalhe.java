@@ -28,7 +28,32 @@ public class RepositorioEntregavelCapituloDetalhe extends ModelRepository<Entreg
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
+
+	public synchronized void recebeLista(List<EntregavelCapituloDetalhe> lista ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("EntregavelCapituloDetalhes/recebeLista","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "EntregavelCapituloDetalhe.recebeLista");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("lista",obtemLista(lista));
+		invokeStaticMethod("recebeLista", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void recebeItem(EntregavelCapituloDetalhe item ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("EntregavelCapituloDetalhes/recebeItem","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "EntregavelCapituloDetalhe.recebeItem");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("item", item.getJSON());
+		invokeStaticMethod("recebeItem", params,   new EmptyResponseParser(callback));
+	}
+
+	public synchronized void atualizaHtml(int idDetalhe ,String html ,final VoidCallback callback ) {
+		RestContractItem contrato = new RestContractItem("EntregavelCapituloDetalhes/atualizaHtml","POST");
+		this.getRestAdapter().getContract().addItem(contrato, "EntregavelCapituloDetalhe.atualizaHtml");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("idDetalhe", idDetalhe);
+		params.put("html", html);
+		invokeStaticMethod("atualizaHtml", params,   new EmptyResponseParser(callback));
+	}
 
 
 	private JSONArray obtemLista(List<EntregavelCapituloDetalhe> listaEntrada) {

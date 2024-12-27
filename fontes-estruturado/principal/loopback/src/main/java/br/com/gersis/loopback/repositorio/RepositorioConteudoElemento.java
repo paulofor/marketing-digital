@@ -28,7 +28,7 @@ public class RepositorioConteudoElemento extends ModelRepository<ConteudoElement
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ConteudoElemento> listaEntrada) {

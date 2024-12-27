@@ -28,7 +28,7 @@ public class RepositorioWhatsappGrupoDiaAgenda extends ModelRepository<WhatsappG
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<WhatsappGrupoDiaAgenda> listaEntrada) {

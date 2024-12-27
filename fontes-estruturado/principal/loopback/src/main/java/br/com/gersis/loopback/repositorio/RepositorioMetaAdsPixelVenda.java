@@ -28,7 +28,7 @@ public class RepositorioMetaAdsPixelVenda extends ModelRepository<MetaAdsPixelVe
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<MetaAdsPixelVenda> listaEntrada) {

@@ -29,6 +29,12 @@
 		},
 		"entregavelProdutoId": {
 			"type": "number"
+		},
+		"descricao": {
+			"type": "string"
+		},
+		"criaDetalhe": {
+			"type": "number"
 		}
 	},
 	"validations": [],
@@ -46,5 +52,49 @@
 	},
 	"acls": [],
 	"methods": {
+		"RecebeLista": {
+			"accepts": [
+				{
+					"arg": "listaCapitulo",
+					"type": "array",
+   					"required": false,
+    				"description": ""
+				}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "object",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/recebeLista",
+   					"verb": "post"
+ 				}
+ 			]
+		},
+		"ListaParaDetalhe": {
+			"accepts": [
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/listaParaDetalhe",
+   					"verb": "get"
+ 				}
+ 			]
+		}
 	}
 }

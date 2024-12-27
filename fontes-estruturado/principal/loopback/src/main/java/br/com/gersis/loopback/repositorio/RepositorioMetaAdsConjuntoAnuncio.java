@@ -28,7 +28,7 @@ public class RepositorioMetaAdsConjuntoAnuncio extends ModelRepository<MetaAdsCo
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<MetaAdsConjuntoAnuncio> listaEntrada) {

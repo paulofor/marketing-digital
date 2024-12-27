@@ -28,7 +28,7 @@ public class RepositorioConcorrenteAfiliado extends ModelRepository<ConcorrenteA
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 
 	private JSONArray obtemLista(List<ConcorrenteAfiliado> listaEntrada) {

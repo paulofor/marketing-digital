@@ -28,7 +28,7 @@ public class RepositorioVersaoPaginaVenda extends ModelRepository<VersaoPaginaVe
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
 
 	public synchronized void obtemListaCriacao(final ListCallback<VersaoPaginaVenda> callback ) {
 		RestContractItem contrato = new RestContractItem("VersaoPaginaVendas/obtemListaCriacao","GET");

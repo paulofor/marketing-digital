@@ -28,7 +28,14 @@ public class RepositorioElementoPaginaCheckout extends ModelRepository<ElementoP
 	}
 
 
-	// ***  OperaÃ§Ãµes  ***
+	// ***  Operações  ***
+
+	public synchronized void obtemListaAtivo(final ListCallback<ElementoPaginaCheckout> callback ) {
+		RestContractItem contrato = new RestContractItem("ElementoPaginaCheckouts/obtemListaAtivo","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "ElementoPaginaCheckout.obtemListaAtivo");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("obtemListaAtivo", params,   new JsonArrayParser<ElementoPaginaCheckout>(this, callback));
+	}
 
 
 	private JSONArray obtemLista(List<ElementoPaginaCheckout> listaEntrada) {
